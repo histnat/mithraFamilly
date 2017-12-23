@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Portail famille</title>
+</head>
+<body>
+<div class="imagePrinc">
+<img src="images/indestructibles.jpg"/>
+</div>
+<div>
+Ma famille d'abord
+</div>
+</body>
+</html>

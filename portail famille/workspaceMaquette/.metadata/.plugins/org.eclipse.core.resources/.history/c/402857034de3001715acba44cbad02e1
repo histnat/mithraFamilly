@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+.layout-menu, .layout-content, .layout-adv {
+   display: inline-block;
+   height: 100%;
+   min-height: 100%;
+   vertical-align: top;
+}
