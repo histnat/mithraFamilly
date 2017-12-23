@@ -1,0 +1,196 @@
+package com.sonovision.openconv.modules.xslprocess;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.URIResolver;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+import org.springframework.web.context.WebApplicationContext;
+import org.w3c.dom.Node;
+
+import com.sedoc.dtdtoolbox.utils.DTDParsing;
+import com.sedoc.toolbox.SpringBeanProvider;
+import com.sedoc.toolbox.bean.UtilsService;
+import com.sedoc.toolbox.bean.XSLTransformService;
+import com.sonovision.openconv.db.cir.TotalCirTable;
+import com.sonovision.openconv.db.vo.ConversionObject;
+import com.sonovision.openconv.log.model.LoggerLevel;
+import com.sonovision.openconv.mapper.TreatedObjectMapper;
+import com.sonovision.openconv.model.ObjectType;
+import com.sonovision.openconv.model.TreatedObject;
+import com.sonovision.openconv.modules.xslprocess.resolver.XSLURIResolver;
+import com.sonovision.openconv.modules.xslprocess.service.CirService;
+import com.sonovision.openconv.utils.FileAccess;
+import com.sonovision.openconv.wf.WFTask;
+import com.sonovision.openconv.wf.WFTaskHelper;
+import com.sonovision.openconv.wf.model.ParameterDetailled;
+import com.sonovision.openconv.wf.model.ParameterTypes;
+
+
+@Component
+@Scope(value = WebApplicationContext.SCOPE_SESSION)
+public class TaskCIRProcess extends WFTaskHelper implements WFTask {
+
+	@Autowired
+	XSLTransformService xslTransformerService;
+
+	@Autowired
+	UtilsService utilsService;
+	
+	static DTDParsing dtdParsing;
+
+    @Autowired
+    private CirService cirService;
+	
+	//I must init spring composent, buti have loop on this class. this variable is for skip loop. I think it will be better if we use @Configure. next time
+	private static boolean initrun = false;
+	
+
+	public TaskCIRProcess() {
+		super();
+	}
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7764367737889004545L;
+
+	public final static String PARAMETER_CIR_TYPE= "cir_type";
+	public final static String PARAMETER_CIR_SNS= "cir_sns";
+	public final static String PARAMETER_CIR_XSL_FILE= "cir_xsl";
+
+
+	private String xslFileName;
+	private String sns;
+	private String cirType;
+	
+
+
+	public String run(HashMap<String, TreatedObject> treatedObjectHash) {
+		initClass();
+		if(!checkRequiredParams())
+			return LoggerLevel.FATAL.getValue().toString();
+		dbLogger.logTask("Debut de la creation CIR", LoggerLevel.INFO);
+		
+		
+		TreatedObject to = new TreatedObject();
+		to.setOutputName(sns);
+		to.setIdObject(sns);
+		to.setObjectType("XML");
+
+
+		Node cirXMLNode=null;
+		try {
+			cirXMLNode=cirService.getXML(totalCirTable, cirType);
+		} catch (ParserConfigurationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+        	dbLogger.logObject("Impossible de créer le cir :" + cirType+ " sns: "+sns ,	LoggerLevel.ERROR,to.getIdObject());
+			return LoggerLevel.FATAL.getValue().toString();
+		}
+		
+		InputStream xslInputSource = FileAccess.getResourceFileStream(xslFileName);
+		
+		ByteArrayOutputStream out = new ByteArrayOutputStream();
+		xslTransformerService.addTransformerParameter("filename", sns);
+//		xslTransformerService.addTransformerParameter("codificationClassUri", codificationClassUri);
+		
+		try {
+			xslTransformerService.transformWithEx(cirXMLNode.getOwnerDocument(), xslInputSource, out,  new XSLURIResolver());
+		} catch (TransformerException e) {
+			to.setLastResultAction(LoggerLevel.ERROR.toString());
+			dbLogger.logObject("Erreur durant la transformation xsl :" + to.getIdObject() + " erreur:" + e.getMessage(),
+					LoggerLevel.ERROR, to.getIdObject());
+			closeObject(LoggerLevel.ERROR, to);
+			return LoggerLevel.FATAL.getValue().toString();
+		}
+		
+		InputStream ips = utilsService.outputStreamToInputStream(out);
+//		utilsService.ecritFile(ips, "d:\\test.xml");
+		
+		
+		to.setObjectConvert(ips);
+		
+		treatedObjectHash.put(sns, to);
+
+		return dbLogger.getTask().getLogResult();
+
+	}
+
+
+	/**
+	 * It can be replaced by @Configuration with aspectj spring but i don't know
+	 * why it doesn't work TODO :make it generic in extends's class
+	 */
+	public void initClass() {
+		if (!initrun) {
+			initrun = true;
+//			if (xslTransformerService == null) {
+//				xslTransformerService = (XSLTransformService) SpringBeanProvider.getBean("XSLTransformService");
+//			}
+			if (utilsService == null) {
+				utilsService = (UtilsService) SpringBeanProvider.getBean("UtilsService");
+			}
+			if (cirService == null) {
+				cirService = (CirService) SpringBeanProvider.getBean("CirService");
+			}
+			if (xslTransformerService == null) {
+				xslTransformerService = (XSLTransformService) SpringBeanProvider.getBean("XSLTransformService");
+			}
+
+			initrun = false;
+		}
+	}
+
+	@Override
+	public HashMap<String, ParameterTypes> getRequiredParams() {
+		parametersRequired=new HashMap<>();
+		parametersRequired.put(PARAMETER_CIR_TYPE,ParameterTypes.TXT);
+		parametersRequired.put(PARAMETER_CIR_SNS,ParameterTypes.TXT);
+		parametersRequired.put(PARAMETER_CIR_XSL_FILE,ParameterTypes.TXT);
+		return parametersRequired;
+	}
+	
+//	@Override
+//	public List<ParameterDetailled> getRequiredDetailledParameterList(Locale locale) {
+//		getRequiredParams();
+//		return super.procedeRequiredParameterList(locale);
+//	}
+
+
+
+	@Override
+	public boolean checkRequiredParams() {
+		// TODO Auto-generated method stub
+		xslFileName = (String) parametersRunning.get(PARAMETER_CIR_XSL_FILE);
+		sns = (String) parametersRunning.get(PARAMETER_CIR_SNS);
+		cirType = (String) parametersRunning.get(PARAMETER_CIR_TYPE);
+		return super.checkParams();
+	}
+
+
+
+//	@Override
+//	public HashMap<String, ParameterTypes> getAskedParams(int step) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+
+
+
+//	@Override
+//	public List<ParameterDetailled> getAskedDetailledParameterList(Locale locale,int step) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+
+}

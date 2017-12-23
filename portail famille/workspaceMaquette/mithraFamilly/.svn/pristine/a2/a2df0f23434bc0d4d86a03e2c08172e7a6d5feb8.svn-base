@@ -1,0 +1,15 @@
+package com.sonovision.openconv.mapper;
+
+public class TaskMapper {
+	
+	public static com.sonovision.openconv.db.vo.Task getTask(com.sonovision.openconv.wf.xmodel.Task task)
+	{
+		com.sonovision.openconv.db.vo.Task resultT = new com.sonovision.openconv.db.vo.Task();
+		resultT.setDescription(task.getDescription());
+		resultT.setName(task.getName());
+		resultT.setTaskName(task.getName());
+		resultT.setXmlId(task.getId().toString());
+		return resultT;
+	}
+
+}

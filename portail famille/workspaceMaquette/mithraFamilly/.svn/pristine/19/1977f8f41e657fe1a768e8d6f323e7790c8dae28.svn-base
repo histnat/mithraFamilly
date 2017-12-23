@@ -1,0 +1,60 @@
+package com.sonovision.openconv.modules.xslprocess.helper;
+
+import static org.testng.Assert.*;
+
+//import static org.junit.Assert.*;
+
+import java.io.File;
+
+import org.testng.annotations.Test;
+
+//import org.junit.Test;
+
+import com.sonovision.openconv.modules.xslprocess.helper.table.impl.LoadHtmlTable;
+import com.sonovision.openconv.utils.TestHelper;
+
+public class LoadTableHtmlTest extends TestHelper{
+
+	@Test
+	public void testLoadTableHtml() {
+		LoadHtmlTable lht=new LoadHtmlTable(new File(getFilePath("/xml/tableau/tableau2.xml")));
+		assertNotNull(lht);
+	}
+
+	@Test(enabled=false)
+	public void testInitTable() throws Exception {
+		LoadHtmlTable lht=new LoadHtmlTable(new File(getFilePath("/xml/tableau/tableau2.xml")));
+		lht.initTable();
+		assertNotNull(lht.getLoadedTable());
+		assertTrue(lht.getLoadedTable().getModel().getHeight()!=0);
+		assertTrue(lht.getLoadedTable().getModel().getWidth()!=0);
+	}
+
+	@Test(enabled=false)
+	public void testLoadTableParam() throws Exception {
+		LoadHtmlTable lht=new LoadHtmlTable(new File(getFilePath("/xml/tableau/tableau2.xml")));
+		lht.initTable();
+		lht.load();
+		assertEquals(lht.getLoadedTable().getParamID(), "TTAB0001");
+		assertEquals(lht.getLoadedTable().getParamBorder(), "1");
+		assertEquals(lht.getLoadedTable().getParamBorderColor(), "#FFFFFF");
+		assertEquals(lht.getLoadedTable().getParamFrame(), "BOX");
+		assertEquals(lht.getLoadedTable().getParamWidth(), "100%");
+	}
+
+	@Test(enabled=false)
+	public void testLoadColGroup() throws Exception {
+		LoadHtmlTable lht=new LoadHtmlTable(new File(getFilePath("/xml/tableau/tableau2.xml")));
+		lht.initTable();
+		lht.load();
+		assertEquals(lht.getLoadedTable().getCell(0,0).getParamColWidth(),"30");
+		assertEquals(lht.getLoadedTable().getCell(1,1).getParamColWidth(),"20");
+		
+	}
+
+	@Test
+	public void testLoad() {
+	//	fail("Not yet implemented");
+	}
+
+}

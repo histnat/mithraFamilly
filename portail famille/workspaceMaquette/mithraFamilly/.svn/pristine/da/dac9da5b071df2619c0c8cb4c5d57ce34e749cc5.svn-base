@@ -1,0 +1,291 @@
+package com.sonovision.openconv.service.impl;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.HashMap;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.Scope;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+import org.springframework.web.context.WebApplicationContext;
+
+import com.sedoc.toolbox.LogMes;
+import com.sedoc.toolbox.SpringBeanProvider;
+import com.sonovision.openconv.db.bo.DBConversionService;
+import com.sonovision.openconv.db.bo.DBExecutionService;
+import com.sonovision.openconv.db.exception.DBNONullException;
+import com.sonovision.openconv.db.exception.DBNOUniqueException;
+import com.sonovision.openconv.db.vo.Task;
+import com.sonovision.openconv.db.vo.execution.CoHistoryExe;
+import com.sonovision.openconv.db.vo.execution.CoParameterExe;
+import com.sonovision.openconv.db.vo.execution.CoScenario;
+import com.sonovision.openconv.log.exception.LoggerException;
+import com.sonovision.openconv.log.model.DBLogger;
+import com.sonovision.openconv.log.model.LoggerLevel;
+import com.sonovision.openconv.modules.fileaccess.exception.LoadFileException;
+import com.sonovision.openconv.service.FileService;
+import com.sonovision.openconv.service.OpenConvService;
+import com.sonovision.openconv.utils.FileAccess;
+import com.sonovision.openconv.wf.exception.WorkflowException;
+import com.sonovision.openconv.wf.service.WorkFlowBo;
+import com.sonovision.openconv.wf.thread.SequenceThread;
+import com.sonovision.openconv.wf.xmodel.Sequence;
+import com.sonovision.openconv.wf.xmodel.Workflow;
+import com.sonovision.openconv.ws.controller.model.TaskParameterModel;
+import com.sonovision.openconv.ws.controller.util.ServiceMapper;
+import com.sonovision.openconv.ws.manager.ParametersCollector;
+import com.sonovision.openconv.ws.manager.ParametersManager;
+
+@Service("OpenConvService")
+@Scope(value = WebApplicationContext.SCOPE_SESSION)
+@PropertySource("classpath:openconv.properties")
+public class OpenConvServiceImpl implements OpenConvService {
+
+	@Value("#{propertiesFile['workflow_path']}")
+	String worflowPath;
+
+	@Autowired
+	WorkFlowBo workFlowBo;
+
+	@Autowired
+	DBConversionService dbConversionService;
+	
+	@Autowired
+	DBExecutionService dbExecutionService;
+	
+	@Autowired
+	private ApplicationContext appContext;
+	
+	@Autowired
+	protected ServiceMapper serviceMapper;
+	
+	@Autowired
+	protected ParametersManager parametersManager;
+	
+	@Autowired
+	protected ParametersCollector parametersCollector;
+	
+	@Autowired
+	protected FileService fileService;
+	
+	private String idExe;
+
+	@Autowired
+	private DBLogger dbLoggerMain;
+	
+//	@Autowired
+//	private SequenceThread st;
+	
+//	static boolean enCours = false;
+
+	private CoHistoryExe coHistoryExe=null;
+	
+	private File workflowFile;
+	
+	
+	@Override
+	public LoggerLevel initSequence(CoScenario coScenario) {
+		//create coHistoryExe
+				try {
+					coHistoryExe=dbExecutionService.createExe(coScenario);
+					idExe=coHistoryExe.getId();
+				} catch (DBNONullException|DBNOUniqueException e) {
+					// TODO Auto-generated catch block
+					LogMes.log(OpenConvServiceImpl.class, LogMes.FATAL, "the coHistoryExe can't be loaded:" + e.getMessage());
+					return LoggerLevel.FATAL;
+				}
+				
+				 workflowFile=new File(coScenario.getFileName());
+				 return LoggerLevel.INFO;
+	}
+	
+	
+	@Override
+	public LoggerLevel launchSequence(){
+//		enCours = true;
+		InputStream is = null;
+
+		SpringBeanProvider.setApplicationContext2(appContext);
+		
+//intialise parametersManager???
+		parametersManager.clean();
+
+//unzip in zipfile to idExeDirectory
+		try {
+			fileService.unzipToIdExe(fileService.getToUnzipFilePath(), coHistoryExe.getId());
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			LogMes.log(OpenConvServiceImpl.class, LogMes.FATAL, fileService.getToUnzipFilePath()+" can't be unzipped:" + e1.getMessage());
+		}
+		
+//load Workflow
+		if (workflowFile == null || !workflowFile.exists()) {
+			is = FileAccess.getResourceFileStream(worflowPath);
+		} else {
+			if (!workflowFile.exists()) {
+				LogMes.log(OpenConvServiceImpl.class, LogMes.FATAL, "the workflow file doesn't exist :" + workflowFile.getAbsolutePath());
+				return LoggerLevel.FATAL;
+			}
+			try {
+				is = new FileInputStream(workflowFile);
+			} catch (FileNotFoundException e) {
+				LogMes.log(OpenConvServiceImpl.class, LogMes.FATAL, "the workflow can't be loaded:" + e.getMessage());
+				return LoggerLevel.FATAL;
+			}
+		}
+
+		Workflow wf;
+		try {
+			wf = workFlowBo.getWorkflow(is);
+		} catch (WorkflowException e) {
+			LogMes.log(OpenConvServiceImpl.class, LogMes.FATAL, "the workflow can't be loaded:" + e.getMessage());
+			return LoggerLevel.FATAL;
+		}
+		
+		//On suppose qu'on a qu'une seule séquence pour l'instant?????
+		Sequence s=wf.getWf().getSequences().getSequence();
+
+
+		
+//initialize dbLogger
+		try {
+			dbLoggerMain.init(fileService.getInDirPath(coHistoryExe.getId()),fileService.getOutDirPath(coHistoryExe.getId()),wf.getName(), s.getName(),coHistoryExe.getId());
+			dbLoggerMain.setWorkflow(wf);
+		} catch (LoggerException e) {
+			LogMes.log(OpenConvServiceImpl.class, LogMes.FATAL, "problem for create the logging context" + e.getMessage());
+			return LoggerLevel.FATAL;
+		}
+		SequenceThread st=new SequenceThread();
+		st.init(dbLoggerMain, s);
+		
+//load all the parameters
+		try {
+			//first extract all the parameters from workflow-> all the required parameters are listed here
+			 List<TaskParameterModel> wfParameterList = serviceMapper.extractListTaskParameterModel(wf);
+			 parametersManager.update(wfParameterList);
+			//then overwrite some of the parameters with list parameters provided by ws -> this list of parameters is not complete, only those that is provided by webservice
+			 parametersManager.update(parametersCollector.getParameterList());
+		} catch (LoadFileException e) {
+			// TODO Auto-generated catch block
+			LogMes.log(OpenConvServiceImpl.class, LogMes.FATAL, "the coHistoryExe can't be loaded:" + e.getMessage());
+		}
+		
+//save the parameters in db
+		try{
+			List<CoParameterExe> listCoParameterExe=serviceMapper.getCoParameterExeList(parametersManager.getAllParams(),coHistoryExe);
+			dbExecutionService.save(listCoParameterExe,coHistoryExe);
+		} catch (DBNONullException e) {
+			// TODO Auto-generated catch block
+			LogMes.log(OpenConvServiceImpl.class, LogMes.FATAL, "the coHistoryExe can't be loaded:" + e.getMessage());
+		} catch (DBNOUniqueException e) {
+			// TODO Auto-generated catch block
+			LogMes.log(OpenConvServiceImpl.class, LogMes.FATAL, "the coHistoryExe can't be loaded:" + e.getMessage());
+		} 
+		
+//run the sequence
+		st.start();
+
+//end of the process
+//		LoggerLevel ll = dbConversionService.geLogLevelResult(dbLoggerMain.getConversion());
+//		enCours = false;
+//		try {
+//			dbExecutionService.stop(idExe,dbConversionService.getCountConversionObjectByConversionId(dbLoggerMain.getConversion().getId()), 
+//					getCountNbrObjectOkByConversionId(dbLoggerMain.getConversion().getId()),
+//					getCountNbrObjectNBloquantByConversionId(dbLoggerMain.getConversion().getId()),
+//					getCountNbrObjectNOkByConversionId(dbLoggerMain.getConversion().getId()));
+//		} catch (DBNONullException e) {
+//			LogMes.log(OpenConvServiceImpl.class, LogMes.FATAL, "the coHistoryExe can't be loaded:" + e.getMessage());
+//		} catch (DBNOUniqueException e) {
+//			LogMes.log(OpenConvServiceImpl.class, LogMes.FATAL, "the coHistoryExe can't be loaded:" + e.getMessage());
+//		}
+		return LoggerLevel.INFO;
+		
+	}
+
+
+	@Override
+	/**
+	 * temporaire pour la demo GIFAS
+	 */
+	public String getResume(String idAction) {
+		if (dbLoggerMain == null)
+			return "{}";
+		Task t = dbConversionService.getTaskByConversionActionId(dbLoggerMain.getConversion(), idAction + "");
+		int nbrObject;
+		String result = "{";
+		nbrObject = dbConversionService.getCountConversionObjectByTask(t);
+
+		int nbrObjectOk = dbConversionService.getCountConversionObjectByTaskOLogResult(t, "3");
+		int nbrObjectNOk = dbConversionService.getCountConversionObjectByTaskOLogResult(t, "2");
+		int nbrObjecterror = dbConversionService.getCountConversionObjectByTaskOLogResult(t, "1");
+		System.out.println("task: nbr fichier:" + nbrObject + " nbrObjectOk:" + nbrObjectOk + "  tnbrObjectNOk:" + nbrObjectNOk + "  nbrObjecterror:" + nbrObjecterror);
+
+		result += "\"nbrFichier\":\"" + nbrObject + "\",\"ok\":\"" + nbrObjectOk + "\",\"nok\":\"" + nbrObjectNOk + "\",\"error\":\"" + nbrObjecterror + "\"";
+
+		return result + "}";
+	}
+	
+	
+
+
+	@Override
+	public int getStatusSequence(int idConversion) {
+//		if (enCours)
+//			return 0;
+//		else
+			return 1;
+		/* a revoir */
+		// if(dbLoggerMain==null)
+		// return 1;
+		// Conversion c= dbLoggerMain.getConversion();
+		// if(c.getStopTime()==null)
+		// return 0;
+		// else
+		// return 1;
+	}
+
+	public String getWorflowPath() {
+		return worflowPath;
+	}
+
+	public void setWorflowPath(String worflowPath) {
+		this.worflowPath = worflowPath;
+	}
+
+	public WorkFlowBo getWorkFlowBo() {
+		return workFlowBo;
+	}
+
+	public void setWorkFlowBo(WorkFlowBo workFlowBo) {
+		this.workFlowBo = workFlowBo;
+	}
+
+	public DBConversionService getDbConversionService() {
+		return dbConversionService;
+	}
+
+	public void setDbConversionService(DBConversionService dbConversionService) {
+		this.dbConversionService = dbConversionService;
+	}
+	
+
+	@Override
+	public String getIdExe() {
+		return idExe;
+	}
+
+
+
+	
+	
+
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lstFilesInOut>
+    <object in="Z1-A-20-10-05-000-0311-FR-A.XML" out="DMC-Z1-A-20-10-05-00A-921A-A_000-01_FR-FR.XML"/>
+    <object in="Z1-A-20-10-05-001-0331-FR-A.XML" out="DMC-Z1-A-20-10-05-01A-921A-A_000-01_FR-FR.XML"/>
+    <object in="Z1-A-20-10-10-000-0311-FR-A.XML" out="DMC-Z1-A-20-10-10-02A-921A-A_000-01_FR-FR.XML"/>
+    <object in="Z1-A-20-10-15-000-0311-FR-A.XML" out="DMC-Z1-A-20-10-15-02A-921A-A_000-01_FR-FR.XML"/>
+    <object in="Z1-A-20-30-05-002-0331-FR-A.XML" out="DMC-Z1-A-20-30-05-02A-921A-A_000-01_FR-FR.XML"/>
+    <object in="Z1-A-23-10-05-000-0332-FR-A.XML" out="DMC-Z1-A-23-10-05-00A-332A-A_000-01_FR-FR.XML"/>
+    <object in="Z1-A-23-10-10-001-0331-FR-A.XML" out="DMC-Z1-A-23-10-10-01A-921A-A_000-01_FR-FR.XML"/>
+    <object in="Z1-A-23-10-10-002-0331-FR-A.XML" out="DMC-Z1-A-23-10-10-02A-921A-A_000-01_FR-FR.XML"/>
+    <object in="Z1-A-24-10-00-001-0470-FR-A.XML" out="DMC-Z1-A-24-10-00-01A-322A-A_000-01_FR-FR.XML"/>
+
+</lstFilesInOut>

@@ -1,0 +1,622 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1A725200SF030100253A021 SYSTEM "x-dm://0900f90b80004020,MYWORKING" NDATA cgm>
+<!ENTITY A1B723300SF030100465A011 SYSTEM "x-dm://0900f90b800085a4,MYWORKING" NDATA cgm>
+<!ENTITY A1B723300SF030100458A011 SYSTEM "x-dm://0900f90b8000430f,MYWORKING" NDATA jpeg>
+<!ENTITY A1B723300SF030100456A011 SYSTEM "x-dm://0900f90b8000430d,MYWORKING" NDATA jpeg>
+<!ENTITY A1A725200SF030100302A011 SYSTEM "x-dm://0900f90b80011ea4,MYWORKING" NDATA jpeg>
+<!ENTITY A1A725200SF030100301A011 SYSTEM "x-dm://0900f90b800106c5,MYWORKING" NDATA jpeg>
+<!ENTITY A1A725200SF030100300A011 SYSTEM "x-dm://0900f90b800106c6,MYWORKING" NDATA jpeg>
+<!ENTITY A1A725200SF030100299A011 SYSTEM "x-dm://0900f90b800106be,MYWORKING" NDATA cgm>
+<!ENTITY A1A703600SF030100003A011 SYSTEM "x-dm://0900f90b80003c59,MYWORKING" NDATA cgm>
+<!ENTITY A1A723300SF030100422A011 SYSTEM "x-dm://0900f90b800042d4,MYWORKING" NDATA jpeg>
+]>
+<?Pub EntList bull copy rArr sect trade percnt Prime lcub lpar hyphen plus plusmn rpar nbsp reg larr raquo laquo>
+<?Pub Inc>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>03</discode><discodev>A</discodev><incode>353</incode><incodev>B</incodev><itemloc>C</itemloc></avee></dmc>
+<dmtitle><techname>DISQUE LABYRINTHE TURBINE HP</techname><infoname>CONTROLE AUX COURANTS DE FOUCAULT - MACHINE M1<?Pub Caret></infoname></dmtitle>
+<issno type="r" issno="2">
+<issdate month="03" year="2012" day="30">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 1"></version>
+<version version="M88-2 ETAPE 4"></version>
+<manufact>F0301</manufact><partno>307-090-267-0</partno>
+<manufact>F0301</manufact><partno>307-245-802-0</partno>
+<manufact>F0301</manufact><partno>307-245-803-0</partno>
+<manufact>F0301</manufact><partno>307-245-855-0</partno>
+<customer aaf="1" anf="1">
+<nti nti1="0" nti2="0" nti3="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Prise en compte de la MOD 250-78R1</rfu>
+<remarks>RAS</remarks>
+<icns><icn id="A1A725200SF030100299A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00299</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A725200SF030100300A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00300</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A725200SF030100301A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00301</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1B725200SF030100465A021">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00465</illnum><illver>A</illver><illupdat>02</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<refdm>
+<dmcid id="A1A70360003A353AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>3</section><subsect>6</subsect><subject>00</subject><discode>03</discode><discodev>A</discodev><incode>353</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+</refdm>
+</refs><proced><pmd>
+<manhour value="2"></manhour>
+<duration value="2"></duration>
+</pmd><prelreqs><reqconds>
+<noconds></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><subcat>Contr&ocirc;leur CDF</subcat><persnum no="1"><perstime value="2"></reqper>
+</reqpers><supequip><supeqli>
+<supequi id="O2.31057"><refipc csn="72016101 046 "><nomen>ENS. MACHINE M1</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.31058"><refipc csn="72016108 003 "><nomen>MACHINE EZ-EDDY</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.31059"><refipc csn="72016108 002 "><nomen>ENSEMBLE DES LOGICIELS</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.31062"><refipc csn="72016108 004 "><nomen>GENERATEUR CDF</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.31064"><refipc csn="72016108 005 "><nomen>KIT DE SUPPORT ET ETALONS</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.310XX"><ident><manufact>F0301</manufact><partno>889-404-663-0</partno></ident><nomen>KIT OUTILLAGES ET SONDES CDF MODULE 8</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.31068"><refipc csn="72016111 001 "><nomen>SUPPORT MANIPULATEUR ANA 05</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.31067"><refipc csn="72016111 004 "><nomen>MANIPULATEUR ANA 30</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.31073"><refipc csn="72016111 005 "><nomen>SONDE ANA MDK26/S</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.310ZZ"><ident><manufact>F0301</manufact><partno>889-404-643-0</partno></ident><nomen>REHAUSSEUR</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.31069"><refipc csn="72016110 004 "><nomen>DISQUE SUPPORT</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.31070"><refipc csn="72016110 003 "><nomen>CENTREUR</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.31072"><refipc csn="72016110 001 "><nomen>ETALON STANDARD</nomen><quantity>1</quantity></supequi>
+</supeqli><nosupeqs></supequip><supplies><nosupply></supplies><miscs><nomisc></miscs><safety>
+<specpara>
+<caution>
+<p>Manipuler les pi&egrave;ces avec pr&eacute;caution (fabriqu&eacute;es en alliage &eacute;labor&eacute; par m&eacute;tallurgie des poudres MdP)&nbsp;: tout impact est inacceptable quelque soit son importance et sa localisation.</p>
+</caution>
+</specpara>
+</safety></prelreqs><mainfunc>
+<step1 control="0" id="P10">
+<title>G&eacute;n&eacute;ralit&eacute;s</title>
+<para><p>Cette instruction de contr&ocirc;le a pour objectif de d&eacute;finir les conditions de contr&ocirc;le par Courants De Foucault du disque labyrinthe turbine HP M88 <refipc csn="72520001 013 "><refipc csn="72520001 019 ">, r&eacute;alis&eacute; sur Ens. machine M1<supeqref refid="O2.31057">.</p>
+</para>
+</step1>
+<step1 control="0" id="P20">
+<title change="MOD">Machine de contr&ocirc;le et g&eacute;n&eacute;rateur &agrave; courants de Foucault</title>
+<list type="SIMPLE">
+<item><para><p>ensemble machine M1<supeqref refid="O2.31057">,</p>
+</para>
+</item>
+<item><para><p>machine EZ-EDDY<supeqref refid="O2.31058">,</p>
+</para>
+</item>
+<item><para><p>ensemble des logiciels<supeqref refid="O2.31059">,</p>
+</para>
+</item>
+<item><para><p>g&eacute;n&eacute;rateur CDF<supeqref refid="O2.31062">.</p>
+</para>
+</item>
+</list>
+</step1>
+<step1 control="0" id="P30">
+<title change="MOD">Kit outillage et sondes</title>
+<para><p>Utiliser les &eacute;quipements suivants du kit outillage et sondes <supeqref refid="O2.310XX">&nbsp;:</p>
+</para>
+<list type="SIMPLE" change="MOD">
+<item><para><p>support manipulateur ANA 05<supeqref refid="O2.31068"> (sert d'interface entre la machine M1 et les manipulateurs ANA XX),</p>
+</para>
+</item>
+<item><para><p>manipulateur ANA 30<supeqref refid="O2.31067">,</p>
+</para>
+</item>
+<item><para><p>sonde ANA MDK26/S<supeqref refid="O2.31073">,</p>
+</para>
+</item>
+<item><para><p>toile nylon abrasive &laquo; scotch brite&nbsp;&reg; &raquo;,</p>
+</para>
+</item>
+<item><para><p>crayon gras ou marqueur homologu&eacute; N 18,</p>
+</para>
+</item>
+<item><para><p>scotch &laquo; t&eacute;flon&nbsp;&reg; &raquo;.</p>
+</para>
+</item>
+</list>
+</step1>
+<step1 control="0" id="P40">
+<title change="MOD">Kit supports et &eacute;talon</title>
+<para><p>Utiliser les &eacute;quipements suivants du kit supports et &eacute;talon <supeqref refid="O2.31064">&nbsp;:</p>
+</para>
+<list type="SIMPLE">
+<item><para><p>disque support<supeqref refid="O2.31069">,</p>
+</para>
+</item>
+<item><para><p>centreur<supeqref refid="O2.31070">,</p>
+</para>
+</item>
+<item><para><p>&eacute;talon standard<supeqref refid="O2.31072">.</p>
+</para>
+</item>
+</list>
+</step1>
+<step1 control="0" id="P50">
+<title>Zones &agrave; contr&ocirc;ler</title>
+<para><p>Contr&ocirc;ler les zones suivantes suivant la version moteur <figref refid="A725200SF030100299A011">&nbsp; conform&eacute;ment aux exigences du bureau d&rsquo;&eacute;tudes Snecma (STB).</p>
+</para>
+<step2>
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>F0301 - 307-090-267-0 <refipc csn="72520001 013 " isn="00A"></p>
+</para>
+<para><p>- Al&eacute;sage disque</p>
+</para>
+</step2>
+<step2>
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>F0301 - 307-245-802-0 <refipc csn="72520001 019 " isn="00A"></p>
+</para>
+<para><p>- Al&eacute;sage disque</p>
+</para>
+</step2>
+<step2>
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>F0301 - 307-245-803-0 <refipc csn="72520001 019 " isn="00C"></p>
+</para>
+<para><p>- Al&eacute;sage disque</p>
+</para>
+</step2>
+<step2>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>F0301 - 307-245-855-0 <refipc csn="72520001 019 " isn="00E"></p>
+</para>
+<para><p>- Al&eacute;sage disque</p>
+</para>
+</step2>
+</step1>
+<step1 control="0" id="P60">
+<title>Pr&eacute;paration avant contr&ocirc;le de la machine M1</title>
+<para><p>V&eacute;rifier au pr&eacute;alable avant toute campagne de mesure, l&rsquo;alignement de l&rsquo;axe X &agrave; l&rsquo;aide du montage &laquo; entre pointe &raquo; avec d&eacute;placement manuel en approche des 2 pointes en position &laquo; 0 &raquo; (pointe vers le bas) et &agrave; 90&deg; avec orientation de la t&ecirc;te support.</p>
+</para>
+<para><p>- 1 pointe mont&eacute;e dans le support ANA 05 (fixation du sabot par 2 vis).</p>
+</para>
+<para><p>- 1 pointe mont&eacute;e dans &laquo; cimblot &raquo; lui-m&ecirc;me centr&eacute; sur le plateau avec serrage des 3 mors &agrave; l&rsquo;aide de la vis centrale plateau (cl&eacute; sp&eacute;cifique).</p>
+</para>
+<note>
+<p>En cas d&rsquo;un constat d&rsquo;une d&eacute;rive &lt; &agrave; 0,5 mm appliquer le protocole de remise &agrave; z&eacute;ro &laquo; 0 &raquo; de l&rsquo;axe X et enregistrer cette correction sur le dossier de suivi machine.</p>
+</note>
+<note>
+<p>En cas d&rsquo;une nouvelle d&eacute;rive, il ne sera pas autoris&eacute; une nouvelle correction et une intervention maintenance devra &ecirc;tre programm&eacute;e.</p>
+</note>
+</step1>
+<step1 control="0" id="P70">
+<title>D&eacute;pose du disque tourillon de la caisse</title>
+<para><p>Prendre le disque labyrinthe dans la caisse et le d&eacute;poser sur le r&eacute;hausseur <supeqref refid="O2.310ZZ">.</p>
+<note>
+<p>Le disque est pos&eacute; sur sa face amont.</p>
+</note>
+</para>
+</step1>
+<step1 control="0" id="P80">
+<title>Cycle d'inspection</title>
+<step2 id="P80-10">
+<para><p>Utiliser le document de r&eacute;f&eacute;rence pour le contr&ocirc;le par Courants De Foucault de surfaces d'&eacute;l&eacute;ments tournants en alliage base nickel <dmcref xrefid="A1A70360003A353AC">.</p>
+</para>
+</step2>
+<step2 id="P80-20">
+<para><p>S'assurer que la pi&egrave;ce &agrave; contr&ocirc;ler, en particulier l'al&eacute;sage et les faces du poireau pr&eacute;sentent un &eacute;tat de propret&eacute; compatible pour les Courants de Foucault.</p>
+<note>
+<p>Si n&eacute;cessaire, utiliser localement la toile nylon abrasive &laquo; scotch brite&nbsp;&reg; &raquo;.</p>
+</note>
+</para>
+</step2>
+<step2 control="0" id="P80-30">
+<title>S&eacute;lection du programme de contr&ocirc;le (pi&egrave;ce pos&eacute;e sur la face amont)</title>
+<para><p>S&eacute;lectionner les s&eacute;quences de contr&ocirc;le en 80-30-20 en fonction de la r&eacute;f&eacute;rence &agrave; contr&ocirc;ler en 50.</p>
+</para>
+<para><p>Param&egrave;tres CDF utilis&eacute;s lors de la mesure :</p>
+</para>
+<para><p>Valeurs donn&eacute;es &agrave; titre indicatif.</p>
+</para>
+<table>
+<tgroup cols="2"><colspec colnum="1" colname="col1" colwidth="90mm" align="left"><colspec colnum="2" colname="col2" colwidth="60mm" align="center">
+<tbody>
+<row>
+<entry colname="col1" align="center"><para><p>PARAMETRES</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>REGLAGE INITIAL</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Frequency / Fr&eacute;quence</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>2 MHz</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Gain H/V</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>41dB *</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Probe drive / Pr&eacute; amplificateur</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>10 dB</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Cal Amp / Coefficient de correction mati&egrave;re Etalon</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>28&percnt;</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Material / Mati&egrave;re</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>N18</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Phase</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>65&deg; *</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Filtre Passe-haut</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>20 Hz</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Filtre Passe-bas</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>500 Hz</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<para><p>(*) R&eacute;glage &agrave; affiner en fonction de la sonde utilis&eacute;e.</p>
+</para>
+<step3 control="0" id="P80-30-10">
+<title>Etalonnage de d&eacute;but et fin de mesure</title>
+<para><p>S&eacute;quence int&eacute;gr&eacute;e dans chaque programme et &agrave; ex&eacute;cuter &agrave; chaque changement d&rsquo;outil, sonde ou pi&egrave;ce.</p>
+</para>
+</step3>
+<step3 control="0" id="P80-30-11">
+<title>Etalonnage de d&eacute;but de mesure &laquo; ETAL-xx-INIT &raquo;</title>
+<step4>
+<para><p>Pr&eacute;parer la sonde en appliquant un morceau de bande &laquo; t&eacute;flon&nbsp;&reg; &raquo; sur l&rsquo;&eacute;l&eacute;ment sensible. Ins&eacute;rer et bloquer la sonde &agrave; l&rsquo;int&eacute;rieur du manipulateur.</p>
+<note>
+<p>Prendre soin de passer le c&acirc;ble dans la rainure pr&eacute;vue &agrave; cet effet sur le manipulateur.</p>
+</note>
+</para>
+</step4>
+<step4>
+<para><p>Fixer le manipulateur sur le support manipulateur ANA 05 <supeqref refid="O2.31068">.</p>
+<note>
+<p>Utiliser le syst&egrave;me de poulies pour maintenir le c&acirc;ble.</p>
+</note>
+</para>
+</step4>
+<step4>
+<para><p>Connecter la sonde au boitier. Placer le centreur <supeqref refid="O2.31070"> sur la pi&egrave;ce <figref refid="A725200SF030100301A011">.</p>
+</para>
+</step4>
+<step4>
+<para><p>Ins&eacute;rer l&rsquo;&eacute;talon standard <supeqref refid="O2.31072"> sur le centreur <figref refid="A725200SF030100302A011">.</p>
+</para>
+</step4>
+<step4>
+<para><p>Utiliser le kit de support et &eacute;talon <supeqref refid="O2.31064">.</p>
+</para>
+</step4>
+<step4>
+<para><p>Poser le sous disque support sur la pi&egrave;ce &agrave; contr&ocirc;ler et le centrer &agrave; l&rsquo;aide des 3 pions de centrage <supeqref refid="O2.31070"> <figref refid="B725200SF030100456A011">.</p>
+</para>
+</step4>
+<step4>
+<para><p>Positionner sur le sous disque support centr&eacute; sur la pi&egrave;ce, l&rsquo;outillage disque support <supeqref refid="O2.31069"> comportant l&rsquo;&eacute;talon standard <supeqref refid="O2.31072"><figref refid="B725200SF030100456A011"> ,</p>
+<note>
+<p>Indexer la fl&egrave;che du support face au point z&eacute;ro du plateau machine.</p>
+</note>
+</para>
+</step4>
+<step4>
+<para><p>Effectuer le &laquo; home &raquo; et le &laquo; park &raquo; de la machine. Lancer le scan d&rsquo;&eacute;talonnage de d&eacute;but de contr&ocirc;le <dmcref xrefid="A1A70360003A353AC">.</p>
+</para>
+</step4>
+<step4>
+<para><p>Surveiller les &eacute;carts d&rsquo;amplitudes enregistr&eacute;s sur le d&eacute;faut &eacute;talon. Ajuster l&rsquo;amplitude du d&eacute;faut &eacute;talon &agrave; 3000 mV (+ 500mV).</p>
+<note>
+<p>L&rsquo;amplitude peut varier entre 60 et 70 &percnt;.</p>
+</note>
+</para>
+</step4>
+<step4>
+<para><p>Relancer le scan apr&egrave;s avoir cliqu&eacute; sur &laquo; delete &raquo; scan si ajustement n&eacute;cessaire.</p>
+</para>
+</step4>
+</step3>
+<step3 control="0" id="P80-30-12">
+<title>Etalonnage de fin de mesure &laquo; ETAL-xx-FIN &raquo;</title>
+<para><p>S&eacute;quence r&eacute;alis&eacute;e apr&egrave;s les s&eacute;quences de mesure des zones &agrave; contr&ocirc;ler en 80-30-20.</p>
+</para>
+<step4>
+<para><p>Repositionner les disques support &eacute;talon &agrave; l&rsquo;identique de l&rsquo;&eacute;talonnage initial.</p>
+</para>
+</step4>
+<step4>
+<para><p>Enlever la bande &laquo; t&eacute;flon&nbsp;&reg; &raquo; us&eacute;e et en apposer une nouvelle pour effectuer la v&eacute;rification de fin de mesure &agrave; l&rsquo;identique de l&rsquo;&eacute;talonnage initial.</p>
+</para>
+</step4>
+<step4>
+<para><p>Lancer la s&eacute;quence d&rsquo;&eacute;talonnage de fin et v&eacute;rifier l&rsquo;amplitude. Comparer les amplitudes de d&eacute;but et fin d&rsquo;&eacute;talonnage :</p>
+</para>
+<para><p>Ecart maxi xxxx</p>
+</para>
+<para><p>Si ok : contr&ocirc;le accept&eacute;.</p>
+</para>
+</step4>
+</step3>
+<step3 control="0" id="P80-30-20">
+<title>S&eacute;quences de contr&ocirc;le</title>
+</step3>
+<step3 control="0" id="P80-30-21">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>F0301 - 307-090-267-0 <refipc csn="72520001 013 " isn="00A">.</p>
+</para>
+<table tocentry="1"><title>ALESAGE :  Face Aval - Rayon aval - Face Al&eacute;sage - Rayon amont - Face Amont</title>
+<tgroup cols="2" align="LEFT"><colspec colnum="1" colname="COL1" colwidth="6.00cm"><colspec colnum="2" colname="COL2" colwidth="10.01cm" colsep="1">
+<tbody valign="TOP">
+<row>
+<entry valign="TOP" morerows="0"><para><p>Manipulateur utilis&eacute;</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>ANA30 <supeqref refid="O2.31067"></p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0"><para><p>Sonde utilis&eacute;e</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>ANA MDK26/S<supeqref refid="O2.31073"></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="COL1" rowsep="0"><para><p>Programme </p>
+</para>
+</entry>
+<entry colname="COL2" rowsep="0"><para><p>307-090-267 - Disque LHP M88 (ETAPE 1)<refipc csn="72520001 013 " isn="00A"></p>
+</para>
+<para><p>ETAL-26-INIT</p>
+</para>
+<para><p>Scan : F-AVAL &ndash; Scan Description : Contr&ocirc;le face aval</p>
+</para>
+<para><p>Scan : ALESAGE &ndash; Scan Description : Al&eacute;sage</p>
+</para>
+<para><p>Scan : F-AMONT &ndash; Scan Description : Contr&ocirc;le face amont</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>S&eacute;quence</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>ETAL-26-FIN</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step3>
+<step3 control="0" id="P80-30-22">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>F0301 - 307-245-802-0 <refipc csn="72520001A019 " isn="00A">et F0301 - 307-245-803-0 <refipc csn="72520001A019 " isn="00C">.</p>
+<note>
+<p>Le programme &laquo; 307-245-802 - Disque LHP M88 &raquo; est commun aux 2 versions moteur. Pour le contr&ocirc;le de la version 307-245-803-0 <refipc csn="72520001A019 " isn="00E"> utiliser le 307-245-802 <refipc csn="72520001A019 " isn="00A">.</p>
+</note>
+</para>
+<table tocentry="1"><title>ALESAGE :  Face Aval - Rayon aval - Face Al&eacute;sage - Rayon amont - Face Amont</title>
+<tgroup cols="2" align="LEFT"><colspec colnum="1" colname="COL1" colwidth="6.00cm"><colspec colnum="2" colname="COL2" colwidth="10.01cm" colsep="1">
+<tbody valign="TOP">
+<row>
+<entry valign="TOP" morerows="0"><para><p>Manipulateur utilis&eacute;</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>ANA30 <supeqref refid="O2.31067"></p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0"><para><p>Sonde utilis&eacute;e</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>ANA MDK26/S <supeqref refid="O2.31073"></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="COL1" rowsep="0"><para><p>Programme </p>
+</para>
+</entry>
+<entry colname="COL2" rowsep="0"><para><p>307-245-802-0 - Disque LHP M88 (ETAPE 4) <refipc csn="72520001 019 " isn="00A"></p>
+</para>
+<para><p>ETAL-26-INIT</p>
+</para>
+<para><p>Scan : F-AVAL &ndash; Scan Description : Contr&ocirc;le face aval</p>
+</para>
+<para><p>Scan : ALESAGE &ndash; Scan Description : Al&eacute;sage</p>
+</para>
+<para><p>Scan : F-AMONT &ndash; Scan Description : Contr&ocirc;le face amont</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>S&eacute;quence</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>ETAL-26-FIN</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step3>
+<step3 control="0" id="P80-30-23">
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>F0301 - 307-245-855-0 <refipc csn="72520001A019 " isn="00E">.</p>
+</para>
+<table tocentry="1"><title>Face Aval - Rayon aval - Face Al&eacute;sage - Rayon amont - Face Amont</title>
+<tgroup cols="2" align="LEFT"><colspec colnum="1" colname="COL1" colwidth="6.00cm"><colspec colnum="2" colname="COL2" colwidth="10.01cm" colsep="1">
+<tbody valign="TOP">
+<row>
+<entry valign="TOP" morerows="0"><para><p>Manipulateur utilis&eacute;</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>ANA30 <supeqref refid="O2.31067"></p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0"><para><p>Sonde utilis&eacute;e</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>ANA MDK26/S <supeqref refid="O2.31073"></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="COL1" rowsep="0"><para><p>Programme </p>
+</para>
+</entry>
+<entry colname="COL2" rowsep="0"><para><p>307-245-855-0 - Disque LHP M88 (ETAPE 4 CGP)<refipc csn="72520001 019 " isn="00E"></p>
+</para>
+<para><p>ETAL-26-INIT</p>
+</para>
+<para><p>Scan : F-AVAL &ndash; Scan Description : Contr&ocirc;le face aval</p>
+</para>
+<para><p>Scan : ALESAGE &ndash; Scan Description : Al&eacute;sage</p>
+</para>
+<para><p>Scan : F-AMONT &ndash; Scan Description : Contr&ocirc;le face amont</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>S&eacute;quence</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>ETAL-26-FIN</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step3>
+</step2>
+<step2 control="0" id="P80-40">
+<title>Inspection et &eacute;valuation</title>
+<step3 control="0">
+<para><p>Lancer l'inspection des zones contenues dans le programme.</p>
+</para>
+</step3>
+<step3>
+<para><p>Evaluer toutes les indications horizontales et verticales sup&eacute;rieures &agrave; 350 mV (7&nbsp;&percnt; cr&ecirc;te &agrave; cr&ecirc;te ou plus.</p>
+</para>
+</step3>
+<step3>
+<para><p>Effectuer une analyse <dmcref xrefid="A1A70360003A353AC">.</p>
+<note>
+<p>Noter les indications sur le rapport de contr&ocirc;le.</p>
+</note>
+</para>
+</step3>
+<step3>
+<para><p>Terminer le contr&ocirc;le par une op&eacute;ration de fin d&rsquo;&eacute;talonnage.</p>
+</para>
+</step3>
+</step2>
+<step2 control="0" id="P80-50">
+<title>Sanction</title>
+<para><p>Ne pas admettre toute indication sup&eacute;rieure &agrave; 500 mV (10&nbsp;&percnt;). Au-del&agrave; <figref refid="B725200SF030100465A021">. Recommencer le cycle d&rsquo;inspection afin de contr&ocirc;ler toutes les zones.</p>
+</para>
+<para><p>Si les r&eacute;sultats sont en coh&eacute;rence avec le contr&ocirc;le initial, suivre le synoptique de d&eacute;cision et d&eacute;clencher les op&eacute;rations de lev&eacute;e de doute.</p>
+</para>
+</step2>
+<step2 control="0" id="P80-60">
+<title>Rapport de contr&ocirc;le</title>
+<para><p>R&eacute;capituler toutes les indications dans un document final, il sera &eacute;mis apr&egrave;s contr&ocirc;le complet.</p>
+</para>
+<para><p>Identifier les pi&egrave;ces non conformes comme telles et avertir Snecma. Identifier les pi&egrave;ces conformes comme telles.</p>
+</para>
+</step2>
+<step2 control="0" id="P80-70">
+<title>Archivage</title>
+<para><p>Archiver obligatoirement les donn&eacute;es relev&eacute;es.</p>
+</para>
+</step2>
+</step1>
+<step1 control="0" id="P90">
+<title>Installation du disque labyrinthe dans la caisse</title>
+<para><p>Prendre le disque labyrinthe et le d&eacute;poser dans la caisse.</p>
+</para>
+</step1>
+<figure id="A725200SF030100299A011">
+<title>ZONE A CONTROLER</title>
+<graphic callicn="A1A725200SF030100299A011">
+</figure>
+<figure id="A725200SF030100300A011">
+<title>MISE EN PLACE DE LA REHAUSSE</title>
+<graphic callicn="A1A725200SF030100300A011">
+</figure>
+<figure id="A725200SF030100301A011">
+<title>CENTREUR ET CALE ETALON </title>
+<graphic callicn="A1A725200SF030100301A011">
+</figure>
+<figure id="B725200SF030100456A011">
+<title>KIT SUPPORTS ET ETALON</title>
+<graphic callicn="A1B723300SF030100456A011">
+</figure>
+<figure id="A725200SF030100302A011">
+<title> MISE EN PLACE DE LA CALE ETALON</title>
+<graphic callicn="A1A725200SF030100302A011">
+</figure>
+<figure id="B725200SF030100458A011">
+<title>AMPLITUDE DEFAUT ETALON</title>
+<graphic callicn="A1B723300SF030100458A011">
+</figure>
+<figure id="B725200SF030100465A021">
+<title>SANCTION</title>
+<graphic callicn="A1B723300SF030100465A021">
+</figure>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000025764 0>

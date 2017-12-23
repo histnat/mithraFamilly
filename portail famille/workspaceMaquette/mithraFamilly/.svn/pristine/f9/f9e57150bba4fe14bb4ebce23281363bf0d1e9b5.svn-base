@@ -1,0 +1,70 @@
+package com.sonovision.openconv.initdb;
+
+
+import com.sonovision.openconv.db.dao.OpGroupDao;
+import com.sonovision.openconv.db.dao.OpRoleDao;
+import com.sonovision.openconv.db.dao.OpUserDao;
+import com.sonovision.openconv.db.exception.DBNONullException;
+import com.sonovision.openconv.db.exception.DBNOUniqueException;
+import com.sonovision.openconv.db.vo.user.OpGroup;
+import com.sonovision.openconv.db.vo.user.OpRole;
+import com.sonovision.openconv.db.vo.user.OpUser;
+import com.sonovision.openconv.utils.TestDBHelper;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+
+@Component("MakeUser")
+public class MakeUser extends TestDBHelper{
+
+
+
+    @Autowired
+    OpRoleDao roleDao;
+
+    public void clean() {
+    	userDBHelper.dropUser();
+    	userDBHelper.dropGroup();
+    }
+
+    public OpUser make(String name) throws DBNONullException, DBNOUniqueException {
+        List<OpRole> roles = roleDao.findAll(OpRole.class);
+        OpGroup group = makeGroup("GROUP_ADMIN_"+name, "Group administrateur", "Administrateur", roles);
+        List<OpGroup> groups = new ArrayList<>();
+        groups.add(group);
+        return makeUser(name,"login_"+name,"pwd_"+name,name+"@sonovisiongroup.com",new Long(12554),new Date(), 3,groups);
+    }
+
+    public OpUser makeUser(String name, String login, String password, String mail,Long avatar, Date lastLogin, int nbrFail,
+                         List<OpGroup> groupList) throws DBNONullException, DBNOUniqueException {
+    	OpUser user = new OpUser();
+    	user.setId(name);
+        user.setName(name);
+        user.setLogin(login);
+        user.setPassword(password);
+        user.setEmail(mail);
+        user.setAvatar(avatar);
+        user.setLastLogin(lastLogin);
+        user.setNbrFail(nbrFail);
+        user.setGroupList(groupList);
+        userDBHelper.save(user);
+        return user;
+    }
+
+    public OpGroup makeGroup(String code, String descr, String name, List<OpRole> roleList) throws DBNONullException, DBNOUniqueException {
+    	OpGroup group = new OpGroup();
+        group.setCode(code);
+        group.addDescr("FR-fr", descr + " fr");
+        group.addDescr("EN-us", descr + " en");
+        group.addName("FR-fr", name + " fr");
+        group.addName("EN-us", name + " en");
+        group.setRoleList(roleList);
+        userDBHelper.save(group);
+        return group;
+    }
+}

@@ -1,0 +1,20 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                           RAFALE                                   *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.2d                           *
+    *                   Dated 12th January 2014                          *
+    *                  M.DOMEON - Dassault-Aviation                      *
+    *                                                                    *
+    *	Dtd Object : Data Dispatch Note.        		         *
+    *                                                                    *
+    * Amendment :-                                                       *
+    * 1. New data Dispatch Note Public Identifier                        *
+    *                                                                    *
+    ********************************************************************** -->
+
+<!DOCTYPE ddn PUBLIC
+ "-//RAFALE CSDB//DTD Data Dispatch Note 140112//EN"
+ [
+ ]> 

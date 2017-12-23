@@ -1,0 +1,241 @@
+package com.sonovision.openconv.modules.xslprocess;
+
+import java.io.BufferedInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.URIResolver;
+
+import org.apache.fop.apps.FOPException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
+
+import com.sedoc.dtdtoolbox.utils.DTDParsing;
+import com.sedoc.toolbox.SpringBeanProvider;
+import com.sedoc.toolbox.bean.PDFTransformService;
+import com.sedoc.toolbox.bean.UtilsService;
+import com.sonovision.openconv.db.vo.ConversionObject;
+import com.sonovision.openconv.log.model.LoggerLevel;
+import com.sonovision.openconv.mapper.TreatedObjectMapper;
+import com.sonovision.openconv.model.TreatedObject;
+import com.sonovision.openconv.modules.xslprocess.exception.XSLProcessException;
+import com.sonovision.openconv.modules.xslprocess.resolver.XSLURIResolver;
+import com.sonovision.openconv.utils.FileAccess;
+import com.sonovision.openconv.wf.WFTask;
+import com.sonovision.openconv.wf.WFTaskHelper;
+import com.sonovision.openconv.wf.model.ParameterDetailled;
+import com.sonovision.openconv.wf.model.ParameterTypes;
+
+@Component
+public class TaskFOPProcess extends WFTaskHelper implements WFTask {
+
+	@Autowired
+	PDFTransformService pdfTransformerService;
+
+	@Autowired
+	UtilsService utilsService;
+	
+	static DTDParsing dtdParsing;
+
+	private URIResolver uriResolver;
+
+	//I must init spring composent, buti have loop on this class. this variable is for skip loop. I think it will be better if we use @Configure. next time
+	private static boolean initrun = false;
+	
+	static{
+		dtdParsing = new DTDParsing();
+	}
+
+	public TaskFOPProcess() {
+		super();
+	}
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7764367737889004545L;
+
+	public final static String PARAMETER_XSLFO_FILE_NAME = "xslfoFileName";
+	public final static String PARAMETER_XSL_URIRESOLVER_CLASS = "uriresolver";
+	public final static String DEFAULT_XSL_URIRESOLVER_CLASS = "defaultUriresolver";
+
+	private String xslFoFileName;
+	private String uriResolverParam;
+
+	public String run(HashMap<String, TreatedObject> treatedObjectHash) {
+		initClass();
+		if(!checkRequiredParams())
+			return LoggerLevel.FATAL.getValue().toString();
+		dbLogger.logTask("Debut de la transformation xsl", LoggerLevel.INFO);
+		if (treatedObjectHash == null || treatedObjectHash.isEmpty()) {
+			dbLogger.logTask("Aucun xml a traiter", LoggerLevel.FATAL);
+			return LoggerLevel.FATAL.getValue().toString();
+		}
+
+
+		if (!uriResolverParam.equals(DEFAULT_XSL_URIRESOLVER_CLASS)) {
+			try {
+				uriResolver = getURIResolver(uriResolverParam);
+			} catch (XSLProcessException e) {
+				dbLogger.logTask(e.getMessage(), LoggerLevel.FATAL);
+				return LoggerLevel.FATAL.getValue().toString();
+			}
+		} else {
+			uriResolver = new XSLURIResolver();
+		}
+
+		treatedObjectHash.values().stream().parallel().forEach((to) -> doTransformation(to));
+		return dbLogger.getTask().getLogResult();
+
+	}
+
+	private URIResolver getURIResolver(String classNameUriResolver) throws XSLProcessException {
+		Class clazz;
+		URIResolver uriResolver = null;
+		try {
+			clazz = ClassLoader.getSystemClassLoader().loadClass(classNameUriResolver);
+		} catch (ClassNotFoundException e1) {
+			dbLogger.logTask("Impossible de charger le resolver :" + classNameUriResolver, LoggerLevel.FATAL);
+			throw new XSLProcessException("Impossible de charger le resolver :" + classNameUriResolver);
+		}
+		if (clazz == null) {
+			throw new XSLProcessException("Impossible de charger le resolver :" + classNameUriResolver);
+		}
+		try {
+			uriResolver = (URIResolver) clazz.newInstance();
+		} catch (InstantiationException e) {
+			throw new XSLProcessException("Impossible de charger le resolver :" + classNameUriResolver);
+		} catch (IllegalAccessException e) {
+			throw new XSLProcessException("Impossible de charger le resolver :" + classNameUriResolver);
+		}
+
+		return uriResolver;
+
+	}
+
+	private TreatedObject doTransformation(TreatedObject to) {
+		if(to.getLastResultAction()!=null && (to.getLastResultAction().equals(LoggerLevel.FATAL.toString())  || to.getLastResultAction().equals(LoggerLevel.ERROR.toString())))
+		{
+			dbLogger.logObject("l'objet :" + to.getIdObject() +" n'est pas traité car il est en level : "+to.getLastResultAction(), LoggerLevel.INFO, to.getIdObject());
+			closeObject(dbLogger.getLoggerLevel(to.getLastResultAction()), to);
+			return to;
+		}
+		dbLogger.logObject("Debut conversion :" + to.getIdObject(), LoggerLevel.INFO, to.getIdObject());
+		ConversionObject co = dbLogger.getConversionObject(to.getIdObject());
+
+		InputStream xslInputSource = FileAccess.getResourceFileStream(xslFoFileName);
+		BufferedInputStream bin = new BufferedInputStream(xslInputSource);
+
+		InputStream document = TreatedObjectMapper.getInputStream(to.getObjectConvert());
+		Document doc = null;
+		try {
+			doc = dtdParsing.getParseXML(document);
+		} catch (IOException | ParserConfigurationException | SAXException e1) {
+			to.setLastResultAction(LoggerLevel.ERROR.toString());
+			dbLogger.logObject("Impossible de parser l'object :" + to.getIdObject() + " erreur:" + e1.getMessage(),	LoggerLevel.ERROR, to.getIdObject());
+			closeObject(LoggerLevel.ERROR, to);
+			return to;
+		}
+		ByteArrayOutputStream out = new ByteArrayOutputStream();
+		pdfTransformerService.addTransformerParameter("objectid", co.getId());
+		try {
+			pdfTransformerService.toPDFWithEx(doc, xslInputSource, out, uriResolver);
+		} catch (FOPException e) {
+			to.setLastResultAction(LoggerLevel.ERROR.toString());
+			dbLogger.logObject("Erreur durant la generation du pdf :" + to.getIdObject() + " erreur:" + e.getMessage(),
+					LoggerLevel.ERROR, to.getIdObject());
+			closeObject(LoggerLevel.ERROR, to);
+			return to;
+		}
+		InputStream ips = utilsService.outputStreamToInputStream(out);
+		to.setObjectConvert(ips);
+		to.setLastResultAction(LoggerLevel.INFO.toString());
+		closeObject(LoggerLevel.INFO, to);
+		
+		
+		return to;
+	}
+
+	/**
+	 * It can be replaced by @Configuration with aspectj spring but i don't know
+	 * why it doesn't work TODO :make it generic in extends's class
+	 */
+	public void initClass() {
+		if (!initrun) {
+			initrun = true;
+			if (pdfTransformerService == null) {
+				pdfTransformerService = (PDFTransformService) SpringBeanProvider.getBean("PDFTransformService");
+			}
+			if (utilsService == null) {
+				utilsService = (UtilsService) SpringBeanProvider.getBean("UtilsService");
+			}
+			initrun = false;
+		}
+	}
+
+	/**
+	 * @return the xslTransformerService
+	 */
+	public PDFTransformService getPdfTransformerService() {
+		return pdfTransformerService;
+	}
+
+	/**
+	 * @param xslTransformerService
+	 *            the xslTransformerService to set
+	 */
+	public void setPdfTransformerService(PDFTransformService pdfTransformerService) {
+		this.pdfTransformerService = pdfTransformerService;
+	}
+
+	/**
+	 * @return the utilsService
+	 */
+	public UtilsService getUtilsService() {
+		return utilsService;
+	}
+
+	/**
+	 * @param utilsService
+	 *            the utilsService to set
+	 */
+	public void setUtilsService(UtilsService utilsService) {
+		this.utilsService = utilsService;
+	}
+
+	@Override
+	public HashMap<String, ParameterTypes> getRequiredParams() {
+
+		parametersRequired=new HashMap<>();
+		parametersRequired.put(PARAMETER_XSLFO_FILE_NAME,ParameterTypes.TXT);
+		parametersRequired.put(PARAMETER_XSL_URIRESOLVER_CLASS,ParameterTypes.TXT);
+		return parametersRequired;
+	}
+	
+	@Override
+	public List<ParameterDetailled> getParameterList(Locale locale) {
+		getRequiredParams();
+		return super.procedeParameterList(locale);
+	}
+
+	@Override
+	public boolean checkRequiredParams() {
+		// get parameter xsl file name
+		xslFoFileName = (String) parametersRunning.get(PARAMETER_XSLFO_FILE_NAME);
+		// get parameter uriresolver, it must be class name
+		uriResolverParam = (String) parametersRunning.get(PARAMETER_XSL_URIRESOLVER_CLASS);
+		if (uriResolverParam == null || uriResolverParam.isEmpty()) {
+			uriResolverParam=DEFAULT_XSL_URIRESOLVER_CLASS;
+			parametersRunning.put(PARAMETER_XSL_URIRESOLVER_CLASS, uriResolverParam);
+		} 
+		return super.checkParams();
+	}
+	
+}

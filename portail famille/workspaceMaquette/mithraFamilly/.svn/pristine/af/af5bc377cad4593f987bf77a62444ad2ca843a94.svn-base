@@ -1,0 +1,118 @@
+package com.sonovision.openconv.wf.thread;
+
+import java.util.HashMap;
+
+import com.sonovision.openconv.log.model.DBLogger;
+import com.sonovision.openconv.log.model.LoggerLevel;
+import com.sonovision.openconv.log.model.LoggerType;
+import com.sonovision.openconv.model.TreatedObject;
+import com.sonovision.openconv.wf.WFTask;
+import com.sonovision.openconv.wf.exception.WorkflowException;
+import com.sonovision.openconv.wf.xmodel.Action;
+import com.sonovision.openconv.wf.xmodel.Sequence;
+
+
+public class SequenceThread extends WFThread {
+	
+	private static final Object RESULT_ACTION_FINISH = "END";
+	
+	//message
+	//it will be in properties file for multilingue
+	private static final String MESSAGE_START_CONVERSION="Début de la conversion %s";
+
+	
+	private Sequence sequence;
+	
+
+	private SequenceThread(DBLogger dbLogger) {
+		super(dbLogger);
+	}
+
+	private SequenceThread(DBLogger dbLogger, HashMap<String, Object> parameter) {
+		super(dbLogger, parameter);
+	}
+	
+	public SequenceThread(DBLogger dbLogger, HashMap<String, Object> parameter, Sequence sequence) {
+		super(dbLogger, parameter);
+		this.sequence=sequence;
+	}
+
+	public void run(){
+		dbLogger.log(LoggerType.CONVERSION, MESSAGE_START_CONVERSION.replaceAll("%s", sequence.getName()));
+		Action action;
+		try {
+			action = wfd.getFirstAction(sequence);
+		} catch (WorkflowException e) {
+			dbLogger.logConversion("problem for getting first action :"+e.getMessage(),LoggerLevel.FATAL);
+			dbLogger.stopConversion();
+			return;
+		}
+		HashMap<String,TreatedObject> treatedObjectHash = new HashMap<>();
+		WFTask wfTask;
+		try {
+			wfTask = workFlowBo.getWFTask(action,dbLogger,parameter);
+		} catch (WorkflowException e) {
+			dbLogger.logConversion("problem for gretting task :"+e.getMessage(),LoggerLevel.FATAL);
+			dbLogger.stopConversion();
+			return;
+		}
+		String resultAction=wfTask.run(treatedObjectHash);
+		String actionId="";
+		while (!actionId.equals(RESULT_ACTION_FINISH))
+		{
+			
+			try {
+				actionId = wfd.getActionForResult(action,resultAction);
+				if(actionId.equals(RESULT_ACTION_FINISH))
+					break;
+			} catch (WorkflowException e2) {
+				dbLogger.logConversion("problem execution of :"+action+" "+e2.getMessage(),LoggerLevel.FATAL);
+				dbLogger.stopConversion();
+				return;
+			}
+			try {
+				action=wfd.getAction(sequence, actionId);
+			} catch (WorkflowException e1) {
+				dbLogger.logConversion("problem for gretting action :"+actionId+" "+e1.getMessage(),LoggerLevel.FATAL);
+				dbLogger.stopConversion();
+				return;
+			}
+			try {
+				wfTask = workFlowBo.getWFTask(action,dbLogger,parameter);
+			} catch (WorkflowException e) {
+				dbLogger.logConversion("problem for gretting task :"+e.getMessage(),LoggerLevel.FATAL);
+				dbLogger.stopConversion();
+				return;
+			}
+			
+			resultAction=wfTask.run(treatedObjectHash);
+		}
+		
+	}
+	
+	
+	
+	
+	/**
+	 * @return the sequence
+	 */
+	public Sequence getSequence() {
+		return sequence;
+	}
+
+	/**
+	 * @param sequence the sequence to set
+	 */
+	public void setSequence(Sequence sequence) {
+		this.sequence = sequence;
+	}
+
+	
+
+	
+	
+	
+	
+	
+
+}

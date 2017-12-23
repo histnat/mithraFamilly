@@ -1,0 +1,179 @@
+package com.sonovision.openconv.utils.db;
+
+import java.text.MessageFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.sonovision.openconv.db.dao.OpGroupDao;
+import com.sonovision.openconv.db.dao.OpRoleDao;
+import com.sonovision.openconv.db.dao.OpUserDao;
+import com.sonovision.openconv.db.exception.DBNONullException;
+import com.sonovision.openconv.db.exception.DBNOUniqueException;
+import com.sonovision.openconv.db.vo.user.OpGroup;
+import com.sonovision.openconv.db.vo.user.OpRole;
+import com.sonovision.openconv.db.vo.user.OpUser;
+import com.sonovision.openconv.utils.TestHelper;
+
+
+@Service(value="UserDBHelper")
+public class UserDBHelper extends TestHelper {
+	
+
+	@Autowired
+	protected OpUserDao opUserDao;
+	
+    @Autowired
+    protected OpRoleDao opRoleDao;
+
+    @Autowired
+    protected OpGroupDao opGroupDao;
+	
+	public void deleteAll() {
+		opUserDao.deleteAll(OpUser.class);
+		opRoleDao.deleteAll(OpRole.class);
+		opGroupDao.deleteAll(OpGroup.class);
+	}
+	
+	
+
+	/**************************************************************
+	 * OpUser
+	 **************************************************************/
+
+	public OpUser getOpUserWithoutSave() {
+		return getOpUserWithoutSave(1);
+	}
+
+	public OpUser getOpUserWithoutSave(int nbr) {
+		OpUser opUser = new OpUser();
+		opUser.setEmail("test"+nbr+"@test.fr");
+		opUser.setLogin("test"+nbr);
+		opUser.setLastLogin(Calendar.getInstance().getTime());
+		opUser.setName("test"+nbr);
+		opUser.setNbrFail(0);
+		opUser.setPassword("kiki");
+		return opUser;
+	}
+
+	public List<OpUser> getOpUserWithSave(int nbr) throws DBNONullException, DBNOUniqueException {
+		List<OpUser> opUserList = new ArrayList<>();
+		for (int i = 0; i < nbr; i++) {
+			OpUser opUser = getOpUserWithoutSave(i);
+			OpUser c1 = dbUserService.getOrSave(opUser);
+			opUserList.add(c1);
+
+		}
+		return opUserList;
+	}
+
+	public OpUser getOpUserWithSave() throws DBNONullException, DBNOUniqueException {
+		OpUser opUser = getOpUserWithoutSave();
+		dbUserService.getOrSave(opUser);
+		return opUser;
+	}
+	
+	public void update(OpUser user){
+		 opUserDao.update(user);
+	}
+	
+	public void save(OpUser user)throws DBNONullException, DBNOUniqueException {
+		 opUserDao.save(user);
+	}
+	
+	public void dropUser(){
+		 opUserDao.drop(OpUser.class);
+	}
+	
+	
+	/**************************************************************
+	 * OpGroup
+	 **************************************************************/
+
+	public OpGroup getOpGroupWithoutSave() {
+		return getOpGroupWithoutSave(1);
+	}
+
+	public OpGroup getOpGroupWithoutSave(int nbr) {
+		OpGroup opGroup = new OpGroup();
+		opGroup.addName(IDLANGUE_FR,  MessageFormat.format("{0} fr","test"+nbr));
+		opGroup.addDescr(IDLANGUE_FR, MessageFormat.format("{0} fr","descr"+nbr));
+		opGroup.addName(IDLANGUE_EN, MessageFormat.format("{0} en","test"+nbr));
+		opGroup.addDescr(IDLANGUE_EN,  MessageFormat.format("{0} en","descr"+nbr));
+		opGroup.setCode("code"+nbr);
+		return opGroup;
+	}
+
+	public List<OpGroup> getOpGroupWithSave(int nbr) throws DBNONullException, DBNOUniqueException {
+		List<OpGroup> opGroupList = new ArrayList<>();
+		for (int i = 0; i < nbr; i++) {
+			OpGroup opGroup = getOpGroupWithoutSave(i);
+			OpGroup c1 = dbUserService.getOrSave(opGroup);
+			opGroupList.add(c1);
+
+		}
+		return opGroupList;
+	}
+
+	public OpGroup getOpGroupWithSave() throws DBNONullException, DBNOUniqueException {
+		OpGroup opGroup = getOpGroupWithoutSave();
+		dbUserService.getOrSave(opGroup);
+		return opGroup;
+	}
+	
+	public void save(OpGroup group)throws DBNONullException, DBNOUniqueException {
+		 opGroupDao.save(group);
+	}
+	
+	public void dropGroup(){
+		 opGroupDao.drop(OpGroup.class);
+	}
+
+
+	/**************************************************************
+	 * OpRole
+	 **************************************************************/
+
+	public OpRole getOpRoleWithoutSave() {
+		return getOpRoleWithoutSave(1);
+	}
+
+	public OpRole getOpRoleWithoutSave(int nbr) {
+		OpRole opRole = new OpRole();
+		opRole.addName(IDLANGUE_FR,  MessageFormat.format("{0} fr","test"+nbr));
+		opRole.addDescr(IDLANGUE_FR, MessageFormat.format("{0} fr","descr"+nbr));
+		opRole.addName(IDLANGUE_EN, MessageFormat.format("{0} en","test"+nbr));
+		opRole.addDescr(IDLANGUE_EN,  MessageFormat.format("{0} en","descr"+nbr));
+		opRole.setCode("code"+nbr);
+		return opRole;
+	}
+
+	public List<OpRole> getOpRoleWithSave(int nbr) throws DBNONullException, DBNOUniqueException {
+		List<OpRole> opRoleList = new ArrayList<>();
+		for (int i = 0; i < nbr; i++) {
+			OpRole opRole = getOpRoleWithoutSave(i);
+			OpRole c1 = dbUserService.getOrSave(opRole);
+			opRoleList.add(c1);
+
+		}
+		return opRoleList;
+	}
+
+	public OpRole getOpRoleWithSave() throws DBNONullException, DBNOUniqueException {
+		OpRole opRole = getOpRoleWithoutSave();
+		dbUserService.getOrSave(opRole);
+		return opRole;
+	}
+	
+	public void save(OpRole opRole)throws DBNONullException, DBNOUniqueException {
+		opRoleDao.save(opRole);
+	}
+	
+	public void dropRole(){
+		 opRoleDao.drop(OpRole.class);
+	}
+
+}

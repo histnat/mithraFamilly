@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="../DTD/styles/module.xsl"?>
+<!DOCTYPE module PUBLIC "-//SEDOC//DTD UD GIAT industries module//FR" "../DTD/module.dtd">
+<module> 
+  <statutmodule langue="FR"><mi version="A">VB</mi> 
+	 <codeTSA> 
+		<codegroupe>03</codegroupe><codessgroupe>10</codessgroupe><codedivision>05</codedivision> 
+		<nomgroupe>STRUCTURE</nomgroupe><nomssgroupe>Portes</nomssgroupe><nomdivision>Porte Pilote</nomdivision> 
+	 </codeTSA> 
+	 <nomtech>Échange de la porte pilote équipée</nomtech> 
+	 <numordre>002</numordre> 
+	 <codeinfo>0331</codeinfo>
+	 <nominfo>Échanges standards</nominfo> 
+	 <nrevision>A</nrevision><daterevision jour="15" mois="09" annee="2008"/> 
+	 <nmodif>F</nmodif><datemodif jour="15" mois="01" annee="2016"/> 
+	 <nti>1</nti> 
+	 <applicst><elementst id="MAT00000006" typemateriel="VBCI" versionmateriel="VCI" modele="ERYX 32T"/><elementst id="MAT00000005" typemateriel="VBCI" versionmateriel="VCI" modele="RANG 32T"/><elementst id="MAT00000001" typemateriel="VBCI"
+		versionmateriel="VCI" modele="RANG"/><elementst id="MAT00000002" typemateriel="VBCI" versionmateriel="VPC" modele="00"/><elementst id="MAT00000003" typemateriel="VBCI" versionmateriel="VCI" modele="ERYX"/>
+	 </applicst> 
+	 <logistique><lcn lcn="ASE1020" alc="00" task="HGOAAAA"/>
+	 </logistique> 
+	 <refs> 
+		<ref type="operation" id="OPE50000039">Ope(VB-A-03-10-05-000-0421-FR-A)OPE00000039</ref> 
+		<ref type="operation" id="OPE50000040">Ope(VB-A-03-10-05-000-0421-FR-A)OPE00000040</ref> 
+		<ref type="operation" id="OPE50002694">Ope(VB-A-03-10-05-000-0540-FR-A)OPE00002694</ref> 
+	 </refs> 
+  </statutmodule> 
+  <modcontenu> 
+	 <intervention> 
+		<operprincipal> 
+		  <operation> 
+			 <refext type="operation" refid="OPE50000039">Voir : (VB-A-03-10-05-000-0421-FR-A) Dépose de la porte pilote équipée</refext> 
+		  </operation> 
+		  <operation id="OPE50001206"> 
+			 <appliccont></appliccont> 
+			 <title> 
+			 <p>Déstockage de la porte pilote équipée</p>
+			 </title> 
+			 <prereqs> 
+				<condreq> 
+				  <outilstdli> 
+					 <outilstd id="OPE50001206_ART00000450"><intitule>Tournevis pour vis à fente de 4X100</intitule><qte>1</qte><fabricant><codefab>F0541</codefab><reffab>ACZ.4X100</reffab></fabricant> 
+					 </outilstd> 
+					 <outilstd id="OPE50001206_ART00000179"><intitule>Grattoir droit</intitule><qte>1</qte><fabricant><codefab>F0541</codefab><reffab>329</reffab></fabricant> 
+					 </outilstd> 
+				  </outilstdli> 
+				  <outilcomplli> <aucun/> 
+				  </outilcomplli> 
+				  <outilspecifli> <aucun/> 
+				  </outilspecifli> 
+				  <ingredientli> <aucun/> 
+				  </ingredientli> 
+				  <consoli> <aucun/> 
+				  </consoli> 
+				  <rechangeli>
+					 <rechange id="OPE50001206_ART00005034"><intitule>Porte pilote équipée</intitule><qte>1</qte><fabricant><codefab>FASL3</codefab><reffab>82031746011</reffab></fabricant> 
+					 </rechange> 
+					 <rechange id="OPE50001206_ART00004745"><intitule>Joint de porte pilote</intitule><qte>1</qte><fabricant><codefab>F0229</codefab><reffab>713440</reffab></fabricant> 
+					 </rechange>
+					 <rechange id="OPE50001206_ART00001091"><intitule>Joint de porte pilote</intitule><qte>1</qte><fabricant><codefab>F0229</codefab><reffab>716709</reffab></fabricant>
+					 </rechange>
+				  </rechangeli> 
+				  <duree operation="0.75" cumul="0" tmi="0"></duree> <environnement condition="sans"/> 
+				</condreq> 
+				<persreq> <personne id="OPE50001206_MECANIC" clair="Mécanicien" nbre="2"/> 
+				</persreq> 
+			 </prereqs> 
+			 <tache1> 
+				<appliccont></appliccont> 
+				<figure id="FIG1"> 
+				  <title><p>Ensemble porte pilote</p>
+				  </title><graphic hauteur="871" largeur="644" source="../Illustration Travail/VB-A-031005-G-F0531-01002-A-03-1.JPG" type="jpg"/> 
+				</figure> 
+				<figure id="FIG2"> 
+				  <title><p>Porte pilote équipée</p>
+				  </title><graphic hauteur="862" largeur="632" source="../Illustration Travail/VB-A-031000-G-F0531-01002-A-03-1.JPG" type="jpg"/> 
+				</figure> 
+				<para> 
+				  <p>Déstocker la porte pilote équipée.
+        
+								<refint refid="OPE50001206_ART00005034" type="rechange">Porte pilote équipée</refint><refint refid="OPE50001206_MECANIC" type="personne">Mécanicien</refint></p>
+				</para> 
+			 </tache1> 
+			 <tache1><appliccont></appliccont> 
+				<para><p>Déposer le joint porte pilote <refint type="figure" refid="FIG1">66, </refint> de la nouvelle porte pilote équipée <refint type="figure" refid="FIG2">1, </refint>. <refint refid="OPE50001206_ART00000450" type="outilstd">Tournevis pour vis à fente de 4X100</refint></p>
+				</para> 
+			 </tache1> 
+			 <tache1><appliccont></appliccont> 
+				<para><p>Nettoyer et vérifier les plans de pose de joint de la porte pilote équipée <refint type="figure" refid="FIG2">1, </refint>. <refint refid="OPE50001206_ART00000179" type="outilstd">Grattoir droit</refint></p>
+				</para> 
+			 </tache1> 
+			 <tache1><appliccont></appliccont> 
+				<para><p>Poser un joint porte pilote neuf <refint type="figure" refid="FIG1">66, </refint> sur la porte pilote équipée <refint type="figure" refid="FIG2">1, </refint>. <refint refid="OPE50001206_ART00004745" type="rechange">Joint de porte pilote</refint><refint refid="OPE50001206_ART00001091" type="rechange">Joint de porte pilote</refint></p>
+				</para> 
+			 </tache1> 
+		  </operation> 
+		  <operation> 
+			 <refext type="operation" refid="OPE50000040">Voir : (VB-A-03-10-05-000-0421-FR-A) Repose de la porte pilote équipée</refext> 
+		  </operation> 
+		</operprincipal> 
+		<opercompl> 
+		  <refext refid="OPE50002694" type="operation">Voir : (VB-A-03-10-05-000-0540-FR-A) Réglage du contacteur porte pilote</refext> 
+		</opercompl> 
+	 </intervention> 
+  </modcontenu> 
+</module> 

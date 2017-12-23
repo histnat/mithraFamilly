@@ -1,0 +1,365 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1Z726100SF030100043A011 SYSTEM "x-dm://0900f90b80019d6e,MYWORKING" NDATA cgm>
+<!ENTITY A1Z726100SF030100042A011 SYSTEM "x-dm://0900f90b80002d31,MYWORKING" NDATA cgm>
+<!ENTITY A1A726199SF030100011A011 SYSTEM "x-dm://0900f90b8000283c,MYWORKING" NDATA cgm>
+<!ENTITY A1A720099SF030100015A011 SYSTEM "x-dm://0900f90b8000dabe,MYWORKING" NDATA jpeg>
+<!ENTITY A1A723400SF030190069A011 SYSTEM "x-dm://0900f90b800025cd,MYWORKING" NDATA tiff>
+<!ENTITY A1A723400SF030190068A011 SYSTEM "x-dm://0900f90b800025cc,MYWORKING" NDATA tiff>
+<!ENTITY A1A780000SF030100051A011 SYSTEM "x-dm://0900f90b80002aa7,MYWORKING" NDATA cgm>
+]>
+<?Pub EntList alpha bull copy rArr sect trade nbsp>
+<?Pub Inc>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>6</section><subsect>1</subsect><subject>99</subject><discode>12</discode><discodev>A</discodev><incode>930</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmc>
+<dmtitle><techname>SERVICE BULLETIN NON CONFORMITE ATTACHE CARTER AVANT DU SUPPORT EQUIPEMENTS</techname><infoname>SERVICE BULLETIN - OPERATIONS EXCEPTIONNELLES DE MAINTENANCE</infoname></dmtitle>
+<issno type="N" issno="1">
+<issdate month="07" year="2011" day="11">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 4"></version>
+<customer aaf="1" anf="1">
+<nti nti2="1" nti3="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Version initiale</rfu>
+<remarks>RAS</remarks>
+<icns><icn id="A1A726199SF030100016A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>6</section><subsect>1</subsect><subject>99</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00016</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<refdm>
+<dmcid id="A1ARF720500A100FC"><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>RF</ecscc><eidc>72</eidc><cic>05</cic><discode>00</discode><discodev>A</discodev><incode>100</incode><incodev>F</incodev><itemloc>C</itemloc></age></dmcid>
+</refdm>
+</refs><proced><pmd>
+<manhour value="0,2"></manhour>
+<duration value="0,2"></duration>
+</pmd><prelreqs><reqconds><reqcondli><reqcond>
+<cond><para><p>Le support d'&eacute;quipements doit &ecirc;tre sur l'outillage<supeqref refid="O2.00003">.</p>
+</para>
+</cond>
+</reqcond></reqcondli></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="0,2"></reqper>
+</reqpers><supequip><supeqli>
+<supequi id="O2.00003"><refipc csn="72016701 067 "><nomen>Outillage pose/d&eacute;pose module 15</nomen><quantity>1</quantity></supequi>
+</supeqli><nosupeqs></supequip><supplies><nosupply></supplies><miscs><nomisc></miscs><safety><nosafety></safety></prelreqs><mainfunc>
+<step1 control="0" id="P10">
+<title>Constat</title>
+<step2 id="P10-10">
+<para><p>La pose du support d'&eacute;quipements<refipc csn="72610001 000 " isn="00L"> est impossible sur le moteur WM000304 en cha&icirc;ne de montage M88<figref repnohot="Zone de contact" refid="A726199SF030100016A011">.</p>
+</para>
+</step2>
+<step2 id="P10-20">
+<para><p>Un contact est constat&eacute; entre les attaches du carter avant support d&rsquo;&eacute;quipements<refipc csn="72610002 170 " isn="00N"> et la chape carter du compresseur BP<refipc csn="72310001 000 ">. </p>
+</para>
+</step2>
+<step2 id="P10-30">
+<para><p>La mise en conformit&eacute; des attaches du carter avant support d&rsquo;&eacute;quipements<refipc csn="72610002 170 " isn="00N"> est r&eacute;alis&eacute;e par retouche locale.</p>
+</para>
+</step2>
+<step2 id="P10-40">
+<para><p>Le support d'&eacute;quipements<refipc csn="72610001 000 " isn="00L"> est install&eacute; sans difficult&eacute; &agrave; l&rsquo;issue de cette retouche locale.</p>
+</para>
+</step2>
+</step1>
+<step1 control="0" id="P20">
+<title>Analyse</title>
+<para><p>Appliquer ce Service-Bulletin, uniquement en cas de contact du carter avant support d&rsquo;&eacute;quipements<refipc csn="72610002 170 " isn="00N"> et la chape carter du compresseur BP<refipc csn="72310001 000 ">, sur les supports &eacute;quipements<refipc csn="72610001 000 " isn="00L"> list&eacute;s ci-dessous.</p>
+</para>
+<table>
+<tgroup cols="3"><colspec colname="col1" colwidth="5.0cm"><colspec colname="col2" colwidth="5.0cm"><colspec colname="col3" colwidth="5.0cm">
+<tbody>
+<row>
+<entry colname="col1"><para><p>Num&eacute;ro de s&eacute;rie du carter avant support d&rsquo;&eacute;quipements<refipc csn="72610002 170 " isn="00N"></p>
+</para>
+</entry>
+<entry colname="col2"><para><p>Num&eacute;ro de s&eacute;rie du support d'&eacute;quipements<refipc csn="72610001 325 " isn="01A"></p>
+</para>
+</entry>
+<entry colname="col3"><para><p>Num&eacute;ro de s&eacute;rie du support d'&eacute;quipements<refipc csn="72610001 000 " isn="00L"></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>EB664349-2</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>EA055628</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>WM015302</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>EB664350-T</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>EA055626</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>WM015300</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>EB664352-P</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>EA055630</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>WM015310</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>EB664353-N</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>EA055645</p>
+</para>
+</entry>
+<entry colname="col3"><para><p></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>EB664354-M</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>EA055631</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>WM015303</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>EB664355-L</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>EA055632</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>WM015305</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>EB664358-H</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>EA055642</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>WM015314</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>EB664359-G</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>EA055634</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>WM015308</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>EB664361-A</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>EA055633</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>WM015307</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>EB664362-8</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>EA055635</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>WM015306</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>EB664364-6</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>EA055649</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>WM015321</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>EB664365-5</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>EA055638</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>WM015311</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>EB664368-2</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>EA055637</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>WM015309</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>EB664369-1</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>EA055636</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>WM015312</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>EB664370-R</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>EA055639</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>WM015313</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>EB664372-N</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>EA055643</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>WM015319</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>EB664374-L</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>EA055641</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>WM015316</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>EB664375-K</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>EA055644</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>WM015315</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>EB664379-F</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>EA055640</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>WM015317</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>EB664382-7</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>EA055647</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>WM015320</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>EB664383-6</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>EA055646</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>WM015318</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>EB664390-P</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>EA055648</p>
+</para>
+</entry>
+<entry colname="col3"><para><p></p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step1>
+<step1 control="0" id="P30">
+<title>Actions</title>
+<step2 id="P30-10">
+<title>Impossibilit&eacute; d'installer le support d'&eacute;quipements</title>
+<para><p>V&eacute;rifier qu'il ya un contact entre les attaches du carter avant support d&rsquo;&eacute;quipements<refipc csn="72610002 170 " isn="00N"> et la chape carter du compresseur BP<refipc csn="72310001 000 ">. </p>
+</para>
+</step2>
+<step2 id="P30-20">
+<specpara>
+<note>
+<p>Les attaches du carter avant support d&rsquo;&eacute;quipements<refipc csn="72610002 170 " isn="00N"> doivent &ecirc;tre retouch&eacute;es par un d&eacute;tachement de sp&eacute;cialistes.</p>
+</note>
+</specpara>
+<para><p>Contacter Snecma Front Office, pour l'envoi d'un d&eacute;tachement de sp&eacute;cialistes.</p>
+</para>
+</step2>
+</step1>
+<step1 id="P40">
+<title>Informations compl&eacute;mentaires</title>
+<para><p>Renseigner le livret informatis&eacute; moteur du support d'&eacute;quipements<refipc csn="72610001 000 " isn="00L"> apr&egrave;s application de ce service bulletin<dmcref xrefid="A1ARF720500A100FC">.</p>
+</para>
+</step1>
+<figure id="A726199SF030100016A011">
+<title>Zone de contact</title>
+</figure>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000010661 0>

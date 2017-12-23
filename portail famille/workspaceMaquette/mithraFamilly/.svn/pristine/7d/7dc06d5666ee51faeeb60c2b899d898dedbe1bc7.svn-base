@@ -1,0 +1,986 @@
+<!DOCTYPE OUTSPEC PUBLIC "-//ArborText//DTD OUTPUT SPEC MIL-PRF-28001 REV B AMEND 1 19961231//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY uniform SYSTEM "C:\Program Files\Epic\formats\uniform.lcf" NDATA lcf>
+]>
+<outspec><?Pub Lcl _id="333" _label="Adept v8.0">
+<!--=======================================================================-->
+<!--= DOCUMENT : canevas                                                  =-->
+<!--=                                                                     =-->
+<!--= DTDs     : canvas Rafale 2.2                                        =-->
+<!--=                                                                     =-->
+<!--= LANGUE   : français                                                 =-->
+<!--=                                                                     =-->
+<!--= COMPATIBILITE : EPIC 4.1                                            =-->
+<!--=                                                                     =-->
+<!--=                                                                     =-->
+<!--=======================================================================-->
+<!--=======================================================================-->
+<rsrcdesc><?Pub Lcl _id="f270">
+<stringdecl textid="canvas.txt" literal=""><?Pub Lcl _id="f236">
+<stringdecl textid="dmc.txt" literal=""><?Pub Lcl _id="f279">
+<stringdecl textid="dmc1.txt" literal="*"><?Pub Lcl _id="f328">
+<stringdecl textid="dmc2.txt" literal=""><?Pub Lcl _id="f329">
+<stringdecl textid="tiret.txt"><?Pub Lcl _id="f282">
+<stringdecl textid="issno.txt" literal=""><?Pub Lcl _id="f294">
+<stringdecl textid="type.txt" literal=""><?Pub Lcl _id="f295">
+<stringdecl textid="varid.txt" literal=""><?Pub Lcl _id="f298">
+<stringdecl textid="canvasstr.txt" literal=""><?Pub Lcl _id="f330">
+<stringdecl textid="fixz.txt" literal=""><?Pub Lcl _id="f331"></rsrcdesc>
+<pagedesc><?Pub Dtl>
+<pageset id="canvas"><?Pub Lcl _id="f234">
+<rectopg>
+<pagespec>
+<topmarg>
+<botmarg>
+<leftmarg>
+<rtmarg>
+<header></header>
+<footer></footer>
+<flowtext>
+<column></flowtext>
+</pagespec>
+</rectopg>
+<versopg>
+<pagespec>
+<topmarg>
+<botmarg>
+<leftmarg>
+<rtmarg>
+<header></header>
+<footer></footer>
+<flowtext>
+<column></flowtext>
+</pagespec>
+</versopg>
+</pageset>
+</pagedesc>
+<styldesc>
+<charsubset charsubsetid="attributs"><?Pub Lcl _id="f226">
+<font posture="italic"></charsubset>
+<charsubset charsubsetid="titreprincipal"><?Pub Lcl _id="f227"><?Pub Dtl>
+<font famname="Helvetica" size="14pt" posture="italic" weight="bold">
+<quadding quad="center">
+<highlt fontclr="gray">
+<presp minimum="30pt" nominal="30pt" maximum="30pt">
+<postsp minimum="30pt" nominal="30pt" maximum="30pt">
+<textbrk startln="1" endln="1"></charsubset>
+<charsubset charsubsetid="titresecondaire"><?Pub Lcl _id="f229"><?Pub Dtl>
+<font famname="Helvetica" size="14pt" posture="italic" weight="bold">
+<highlt fontclr="gray">
+<presp minimum="30pt" nominal="30pt" maximum="30pt">
+<postsp minimum="15pt" nominal="15pt" maximum="15pt">
+<textbrk startln="1" endln="1"></charsubset>
+<charsubset charsubsetid="changemod"><?Pub Lcl _id="f230"><?Pub Dtl>
+<highlt bckclr="bgreen"></charsubset>
+<charsubset charsubsetid="changeadd"><?Pub Lcl _id="f231"><?Pub Dtl>
+<highlt bckclr="byellow"></charsubset>
+<charsubset charsubsetid="paragraphes"><?Pub Lcl _id="f232"><?Pub Dtl>
+<font famname="Times" size="12pt"></charsubset>
+<charsubset charsubsetid="gentext"><?Pub Lcl _id="f237">
+<highlt fontclr="black"></charsubset>
+<docdesc><?Pub Lcl _id="f144">
+<charlist>
+<font famname="Times" size="12pt"></charlist>
+</docdesc>
+<e-i-c gi="addres" context="specific"><?Pub Lcl _id="f242"><?Pub Dtl>
+<charlist>
+<indent inherit="1" leftind="@" firstln="@"></charlist>
+</e-i-c>
+<e-i-c gi="age"><?Pub Lcl _id="f314"><?Pub Dtl>
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<usetext source="@130pt"></usetext>
+<reset resetlist="dmc.txt"></charlist>
+</e-i-c>
+<e-i-c gi="avee"><?Pub Lcl _id="f315"><?Pub Dtl>
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<reset resetlist="dmc.txt"></charlist>
+</e-i-c>
+<e-i-c gi="anchor" context="* body" occur="first"><?Pub Lcl _id="f300"><?Pub Dtl>
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<textbrk startln="1">
+<usetext source="\Liste des ancres : \,@130pt" placemnt="before">
+<subchars charsubsetref="gentext">
+<font weight="bold"></subchars>
+</usetext>
+</charlist>
+<att>
+<fillval attname="value" attloc="anchor" fillcat="usetext" fillchar="source">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attributs"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="anchor" context="* body" occur="notfirst"><?Pub Lcl _id="f301"><?Pub Dtl>
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<textbrk startln="1">
+<usetext source="@130pt"></usetext>
+</charlist>
+<att>
+<fillval attname="value" attloc="anchor" fillcat="usetext" fillchar="source">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attributs"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="body"><?Pub Lcl _id="f277"><?Pub Dtl>
+<charlist>
+<indent leftind="0pt" firstln="0pt">
+<textbrk startln="1" endln="1">
+<usetext source="\Corps de publication\" placemnt="before">
+<subchars charsubsetref="titreprincipal"></subchars>
+</usetext>
+<usetext source="\Liste des Data-Modules\">
+<subchars charsubsetref="titresecondaire"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="chapnum"><?Pub Lcl _id="f317"><?Pub Dtl>
+<charlist>
+<usetext source="\-\" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="dmc.txt" conrule="\-\,#CONTENT" placemnt="after" append="1">
+</charlist>
+</e-i-c>
+<e-i-c gi="canvas"><?Pub Lcl _id="f233"><?Pub Dtl>
+<charlist charsubsetref="paragraphes">
+<indent leftind="0pt" firstln="0pt">
+<textbrk startln="1" endln="1">
+<usetext source="\Identification du canevas\" placemnt="before">
+<subchars charsubsetref="titreprincipal"></subchars>
+</usetext>
+<usetext source="\Fin du canevas de publication\" placemnt="after">
+<subchars charsubsetref="titreprincipal"></subchars>
+</usetext>
+</charlist>
+<att>
+<fillval attname="id" attloc="canvas" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="canvasstr.txt">
+<usetext source="\Identification du canevas : \">
+<subchars charsubsetref="paragraphes gentext">
+<font weight="bold">
+<textbrk startln="1" endln="0"></subchars>
+</usetext>
+<usetext source="canvasstr.txt">
+<subchars charsubsetref="attributs"></subchars>
+</usetext>
+<usetext source="\Type : \">
+<subchars charsubsetref="gentext paragraphes">
+<font weight="bold">
+<presp minimum="10pt" nominal="10pt" maximum="10pt">
+<postsp minimum="10pt" nominal="10pt" maximum="10pt">
+<textbrk startln="1" endln="0"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="type" attloc="canvas" attval="canevas">
+<charsubset>
+<usetext source="\Canevas de Publication\">
+<subchars charsubsetref="attributs"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="type" attloc="canvas" attval="proposition">
+<charsubset>
+<usetext source="\Proposition de canevas\">
+<subchars charsubsetref="attributs"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="cic" context="* body"><?Pub Lcl _id="f285"><?Pub Dtl>
+<charlist>
+<usetext source="\-\" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="dmc.txt" conrule="\-\,#CONTENT" placemnt="after" append="1">
+</charlist>
+</e-i-c>
+<e-i-c gi="dm" context="* body"><?Pub Lcl _id="f278"><?Pub Dtl>
+<charlist>
+<indent inherit="1" leftind="@+30pt" firstln="@+30pt">
+<postsp minimum="15pt" nominal="15pt" maximum="15pt">
+<textbrk startln="1" endln="1">
+<usetext source="\DMC : \">
+<subchars>
+<font weight="bold">
+<presp minimum="15pt" nominal="15pt" maximum="15pt"></subchars>
+</usetext>
+</charlist>
+<att>
+<fillval attname="dmid" attloc="dm" fillcat="savetext" fillchar="textid">
+<charsubset>
+<savetext conrule="dmc.txt,@50pt,dmc1.txt,@50pt,dmc2.txt" placemnt="after">
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="dmtitle" context="* body"><?Pub Lcl _id="f292"><?Pub Dtl>
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<textbrk startln="1" endln="1">
+<usetext source="\Titre  : \" placemnt="before">
+<subchars charsubsetref="gentext">
+<font weight="bold"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="discode" context="* body"><?Pub Lcl _id="f286"><?Pub Dtl>
+<charlist>
+<usetext source="\-\" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="dmc.txt" conrule="\-\,#CONTENT" placemnt="after" append="1">
+</charlist>
+</e-i-c>
+<e-i-c gi="discodev"><?Pub Lcl _id="f287"><?Pub Dtl>
+<charlist>
+<savetext textid="dmc.txt" conrule="#CONTENT" placemnt="after" append="1">
+</charlist>
+</e-i-c>
+<e-i-c gi="dmcref"><?Pub Lcl _id="f313"><?Pub Dtl>
+<charlist inherit="0"></charlist>
+<att>
+<fillval attname="xrefid" attloc="dmcref" fillcat="usetext" fillchar="source">
+<charsubset>
+<usetext placemnt="before">
+<subchars>
+<font inherit="0" famname="Helvetica" size="11pt">
+<indent inherit="1" leftind="@+187pt" firstln="@"><?Pub Caret></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="ecscc" context="* body"><?Pub Lcl _id="f283"><?Pub Dtl>
+<charlist>
+<usetext source="\-\" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="dmc.txt" conrule="\-\,#CONTENT" placemnt="after" append="1">
+</charlist>
+</e-i-c>
+<e-i-c gi="eidc" context="* body"><?Pub Lcl _id="f284"><?Pub Dtl>
+<charlist>
+<usetext source="\-\" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="dmc.txt" conrule="\-\,#CONTENT" placemnt="after" append="1">
+</charlist>
+</e-i-c>
+<e-i-c gi="endippn" context="* body"><?Pub Lcl _id="f327"><?Pub Dtl>
+<charlist>
+<usetext source="\-\" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="dmc.txt" conrule="\-\,#CONTENT" placemnt="after" append="1">
+</charlist>
+</e-i-c>
+<e-i-c gi="fig" context="* body"><?Pub Lcl _id="f321"><?Pub Dtl>
+<charlist>
+<usetext source="\-\" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="dmc.txt" conrule="\-\,#CONTENT" placemnt="after" append="1">
+</charlist>
+</e-i-c>
+<e-i-c gi="figv" context="* body"><?Pub Lcl _id="f322"><?Pub Dtl>
+<charlist>
+<savetext textid="dmc.txt" conrule="#CONTENT" placemnt="after" append="1">
+</charlist>
+</e-i-c>
+<e-i-c gi="fixz" context="* body"><?Pub Lcl _id="f325"><?Pub Dtl>
+<charlist>
+<usetext source="\-\" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+</charlist>
+<att>
+<fillval attname="fixz" attloc="fixz" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="fixz.txt">
+<usetext source="fixz.txt">
+<subchars charsubsetref="attributs"></subchars>
+</usetext>
+<savetext textid="dmc.txt" conrule="\-\,fixz.txt" placemnt="after" append="1">
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="generated"><?Pub Lcl _id="f302"><?Pub Dtl>
+<charlist>
+<indent leftind="0pt" firstln="0pt">
+<textbrk startln="1" endln="1">
+<usetext source="\Listes d&eacute;duites\" placemnt="before">
+<subchars charsubsetref="titreprincipal"></subchars>
+</usetext>
+<usetext source="\Fin des listes d&eacute;duites\" placemnt="after">
+<subchars charsubsetref="titreprincipal"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="ipcc" context="* body"><?Pub Lcl _id="f323"><?Pub Dtl>
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<reset resetlist="dmc.txt"></charlist>
+</e-i-c>
+<e-i-c gi="ipcn" context="* body"><?Pub Lcl _id="f324"><?Pub Dtl>
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<usetext source="@130pt"></usetext>
+<reset resetlist="dmc.txt"></charlist>
+</e-i-c>
+<e-i-c gi="idstatus" context="specific"><?Pub Lcl _id="f239"><?Pub Dtl>
+<charlist>
+<indent leftind="0pt" firstln="0pt">
+<textbrk startln="1" endln="1">
+<usetext source="\Identification de la Publication\" placemnt="before">
+<subchars charsubsetref="titreprincipal"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="ietptitle" context="addres"><?Pub Lcl _id="f251"><?Pub Dtl>
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<presp minimum="10pt" nominal="10pt" maximum="10pt">
+<postsp minimum="10pt" nominal="10pt" maximum="10pt">
+<textbrk startln="1" endln="1">
+<usetext source="\Titre de la Publication : \" placemnt="before">
+<subchars charsubsetref="gentext">
+<font weight="bold"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="ietpc" context="specific"><?Pub Lcl _id="f243"><?Pub Dtl>
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<textbrk startln="1" endln="0"></charlist>
+</e-i-c>
+<e-i-c gi="issno" context="addres"><?Pub Lcl _id="f250"><?Pub Dtl>
+<charlist>
+<postsp minimum="10pt" nominal="10pt" maximum="10pt">
+<textbrk startln="1" endln="1">
+<usetext source="\Num&eacute;ro d'&eacute;dition : \">
+<subchars charsubsetref="gentext">
+<font weight="bold"></subchars>
+</usetext>
+</charlist>
+<att>
+<fillval attname="issno" attloc="issno" fillcat="usetext" fillchar="source">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attributs"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="type" attloc="issno" fillcat="usetext" fillchar="source">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attributs"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="issno" context="* body"><?Pub Lcl _id="f291"><?Pub Dtl>
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<usetext source="\ \" placemnt="before"></usetext>
+</charlist>
+<att>
+<fillval attname="issno" attloc="issno" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="issno.txt">
+<usetext source="issno.txt">
+<subchars charsubsetref="attributs"></subchars>
+</usetext>
+<savetext textid="dmc1.txt" conrule="issno.txt" placemnt="after"></charsubset>
+</att>
+<att>
+<fillval attname="type" attloc="issno" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="type.txt">
+<usetext source="type.txt">
+<subchars charsubsetref="attributs"></subchars>
+</usetext>
+<savetext textid="dmc1.txt" conrule="type.txt" placemnt="after" append="1">
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="issdate" context="status"><?Pub Lcl _id="f254"><?Pub Dtl>
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<presp minimum="10pt" nominal="10pt" maximum="10pt">
+<textbrk startln="1" endln="1">
+<usetext source="\Date de cr&eacute;ation : \" placemnt="before">
+<subchars charsubsetref="gentext">
+<font weight="bold"></subchars>
+</usetext>
+</charlist>
+<att>
+<fillval attname="day" attloc="issdate" fillcat="usetext" fillchar="source">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attributs"></subchars>
+</usetext>
+<usetext source="\-\">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="month" attloc="issdate" fillcat="usetext" fillchar="source">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attributs"></subchars>
+</usetext>
+<usetext source="\-\">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="year" attloc="issdate" fillcat="usetext" fillchar="source">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attributs"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="intr" context="specific"><?Pub Lcl _id="f261"><?Pub Dtl>
+<charlist>
+<indent leftind="0pt" firstln="0pt">
+<textbrk startln="1" endln="1">
+<usetext source="\Introduction\">
+<subchars charsubsetref="titreprincipal"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="incode" context="* body"><?Pub Lcl _id="f288"><?Pub Dtl>
+<charlist>
+<usetext source="\-\" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="dmc.txt" conrule="\-\,#CONTENT" placemnt="after" append="1">
+</charlist>
+</e-i-c>
+<e-i-c gi="incodev"><?Pub Lcl _id="f289"><?Pub Dtl>
+<charlist>
+<savetext textid="dmc.txt" conrule="#CONTENT" placemnt="after" append="1">
+</charlist>
+</e-i-c>
+<e-i-c gi="item" context="specific"><?Pub Lcl _id="f265"><?Pub Dtl>
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<textbrk startln="1" endln="1">
+<usetext source="\-\">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<usetext source="@10pt"></usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="item" context="* item"><?Pub Lcl _id="f267"><?Pub Dtl>
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<textbrk startln="1" endln="1">
+<usetext source="\-\">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<usetext source="@10pt"></usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="itemloc" context="* body"><?Pub Lcl _id="f290"><?Pub Dtl>
+<charlist>
+<usetext source="\-\" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="dmc.txt" conrule="\-\,#CONTENT" placemnt="after" append="1">
+</charlist>
+</e-i-c>
+<e-i-c gi="infoname" context="* body"><?Pub Lcl _id="f297"><?Pub Dtl>
+<charlist>
+<indent inherit="1" leftind="@+18mm">
+<usetext source="\ - \" placemnt="before">
+<subchars></subchars>
+</usetext>
+<savetext textid="dmc2.txt" conrule="\-\,#CONTENT" placemnt="after" append="1">
+</charlist>
+</e-i-c>
+<e-i-c gi="loedm" context="* generated"><?Pub Lcl _id="f303"><?Pub Dtl>
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<textbrk startln="1"></charlist>
+<att>
+<specval attname="status" attloc="loedm" attval="1">
+<charsubset>
+<usetext source="\Liste des Data Modules\">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="loi" context="* generated"><?Pub Lcl _id="f304"><?Pub Dtl>
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<textbrk startln="1"></charlist>
+<att>
+<specval attname="status" attloc="loi" attval="1">
+<charsubset>
+<usetext source="\Liste des Illustrations\">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="hlt" context="* generated"><?Pub Lcl _id="f332"><?Pub Dtl>
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<textbrk startln="1"></charlist>
+<att>
+<specval attname="status" attloc="hlt" attval="1">
+<charsubset>
+<usetext source="\Sommaire Explicatif de mise &agrave; jour\">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="loipd" context="* generated"><?Pub Lcl _id="f305"><?Pub Dtl>
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<textbrk startln="1"></charlist>
+<att>
+<specval attname="status" attloc="loipd" attval="1">
+<charsubset>
+<usetext source="\Liste des Data Modules Identification et Donn&eacute;es d'Identification\">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="losu" context="* generated"><?Pub Lcl _id="f307"><?Pub Dtl>
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<textbrk startln="1"></charlist>
+<att>
+<specval attname="status" attloc="losu" attval="1">
+<charsubset>
+<usetext source="\Liste des Rechanges\">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="lose" context="* generated"><?Pub Lcl _id="f308"><?Pub Dtl>
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<textbrk startln="1"></charlist>
+<att>
+<specval attname="status" attloc="lose" attval="1">
+<charsubset>
+<usetext source="\Liste des Moyens de Soutien\">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="lomi" context="* generated"><?Pub Lcl _id="f309"><?Pub Dtl>
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<textbrk startln="1"></charlist>
+<att>
+<specval attname="status" attloc="lomi" attval="1">
+<charsubset>
+<usetext source="\Liste des Ingr&eacute;dients et Produits Divers\">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="lextp" context="* generated"><?Pub Lcl _id="f333"><?Pub Dtl>
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<textbrk startln="1"></charlist>
+<att>
+<specval attname="status" attloc="lextp" attval="1">
+<charsubset>
+<usetext source="\Liste des Publications Externes\">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="loh" context="* generated"><?Pub Lcl _id="f310"><?Pub Dtl>
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<textbrk startln="1"></charlist>
+<att>
+<specval attname="status" attloc="loh" attval="1">
+<charsubset>
+<usetext source="\Liste des c&acirc;blages\">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="low" context="* generated"><?Pub Lcl _id="f311"><?Pub Dtl>
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<textbrk startln="1"></charlist>
+<att>
+<specval attname="status" attloc="low" attval="1">
+<charsubset>
+<usetext source="\Liste des sch&eacute;mas de c&acirc;blages\">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="list" context="specific"><?Pub Lcl _id="f263"><?Pub Dtl>
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<textbrk endln="1"></charlist>
+</e-i-c>
+<e-i-c gi="list" context="* list"><?Pub Lcl _id="f269"><?Pub Dtl>
+<charlist>
+<indent inherit="1" leftind="@+10pt" firstln="@+10pt"></charlist>
+</e-i-c>
+<e-i-c gi="modelic" context="ietpc"><?Pub Lcl _id="f244"><?Pub Dtl>
+<charlist>
+<postsp minimum="10pt" nominal="10pt" maximum="10pt">
+<textbrk startln="1" endln="0">
+<usetext source="\Publication : \" placemnt="before">
+<subchars charsubsetref="gentext">
+<font weight="bold"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="modelic" context="body"><?Pub Lcl _id="f280"><?Pub Dtl>
+<charlist>
+<savetext textid="dmc.txt" conrule="#CONTENT" placemnt="after" append="1">
+</charlist>
+</e-i-c>
+<e-i-c gi="nature" context="ietpc"><?Pub Lcl _id="f249"><?Pub Dtl>
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<postsp minimum="10pt" nominal="10pt" maximum="10pt">
+<textbrk startln="1" endln="1">
+<usetext source="\Nature : \">
+<subchars charsubsetref="gentext">
+<font weight="bold"></subchars>
+</usetext>
+</charlist>
+<att>
+<specval attname="nature" attloc="nature" attval="i">
+<charsubset>
+<usetext source="\Interactive\">
+<subchars charsubsetref="attributs"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="nature" attloc="nature" attval="p">
+<charsubset>
+<usetext source="\Papier\">
+<subchars charsubsetref="attributs"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="p" context="specific"><?Pub Lcl _id="f262"><?Pub Dtl>
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<textbrk endln="1"></charlist>
+</e-i-c>
+<e-i-c gi="para" context="specific"><?Pub Lcl _id="f268"><?Pub Dtl>
+<charlist>
+<indent inherit="1" leftind="@" firstln="@"></charlist>
+</e-i-c>
+<e-i-c gi="para" context="item"><?Pub Lcl _id="f271"><?Pub Dtl>
+<charlist>
+<indent inherit="1" leftind="@+10pt" firstln="@+10pt"></charlist>
+</e-i-c>
+<e-i-c gi="pubtype" context="status"><?Pub Lcl _id="f253"><?Pub Dtl>
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<postsp minimum="10pt" nominal="10pt" maximum="10pt">
+<textbrk startln="1" endln="1">
+<usetext source="\Type de Publication : \">
+<subchars charsubsetref="gentext">
+<font weight="bold"></subchars>
+</usetext>
+</charlist>
+<att>
+<specval attname="pubtype" attloc="pubtype" attval="p">
+<charsubset>
+<usetext source="\PUBLICATION\">
+<subchars charsubsetref="attributs"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="pubtype" attloc="pubtype" attval="l">
+<charsubset>
+<usetext source="\LOAP\">
+<subchars charsubsetref="attributs"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="pubtype" attloc="pubtype" attval="f">
+<charsubset>
+<usetext source="\FLASH\">
+<subchars charsubsetref="attributs"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="rpc" context="status"><?Pub Lcl _id="f255"><?Pub Dtl>
+<charlist>
+<presp minimum="10pt" nominal="10pt" maximum="10pt">
+<textbrk startln="1" endln="1">
+<usetext source="\Responsible Partner Company : \">
+<subchars charsubsetref="gentext">
+<font weight="bold"></subchars>
+</usetext>
+</charlist>
+<att>
+<fillval attname="rpcname" attloc="rpc" fillcat="usetext" fillchar="source">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attributs"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="rpc" context="* body"><?Pub Lcl _id="f326"><?Pub Dtl>
+<charlist></charlist>
+<att>
+<fillval attname="rpcname" attloc="rpc" fillcat="usetext" fillchar="source">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attributs"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="rpcname" attloc="rpc" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="dmc.txt" placemnt="after" append="1"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="resp" context="status"><?Pub Lcl _id="f257"><?Pub Dtl>
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<presp minimum="10pt" nominal="10pt" maximum="10pt">
+<textbrk startln="1" endln="1">
+<usetext source="\Responsable de publication : \" placemnt="before">
+<subchars charsubsetref="gentext">
+<font weight="bold"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="remarks" context="status"><?Pub Lcl _id="f260"><?Pub Dtl>
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<presp minimum="10pt" nominal="10pt" maximum="10pt">
+<textbrk startln="1" endln="1">
+<usetext source="\Remarques : \" placemnt="before">
+<subchars charsubsetref="gentext">
+<font weight="bold"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="rfu" context="status"><?Pub Lcl _id="f259"><?Pub Dtl>
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<presp minimum="10pt" nominal="10pt" maximum="10pt">
+<textbrk startln="1" endln="1">
+<usetext source="\Raison de la mise &agrave; jour : \" placemnt="before">
+<subchars charsubsetref="gentext">
+<font weight="bold"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="security" context="status"><?Pub Lcl _id="f256"><?Pub Dtl>
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<presp minimum="10pt" nominal="10pt" maximum="10pt">
+<textbrk startln="1" endln="1">
+<usetext source="\Niveau de s&eacute;curit&eacute; : \" placemnt="before">
+<subchars charsubsetref="gentext">
+<font weight="bold"></subchars>
+</usetext>
+</charlist>
+<att>
+<specval attname="class" attloc="security" attval="np">
+<charsubset>
+<usetext source="\Non Prot&eacute;g&eacute;\">
+<subchars charsubsetref="attributs"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="class" attloc="security" attval="dr">
+<charsubset>
+<usetext source="\Diffusion restreinte\">
+<subchars charsubsetref="attributs"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="class" attloc="security" attval="cd">
+<charsubset>
+<usetext source="\Confidentiel D&eacute;fense\">
+<subchars charsubsetref="attributs"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="specific" context="specific"><?Pub Lcl _id="f241"><?Pub Dtl>
+<charlist>
+<textbrk startln="1" endln="1"></charlist>
+</e-i-c>
+<e-i-c gi="sdc" context="ietpc"><?Pub Lcl _id="f246"><?Pub Dtl>
+<charlist>
+<usetext source="\-\">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="systcode" context="ietpc"><?Pub Lcl _id="f248"><?Pub Dtl>
+<charlist>
+<usetext source="@270pt" placemnt="after"></usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="status" context="specific"><?Pub Lcl _id="f252"><?Pub Dtl>
+<charlist>
+<indent leftind="0pt" firstln="0pt">
+<textbrk startln="1" endln="1">
+<usetext source="\Donn&eacute;es de gestion de la publication\">
+<subchars charsubsetref="titreprincipal"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="supeqvc" context="* body"><?Pub Lcl _id="f281"><?Pub Dtl>
+<charlist>
+<usetext source="\-\" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="dmc.txt" conrule="\-\,#CONTENT" placemnt="after" append="1">
+</charlist>
+</e-i-c>
+<e-i-c gi="subsect"><?Pub Lcl _id="f319"><?Pub Dtl>
+<charlist>
+<savetext textid="dmc.txt" conrule="#CONTENT" placemnt="after" append="1">
+</charlist>
+</e-i-c>
+<e-i-c gi="subject"><?Pub Lcl _id="f320"><?Pub Dtl>
+<charlist>
+<usetext source="\-\" placemnt="before">
+<subchars></subchars>
+</usetext>
+<savetext textid="dmc.txt" conrule="\-\,#CONTENT" placemnt="after" append="1">
+</charlist>
+</e-i-c>
+<e-i-c gi="sdc" context="* body"><?Pub Lcl _id="f316"><?Pub Dtl>
+<charlist>
+<usetext source="\-\" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="dmc.txt" conrule="\-\,#CONTENT" placemnt="after" append="1">
+</charlist>
+</e-i-c>
+<e-i-c gi="section"><?Pub Lcl _id="f318"><?Pub Dtl>
+<charlist>
+<usetext source="\-\" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="dmc.txt" conrule="\-\,#CONTENT" placemnt="after" append="1">
+</charlist>
+</e-i-c>
+<e-i-c gi="tbac" context="specific"><?Pub Lcl _id="f274"><?Pub Dtl>
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<textbrk startln="1" endln="1"></charlist>
+</e-i-c>
+<e-i-c gi="toc" context="specific"><?Pub Lcl _id="f275"><?Pub Dtl>
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<textbrk startln="1" endln="1"></charlist>
+</e-i-c>
+<e-i-c gi="title" context="specific"><?Pub Lcl _id="f264"><?Pub Dtl>
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<textbrk startln="1" endln="1"></charlist>
+</e-i-c>
+<e-i-c gi="title" context="tbac"><?Pub Lcl _id="f273"><?Pub Dtl>
+<charlist>
+<font weight="bold">
+<indent inherit="1" leftind="@" firstln="@">
+<highlt allcap="1">
+<presp minimum="10pt" nominal="10pt" maximum="10pt">
+<postsp minimum="10pt" nominal="10pt" maximum="10pt">
+<textbrk startln="1" endln="1"></charlist>
+</e-i-c>
+<e-i-c gi="title" context="toc"><?Pub Lcl _id="f276"><?Pub Dtl>
+<charlist>
+<font posture="italic" weight="bold">
+<indent inherit="1" leftind="@+30pt" firstln="@+30pt">
+<highlt scoring="1" allcap="1" scorespc="1">
+<postsp minimum="10pt" nominal="10pt" maximum="10pt">
+<textbrk startln="1" endln="1"></charlist>
+</e-i-c>
+<e-i-c gi="tpc" context="ietpc"><?Pub Lcl _id="f247"><?Pub Dtl>
+<charlist>
+<usetext source="\-\" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="tp-appli" context="status"><?Pub Lcl _id="f258"><?Pub Dtl>
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<presp minimum="10pt" nominal="10pt" maximum="10pt">
+<textbrk startln="1" endln="1">
+<usetext source="\Applicabilit&eacute; : \">
+<subchars charsubsetref="gentext">
+<font weight="bold"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="tbaclist" context="specific"><?Pub Lcl _id="f272"><?Pub Dtl>
+<charlist>
+<indent leftind="0pt" firstln="0pt">
+<textbrk startln="1" endln="1">
+<usetext source="\Tables d'acc&eacute;s\" placemnt="before">
+<subchars charsubsetref="titreprincipal"></subchars>
+</usetext>
+<usetext source="\Fin des Tables d'acc&eacute;s\" placemnt="after">
+<subchars charsubsetref="titreprincipal"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="techname" context="* body"><?Pub Lcl _id="f296"><?Pub Dtl>
+<charlist>
+<indent inherit="1" leftind="@+18mm" firstln="@">
+<savetext textid="dmc2.txt" conrule="#CONTENT" placemnt="after" append="0">
+</charlist>
+</e-i-c>
+<e-i-c gi="tocline" context="* specific"><?Pub Lcl _id="f312"><?Pub Dtl>
+<charlist>
+<indent inherit="1" leftind="@+60pt" firstln="@+60pt">
+<textbrk startln="1"></charlist>
+</e-i-c>
+</styldesc>
+</outspec>
+<?Pub *0000031707>

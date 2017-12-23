@@ -1,0 +1,262 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN">
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>3</subsect><subject>00</subject><discode>00</discode><discodev>A</discodev><incode>350</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmc>
+<dmtitle><techname>STATOR DE TURBINE</techname><infoname>ESSAIS STRUCTURAUX</infoname></dmtitle>
+<issno type="c" issno="6">
+<issdate month="10" year="2011" day="15">
+</dmaddres><status>
+<security class="np">
+<rpc rpcname="s">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<customer aaf="1" anf="1">
+<nti nti3="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Prise en compte de la MOD 252-9R1</rfu>
+<remarks>RAS</remarks>
+</status>
+</idstatus><content><refs>
+<refdm>
+<dmcid id="A1A70320001A351ac"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>3</section><subsect>2</subsect><subject>00</subject><discode>01</discode><discodev>A</discodev><incode>351</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A70320002A351ac"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>3</section><subsect>2</subsect><subject>00</subject><discode>02</discode><discodev>A</discodev><incode>351</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A72530005A311AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>3</subsect><subject>00</subject><discode>05</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A72530006A311AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>3</subsect><subject>00</subject><discode>06</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A72530006A311AD"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>3</subsect><subject>00</subject><discode>06</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmcid>
+<dmcid id="A1A72530007A311AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>3</subsect><subject>00</subject><discode>07</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A72530010A311AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>3</subsect><subject>00</subject><discode>10</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A72530011A311AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>3</subsect><subject>00</subject><discode>11</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A72530008A311AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>3</subsect><subject>00</subject><discode>08</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A72530001A311AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>3</subsect><subject>00</subject><discode>01</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A72530012A311AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>3</subsect><subject>00</subject><discode>12</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A72530014A311AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>3</subsect><subject>00</subject><discode>14</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A72530032A311AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>3</subsect><subject>00</subject><discode>32</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A72530033A311AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>3</subsect><subject>00</subject><discode>33</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A72530034A311AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>3</subsect><subject>00</subject><discode>34</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A72530031A311AD"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>3</subsect><subject>00</subject><discode>31</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmcid>
+<dmcid id="A1A72530030A311AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>3</subsect><subject>00</subject><discode>30</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+</refdm>
+</refs><proced><pmd>
+<manhour value="0,1"></manhour>
+<duration value="0,1"></duration>
+</pmd><prelreqs><reqconds>
+<noconds></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="0,1"></reqper>
+</reqpers><supequip><nosupeq><nosupeqs></supequip><supplies><nosupply></supplies><miscs><nomisc></miscs><safety>
+<specpara>
+<caution>
+<p>Signaler tout autre d&eacute;faut pr&eacute;sent sur une pi&egrave;ce n'ayant pas de renvois a un Data Module "contr&ocirc;le visuel sans moyen sp&eacute;cial" &agrave; Snecma.</p>
+</caution>
+</specpara>
+</safety></prelreqs><mainfunc>
+<step1 control="0" id="p10">
+<para><p>Effectuer le contr&ocirc;le sant&eacute; mati&egrave;re si demand&eacute; par les Data Module Limite de Fonctionnement et si n&eacute;cessaire aux op&eacute;rations de r&eacute;paration suivant les informations du tableau ci-dessous.</p>
+</para>
+<table tocentry="1">
+<tgroup cols="3" align="center"><colspec colnum="1" colname="sqcolumn1" colwidth="6cm" align="center" colsep="1" rowsep="1"><colspec colnum="2" colname="sqcolumn2" colwidth="6cm" align="left" colsep="1" rowsep="1"><colspec colnum="3" colname="sqcolumn3" colwidth="5cm" align="left" colsep="1" rowsep="1">
+<tbody valign="top">
+<row rowsep="1">
+<entry valign="top" align="center" colsep="1" morerows="0" rowsep="1"><para><p>DESIGNATION PIECE</p>
+</para>
+</entry>
+<entry valign="top" align="center" colsep="1" morerows="0" rowsep="1"><para><p>METHODES DE CONTROLE</p>
+</para>
+</entry>
+<entry valign="top" align="center" colsep="1" morerows="0" rowsep="1"><para><p>Si d&eacute;faut se reporter &agrave; :</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" align="center" colsep="1" morerows="0" rowsep="1"><para change="mod"><applic><config><mod modnb="252-9R1" change="mod" modcond="pre"></config></applic>
+<p>Secteur anneau, turbine HP <refipc csn="72530001 049 "> <refipc csn="72530002 003 "> <refipc change="mod" csn="72530005 003 " isn="00A"></p>
+</para>
+<para change="add"><applic><config><mod modnb="252-9R1" change="add" modcond="post"></config></applic>
+<p change="add">Secteur anneau, turbine HP <refipc change="add" csn="72530005 003 " isn="00C"></p>
+</para>
+</entry>
+<entry valign="top" align="center" colsep="1" morerows="0" rowsep="1"><para><p><dmcref xrefid="A1A70320001a351ac"> <dmcref xrefid="A1A70320002a351ac"></p>
+</para>
+</entry>
+<entry valign="top" align="center" colsep="1" morerows="0" rowsep="1"><para change="mod"><applic><config><mod modnb="252-9R1" change="mod" modcond="pre"></config></applic>
+<p><dmcref xrefid="A1A72530006A311AC"></p>
+</para>
+<para change="add"><applic><config><mod modnb="252-9R1" change="add" modcond="post"></config></applic>
+<p><dmcref change="add" xrefid="A1A72530006A311AD"></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" align="center" colsep="1" morerows="0" rowsep="1"><para><p>Carter externe, turbine HP <refipc csn="72530001 057 "> <refipc csn="72530002 013 "> <refipc csn="72530005 009 "></p>
+</para>
+</entry>
+<entry valign="top" align="center" colsep="1" morerows="0" rowsep="1"><para><p><dmcref xrefid="A1A70320001a351ac"> <dmcref xrefid="A1A70320002a351ac"></p>
+</para>
+</entry>
+<entry valign="top" align="center" colsep="1" morerows="0" rowsep="1"><para><p><dmcref xrefid="A1A72530005A311AC"></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" align="center" colsep="1" morerows="0" rowsep="1"><para><p>Carter de turbine <refipc csn="72530001 015 "></p>
+</para>
+</entry>
+<entry valign="top" align="center" colsep="1" morerows="0" rowsep="1"><para><p><dmcref xrefid="A1A70320001A351AC"> <dmcref xrefid="A1A70320002a351ac"></p>
+</para>
+</entry>
+<entry valign="top" align="center" colsep="1" morerows="0" rowsep="1"><para><p><dmcref xrefid="A1A72530011A311AC"></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" align="center" colsep="1" morerows="0" rowsep="1"><para><p>Secteur anneau, turbine BP <refipc csn="72530001 022 "></p>
+</para>
+</entry>
+<entry valign="top" align="center" colsep="1" morerows="0" rowsep="1"><para><p><dmcref xrefid="A1A70320001a351ac"> <dmcref xrefid="A1A70320002a351ac"></p>
+</para>
+</entry>
+<entry valign="top" align="center" colsep="1" morerows="0" rowsep="1"><para><p><dmcref xrefid="A1A72530007A311AC"></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" align="center" colsep="1" morerows="0" rowsep="1"><para><p>Secteur distributeur, BP <refipc csn="72530001 038 "></p>
+</para>
+</entry>
+<entry valign="top" align="center" colsep="1" morerows="0" rowsep="1"><para><p><dmcref xrefid="A1A70320001A351AC"> <dmcref xrefid="A1A70320002a351ac"></p>
+</para>
+</entry>
+<entry valign="top" align="center" colsep="1" morerows="0" rowsep="1"><para><p><dmcref xrefid="A1A72530008A311AC"></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" align="center" colsep="1" morerows="0" rowsep="1"><para><p>Carter interne distributeur, BP <refipc csn="72530001 033 "></p>
+</para>
+</entry>
+<entry valign="top" align="center" colsep="1" morerows="0" rowsep="1"><para><p><dmcref xrefid="A1A70320001a351ac"> <dmcref xrefid="A1A70320002a351ac"></p>
+</para>
+</entry>
+<entry valign="top" align="center" colsep="1" morerows="0" rowsep="1"><para><p><dmcref xrefid="A1A72530010A311AC"></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" align="center" colsep="1" morerows="0" rowsep="1"><para><p>Secteur distributeur ENDOSC <refipc csn="72530001 039 "></p>
+</para>
+</entry>
+<entry valign="top" align="center" colsep="1" morerows="0" rowsep="1"><para><p><dmcref xrefid="A1A70320001a351ac"> <dmcref xrefid="A1A70320002a351ac"></p>
+</para>
+</entry>
+<entry valign="top" align="center" colsep="1" morerows="0" rowsep="1"><para><p><dmcref xrefid="A1A72530008A311AC"></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" align="center" colsep="1" morerows="0" rowsep="1"><para><p>Secteur virole BP <refipc csn="72530001 029 "> <refipc csn="72530001 030 "> <refipc csn="72530001 031 "> <refipc csn="72530001 032 "></p>
+</para>
+</entry>
+<entry valign="top" align="center" colsep="1" morerows="0" rowsep="1"><para><p>Contr&ocirc;le visuel</p>
+</para>
+</entry>
+<entry valign="top" align="center" colsep="1" morerows="0" rowsep="1"><para><p><dmcref xrefid="A1A72530001A311AC"></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" align="center" colsep="1" morerows="0" rowsep="1"><para><p>D&eacute;flecteur thermique <refipc csn="72530001 001 "></p>
+</para>
+</entry>
+<entry valign="top" align="center" colsep="1" morerows="0" rowsep="1"><para><p>Contr&ocirc;le visuel</p>
+</para>
+</entry>
+<entry valign="top" align="center" colsep="1" morerows="0" rowsep="1"><para><p><dmcref xrefid="A1A72530012A311AC"></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" morerows="0"><para><p>Support de pyrom&egrave;tre <refipc csn="72530001 064 "></p>
+</para>
+</entry>
+<entry valign="top" align="center" morerows="0"><para><p>Contr&ocirc;le visuel</p>
+</para>
+</entry>
+<entry valign="top" align="center" morerows="0"><para><p><dmcref xrefid="A1A72530014A311AC"></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" morerows="0"><para change="mod"><applic><config><mod modnb="252-9R1" change="mod" modcond="pre"></config></applic>
+<p>T&ocirc;les d'&eacute;tanch&eacute;it&eacute;, anneau HP <refipc csn="72530001 050 "> <refipc csn="72530002 005 "> <refipc csn="72530005 004 " isn="00A"> <refipc csn="72530001 051 "> <refipc csn="72530002 006 "> <refipc csn="72530005 005 "> <refipc csn="72530001 052 "> <refipc csn="72530002 008 "> <refipc csn="72530005 006 "> <refipc csn="72530001 055 "> <refipc csn="72530002 010 "> <refipc csn="72530005 007 "></p>
+</para>
+<para change="add"><applic><config><mod modnb="252-9R1" change="add" modcond="post"></config></applic>
+<p change="add">T&ocirc;les d'&eacute;tanch&eacute;it&eacute;, anneau HP <refipc csn="72530005 004 " isn="00C"> <refipc csn="72530005 005 "> <refipc csn="72530005 006 " isn="00C"> </p>
+</para>
+</entry>
+<entry valign="top" align="center" morerows="0"><para><p>Contr&ocirc;le visuel</p>
+</para>
+</entry>
+<entry valign="top" align="center" morerows="0"><para change="mod"><applic><config><mod modnb="252-9R1" change="mod" modcond="pre"></config></applic>
+<p><dmcref xrefid="A1A72530032A311AC"></p>
+</para>
+<para change="add"><applic><config><mod modnb="252-9R1" change="add" modcond="post"></config></applic>
+<p><dmcref change="add" xrefid="A1A72530032A311AC"></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" morerows="0"><para><p>Cales, segment anneau BP <refipc csn="72530001 026 "> <refipc csn="72530001 027 "></p>
+</para>
+</entry>
+<entry valign="top" align="center" morerows="0"><para><p>Contr&ocirc;le visuel</p>
+</para>
+</entry>
+<entry valign="top" align="center" morerows="0"><para><p><dmcref xrefid="A1A72530033A311AC"></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" morerows="0"><para><p>Verrou <refipc csn="72530001 029 "></p>
+</para>
+</entry>
+<entry valign="top" align="center" morerows="0"><para><p>Contr&ocirc;le visuel</p>
+</para>
+</entry>
+<entry valign="top" align="center" morerows="0"><para><p><dmcref xrefid="A1A72530034A311AC"></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" morerows="0"><para><p>Secteur verrou, anneau turbine <refipc csn="72530001 046 "></p>
+</para>
+</entry>
+<entry valign="top" align="center" morerows="0"><para><p>Contr&ocirc;le visuel</p>
+</para>
+</entry>
+<entry valign="top" align="center" morerows="0"><para><p><dmcref xrefid="A1A72530031A311AD"></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top"><para><p>Raccord coud&eacute; <refipc csn="72530001 001 "><refipc csn="72530001 003 "><refipc csn="72530001 005 "><refipc csn="72530001 007 "></p>
+</para>
+</entry>
+<entry valign="top" align="center"><para><p>Contr&ocirc;le visuel</p>
+</para>
+</entry>
+<entry valign="top" align="center"><para><p><dmcref xrefid="A1A72530030A311AC"></p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step1>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000015564 0>

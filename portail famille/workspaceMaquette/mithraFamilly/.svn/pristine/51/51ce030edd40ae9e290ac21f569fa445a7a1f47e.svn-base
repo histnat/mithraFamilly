@@ -1,0 +1,235 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1A725200SF030190014A011 SYSTEM "x-dm://0900f90b80002530,MYWORKING" NDATA tiff>
+<!ENTITY A1A725200SF030190028A011 SYSTEM "x-dm://0900f90b8000253e,MYWORKING" NDATA tiff>
+<!ENTITY A1A725200SF030190069A011 SYSTEM "x-dm://0900f90b80002567,MYWORKING" NDATA tiff>
+<!ENTITY A1A725200SF030190070A011 SYSTEM "x-dm://0900f90b80002569,MYWORKING" NDATA tiff>
+<!ENTITY A1A725200SF030190116A011 SYSTEM "x-dm://0900f90b8000246b,MYWORKING" NDATA tiff>
+<!ENTITY A1A725200SF030190118A011 SYSTEM "x-dm://0900f90b8000246d,MYWORKING" NDATA tiff>
+<!ENTITY A1A725200SF030100165A011 SYSTEM "x-dm://0900f90b80003446,MYWORKING" NDATA cgm>
+<!ENTITY A1A725200SF030100166A011 SYSTEM "x-dm://0900f90b80003c98,MYWORKING" NDATA cgm>
+]>
+<?Pub Inc>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>01</discode><discodev>A</discodev><incode>527</incode><incodev>C</incodev><itemloc>C</itemloc></avee></dmc>
+<dmtitle><techname>ROTOR TURBINE HP EQUIPE</techname><infoname>PROCEDURES DE DEPOSE PROPREMENT DITE - DU BATI REPOS MODULES OU DU SUPPORT VERTICAL MODULES</infoname></dmtitle>
+<issno type="d" issno="3">
+<issdate month="12" year="2008" day="12">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 1"></version>
+<version version="M88-2 ETAPE 4"></version>
+<nti nti2="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Ce Data-Module est remplac&eacute; par le Data-Module A1A72520001A527DC</rfu>
+<remarks>RAS</remarks>
+<icns><icn id="A1A725200SF030190028A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>90028</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A725200SF030190069A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>90069</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A725200SF030190070A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>90070</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A725200SF030100165A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00165</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A725200SF030190116A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>90116</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A725200SF030190014A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>90014</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A725200SF030190118A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>90118</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A725200SF030100166A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00166</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<norefs>
+</refs><proced><pmd>
+<manhour value="0,2"></manhour>
+<duration value="0,2"></duration>
+</pmd><prelreqs><reqconds><reqcondli change="MOD"><reqcond>
+<cond change="MOD"><para><applic><systemid><customer aaf="1" anf="0"></systemid></applic>
+<p>Ensemble rotor HP sur b&acirc;ti repos modules <supeqref refid="O2.00500">.</p>
+</para>
+<para><applic><systemid><customer aaf="0" anf="1"></systemid></applic>
+<p>Ensemble rotor sur support vertical modules <supeqref refid="O2.00713">, chapeau de protection palier 4 <supeqref refid="O2.00230"> en place sur module8.</p>
+</para>
+</cond>
+</reqcond></reqcondli></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="0,2"></reqper>
+</reqpers><supequip><supeqli>
+<supequi id="O2.00357"><refipc csn="72016601 008 "><nomen>Protecteur de turbine</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.00316"><refipc csn="72016601 003 "><nomen>Protecteur de disque M8</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.00093"><refipc csn="72016701 062 "><nomen>Outillage manutention module 8</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.00352"><refipc csn="72016701 081 "><nomen>Cl&eacute; outillage manutention module 8</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.00350"><refipc csn="72016701 095 "><nomen>Ecrou outillage pose module 8</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.00500"><refipc csn="72016701 192 "><nomen>B&acirc;ti repos module</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.00713"><refipc csn="72016801 036 "><nomen>Support vertical modules</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.00230"><refipc csn="72016601 002 "><nomen>Chapeau de protection palier 4</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.00264"><refipc csn="72016701 045 "><nomen>Support cl&eacute;/manutention corps HP</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.00067"><refipc csn="72016701 021 "><nomen>Out. pose MOD 8</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.00577"><refipc csn="72016701 171 "><nomen>Broche positionnement tirant 1</nomen><quantity>1</quantity></supequi>
+</supeqli><nosupeqs></supequip><supplies><nosupply></supplies><miscs><nomisc></miscs><safety><nosafety></safety></prelreqs><mainfunc>
+<step1 control="0" id="P10">
+<para><p>D&eacute;poser le chapeau de protection palier 4 <supeqref refid="O2.00230"> <figref refid="A725200SF030190028A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P20">
+<applic><systemid><customer aaf="1" anf="0"></systemid></applic>
+<para><p>Installer le protecteur de turbine HP <supeqref refid="O2.00357"> <figref repnohot="2.00357" refid="A725200SF030190069A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P30">
+<applic><systemid><customer aaf="0" anf="1"></systemid></applic>
+<para><p>Installer le protecteur de turbine HP <supeqref refid="O2.00357"> <figref repnohot="2.00357" refid="A725200SF030190070A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P40">
+<para><p>Installer le protecteur disque M8 <supeqref refid="O2.00316"> dans le tourillon <figref repnohot="2.00316" refid="A725200SF030100165A011">.</p>
+<note>
+<p>Le protecteur se visse dans le sens anti horaire&nbsp;(&ldquo;pas &agrave;gauche&rdquo;)</p>
+</note>
+</para>
+</step1>
+<step1 control="0" id="P50">
+<para><p>R&eacute;tracter les patins de l&apos;outillage de manutention module 8, par action sur l'ensemble &eacute;crous goupilles orient&eacute;es &agrave;l'int&eacute;rieur <figref repnohot="2.00093Rep06, 2.00093Rep03" refid="A725200SF030100165A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P60">
+<para><p>Placer l'ensemble &agrave; l'int&eacute;rieur du protecteur <supeqref refid="O2.00316"> <figref repnohot="2.00316" refid="A725200SF030100165A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P70">
+<para><p>Placer la cl&eacute; outillage manutention M8 <supeqref refid="O2.00352"> <figref repnohot="2.00352" refid="A725200SF030100165A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P80">
+<applic><systemid><version version="M88-2 ETAPE 1"></version></systemid></applic>
+<para><p>Positionner les patins par action sur l'ensemble &eacute;crous , goupillesorient&eacute;es vers l'ext&eacute;rieur afin d'immobiliser le disque labyrinthe, turbine HP <refipc csn="72520001 013 "> <figref repnohot="2.00093Rep06, 2.00093Rep03" refid="A725200SF030100165A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P90">
+<applic><systemid><version version="M88-2 ETAPE 4"></version></systemid></applic>
+<para><p>Positionner les patins par action sur l'ensemble &eacute;crous , goupillesorient&eacute;es vers l'ext&eacute;rieur afin d'immobiliser le disque labyrinthe, turbine HP <refipc csn="72520001A019 "> <figref repnohot="2.00093Rep06, 2.00093Rep03" refid="A725200SF030100165A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P100">
+<para><p>Bloquer les &eacute;crous molet&eacute;s <figref repnohot="2.00093Rep03" refid="A725200SF030100165A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P110">
+<para><p>Placer l'&eacute;crou outillage pose module&nbsp;8 <supeqref refid="O2.00350">.</p>
+</para>
+</step1>
+<step1 control="0" id="P120">
+<title>POUR INSTALLATION DU ROTOR DE TURBINE HP SUR MOTEUR ASSEMBLE</title>
+<step2 control="0" id="P120-10">
+<para><p>D&eacute;visser les deux vis molet&eacute;es <figref repnohot="2.00264Rep11, 2.00264Rep13" refid="A725200SF030190116A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P120-20">
+<para><p>D&eacute;poser l'&eacute;crou (Rep. 05) de l'outillage <supeqref refid="O2.00067"> <figref repnohot="2.00067Rep05" refid="A725200SF030190116A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P120-30">
+<para><p>Tourner le disque pour aligner les trous du disque avec les 3 vis <figref repnohot="2.00067Rep03, 2.00067Rep50" refid="A725200SF030190014A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P120-40">
+<para><p>D&eacute;visser les trois vis pour lib&eacute;rer la bague &agrave; cran <figref repnohot="2.00067Rep50, 2.00067Rep04" refid="A725200SF030190014A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P120-50">
+<para><p>Rep&eacute;rer l'empreinte situ&eacute;e sur la collerette du tourillon <figref refid="A725200SF030190118A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P120-60">
+<para><p>Simultan&eacute;ment, engager le tenon de la bague &agrave; cran dans un cr&eacute;neau du tourillon, orienter l'ensemble par les broches de positionnement <figref repnohot="2.00067Rep04" refid="A725200SF030190014A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P120-70">
+<para><p>Brider l'ensemble &agrave; partir des &eacute;crous molet&eacute;s <figref repnohot="2.00264Rep11, 2.00264Rep13" refid="A725200SF030190014A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P120-80">
+<para><p>V&eacute;rifier la position de l'empreinte turbine HP. Elle doit &ecirc;tre align&eacute;e avec la partie plate de la broche <supeqref refid="O2.00577"> <figref refid="A725200SF030190118A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P120-90">
+<para><p>Eventuellement, parfaire l'alignement.</p>
+</para>
+</step2>
+<step2 control="0" id="P120-100">
+<para><p>Lib&eacute;rer la bague &agrave; cran et les vis <figref repnohot="2.00067Rep04, 2.00067Rep50" refid="A725200SF030190014A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P120-110">
+<para><p>Immobiliser la bague &agrave; cran <figref repnohot="2.00067Rep04" refid="A725200SF030190014A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P120-120">
+<para><p>Serrer les 3 vis <figref repnohot="2.00067Rep50" refid="A725200SF030190014A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P120-130">
+<para><p>Centrer l'ensemble &agrave; l'aide de l'&eacute;crou <figref repnohot="2.00067Rep05" refid="A725200SF030100166A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P120-140">
+<para><p>V&eacute;rifier le bon positionnement <figref refid="A725200SF030190118A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P120-150">
+<para><p>Extraire la broche <supeqref refid="O2.00577"> <figref repnohot="2.00577" refid="A725200SF030190118A011">.</p>
+</para>
+</step2>
+</step1>
+<step1 control="0" id="P130">
+<para><p>Accrocher l'ensemble au palan.</p>
+</para>
+</step1>
+<figure id="A725200SF030190028A011">
+<title change="MOD">CHAPEAU DE PROTECTION</title>
+<graphic callicn="A1A725200SF030190028A011" change="MOD">
+</figure>
+<figure id="A725200SF030190069A011">
+<applic><systemid><customer aaf="1" anf="0"></systemid></applic>
+<title change="MOD">PROTECTEUR DE TURBINE</title>
+<graphic callicn="A1A725200SF030190069A011" change="MOD">
+</figure>
+<figure id="A725200SF030190070A011">
+<applic><systemid><customer aaf="0" anf="1"></systemid></applic>
+<title change="MOD">PROTECTEUR DE TURBINE</title>
+<graphic callicn="A1A725200SF030190070A011" change="MOD">
+</figure>
+<figure id="A725200SF030100165A011">
+<title change="MOD">PROTECTEUR DE DISQUE</title>
+<graphic callicn="A1A725200SF030100165A011">
+</figure>
+<figure id="A725200SF030190116A011">
+<title change="MOD">OUTILLAGE POSE MODULE&nbsp;08</title>
+<graphic callicn="A1A725200SF030190116A011" change="MOD">
+</figure>
+<figure id="A725200SF030190014A011">
+<title change="MOD">ALIGNEMENT DU DISQUE</title>
+<graphic callicn="A1A725200SF030190014A011" change="MOD">
+</figure>
+<figure id="A725200SF030190118A011">
+<title change="MOD">BROCHE POSITIONNEMENT TIRANT</title>
+<graphic callicn="A1A725200SF030190118A011" change="MOD">
+</figure>
+<figure id="A725200SF030100166A011">
+<title change="MOD">CENTRAGE DE L'ENSEMBLE</title>
+<graphic callicn="A1A725200SF030100166A011">
+</figure>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000013737 0>

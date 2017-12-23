@@ -1,0 +1,369 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1B725200SF030100446A011 SYSTEM "x-dm://0900f90b8006d361,MYWORKING" NDATA cgm>
+<!ENTITY A1A725200SF030100429A011 SYSTEM "x-dm://0900f90b80068f30,MYWORKING" NDATA cgm>
+<!ENTITY A1B725200SF030100418A021 SYSTEM "x-dm://0900f90b80068f31,MYWORKING" NDATA cgm>
+<!ENTITY A1A725200SF030100258A011 SYSTEM "x-dm://0900f90b800039aa,MYWORKING" NDATA cgm>
+<!ENTITY A1B725200SF030100419A011 SYSTEM "x-dm://0900f90b80064a0c,MYWORKING" NDATA cgm>
+<!ENTITY A1B725200SF030100418A011 SYSTEM "x-dm://0900f90b80064a0b,MYWORKING" NDATA cgm>
+<!ENTITY A1B725200SF030100417A011 SYSTEM "x-dm://0900f90b80064a0a,MYWORKING" NDATA cgm>
+<!ENTITY A1B725200SF030100416A011 SYSTEM "x-dm://0900f90b80064a09,MYWORKING" NDATA cgm>
+<!ENTITY A1A725200SF030100390A011 SYSTEM "x-dm://0900f90b8005bd49,MYWORKING" NDATA cgm>
+<!ENTITY A1A725200SF030100253A021 SYSTEM "x-dm://0900f90b80004020,MYWORKING" NDATA cgm>
+<!ENTITY A1A725200SF030100254A011 SYSTEM "x-dm://0900f90b800039a4,MYWORKING" NDATA cgm>
+<!ENTITY A1A725200SF030100255A011 SYSTEM "x-dm://0900f90b800039a6,MYWORKING" NDATA cgm>
+<!ENTITY A1A725200SF030100256A011 SYSTEM "x-dm://0900f90b800039a8,MYWORKING" NDATA cgm>
+<!ENTITY A1A725200SF030100257A011 SYSTEM "x-dm://0900f90b800039a9,MYWORKING" NDATA cgm>
+<!ENTITY A1A725200SF030100258A021 SYSTEM "x-dm://0900f90b80004021,MYWORKING" NDATA cgm>
+]>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>02</discode><discodev>A</discodev><incode>310</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmc>
+<dmtitle><techname>DISQUE TOURILLON TURBINE HP</techname><infoname>CONTROLES VISUELS</infoname></dmtitle>
+<issno type="r" issno="5">
+<issdate month="08" year="2011" day="15">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 4"></version>
+<customer aaf="1" anf="1">
+<nti nti1="0" nti2="0" nti3="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Prise en compte de la MOD 250-78R1 + Pr&eacute;cisions sur les aptitudes physiques requises pour le contr&ocirc;le + Pr&eacute;cisions sur les moyens d'&eacute;clairage requis.</rfu>
+<remarks>RAS</remarks>
+<icns><icn id="A1A725200SF030100253A021">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00253</illnum><illver>A</illver><illupdat>02</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1B725200SF030100419A011">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00419</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A725200SF030100254A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00254</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A725200SF030100255A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00255</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1B725200SF030100416A011">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00416</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A725200SF030100256A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00256</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A725200SF030100257A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00257</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A725200SF030100258A021">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00258</illnum><illver>A</illver><illupdat>02</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1B725200SF030100417A011">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00417</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A725200SF030100390A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00390</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1B725200SF030100418A021">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00418</illnum><illver>A</illver><illupdat>02</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A725200SF030100429A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00429</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1B725200SF030100446A011">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00446</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<refdm>
+<dmcid id="A1A70380001A311AD"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>3</section><subsect>8</subsect><subject>00</subject><discode>01</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmcid>
+<dmcid id="A1A70380005A311AD"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>3</section><subsect>8</subsect><subject>00</subject><discode>05</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmcid>
+<dmcid id="A1A72520002A311AD"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>02</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmcid>
+</refdm>
+</refs><proced><pmd>
+<manhour value="0,1"></manhour>
+<duration value="0,1"></duration>
+</pmd><prelreqs><reqconds>
+<noconds></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="0,1"></reqper>
+</reqpers><supequip><supeqli>
+<supequi id="O2.31030"><refipc csn="72016101 053 "><nomen>PLATEAU DE CONTROLE</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.31029"><refipc csn="72016801 097 "><nomen>OUTILLAGE DE RETOURNEMENT</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.31055"><refipc csn="72016801 098 "><nomen>OUTILLAGE DE MANUTENTION</nomen><quantity>1</quantity></supequi>
+</supeqli><nosupeqs></supequip><supplies><nosupply></supplies><miscs><nomisc></miscs><safety>
+<specpara>
+<caution>
+<p>En cas de pr&eacute;sence de rayure, effectuer un contr&ocirc;le rayure au stylet sur pi&egrave;ce MDP <dmcref xrefid="A1A70380001A311AD"></p>
+</caution>
+</specpara>
+</safety></prelreqs><mainfunc>
+<step1 control="0" id="P10">
+<para><applic><config><mod modnb="250-78R1" modcond="PRE"></config></applic>
+<p>Prendre le rotor <refipc csn="72520001A000 " isn="00A"> dans la caisse et le poser sur une table &agrave; l'aide de l'outillage de manutention <supeqref refid="O2.31055"> <figref repnohot="2.31055" refid="A725200SF030100253A021">.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="POST"></config></applic>
+<p>Prendre le rotor <refipc csn="72520001A000 " isn="00C"> dans la caisse et le poser sur une table &agrave; l'aide de l'outillage de manutention <supeqref refid="O2.31055"> <figref repnohot="2.31055" refid="B725200SF030100419A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P20">
+<para><applic><config><mod modnb="250-78R1" modcond="PRE"></config></applic>
+<p>Mettre le rotor sur le plateau de contr&ocirc;le <supeqref refid="O2.31030"> &agrave; l'aide de l'outillage de retournement <supeqref refid="O2.31029"> <figref repnohot="2.30130" refid="A725200SF030100258A021"><?Pub Caret> <figref repnohot="2.31029" refid="A725200SF030100254A011">.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="POST"></config></applic>
+<p>Mettre le rotor sur le plateau de contr&ocirc;le <supeqref refid="O2.31030"> &agrave; l'aide de l'outillage de retournement <supeqref refid="O2.31029"> <figref repnohot="2.30130" refid="B725200SF030100417A011"> <figref repnohot="2.31029" refid="A725200SF030100254A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P30">
+<para><applic><config><mod modnb="250-78R1" modcond="PRE"></config></applic>
+<p>Contr&ocirc;ler les zones int&eacute;rieures A et D <xref xrefid="P100"> <figref refid="A725200SF030100255A011">.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="POST"></config></applic>
+<p>Contr&ocirc;ler les zones int&eacute;rieures A et D <xref xrefid="P100"> <figref refid="B725200SF030100416A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P40">
+<para><p>Retourner le rotor &agrave; l'aide de l'outillage de retournement <supeqref refid="O2.31029"><figref repnohot="2.31029" refid="A725200SF030100254A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P50">
+<para><p>Contr&ocirc;ler les zones ext&eacute;rieures et en particulier au niveau des trous de ventilation.</p>
+</para>
+</step1>
+<step1 control="0" id="P60">
+<para><applic><config><mod modnb="250-78R1" modcond="PRE"></config></applic>
+<p>Contr&ocirc;ler les zones int&eacute;rieures suivantes <xref xrefid="P100"> <figref refid="A725200SF030100255A011">&nbsp;:</p>
+</para>
+<list type="SIMPLE">
+<item><para><p>zone B,</p>
+</para>
+</item>
+<item><para><p>zone C <figref refid="A725200SF030100256A011">,</p>
+</para>
+</item>
+<item><para><p>zone E <figref refid="A725200SF030100255A011"> et <figref refid="A725200SF030100257A011">.</p>
+</para>
+</item>
+</list>
+<para><applic><config><mod modnb="250-78R1" modcond="POST"></config></applic>
+<p>Contr&ocirc;ler les zones int&eacute;rieures suivantes <figref refid="B725200SF030100416A011">&nbsp;:</p>
+</para>
+<list type="SIMPLE">
+<item><para><p>zone B,</p>
+</para>
+</item>
+<item><para><p>zone C <figref refid="A725200SF030100256A011">,</p>
+</para>
+</item>
+</list>
+</step1>
+<step1 control="0" id="P70">
+<para><applic><config><mod modnb="250-78R1" modcond="POST"></config></applic>
+<p>Effectuer un contr&ocirc;le visuel sp&eacute;cifique du col face amont du disque tourillon <figref refid="B725200SF030100446A011">.</p>
+</para>
+<note>
+<p>Les aptitudes physiques suivantes sont requises pour le contr&ocirc;le de cette zone :</p>
+<p>- La vision de pr&egrave;s doit satisfaire les exigences suivantes : lecture de l'&eacute;chelle Jaeger N&deg;1 ou &eacute;quivalent &agrave; une distance d'au moins 30 cm, pour au moins un oeil, avec ou sans correction.</p>
+<p>- La perception des couleurs doit lui permettre de distinguer et diff&eacute;rencier les couleurs ou nuances de gris de fa&ccedil;on adapt&eacute;e aux indications recherch&eacute;es.</p>
+<p>- La v&eacute;rification de l'acuit&eacute; visuelle doit &ecirc;tre renouvel&eacute;e obligatoirement tous les ans.</p>
+</note>
+<note>
+<p>Les moyens d&rsquo;&eacute;clairage suivants sont requis pour le contr&ocirc;le de cette zone :</p>
+<p>- Le dispositif d&rsquo;&eacute;clairage doit &ecirc;tre choisi de mani&egrave;re &agrave; garantir une intensit&eacute; minimum de 1000 Lux au niveau de la zone &agrave; contr&ocirc;ler et un domaine spectral de lumi&egrave;re compris entre 400 nm et 700 nm et centr&eacute; au plus proche de 550 nm.</p>
+<p>Il est &eacute;galement pr&eacute;conis&eacute; d&rsquo;employer un cordon de fibres optiques souple pour transporter la lumi&egrave;re du g&eacute;n&eacute;rateur &agrave; la zone de la pi&egrave;ce &agrave; contr&ocirc;ler.</p>
+<p>Exemple de g&eacute;n&eacute;rateur de lumi&egrave;re blanche : EFER type Vega 400/T02. </p>
+</note>
+</step1>
+<step1 control="0" id="P80">
+<para><p>Installer le disque sur la face arri&egrave;re.</p>
+</para>
+</step1>
+<step1 control="0" id="P90">
+<para><applic><config><mod modnb="250-78R1" modcond="PRE"></config></applic>
+<p>Effectuer un contr&ocirc;le lumi&egrave;re rasante de la zone de sortie des trous curvilignes <figref refid="A725200SF030100390A011"> et suivant les instructions <dmcref xrefid="A1A70380005A311AD">.</p>
+<note>
+<p>Eclairer la zone &agrave; contr&ocirc;ler en lumi&egrave;re rasante en faisant varier l'intensit&eacute; pour &eacute;viter l'&eacute;blouissement.</p>
+<p>Balayer la zone de sortie des trous curvilignes avec le faisceau lumineux en veillant &agrave; toujours respecter un angle de 20&deg; maximum par rapport &agrave; la surface &agrave; inspecter.</p>
+</note>
+<note>
+<p>Si d&eacute;tection d'une indication, passage du stylet de rayon 0,125 mm sur celle-ci pour v&eacute;rifier la sensibilit&eacute; et juger de l'acceptabilit&eacute; de l'indication <dmcref xrefid="A1A70380001A311AD">.</p>
+</note>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="POST"></config></applic>
+<p>Effectuer un contr&ocirc;le visuel renforc&eacute; des surfaces sur toute la longueur du brochage incluant :</p>
+</para>
+<list>
+<item><para><p>les trous de bride <figref refid="A725200SF030100429A011"> et suivant les instructions <dmcref xrefid="A1A70380005A311AD">,</p>
+</para>
+</item>
+<item><para><p>les festons de bride <figref refid="A725200SF030100429A011"> et suivant les instructions <dmcref xrefid="A1A70380005A311AD">,</p>
+</para>
+</item>
+<item><para><p>les rayonnages amont/aval de chaque alv&eacute;ole <figref refid="B725200SF030100418A021"> et suivant les instructions <dmcref xrefid="A1A70380005A311AD">,</p>
+</para>
+</item>
+<item><para><p>les dents du disque et fond d'alv&eacute;ole <figref refid="B725200SF030100418A021"> et suivant les instructions <dmcref xrefid="A1A70380005A311AD">.</p>
+</para>
+</item>
+<note>
+<p>Eclairer la zone &agrave; contr&ocirc;ler en lumi&egrave;re rasante en faisant varier l'intensit&eacute; pour &eacute;viter l'&eacute;blouissement.</p>
+<p>Balayer la zone de sortie des trous curvilignes avec le faisceau lumineux en veillant &agrave; toujours respecter un angle de 20&deg; maximum par rapport &agrave; la surface &agrave; inspecter.</p>
+</note>
+<note>
+<p>Si d&eacute;tection d'une indication, passage du stylet de rayon 0,125 mm sur celle-ci pour v&eacute;rifier la sensibilit&eacute; et juger de l'acceptabilit&eacute; de l'indication <dmcref xrefid="A1A70380001A311AD">.</p>
+</note>
+</list>
+</step1>
+<step1 control="0" id="P100">
+<para><p>Prendre le rotor &agrave; l'aide de l'outillage de retournement <supeqref refid="O2.31029"> et le d&eacute;poser sur une table <figref repnohot="2.31029" refid="A725200SF030100254A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P110">
+<para><applic><config><mod modnb="250-78R1" modcond="PRE"></config></applic>
+<p>Installer le rotor dans la caisse &agrave; l'aide de l'outillage de manutention <supeqref refid="O2.31055"> <figref repnohot="2.31055" refid="A725200SF030100253A021">.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="POST"></config></applic>
+<p>Installer le rotor dans la caisse &agrave; l'aide de l'outillage de manutention <supeqref refid="O2.31055"> <figref repnohot="2.31055" refid="B725200SF030100419A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P120">
+<title>Tableau du mat&eacute;riel utilis&eacute;</title>
+<table tocentry="1">
+<tgroup cols="3" align="LEFT"><colspec colnum="1" colname="COL1" colwidth="3cm" align="CENTER"><colspec colnum="2" colname="COL2" colwidth="5cm" align="CENTER"><colspec colnum="3" colname="COL3" colwidth="8cm" align="CENTER">
+<tbody valign="TOP">
+<row>
+<entry colname="COL1" valign="TOP" align="CENTER" morerows="0"><para><p>N&deg; DE ZONE</p>
+</para>
+</entry>
+<entry colname="COL2" valign="TOP" align="CENTER" morerows="0"><para><p>NOM DE LA ZONE</p>
+</para>
+</entry>
+<entry colname="COL3" valign="TOP" align="CENTER" morerows="0"><para><p>MATERIEL UTILISE</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="COL1" valign="TOP" align="CENTER" morerows="0"><para><p>A</p>
+</para>
+</entry>
+<entry colname="COL2" valign="TOP" align="CENTER" morerows="0"><para><p>EXTERIEUR DISQUE TURBINE HP</p>
+</para>
+</entry>
+<entry colname="COL3" valign="TOP" align="CENTER" morerows="0"><para><p>Lampe LB&nbsp;+&nbsp;miroir 90&nbsp;mm&nbsp;x&nbsp;60&nbsp;mm</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="COL1" valign="TOP" align="CENTER" morerows="0"><para><p>B</p>
+</para>
+</entry>
+<entry colname="COL2" valign="TOP" align="CENTER" morerows="0"><para><p>INTERIEUR DISQUE TURBINE HP</p>
+</para>
+</entry>
+<entry colname="COL3" valign="TOP" align="CENTER" morerows="0"><para><p>Lampe LB&nbsp;+&nbsp;miroir 90&nbsp;mm&nbsp;x&nbsp;60&nbsp;mm</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry colname="COL1" valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>C</p>
+</para>
+</entry>
+<entry colname="COL2" valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>POCHE</p>
+</para>
+<para><p> (entr&eacute;e de la poche)</p>
+</para>
+</entry>
+<entry colname="COL3" valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>Endoscope LB&nbsp;Dia&nbsp;6,5&nbsp;mm VD Ch 40&nbsp;&deg; lg&nbsp;=&nbsp;410&nbsp;mm&nbsp;+&nbsp;gaine porte miroir vis&eacute;e 110&nbsp;&deg;</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry colname="COL1" valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>D</p>
+</para>
+</entry>
+<entry colname="COL2" valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>POCHE</p>
+</para>
+<para><p> (faces lat&eacute;rales et cordon FE)</p>
+</para>
+</entry>
+<entry colname="COL3" valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>Fibre LB&nbsp;+&nbsp;miroir&nbsp;90&nbsp;mm&nbsp;x&nbsp;60&nbsp;mm&nbsp;</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="COL1" valign="TOP" align="CENTER" morerows="0"><para><applic><config><mod modnb="250-78R1" modcond="PRE"></config></applic>
+<p>E</p>
+</para>
+</entry>
+<entry colname="COL2" valign="TOP" align="CENTER" morerows="0"><para><applic><config><mod modnb="250-78R1" modcond="PRE"></config></applic>
+<p>TROUS CURVILIGNES</p>
+</para>
+</entry>
+<entry colname="COL3" valign="TOP" align="CENTER" morerows="0"><para><p>Endoscope LB&nbsp;Dia&nbsp;6,5&nbsp;mm VD Ch 40&nbsp;&deg; lg&nbsp;=&nbsp;410&nbsp;mm</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<note>
+<p>En cas de d&eacute;fauts <dmcref xrefid="A1A72520002A311AD">.</p>
+</note>
+</step1>
+<figure id="A725200SF030100253A021">
+<applic><config><mod modnb="250-78R1" modcond="PRE"></config></applic>
+<title>OUTILLAGE DE MANUTENTION - Avant modification 250-78R1</title>
+<graphic callicn="A1A725200SF030100253A021">
+</figure>
+<figure id="B725200SF030100419A011">
+<applic><config><mod modnb="250-78R1" modcond="POST"></config></applic>
+<title>OUTILLAGE DE MANUTENTION - Apr&egrave;s modification 250-78R1</title>
+<graphic callicn="A1B725200SF030100419A011">
+</figure>
+<figure id="A725200SF030100254A011">
+<title> OUTILLAGE DE RETOURNEMENT</title>
+<graphic callicn="A1A725200SF030100254A011">
+</figure>
+<figure id="A725200SF030100255A011">
+<applic><config><mod modnb="250-78R1" modcond="PRE"></config></applic>
+<title>CONTROLE ZONES INTERIEURES A, B, C, D et E &ndash; Avant modification 250-78R1</title>
+<graphic callicn="A1A725200SF030100255A011">
+</figure>
+<figure id="B725200SF030100416A011">
+<applic><config><mod modnb="250-78R1" modcond="POST"></config></applic>
+<title>CONTROLE ZONES INTERIEURES A, B, C et D &ndash; Apr&egrave;s modification 250-78R1</title>
+<graphic callicn="A1B725200SF030100416A011">
+</figure>
+<figure id="A725200SF030100256A011">
+<title>CONTROLE ZONE INTERIEURE C</title>
+<graphic callicn="A1A725200SF030100256A011">
+</figure>
+<figure id="A725200SF030100257A011">
+<applic><config><mod modnb="250-78R1" modcond="PRE"></config></applic>
+<title>CONTROLE ZONE INTERIEURE E &ndash; Avant modification 250-78R1</title>
+<graphic callicn="A1A725200SF030100257A011">
+</figure>
+<figure id="A725200SF030100258A021">
+<applic><config><mod modnb="250-78R1" modcond="PRE"></config></applic>
+<title>PLATEAU DE CONTROLE &ndash; Avant modification 250-78R1</title>
+<graphic callicn="A1A725200SF030100258A021">
+</figure>
+<figure id="B725200SF030100417A011">
+<applic><config><mod modnb="250-78R1" modcond="POST"></config></applic>
+<title>PLATEAU DE CONTROLE &ndash; Apr&egrave;s modification 250-78R1</title>
+<graphic callicn="A1B725200SF030100417A011">
+</figure>
+<figure id="A725200SF030100390A011">
+<applic><config><mod modnb="250-78R1" modcond="PRE"></config></applic>
+<title>CONTROLE LUMIERE RASANTE SORTIE DES TROUS CURVILIGNES &ndash; Avant modification 250-78R1</title>
+<graphic callicn="A1A725200SF030100390A011">
+</figure>
+<figure id="B725200SF030100418A021">
+<applic><config><mod modnb="250-78R1" modcond="POST"></config></applic>
+<title>CONTROLE DES DENTS DU DISQUE ET FOND D'ALVEOLE &ndash; Apr&egrave;s modification 250-78R1</title>
+<graphic callicn="A1B725200SF030100418A021">
+</figure>
+<figure id="A725200SF030100429A011">
+<applic><config><mod modnb="250-78R1" modcond="POST"></config></applic>
+<title>CONTROLE DES TROUS ET DES FESTONS DU DISQUE TOURILLON &ndash; Apr&egrave;s modification 250-78R1</title>
+<graphic callicn="A1A725200SF030100429A011">
+</figure>
+<figure id="B725200SF030100446A011">
+<applic><config><mod modnb="250-78R1" modcond="POST"></config></applic>
+<title>CONTROLE VISUEL DU COL FACE AMONT DU DISQUE TOURILLON &ndash; Apr&egrave;s modification 250-78R1</title>
+<graphic callicn="A1B725200SF030100446A011">
+</figure>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000022488 0>

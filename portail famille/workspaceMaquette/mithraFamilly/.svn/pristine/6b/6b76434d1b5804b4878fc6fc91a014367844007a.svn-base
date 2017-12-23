@@ -1,0 +1,126 @@
+<!--**********************************************************************
+    *									                            	 *
+    *				            RAFALE				                     *
+    *									                             	 *
+    *				      Release Version 2.0			              	 *
+    *				       Dated 19 MAY 1997            		       	 *
+    *									                            	 *
+    *									                            	 *
+    *	Company in charge of           :						       	 *
+    *									                            	 *
+    *	Dtd Object : Data Dispatch Note.        				         *
+    *									                            	 *
+    *  Amendment :												         *
+    *    19/05/97: Change public Identifier								 *
+    *                Modified comment attached to <supporid>, to reflect *
+    *                the fact that the element identifies the exchange	 *
+    *                rather than the physical 'support' of the exchange. *
+	*																	 *
+    *                add reference to  public entities ISO Latin 1		 *
+	*																	 *
+    *  The following DOCTYPE statement may be used to call this set of	 *
+    *  declarations:		                					       	 *
+    *									                            	 *
+    *	 <!DOCTYPE ddn PUBLIC					                		 *
+    *   "-//RAFALE CSDB//DTD Data Dispatch Note 971001//EN"	    		 *
+    *	 []>							                            	 *
+    ********************************************************************** -->
+
+<!--*********************************************************************
+    * Define and Reference Entity %ISOlat1; (ISO Added Latin 1).		*
+    *********************************************************************-->
+<!ENTITY % ISOlat1
+  PUBLIC "ISO 8879-1986//ENTITIES Added Latin 1//EN" >
+%ISOlat1;
+
+<!--*********************************************************************
+    * Define Element DDN (Data Dispatch Note).			                *
+    *********************************************************************-->
+<!ELEMENT ddn  - - (srcsys, supporid, bexpno, refdocc, marketno, date, ctgver,
+			nbfiles, nbdm, nbccitt4, nbcgm, nbjpeg, remarks?) >
+
+
+<!--*********************************************************************
+    * Define Element SRCSYS (Source system).				         	*
+    *********************************************************************-->
+<!ELEMENT srcsys - O (#PCDATA) -- Source System.-->
+
+
+<!--*********************************************************************
+    * Define Element SUPPORID (Exchange identificator).		           	*
+    *********************************************************************-->
+<!ELEMENT supporid - O  (#PCDATA) -- Exchange identificator.-->
+
+
+<!--*********************************************************************
+    * Define Element BEXPNO (Bordereau expedition number).	          	*
+    *********************************************************************-->
+<!ELEMENT bexpno - O  (#PCDATA) -- Bordereau expedition number.	 -->
+
+
+<!--*********************************************************************
+    * Define Element REFCDOC (Reference of the doc's contract).        	*
+    *********************************************************************-->
+<!ELEMENT refdocc - O  (#PCDATA) -- Reference of the doc's contract.-->
+
+
+<!--*********************************************************************
+    * Define Element MARKETNO (Market number).	                      	*
+    *********************************************************************-->
+<!ELEMENT marketno - O (#PCDATA) -- Market number.-->
+
+
+<!--*********************************************************************
+    * Define Element DATE (date of expedition).                   		*
+    *********************************************************************-->
+<!ELEMENT date - O  EMPTY -- Date of expedition.-->
+<!ATTLIST date
+            year 	NUMBER  #REQUIRED -- The year.--
+            month 	NUMBER	#REQUIRED -- The month of the year.--
+            day  	NUMBER  #REQUIRED -- The day of the month. -->
+
+<!--*********************************************************************
+    * Define Element CTGVER ("clauses techniques generiques"  version)  *
+    *********************************************************************-->
+<!ELEMENT ctgver - O (#PCDATA) --"clauses techniques generiques" version).-->
+
+
+<!--*********************************************************************
+    * Define Element nbfiles (total number of files).	                *
+    *********************************************************************-->
+<!ELEMENT nbfiles - O  EMPTY -- total number of files.-->
+<!ATTLIST nbfiles
+		total	NUMBER	#REQUIRED >
+
+<!--*********************************************************************
+    * Define Element nbdm (total number of data-modules).              	*
+    *********************************************************************-->
+<!ELEMENT nbdm - O  EMPTY --total number of data-modules.-->
+<!ATTLIST nbdm
+		total	NUMBER	#REQUIRED >
+
+<!--*********************************************************************
+    * Define Element nbccitt4 (total number of CCITT GR 4's files).    	*
+    *********************************************************************-->
+<!ELEMENT nbccitt4 - O  EMPTY --total number of CCITT GR 4's files.-->
+<!ATTLIST nbccitt4
+		total	NUMBER	#REQUIRED >
+
+<!--*********************************************************************
+    * Define Element nbcgm (total number of CGM's files).			    *
+    *********************************************************************-->
+<!ELEMENT nbcgm - O  EMPTY --total number of CGM's files.-->
+<!ATTLIST nbcgm
+		total	NUMBER	#REQUIRED >
+
+<!--*********************************************************************
+    * Define Element nbjpeg (total number of JPEG's files).			    *
+    *********************************************************************-->
+<!ELEMENT nbjpeg - O  EMPTY --total number of JPEG's files.-->
+<!ATTLIST nbjpeg
+		total	NUMBER	#REQUIRED >
+
+<!--*********************************************************************
+    * Define Element remarks (optional remarks).                       	*
+    *********************************************************************-->
+<!ELEMENT remarks - O (#PCDATA) --optional remarks.-->

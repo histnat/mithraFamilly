@@ -1,0 +1,220 @@
+package com.sonovision.openconv.modules.xslprocess.helper.table.impl;
+
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.StringWriter;
+import java.io.Writer;
+import java.util.Date;
+import java.util.HashSet;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.Source;
+import javax.xml.transform.stream.StreamSource;
+
+import org.w3c.dom.Attr;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.InputSource;
+
+import com.sedoc.toolbox.bean.UtilsService;
+import com.sedoc.toolbox.bean.XMLFactoryService;
+import com.sedoc.toolbox.bean.impl.UtilsServiceImpl;
+import com.sonovision.openconv.modules.xslprocess.helper.table.GetTable;
+import com.sonovision.openconv.modules.xslprocess.helper.table.model.Table;
+import com.sonovision.openconv.modules.xslprocess.helper.table.model.TableCell;
+
+public class GetTableCals implements GetTable{
+		
+	private Table inTable=null;
+	private Element eTable=null;
+	
+	private Document outDocument=null;
+	private String colNames[];
+	private HashSet<TableCell> hsTableCellTreated=null;
+	
+	
+	public GetTableCals(Table inTable){
+		this.inTable=inTable;
+		outDocument=null;
+		colNames=new String[inTable.getModel().getWidth()];
+		for(int i=0;i<colNames.length;i++){
+			colNames[i]="COL"+i;
+		}
+		hsTableCellTreated=new HashSet<TableCell>();
+	}
+	
+	public void initDocument() throws Exception{
+		DocumentBuilderFactory fabrique = DocumentBuilderFactory.newInstance();
+		DocumentBuilder builder = fabrique.newDocumentBuilder();
+		outDocument = builder.newDocument();
+	}
+	
+	private Element generateElementTable(){
+		Element eTable = (Element) outDocument.createElement("table");
+		if(inTable.getParamID()!=null){
+			eTable.setAttribute("id",inTable.getParamID());
+		}
+		if(inTable.getParamFrame()!=null){
+			eTable.setAttribute("frame",inTable.getParamFrame());
+		}
+		/*if(inTable.getParamBorder()!=null){
+			eTable.setAttribute("border",inTable.getParamBorder());
+		}
+		if(inTable.getParamBorderColor()!=null){
+			eTable.setAttribute("bordercolor",inTable.getParamBorderColor());
+		}
+		if(inTable.getParamWidth()!=null){
+			eTable.setAttribute("width",inTable.getParamWidth());
+		}
+		if(inTable.getParamTitle()!=null){
+			eTable.setAttribute("title",inTable.getParamTitle());
+		}*/
+		outDocument.appendChild(eTable);
+		return eTable;
+	}
+	
+	private Element generateElementTgroup(){
+		Element eTgroup = outDocument.createElement("tgroup");
+		eTgroup.setAttribute("cols", String.valueOf(colNames.length));
+		Element eColspec;
+		for(int i=0;i<colNames.length;i++){
+			eColspec=generateElementColspec(i);
+			eTgroup.appendChild(eColspec);
+		}
+
+		return eTgroup;
+	}
+
+	private Element generateElementColspec(int num){
+		Element eColspec = outDocument.createElement("colspec");
+		eColspec.setAttribute("colname",colNames[num]);
+		TableCell tc=null;
+		//to set param colwidth, find an non-spanned cell in the same column
+		for(int i=0;i<inTable.getModel().getHeight();i++){
+			tc=inTable.getCell(i, num);
+			if(tc.getColspan()<=1){//if(!tc.isSpanned()){
+				if(tc.getParamColWidth()!=null)
+					eColspec.setAttribute("colwidth",tc.getParamColWidth().replaceAll("%", "*"));
+//				else
+//					eColspec.setAttribute("colwidth",tc.getParamColWidth());
+				break;
+			}
+		}
+		return eColspec;
+	}
+
+	
+	private Element generateElementThead(){
+		Element eThead = outDocument.createElement("thead");
+		Element eRow=null;
+		for(int i=0;i<inTable.getModel().getHeight();i++){
+			if(inTable.getCell(i,0).getCellPartType()==TableCell.HEAD_PART_TYPE){
+				eRow=generateElementRow(i);
+				eThead.appendChild(eRow);
+			}
+		}	
+		return eThead;
+	}
+
+	
+	private Element generateElementTbody(){
+		Element eTBody = outDocument.createElement("tbody");
+		Element eRow=null;
+		for(int i=0;i<inTable.getModel().getHeight();i++){
+			if(inTable.getCell(i,0).getCellPartType()==TableCell.BODY_PART_TYPE){
+				eRow=generateElementRow(i);
+				eTBody.appendChild(eRow);
+			}
+		}	
+		return eTBody;
+	}
+	
+	
+	private Element generateElementRow(int y){
+		Element eRow = outDocument.createElement("row");
+		Element eEntry=null;
+		TableCell tc=null;
+		for(int j=0;j<inTable.getModel().getWidth();j++){
+			tc=inTable.getCell(y,j);
+			if(!hsTableCellTreated.contains(tc)){
+					eEntry=generateElementEntry(y,j);
+					eRow.appendChild(eEntry);
+					hsTableCellTreated.add(tc);
+			}
+		}
+		
+		return eRow;
+	}
+	
+	
+	private Element generateElementEntry(int x, int y){
+		Element eEntry = outDocument.createElement("entry");
+		TableCell tc=inTable.getCell(x,y);
+		if(tc.getContent()!=null){
+
+			NodeList nodeList=(NodeList)tc.getContent();
+
+			Node newNode=null;
+			Node extNode=null;
+			for(int i=0;i<nodeList.getLength();i++){
+				extNode=outDocument.importNode((Node)(nodeList.item(i)),true);
+
+				if(tc.getColspan()>1){
+					eEntry.setAttribute("namest", colNames[y]);
+					eEntry.setAttribute("nameend", colNames[tc.getColspan()+y-1]);
+				}
+
+				if(tc.getRowspan()>1){
+					eEntry.setAttribute("morerows", String.valueOf(tc.getRowspan()-1));
+				}
+				if(tc.getParamH_Align()!=null){
+					eEntry.setAttribute("align", tc.getParamH_Align());
+				}
+				if(tc.getParamV_Align()!=null){
+					eEntry.setAttribute("valign", tc.getParamV_Align());
+				}
+				if(tc.getParamChar()!=null){
+					eEntry.setAttribute("char", tc.getParamChar());
+				}
+				if(tc.getParamCharoff()!=null){
+					eEntry.setAttribute("charoff", tc.getParamCharoff());
+				}
+				if(tc.getParamId()!=null){
+					eEntry.setAttribute("id", tc.getParamId());
+				}		
+			eEntry.appendChild(extNode);
+			}
+		}
+		return eEntry;
+	}
+	
+	
+	
+	
+	public void generate() {
+		eTable=generateElementTable();
+		Element eTgroup=generateElementTgroup();
+		Element eThead=generateElementThead();
+		Element eTbody=generateElementTbody();
+		eTable.appendChild(eTgroup);
+		eTgroup.appendChild(eThead);
+		eTgroup.appendChild(eTbody);
+	}
+	
+	
+	public Element geteTable() {
+		return eTable;
+	}
+
+	public void display(){
+		UtilsService us=new UtilsServiceImpl();
+		
+		us.afficheXML(outDocument);
+	}
+
+}

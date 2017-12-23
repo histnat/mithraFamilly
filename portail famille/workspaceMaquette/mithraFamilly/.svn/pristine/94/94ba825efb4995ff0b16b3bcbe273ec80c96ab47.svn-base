@@ -1,0 +1,87 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                             RAFALE                                 *
+    *                   Document Type Definition                         *
+    *                                                                    *
+     *                     Release Version 2.2                           *
+    *                   Dated 22th December 1998                         *
+    *                                                                    *
+    * Amendment :-                                                       *
+    * 1. New Illustrated Part Catalog Public Identifier                  *
+    *                                                                    *
+    * 98/12/22                                                           *
+    *    new comps doctype                                               *
+	*    Avoid reference to specific location for %Comps entity          *
+	*                                                                    *
+    * The following DOCTYPE statement may be used to call this set of    *
+    * declarations:-                                                     *
+    *                                                                    *
+    * <!DOCTYPE dmodule PUBLIC                                           *
+    *  "-//RAFALE CSDB//DTD Aircraft Ground Equipment IPC 981222//EN" []>*
+    ********************************************************************** -->
+
+
+
+<!--**********************************************************************
+    * Define Entity %COMPS; (Components) containing:- the formal public  *
+    * identifier for the component definitions.                          *
+    ********************************************************************** -->
+
+<!ENTITY % COMPS
+ PUBLIC "-//RAFALE//ENTITIES Component Definitions 981222//EN">
+
+
+
+<!--**********************************************************************
+    * Call the Components Definition Public Text. The formal public      *
+    * identifier is stored in the entity %COMPS;                         *
+    ********************************************************************** -->
+
+%COMPS;
+
+
+
+<!--**********************************************************************
+    * Call the Non chapterized IPC Specific Public Text.                 *
+    * The formal public identifier is stored in the entity %IPCN;        *
+    ********************************************************************** -->
+
+
+%IPCN;
+
+
+
+<!--**********************************************************************
+    * Call the AECMA Configuration Public Text.                          *
+    * The formal public identifier is stored in the entity %AECMA;       *
+    ********************************************************************** -->
+
+%AECMA;
+
+
+
+<!--**********************************************************************
+    * Call the AECMA Base DTD Public Text. The formal public identifier  *
+    * is stored in the entity %BASE;                                     *
+    ********************************************************************** -->
+
+%BASE;
+
+
+
+
+<!--**********************************************************************
+    * Call the Illustrated Parts Catalog Content Public Text.            *
+    * The formal public identifier is stored in the entity %IPC;         *
+    ********************************************************************** -->
+
+%IPC;
+
+
+
+<!--**********************************************************************
+    * Call the Content Breakdown Public Text. The formal public          *
+    * identifier is stored in the entity %EXTCONT;                       *
+    ********************************************************************** -->
+
+%EXTCONT;

@@ -1,0 +1,15 @@
+package com.sonovision.openconv.modules.sgmlprocess;
+
+import java.io.IOException;
+
+import org.testng.annotations.Test;
+
+public class SGMLConverterTest {
+
+  @Test(enabled=false)
+  public void runSX() throws IOException {
+	  
+    SGMLConverter s = new SGMLConverter();
+    s.runSX(null);
+  }
+}

@@ -1,0 +1,909 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1A785000SF030100297A021 SYSTEM "x-dm://0900f90b800702d8,MYWORKING" NDATA cgm>
+<!ENTITY A1A785000SF030100299A011 SYSTEM "x-dm://0900f90b800399d2,MYWORKING" NDATA cgm>
+<!ENTITY A1A785000SF030100298A011 SYSTEM "x-dm://0900f90b800399d1,MYWORKING" NDATA cgm>
+<!ENTITY A1A785000SF030100297A011 SYSTEM "x-dm://0900f90b800399d0,MYWORKING" NDATA cgm>
+<!ENTITY A1A785000SF030100296A011 SYSTEM "x-dm://0900f90b800399cf,MYWORKING" NDATA cgm>
+<!ENTITY A1A785000SF030100295A011 SYSTEM "x-dm://0900f90b800399ce,MYWORKING" NDATA cgm>
+<!ENTITY A1A785000SF030100129A031 SYSTEM "x-dm://0900f90b800189b6,MYWORKING" NDATA cgm>
+<!ENTITY A1A785000SF030100129A021 SYSTEM "x-dm://0900f90b80003e4a,MYWORKING" NDATA cgm>
+<!ENTITY A1A785000SF030100279A011 SYSTEM "x-dm://0900f90b80004304,MYWORKING" NDATA jpeg>
+]>
+<?Pub EntList alpha bull copy rArr sect trade nbsp ge le>
+<?Pub Inc>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>78</chapnum><section>5</section><subsect>0</subsect><subject>00</subject><discode>15</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmc>
+<dmtitle><techname>BRAS ACCROCHE FLAMME</techname><infoname>CONTROLE VISUEL SANS MOYEN SPECIAL</infoname></dmtitle>
+<issno type="r" issno="6">
+<issdate month="12" year="2011" day="15">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 1"></version>
+<version version="M88-2 ETAPE 4"></version>
+<customer aaf="1" anf="1">
+<nti nti1="1" nti2="1" nti3="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Prise en compte ATVT014/KS/2011 et ATVT021/KS/2011</rfu>
+<remarks>RAS</remarks>
+<icns><icn id="A1A785000SF030100129A031">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>78</chapnum><section>5</section><subsect>0</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00129</illnum><illver>A</illver><illupdat>03</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A785000SF030100279A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>78</chapnum><section>5</section><subsect>0</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00279</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A785000SF030100295A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>78</chapnum><section>5</section><subsect>0</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00295</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A785000SF030100296A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>78</chapnum><section>5</section><subsect>0</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00296</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A785000SF030100297A021">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>78</chapnum><section>5</section><subsect>0</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00297</illnum><illver>A</illver><illupdat>02</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A785000SF030100298A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>78</chapnum><section>5</section><subsect>0</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00298</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A785000SF030100299A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>78</chapnum><section>5</section><subsect>0</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00299</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<norefs>
+</refs><proced><pmd>
+<manhour value="0,1"></manhour>
+<duration value="0,1"></duration>
+</pmd><prelreqs><reqconds>
+<noconds></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="0,1"></reqper>
+</reqpers><supequip><nosupeq><nosupeqs></supequip><supplies><supplyli exhaust="0">
+<supply id="R34002" mand="0"><applic><systemid><version version="M88-2 ETAPE 1"></version></systemid></applic>
+<refipc csn="78500001 342 "><nomen>BRAS D'ACCROCHE FLAMME</nomen><quantity>SB</quantity></supply>
+<supply id="R1" mand="0"><applic><systemid><version version="M88-2 ETAPE 4"></version></systemid></applic>
+<refipc csn="78500001A322 "><nomen>BRAS D'ACCROCHE FLAMME</nomen><quantity>SB</quantity></supply>
+</supplyli></supplies><miscs><nomisc></miscs><safety>
+<specpara>
+<caution>
+<p>Tout autre d&eacute;faut non r&eacute;pertori&eacute; dans la proc&eacute;dure doit &ecirc;tre signal&eacute; &agrave; SNECMA.</p>
+</caution>
+</specpara>
+</safety></prelreqs><mainfunc>
+<step1 control="0" id="P10">
+<para><applic><systemid><version version="M88-2 ETAPE 1"></version></systemid></applic>
+<p>Approvisionner en cas de remplacement la ou les rechanges n&eacute;cessaires <supplref refid="R34002">.</p>
+</para>
+<para><applic><systemid><version version="M88-2 ETAPE 4"></version></systemid></applic>
+<p>Approvisionner en cas de remplacement la ou les rechanges n&eacute;cessaires <supplref refid="R1">.</p>
+</para>
+</step1>
+<step1 control="0" id="P20">
+<applic><systemid><version version="M88-2 ETAPE 1"></version></systemid></applic>
+<para><p>Contr&ocirc;ler visuellement les pi&egrave;ces selon les informations des tableaux ci-dessous <figref refid="A785000SF030100129A031"> <figref refid="A785000SF030100279A011">.</p>
+</para>
+<table tocentry="1"><applic><systemid><nti nti1="1"></systemid></applic>
+<tgroup cols="3" align="LEFT"><colspec colnum="1" colname="SQCOLUMN1" colwidth="5cm" align="CENTER" colsep="1" rowsep="1"><colspec colnum="2" colname="SQCOLUMN2" colwidth="8cm" align="LEFT" colsep="1" rowsep="1"><colspec colnum="3" colname="SQCOLUMN3" colwidth="4cm" align="LEFT" colsep="1" rowsep="1">
+<tbody valign="TOP">
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>DEFAUTS</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>CRITERES D'ADMISSIBILITE</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>SANCTION</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Crique type&nbsp;A</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Admissible si L&nbsp;&le;&nbsp;15&nbsp;mm et d&nbsp;&ge;&nbsp;10&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Au del&agrave; d&eacute;pose moteur&nbsp;/&nbsp;retour&nbsp;NTI2</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Crique type&nbsp;B</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Admissible si la crique ne d&eacute;passe pas la ligne des rivets et si la distance d1&nbsp;&ge;&nbsp;10&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Au del&agrave; d&eacute;pose moteur&nbsp;/&nbsp;retour&nbsp;NTI2</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Br&ucirc;lure type&nbsp;B1</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Admissible si d2&nbsp;&ge;&nbsp;10&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Au del&agrave; d&eacute;pose moteur&nbsp;/&nbsp;retour&nbsp;NTI2</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>D&eacute;formation type&nbsp;C</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Admissible</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>D&eacute;formation type&nbsp;D</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Admissible</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Crique type&nbsp;H</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Admissible si L&nbsp;&le;&nbsp;10&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Au del&agrave; d&eacute;pose moteur&nbsp;/&nbsp;retour&nbsp;NTI2</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Crique type&nbsp;J</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Admissible si L&nbsp;&le;&nbsp;15&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Au del&agrave; d&eacute;pose moteur&nbsp;/&nbsp;retour&nbsp;NTI2</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>usure type&nbsp;E</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Admissible si jeu&nbsp;&le;&nbsp;6&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Au del&agrave; d&eacute;pose moteur&nbsp;/&nbsp;retour&nbsp;NTI2</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<table tocentry="1"><applic><systemid><nti nti2="1"></systemid></applic>
+<tgroup cols="3" align="LEFT"><colspec colnum="1" colname="SQCOLUMN1" colwidth="5cm" align="CENTER" colsep="1" rowsep="1"><colspec colnum="2" colname="SQCOLUMN2" colwidth="8cm" align="LEFT" colsep="1" rowsep="1"><colspec colnum="3" colname="SQCOLUMN3" colwidth="4cm" align="LEFT" colsep="1" rowsep="1">
+<tbody valign="TOP">
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>DEFAUTS</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>CRITERES D'ADMISSIBILITE</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>SANCTION</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry align="left" morerows="0"><para><p>Crique type&nbsp;A</p>
+</para>
+</entry>
+<entry morerows="0"><para><p>Admissible si L&nbsp;&le;&nbsp;15&nbsp;mm et d&nbsp;&ge;&nbsp;10&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Crique type&nbsp;B</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Admissible si la crique ne d&eacute;passe pas la ligne des rivets et si la distance d1&nbsp;&ge;&nbsp;10&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Br&ucirc;lure type&nbsp;B1</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Admissible si d2&nbsp;&ge;&nbsp;10&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>D&eacute;formation type&nbsp;C</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Admissible</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>D&eacute;formation type&nbsp;D</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Admissible</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Crique type&nbsp;H</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Admissible si L&nbsp;&le;&nbsp;5&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Crique type&nbsp;J</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Admissible si L&nbsp;&le;&nbsp;10&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>usure type&nbsp;E</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Admissible si jeu&nbsp;&le;&nbsp;6&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="SQCOLUMN1" align="left"><para><p>Usure type&nbsp;K</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN2"><para><p>Admissible si P&nbsp;&le;&nbsp;0,10&nbsp;mm</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN3"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="SQCOLUMN1" align="left"><para><p>Usure type&nbsp;L</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN2"><para><p>Admissible si P&nbsp;&le;&nbsp;0,10&nbsp;mm</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN3"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<table tocentry="1"><applic><systemid><nti nti3="1"></systemid></applic>
+<tgroup cols="3" align="LEFT"><colspec colnum="1" colname="SQCOLUMN1" colwidth="5cm" align="CENTER" colsep="1" rowsep="1"><colspec colnum="2" colname="SQCOLUMN2" colwidth="8cm" align="LEFT" colsep="1" rowsep="1"><colspec colnum="3" colname="SQCOLUMN3" colwidth="4cm" align="LEFT" colsep="1" rowsep="1">
+<tbody valign="TOP">
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>DEFAUTS</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>CRITERES D'ADMISSIBILITE</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>SANCTION</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry align="left" morerows="0"><para><p>Crique type&nbsp;A</p>
+</para>
+</entry>
+<entry morerows="0"><para><p>Admissible si L&nbsp;&le;&nbsp;15&nbsp;mm et d&nbsp;&ge;&nbsp;10&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Crique type&nbsp;B</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Admissible si la crique ne d&eacute;passe pas la ligne des rivets et si la distance d1&nbsp;&ge;&nbsp;10&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Br&ucirc;lure type&nbsp;B1</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Admissible si d2&nbsp;&ge;&nbsp;10&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>D&eacute;formation type&nbsp;C</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Admissible si aucun contact</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>D&eacute;formation type&nbsp;D</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Admissible si L&nbsp;de&nbsp;contact&nbsp;&le;&nbsp;10&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry align="left" morerows="0"><para><p>Crique type&nbsp;H</p>
+</para>
+</entry>
+<entry morerows="0"><para><p>Admissible si L&nbsp;&le;&nbsp;5&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Crique type&nbsp;J</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Inadmissible</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>usure type&nbsp;E</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Admissible si jeu&nbsp;&le;&nbsp;6&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="SQCOLUMN1" align="left"><para><p>Usure type&nbsp;K</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN2"><para><p>Admissible si P&nbsp;&le;&nbsp;0,10&nbsp;mm</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN3"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="SQCOLUMN1" align="left"><para><p>Usure type&nbsp;L</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN2"><para><p>Admissible si P&nbsp;&le;&nbsp;0,10&nbsp;mm</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN3"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step1>
+<step1 control="0" id="P30">
+<applic><systemid><version version="M88-2 ETAPE 4"></version></systemid></applic>
+<para><p>Contr&ocirc;ler visuellement les pi&egrave;ces selon les tableaux ci-dessous <figref refid="A785000SF030100129A031"> <figref refid="A785000SF030100295A011"><figref refid="A785000SF030100279A011"> <figref refid="A785000SF030100296A011"> <figref refid="A785000SF030100297A021"> <figref refid="A785000SF030100298A011"> <figref refid="A785000SF030100299A011">.</p>
+<note>
+<p>Si un d&eacute;faut est constater sur le bras accroche flamme pr&eacute;venir l'assistant technique Snecma.</p>
+</note>
+</para>
+<table frame="all" tocentry="1"><applic><systemid><nti nti1="1"></systemid></applic>
+<tgroup cols="3">
+<?PubTbl tgroup rth="1.00pt">
+<colspec colname="col1" colwidth="5.00cm"><colspec colname="col2" colwidth="8.00cm"><colspec colname="col3" colwidth="4.00cm">
+<tbody>
+<row>
+<entry colname="col1"><para><p>DEFAUTS</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>CRITERES D'ADMISSIBILITE</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>SANCTION</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Crique type&nbsp;A sur &eacute;cran pare-feu hors zone pion de fixation</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>Admissible si L&nbsp;&le;&nbsp;15&nbsp;mm</p>
+</para>
+<para><p>Distance pion d&nbsp;&ge;&nbsp;10&nbsp;mm (si d &lt;&nbsp;10 mm appliquer le crit&egrave;re crique type Fr)</p>
+</para>
+<para><p>Pas de propagation dans la zone emboutie du pion</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>Au del&agrave; d&eacute;pose moteur&nbsp;/&nbsp;retour&nbsp;NTI2</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Br&ucirc;lure type A1 dans le bord de fuite des &eacute;crans anti-rayonnement</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>Br&ucirc;lure avec perte de mati&egrave;re admissible en zone A, B et C si&nbsp;: </p>
+</para>
+<para><p>- Pr&eacute;sente en bord de fuite uniquement</p>
+</para>
+<para><p>- Hauteur H inf&eacute;rieure &agrave; 15&nbsp;mm</p>
+</para>
+<para><p>- Largeur L  inf&eacute;rieure &agrave; 5&nbsp;mm</p>
+</para>
+<para><p>- Hors des emboutis de l&rsquo;&eacute;cran (entre zone A-B et B-C)</p>
+</para>
+<para><p>- Non adjacente &agrave; un embouti de part et d&rsquo;autre</p>
+</para>
+<para><p>- Pas de crique dans la zone concern&eacute;e pas la br&ucirc;lure</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>Au del&agrave; d&eacute;pose moteur&nbsp;/&nbsp;retour&nbsp;NTI2</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>D&eacute;formation type De de l&rsquo;&eacute;cran pare-feu</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>Pas de limitation sur le nombre de d&eacute;formations admissibles.</p>
+</para>
+<para><p>Inadmissible si e au moins une fois&nbsp;&lt;&nbsp;0,5&nbsp;mm.</p>
+</para>
+<para><p>Inadmissible si e&nbsp;=&nbsp;0,5&nbsp;mm et L&nbsp;&gt;&nbsp;10&nbsp;mm.</p>
+</para>
+<para><p>Admissible si e toujours&nbsp;&gt;&nbsp;0,5&nbsp;mm.</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>Au del&agrave; d&eacute;pose moteur&nbsp;/&nbsp;retour&nbsp;NTI2</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Crique type&nbsp;H</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>Admissible si L&nbsp;&le;&nbsp;10&nbsp;mm</p>
+</para>
+<para><p>Distance pion d &ge;&nbsp;10&nbsp;mm (si d&nbsp;&lt;&nbsp;10&nbsp;mm, appliquer  le crit&egrave;re crique type Hr)</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>Au del&agrave; d&eacute;pose moteur&nbsp;/&nbsp;retour&nbsp;NTI2</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Crique type Hr</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>Admissible si une seule crique sur un seul des quatre pions</p>
+</para>
+<para><p>Longueur &le;&nbsp;8&nbsp;mm</p>
+</para>
+<para><p>Pas d&rsquo;&eacute;branlement du pion en vis-&agrave;-vis</p>
+</para>
+<para><p>Distance pion d&nbsp;&lt;&nbsp;10&nbsp;mm (si d&nbsp;&ge;&nbsp;10&nbsp;mm appliquer le crit&egrave;re crique type H)</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>Au del&agrave; d&eacute;pose moteur&nbsp;/&nbsp;retour&nbsp;NTI2</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Crique type&nbsp;J</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>Admissible si :</p>
+</para>
+<para><p>- L &le; 20mm</p>
+</para>
+<para><p>- Distance d1 aux criques (types A et Fr) &ge; 20 mm</p>
+</para>
+<para><p>- Distance d2 entre criques type J &ge; 20 mm</p>
+</para>
+<para><p>- Distance d3 aux bords de l&rsquo;&eacute;cran &ge; 15 mm (si propagation sur les flancs)</p>
+</para>
+<para><p>- Pas de propagation dans les zones embouties des pions</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>Au del&agrave; d&eacute;pose moteur&nbsp;/&nbsp;retour&nbsp;NTI2</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Usure type&nbsp;E</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>Admissible si jeu&nbsp;&le;&nbsp;6&nbsp;mm</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>Au del&agrave; d&eacute;pose moteur&nbsp;/&nbsp;retour&nbsp;NTI2</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Crique type&nbsp;Pc sur l'&eacute;cran pare feu dans zone pion de centrage</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>Admissible si L&nbsp;&le;&nbsp;5&nbsp;mm et pas de perte de mati&egrave;re.</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>Au del&agrave; d&eacute;pose moteur&nbsp;/&nbsp;retour&nbsp;NTI2</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Jeu type&nbsp;Er sur pions de fixation de l'&eacute;cran</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>Admissible si soudure du pion visuellement saine.</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>Au del&agrave; d&eacute;pose moteur&nbsp;/&nbsp;retour&nbsp;NTI2</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Br&ucirc;lure ou boursouflure  type Be  (avec ou sans perte de mati&egrave;re)</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>Inadmissible</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>D&eacute;pose moteur&nbsp;/&nbsp;retour&nbsp;NTI2</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Crique Type Cr  avec ramifications (minimum 3 branches)</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>Inadmissible</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>D&eacute;pose moteur&nbsp;/&nbsp;retour&nbsp;NTI2</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<table tocentry="1"><applic><systemid><nti nti2="1" nti3="1"></systemid></applic>
+<tgroup cols="3" align="LEFT"><colspec colnum="1" colname="SQCOLUMN1" colwidth="5cm" align="CENTER" colsep="1" rowsep="1"><colspec colnum="2" colname="SQCOLUMN2" colwidth="8cm" align="LEFT" colsep="1" rowsep="1"><colspec colnum="3" colname="SQCOLUMN3" colwidth="4cm" align="LEFT" colsep="1" rowsep="1">
+<tbody valign="TOP">
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>DEFAUTS</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>CRITERES D'ADMISSIBILITE</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>SANCTION</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry align="left" morerows="0"><para><p>Crique type&nbsp;A sur &eacute;cran pare-feu hors zone pion de fixation</p>
+</para>
+</entry>
+<entry morerows="0"><para><p>Admissible si L&nbsp;&le;&nbsp;10&nbsp;mm</p>
+</para>
+<para><p>Distance pion d&nbsp;&ge;&nbsp;10&nbsp;mm (si d &lt;&nbsp;10 mm appliquer le crit&egrave;re crique type Fr)</p>
+</para>
+<para><p>Pas de propagation dans la zone emboutie du pion</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="SQCOLUMN1" align="left"><para><p>Br&ucirc;lure type A1 dans le bord de fuite des &eacute;crans anti-rayonnement</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN2"><para><p>Br&ucirc;lure avec perte de mati&egrave;re admissible en zone A, B et C si&nbsp;: </p>
+</para>
+<para><p>- Pr&eacute;sente en bord de fuite uniquement</p>
+</para>
+<para><p>- Hauteur H inf&eacute;rieure &agrave; 15&nbsp;mm</p>
+</para>
+<para><p>- Largeur L  inf&eacute;rieure &agrave; 5&nbsp;mm</p>
+</para>
+<para><p>- Hors des emboutis de l&rsquo;&eacute;cran (entre zone A-B et B-C)</p>
+</para>
+<para><p>- Non adjacente &agrave; un embouti de part et d&rsquo;autre</p>
+</para>
+<para><p>- Pas de crique dans la zone concern&eacute;e pas la br&ucirc;lure</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN3"><para><p>Au del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="SQCOLUMN1" align="left"><para><p>D&eacute;formation type&nbsp;De de l'&eacute;cran pare feu</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN2"><para><p>Pas de limitation sur le nombre de d&eacute;formations admissibles.</p>
+</para>
+<para><p>Inadmissible si e au moins une fois&nbsp;&lt;&nbsp;0,5&nbsp;mm.</p>
+</para>
+<para><p>Inadmissible si e&nbsp;=&nbsp;0,5&nbsp;mm et L&nbsp;&gt;&nbsp;10&nbsp;mm.</p>
+</para>
+<para><p>Admissible si e toujours&nbsp;&gt;&nbsp;0,5&nbsp;mm.</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN3"><para><p>Au del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Crique type&nbsp;H</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Admissible si L&nbsp;&le;&nbsp;5&nbsp;mm</p>
+</para>
+<para><p>Distance pion d &ge;&nbsp;10&nbsp;mm (si d&nbsp;&lt;&nbsp;10&nbsp;mm, appliquer  le crit&egrave;re crique type Hr)</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="SQCOLUMN1" align="left"><para><p>Crique type Hr</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN2"><para><p>Admissible si une seule crique sur un seul des quatre pions</p>
+</para>
+<para><p>Longueur &le;&nbsp;4&nbsp;mm</p>
+</para>
+<para><p>Pas d&rsquo;&eacute;branlement du pion en vis-&agrave;-vis</p>
+</para>
+<para><p>Distance pion d&nbsp;&lt;&nbsp;10&nbsp;mm (si d&nbsp;&ge;&nbsp;10&nbsp;mm appliquer le crit&egrave;re crique type H)</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN3"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Crique type&nbsp;J</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Admissible si :</p>
+</para>
+<para><p>- L &le; 15&nbsp;mm</p>
+</para>
+<para><p>- Distance d1 aux criques (types A et Fr) &ge; 20 mm</p>
+</para>
+<para><p>- Distance d2 entre criques type J &ge; 20 mm</p>
+</para>
+<para><p>- Distance d3 aux bords de l&rsquo;&eacute;cran &ge; 15 mm (si propagation sur les flancs)</p>
+</para>
+<para><p>- Pas de propagation dans les zones embouties des pions</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>usure type&nbsp;E</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Admissible si jeu&nbsp;&le;&nbsp;6&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="SQCOLUMN1" align="left"><para><p>Usure type&nbsp;K</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN2"><para><p>Admissible si P&nbsp;&le;&nbsp;0,10&nbsp;mm</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN3"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="SQCOLUMN1" align="left"><para><p>Usure type&nbsp;L</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN2"><para><p>Admissible si P&nbsp;&le;&nbsp;0,10&nbsp;mm</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN3"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" rowsep="1"><para><p>Crique type&nbsp;Fr sur &eacute;cran pare-feu dans zone pion de fixation</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" rowsep="1"><para><p>Admissible si :</p>
+</para>
+<para><p>- pas de perte de mati&egrave;re</p>
+</para>
+<para><p>- axe de crique perpendiculaire au BF de l'&eacute;cran</p>
+</para>
+<para><p>- l'extr&eacute;mit&eacute;s des criques ne d&eacute;passent pas l'axe du pion</p>
+</para>
+<para><p>- distance pion d&nbsp;&lt;&nbsp;10&nbsp;mm (si d&nbsp;&ge;&nbsp;10&nbsp;mm appliquer le crit&egrave;re crique  type A)</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" rowsep="1"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" rowsep="1"><para><p>Crique type&nbsp;Pc sur l'&eacute;cran pare feu dans la zone pion de centrage</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" rowsep="1"><para><p>Admissible si L&nbsp;&le;&nbsp;5&nbsp;mm et pas de perte de mati&egrave;re.</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" rowsep="1"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" rowsep="1"><para><p>Jeu type&nbsp;Er sur pions de fixation de l'&eacute;cran</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" rowsep="1"><para><p>Admissible si soudure du pion visuellement saine.</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" rowsep="1"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" rowsep="1"><para><p>Usure type&nbsp;AB1 sur face d'appui int&eacute;rieure / secteur anneaux</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" rowsep="1"><para><p>Admissible si usure&nbsp;&le;&nbsp;0,2&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" rowsep="1"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" rowsep="1"><para><p>Usure type&nbsp;AB2 sur face d'appui ext&eacute;rieure / secteur anneaux</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" rowsep="1"><para><p>Admissible si usure&nbsp;&le;&nbsp;0,2&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" rowsep="1"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="SQCOLUMN1" align="left"><para><p>Br&ucirc;lure ou boursouflure  type Be  (avec ou sans perte de mati&egrave;re)</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN2"><para><p>Inadmissible</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN3"><para><p>Remplacement de la pi&egrave;ce</p>
+</para>
+<para><p>Inspecter les trous de l&rsquo;injecteur carburant associ&eacute; au bras + v&eacute;rification du bon fonctionnement des clapet PC bras.</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="SQCOLUMN1" align="left"><para><p>Crique Type Cr  avec ramifications (minimum 3 branches)</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN2"><para><p>Inadmissible</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN3"><para><p>Remplacement de la pi&egrave;ce</p>
+</para>
+<para><p>Inspecter les trous de l&rsquo;injecteur carburant associ&eacute; au bras + v&eacute;rification du bon fonctionnement des clapet PC bras.</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step1>
+<figure id="A785000SF030100129A031">
+<title>BRAS ACCROCHE FLAMME - FIGURE 1</title>
+<graphic callicn="A1A785000SF030100129A031">
+</figure>
+<figure id="A785000SF030100279A011">
+<title>BRAS ACCROCHE FLAMME - FIGURE 2</title>
+<graphic callicn="A1A785000SF030100279A011">
+</figure>
+<figure id="A785000SF030100295A011">
+<title>BRAS ACCROCHE FLAMME - FIGURE 3</title>
+<graphic callicn="A1A785000SF030100295A011">
+</figure>
+<figure id="A785000SF030100296A011">
+<title>BRAS ACCROCHE FLAMME - FIGURE 4</title>
+<graphic callicn="A1A785000SF030100296A011">
+</figure>
+<figure id="A785000SF030100297A021"><?Pub Caret>
+<title>BRAS ACCROCHE FLAMME - FIGURE 5 </title>
+<graphic callicn="A1A785000SF030100297A021">
+</figure>
+<figure id="A785000SF030100298A011">
+<title>BRAS ACCROCHE FLAMME - FIGURE 6</title>
+<graphic callicn="A1A785000SF030100298A011">
+</figure>
+<figure id="A785000SF030100299A011">
+<title>BRAS ACCROCHE FLAMME - FIGURE 7</title>
+<graphic callicn="A1A785000SF030100299A011">
+</figure>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000036293 0>

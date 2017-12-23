@@ -1,0 +1,307 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        RAFALE Change 7                             *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.2                            *
+    *                   Dated 22th December 1998                         *
+    *                                                                    *
+    *  Amendment     :							 *
+    *   31/08/95     : change security value to 1/2/3/4 instead of	 *
+    *                 NP/DR/CD						 *
+    *   19/05/97     : Changed Public Identifier			 *
+    *								         *
+    *   15/01/98     : Changed Public Identifier			 *
+    *			   Add "P" value to rpcname attribute list       *
+    *								         *
+    *   22/12/98     : remove %bodyatt definition               	 *
+    *                  update ipcn comments definition                   *
+    *								         *
+    *   15/03/01     : Extension de la liste de l'attribut rpcname       *
+    *   Motif: Fiche de Changement Rafale Num 3485 Ind A du 06/10/2000   *
+    *								         *
+    *   1. Update Public Identifier.                                     *
+    *   2. Removal of Marked Section.                                    *
+    *   3. change values of securit np/dr/cd instead of 1/2/3            *
+    *                                                                    *
+    * Typical invocation :                                               *
+    * <!ENTITY % CCLCFG                                                  *
+    *   PUBLIC "-//RAFALE//ENTITIES CCL Configuration 981222//EN" >      *
+    * %CCL.CFG;                                                          *
+    *								         *	
+    ********************************************************************** -->
+
+
+<!--**********************************************************************
+    * Define Entity %ISOlat1; (ISO Added Latin 1) containing:-  the      *
+    * formal public identifier for the ISO Added Latin 1 public text.    *
+    ********************************************************************** -->
+
+<!ENTITY % ISOlat1
+  PUBLIC "ISO 8879-1986//ENTITIES Added Latin 1//EN" >
+
+
+
+<!--**********************************************************************
+    * Define Entity %ISOpub; (ISO Publishing) containing:- the formal    *
+    * public identifier for the ISO Publishing public text.              *
+    ********************************************************************** -->
+
+<!ENTITY % ISOpub
+  PUBLIC "ISO 8879-1986//ENTITIES Publishing//EN" > 
+
+
+
+
+<!--**********************************************************************
+    * Define Entity %ISOgrk3; (ISO Greek Symbols) containing:- the       *
+    * formal public identifier for the ISO Greek Symbols public text.    *
+    ********************************************************************** -->
+
+<!ENTITY % ISOgrk3
+  PUBLIC "ISO 8879-1986//ENTITIES Greek Symbols//EN" >
+
+
+
+
+<!--**********************************************************************
+    * Define Entity %ISOnum; (ISO Numeric and Special Symbols)           *
+    * containing:- the formal public identifier for the ISO Numeric and  *
+    * Special Symbols public text.                                       *
+    ********************************************************************** -->
+
+<!ENTITY % ISOnum
+  PUBLIC "ISO 8879-1986//ENTITIES Numeric and Special Graphic//EN" >
+
+<!--**********************************************************************
+    * Define Entity %ISOtech; (ISO General Technical) containing:- the   *
+    * formal public identifier for the ISO General Technical public text.*
+    ********************************************************************** -->
+
+<!ENTITY % ISOtech
+  PUBLIC "ISO 8879-1986//ENTITIES General Technical//EN" >
+
+
+
+<!--**********************************************************************
+    * Call the ISO Added Latin 1 Public Text. The formal public          *
+    * identifier is stored in the entity %ISOlat1;                       *
+    ********************************************************************** -->
+
+%ISOlat1;
+
+
+
+<!--**********************************************************************
+    * Call the ISO Publishing Public Text. The formal public identifier  *
+    * is stored in the entity %ISOpub;                                   *
+    ********************************************************************** -->
+
+%ISOpub;
+
+
+
+<!--**********************************************************************
+    * Call the ISO Greek Symbols Public Text. The formal public          *
+    * identifier is stored in the entity %ISOgrk3;                       *
+    ********************************************************************** -->
+
+%ISOgrk3;
+
+
+
+<!--**********************************************************************
+    * Call the ISO Numeric and Special Symbols Public Text. The formal   *
+    * public identifier is stored in the entity %ISOnum;                 *
+    ********************************************************************** -->
+
+%ISOnum;
+
+
+
+<!--**********************************************************************
+    * Call the ISO General Technical Public Text. The formal public      *
+    * identifier is stored in the entity %ISOtech;                       *
+    ********************************************************************** -->
+
+%ISOtech;
+
+
+<!--**********************************************************************
+    * Define Entity %yesorno (Yes or No Attribute Answer) containing:-   *
+    * NUMBER                                                             *
+    ********************************************************************** -->
+
+<!ENTITY % yesorno  "NUMBER" >
+
+
+
+<!--**********************************************************************
+    * Define Entity %SECURIT; (Status Security) containing:-             *
+    *  Attribute Definition List.                                        *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *                                                                    *
+    *  CLASS    - Declared - Required - Identifies Security Marking.     *
+	*    	NP = Non protege.										     *
+	*		DR = Diffusion Restreinte.							    	 *
+	*		CD = Confidentiel Defense.  						     	 *
+    ********************************************************************** -->
+
+<!ENTITY % SECURIT " class  (NP | DR | CD )  #REQUIRED " >
+
+
+
+<!--*****************************************************************************
+    * Define Entity %RPCNAME (Responsible Partner Company Names).              	*
+    *   Responsible Partner Company Names.                                      *
+    *   See "CTG annexe 2" for details about the above letters.                 *
+    **************************************************************************-->
+<!ENTITY % RPCNAME "(A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z|0|1|2|3|4|5|6|7|8|9)"  >
+
+
+
+<!--**********************************************************************
+    * Define Entity %ALLDMC; (All Data Module Codes) containing:-        *
+    *--------------------------------------------------------------------*
+    * The entity %ALLDMC; is used to allow REFQM & REFDM to access Data  *
+    * Modules Codes of different types (AGE or AVEE).                    *
+    *--------------------------------------------------------------------*
+    *   AGE      - mandatory single     contains MODELIC, SUPEQVC,       *
+    *                                   ECSCS, EIDC, CIDC,               *
+    *                                   DISCODE , DISCODEV, INCODE,      *
+    *                                   INCODEV, ITEMLOC.                *
+    *  or                                                                *
+    *   AVEE     - mandatory single     contains MODELIC, SDC, CHAPNUM,  *
+    *                                   SECTION, SUBSECT, DISCODE,       *
+    *                                   DISCODEV, INCODE, INCODEV,       *
+    *                                   ITEMLOC.                         *
+    ********************************************************************** -->
+
+<!ENTITY % ALLDMC "(age | avee | ipcc | ipcn)" >
+
+
+<!--**********************************************************************
+    * Define Element AGE (Aircraft Ground Equipment) containing:-        *
+    *--------------------------------------------------------------------*
+    * This defines the structure of the data module code for Aircraft    *
+    * Ground Equipment Data Modules.                                     *
+    *--------------------------------------------------------------------*
+    *   MODELIC  - mandatory single     contains Parsed Character Data.  *
+    *   SUPEQVC  - mandatory single     contains Parsed Character Data.  *
+    *   ECSCS    - mandatory single     contains Parsed Character Data.  *
+    *   EIDC     - mandatory single     contains Parsed Character Data.  *
+    *   CIDC     - mandatory single     contains Parsed Character Data.  *
+    *   DISCODE  - mandatory single     contains Parsed Character Data.  *
+    *   DISCODEV - mandatory single     contains Parsed Character Data.  *
+    *   INCODE   - mandatory single     contains Parsed Character Data.  *
+    *   INCODEV  - mandatory single     contains Parsed Character Data.  *
+    *   ITEMLOC  - mandatory single     contains Parsed Character Data.  *
+    ********************************************************************** -->
+
+<!ELEMENT age - o (modelic,supeqvc,ecscc,eidc,cic,discode,
+                  discodev,incode,incodev,itemloc) >
+
+
+
+<!--**********************************************************************
+    * Define Element AVEE (Air Vehicle, Engines, Equipment) containing:- *
+    *--------------------------------------------------------------------*
+    * This defines the structure of the data module code for Air Vehicle,*
+    * Engines, Equipment Data Modules.                                   *
+    *--------------------------------------------------------------------*
+    *   MODELIC  - mandatory single     contains Parsed Character Data.  *
+    *   SDC      - mandatory single     contains Parsed Character Data.  *
+    *   CHAPNUM  - mandatory single     contains Parsed Character Data.  *
+    *   SECTION  - mandatory single     contains Parsed Character Data.  *
+    *   SUBSECT  - mandatory single     contains Parsed Character Data.  *
+    *   SUBJECT  - mandatory single     contains Parsed Character Data.  *
+    *   DISCODE  - mandatory single     contains Parsed Character Data.  *
+    *   DISCODEV - mandatory single     contains Parsed Character Data.  *
+    *   INCODE   - mandatory single     contains Parsed Character Data.  *
+    *   INCODEV  - mandatory single     contains Parsed Character Data.  *
+    *   ITEMLOC  - mandatory single     contains Parsed Character Data.  *
+    ********************************************************************** -->
+
+<!ELEMENT avee - o (modelic,sdc,chapnum,section,subsect,subject,discode,
+                   discodev,incode,incodev,itemloc) >
+
+
+
+<!--**********************************************************************
+    * Define Element IPCC (Chapterized Illustrated parts Catalog) containing:- *
+    *--------------------------------------------------------------------*
+    * This defines the structure of the data module code for             *
+    * Chapterized IPC.                                                   *
+    *--------------------------------------------------------------------*
+    *   MODELIC  - mandatory single     contains Parsed Character Data.  *
+    *   SDC      - mandatory single     contains Parsed Character Data.  *
+    *   CHAPNUM  - mandatory single     contains Parsed Character Data.  *
+    *   SECTION  - mandatory single     contains Parsed Character Data.  *
+    *   SUBSECT  - mandatory single     contains Parsed Character Data.  *
+    *   SUBJECT  - mandatory single     contains Parsed Character Data.  *
+    *   FIG      - mandatory single     contains Parsed Character Data.  *
+    *   FIGV     - mandatory single     contains Parsed Character Data.  *
+    *   INCODE   - mandatory single     contains Parsed Character Data.  *
+    *   INCODEV  - mandatory single     contains Parsed Character Data.  *
+    *   ITEMLOC  - mandatory single     contains Parsed Character Data.  *
+    ********************************************************************** -->
+
+<!ELEMENT ipcc - o (modelic,sdc,chapnum,section,subsect,subject,fig,
+                   figv,incode,incodev,itemloc) >
+
+
+
+<!--**********************************************************************
+    * Define Element IPCN (Non Chapterized Illustrated parts Catalog)    *
+    *--------------------------------------------------------------------*
+    * This defines the structure of the data module code for             *
+    * Non Chapterized IPC.                                               *
+    *--------------------------------------------------------------------*
+    *   MODELIC  - mandatory single     contains Parsed Character Data.  *
+    *   SDC      - mandatory single     contains Parsed Character Data.  *
+    *   FIXZ     - mandatory single     'Z'                              *
+    *   RPC      - mandatory single     Responnsible Partner Company     *
+    *   ENDIPPN  - mandatory single     IPPN last digit                  *
+    *   FIG      - mandatory single     Figure Number                    *
+    *   FIGV     - mandatory single     Figure variant                   *
+    *   INCODEV  - mandatory single     contains Parsed Character Data.  *
+    *   ITEMLOC  - mandatory single     contains Parsed Character Data.  *
+    ********************************************************************** -->
+
+<!ELEMENT ipcn - o (modelic,sdc,fixz,rpc,endippn,fig,
+                   figv,incode,incodev,itemloc) >
+
+<!--**********************************************************************
+    * Define the following elements.                                     *
+    *  MODELIC  - Model Identification Code.                             *
+    *  SDC      - System Difference code                                 *
+    *  FIXZ     - Z                                                      *
+    *  RPC      - RPCNAME                                                *
+    *  ENDIPPN  - Four Last IPPN digits                                  *
+    *  FIG      - FIGURE NUMBER                                          *
+    *  FIGV     - FIGURE VARIANT                                         *
+    *  INCODE   - Information Code.                                      *
+    *  INCODEV  - Information Code Variant.                              *
+    *  ITEMLOC  - Item Location Code.                                    *
+    ********************************************************************** -->
+
+<!ELEMENT (modelic | supeqvc | ecscc | eidc | cic | discode | discodev |
+          incode | incodev | itemloc | subject | sdc | chapnum | section |
+          subsect| fig | figv | endippn) - o (#PCDATA)>
+
+					 
+<!--**********************************************************************
+    * Define Element FIXZ (FIXE A "Z") containing:-                      *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  fixz    - DECLARED  - Z- Issue Number.                            *
+    ********************************************************************** -->
+
+<!ELEMENT fixz - o  EMPTY >
+<!ATTLIST fixz
+            fixz   (Z)	"Z"   >
+
+
+					 

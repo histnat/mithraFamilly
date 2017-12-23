@@ -1,0 +1,260 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Aircraft Ground Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1ARF7201SF030100031A011 SYSTEM "x-dm://0900f90b80002f52,MYWORKING" NDATA cgm>
+<!ENTITY A1ARF7201SF030100032A021 SYSTEM "x-dm://0900f90b8000424b,MYWORKING" NDATA jpeg>
+<!ENTITY A1ARF7201SF030100149A011 SYSTEM "x-dm://0900f90b8000428a,MYWORKING" NDATA jpeg>
+]>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>RF</ecscc><eidc>72</eidc><cic>99</cic><discode>17</discode><discodev>A</discodev><incode>930</incode><incodev>A</incodev><itemloc>A</itemloc></age></dmc>
+<dmtitle><techname>SERVICE BULLETIN MODIFICATION 265C2-S5 MOYEN DE DIALOGUE V7</techname><infoname>SERVICE BULLETIN - Application de modification suite &agrave; &eacute;volution du logiciel calculateur en VL08D</infoname></dmtitle>
+<issno issno="1" type="N">
+<issdate year="2010" month="03" day="15">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F<?Pub Caret1>0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 4"></version>
+<manufact>F0301</manufact><partno>INPM1A33-34</partno>
+<customer aaf="1" anf="1">
+<nti nti2="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Version initiale</rfu>
+<remarks>RAS</remarks>
+<icns><icn id="A1ARF7201SF030100031A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>RF</chapnum><section>7</section><subsect>2</subsect><subject>01</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00031</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1ARF7201SF030100032A021">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>RF</chapnum><section>7</section><subsect>2</subsect><subject>01</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00032</illnum><illver>A</illver><illupdat>02</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1ARF7201SF030100149A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>RF</chapnum><section>7</section><subsect>2</subsect><subject>01</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00149</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<refdm>
+<dmcid id="A1ARF720100A840AC"><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>RF</ecscc><eidc>72</eidc><cic>01</cic><discode>00</discode><discodev>A</discodev><incode>840</incode><incodev>A</incodev><itemloc>C</itemloc></age></dmcid>
+<dmcid id="A1ARF720100A730AC"><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>RF</ecscc><eidc>72</eidc><cic>01</cic><discode>00</discode><discodev>A</discodev><incode>730</incode><incodev>A</incodev><itemloc>C</itemloc></age></dmcid>
+<dmcid id="A1ARF720111A750AA"><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>RF</ecscc><eidc>72</eidc><cic>01</cic><discode>11</discode><discodev>A</discodev><incode>750</incode><incodev>A</incodev><itemloc>A</itemloc></age></dmcid>
+<dmcid id="A1ARF720100A100AC"><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>RF</ecscc><eidc>72</eidc><cic>01</cic><discode>00</discode><discodev>A</discodev><incode>100</incode><incodev>A</incodev><itemloc>C</itemloc></age></dmcid>
+<dmcid id="A1ARF720100A150AC"><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>RF</ecscc><eidc>72</eidc><cic>01</cic><discode>00</discode><discodev>A</discodev><incode>150</incode><incodev>A</incodev><itemloc>C</itemloc></age></dmcid>
+<dmcid id="A1ARF720100A510AC"><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>RF</ecscc><eidc>72</eidc><cic>01</cic><discode>00</discode><discodev>A</discodev><incode>510</incode><incodev>A</incodev><itemloc>C</itemloc></age></dmcid>
+<dmcid id="A1ARF720100A830AC"><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>RF</ecscc><eidc>72</eidc><cic>01</cic><discode>00</discode><discodev>A</discodev><incode>830</incode><incodev>A</incodev><itemloc>C</itemloc></age></dmcid>
+</refdm>
+</refs><proced><pmd>
+<manhour value="0,5"></manhour>
+<duration value="0,5"></duration>
+</pmd><prelreqs><reqconds>
+<noconds></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="0,5"></reqper>
+</reqpers><supequip><nosupeq><supeqlis>
+<supequis id="O2.C0883"><ident><manufact>F4790</manufact><partno>140100</partno></ident><nomen>Stylo graveur FRAP'R</nomen><quantity>1</quantity></supequis>
+</supeqlis></supequip><supplies><supplyli exhaust="0">
+<supply id="RTR060" mand="1"><ident><manufact>FAQ15</manufact><partno>394-167-301-0</partno></ident><nomen>Trousse de rattrapage</nomen><quantity>1</quantity></supply>
+<supply id="RZA00001" mand="1"><ident><manufact>FAQ15</manufact><partno>689-760-084-0</partno></ident><nomen>Plaque d'identification</nomen><quantity>Voir trousse TR060</quantity></supply>
+<supply id="RZAA02" mand="1"><ident><manufact>FAQ15</manufact><partno>392-281-701-0</partno></ident><nomen>Support logiciel</nomen><quantity>Voir trousse TR060</quantity></supply>
+</supplyli></supplies><miscs><miscli>
+<misc matiere="0" id="P0442"><refipc csn="72013002 009 "><nomen>Alcool isopropylique</nomen><quantity>SB</quantity></misc>
+</miscli></miscs><safety>
+<specpara>
+<caution>
+<p>CETTE PROCEDURE DOIT ETRE EFFECTUEE PAR UNE PERSONNE FORMEE AU TELECHARGEMENT D'UN CALCULATEUR <refipc csn="72000001A021 "> AVEC LE MOYEN DE DIALOGUE (MDD) <refipc csn="72017701 001 ">.</p>
+</caution>
+<note>
+<p>Du fait de l'affectation d'un seul Type-&eacute;tat au MDD, le MDD Type-&eacute;tat INPM1A34-36 apr&egrave;s application du pr&eacute;sent SB sera compatible des calculateurs INAC6A34-36, INAC6A34-37 et INAC6A34-38.</p>
+</note>
+</specpara>
+</safety></prelreqs><mainfunc>
+<step1 id="P10" control="0">
+<title>OBJET DU SERVICE BULLETIN</title>
+<para><p>Mise &agrave; niveau du logiciel des Moyens de Dialogue (MDD) <refipc csn="72017701 001 "> pour rendre le MDD compatible des calculateurs programm&eacute;s <refipc csn="72000001A021 "> pourvus de la version de logiciel VL08D.</p>
+</para>
+</step1>
+<step1 id="P20" control="0">
+<title>CONDITIONS D'APPLICATION</title>
+<para><p>Application imm&eacute;diate sur mat&eacute;riel sur site.</p>
+</para>
+</step1>
+<step1 id="P30" control="0">
+<title>INSTRUCTIONS DETAILLEES D'APPLICATION</title>
+<step2 id="P30-10" control="0">
+<para><p>Sortir le MDD de son conteneur <dmcref xrefid="A1ARF720100A840AC">.</p>
+</para>
+</step2>
+<step2 id="P30-20" control="0">
+<para><p>Connecter le MDD au 28&nbsp;V Forces Atelier <dmcref xrefid="A1ARF720100A730AC">.</p>
+</para>
+</step2>
+<step2 id="P30-30" control="0">
+<para><p>Mettre le MDD sous tension.</p>
+</para>
+<step3 control="0">
+<para><p>Basculer l'interrupteur g&eacute;n&eacute;ral de mise sous tension du MDD <refipc csn="72017702 000 "> sur "ON" <figref refid="ARF7201SF030100031A011" repnohot="ZA000">.</p>
+</para>
+<note>
+<p>A la mise sous tension du PC portable programm&eacute;, l'Interface Homme-Machine (IHM) s'autoteste. Quand le contr&ocirc;le est termin&eacute;, le logiciel d'exploitation WINDOWS NT demande &agrave; l'op&eacute;rateur d'ouvrir une session de travail.</p>
+</note>
+</step3>
+<step3 control="0">
+<para><p>Appuyer simultan&eacute;ment sur les trois touches&nbsp;: "CTRL-ALT-SUPPR", du clavier pour ouvrir une bo&icirc;te de dialogue.</p>
+</para>
+</step3>
+<step3 control="0">
+<para><p>Fournir les informations suivantes&nbsp;:</p>
+</para>
+<list type="SIMPLE">
+<item><para><p>utilisateur&nbsp;: Administrateur,</p>
+</para>
+</item>
+<item><para><p>mot de passe&nbsp;: (ne pas remplir).</p>
+</para>
+</item>
+</list>
+</step3>
+<step3 control="0">
+<para><p>Cliquer sur "OK" pour ouvrir une session de travail WINDOWS NT.</p>
+</para>
+</step3>
+</step2>
+<step2 id="P30-40" control="0">
+<para><p>Installer le nouveau logiciel du MDD &agrave; l'aide du CDROM <supplref refid="RZAA02"> fourni dans la trousse <supplref refid="RTR060"> <dmcref xrefid="A1ARF720111A750AA">.</p>
+</para>
+</step2>
+<step2 id="P30-50" control="0">
+<para><p>Remettre le MDD en marche <dmcref xrefid="A1ARF720100A100AC">.</p>
+</para>
+<note>
+<p>Lors de la proc&eacute;dure de mise en marche, l'ic&ocirc;ne du programme MDD &agrave; lancer &agrave; partir du bureau WINDOWS NT est "MDD V7.30".</p>
+</note>
+</step2>
+<step2 id="P30-60" control="0">
+<para><p>Contr&ocirc;ler la version du nouveau logiciel.</p>
+</para>
+<step3 control="0">
+<para><p>Cliquer sur l'onglet "?" <figref refid="ARF7201SF030100032A021">.</p>
+</para>
+</step3>
+<step3 control="0">
+<para><p>S&eacute;lectionner la fonction "A propos du Moyen de Dialogue".</p>
+</para>
+</step3>
+<step3 control="0">
+<specpara>
+<note>
+<p>L'illustration est donn&eacute;e &agrave; titre d'exemple.</p>
+</note>
+</specpara>
+<para><p>V&eacute;rifier les donn&eacute;es suivantes &agrave; l'&eacute;cran <figref refid="ARF7201SF030100149A011">.</p>
+</para>
+<list type="SIMPLE">
+<item><para><p>R&eacute;f&eacute;rence&nbsp;: 889-501-240-0,</p>
+</para>
+</item>
+<item><para><p>Version logiciel&nbsp;: 7.30.</p>
+</para>
+</item>
+</list>
+</step3>
+</step2>
+<step2 id="P30-70" control="0">
+<para><p>Mettre le MDD hors tension.</p>
+</para>
+<step3 control="0">
+<para><p>Cliquer sur "OK" <figref refid="ARF7201SF030100149A011">.</p>
+</para>
+</step3>
+<step3 control="0">
+<para><p>Sortir de l'application <dmcref xrefid="A1ARF720100A150AC">.</p>
+</para>
+</step3>
+</step2>
+<step2 id="P30-80" control="0">
+<para><p>D&eacute;connecter le MDD du 28&nbsp;V Forces Atelier <dmcref xrefid="A1ARF720100A510AC">.</p>
+</para>
+</step2>
+</step1>
+<step1 id="P40" control="0">
+<title>IDENTIFICATION DU MATERIEL MODIFIE</title>
+<para><p>Changer l'&eacute;tiquette d'identification <refipc csn="72017702 013 "> du MDD.</p>
+</para>
+<step2 id="P40-10" control="0">
+<title>D&eacute;pose de l'ancienne &eacute;tiquette</title>
+<step3 control="0">
+<para><p>D&eacute;coller l'&eacute;tiquette d'identification du MDD situ&eacute;e &agrave; l'arri&egrave;re du PC &eacute;quip&eacute;.</p>
+</para>
+</step3>
+<step3 control="0">
+<para><p>Noter les informations &agrave; reporter sur la nouvelle &eacute;tiquette&nbsp;:</p>
+</para>
+<list type="SIMPLE">
+<item><para><p>num&eacute;ro de s&eacute;rie du MDD,</p>
+</para>
+</item>
+<item><para><p>date.</p>
+</para>
+</item>
+</list>
+</step3>
+<step3 control="0">
+<para><p>Nettoyer l'emplacement de l'ancienne &eacute;tiquette &agrave; l'aide d'un chiffon imbib&eacute; d'alcool <miscref refid="P0442">.</p>
+</para>
+</step3>
+</step2>
+<step2 id="P40-20" control="0">
+<title>Gravage de la nouvelle &eacute;tiquette</title>
+<step3 control="0">
+<para><p>D&eacute;coller le papier de protection de l'&eacute;tiquette<supplref refid="RZA00001"> fournie dans la trousse <supplref refid="RTR060">.</p>
+</para>
+</step3>
+<step3 control="0">
+<para><p>Graver la nouvelle r&eacute;f&eacute;rence fabricant et la nouvelle identification type-&eacute;tat du MDD &agrave; l'aide de l'outillage <supeqref refid="O2.C0883">&nbsp;:</p>
+</para>
+<list type="SIMPLE">
+<item><para><p>r&eacute;f&eacute;rence fabricant&nbsp;: 889-501-240-0,</p>
+</para>
+</item>
+<item><para><p>identification type-&eacute;tat&nbsp;: INPM1A34-36.</p>
+</para>
+</item>
+</list>
+</step3>
+<step3 control="0">
+<para><p>Reporter les autres informations de l'ancienne &eacute;tiquette.</p>
+</para>
+</step3>
+</step2>
+<step2 id="P40-30" control="0">
+<title>Installation de la nouvelle &eacute;tiquette</title>
+<step3 control="0">
+<para><p>D&eacute;coller le papier de protection de l'autocollant de l'&eacute;tiquette.</p>
+</para>
+</step3>
+<step3 control="0">
+<para><p>Coller l'&eacute;tiquette en lieu et place de l'ancienne.</p>
+</para>
+</step3>
+</step2>
+</step1>
+<step1 id="P50" control="0">
+<para><p>Mettre le MDD dans son conteneur <dmcref xrefid="A1ARF720100A830AC">.</p>
+</para>
+</step1>
+<figure id="ARF7201SF030100031A011">
+<title>Mise sous tension du MDD</title>
+<graphic callicn="A1ARF7201SF030100031A011">
+</figure>
+<figure id="ARF7201SF030100032A021">
+<title>Ecran principal de choix des fonctions du MDD</title>
+<graphic callicn="A1ARF7201SF030100032A021">
+</figure>
+<figure id="ARF7201SF030100149A011">
+<title>V&eacute;rification des donn&eacute;es &eacute;cran</title>
+<graphic callicn="A1ARF7201SF030100149A011">
+</figure>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000012176 0>

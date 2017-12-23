@@ -1,0 +1,72 @@
+package com.sonovision.openconv.modules.xmlprocess;
+
+import static org.testng.AssertJUnit.assertEquals;
+
+import java.io.IOException;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.testng.annotations.Test;
+
+
+import com.sedoc.dtdtoolbox.resource.model.Entity;
+import com.sedoc.dtdtoolbox.resource.model.Resource;
+import com.sedoc.dtdtoolbox.resource.model.ResourceBlinde;
+import com.sedoc.toolbox.bean.UtilsService;
+import com.sonovision.openconv.log.model.DBLogger;
+import com.sonovision.openconv.log.model.LoggerLevel;
+import com.sonovision.openconv.model.TreatedObject;
+import com.sonovision.openconv.modules.xmlprocess.model.ResourcesModel;
+import com.sonovision.openconv.modules.xslprocess.helper.XSLHelperMain;
+import com.sonovision.openconv.utils.ResourceTestPath;
+import com.sonovision.openconv.utils.TestHelperXslProcess;
+
+public class TaskXmlResourcesTest extends  TestHelperXslProcess {
+	
+	@Autowired
+	UtilsService utilservice;
+
+  
+	
+  @Test(enabled=false)
+  public void runTaskXmlResourcesTest() throws IOException {
+	  System.out.println("run TaskXmlResources Test");
+
+	  HashMap<String, TreatedObject> toList=new HashMap<>();
+      
+	  TaskXmlResources txp = new TaskXmlResources();
+	  DBLogger dbLogger=getDBLogger(ResourceTestPath.TITUS);
+	  txp.setDBLogger(dbLogger);
+	  txp.addParameter(TaskXmlResources.PARAMETER_LOADFILE_INPUT_FOLDER, dbLogger.getFolderIn());
+	  txp.addParameter(TaskXmlResources.PARAMETER_DTD_TYPE, "BLINDE");
+	  String result=txp.run(toList);
+	  assertEquals(result,LoggerLevel.INFO.getValue().toString());
+	  assertEquals(ResourcesModel.getResourcesModel().size(),3);
+	  Map<String,Resource<Entity>> resources=ResourcesModel.get("VB-A-03-10-10-001-0331-FR-A.XML");
+	  assertEquals(7, resources.size());
+      assertEquals("3", XSLHelperMain.getResourceCount("VB-A-03-10-10-001-0331-FR-A.XML", "F7121", "LOCTITE 222 FL50ML")); 
+      assertEquals("1", XSLHelperMain.getResourceCount("VB-A-03-10-10-001-0331-FR-A.XML", "F0541", "44.22X24"));
+
+
+  }
+
+
+  
+  
+  /**
+   * @return the utilservice
+   */
+  public UtilsService getUtilservice() {
+  	return utilservice;
+  }
+
+  /**
+   * @param utilservice the utilservice to set
+   */
+  public void setUtilservice(UtilsService utilservice) {
+  	this.utilservice = utilservice;
+  }
+
+}

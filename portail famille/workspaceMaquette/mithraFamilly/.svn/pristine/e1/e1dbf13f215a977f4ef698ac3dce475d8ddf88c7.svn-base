@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet href="cobra1_th_en_new.xsl" type="text/xsl"?><!DOCTYPE TLDOC PUBLIC "-//XCOBRA-IETP // Interactive Technical Logistic Documentation //DE" "./XCobrask/XCobrask.dtd" []>  <!--<!DOCTYPE TLDOC PUBLIC "-//COBRA-IETP //DTD Interactive Technical Logistic Documentation //DE" [ ENTITY amp SDATA "[amp   ]">]-->
+<TLDOC VERSION="COBRA-DTD 1.0.0">
+<DM LANG="EN.GB" SECURITY="2" UDN="COBRAAK000K01000D0000000000042DA">
+<TDDM>
+<HEAD>
+<DES>COBRA Operating Modes</DES>
+<TMN/>
+<VARCODE>Common</VARCODE>
+<ISSDATE YEAR="2015" MONTH="06" DAY="18"/>
+<MANUF>Euro-Art International</MANUF>
+<CHGLIST>
+<CHGREC>
+<CHGNUM>V00-00-00</CHGNUM>
+<CHGREF>COBRAAG000U01000D0000000000042DA</CHGREF>
+<CHGDEF>
+</CHGDEF>
+<CHGDATE YEAR="2015" MONTH="06" DAY="18"/>
+</CHGREC>
+</CHGLIST>
+</HEAD>
+<DESCONT>
+<SECTION1>
+<STITLE>General</STITLE>
+<P>The COBRA system has two modes of operation:</P>
+<UNDLIST>
+<LITEM>Automatic</LITEM>
+<LITEM>Autonomous.</LITEM>
+</UNDLIST>
+<SECTION2>
+<STITLE>Automatic</STITLE>
+<P>In the automatic mode, the system receives missions from the Communications, Command and Control (C<SUP>3</SUP>) equipment and executes them automatically, the COBRA operator performs a monitoring function. In this mode, it is possible to start and execute missions which have previously been entered into the system. When the system is operating in automatic mode, the COBRA operator can review the mission parameters received from the C<SUP>3</SUP> equipment and change them to suit local conditions.</P>
+</SECTION2>
+<SECTION2>
+<STITLE>Autonomous</STITLE>
+<P>In the autonomous mode, COBRA operates independently of the C<SUP>3</SUP> equipment. In this mode, the COBRA detachment are responsible for the mission plans, mission parameters, interpretation of the mission results and communication of the results to the command post.</P>
+</SECTION2>
+</SECTION1>
+</DESCONT>
+</TDDM>
+</DM>
+</TLDOC>

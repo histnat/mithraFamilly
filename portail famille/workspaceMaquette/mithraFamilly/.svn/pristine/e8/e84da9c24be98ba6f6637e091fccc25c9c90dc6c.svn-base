@@ -1,0 +1,56 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN">
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<dmodule><?Pub Caret1><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>0</subsect><subject>00</subject><discode>01</discode><discodev>A</discodev><incode>340</incode><incodev>B</incodev><itemloc>A</itemloc></avee></dmc>
+<dmtitle><techname>EQUIPEMENTS ELECTRIQUES</techname><infoname>TESTS DE BON FONCTIONNEMENT </infoname></dmtitle>
+<issno type="N" issno="1">
+<issdate month="10" year="2002" day="31">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 1"></version>
+<version version="M88-2 ETAPE 4"></version>
+<customer aaf="1" anf="1">
+<nti nti1="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Version initiale </rfu>
+<remarks>RAS</remarks>
+</status>
+</idstatus><content><refs>
+<refdm>
+<dmcid id="DM1"><dmcopen dmco="A1A45713100A320AA">MOTEURS - TESTS DECLENCHES</dmcopen></dmcid>
+<dmcid id="DM2"><dmcopen dmco="A1A71920000A720AA">MOTEUR - POSE SUR BASE</dmcopen></dmcid>
+<dmcid id="DM3"><dmcopen dmco="A1A71920000A320AA">MOTEUR - VALIDATION APRES POSE</dmcopen></dmcid>
+</refdm>
+</refs><proced><pmd>
+<manhour value="0,0"></manhour>
+<duration value="0,0"></duration>
+</pmd><prelreqs><reqconds><reqcondli><reqcond>
+<cond><para><p>Les s&eacute;curit&eacute;s a&eacute;ronef sont en place. </p>
+</para>
+</cond>
+</reqcond><reqcond>
+<cond><para><p>Le moteur assembl&eacute; est install&eacute; dans l'avion et les portes de l'a&eacute;ronef sont d&eacute;pos&eacute;es.</p>
+</para>
+</cond>
+<dmcref xrefid="DM2"></reqcond><reqcond>
+<cond><para><p>L'installation du moteur assembl&eacute; est valid&eacute;e.</p>
+</para>
+</cond>
+<dmcref xrefid="DM3"></reqcond></reqcondli></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="0,0"></reqper>
+</reqpers><supequip><nosupeq><nosupeqs></supequip><supplies><nosupply></supplies><miscs><nomisc></miscs><safety><nosafety></safety></prelreqs><mainfunc>
+<step1 control="0" id="P10">
+<para><p>Valider l'installation de l'&eacute;quipement par un test d&eacute;clench&eacute; ventilation s&egrave;che <dmcref xrefid="DM1">.</p>
+</para>
+</step1>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>

@@ -1,0 +1,63 @@
+package com.sonovision.openconv.codification.impl;
+
+import static org.testng.AssertJUnit.assertEquals;
+
+import java.util.HashMap;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.testng.annotations.Test;
+
+import com.sonovision.openconv.codification.Codification;
+import com.sonovision.openconv.codification.exception.CodificationException;
+import com.sonovision.openconv.utils.TestHelper;
+
+public class ListFileInOutTest extends TestHelper {
+	
+	@Autowired
+	@Qualifier("ListFileInOut")
+	Codification codification;
+
+  @Test
+  public void getNewFileName() throws CodificationException {
+    //Codification codification = new ListFileInOut();
+    String codificationFilePath = getFilePath("/codification/listeInOut.xml");
+    
+    HashMap<String,Object>  parameter = new HashMap<>();
+    parameter.put(ListFileInOut.PARAMETER_LOADFILE_CODIFICATION_FILE, codificationFilePath);
+    
+    codification.setCodificationParameter(parameter);
+    assertEquals("DMC-COBRAAK000-K01-000-D0-0000-00000-042A-A_002-00.xml",codification.getNewFileName("COBRAAK000K01000D0000000000042AA.xml"));
+    assertEquals("DMC-COBRAAK000-K01-000-D0-0000-00000-090A-A_002-00.xml",codification.getNewFileName("COBRAAK000K01000D0000000000090AA.xml"));
+  }
+
+  @Test
+  public void getOldFileName() throws CodificationException {
+	    //Codification codification = new ListFileInOut();
+	    String codificationFilePath = getFilePath("/codification/listeInOut.xml");
+	    HashMap<String,Object>  parameter = new HashMap<>();
+	    parameter.put(ListFileInOut.PARAMETER_LOADFILE_CODIFICATION_FILE, codificationFilePath);
+	    
+	    codification.setCodificationParameter(parameter);
+	    assertEquals("COBRAAK000K01000D0000000000042AA.xml",codification.getOldFileName("DMC-COBRAAK000-K01-000-D0-0000-00000-042A-A_002-00.xml"));
+	    assertEquals("COBRAAK000K01000D0000000000090AA.xml",codification.getOldFileName("DMC-COBRAAK000-K01-000-D0-0000-00000-090A-A_002-00.xml"));
+  }
+
+/**
+ * @return the codification
+ */
+public Codification getCodification() {
+	return codification;
+}
+
+/**
+ * @param codification the codification to set
+ */
+public void setCodification(Codification codification) {
+	this.codification = codification;
+}
+  
+  
+  
+  
+}

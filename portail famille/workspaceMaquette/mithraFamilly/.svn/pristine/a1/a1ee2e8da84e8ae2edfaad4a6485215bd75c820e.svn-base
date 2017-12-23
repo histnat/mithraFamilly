@@ -1,0 +1,100 @@
+package com.sonovision.openconv.db.bo;
+
+import java.io.Serializable;
+import java.util.Collection;
+import java.util.List;
+
+import org.springframework.security.core.GrantedAuthority;
+
+import com.sonovision.openconv.db.exception.DBNONullException;
+import com.sonovision.openconv.db.exception.DBNOUniqueException;
+import com.sonovision.openconv.db.vo.user.OpGroup;
+import com.sonovision.openconv.db.vo.user.OpRole;
+import com.sonovision.openconv.db.vo.user.OpUser;
+import com.sonovision.openconv.security.model.UserOpen;
+
+public interface DBUserService extends Serializable {
+
+	/**
+	 * 
+	 * @param opUser
+	 * @return
+	 * @throws DBNOUniqueException 
+	 * @throws DBNONullException 
+	 */
+	OpUser save(OpUser opUser) throws DBNONullException, DBNOUniqueException;
+
+	/**
+	 * 
+	 * @param opUser
+	 * @return
+	 * @throws DBNOUniqueException 
+	 * @throws DBNONullException 
+	 */
+	OpUser getOrSave(OpUser opUser) throws DBNONullException, DBNOUniqueException;
+
+	/**
+	 * 
+	 * @param opUser
+	 * @return
+	 */
+	OpUser findByAll(OpUser opUser);
+
+	/**
+	 * 
+	 * @param opGroup
+	 * @return
+	 */
+	OpGroup save(OpGroup opGroup) throws DBNONullException, DBNOUniqueException;
+	
+	/**
+	 * 
+	 * @param opGroup
+	 * @return
+	 * @throws DBNONullException
+	 * @throws DBNOUniqueException
+	 */
+	OpGroup getOrSave(OpGroup opGroup) throws DBNONullException, DBNOUniqueException;
+
+	/**
+	 * 
+	 * @param opGroup
+	 * @return
+	 */
+	OpGroup findByAll(OpGroup opGroup);
+	
+	/**
+	 * 
+	 * @param opGroup
+	 * @return
+	 */
+	OpRole save(OpRole opRole) throws DBNONullException, DBNOUniqueException;
+	
+	/**
+	 * 
+	 * @param opGroup
+	 * @return
+	 * @throws DBNONullException
+	 * @throws DBNOUniqueException
+	 */
+	OpRole getOrSave(OpRole opRole) throws DBNONullException, DBNOUniqueException;
+
+	/**
+	 * 
+	 * @param opGroup
+	 * @return
+	 */
+	OpRole findByAll(OpRole opRole);
+
+	OpUser findUserByLogin(String login);
+
+	OpUser findUserById(String id);
+
+	List<OpUser> listUser();
+
+	List<OpGroup> listGroup();
+
+	UserOpen getUserOpenByLogin(String uid);
+
+	Collection<? extends GrantedAuthority> getGrantedAuthorities(OpUser user);
+}

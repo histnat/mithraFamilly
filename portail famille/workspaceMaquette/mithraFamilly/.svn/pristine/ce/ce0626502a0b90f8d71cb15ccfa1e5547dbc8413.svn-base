@@ -1,0 +1,17 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                           RAFALE                                   *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                    Dated 01st October 1997                         *
+    *                                                                    *
+    * Amendment :-                                                       *
+    * 1. New data Dispatch Note Public Identifier                        *
+    *                                                                    *
+    ********************************************************************** -->
+
+<!DOCTYPE ddn PUBLIC
+ "-//RAFALE CSDB//DTD Data Dispatch Note 971001//EN"
+ [
+ ]> 

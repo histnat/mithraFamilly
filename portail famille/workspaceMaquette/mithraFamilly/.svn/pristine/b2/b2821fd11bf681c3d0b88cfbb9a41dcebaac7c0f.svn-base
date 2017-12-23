@@ -1,0 +1,511 @@
+<!-- ********************************************************************
+     *									                                *
+     *				             RAFALE              			       	*
+     *									                            	*
+     *				       Release Version 2.2             		       	*
+     *				     Dated 22th December 1998	                   	*
+     *				                        					       	*
+     *									                            	*
+     *	Company in charge of :	            					       	*
+     *									       	                        *
+     *	Dtd Object : IETP Canvas DTD .              				    *
+     *  Amendment	:                                                   *
+     *                                                                  *
+     *  15/01/98		: Change public Identifier                      *
+     *                    Element Message become optional in answer     *
+	 *                    add attribute sens to ccl                     *
+	 *                    update attribute type for ccl                 *
+	 *                                                                  *
+     *  22/12/98		: Change public Identifiers                     *
+     *                    toc become multiple behind tbac               *
+	 *                    rename lodmi by loipd                         *
+	 *                    add low and loh                               *
+	 *                    replace pubtype by tpc within IETPC           *
+	 *                    add pubtype and tp-applic within status       *
+	 *                    add pubtype definition                        *
+	 *                    add tp-appli definition                       *
+	 *                    change anchor attributes                      *
+	 *                       (id added and value become implied)        *
+	 *                    delete insdel behind dmcref                   *
+	 *                                                                  *
+	 *  The following DOCTYPE statement may be used to call this set of	*
+     *  declarations:		                					       	*
+     *									                            	*
+     *	 <!DOCTYPE canvas PUBLIC					              		*
+     *   "-//RAFALE IETP//DTD IETP Canvas 981222//EN" []>             	*
+     *									                            	*
+     ********************************************************************-->
+
+
+<!--********************************************************************
+    * Define Entity %CANCFG (CANVAS configuration) containing:-        *
+    * the formal public identifier for the CANVAS Configuration.       *
+    ******************************************************************** -->
+<!ENTITY % CANCFG
+ PUBLIC "-//RAFALE IETP//ENTITIES CANVAS Configuration 981222//EN"
+ >
+
+
+<!--********************************************************************
+    * Call the CANVAS configuration Public Text. The formal public     *
+    * identifier is stored in the entity %CANCFG;                      *
+    ******************************************************************** -->
+%CANCFG;
+
+
+
+<!--********************************************************************
+    * Define Element canvas (CSDB Configuration List).		Containing:*
+    *  SPECIFIC - mandatory  single      Specific data                 *
+    *  BODY     - mandatory  single      Canvas core                   *
+    *  GENERATED- mandatory  single      generated data                *
+   	*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                   *
+    * id          CCL file identifier                                  *
+	* Type        Type of Canvas (proposition or real canvas)          *
+	* Attribute Definition List stored in Entity %SECURIT;             *
+	********************************************************************-->
+<!ELEMENT canvas - - (specific, body, generated) >
+<!ATTLIST  canvas
+           id        id       		        #REQUIRED
+	       type		 (proposition|canevas)  #REQUIRED  >
+          
+<!--********************************************************************
+    * Define Element specific:  CANVAS specific data.	Containing:    *
+    *  IDSTATUS - mandatory  single      canvas status                 *
+    *  INTR     - mandatory  single      Canvas Introduction           *
+    *  TBACLIST - mandatory  single      canvas table of access        *
+   	*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                   *
+   	********************************************************************-->
+<!ELEMENT specific - - (idstatus, intr, tbaclist) >
+
+
+<!--********************************************************************
+    * Define Element idstatus:  CANVAS status part.	Containing:        *
+    *  ADDRES   - mandatory  single      canvas identification part    *
+    *  STATUS   - mandatory  single      Canvas Status                 *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                   *
+   	********************************************************************-->
+<!ELEMENT idstatus - - (addres, status) >
+
+
+<!--********************************************************************
+    * Define Element addres:  CANVAS status addres.	Containing:        *
+    *  IETPC   - mandatory  single      publication code               *
+    *  ISSNO   - mandatory  single      publication issue number       *
+    *  IETTITLE- mandatory  single      publication title              *
+	*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                   *
+   	********************************************************************-->
+<!ELEMENT addres - - (ietpc , issno , ietptitle) >
+
+
+<!--********************************************************************
+    * Define Element IETPC:  Publication code.	Containing:            *
+    *  MODELIC - mandatory  single      Model identifier               *
+    *  SDC     - mandatory  single      System difference code         *
+    *  TPC     - mandatory  single      Technical Publication Code     *
+	*  SYSTCODE- mandatory  single      systeme code                   *
+	*  NATURE  - mandatory  single      Technical Publication type     *
+	*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                   *
+   	********************************************************************-->
+<!ELEMENT ietpc - - (modelic, sdc, tpc, systcode, nature) >
+
+
+<!--********************************************************************
+    * Define Element ietptitle:  Publication title.	Containing:        *
+   	*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                   *
+   	********************************************************************-->
+<!ELEMENT ietptitle - O (#PCDATA) >
+
+
+<!--********************************************************************
+    * Define ELEMENT STATUS (Status) containing:-                      *
+    *  ISSDATE  - mandatory single     contains No Other Tags.         *
+	*  SECURITY - mandatory single     contains No Other Tags.         *
+    *  RPC      - mandatory single     contains Parsed Character Data. *
+    *  RESP     - optional single      contains Parsed Character Data. *
+	*  RFU      - optional  single     contains Parsed Character Data. *
+    *  REMARKS  - optional  single     contains Parsed Character Data. *
+    ******************************************************************** -->
+
+<!ELEMENT status - o 
+	(pubtype, issdate, security, rpc, resp?, tp-appli, rfu?, remarks?) >
+
+
+<!--********************************************************************
+    * Define Element PUBTYPE (IETP TYPE) containing:-                  *
+    *  No Other Tags.                                                  *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                   *
+    *  pubtype - DECLARED  - F- Flash.                                 *
+	*                      - P- Publication.  (default)                *
+	*                      - L- LOAP.                                  *
+	******************************************************************** -->
+
+<!ELEMENT pubtype - o EMPTY >
+<!ATTLIST pubtype
+		pubtype	 (F|L|P)  "P" >
+
+
+<!--**********************************************************************
+    * Define Element ISSDATE (Issue Date) containing:-                   *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  YEAR     - NUMBER - REQUIRED - The year. (YYYY)                   *
+    *  MONTH    - NUMBER - REQUIRED - The month of the year. (MM)        *
+    *  DAY      - NUMBER - REQUIRED - The day of the month. (DD)         *
+    ********************************************************************** -->
+
+<!ELEMENT issdate  - o  EMPTY >
+<!ATTLIST issdate
+            year  NUMBER  #REQUIRED
+            month NUMBER  #REQUIRED
+            day   NUMBER  #REQUIRED >
+
+
+<!--********************************************************************
+    * Define Element SECURITY (Security Marking) containing:-          *
+    *  No Other Tags.                                                  *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                   *
+    * Attribute Definition List stored in Entity %SECURIT;             *
+    ******************************************************************** -->
+<!ELEMENT security  - o EMPTY >
+<!ATTLIST security %SECURIT; >
+
+
+
+<!--********************************************************************
+    * Define Element RPC (Responsible Partner Company) containing:-    *
+    *  Parsed Character Data.                                          *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                   *
+    *  RPCNAME  - %RPCNAME - The name or CAGE code of the responsible  *
+    *                        partner company.                          *
+    ******************************************************************** -->
+<!ELEMENT rpc      - O EMPTY >
+<!ATTLIST rpc
+            rpcname	%RPCNAME;	#REQUIRED >
+
+
+<!--********************************************************************
+    * Define Element RESP ( Responsile of publication). 		       *
+    ********************************************************************-->
+<!ELEMENT resp - O (#PCDATA) >
+
+
+<!--********************************************************************
+    * Define Element TP-APPLI ( Technical Publication applicability). *
+    ********************************************************************-->
+<!ELEMENT tp-appli - O (#PCDATA) >
+
+
+<!--********************************************************************
+    * Define Element RFU ( Reasons for Updating.).				       *
+    ********************************************************************-->
+<!ELEMENT rfu - O (#PCDATA) >
+
+
+<!--********************************************************************
+    * Define Element REMARKS (Remarks).					               *
+    ********************************************************************-->
+<!ELEMENT remarks - O (#PCDATA) >
+
+
+<!--********************************************************************
+    * Define Element INTR (IETP Introduction) containing:-             *
+    *  PARA - mandatory  repeatable     contains P.                    *
+    *  or.                                                             *
+	*  LIST - mandatory  repeatable     contains ITEM.                 *
+	******************************************************************** -->
+<!ELEMENT	intr	- - 	 (para|list)*>
+
+
+<!--********************************************************************
+    * Define Element PARA (Paragraph).						           *
+    ********************************************************************-->
+<!ELEMENT para - - (p+) >
+
+
+<!--********************************************************************
+    * Define Element P (Paragraph Main Content).				       *
+    ********************************************************************-->
+<!ELEMENT p - O (#PCDATA) >
+
+
+
+<!--********************************************************************
+    * Define Element LIST (List).						               *
+    ********************************************************************-->
+<!ELEMENT list  - -  (title?,item+)>
+		
+
+<!--********************************************************************
+    * Define Element ITEM (List Item).						           *
+    ********************************************************************-->
+<!ELEMENT item  - O     ((para | list)+) >
+	
+
+
+<!--********************************************************************
+    * Define Element TBACLIST (List of Table of access) containing:-   *
+    *  TBAC - mandatory  repeatable     contains TITLE , TOC, TOCLINE. *
+    ******************************************************************** -->
+<!ELEMENT	tbaclist	- - 	 (tbac)*>
+<!ATTLIST 	tbaclist
+			id		ID	#IMPLIED >
+
+
+<!--********************************************************************
+    * Define Element TBAC (Table of access) containing:-               *
+    *  TOC - mandatory  multiple     contains TOC, TOCLINE.            *
+    ******************************************************************** -->
+<!ELEMENT	tbac	- - 	 (title, toc+)>
+<!ATTLIST 	tbac
+			id		ID	#IMPLIED>
+
+<!--********************************************************************
+    * Define Element TOC (Table of access element) containing:-        *
+    *  TOC - optionnal multiple    Tbac element                        *
+    *  TOCLINE - optionnal multiple   contains DMCTITLE, DMCID.        *
+    ******************************************************************** -->
+
+<!ELEMENT	toc	    - - 	 (title ,(toc | tocline)*)>
+
+
+<!--********************************************************************
+    * Define Element TITLE (Table of access title) containing:-        *
+    *     No other tags                                                *
+    ******************************************************************** -->
+
+<!ELEMENT title - o (#PCDATA) >
+
+
+<!--********************************************************************
+    * Define Element TOCLINE (Table of access line) containing:-       *
+    * DMCREF      - mandatory unique    Data-module DMC                *
+    ******************************************************************** -->
+
+<!ELEMENT	tocline	- -	(dmcref)>
+
+
+<!--*****************************************************************************
+    * Define Element DMCREF (Data Module Reference).				*
+    ***************************************************************************-->
+<!ELEMENT dmcref - O EMPTY -- Data Module Reference.-->
+<!ATTLIST dmcref     
+             xrefid 	IDREF 		#REQUIRED -- Cross reference ID.-->
+
+
+<!--********************************************************************
+    * Define ELEMENT BODY (canvas body) containing:-                   *
+    *  DM       - mandatory repeatable contains dmc,dmtitle,issno,issdate*
+    ******************************************************************** -->
+
+<!ELEMENT body - o (dm+) >
+
+
+<!--********************************************************************
+    * Define Element DM (Data Module Address) containing:-             *
+    *  DMC      - mandatory  single      contains definition stored in *
+    *                                    entity %DMC;                  *
+    *  DMTITLE  - mandatory  single      contains TECHNAME, INFONAME.  *
+    ******************************************************************** -->
+
+<!ELEMENT dm - o ((%ALLDMC;,issno?,dmtitle),anchor*) >
+<!ATTLIST dm
+		dmid	ID	#REQUIRED>
+
+
+
+<!--********************************************************************
+    * Define Element ISSNO (Issue Number) containing:-                 *
+    *  No Other Tags.                                                  *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                   *
+    *  ISSNO    - NUMBER    - Required - Issue Number.                 *
+    *  TYPE     - DECLARED  - NEW      - Status of this issue of the   *
+    *                                    data module.                  *
+    *           - "N"      - New Data Module.                          *
+    *           - "C"  - Changed. Changes marked by change markers.    *
+    *           - "D"  - Deleted.                                      *
+    *           - "R"  - Completely Revised. Changes not marked by     *
+    *                           change markers.                        *
+    *           - "S"   - Only Status information changed.             *
+    *           - "T" - Reinstated.                                    *
+    ******************************************************************** -->
+
+<!ELEMENT issno - o  EMPTY >
+<!ATTLIST issno
+            issno   NUMBER      #REQUIRED
+            type    (N | C | D | R | S | T)	"N"   >
+
+
+
+<!--**********************************************************************
+    * Define Element DMTITLE (Data Module Title) containing:-            *
+    *  TECHNAME - mandatory  single      contains Parsed Character Data. *
+    *  INFONAME - optional   single      contains Parsed Character Data. *
+    ********************************************************************** -->
+
+<!ELEMENT dmtitle - o (techname,infoname) >
+
+
+
+<!--**********************************************************************
+    * Define the following Elements:-                                    *
+    *   TECHNAME - Technical Name.                                       *
+    *   INFONAME - Information Name.                                     *
+    * Containing Parsed Character Data.                                  *
+    ********************************************************************** -->
+
+<!ELEMENT (techname | infoname) - o (#PCDATA) >
+
+
+
+
+<!--********************************************************************
+    * Define Element ANCHOR (Anchor resolution).	            	   *	
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+	* Attribute(s):-                                                   *
+    *  id        anchor id                                             *
+	*  link      anchor link value (0 ancre close, 1 ancre valorisee   *
+	*  value     anchor value                                          * 
+	********************************************************************-->
+<!ELEMENT anchor - O   EMPTY >
+<!ATTLIST anchor
+		id   	CDATA   	#REQUIRED
+		link	%yesorno	"1"  
+		value	CDATA   	#IMPLIED >
+
+
+<!--*******************************************************************
+    * Define ELEMENT GENERATED (canvas generated data) containing:-   *
+    *  LOEDM       - mandatory single    List of effective DM         *
+    *  LOI         - mandatory single    List of Illustrations        *
+	*  HLT         - mandatory single    Highlight                    *
+	*  LOIPD       - mandatory single    List of Identification DM    *
+	*  LOSU        - mandatory single    List of Supplies             *
+	*  LOSE        - mandatory single    List of Support equipments   *
+	*  LOMI        - mandatory single    List of Miscallenaous        *
+	*  LEXTP       - mandatory single    List of External Publications*
+	*  LOH         - mandatory single    List of Harness              *
+	*  LOW         - mandatory single    List of Wirings              *
+	******************************************************************* -->
+
+<!ELEMENT generated  - - (loedm,loi,hlt,loipd,losu,lose,lomi,lextp,loh,low)>
+
+
+<!--********************************************************************
+    * Define Element LOEDM (List of Effective DM).	            	   *	
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+	* Attribute(s):-                                                   *
+    * status      pesence needed (yes or no)                           *
+	********************************************************************-->
+<!ELEMENT loedm - O   EMPTY >
+<!ATTLIST loedm
+		status	%yesorno	"1" >
+
+
+<!--********************************************************************
+    * Define Element LOI (List of illustrations).	            	   *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+	* Attribute(s):-                                                   *
+    * status      pesence needed (yes or no)                           *
+	********************************************************************-->
+<!ELEMENT loi - O   EMPTY >
+<!ATTLIST loi
+		status	%yesorno	"1" >
+
+<!--********************************************************************
+    * Define Element HLT (Highlight).	                        	   *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+	* Attribute(s):-                                                   *
+    * status      pesence needed (yes or no)                           *
+	********************************************************************-->
+<!ELEMENT hlt - O   EMPTY >
+<!ATTLIST hlt
+		status	%yesorno	"1" >
+
+
+<!--********************************************************************
+    * Define Element loipd (List of identification DM).	          	   *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+	* Attribute(s):-                                                   *
+    * status      pesence needed (yes or no)                           *
+	********************************************************************-->
+<!ELEMENT loipd - O   EMPTY >
+<!ATTLIST loipd
+		status	%yesorno	"1" >
+
+
+<!--********************************************************************
+    * Define Element losu (List of supplies).       	          	   *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+	* Attribute(s):-                                                   *
+    * status      pesence needed (yes or no)                           *
+	********************************************************************-->
+<!ELEMENT losu - O   EMPTY >
+<!ATTLIST losu
+		status	%yesorno	"1" >	
+		
+
+<!--********************************************************************
+    * Define Element lose (List of support equipment).       	   	   *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+	* Attribute(s):-                                                   *
+    * status      pesence needed (yes or no)                           *
+	********************************************************************-->
+<!ELEMENT lose - O   EMPTY >
+<!ATTLIST lose
+		status	%yesorno	"1" >		
+
+
+<!--********************************************************************
+    * Define Element lomi (List of miscallenaous products).   	   	   *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+	* Attribute(s):-                                                   *
+    * status      pesence needed (yes or no)                           *
+	********************************************************************-->
+<!ELEMENT lomi  - O   EMPTY >
+<!ATTLIST lomi
+		status	%yesorno	"1" >	
+		
+
+<!--********************************************************************
+    * Define Element lextp (List of external technical publication).   *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+	* Attribute(s):-                                                   *
+    * status      pesence needed (yes or no)                           *
+	********************************************************************-->
+<!ELEMENT lextp  - O   EMPTY >
+<!ATTLIST lextp
+		status	%yesorno	"1" >	
+		
+
+<!--********************************************************************
+    * Define Element low (List of wirings).                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+	* Attribute(s):-                                                   *
+    * status      pesence needed (yes or no)                           *
+	********************************************************************-->
+<!ELEMENT low  - O   EMPTY >
+<!ATTLIST low
+		status	%yesorno	"1" >	
+
+
+<!--********************************************************************
+    * Define Element loh (List of harness).                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+	* Attribute(s):-                                                   *
+    * status      pesence needed (yes or no)                           *
+	********************************************************************-->
+<!ELEMENT loh  - O   EMPTY >
+<!ATTLIST loh
+		status	%yesorno	"1" >	

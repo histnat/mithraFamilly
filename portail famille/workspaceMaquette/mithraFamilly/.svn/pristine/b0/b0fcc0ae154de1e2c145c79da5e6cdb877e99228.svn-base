@@ -1,0 +1,99 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                          RAFALE                                    *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                     Dated 23rd June 1997                           *
+    *                                                                    *
+    *  Amendment     :							                         *
+    *   31/08/95     : change security value to 1/2/3/4 instead of	     *
+    *                 NP/DR/CD						                     *
+    *   19/05/97     : Changed Public Identifier			             *
+    *								                                     *
+    *                 Modified %INSDEL entity (Used in attribute 	     *
+    *                 lists of elements for version control):		     *
+    *                 deleted "inschlvl" and "delchlvl"			         *
+    *                 added "change" which takes values "add" or "mod".	 *
+    *                 Added Definition of %IPC entity    		         *
+    *                  (used in marked sections)			             *
+    *                  for Illustrated Parts Catalog Data modules.	     *
+    *                                                                    *
+    *   1. Update Public Identifier.                                     *
+    *   2. Removal of Marked Section.                                    *
+    *   3. Move entities %HEADING; to Numbered Paragraphs entity         *
+    *   4. change values of securit np/dr/cd instead of 1/2/3            *
+	*   5. add caption to acparc entity (descript same as aircrew)       *
+    *                                                                    *
+	* Typical invocation :                                               *
+    * <!ENTITY % AECMA                                                   *
+    *   PUBLIC "-//RAFALE//ENTITIES AECMA Configuration 971001//EN" >    *
+    * %AECMA                                                             *
+    ********************************************************************** -->
+
+
+
+<!--**********************************************************************
+    * Define Entity %INSDEL; (Insert/Delete Change Level Attributes)     *
+    *  containing:-                                                      *
+    *  Attribute Definition List.                                        *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Name      - Type     - Default  - Description.                    *
+    *                                                                    *
+    *  change  - value   - Implied  - Controls whether the inserted      *
+    *                        information is added or modified            *
+    ********************************************************************** -->
+
+<!ENTITY % INSDEL
+  "change (add | mod) #IMPLIED" >
+
+
+
+<!--**********************************************************************
+    * Define Entity %bodyatt; (Body Attributes) containing:-             *
+    *  Attribute Definition List.                                        *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Name      - Type     - Default  - Description.                    *
+    *                                                                    *
+    *  ID        - ID       - Implied  - An identifier of the element    *
+    *                       which is assigned at origination and which   *
+    *                       remains unchanged as the document is revised *
+    *                       or updated even though the automatically     *
+    *                       assigned enumeration "labels" change. The    *
+    *                       value of "id" is used when making references *
+    *                       to the element from other portions of the    *
+    *                       document.                                    *
+    * Attribute Definition List stored in entity %INSDEL;                *
+    ********************************************************************** -->
+
+<!ENTITY % bodyatt
+  "id ID #IMPLIED
+   %INSDEL;" >
+
+
+
+
+<!--**********************************************************************
+    * Define Entity %SECURIT; (Status Security) containing:-             *
+    *  Attribute Definition List.                                        *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *                                                                    *
+    *  CLASS    - Declared - Required - Identifies Security Marking.     *
+	*    	NP = Non protege.										     *
+	*		DR = Diffusion Restreinte.							    	 *
+	*		CD = Confidentiel Defense.  						     	 *
+    ********************************************************************** -->
+
+<!ENTITY % SECURIT " class  (NP | DR | CD )  #REQUIRED " >
+
+
+
+<!--**********************************************************************
+   * Call the Common Entities Public Text. The formal public identifier *
+   * is stored in the entity %COMMON;                                   *
+   ********************************************************************** -->
+
+%COMMON;

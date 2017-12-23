@@ -1,0 +1,73 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Schedule information 981222//EN">
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<?Pub Inc>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>05</chapnum><section>
+2</section><subsect>5</subsect><subject>72</subject><discode>00</discode>
+<discodev>A</discodev><incode>281</incode><incodev>A</incodev><itemloc>D</itemloc>
+</avee></dmc>
+<dmtitle><techname>PERIODICITES VISITES D'ENTRETIEN, MOTEUR ASSEMBLE</techname>
+<infoname>VISITES PROGRAMMEES</infoname></dmtitle>
+<issno issno="4" type="c"><issdate year="2003" month="10" day="31"></dmaddres>
+<status><security class="np"><rpc rpcname="s"><orig>F0301</orig><applic><systemid>
+<version version="M88-2 ETAPE 1"></version><version version="M88-2 ETAPE 4">
+</version>
+<nti nti1="1" nti2="0" nti3="0"></systemid></applic><techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Mise en coh&eacute;rence avec la documentation avionneur</rfu>
+<remarks>RAS</remarks>
+</status></idstatus>
+<content>
+<refs><refdm><dmcid id="dm1"><dmcopen dmco="A1A12210000A280AA" change="mod">
+PROCEDURE-VISITE JOURNALIERE</dmcopen></dmcid><dmcid id="dm2"><dmcopen dmco="A1A12251000A280AA">
+PROCEDURE-VISITE APRES VOL</dmcopen></dmcid><dmcid id="dm3"><dmcopen dmco="A1A71000000A251AA">
+INSTALLATION MOTRICE-RINCAGE INHIBITION</dmcopen></dmcid></refdm></refs>
+<schedule><timelim identifier="DAI">
+<equip><applic><systemid><version version="M88-2 ETAPE 1"></version><version
+version="M88-2 ETAPE 4"></version><nti nti1="1"></systemid></applic><refipc
+csn="72000001 000 ">
+<nomen>MOTEUR ASSEMBLE</nomen>
+</equip>
+<timelimit>
+<limittype type="cm">
+<threshold><value>Avant le premier vol de la journ&eacute;e</value></threshold>
+</limittype>
+</timelimit>
+<dmcref change="mod" xrefid="dm1"></timelim><timelim identifier="SPH">
+<equip><applic><systemid><version version="M88-2 ETAPE 1"></version><version
+version="M88-2 ETAPE 4"></version><nti nti1="1"></systemid></applic><refipc
+csn="72000001 000 ">
+<nomen>MOTEUR ASSEMBLE</nomen>
+</equip>
+<timelimit>
+<limittype type="cm">
+<threshold><value>50</value><uom>Heures de fonctionnement</uom></threshold>
+</limittype>
+</timelimit>
+<dmcref change="mod" xrefid="dm2"></timelim><timelim identifier="PO">
+<equip><applic><systemid><version version="M88-2 ETAPE 1"></version><version
+version="M88-2 ETAPE 4"></version><nti nti1="1"></systemid></applic><refipc
+csn="72000001 000 ">
+<nomen>MOTEUR ASSEMBLE</nomen>
+</equip>
+<timelimit>
+<limittype type="cm">
+<threshold><value>Apr&egrave;s chaque </value><uom>Cycle de vol</uom></threshold>
+</limittype>
+</timelimit>
+<dmcref change="mod" xrefid="dm2"></timelim><timelim identifier="SPH">
+<equip><applic><systemid><version version="M88-2 ETAPE 1"></version><nti nti1="1">
+</systemid></applic><refipc csn="72000001 000 ">
+<nomen>MOTEUR ASSEMBLE</nomen>
+</equip>
+<timelimit>
+<limittype type="oc" change="add">
+<threshold><value>48H apr&egrave;s retour du P.A</value></threshold>
+</limittype>
+</timelimit>
+<dmcref xrefid="dm3"></timelim></schedule></content>
+</dmodule>
+<?Pub *0000003118 0>

@@ -1,0 +1,24 @@
+package com.sonovision.openconv.db.dao;
+
+import java.io.Serializable;
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import com.sonovision.openconv.db.vo.Conversion;
+import com.sonovision.openconv.db.vo.Task;
+
+@Repository
+public interface TaskDao extends CommonDao<Task>, Serializable  {
+
+	void deleteAll();
+
+	List<Task> findAll();
+
+	Task findByAll(String actionId, String name, String taskName, String conversionId);
+
+	Task findByConversionActionId(Conversion conversion, String actionId);
+
+	Task findOne(String id);
+
+}

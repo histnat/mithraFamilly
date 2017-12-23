@@ -1,0 +1,472 @@
+package com.sonovision.openconv.log.model;
+
+import java.io.Serializable;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.sedoc.toolbox.LogMes;
+import com.sedoc.toolbox.SpringBeanProvider;
+import com.sonovision.openconv.db.bo.DBConversionService;
+import com.sonovision.openconv.db.exception.DBNONullException;
+import com.sonovision.openconv.db.exception.DBNOUniqueException;
+import com.sonovision.openconv.db.vo.Conversion;
+import com.sonovision.openconv.db.vo.ConversionObject;
+import com.sonovision.openconv.db.vo.LogLine;
+import com.sonovision.openconv.db.vo.Task;
+import com.sonovision.openconv.log.exception.LoggerException;
+import com.sonovision.openconv.log.impl.TaskLoggerServiceImpl;
+import com.sonovision.openconv.service.FileService;
+import com.sonovision.openconv.wf.xmodel.Workflow;
+
+public class DBLogger implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 184329958774383566L;
+
+	private final static String DEFAULT_CONVERSION_MESSAGE_STATUS = "0";
+	private final static LoggerLevel DEFAULT_CONVERSION_MESSAGE_LEVEL = LoggerLevel.INFO;
+
+	@Autowired
+	private static DBConversionService dbConversionService;
+
+	private Conversion conversion;
+
+	private Task task;
+
+	private Workflow workflow;
+
+	private String idExe=null;
+	
+	
+	public DBLogger() {
+		initClass();
+	};
+
+	public DBLogger(String workFlowName, String workFlowSequence, String idExe) throws LoggerException {
+		initClass();
+		this.idExe=idExe;
+		try {
+				conversion = dbConversionService.getConversion(workFlowName, workFlowSequence);
+		} catch (DBNONullException | DBNOUniqueException e) {
+			LogMes.logError(DBLogger.class, "probleme for getting conversion :workFlowName:"+workFlowName+", workFlowSequence:"+workFlowSequence,e);
+		}
+		if (conversion == null) {
+			throw new LoggerException("creation of DBLogger impossible");
+		}
+	}
+	
+	
+	public DBLogger(String folderIn, String folderOut, String workFlowName, String workFlowSequence, String idExe) throws LoggerException {
+		initClass();
+		this.idExe=idExe;
+		try {
+			conversion = dbConversionService.getConversion(folderIn, folderOut, workFlowName, workFlowSequence);
+		} catch (DBNONullException | DBNOUniqueException e) {
+			LogMes.logError(DBLogger.class, "probleme for getting conversion :folderIn :"+folderIn+", folderOut:"+folderOut+", workFlowName:"+workFlowName+", workFlowSequence:"+workFlowSequence,e);
+		}
+		if (conversion == null) {
+			throw new LoggerException("creation of DBLogger impossible");
+		}
+	}
+
+	/**
+	 * It can be replaced by @Configuration with aspectj spring but i don't know
+	 * why it doesn't work
+	 */
+	public void initClass() {
+		if (dbConversionService == null) {
+			dbConversionService = (DBConversionService) SpringBeanProvider.getBean("DBConversionService");
+		}
+	}
+
+	public void log(LoggerType type, String message) {
+		if (type == LoggerType.CONVERSION) {
+			if (conversion == null) {
+				LogMes.log(DBLogger.class, LogMes.ERROR, "db log impossible without context conversion");
+			} else {
+				logConversion(message);
+			}
+		}
+	}
+
+	public void logConversion(String message) {
+		logConversion(this.conversion, message, message, DEFAULT_CONVERSION_MESSAGE_STATUS, DEFAULT_CONVERSION_MESSAGE_LEVEL);
+
+	}
+
+	public void logConversion(Conversion conversion, String message, String messageLong, String logResult, LoggerLevel level) {
+		logConversion(conversion, message, messageLong, logResult, level.getValue(), level.getLogMesLevel());
+	}
+
+	public void logConversion(String message, LoggerLevel level) {
+		logConversion(conversion, message, message, level.getValue().toString(), level);
+
+	}
+
+	public void logConversion(Conversion conversion, String message, String messageLong, String logResult, int level, int logMesLevel) {
+		LogLine logLine = getLogLine(message, messageLong, logResult, level);
+		logLine.setConversion(conversion);
+
+		try {
+			dbConversionService.save(logLine);
+		} catch (DBNONullException | DBNOUniqueException e) {
+			LogMes.logError(DBLogger.class, "Problem during save of logLine :" + logLine, e);
+		}
+		LogMes.log(DBLogger.class, logMesLevel, message);
+	}
+
+	public void logTask(String message) {
+		logTask(this.task, message, message, DEFAULT_CONVERSION_MESSAGE_STATUS, DEFAULT_CONVERSION_MESSAGE_LEVEL);
+
+	}
+
+	public void logTask(String message, LoggerLevel level) {
+		logTask(this.task, message, message, level.getValue().toString(), level);
+
+	}
+
+	public void logTask(Task task, String message, String messageLong, String logResult, LoggerLevel level) {
+		logTask(task, message, messageLong, logResult, level.getValue(), level.getLogMesLevel());
+		logTask(level);
+	}
+
+	public void logTask(Task task, String message, String messageLong, String logResult, int level, int logMesLevel) {
+		LogLine logLine = getLogLine(message, messageLong, logResult, level);
+		logLine.setConversion(dbConversionService.getConversion(task));
+		logLine.setTask(task.getId());
+		task.addLogLine(logLine);
+		// task.getConversion().addLogLine(logLine);
+		try {
+			dbConversionService.save(logLine);
+		} catch (DBNONullException | DBNOUniqueException e) {
+			LogMes.logError(DBLogger.class, "Problem during save of logLine :" + logLine, e);
+		}
+
+		LogMes.log(DBLogger.class, logMesLevel, message);
+	}
+
+	public void logObject(String message, LoggerLevel level, String idObject) {
+		logObject(this.task, message, message, level.getValue().toString(), level.getValue(), level.getLogMesLevel(), idObject);
+
+	}
+
+	public void logObject(Task task, String message, String messageLong, String logResult, int level, int logMesLevel, String idObject) {
+		ConversionObject co = null;
+		try {
+			co = dbConversionService.getConversionObject(conversion, task, idObject);
+		} catch (DBNONullException | DBNOUniqueException e) {
+			LogMes.logError(DBLogger.class, "Problem during creation of ConversionObject :task :" + task + " idObject:" + idObject + " conversion:" + conversion, e);
+		}
+		logObject(task, message, messageLong, logResult, level, logMesLevel, co);
+	}
+
+	public void logObject(Task task, String message, String messageLong, String logResult, int level, int logMesLevel, ConversionObject conversionObject) {
+		LogLine logLine = getLogLine(message, messageLong, logResult, level);
+		logLine.setConversion(dbConversionService.getConversion(task));
+		logLine.setTask(task.getId());
+		logLine.setConversionObject(conversionObject);
+		try {
+			dbConversionService.save(logLine);
+		} catch (DBNONullException | DBNOUniqueException e) {
+			LogMes.logError(DBLogger.class, "Problem during save of logLine :" + logLine, e);
+		}
+		// task.getConversion().addLogLine(logLine);
+		task.addLogLine(logLine);
+		LogMes.log(DBLogger.class, logMesLevel, message);
+	}
+
+	/**
+	 * change logResult of this conversionObject, and check task, and conversion
+	 * 
+	 * @param info
+	 * @param idObject
+	 */
+	public void logObject(LoggerLevel level, String idObject) {
+		ConversionObject co = null;
+		try {
+			co = dbConversionService.getConversionObject(conversion, task, idObject);
+		} catch (DBNONullException | DBNOUniqueException e) {
+			LogMes.logError(DBLogger.class, "Problem during creation of ConversionObject :task :" + task + " idObject:" + idObject + " conversion:" + conversion, e);
+		}
+		co.setLogResult(level.getValue().toString());
+		try {
+			dbConversionService.update(co);
+		} catch (DBNONullException | DBNOUniqueException e) {
+			LogMes.logError(DBLogger.class, "Problem during update of:" + co, e);
+		}
+		logTask(level);
+	}
+
+	public void logObject(String objectId, String level, String message) {
+		ConversionObject co = dbConversionService.getConversionObjectById(objectId);
+		LoggerLevel ll = getLoggerLevel(level);
+		logObject(co.getTask(), message, message, level, ll.getValue(), ll.getLogMesLevel(), co);
+	}
+
+	public static LoggerLevel getLoggerLevel(String level) {
+		for (LoggerLevel ll : LoggerLevel.values()) {
+			if (level.equals(ll.toString())) {
+				return ll;
+			}
+		}
+		return DEFAULT_CONVERSION_MESSAGE_LEVEL;
+	}
+
+	/**
+	 * return conversionObject for idObject
+	 * 
+	 * @param idObject
+	 * @return
+	 */
+	public ConversionObject getConversionObject(String idObject) {
+		ConversionObject co = null;
+		try {
+			co = dbConversionService.getConversionObject(conversion, task, idObject);
+		} catch (DBNONullException | DBNOUniqueException e) {
+			LogMes.logError(DBLogger.class, "Problem during creation of ConversionObject :task :" + task + " idObject:" + idObject + " conversion:" + conversion, e);
+		}
+		return co;
+	}
+
+	public void logTask(LoggerLevel level) {
+
+		if (task.getLogResult() == null || Integer.parseInt(task.getLogResult()) > level.getValue()) {
+			task.setLogResult(level.getValue().toString());
+			dbConversionService.findByAll(task);
+			try {
+				dbConversionService.save(task);
+			} catch (DBNONullException | DBNOUniqueException e) {
+				LogMes.logError(DBLogger.class, "Problem during task save:" + task, e);
+			}
+
+			logConversion(level);
+		}
+	}
+
+	public void logConversion(LoggerLevel level) {
+		Conversion conversionFound = null;
+		if (conversion.getLogResult() == null || Integer.parseInt(conversion.getLogResult()) >= level.getValue()) {
+			conversion.setLogResult(level.getValue().toString());
+			conversionFound = dbConversionService.findByAll(conversion);
+
+			try {
+				if (conversionFound == null) {
+					dbConversionService.save(conversion);
+				} else {
+					dbConversionService.update(conversion);
+				}
+			} catch (DBNONullException | DBNOUniqueException e) {
+
+				LogMes.logError(DBLogger.class, "Problem during creation of logConversion:" + level, e);
+			}
+		}
+	}
+
+	private LogLine getLogLine(String message, String messageLong, String logResult, int level) {
+		LogLine logLine = new LogLine();
+		logLine.setMessage(message);
+		logLine.setMessageLong(message);
+		logLine.setLogResult(logResult);
+		logLine.setLevel(level);
+		return logLine;
+	}
+
+	public void setTask(com.sonovision.openconv.wf.xmodel.Task xmlTask, com.sonovision.openconv.wf.xmodel.Action xmlAction) {
+		Task task = new Task();
+		task.setActionId(xmlAction.getActionid());
+		task.setDescription(xmlTask.getDescription());
+		task.setName(xmlTask.getName());
+		task.setTaskName(xmlTask.getName());
+		task.setXmlId(xmlTask.getId().toString());
+
+		try {
+			this.task = dbConversionService.getOrSave(task);
+		} catch (DBNONullException | DBNOUniqueException e) {
+			LogMes.logError(DBLogger.class, "Problem during creation task save :" + task, e);
+		}
+
+	}
+
+	public String getFolderIn() {
+		if (conversion == null)
+			return null;
+		return conversion.getFolderIn();
+	}
+
+	public void setFolderIn(String folderIn) {
+		if (conversion == null)
+			return;
+		conversion.setFolderIn(folderIn);
+		try {
+			dbConversionService.save(conversion);
+		} catch (DBNONullException | DBNOUniqueException e) {
+			LogMes.logError(DBLogger.class, "Problem during save of conversion:"+conversion, e);
+		}
+	}
+
+	public void setFolderOut(String folderOut) {
+		if (conversion == null){
+			return;
+		}
+		conversion.setFolderOut(folderOut);
+		try {
+			dbConversionService.save(conversion);
+		} catch (DBNONullException | DBNOUniqueException e) {
+			LogMes.logError(DBLogger.class, "Problem during save of conversion:"+conversion, e);
+		}
+	}
+
+	public String getFolderOut() {
+		return conversion.getFolderOut();
+	}
+
+	public void stopConversion() {
+		if (conversion == null)
+			return;
+		try {
+			dbConversionService.save(conversion);
+		} catch (DBNONullException | DBNOUniqueException e) {
+			LogMes.logError(DBLogger.class, "Problem during save of conversion:"+conversion, e);
+		}
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#hashCode()
+	 */
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((conversion == null) ? 0 : conversion.hashCode());
+		result = prime * result + ((dbConversionService == null) ? 0 : dbConversionService.hashCode());
+		result = prime * result + ((task == null) ? 0 : task.hashCode());
+		return result;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DBLogger other = (DBLogger) obj;
+		if (conversion == null) {
+			if (other.conversion != null)
+				return false;
+		} else if (!conversion.equals(other.conversion))
+			return false;
+		if (dbConversionService == null) {
+			if (other.dbConversionService != null)
+				return false;
+		} else if (!dbConversionService.equals(other.dbConversionService))
+			return false;
+		if (task == null) {
+			if (other.task != null)
+				return false;
+		} else if (!task.equals(other.task))
+			return false;
+		return true;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "DBLogger [dbConversionService=" + dbConversionService + ", conversion=" + conversion + ", task=" + task + "]";
+	}
+
+	/**
+	 * @return the dbConversionService
+	 */
+	public DBConversionService getDbConversionService() {
+		return dbConversionService;
+	}
+
+	/**
+	 * @param dbConversionService
+	 *            the dbConversionService to set
+	 */
+	public void setDbConversionService(DBConversionService dbConversionService) {
+		this.dbConversionService = dbConversionService;
+	}
+
+	/**
+	 * @return the conversion
+	 */
+	public Conversion getConversion() {
+		return conversion;
+	}
+
+	/**
+	 * @param conversion
+	 *            the conversion to set
+	 */
+	public void setConversion(Conversion conversion) {
+		this.conversion = conversion;
+	}
+
+	/**
+	 * @return the task
+	 */
+	public Task getTask() {
+		return task;
+	}
+
+	/**
+	 * @param task
+	 *            the task to set
+	 */
+	public void setTask(Task task) {
+		this.task = task;
+		conversion.addTask(task);
+	}
+
+	/**
+	 * @return the workflow
+	 */
+	public Workflow getWorkflow() {
+		return workflow;
+	}
+
+	/**
+	 * @param workflow
+	 *            the workflow to set
+	 */
+	public void setWorkflow(Workflow workflow) {
+		this.workflow = workflow;
+	}
+
+	public void saveConversion() {
+		try {
+			dbConversionService.save(conversion);
+		} catch (DBNONullException | DBNOUniqueException e) {
+			LogMes.logError(DBLogger.class, "Problem during save of conversion:"+conversion, e);
+		}
+
+	}
+
+	public String getIdExe() {
+		return idExe;
+	}
+
+	public void setIdExe(String idExe) {
+		this.idExe = idExe;
+	}
+	
+	
+
+}

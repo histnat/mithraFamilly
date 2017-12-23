@@ -1,0 +1,254 @@
+package com.sonovision.openconv.db.dao.impl;
+
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertNotNull;
+import static org.testng.Assert.assertNull;
+
+import java.lang.reflect.Method;
+import java.util.List;
+
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import com.sonovision.openconv.db.exception.DBNONullException;
+import com.sonovision.openconv.db.exception.DBNOUniqueException;
+import com.sonovision.openconv.db.vo.LogLine;
+import com.sonovision.openconv.utils.TestDBHelper;
+
+public class LogLineDaoImplTest extends TestDBHelper{
+
+	@AfterMethod
+    public void setAfterMethod(Method method) throws Exception {
+    	deleteAll();
+    }
+
+    @BeforeMethod
+    public void setUpMethod(Method method) throws Exception {
+    	deleteAll();
+    }
+    
+    @Test
+    public void test_save() throws DBNONullException, DBNOUniqueException  {
+        System.out.println("*** TEST logLineDao.save ***");
+
+        LogLine logLine = getLogLineWithoutSave();
+        logLineDao.save(logLine);
+        assertNotNull(logLine.getId());
+        
+        
+    }
+
+    /**
+     * test logLineDao.deleteAll. 
+     * @throws DBNOUniqueException 
+     * @throws DBNONullException 
+     *
+     * @throws DuplicateObjectException
+     * @throws UnexpectedDatabaseException
+     */
+    @Test(dependsOnMethods = {"test_save"})
+    public synchronized void test_deleteAll() throws DBNONullException, DBNOUniqueException  {
+        System.out.println("*** TEST logLineDao.deleteAll ***");
+
+        logLineDao.deleteAll();
+        
+        List<LogLine> logLineList = getLogLineWithSave(3);
+
+        List<LogLine> logLineTest = (List<LogLine>) logLineDao.findAll();
+        assertEquals(logLineTest.size(), 3);
+    }
+
+    /**
+     * test logLineDao.delete
+     * @throws DBNOUniqueException 
+     * @throws DBNONullException 
+     *
+     * @throws DuplicateObjectException
+     * @throws UnexpectedDatabaseException
+     */
+    @Test(dependsOnMethods = {"test_save", "test_deleteAll"})
+    public void test_delete() throws DBNONullException, DBNOUniqueException  {
+        System.out.println("*** TEST logLineDao.delete ***");
+        String logLineId;
+
+        LogLine logLine = getLogLineWithSave();
+        logLineId = logLine.getId();
+        assertNotNull(logLineId);
+
+        logLineDao.delete(logLine);
+
+        logLine = logLineDao.findOne(logLineId);
+        assertNull(logLine);
+    }
+
+    /**
+     * test logLineDao.update
+     * @throws DBNOUniqueException 
+     * @throws DBNONullException 
+     *
+     * @throws DuplicateObjectException
+     * @throws UnexpectedDatabaseException
+     */
+    @Test(dependsOnMethods = {"test_save", "test_delete", "test_deleteAll"})
+    public void test_Update() throws DBNONullException, DBNOUniqueException  {
+        System.out.println("*** TEST logLineDao.update ***");
+        String logLineId;
+
+        LogLine logLine = getLogLineWithSave();
+        logLineId = logLine.getId();
+        assertNotNull(logLineId);
+
+        logLine.setLogResult("TEST UPDATE");
+        logLineDao.save(logLine);
+
+        LogLine logLineTest = new LogLine();
+        logLineTest = logLineDao.findOne( logLineId);
+        assertEquals(logLineTest.getLogResult(), "TEST UPDATE");
+
+    }
+
+    /**
+     * test logLineDao.get
+     * @throws DBNOUniqueException 
+     * @throws DBNONullException 
+     *
+     * @throws DuplicateObjectException
+     * @throws UnexpectedDatabaseException
+     */
+    @Test(dependsOnMethods = {"test_save", "test_delete", "test_deleteAll"})
+    public void test_get() throws DBNONullException, DBNOUniqueException  {
+        System.out.println("*** TEST logLineDao.get ***");
+        String logLineId;
+
+        LogLine logLine = getLogLineWithSave();
+        logLineId = logLine.getId();
+        assertNotNull(logLineId);
+        String str = logLine.getLogResult();
+        
+        logLine = getLogLineWithoutSave(2);
+        logLineDao.save(logLine);
+        assertNotNull(logLine.getId());
+
+        LogLine logLineTest = new LogLine();
+        logLineTest = logLineDao.findOne( logLineId);
+        assertNotNull(logLineTest.getId());
+        assertEquals(logLineTest.getLogResult(), str);
+
+
+    }
+
+    /**
+     * test logLineDao.findAll
+     * @throws DBNOUniqueException 
+     * @throws DBNONullException 
+     *
+     * @throws DuplicateObjectException
+     * @throws UnexpectedDatabaseException
+     */
+    @Test(dependsOnMethods = {"test_save", "test_delete", "test_deleteAll"})
+    public void test_findAll() throws DBNONullException, DBNOUniqueException  {
+        System.out.println("*** TEST logLineDao.findAll ***");
+
+        logLineDao.deleteAll();
+
+        LogLine logLine = getLogLineWithSave();
+        assertNotNull(logLine.getId());
+
+        List<LogLine> result = (List<LogLine>) logLineDao.findAll();
+        assertEquals(result.size(), 1);
+
+    
+
+    }
+
+    /**
+     * test logLineDao.findOne
+     * @throws DBNOUniqueException 
+     * @throws DBNONullException 
+     *
+     * @throws DuplicateObjectException
+     * @throws UnexpectedDatabaseException
+     */
+    @Test(dependsOnMethods = {"test_save", "test_delete", "test_deleteAll"})
+    public void test_findOne() throws DBNONullException, DBNOUniqueException  {
+        System.out.println("*** TEST logLineDao.findOne ***");
+
+        logLineDao.deleteAll();
+
+        List<LogLine> logLine = getLogLineWithSave(2);
+
+
+        List<LogLine> logLineList = (List<LogLine>) logLineDao.findAll();
+        assertEquals(logLineList.size(), logLine.size());
+
+        LogLine logLineTest = logLineDao.findOne(logLine.get(0).getId());//langue2.getScDmCodeId());
+        assertNotNull(logLineTest.getId());
+        assertEquals(logLineTest.getId(), logLine.get(0).getId());
+
+        
+    }
+
+    /**
+     * test dbConversionService.getOrSave
+     * @throws DBNOUniqueException 
+     * @throws DBNONullException 
+     *
+     * @throws DuplicateObjectException
+     * @throws UnexpectedDatabaseException
+     */
+    @Test(dependsOnMethods = {"test_save", "test_delete", "test_deleteAll"})
+    public void test_getOrSave() throws DBNONullException, DBNOUniqueException  {
+        System.out.println("*** TEST dbConversionService.getOrSave ***");
+
+        logLineDao.deleteAll();
+        
+        LogLine logLine = getLogLineWithoutSave();
+        logLine = dbConversionService.getOrSave(logLine);
+        assertNotNull(logLine.getId());        
+
+        List<LogLine> logLineList = (List<LogLine>) logLineDao.findAll();
+        assertEquals(logLineList.size(), 1);
+
+        LogLine logLineTest = dbConversionService.getOrSave(logLine);
+        assertNotNull(logLineTest.getId());
+
+        logLineList = (List<LogLine>) logLineDao.findAll();
+        assertEquals(logLineList.size(), 1);
+        
+        
+    }
+    
+    /**
+     * test dbConversionService.findByAll
+     * @throws DBNOUniqueException 
+     * @throws DBNONullException 
+     *
+     * @throws DuplicateObjectException
+     * @throws UnexpectedDatabaseException
+     */
+    @Test(dependsOnMethods = {"test_save", "test_delete", "test_deleteAll"})
+    public void test_findByAll() throws DBNONullException, DBNOUniqueException  {
+        System.out.println("*** TEST dbConversionService.findByAll ***");
+
+        logLineDao.deleteAll();
+        
+        LogLine logLine = getLogLineWithoutSave();
+        logLine = dbConversionService.getOrSave(logLine);
+        assertNotNull(logLine.getId());        
+
+        List<LogLine> logLineList = (List<LogLine>) logLineDao.findAll();
+        assertEquals(logLineList.size(), 1);
+
+        LogLine logLineTest = dbConversionService.findByAll(logLine);
+        assertNotNull(logLineTest.getId());
+
+        logLineList = (List<LogLine>) logLineDao.findAll();
+        assertEquals(logLineList.size(), 1);
+        
+        
+    }
+    
+
+    
+}

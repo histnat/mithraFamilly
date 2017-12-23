@@ -1,0 +1,218 @@
+package net.mithra.familly.db.dao.execution.impl;
+
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertNotNull;
+import static org.testng.Assert.assertNull;
+
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import net.mithra.familly.db.dao.CoScenarioDao;
+
+import net.mithra.familly.db.exception.DBNONullException;
+import net.mithra.familly.db.exception.DBNOUniqueException;
+import net.mithra.familly.db.vo.execution.CoScenario;
+import net.mithra.familly.db.vo.user.FaUser;
+import net.mithra.familly.utils.TestDBHelper;
+
+public class CoScenarioDaoTest extends TestDBHelper {
+
+	@Autowired
+	CoScenarioDao coScenarioDao;
+
+	@AfterMethod
+	public void setAfterMethod(Method method) throws Exception {
+		deleteAll();
+	}
+
+	@BeforeMethod
+	public void setUpMethod(Method method) throws Exception {
+		deleteAll();
+	}
+
+	@Test
+	public void test_save() throws DBNONullException, DBNOUniqueException {
+		System.out.println("*** TEST coScenarioDao.save ***");
+		CoScenario coScenario = getCoScenarioWithoutSave();
+		coScenarioDao.save(coScenario);
+		assertNotNull(coScenario.getId());
+		CoScenario result = coScenarioDao.find(coScenario);
+        assertNotNull(result);
+        coScenarioDao.delete(coScenario);
+	}
+	
+	@Test
+	public void test_add() throws DBNONullException, DBNOUniqueException {
+		System.out.println("*** TEST coScenarioDao.add ***");
+		CoScenario coScenario = getCoScenarioWithoutSave();
+		assertNotNull(coScenario);
+		coScenarioDao.add(coScenario);
+		assertNotNull(coScenario.getId());
+		coScenarioDao.delete(coScenario);
+	}
+	
+
+	@Test
+    public void testfindByUser() throws DBNONullException, DBNOUniqueException {
+        System.out.println("*** TEST coScenarioDao.findByUser ***");
+        CoScenario coScenario = getCoScenarioWithoutSave();
+        FaUser opUser=getOpUserWithSave();
+//        coScenario.setOpUser(opUser);
+        coScenario.setUserId(opUser.getId());
+        coScenarioDao.getOrSave(coScenario);
+        assertNotNull(coScenario);
+        assertNotNull(coScenario.getId());
+        CoScenario coScenarioTest = coScenarioDao.findByUser(opUser);
+        assertNotNull(coScenarioTest);
+        assertEquals(coScenarioTest.getId(),coScenario.getId());
+        deleteAll();
+    }
+	
+	/**
+	 * test opUserDao.deleteAll.
+	 * 
+	 * @throws DBNOUniqueException
+	 * @throws DBNONullException
+	 *
+	 * @throws DuplicateObjectException
+	 * @throws UnexpectedDatabaseException
+	 */
+	@Test(dependsOnMethods = { "test_save" })
+	public void test_deleteAll() throws DBNONullException, DBNOUniqueException {
+		System.out.println("*** TEST coScenarioDao.deleteAll ***");
+
+		getCoScenarioListWithSave(3);
+		coScenarioDao.deleteAll(CoScenario.class);
+
+		List<CoScenario> coScenarioTest = (List<CoScenario>) coScenarioDao.findAll(CoScenario.class);
+		assertEquals(coScenarioTest.size(), 0);
+	}
+
+	/**
+	 * test opUserDao.delete
+	 * 
+	 * @throws DBNOUniqueException
+	 * @throws DBNONullException
+	 *
+	 * @throws DuplicateObjectException
+	 * @throws UnexpectedDatabaseException
+	 */
+	@Test(dependsOnMethods = { "test_save", "test_deleteAll" })
+	public void test_delete() throws DBNONullException, DBNOUniqueException {
+		System.out.println("*** TEST opUserDao.delete ***");
+		String coScenarioId;
+
+		CoScenario coScenario = getCoScenarioWithSave();
+		coScenarioId = coScenario.getId();
+		assertNotNull(coScenarioId);
+
+		coScenarioDao.delete(coScenario);
+
+		CoScenario result = coScenarioDao.find(coScenario);
+		assertNull(result);
+	}
+
+	/**
+	 * test opUserDao.update
+	 * 
+	 * @throws DBNOUniqueException
+	 * @throws DBNONullException
+	 *
+	 * @throws DuplicateObjectException
+	 * @throws UnexpectedDatabaseException
+	 */
+	@Test(dependsOnMethods = { "test_save", "test_delete", "test_deleteAll" })
+	public void test_Update() throws DBNONullException, DBNOUniqueException {
+		System.out.println("*** TEST coScenarioDao.update ***");
+		String coScenarioId;
+
+		CoScenario coScenario = getCoScenarioWithSave();
+		coScenarioId = coScenario.getId();
+		assertNotNull(coScenarioId);
+
+		coScenario.setCode("test");
+		coScenarioDao.update(coScenario);
+
+
+		CoScenario result = coScenarioDao.find(coScenario);
+        assertNotNull(result);
+        assertEquals(result.getCode(),"test");
+
+	}
+
+
+	/**
+	 * test opUserDao.findAll
+	 * 
+	 * @throws DBNOUniqueException
+	 * @throws DBNONullException
+	 *
+	 * @throws DuplicateObjectException
+	 * @throws UnexpectedDatabaseException
+	 */
+	@Test(dependsOnMethods = { "test_add"})
+	public void test_find() throws DBNONullException, DBNOUniqueException {
+		System.out.println("*** TEST coScenarioDao.find ***");
+		String coScenarioId;
+		
+		CoScenario coScenario = getCoScenarioWithSave();
+		coScenarioId = coScenario.getId();
+		assertNotNull(coScenarioId);
+		
+		CoScenario result = coScenarioDao.find(coScenario);
+        assertNotNull(result);    
+        assertEquals(result.getCode(), coScenario.getCode());
+        assertEquals(result.getDescrs().size(), coScenario.getDescrs().size());
+        assertEquals(2, coScenario.getDescrs().size());
+        assertEquals(result.getName().size(), coScenario.getName().size());
+        assertEquals(2, coScenario.getName().size());
+        assertEquals(result.getModificationdate(), coScenario.getModificationdate());
+        assertEquals(result.getCreationDate(), coScenario.getCreationDate());
+        assertEquals(result.getNbrStep(), coScenario.getNbrStep());
+        assertEquals(result.getFileName(), coScenario.getFileName());
+        assertEquals(result.getShared(), coScenario.getShared());
+	}
+	
+	
+	/**
+	 * test opUserDao.findById
+	 * 
+	 * @throws DBNOUniqueException
+	 * @throws DBNONullException
+	 *
+	 * @throws DuplicateObjectException
+	 * @throws UnexpectedDatabaseException
+	 */
+	@Test(dependsOnMethods = { "test_save", "test_delete", "test_deleteAll" })
+	public void test_findByAll() throws DBNONullException, DBNOUniqueException {
+		System.out.println("*** TEST coScenarioDao.findByAll ***");
+
+		coScenarioDao.deleteAll();
+
+		CoScenario coScenario = getCoScenarioWithoutSave();
+		coScenarioDao.save(coScenario);
+		assertNotNull(coScenario.getId()); 
+		
+        List<CoScenario> coScenarioList = (List<CoScenario>) coScenarioDao.findAll(CoScenario.class);
+        assertEquals(coScenarioList.size(), 1);
+		
+
+		CoScenario coScenarioListResult =coScenarioDao.findByAll(coScenario.getId(),coScenario.getName(),coScenario.getFileName(),coScenario.getNbrStep(),coScenario.getCreationDate(),coScenario.getModificationdate(),coScenario.getShared());
+		assertNotNull(coScenarioListResult);
+		assertNotNull(coScenarioListResult.getId());
+
+		coScenarioList = (List<CoScenario>) coScenarioDao.findAll(CoScenario.class);
+        assertEquals(coScenarioList.size(), 1);
+
+	}
+
+
+}

@@ -1,0 +1,156 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                              RAFALE                                *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.1                            *
+    *                   Dated 15th January 1998                          *
+    *                                                                    *
+    * Amendment :-                                                       *
+    *  19/05/97        : Changed Public Identifier                       *
+    *                     deleted <math> from <entry> content model.	 *
+	*																	 *
+    *                     added attribute %INSDEL; to elements			 *
+    *                     rfa,legend,table,tgroup,colspec,spanspec,thead,*
+    *                     tbody,row,entry								 *
+    *  15/01/98        : Changed Public Identifier                       *
+    *                    deleted Figure part                          	 *
+	* 1. Update Public Identifier.                                       *
+    *                                                                    *
+    * Typical invocation :                                               *
+    * <!ENTITY % EXTTAB                                                  *
+    * PUBLIC "-//RAFALE//ELEMENTS Table Breakdown 980115//EN" >          *
+    * %EXTTAB;                                                          *
+    ********************************************************************** -->
+
+
+
+<!--*****************************************************************************
+    * Define Element TABLE (Table).		                            	*
+    **************************************************************************-->
+<!ELEMENT table     - -       ((%applic;)?,(title)?,(tgroup+ | graphic+))
+                               -(specpara) -- Table.-->
+<!ATTLIST table
+              tocentry	%yesorno;      "1"
+			-- Included in list of tables.--
+              frame    	(top | bottom | topbot | all | sides | none)
+                                    	#IMPLIED
+			-- Position of border siderules, as well as the
+			   required top and bottom rules.--
+              %bodyatt; >
+
+
+<!--*****************************************************************************
+    * Define Element TGROUP (Table Group).		                    	*
+    **************************************************************************-->
+<!ELEMENT tgroup - O (colspec*,spanspec*,thead?,tfoot?,tbody) -- Table Group.-->
+<!ATTLIST tgroup      %INSDEL;
+              cols    	NUMBER         	#REQUIRED
+			-- The number of distinct columns.--
+              colsep  	%yesorno;      	#IMPLIED
+			-- Internal Column rulings.--
+              rowsep  	%yesorno;      	#IMPLIED
+			-- Internal Row rulings.--
+              align   	(left | right | center | justify )
+                                     	"left"
+			-- Text horizontal position within the column (or
+			   portion controlled by this tgroup).-->
+
+
+<!--*****************************************************************************
+    * Define Element COLSPEC (Column Specification).			    	*
+    **************************************************************************-->
+<!ELEMENT colspec   - O       EMPTY -- Column Specification.-->
+<!ATTLIST colspec     %INSDEL;
+              colnum    NUMBER         	#IMPLIED
+			-- This identifies the number of column. counting
+			   from 1 at left of table.--
+              colname   NMTOKEN        	#IMPLIED
+			-- Name of the column.--
+              align        (left | right | center | justify )
+                                      	#IMPLIED
+			-- Text horizontal position within the column (or
+			   portion controlled by this tgroup.--
+              colwidth  CDATA          	#REQUIRED
+			-- Width of the column in millimeter.--
+              colsep    %yesorno;      	#IMPLIED
+			-- Internal Column rulings.--
+              rowsep    %yesorno;      	#IMPLIED
+			-- Internal Row rulings.-->
+
+
+<!--*****************************************************************************
+    * Define Element SPANSPEC (Span Column Specification).		    	*
+    **************************************************************************-->
+<!ELEMENT spanspec  - O       EMPTY -- Span Column Specification.-->
+<!ATTLIST spanspec    %INSDEL;
+              namest    NMTOKEN        	#REQUIRED
+			-- Name of the left most column of the span.--
+              nameend   NMTOKEN        	#REQUIRED
+			-- Name of the right most column of the span.--
+              spanname  NMTOKEN        	#REQUIRED
+			-- Name of the horizontal span.--
+              align     (left | right | center | justify )
+                                     	"center"
+			--  Text horizontal position within the column.--
+              colsep    %yesorno;      	#IMPLIED
+			-- Internal Column rulings.--
+              rowsep   	%yesorno;      	#IMPLIED
+			-- Internal Row rulings.-->
+
+
+<!--*****************************************************************************
+    * Define Element THEAD (Table Header).		                    	*
+    **************************************************************************-->
+<!ELEMENT thead - O       (row+) -- Table Header.-->
+<!ATTLIST thead   %INSDEL;
+              valign       (top | middle | bottom)  "bottom"
+			-- Text vertical positioning within the entries.-->
+
+
+<!--*****************************************************************************
+    * Define Element TFOOT (Table Footer).				    	*
+    **************************************************************************-->
+<!ELEMENT tfoot - O       (row+) -- Table Footer.-->
+<!ATTLIST tfoot    %INSDEL;
+              valign	(top | middle | bottom)
+					"top"
+			-- Text vertical positioning within the entries.-->
+
+
+<!--*****************************************************************************
+    * Define Element TBODY (Table Body).				    	*
+    **************************************************************************-->
+<!ELEMENT tbody     - O       (row+) -- Table Body.-->
+<!ATTLIST tbody    %INSDEL;
+              valign    (top | middle | bottom)
+					"top"
+			-- Text vertical positioning within the entries.-->
+
+
+<!--*****************************************************************************
+    * Define Element ROW (Row Of Table).				    	*
+    **************************************************************************-->
+<!ELEMENT row       - O       (entry)+ -- Row Of Table.-->
+<!ATTLIST row      %INSDEL;
+              rowsep    %yesorno;    	#IMPLIED -- Internal Row rulings.-->
+
+
+<!--*****************************************************************************
+    * Define Element ENTRY (Table Entry).				    	*
+    **************************************************************************-->
+<!ELEMENT entry     - O       (para | %list; )+  -- Table Entry.-->
+<!ATTLIST entry    %INSDEL;
+              colname   NMTOKEN      	#IMPLIED -- Column name of entry.--
+              spanname  NMTOKEN        	#IMPLIED -- Name of horizontal span.--
+              morerows  NUMBER         	"0"      -- Number of additional rows in
+					            a vertical straddle.--
+              colsep    %yesorno;      	#IMPLIED -- Internal Row rulings.--
+              rowsep    %yesorno;      	#IMPLIED -- Internal Row rulings.--
+              valign    (top | bottom | middle)
+					"top"
+			-- Text vertical positioning within the entries.--
+              align     (left | right | center | justify )
+                                       	#IMPLIED
+			-- Text horizontal position within the column.-->
+

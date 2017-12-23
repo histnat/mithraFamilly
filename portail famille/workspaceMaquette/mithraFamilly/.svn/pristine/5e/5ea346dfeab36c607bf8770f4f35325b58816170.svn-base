@@ -1,0 +1,158 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Aircraft Ground Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1ARF7201SF030100245A011 SYSTEM "x-dm://0900f90b8005bf5e,MYWORKING" NDATA jpeg>
+<!ENTITY A1ARF7201SF030100244A011 SYSTEM "x-dm://0900f90b8005bf5c,MYWORKING" NDATA jpeg>
+<!ENTITY A1ARF7201SF030100243A011 SYSTEM "x-dm://0900f90b8005bf5a,MYWORKING" NDATA jpeg>
+<!ENTITY A1ARF7201SF030100242A011 SYSTEM "x-dm://0900f90b8005bf6d,MYWORKING" NDATA jpeg>
+]>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><age><modelic>A<?Pub Caret1>1</modelic><supeqvc>A</supeqvc><ecscc>RF</ecscc><eidc>72</eidc><cic>06</cic><discode>00</discode><discodev>A</discodev><incode>840</incode><incodev>A</incodev><itemloc>C</itemloc></age></dmc>
+<dmtitle><techname>MOYEN DE DIALOGUE M88</techname><infoname>PROCEDURES DE SORTIE DE VALISE</infoname></dmtitle>
+<issno issno="1" type="n">
+<issdate year="2010" month="06" day="15">
+</dmaddres><status>
+<security class="np">
+<rpc rpcname="s">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88 ETAPE 4 MDD V10"></version>
+<customer aaf="1" anf="1">
+<nti nti1="1" nti2="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Version initiale</rfu>
+<remarks>RAS</remarks>
+<icns><icn id="a1arf7201sf030100242a011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>RF</chapnum><section>7</section><subsect>2</subsect><subject>01</subject><rpc rpcname="s"><orig>F0301</orig><illnum>00242</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="a1arf7201sf030100243a011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>RF</chapnum><section>7</section><subsect>2</subsect><subject>01</subject><rpc rpcname="s"><orig>F0301</orig><illnum>00243</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="a1arf7201sf030100244a011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>RF</chapnum><section>7</section><subsect>2</subsect><subject>01</subject><rpc rpcname="s"><orig>F0301</orig><illnum>00244</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="a1arf7201sf030100245a011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>RF</chapnum><section>7</section><subsect>2</subsect><subject>01</subject><rpc rpcname="s"><orig>F0301</orig><illnum>00245</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<norefs>
+</refs><proced><pmd>
+<manhour value="0,5"></manhour>
+<duration value="0,5"></duration>
+</pmd><prelreqs><reqconds>
+<noconds></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="0,5"></reqper>
+</reqpers><supequip><nosupeq><nosupeqs></supequip><supplies><supplyli exhaust="0">
+<supply id="RZAB00017" mand="0"><refipc csn="72017704 012 "><nomen>Bouchon de protection</nomen><quantity>1</quantity></supply>
+<supply id="RZAB00022" mand="0"><refipc csn="72017704 013 "><nomen>Bouchon de protection</nomen><quantity>1</quantity></supply>
+<supply id="RZAC00020" mand="0"><refipc csn="72017705 013 "><nomen>Bouchon de protection</nomen><quantity>1</quantity></supply>
+<supply id="RZAC00024" mand="0"><refipc csn="72017705 014 "><nomen>Bouchon de protection</nomen><quantity>1</quantity></supply>
+<supply id="RZAD00017" mand="0"><refipc csn="72017706 012 "><nomen>Bouchon de protection</nomen><quantity>1</quantity></supply>
+<supply id="RZAD00022" mand="0"><refipc csn="72017706 013 "><nomen>Bouchon de protection</nomen><quantity>1</quantity></supply>
+<supply id="RZAE00036" mand="0"><refipc csn="72017707 019 "><nomen>Bouchon de protection</nomen><quantity>1</quantity></supply>
+<supply id="RZAE00037" mand="0"><refipc csn="72017707 021 "><nomen>Bouchon de protection</nomen><quantity>1</quantity></supply>
+<supply id="RZAE00044" mand="0"><refipc csn="72017707 020 "><nomen>Bouchon de protection</nomen><quantity>1</quantity></supply>
+<supply id="RZAH00006" mand="0"><refipc csn="72017702 012 "><nomen>Prot&egrave;ge connecteur</nomen><quantity>1</quantity></supply>
+<supply id="RZAJ00006" mand="0"><refipc csn="72017702 010 "><nomen>Prot&egrave;ge connecteur</nomen><quantity>1</quantity></supply>
+<supply id="RZAK00032" mand="0"><refipc csn="72017709 014 "><nomen>Bouchon de protection</nomen><quantity>1</quantity></supply>
+<supply id="RZAK00033" mand="0"><refipc csn="72017709 013 "><nomen>Bouchon de protection</nomen><quantity>1</quantity></supply>
+<supply id="RZAM00018" mand="0"><refipc csn="72017710 013 "><nomen>Bouchon de protection</nomen><quantity>1</quantity></supply>
+<supply id="RZAM00019" mand="0"><refipc csn="72017710 014 "><nomen>Bouchon de protection</nomen><quantity>1</quantity></supply>
+</supplyli></supplies><miscs><nomisc></miscs><safety><nosafety></safety></prelreqs><mainfunc>
+<step1 id="p10" control="0">
+<para><p>D&eacute;solidariser la valise harnais MDD de la valise MDD en d&eacute;verrouillant les 2 grenouill&egrave;res de gerbabilit&eacute; <figref refid="arf7201sf030100242a011" repnohot="ZCA00, ZCA01">. D&eacute;poser la valise harnais MDD sur le c&ocirc;t&eacute;. </p>
+</para>
+</step1>
+<step1 id="p20" control="0">
+<para><p>D&eacute;verrouiller les 4 grenouill&egrave;res de la valise harnais MDD et d&eacute;poser le couvercle.</p>
+</para>
+</step1>
+<step1 id="p30" control="0">
+<para><p>Contr&ocirc;ler que le contenu de la valise harnais MDD est conforme &agrave; la liste ci-dessous <figref refid="arf7201sf030100243a011" repnohot=" ZCA00xxx,  ZAB00, ZAC00, ZAD00, ZAE00,  ZAK00,ZAH00, ZAJ00, ZAM00"> &nbsp;: </p>
+</para>
+<list type="simple">
+<item><para><p>un harnais W40 <refipc csn="72017702 002 ">,</p>
+</para>
+</item>
+<item><para><p>un harnais W41 <refipc csn="72017702 003 ">,</p>
+</para>
+</item>
+<item><para><p>un harnais W42 <refipc csn="72017702 004 ">,</p>
+</para>
+</item>
+<item><para><p>un harnais W45 <refipc csn="72017702 005 ">,</p>
+</para>
+</item>
+<item><para><p>un harnais W50 <refipc csn="72017702 007 ">,</p>
+</para>
+</item>
+<item><para><p>un connecteur "MONO-CALC", P08 <refipc csn="72017702 011 ">,</p>
+</para>
+</item>
+<item><para><p>un connecteur "POS. DROIT", P01 <refipc csn="72017702 009 ">,</p>
+</para>
+</item>
+<item><para><p>deux bretelles BHMPR <refipc csn="72017702 008 ">.</p>
+</para>
+</item>
+<item><para><p>un c&acirc;ble r&eacute;seau Ethernet RJ45.</p>
+</para>
+</item>
+</list>
+</step1>
+<step1 id="p40" control="0">
+<para><p>D&eacute;poser tous les bouchons de protection <supplref refid="RZAB00017"> <supplref refid="RZAB00022"> <supplref refid="RZAC00020"> <supplref refid="RZAC00024"> <supplref refid="RZAD00017"> <supplref refid="RZAD00022"> <supplref refid="RZAE00036"> <supplref refid="RZAE00037"> <supplref refid="RZAE00044"> <supplref refid="RZAK00032"> <supplref refid="RZAK00033"> <supplref refid="RZAM00018"> <supplref refid="RZAM00019"> des connecteurs des harnais et bretelles <figref refid="arf7201sf030100243a011" repnohot="ZAB00, ZAC00,ZAD00, ZAE00,  ZAK00, ZAM00">.</p>
+</para>
+<note>
+<p>Les bouchons de protection des connecteurs restent solidaires du harnais ou de la bretelle auxquels ils appartiennent. </p>
+</note>
+</step1>
+<step1 id="p50" control="0">
+<para><p>D&eacute;poser les prot&egrave;ges connecteurs <supplref refid="RZAH00006"> <supplref refid="RZAJ00006"> des connecteurs P01 et P08 <figref refid="arf7201sf030100243a011" repnohot="ZAH00, ZAJ00">.</p>
+</para>
+</step1>
+<step1 id="p60" control="0">
+<para><p>D&eacute;verrouiller la trappe de protection des connecteurs de la valise MDD &agrave; l'aide des 2 vis. <figref refid="arf7201sf030100244a011" repnohot="ZCB00"> </p>
+</para>
+</step1>
+<step1 id="p70" control="0">
+<para><p>D&eacute;poser les bouchons de protection des connecteurs J40, J41, J42 et J45 <figref refid="arf7201sf030100244a011" repnohot="ZAA01005, ZAA01006, ZAA01007, ZAA01008"> .</p>
+</para>
+<note>
+<p>Les bouchons de protection des connecteurs restent solidaires de celui-ci.</p>
+</note>
+</step1>
+<step1 id="p80" control="0">
+<para><p>D&eacute;verrouiller les 4 grenouill&egrave;res du couvercle de la valise MDD et d&eacute;poser le couvercle<figref refid="arf7201sf030100245a011" repnohot="ZCB00">.</p>
+</para>
+</step1>
+<step1 id="p90" control="0">
+<para><p>Connecter le c&acirc;ble d'alimentation 28V et la prise c&acirc;ble r&eacute;seau Ethernet au PC portable. <figref refid="arf7201sf030100245a011" repnohot="ZCB00, ZAA00"> </p>
+</para>
+</step1>
+<step1 id="p100" control="0">
+<para><p>D&eacute;faire les 2 sangles de maintien auto-agrippante du PC portable.</p>
+</para>
+</step1>
+<figure id="arf7201sf030100242a011">
+<title>VALISE MDD</title>
+<graphic callicn="A1ARF7201SF030100242A011">
+</figure>
+<figure id="arf7201sf030100243a011">
+<title>COMPOSITION DE LA VALISE HARNAIS</title>
+<graphic callicn="A1ARF7201SF030100243A011">
+</figure>
+<figure id="arf7201sf030100244a011">
+<title>CONNEXION VALISE MDD</title>
+<graphic callicn="A1ARF7201SF030100244A011">
+</figure>
+<figure id="arf7201sf030100245a011">
+<title>DEVERROUILLAGE PC PORTABLE</title>
+<graphic callicn="A1ARF7201SF030100245A011">
+</figure>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000009139 0>

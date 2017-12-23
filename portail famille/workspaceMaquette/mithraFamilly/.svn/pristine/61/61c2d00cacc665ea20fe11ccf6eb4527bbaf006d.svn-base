@@ -1,0 +1,7 @@
+package com.sonovision.openconv.security;
+
+import org.springframework.security.core.userdetails.UserDetailsService;
+
+public interface UserDetailsOpenService extends UserDetailsService {
+
+}

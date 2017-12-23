@@ -1,0 +1,208 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                             RAFALE                                 *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                       Release Version 2.1                          *
+    *                     Dated 15st January 1998                        *
+    *                                                                    *
+    *  Amendment       :												 *
+    *    31/08/95     delivery date "delidate" added as new attribute	 *
+    *                 of <delivery>.									 *
+    *                 multiples elements <zone> and <accpnl> allowed 	 *
+	*    19/05/97       : Changed Public Identifier						 *
+    *                 attribute "zoneid" of <zone> changed from 		 *
+    *                 type NAMES to NUTOKENS							 *
+	*                 <delivery> changed into <reception>, and names of	 *
+    *                 attributes changed to reflect a reception rather	 *
+    *                 than a delivery.									 *
+    *                 added attributes "approvdate" and "authoapprov" to *
+    *                 <reception>, for approval information data.		 *
+	*                 changed <dmsize> content model to #PCDATA (Aecma)	 *
+	*                 added <icns> (containing <icn>(s) for the DM)		 *
+    *                 <icns> is placed in the content model of the <status>*
+	*              														 *
+    *              	  Remove pmdata to procedural content				 *
+	*              	  Change QA structure (unverif or (unitary/context)  *
+	*              				Reception optionnal 					 *
+	*    15/01/98     Remove attribute origname from <orig>         	 *
+    *                 delete attributes from unitary and context    	 *
+   	*              	  Attribute receptdate become implied for <reception>*
+	*              														 *
+	*              														 *
+	* 1. Update Public Identifier.                                       *
+    *                                                                    *
+    *   Typical invocation :                                             *
+    * <!ENTITY % EXTSTAT                                                 *
+    *   PUBLIC "-//RAFALE//ELEMENTS Status Breakdown 980115//EN" >       *
+    * %EXTSTAT;                                                          *
+    ********************************************************************** -->
+
+
+
+<!--**********************************************************************
+    * Define Entity %STATUS (Status) containing:-                        *
+    *  SECURITY - mandatory single     contains No Other Tags.           *
+    *  DMSIZE   - optional  single     contains Parsed Character Data.   *
+    *  RPC      - mandatory single     contains Parsed Character Data.   *
+    *  ORIG     - mandatory single     contains Parsed Character Data.   *
+    *  APPLIC   - mandatory single     contains TYPE, MODEL.             *
+    *  TECHSTD  - optional  single     contains AUTANDTP, AUTHBLK, TPBASE*
+    *                                  AUTHEX, NOTES.                    *
+    *  QA       - mandatory single     contains UNVERIF, FIRSTVER, SECVER*
+    *--------------------------------------------------------------------*
+    *--------------------------------------------------------------------*
+    *  RFU      - optional  single     contains Parsed Character Data.   *
+    *  REMARKS  - optional  single     contains Parsed Character Data.   *
+    *  PMD      - optional  single     contains THI, ZONE, ACCPNL,       *
+    *                                   AVEHCFG, OPNDURN.                *
+    ********************************************************************** -->
+
+<!ENTITY % STATUS
+  "security,dmsize?,rpc,orig,%applic,techstd,qa,rfu,remarks,icns?" >
+
+
+
+<!--**********************************************************************
+    * Define Element STATUS (Status) containing:-                        *
+    *  Definition stored in entity %STATUS.                              *
+    ********************************************************************** -->
+
+<!ELEMENT status - o (%STATUS;) >
+
+
+
+<!--**********************************************************************
+    * Define Element DMSIZE (Data Module Size) containing:-              *
+    *  Parsed Character Data.                                            *
+    ********************************************************************** -->
+
+<!ELEMENT dmsize   - o (#PCDATA) >
+
+
+<!--*****************************************************************************
+    * Define Element ICNS (List of ICN referenced).		*
+    **************************************************************************-->
+<!ELEMENT icns   - O (icn+) -- List of ICN referenced -->
+
+
+
+<!--**********************************************************************
+    * Define Element SECURITY (Security Marking) containing:-            *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition List stored in Entity %SECURIT;               *
+    ********************************************************************** -->
+
+<!ELEMENT security  - o EMPTY >
+<!ATTLIST security %SECURIT; >
+
+
+
+<!--**********************************************************************
+    * Define Element RPC (Responsible Partner Company) containing:-      *
+    *  Parsed Character Data.                                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  RPCNAME  - %RPCNAME - The name or CAGE code of the responsible    *
+    *                        partner company.                            *
+    ********************************************************************** -->
+
+<!ELEMENT rpc      - O EMPTY -- Responsible Partner Company.-->
+<!ATTLIST rpc
+            rpcname	%RPCNAME;	#REQUIRED --  The name of the Responsible
+						     Partner Company.-->
+
+
+
+<!--**********************************************************************
+    * Define Element ORIG (Originator) containing Parsed Character Data. *
+	*   The name or CAGE code of the originator                          *
+    ********************************************************************** -->
+
+<!ELEMENT orig     - O (#PCDATA) -- Originator.-->
+
+
+<!--**********************************************************************
+    * Call the Applicability Breakdown public text. The formal public    *
+    * identifier is stored in entity %EXTAPPL;                           *
+    ********************************************************************** -->
+
+%EXTAPPL;
+
+
+
+<!--*****************************************************************************
+    * Define Element TECHSTD (Technical Standard : version clause technique).	*
+    **************************************************************************-->
+<!ELEMENT techstd - O (tpbase) -- Technical Standard. -->
+
+
+<!--*****************************************************************************
+    * Define Element TPBASE (Technical Publication Baseline).			*
+    **************************************************************************-->
+<!ELEMENT tpbase - O (#PCDATA) -- Technical Publication Baseline.--
+			      -- Version of the "Clauses Techniques Generiques"
+				 document.-->
+
+
+
+<!--*****************************************************************************
+    * Define Element QA (Quality Assurance Status).				*
+    **************************************************************************-->
+<!ELEMENT qa - O ((unverif|(unitary?,context?)),reception?)>
+		
+
+
+
+<!--**********************************************************************
+    * Define Element UNVERIF (Unverified) containing:-                   *
+    *   No other tags.                                                   *
+    ********************************************************************** -->
+
+<!ELEMENT unverif - o EMPTY >
+
+<!--**********************************************************************
+    * Define Element UNITARY (Unitary verification).containing:-         *
+    *   No other tags.                                                   *
+	********************************************************************** -->
+<!ELEMENT unitary - O EMPTY -- Unitary verification. -->
+
+
+<!--**********************************************************************
+    * Define Element CONTEXT ( In context verification. ).	containing:- *
+    *   No other tags.                                                   *
+	********************************************************************** -->
+<!ELEMENT context - O EMPTY -- In context verification. -->
+
+
+<!--**********************************************************************
+    * Define Element RECEPTION ( Data Module Reception.).	containing:- *
+	********************************************************************** -->
+<!ELEMENT reception - O EMPTY >
+<!ATTLIST reception
+       	recept		%yesorno;	"0"       -- Received Data Module.--
+	    receptdate	NUMBER  	#IMPLIED  -- date of reception yymmdd--
+	    approv 		%yesorno;	"0"       -- Approved Data Module.--
+	    approvdate	NUMBER  	#IMPLIED  -- date of approval  yymmdd--
+	    authoapprov CDATA		#IMPLIED  -- authority for approval --
+>
+
+
+
+
+<!--*****************************************************************************
+    * Define Element RFU ( Reasons for Updating.).				*
+    **************************************************************************-->
+<!ELEMENT rfu - O (#PCDATA) -- Reasons for Updating.-->
+
+
+<!--*****************************************************************************
+    * Define Element REMARKS (Remarks).					*
+    **************************************************************************-->
+<!ELEMENT remarks - O (#PCDATA) -- Remarks.-->
+
+
+
+

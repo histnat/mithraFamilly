@@ -1,0 +1,83 @@
+DocTraits
+	Protected: No
+	UnprotectedTags:
+
+TagTypes
+	Divisions: 
+	DivisionHeads: 
+	Paragraphs: 
+
+GraphicTraits
+	GraphicTag:graphic
+	GraphicEntityAttr:callicn
+  GraphicFileNameAttr:
+  GraphicProcTypeAttr:
+  GraphicMagAttr:
+  GraphicResAttr:
+  GraphicVertAdjAmt:
+  GraphicVertAdjPct:
+  GraphicCropH:
+  GraphicCropW:
+  GraphicCropLLX:
+  GraphicCropLLY:
+  GraphicScalefit:
+  GraphicReprodep:
+  GraphicReprowid:
+	GraphicTag:symbol
+	GraphicEntityAttr:callicn
+  GraphicFileNameAttr:
+  GraphicProcTypeAttr:
+  GraphicMagAttr:hscale
+  GraphicResAttr:
+  GraphicVertAdjAmt:
+  GraphicVertAdjPct:
+  GraphicCropH:
+  GraphicCropW:
+  GraphicCropLLX:
+  GraphicCropLLY:
+  GraphicScalefit:
+  GraphicReprodep:
+  GraphicReprowid:
+
+EqnTableModes
+	EqnMode: None
+	TableMode: None
+
+TagTraits
+	NoCharacterSubstitution:
+	NewlineAfterStartTag:idstatus dmaddres status refs rdandrt reftp refdm graphic figure ipp
+	NewlineBeforeEndTag:/idstatus /dmaddres /status /refs /rdandrt /reftp /refdm /figure 
+	NoTagFullMode:
+	NoTagPartialMode:
+	NoTagNoTagsMode:
+	FullTagPartialMode: reporg unverif nti
+		 issdate indxflag range norefs customer supscrpt context fixz unitary
+		 dmcref single
+		 secur issno sheet security
+		 manufact partno reception subscrpt mod rpc
+		 fixzz graphic tpubref illver rfu cic discode illupdat tpbase discodev tpcode
+		 infoname tptitle ecscc endippn libelle itemloc chapnum eidc techname
+		 illnum supeqvc rfa dmsize subject sdc standard
+		 incodev section remarks swprog modelic dmcopen subsect figv fig
+		 orig incode
+	FullTagNoTagsMode:
+		SmallIconFullMode:
+	SmallIconPartialMode:
+	SmallIconNoTagsMode:
+	IconFullMode:
+	IconPartialMode:
+	IconNoTagsMode:
+
+ContextTransformations
+	InsertAroundToFix: illver rfu cic discode illupdat tpbase discodev tpcode
+		 infoname tptitle ecscc endippn libelle itemloc chapnum eidc techname
+		 illnum supeqvc rfa dmsize subject sdc
+		 standard incodev section remarks swprog modelic dmcopen subsect figv
+		 fig incode orig
+	Substitutions:
+	InsertAutoNested:
+	InsertAutoHeading:
+
+Options
+	AllowFosiMod: yes
+	AllowTouchup: yes

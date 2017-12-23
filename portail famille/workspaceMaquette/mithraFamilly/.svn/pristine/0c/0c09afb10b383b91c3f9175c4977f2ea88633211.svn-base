@@ -1,0 +1,169 @@
+package com.sonovision.openconv.codification.impl;
+
+import java.util.HashMap;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+
+import com.sedoc.dtdtoolbox.utils.DTDParsing;
+import com.sedoc.toolbox.SpringBeanProvider;
+import com.sedoc.toolbox.bean.XMLFactoryService;
+import com.sonovision.openconv.codification.Codification;
+import com.sonovision.openconv.codification.exception.CodificationException;
+import com.sonovision.openconv.utils.FileAccess;
+
+@Service("ListFileInOut")
+public class ListFileInOut implements Codification {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3853167456780174143L;
+	
+
+
+	private static final String XPATH_OBJECT = "//object";
+	private static final String XPATH_OBJECT_IN = "./@in";
+	private static final String XPATH_OBJECT_OUT = "./@out";
+
+	private DTDParsing dtdParsing = new DTDParsing();
+
+	@Autowired
+	private XMLFactoryService xmlFactoryService;
+
+	private HashMap<String, String> hashInToOut = new HashMap<>();
+
+	private HashMap<String, String> hashOutToIn = new HashMap<>();
+
+	private String codificationFilePath;
+
+	private boolean codificationLoaded = false;
+
+	// I must init spring composent, buti have loop on this class. this variable
+	// is for skip loop. I think it will be better if we use @Configure. next
+	// time
+	private static boolean initrun = false;
+
+	public ListFileInOut() {
+		super();
+	}
+
+	@Override
+	public String getNewFileName(String oldFileName) throws CodificationException {
+		initClass();
+		if (!codificationLoaded)
+			loadCodificationFile();
+
+		return hashInToOut.get(oldFileName.toUpperCase().replaceAll("(?i).xml",""));
+	}
+
+	@Override
+	public String getOldFileName(String newFileName) throws CodificationException {
+		initClass();
+		if (!codificationLoaded)
+			loadCodificationFile();
+
+		return hashOutToIn.get(newFileName.replaceAll("(?i).xml",""));
+	}
+
+	private void loadCodificationFile() throws CodificationException {
+		Document document = null;
+		document = dtdParsing.getParseXML(FileAccess.getResourceFilePath(codificationFilePath, true));
+		NodeList objectNodeList = null;
+		try {
+			objectNodeList = (NodeList) xmlFactoryService.executeXpathQuery(document, XPATH_OBJECT, true);
+		} catch (Exception e) {
+			throw new CodificationException("probleme for getting object :" + XPATH_OBJECT, e);
+		}
+		if (objectNodeList != null) {
+			int taille = objectNodeList.getLength();
+			while (--taille > -1) {
+				Node n = objectNodeList.item(taille);
+				Node inNode = null;
+				try {
+					inNode = (Node) xmlFactoryService.executeXpathQuery(n, XPATH_OBJECT_IN, false);
+				} catch (Exception e) {
+					throw new CodificationException("probleme for getting in :" + XPATH_OBJECT_IN, e);
+				}
+				Node outNode = null;
+				try {
+					outNode = (Node) xmlFactoryService.executeXpathQuery(n, XPATH_OBJECT_OUT, false);
+				} catch (Exception e) {
+					throw new CodificationException("probleme for getting in :" + XPATH_OBJECT_OUT, e);
+				}
+
+				hashInToOut.put(inNode.getNodeValue().toUpperCase().replaceAll(".XML", ""), outNode.getNodeValue());
+				hashOutToIn.put(outNode.getNodeValue().toUpperCase().replaceAll(".XML", ""), inNode.getNodeValue());
+			}
+		}
+		codificationLoaded = true;
+
+	}
+
+	/**
+	 * @return the xmlFactoryService
+	 */
+	public XMLFactoryService getXmlFactoryService() {
+		return xmlFactoryService;
+	}
+
+	/**
+	 * @param xmlFactoryService
+	 *            the xmlFactoryService to set
+	 */
+	public void setXmlFactoryService(XMLFactoryService xmlFactoryService) {
+		this.xmlFactoryService = xmlFactoryService;
+	}
+
+	/**
+	 * @return the codificationFilePath
+	 */
+	public String getCodificationFilePath() {
+		return codificationFilePath;
+	}
+
+	/**
+	 * set path where the codification is stored
+	 * @param codificationFilePath
+	 */
+	@Override
+	public void setCodificationParameter(HashMap<String,Object>  parameter) throws CodificationException{
+		String codificationFile = (String) parameter.get(PARAMETER_LOADFILE_CODIFICATION_FILE);
+		if(codificationFile==null || codificationFile.isEmpty())
+		{
+			throw new CodificationException("aucun fichier de codification indiqué pour  "+this.getClass().getName() );
+		}
+		this.codificationFilePath=codificationFile;
+		
+		
+	}
+
+	/**
+	 * @return the dtdParsing
+	 */
+	public DTDParsing getDtdParsing() {
+		return dtdParsing;
+	}
+
+	/**
+	 * @param dtdParsing
+	 *            the dtdParsing to set
+	 */
+	public void setDtdParsing(DTDParsing dtdParsing) {
+		this.dtdParsing = dtdParsing;
+	}
+
+	public void initClass() {
+		if (!initrun) {
+			initrun = true;
+			if (xmlFactoryService == null) {
+				xmlFactoryService = (XMLFactoryService) SpringBeanProvider.getBean("XMLFactoryService");
+			}
+			initrun = false;
+		}
+	}
+
+}

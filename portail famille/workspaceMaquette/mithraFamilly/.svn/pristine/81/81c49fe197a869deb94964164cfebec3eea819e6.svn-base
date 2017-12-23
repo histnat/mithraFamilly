@@ -1,0 +1,125 @@
+package com.sonovision.openconv.db.dao.execution.impl;
+
+import java.io.Serializable;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.stereotype.Repository;
+
+import com.sedoc.toolbox.LogMes;
+import com.sonovision.openconv.db.dao.CoScenarioDao;
+import com.sonovision.openconv.db.dao.impl.CommonDaoImpl;
+import com.sonovision.openconv.db.exception.DBNONullException;
+import com.sonovision.openconv.db.exception.DBNOUniqueException;
+import com.sonovision.openconv.db.vo.Conversion;
+import com.sonovision.openconv.db.vo.execution.CoHistoryExe;
+import com.sonovision.openconv.db.vo.execution.CoScenario;
+import com.sonovision.openconv.db.vo.user.OpGroup;
+import com.sonovision.openconv.db.vo.user.OpRole;
+import com.sonovision.openconv.db.vo.user.OpUser;
+
+
+@Repository(value="CoScenarioDao")
+public class CoScenarioDaoImpl extends CommonDaoImpl<CoScenario> implements CoScenarioDao{
+
+	@Override
+	public CoScenario findByUser(OpUser opUser) {
+
+        if (opUser == null) {
+        	LogMes.log(CoHistoryExeDaoImpl.class, LogMes.ERROR, "findByLogin : login can't be null");
+            return null;
+        }
+        Query query = new Query();
+        query.addCriteria(
+                new Criteria().andOperator(
+                        Criteria.where("userId").is(opUser.getId())
+                )
+        );
+        return mongoTemplate.findOne(query, CoScenario.class);
+	}
+
+	@Override
+	public CoScenario findByAll(String id, HashMap<String,String> name, String filesName, int nbrStep, Date creationDate, Date modificationDate, byte shared) {
+	    if (creationDate == null) {
+	    	LogMes.log(CoHistoryExeDaoImpl.class, LogMes.ERROR, "findByAll : creationDate can't be null");
+	        return null;
+	    }
+	    if (modificationDate == null) {
+	    	LogMes.log(CoHistoryExeDaoImpl.class, LogMes.ERROR, "findByAll : modificationDate can't be null");
+	        return null;
+	    }
+	    Query query = new Query();
+	    query.addCriteria(
+	            new Criteria().andOperator(
+	            	    Criteria.where("id").in(id),
+	                    Criteria.where("name").in(name),
+	                    Criteria.where("fileName").is(filesName),
+	                    Criteria.where("nbrStep").is(nbrStep),
+	                    Criteria.where("shared").is(shared)
+//	                    Criteria.where("creationDate").is(creationDate),
+//	                    Criteria.where("modificationDate").is(modificationDate)
+	            )
+	    );
+	    return mongoTemplate.findOne(query, CoScenario.class);
+	}
+
+
+	@Override
+	public void deleteAll()
+	{
+		super.deleteAll(CoScenario.class);
+	}
+
+	@Override
+	public CoScenario getOrSave(CoScenario coScenario) throws DBNONullException, DBNOUniqueException {
+		CoScenario ou = findByAll(coScenario.getId(),coScenario.getName(),coScenario.getFileName(),coScenario.getNbrStep(),coScenario.getCreationDate(),coScenario.getModificationdate(),coScenario.getShared());
+		if (ou == null) {
+			save(coScenario);
+		} else {
+			coScenario = ou;
+		}
+
+		return coScenario;
+	}
+
+	@Override
+	public List<CoScenario> findAllByUser(OpUser opUser) {
+
+        if (opUser == null) {
+        	LogMes.log(CoHistoryExeDaoImpl.class, LogMes.ERROR, "findByLogin : login can't be null");
+            return null;
+        }
+        Query query = new Query();
+        query.addCriteria(
+                new Criteria().andOperator(
+                        Criteria.where("userId").is(opUser.getId())
+                )
+        );
+        return mongoTemplate.find(query, CoScenario.class);
+	}
+
+	@Override
+	public void deleteById(String id) {
+		delete(findOne(id, CoScenario.class));
+		
+	}
+	
+	@Override
+	public CoScenario findByUserId(String userId) {
+	       if (userId == null) {
+	        	LogMes.log(CoScenarioDaoImpl.class, LogMes.ERROR, "findByUserId : login can't be null");
+	            return null;
+	        }
+	        Query query = new Query();
+	        query.addCriteria(
+	                new Criteria().andOperator(
+	                        Criteria.where("userId").is(userId)
+	                )
+	        );
+	        return mongoTemplate.findOne(query, CoScenario.class);
+	}
+	
+}

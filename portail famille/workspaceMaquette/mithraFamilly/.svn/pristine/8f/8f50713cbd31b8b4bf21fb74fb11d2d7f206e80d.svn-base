@@ -1,0 +1,3712 @@
+<!--ArborText, Inc., 1988-2001, v.4002-->
+<!DOCTYPE OUTSPEC PUBLIC "-//ArborText//DTD OUTPUT SPEC MIL-PRF-28001 REV B AMEND 1 19961231//EN" [
+<!ENTITY % extrule "(0 | 1)">
+<!ENTITY uniform SYSTEM "C:\Program Files\Epic\formats\uniform.lcf" NDATA lcf>
+]>
+<outspec>
+<!--=======================================================================-->
+<!--=======================================================================-->
+<!--= DOCUMENT : DATA-MODULES descriptifs                                 =-->
+<!--=                                                                     =-->
+<!--= DTDs     : avee_d/age_d Rafale 2.2 avec entité graphique            =-->
+<!--=                                                                     =-->
+<!--= LANGUE   : français                                                 =-->
+<!--=                                                                     =-->
+<!--= COMPATIBILITE : EPIC V4.1                                           =-->
+<!--=                                                                     =-->
+<!--=======================================================================-->
+<!--=======================================================================-->
+<rsrcdesc><?Pub Lcl _id="f60">
+<counter initial="0" enumid="subparagraphe2.ct"><?Pub Lcl _id="f109">
+<counter initial="0" enumid="paragraphe.ct"><?Pub Lcl _id="f102">
+<counter style="alphauc" enumid="subparagraphe1.ct"><?Pub Lcl _id="f106">
+<counter style="alphalc" enumid="subparagraphe3.ct"><?Pub Lcl _id="f113">
+<counter initial="0" enumid="subparagraphe4.ct"><?Pub Lcl _id="f114">
+<counter initial="0" enumid="table.ct"><?Pub Lcl _id="f165">
+<counter initial="0" enumid="list1.ct"><?Pub Lcl _id="f150">
+<counter initial="0" enumid="list2.ct"><?Pub Lcl _id="f306">
+<counter initial="0" enumid="nblist.ct"><?Pub Lcl _id="f328">
+<counter initial="0" enumid="serie.ct"><?Pub Lcl _id="f336">
+<counter style="arabic" enumid="page.ct"><?Pub Lcl _id="f382">
+<stringdecl textid="temp.txt" literal=""><?Pub Lcl _id="f39">
+<stringdecl textid="ttable.txt" literal="" status="1" scope="table"><?Pub Lcl
+_id="f363">
+<stringdecl textid="idnote.txt" literal=""><?Pub Lcl _id="f358">
+<stringdecl textid="separateur.txt" literal=""><?Pub Lcl _id="f125">
+<stringdecl textid="sep.txt" literal=""><?Pub Lcl _id="f41">
+<stringdecl textid="virgule.txt" literal=""><?Pub Lcl _id="f156">
+<stringdecl textid="dmc.txt" literal=""><?Pub Lcl _id="f151">
+<stringdecl textid="passage.txt" literal=""><?Pub Lcl _id="f287">
+<stringdecl textid="paraid.txt" literal=""><?Pub Lcl _id="f326">
+<stringdecl textid="tableid.txt" literal=""><?Pub Lcl _id="f327">
+<stringdecl textid="listeid.txt" literal=""><?Pub Lcl _id="f330">
+<stringdecl textid="ptvirgule.txt" literal=""><?Pub Lcl _id="f345">
+<stringdecl textid="endippncont1.txt" literal=""><?Pub Lcl _id="f347">
+<stringdecl textid="decalpara.txt" literal=""><?Pub Lcl _id="f355">
+<stringdecl textid="idlist.txt" literal=""><?Pub Lcl _id="f354">
+<stringdecl textid="passetitre.txt" literal=""><?Pub Lcl _id="f351">
+<stringdecl textid="endippncont2.txt" literal=""><?Pub Lcl _id="f348">
+<stringdecl textid="idtable.txt" literal=""><?Pub Lcl _id="f360">
+<stringdecl textid="dmcopen.txt" literal=""><?Pub Lcl _id="f366"></rsrcdesc>
+<pagedesc>
+<pageset id="page1" blankpg="1"><?Pub Lcl _id="f376">
+<rectopg width="210mm" nomdepth="297mm">
+<pageres>
+<enumerat enumid="page.ct" setvalue="0"></pageres>
+<pagespec pgid="R1">
+<topmarg nomdepth="11mm">
+<botmarg nomdepth="12mm">
+<leftmarg width="25mm">
+<rtmarg width="15mm">
+<header nomdepth="22mm" spaflow="3pi">
+<usetext source="page.ct"></usetext>
+</header>
+<footer nomdepth="22mm" spaflow="3pi">
+<usetext source="page.ct"></usetext>
+</footer>
+<flowtext numcols="1">
+<column width="170mm"></flowtext>
+</pagespec>
+</rectopg>
+<versopg width="210mm" nomdepth="297mm">
+<pageres>
+<enumerat enumid="page.ct" setvalue="0"></pageres>
+<pagespec pgid="V1">
+<topmarg nomdepth="11mm">
+<botmarg nomdepth="12mm">
+<leftmarg width="15mm">
+<rtmarg width="25mm">
+<header nomdepth="22mm">
+<usetext source="\HEADER VERSO\">
+<subchars>
+<quadding quad="center"></subchars>
+</usetext>
+<ruling thick="3pt" lentype="spec" speclen="10cm" rellen="text" type="single">
+<quadding quad="center">
+<textbrk startln="1" endln="1"></ruling>
+</header>
+<footer nomdepth="22mm">
+<usetext source="\FOOTER VERSO\">
+<subchars>
+<quadding quad="center"></subchars>
+</usetext>
+<usetext source="page.ct">
+<subchars>
+<quadding quad="left">
+<textbrk startln="1" endln="1"></subchars>
+</usetext>
+</footer>
+<flowtext numcols="1">
+<column width="170mm"></flowtext>
+</pagespec>
+</versopg>
+<blankpg>
+<pagespec pgid="B1">
+<topmarg>
+<botmarg>
+<leftmarg>
+<rtmarg>
+<header></header>
+<footer></footer>
+<flowtext numcols="1">
+<column></flowtext>
+</pagespec>
+</blankpg>
+</pageset>
+</pagedesc>
+<styldesc>
+<charsubset charsubsetid="paragraph"><?Pub Lcl _id="f5">
+<textbrk startln="1" endln="1"></charsubset>
+<charsubset charsubsetid="title" charsubsetref="paragraph"><?Pub Lcl _id="f63">
+<font famname="Helvetica" size="14pt" posture="italic" weight="bold">
+<quadding quad="center">
+<highlt fontclr="gray">
+<presp nominal="30pt">
+<postsp nominal="30pt"></charsubset>
+<charsubset charsubsetid="title2" charsubsetref="paragraph"><?Pub Lcl _id="f71">
+<font famname="Helvetica" size="14pt" posture="upright" weight="bold">
+<quadding quad="left">
+<highlt fontclr="gray">
+<presp nominal="30pt">
+<postsp nominal="15pt"></charsubset>
+<charsubset charsubsetid="attr"><?Pub Lcl _id="f98">
+<font posture="italic"></charsubset>
+<charsubset charsubsetid="changeadd"><?Pub Lcl _id="f168">
+<highlt bckclr="byellow"></charsubset>
+<charsubset charsubsetid="changemod"><?Pub Lcl _id="f169">
+<highlt bckclr="bgreen"></charsubset>
+<charsubset charsubsetid="gentext"><?Pub Lcl _id="f278">
+<highlt fontclr="blue"></charsubset>
+<docdesc><?Pub Lcl _id="f2">
+<charlist inherit="1">
+<font style="serif" famname="Palatino" size="12pt" posture="upright" weight="medium">
+<quadding quad="left">
+<highlt fontclr="black" scorespc="1">
+<textbrk startln="0" endln="0"></charlist>
+</docdesc>
+<e-i-c gi="avee"><?Pub Lcl _id="f152">
+<charlist inherit="1">
+<indent inherit="1" leftind="@" firstln="@">
+<float></charlist>
+</e-i-c>
+<e-i-c gi="avee" context="* dmcid"><?Pub Lcl _id="f341">
+<charlist inherit="1">
+<indent inherit="1" leftind="@" firstln="@">
+<usetext source="@180pt" placemnt="after"></usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="age"><?Pub Lcl _id="f319">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@"></charlist>
+</e-i-c>
+<e-i-c gi="age" context="* dmcid"><?Pub Lcl _id="f340">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<usetext source="@180pt" placemnt="after"></usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="action"><?Pub Lcl _id="f314">
+<charlist>
+<indent inherit="1" leftind="@+12pt" firstln="@+12pt">
+<textbrk startln="1" endln="1"></charlist>
+</e-i-c>
+<e-i-c gi="applic" context="* figure"><?Pub Lcl _id="f350">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<textbrk startln="1" endln="1">
+<usetext source="\Applicabilité: \">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="separateur.txt" conrule="\\"></charlist>
+</e-i-c>
+<e-i-c gi="applic"><?Pub Lcl _id="f171">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<textbrk startln="0" endln="1">
+<usetext source="\Applicabilité: \">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="separateur.txt" conrule="\\"></charlist>
+</e-i-c>
+<e-i-c gi="applic" context="status"><?Pub Lcl _id="f193">
+<charlist charsubsetref="paragraph">
+<usetext source="\Applicabilité\" placemnt="before">
+<subchars charsubsetref="paragraph">
+<font weight="bold">
+<highlt fontclr="brown"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="capgrp"><?Pub Lcl _id="f316">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@"></charlist>
+</e-i-c>
+<e-i-c gi="caprow"><?Pub Lcl _id="f317">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@"></charlist>
+</e-i-c>
+<e-i-c gi="caption"><?Pub Lcl _id="f318">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<textbrk startln="1" endln="1"></charlist>
+<att>
+<specval attname="change" attloc="caption" attval="add">
+<charsubset charsubsetref="changeadd"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="caption" attval="mod">
+<charsubset charsubsetref="changemod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="caution"><?Pub Lcl _id="f241">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<presp minimum="15pt" nominal="15pt" maximum="15pt">
+<postsp minimum="15pt" nominal="15pt" maximum="15pt">
+<textbrk startln="1" endln="1"></charlist>
+<att>
+<specval attname="change" attloc="caution" attval="add">
+<charsubset charsubsetref="changeadd">
+<usetext source="\ATTENTION\" placemnt="before">
+<subchars charsubsetref="paragraph">
+<font famname="Helvetica" size="13pt" weight="bold">
+<quadding quad="center">
+<highlt scoring="1" fontclr="orange" scorespc="1"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="caution" attval="mod">
+<charsubset charsubsetref="changemod">
+<usetext source="\ATTENTION\" placemnt="before">
+<subchars charsubsetref="paragraph">
+<font famname="Helvetica" size="13pt" weight="bold">
+<quadding quad="center">
+<highlt scoring="1" fontclr="orange" scorespc="1"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="caution" attval="#NONE">
+<charsubset>
+<usetext source="\ATTENTION\" placemnt="before">
+<subchars charsubsetref="paragraph">
+<font famname="Helvetica" size="13pt" weight="bold">
+<quadding quad="center">
+<highlt scoring="1" fontclr="orange" scorespc="1"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="config" context="* status"><?Pub Lcl _id="f205">
+<charlist charsubsetref="paragraph">
+<indent inherit="1" leftind="@+30pt" firstln="@+30pt">
+<savetext textid="separateur.txt" conrule="\\" placemnt="before">
+<usetext source="\Configuration: \" placemnt="before">
+<subchars>
+<font weight="bold">
+<highlt fontclr="brown"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="content"><?Pub Lcl _id="f215">
+<charlist inherit="1">
+<ruling thick="3pt" lentype="spec" speclen="5cm" rellen="col" placemnt="before"
+type="single">
+<textbrk startln="1" endln="1"></ruling>
+</charlist>
+</e-i-c>
+<e-i-c gi="context" context="qa"><?Pub Lcl _id="f197">
+<charlist>
+<usetext source="\Validation globale \" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="cic"><?Pub Lcl _id="f172">
+<charlist inherit="1">
+<indent inherit="1" leftind="@" firstln="@">
+<usetext source="\-\" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="dmc.txt" conrule="\-\,#CONTENT" placemnt="after" append="1">
+</charlist>
+</e-i-c>
+<e-i-c gi="chapnum"><?Pub Lcl _id="f173">
+<charlist inherit="1">
+<usetext source="\-\" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="dmc.txt" conrule="\-\,#CONTENT" placemnt="after" append="1">
+</charlist>
+</e-i-c>
+<e-i-c gi="customer" context="* status"><?Pub Lcl _id="f293">
+<charlist>
+<indent inherit="1" leftind="@+30pt" firstln="@+30pt">
+<textbrk startln="1">
+<savetext textid="tiret.txt">
+<usetext source="\Client : \" placemnt="before">
+<subchars>
+<highlt fontclr="brown"></subchars>
+</usetext>
+</charlist>
+<att>
+<specval attname="aaf" attloc="customer" attval="\1\">
+<specval attname="change" attloc="customer" attval="add">
+<charsubset>
+<usetext source="tiret.txt">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="tiret.txt" conrule="\ - \">
+<usetext source="\AAF\">
+<subchars charsubsetref="attr changeadd"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="aaf" attloc="customer" attval="\1\">
+<specval attname="change" attloc="customer" attval="mod">
+<charsubset>
+<usetext source="tiret.txt">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="tiret.txt" conrule="\ - \">
+<usetext source="\AAF\">
+<subchars charsubsetref="attr changemod"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="aaf" attloc="customer" attval="\1\">
+<specval attname="change" attloc="customer" attval="#NONE">
+<charsubset>
+<usetext source="tiret.txt">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="tiret.txt" conrule="\ - \">
+<usetext source="\AAF\">
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="anf" attloc="customer" attval="\1\">
+<specval attname="change" attloc="customer" attval="add">
+<charsubset>
+<usetext source="tiret.txt">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="tiret.txt" conrule="\ - \">
+<usetext source="\ANF\">
+<subchars charsubsetref="attr changeadd"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="anf" attloc="customer" attval="\1\">
+<specval attname="change" attloc="customer" attval="mod">
+<charsubset>
+<usetext source="tiret.txt">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="tiret.txt" conrule="\ - \">
+<usetext source="\ANF\">
+<subchars charsubsetref="attr changemod"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="anf" attloc="customer" attval="\1\">
+<specval attname="change" attloc="customer" attval="#NONE">
+<charsubset>
+<usetext source="tiret.txt">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="tiret.txt" conrule="\ - \">
+<usetext source="\ANF\">
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="customer"><?Pub Lcl _id="f265">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@"></charlist>
+<att>
+<specval attname="aaf" attloc="customer" attval="\1\">
+<specval attname="change" attloc="customer" attval="add">
+<charsubset>
+<usetext source="separateur.txt">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="separateur.txt" conrule="\ - \">
+<usetext source="\AAF\">
+<subchars charsubsetref="attr changeadd"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="aaf" attloc="customer" attval="\1\">
+<specval attname="change" attloc="customer" attval="mod">
+<charsubset>
+<usetext source="separateur.txt">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="separateur.txt" conrule="\ - \">
+<usetext source="\AAF\">
+<subchars charsubsetref="attr changemod"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="aaf" attloc="customer" attval="\1\">
+<specval attname="change" attloc="customer" attval="#NONE">
+<charsubset>
+<usetext source="separateur.txt">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="separateur.txt" conrule="\ - \">
+<usetext source="\AAF\">
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="anf" attloc="customer" attval="\1\">
+<specval attname="change" attloc="customer" attval="add">
+<charsubset>
+<usetext source="separateur.txt">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="separateur.txt" conrule="\ - \">
+<usetext source="\ANF\">
+<subchars charsubsetref="attr changeadd"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="anf" attloc="customer" attval="\1\">
+<specval attname="change" attloc="customer" attval="mod">
+<charsubset>
+<usetext source="separateur.txt">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="separateur.txt" conrule="\ - \">
+<usetext source="\ANF\">
+<subchars charsubsetref="attr changemod"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="anf" attloc="customer" attval="\1\">
+<specval attname="change" attloc="customer" attval="#NONE">
+<charsubset>
+<usetext source="separateur.txt">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="separateur.txt" conrule="\ - \">
+<usetext source="\ANF\">
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="config"><?Pub Lcl _id="f267">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@"></charlist>
+</e-i-c>
+<e-i-c gi="dmodule"><?Pub Lcl _id="f381">
+<charlist>
+<textbrk startpg="recto" pageid="page1" newpgmdl="global"></charlist>
+</e-i-c>
+<e-i-c gi="dmcopen"><?Pub Lcl _id="f334">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<textbrk startln="1">
+<savetext textid="dmcopen.txt" conrule="#CONTENT" placemnt="after"></charlist>
+<att>
+<fillval attname="dmco" attloc="dmcopen" fillcat="savetext" fillchar="textid">
+<charsubset>
+<savetext conrule="dmcopen.txt" placemnt="after"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="dmcopen" attval="add">
+<fillval attname="dmco" attloc="dmcopen" fillcat="usetext" fillchar="source">
+<charsubset charsubsetref="changeadd">
+<usetext placemnt="before">
+<subchars charsubsetref="attr changeadd"></subchars>
+</usetext>
+<usetext source="@210pt">
+<subchars>
+<highlt bckclr="bwhite"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="dmcopen" attval="mod">
+<fillval attname="dmco" attloc="dmcopen" fillcat="usetext" fillchar="source">
+<charsubset charsubsetref="changemod">
+<usetext placemnt="before">
+<subchars charsubsetref="attr changemod"></subchars>
+</usetext>
+<usetext source="@210pt">
+<subchars>
+<highlt bckclr="bwhite"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="dmcopen" attval="#NONE">
+<fillval attname="dmco" attloc="dmcopen" fillcat="usetext" fillchar="source">
+<charsubset>
+<usetext placemnt="before">
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+<usetext source="@210pt">
+<subchars>
+<highlt bckclr="bwhite"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="dmcid techpub"><?Pub Lcl _id="f233">
+<charlist charsubsetref="paragraph">
+<indent leftind="30pt" firstln="30pt"></charlist>
+<att>
+<fillval attname="id" fillcat="savetext" fillchar="textid">
+<specval attname="change" attloc="dmcid" attval="add">
+<charsubset charsubsetref="changeadd">
+<savetext conrule="dmc.txt" placemnt="after"></charsubset>
+</att>
+<att>
+<fillval attname="id" fillcat="savetext" fillchar="textid">
+<specval attname="change" attloc="dmcid" attval="mod">
+<charsubset charsubsetref="changemod">
+<savetext conrule="dmc.txt" placemnt="after"></charsubset>
+</att>
+<att>
+<fillval attname="id" fillcat="savetext" fillchar="textid">
+<specval attname="change" attloc="dmcid" attval="#NONE">
+<charsubset>
+<savetext conrule="dmc.txt" placemnt="after"></charsubset>
+</att>
+<att>
+<fillval attname="id" fillcat="savetext" fillchar="textid">
+<specval attname="change" attloc="techpub" attval="add">
+<charsubset charsubsetref="changeadd">
+<savetext conrule="dmc.txt" placemnt="after"></charsubset>
+</att>
+<att>
+<fillval attname="id" fillcat="savetext" fillchar="textid">
+<specval attname="change" attloc="techpub" attval="mod">
+<charsubset charsubsetref="changemod">
+<savetext conrule="dmc.txt" placemnt="after"></charsubset>
+</att>
+<att>
+<fillval attname="id" fillcat="savetext" fillchar="textid">
+<specval attname="change" attloc="techpub" attval="#NONE">
+<charsubset>
+<savetext conrule="dmc.txt" placemnt="after"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="dmc" context="idstatus"><?Pub Lcl _id="f170">
+<charlist charsubsetref="paragraph">
+<font size="20pt" weight="bold">
+<quadding quad="center">
+<postsp minimum="15pt" nominal="15pt" maximum="15pt">
+<textbrk startln="1" endln="1"></charlist>
+</e-i-c>
+<e-i-c gi="def"><?Pub Lcl _id="f272">
+<charlist inherit="1">
+<indent inherit="1" leftind="@+10pt" firstln="@">
+<textbrk startln="0" endln="1"></charlist>
+<att>
+<specval attname="change" attloc="def" attval="add">
+<charsubset charsubsetref="changeadd"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="def" attval="mod">
+<charsubset charsubsetref="changemod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="discode"><?Pub Lcl _id="f177">
+<charlist inherit="1">
+<usetext source="\-\" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="dmc.txt" conrule="\-\,#CONTENT" placemnt="after" append="1">
+</charlist>
+</e-i-c>
+<e-i-c gi="dmtitle" context="idstatus"><?Pub Lcl _id="f181">
+<charlist charsubsetref="paragraph">
+<font size="16pt">
+<quadding quad="center">
+<postsp minimum="15pt" nominal="15pt" maximum="15pt">
+<textbrk startln="1" endln="1"></charlist>
+</e-i-c>
+<e-i-c gi="dmtitle" context="* config"><?Pub Lcl _id="f308">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@"></charlist>
+</e-i-c>
+<e-i-c gi="dmtitle" context="* refs"><?Pub Lcl _id="f367">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<usetext source="@210pt" placemnt="before"></usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="descript"><?Pub Lcl _id="f234">
+<charlist>
+<quadding>
+<textbrk startcol="1" startpg="recto">
+<usetext source="\Description\" placemnt="before">
+<subchars charsubsetref="title"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="discodev"><?Pub Lcl _id="f182">
+<charlist inherit="1">
+<savetext textid="dmc.txt" conrule="#CONTENT" placemnt="after" append="1">
+</charlist>
+</e-i-c>
+<e-i-c gi="dmcref tpubref"><?Pub Lcl _id="f242">
+<charlist inherit="1">
+<indent inherit="1" leftind="@" firstln="@"></charlist>
+<att>
+<specval attname="change" attloc="dmcref" attval="add">
+<charsubset>
+<usetext source="\ (Se reporter à  \" placemnt="before">
+<subchars charsubsetref="attr changeadd gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="dmcref" attval="mod">
+<charsubset>
+<usetext source="\ (Se reporter à  \" placemnt="before">
+<subchars charsubsetref="attr gentext changemod"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="dmcref" attval="#NONE">
+<charsubset>
+<usetext source="\ (Se reporter à  \" placemnt="before">
+<subchars charsubsetref="attr gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="xrefid" attloc="dmcref" fillcat="usetext" fillchar="source">
+<specval attname="change" attloc="dmcref" attval="add">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attr changeadd"></subchars>
+</usetext>
+<usetext source="\) \" placemnt="before">
+<subchars charsubsetref="attr changeadd gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="xrefid" attloc="dmcref" fillcat="usetext" fillchar="source">
+<specval attname="change" attloc="dmcref" attval="mod">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attr changemod"></subchars>
+</usetext>
+<usetext source="\) \" placemnt="before">
+<subchars charsubsetref="attr changemod gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="xrefid" attloc="dmcref" fillcat="usetext" fillchar="source">
+<specval attname="change" attloc="dmcref" attval="#NONE">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+<usetext source="\) \" placemnt="before">
+<subchars charsubsetref="attr gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="tpubref" attval="add">
+<charsubset>
+<usetext source="\ (Se reporter à  \" placemnt="before">
+<subchars charsubsetref="attr changeadd gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="tpubref" attval="mod">
+<charsubset>
+<usetext source="\ (Se reporter à  \" placemnt="before">
+<subchars charsubsetref="attr gentext changemod"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="tpubref" attval="#NONE">
+<charsubset>
+<usetext source="\ (Se reporter à  \" placemnt="before">
+<subchars charsubsetref="attr gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="xrefid" attloc="tpubref" fillcat="usetext" fillchar="source">
+<specval attname="change" attloc="tpubref" attval="add">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attr changeadd"></subchars>
+</usetext>
+<usetext source="\) \" placemnt="before">
+<subchars charsubsetref="attr changeadd gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="xrefid" attloc="tpubref" fillcat="usetext" fillchar="source">
+<specval attname="change" attloc="tpubref" attval="mod">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attr changemod"></subchars>
+</usetext>
+<usetext source="\) \" placemnt="before">
+<subchars charsubsetref="attr changemod gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="xrefid" attloc="tpubref" fillcat="usetext" fillchar="source">
+<specval attname="change" attloc="tpubref" attval="#NONE">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+<usetext source="\) \" placemnt="before">
+<subchars charsubsetref="attr gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="defitem"><?Pub Lcl _id="f275">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<textbrk startln="1" endln="1"></charlist>
+<att>
+<specval attname="change" attloc="defitem" attval="add">
+<charsubset charsubsetref="changeadd"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="defitem" attval="mod">
+<charsubset charsubsetref="changemod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="deflist"><?Pub Lcl _id="f276">
+<charlist inherit="1">
+<indent inherit="1" leftind="@" firstln="@"></charlist>
+<att>
+<specval attname="change" attloc="deflist" attval="add">
+<charsubset charsubsetref="changeadd"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="deflist" attval="mod">
+<charsubset charsubsetref="changemod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="ecscc"><?Pub Lcl _id="f174">
+<charlist inherit="1">
+<usetext source="\-\" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="dmc.txt" conrule="\-\,#CONTENT" placemnt="after" append="1">
+</charlist>
+</e-i-c>
+<e-i-c gi="eidc"><?Pub Lcl _id="f175">
+<charlist inherit="1">
+<usetext source="\-\" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="dmc.txt" conrule="\-\,#CONTENT" placemnt="after" append="1">
+</charlist>
+</e-i-c>
+<e-i-c gi="endippn"><?Pub Lcl _id="f179">
+<charlist inherit="1">
+<usetext source="\-\" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="dmc.txt" conrule="\-\,#CONTENT" placemnt="after" append="1">
+</charlist>
+</e-i-c>
+<e-i-c gi="emphasis"><?Pub Lcl _id="f258">
+<charlist inherit="1">
+<font></charlist>
+<att>
+<specval attname="change" attloc="emphasis" attval="add">
+<charsubset charsubsetref="changeadd"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="emphasis" attval="mod">
+<charsubset charsubsetref="changemod"></charsubset>
+</att>
+<att>
+<specval attname="bold" attloc="emphasis" attval="1">
+<charsubset>
+<font weight="bold"></charsubset>
+</att>
+<att>
+<specval attname="underscr" attloc="emphasis" attval="1">
+<charsubset>
+<highlt scoring="1" scorespc="1"></charsubset>
+</att>
+<att>
+<specval attname="italic" attloc="emphasis" attval="1">
+<charsubset>
+<font posture="italic"></charsubset>
+</att>
+<att>
+<specval attname="case" attloc="emphasis" attval="upper">
+<charsubset>
+<highlt allcap="1"></charsubset>
+</att>
+<att>
+<fillval attname="color" attloc="emphasis" fillcat="highlt" fillchar="fontclr">
+</att>
+</e-i-c>
+<e-i-c gi="figure"><?Pub Lcl _id="f248">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<presp minimum="20pt" nominal="20pt" maximum="20pt">
+<textbrk startln="1" endln="1"></charlist>
+<att>
+<fillval attname="id" attloc="figure" fillcat="savetext" fillchar="conrule">
+<fillval attname="id" attloc="figure" fillcat="savetext" fillchar="textid">
+<charsubset></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="fixz"><?Pub Lcl _id="f176">
+<charlist>
+<usetext source="\-\">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="dmc.txt" conrule="\-\,temp.txt" placemnt="after" append="1">
+</charlist>
+<att>
+<fillval attname="fixz" attloc="fixz" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="temp.txt" placemnt="before"></charsubset>
+</att>
+<att>
+<fillval attname="fixz" attloc="fixz" fillcat="usetext" fillchar="source">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attr">
+<highlt allcap="1"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="fixzz"><?Pub Lcl _id="f344">
+<charlist>
+<usetext source="\-\">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+</charlist>
+<att>
+<fillval attname="fixzz" attloc="fixzz" fillcat="usetext" fillchar="source">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="fig"><?Pub Lcl _id="f178">
+<charlist inherit="1">
+<usetext source="\-\" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="dmc.txt" conrule="\-\,#CONTENT" placemnt="after" append="1">
+</charlist>
+</e-i-c>
+<e-i-c gi="figv"><?Pub Lcl _id="f180">
+<charlist inherit="1">
+<savetext textid="dmc.txt" conrule="#CONTENT" placemnt="after" append="1">
+</charlist>
+</e-i-c>
+<e-i-c gi="figref"><?Pub Lcl _id="f247">
+<charlist inherit="1">
+<indent inherit="1" firstln="@"></charlist>
+<att>
+<specval attname="change" attloc="figref" attval="add">
+<charsubset>
+<usetext source="\ (voir figure \" placemnt="before">
+<subchars charsubsetref="gentext changeadd">
+<font posture="italic"></subchars>
+</usetext>
+<usetext source="\)\" placemnt="after">
+<subchars charsubsetref="gentext changeadd">
+<font posture="italic"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="figref" attval="mod">
+<charsubset>
+<usetext source="\ (voir figure \" placemnt="before">
+<subchars charsubsetref="gentext changemod">
+<font posture="italic"></subchars>
+</usetext>
+<usetext source="\)\" placemnt="after">
+<subchars charsubsetref="gentext changemod">
+<font posture="italic"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="figref" attval="#NONE">
+<charsubset>
+<usetext source="\ (voir figure \" placemnt="before">
+<subchars charsubsetref="gentext">
+<font posture="italic"></subchars>
+</usetext>
+<usetext source="\)\" placemnt="after">
+<subchars charsubsetref="gentext">
+<font posture="italic"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="refid" attloc="figref" fillcat="usetext" fillchar="source">
+<specval attname="change" attloc="figref" attval="add">
+<charsubset>
+<usetext placemnt="before">
+<subchars charsubsetref="attr changeadd"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="refid" attloc="figref" fillcat="usetext" fillchar="source">
+<specval attname="change" attloc="figref" attval="mod">
+<charsubset>
+<usetext placemnt="before">
+<subchars charsubsetref="attr changemod"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="refid" attloc="figref" fillcat="usetext" fillchar="source">
+<specval attname="change" attloc="figref" attval="#NONE">
+<charsubset>
+<usetext placemnt="before">
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="repnohot" attloc="figref" attval="#NE#\\">
+<specval attname="change" attloc="figref" attval="add">
+<fillval attname="repnohot" attloc="figref" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="temp.txt" placemnt="before">
+<usetext source="\, repère \" placemnt="before">
+<subchars charsubsetref="attr gentext changeadd"></subchars>
+</usetext>
+<usetext source="temp.txt" placemnt="before">
+<subchars charsubsetref="attr changeadd"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="repnohot" attloc="figref" attval="#NE#\\">
+<specval attname="change" attloc="figref" attval="mod">
+<fillval attname="repnohot" attloc="figref" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="temp.txt" placemnt="before">
+<usetext source="\, repère \" placemnt="before">
+<subchars charsubsetref="attr gentext changemod"></subchars>
+</usetext>
+<usetext source="temp.txt" placemnt="before">
+<subchars charsubsetref="attr changemod"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="repnohot" attloc="figref" attval="#NE#\\">
+<specval attname="change" attloc="figref" attval="#NONE">
+<fillval attname="repnohot" attloc="figref" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="temp.txt" placemnt="before">
+<usetext source="\, repère \" placemnt="before">
+<subchars charsubsetref="attr gentext"></subchars>
+</usetext>
+<usetext source="temp.txt" placemnt="before">
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="graphic"><?Pub Lcl _id="f257">
+<charlist>
+<usetext source="\ (\" placemnt="before">
+<subchars>
+<textbrk startln="1" endln="0"></subchars>
+</usetext>
+</charlist>
+<att>
+<fillval attname="callicn" attloc="graphic" fillcat="usetext" fillchar="source">
+<charsubset>
+<usetext placemnt="before">
+<subchars>
+<font posture="italic"></subchars>
+</usetext>
+<usetext source="\)\" placemnt="before">
+<subchars>
+<textbrk startln="0" endln="1"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="hotspot"><?Pub Lcl _id="f325">
+<charlist>
+<indent inherit="1" leftind="@30pt" firstln="@30pt"></charlist>
+</e-i-c>
+<e-i-c gi="icn"><?Pub Lcl _id="f332">
+<charlist></charlist>
+</e-i-c>
+<e-i-c gi="incode"><?Pub Lcl _id="f183">
+<charlist inherit="1">
+<usetext source="\-\" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="dmc.txt" conrule="\-\,#CONTENT" placemnt="after" append="1">
+</charlist>
+</e-i-c>
+<e-i-c gi="incodev"><?Pub Lcl _id="f184">
+<charlist inherit="1">
+<savetext textid="dmc.txt" conrule="#CONTENT" placemnt="after" append="1">
+</charlist>
+</e-i-c>
+<e-i-c gi="itemloc"><?Pub Lcl _id="f185">
+<charlist inherit="1">
+<usetext source="\-\" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="dmc.txt" conrule="\-\,#CONTENT" placemnt="after" append="1">
+</charlist>
+</e-i-c>
+<e-i-c gi="infoname"><?Pub Lcl _id="f186">
+<charlist inherit="1">
+<usetext source="\ - \" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="issno" context="* dmaddres"><?Pub Lcl _id="f187">
+<charlist inherit="1" charsubsetref="paragraph">
+<usetext source="\Numéro d'édition: \" placemnt="before">
+<subchars>
+<font weight="bold">
+<highlt fontclr="brown"></subchars>
+</usetext>
+</charlist>
+<att>
+<fillval attname="issno" attloc="issno" fillcat="usetext" fillchar="source">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attr">
+<highlt allcap="1"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="type" attloc="issno" fillcat="usetext" fillchar="source">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attr">
+<highlt allcap="1"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="issno"><?Pub Lcl _id="f296">
+<charlist inherit="1">
+<usetext source="\ \" placemnt="before"></usetext>
+<usetext source="\ \" placemnt="after"></usetext>
+</charlist>
+<att>
+<fillval attname="issno" attloc="issno" fillcat="usetext" fillchar="source">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attr">
+<highlt allcap="1"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="type" attloc="issno" fillcat="usetext" fillchar="source">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attr">
+<highlt allcap="1"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="issno" context="* dmcid"><?Pub Lcl _id="f339">
+<charlist inherit="1">
+<indent inherit="1" leftind="@180pt" firstln="@180pt">
+<usetext source="@180pt" placemnt="before"></usetext>
+</charlist>
+<att>
+<fillval attname="issno" attloc="issno" fillcat="usetext" fillchar="source">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="type" attloc="issno" fillcat="usetext" fillchar="source">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="issdate"><?Pub Lcl _id="f188">
+<charlist inherit="1" charsubsetref="paragraph">
+<usetext source="\Date d'édition: \" placemnt="before">
+<subchars>
+<font weight="bold">
+<highlt fontclr="brown"></subchars>
+</usetext>
+</charlist>
+<att>
+<fillval attname="day" attloc="issdate" fillcat="usetext" fillchar="source">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+<usetext source="\-\">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="month" attloc="issdate" fillcat="usetext" fillchar="source">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+<usetext source="\-\">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="year" attloc="issdate" fillcat="usetext" fillchar="source">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="icns" context="status"><?Pub Lcl _id="f210">
+<charlist charsubsetref="paragraph">
+<usetext source="\Références à Illustrations\" placemnt="before">
+<subchars charsubsetref="paragraph">
+<font weight="bold">
+<highlt fontclr="brown"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="icn-c"><?Pub Lcl _id="f211">
+<charlist charsubsetref="paragraph">
+<indent leftind="10mm" firstln="10mm"></charlist>
+</e-i-c>
+<e-i-c gi="icn-n"><?Pub Lcl _id="f221">
+<charlist charsubsetref="paragraph">
+<indent leftind="10mm" firstln="10mm"></charlist>
+</e-i-c>
+<e-i-c gi="illnum" context="* icns"><?Pub Lcl _id="f212">
+<charlist>
+<usetext source="\-\" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="illupdat" context="* icns"><?Pub Lcl _id="f213">
+<charlist>
+<usetext source="\-\" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="item" occur="first"><?Pub Lcl _id="f410">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<textbrk startln="1" endln="1">
+<savetext textid="passetitre.txt" conrule="passetitre.txt"></charlist>
+<att>
+<specval attname="passetitre.txt" attloc="#FOSI" attval="#EQ#\no\">
+<charsubset>
+<usetext source="idlist.txt">
+<subchars>
+<font weight="bold">
+<quadding quad="center">
+<textbrk startln="1" endln="1"></subchars>
+</usetext>
+<savetext textid="decalpara.txt" conrule="\yes\"></charsubset>
+</att>
+<att>
+<specval attname="type" attloc="list" attval="ordered">
+<charsubset>
+<enumerat increm="1" enumid="list1.ct" setvalue="0">
+<usetext source="list1.ct,\.\">
+<subchars charsubsetref="gentext">
+<textbrk startln="1" endln="0"></subchars>
+</usetext>
+<usetext source="@10pt"></usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="type" attloc="list" attval="simple">
+<charsubset>
+<usetext source="\-\">
+<subchars charsubsetref="gentext">
+<textbrk startln="1" endln="0"></subchars>
+</usetext>
+<usetext source="@10pt"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="item"><?Pub Lcl _id="f411">
+<charlist>
+<indent inherit="1" leftind="@+12pt" firstln="@">
+<textbrk startln="1" endln="1"></charlist>
+<att>
+<specval attname="type" attloc="list" attval="ordered">
+<charsubset>
+<enumerat increm="1" enumid="list1.ct" setvalue="0">
+<usetext source="list1.ct,\.\">
+<subchars charsubsetref="gentext">
+<textbrk startln="1" endln="0"></subchars>
+</usetext>
+<usetext source="@10pt"></usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="type" attloc="list" attval="simple">
+<charsubset>
+<usetext source="\-\">
+<subchars charsubsetref="gentext">
+<textbrk startln="1" endln="0"></subchars>
+</usetext>
+<usetext source="@10pt"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="item" context="list item" occur="first"><?Pub Lcl _id="f412">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<textbrk startln="1" endln="1">
+<savetext textid="passetitre.txt" conrule="passetitre.txt"></charlist>
+<att>
+<specval attname="passetitre.txt" attloc="#FOSI" attval="#EQ#\no\">
+<charsubset>
+<usetext source="idlist.txt">
+<subchars>
+<font weight="bold">
+<quadding quad="center">
+<textbrk startln="1" endln="1"></subchars>
+</usetext>
+<savetext textid="decalpara.txt" conrule="\yes\"></charsubset>
+</att>
+<att>
+<specval attname="type" attloc="list" attval="ordered">
+<specval attname="list1.ct" attloc="#FOSI" attval="#EQ#\0\">
+<charsubset>
+<enumerat increm="1" enumid="list2.ct" setvalue="0">
+<usetext source="list2.ct,\.\" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<usetext source="@10pt"></usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="type" attloc="list" attval="ordered">
+<specval attname="list1.ct" attloc="#FOSI" attval="#NE#\0\">
+<charsubset>
+<enumerat increm="1" enumid="list2.ct" setvalue="0">
+<usetext source="list1.ct,\.\,list2.ct,\.\" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<usetext source="@10pt"></usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="type" attloc="list" attval="simple">
+<charsubset>
+<usetext source="\-\" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<usetext source="@10pt"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="item" context="list item"><?Pub Lcl _id="f413">
+<charlist>
+<indent inherit="1" leftind="@+10pt" firstln="@">
+<textbrk startln="1" endln="1"></charlist>
+<att>
+<specval attname="type" attloc="list" attval="ordered">
+<specval attname="list1.ct" attloc="#FOSI" attval="#NE#\0\">
+<charsubset>
+<enumerat increm="1" enumid="list2.ct" setvalue="0">
+<usetext source="list1.ct,\.\,list2.ct,\.\" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<usetext source="@15pt"></usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="type" attloc="list" attval="simple">
+<charsubset>
+<usetext source="\-\" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<usetext source="@10pt"></usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="type" attloc="list" attval="ordered">
+<specval attname="list1.ct" attloc="#FOSI" attval="#EQ#\0\">
+<charsubset>
+<enumerat increm="1" enumid="list2.ct" setvalue="0">
+<usetext source="list2.ct,\.\" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<usetext source="@10pt"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="item" context="list item list item"><?Pub Lcl _id="f414">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<textbrk startln="1" endln="1"></charlist>
+</e-i-c>
+<e-i-c gi="ipcc" context="* dmcid"><?Pub Lcl _id="f342">
+<charlist>
+<usetext source="@180pt" placemnt="after"></usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="ipcn" context="* dmcid"><?Pub Lcl _id="f343">
+<charlist>
+<usetext source="@180pt" placemnt="after"></usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="indxglag"><?Pub Lcl _id="f322">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@"></charlist>
+</e-i-c>
+<e-i-c gi="list"><?Pub Lcl _id="f415">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<textbrk startln="0" endln="1">
+<savetext textid="passetitre.txt" conrule="\no\" placemnt="before">
+<savetext textid="decalpara.txt" conrule="\no\" placemnt="before">
+<reset resetlist="list1.ct"></charlist>
+<att>
+<fillval attname="id" attloc="list" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="idlist.txt"></charsubset>
+</att>
+<att>
+<fillval attname="id" attloc="list" fillcat="savetext" fillchar="textid">
+<fillval attname="id" attloc="list" fillcat="savetext" fillchar="conrule">
+<charsubset></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="list" context="item list"><?Pub Lcl _id="f416">
+<charlist>
+<indent inherit="1" leftind="@+12pt" firstln="@+12pt">
+<textbrk startln="0" endln="1">
+<savetext textid="passetitre.txt" conrule="\no\" placemnt="before">
+<savetext textid="decalpara.txt" conrule="\no\" placemnt="before">
+<reset resetlist="list2.ct"></charlist>
+<att>
+<fillval attname="id" attloc="list" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="idlist.txt"></charsubset>
+</att>
+<att>
+<fillval attname="id" attloc="list" fillcat="savetext" fillchar="textid">
+<fillval attname="id" attloc="list" fillcat="savetext" fillchar="conrule">
+<charsubset></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="list" context="item list item list"><?Pub Lcl _id="f417">
+<charlist>
+<indent inherit="1" leftind="@+22pt" firstln="@+22pt">
+<textbrk startln="0" endln="1"></charlist>
+</e-i-c>
+<e-i-c gi="link"><?Pub Lcl _id="f323">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@"></charlist>
+</e-i-c>
+<e-i-c gi="libelle"><?Pub Lcl _id="f324">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@"></charlist>
+</e-i-c>
+<e-i-c gi="listref"><?Pub Lcl _id="f331">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@"></charlist>
+<att>
+<specval attname="change" attloc="listref" attval="add">
+<charsubset>
+<usetext source="\(Se reporter à la liste \" placemnt="before">
+<subchars charsubsetref="changeadd attr gentext"></subchars>
+</usetext>
+<usetext source="\)\" placemnt="after">
+<subchars charsubsetref="changeadd attr gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="listref" attval="mod">
+<charsubset>
+<usetext source="\(Se reporter à la liste \" placemnt="before">
+<subchars charsubsetref="changemod gentext attr"></subchars>
+</usetext>
+<usetext source="\)\" placemnt="after">
+<subchars charsubsetref="changemod gentext attr"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="listref" attval="#NONE">
+<charsubset>
+<usetext source="\(Se reporter à la liste \" placemnt="before">
+<subchars charsubsetref="attr gentext"></subchars>
+</usetext>
+<usetext source="\)\" placemnt="after">
+<subchars charsubsetref="attr gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="refid" attloc="listref" fillcat="usetext" fillchar="source">
+<specval attname="change" attloc="listref" attval="add">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attr changeadd"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="refid" attloc="listref" fillcat="usetext" fillchar="source">
+<specval attname="change" attloc="listref" attval="mod">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attr changemod"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="refid" attloc="listref" fillcat="usetext" fillchar="source">
+<specval attname="change" attloc="listref" attval="#NONE">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="modelic"><?Pub Lcl _id="f21">
+<charlist inherit="1">
+<indent inherit="1">
+<highlt>
+<savetext textid="dmc.txt" conrule="#CONTENT" placemnt="after"></charlist>
+</e-i-c>
+<e-i-c gi="manufact" context="* status" occur="first"><?Pub Lcl _id="f288">
+<charlist>
+<indent inherit="1" leftind="@+30pt" firstln="@+30pt">
+<textbrk startln="1" endln="0">
+<savetext textid="passage.txt" conrule="\manufact\" placemnt="after">
+<usetext source="\Bloc d'identification:  \" placemnt="before">
+<subchars>
+<highlt bckclr="bwhite" fontclr="brown">
+<textbrk startln="1" endln="1"></subchars>
+</usetext>
+<usetext source="@40pt" placemnt="after">
+<subchars>
+<highlt bckclr="bwhite"></subchars>
+</usetext>
+</charlist>
+<att>
+<specval attname="change" attloc="manufact" attval="add">
+<charsubset charsubsetref="changeadd"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="manufact" attval="mod">
+<charsubset charsubsetref="changemod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="manufact" context="* status" occur="notfirst"><?Pub Lcl _id="f289">
+<charlist>
+<indent inherit="1" leftind="@+30pt" firstln="@+30pt">
+<textbrk startln="1" endln="0">
+<savetext textid="passage.txt" conrule="\manufact\" placemnt="after">
+<usetext source="@40pt" placemnt="after">
+<subchars>
+<highlt bckclr="bwhite"></subchars>
+</usetext>
+</charlist>
+<att>
+<specval attname="change" attloc="manufact" attval="add">
+<charsubset charsubsetref="changeadd"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="manufact" attval="mod">
+<charsubset charsubsetref="changemod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="manufact"><?Pub Lcl _id="f259">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<usetext source="separateur.txt" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="separateur.txt" conrule="\ - \"></charlist>
+</e-i-c>
+<e-i-c gi="mod" context="* status"><?Pub Lcl _id="f268">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@"></charlist>
+<att>
+<specval attname="modcond" attloc="mod" attval="post">
+<specval attname="change" attloc="mod" attval="add">
+<charsubset>
+<usetext source="separateur.txt"></usetext>
+<savetext textid="separateur.txt" conrule="\ - \">
+<usetext source="\Après \">
+<subchars charsubsetref="attr changeadd"></subchars>
+</usetext>
+<usetext source="\modification \">
+<subchars charsubsetref="attr changeadd gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="modcond" attloc="mod" attval="post">
+<specval attname="change" attloc="mod" attval="mod">
+<charsubset>
+<usetext source="separateur.txt"></usetext>
+<savetext textid="separateur.txt" conrule="\ - \">
+<usetext source="\Après \">
+<subchars charsubsetref="attr changemod"></subchars>
+</usetext>
+<usetext source="\modification \">
+<subchars charsubsetref="attr changemod gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="modcond" attloc="mod" attval="post">
+<specval attname="change" attloc="mod" attval="#NONE">
+<charsubset>
+<usetext source="separateur.txt"></usetext>
+<savetext textid="separateur.txt" conrule="\ - \">
+<usetext source="\Après \">
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+<usetext source="\modification \">
+<subchars charsubsetref="attr gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="modcond" attloc="mod" attval="pre">
+<specval attname="change" attloc="mod" attval="mod">
+<charsubset>
+<usetext source="separateur.txt"></usetext>
+<savetext textid="separateur.txt" conrule="\ - \">
+<usetext source="\Avant \">
+<subchars charsubsetref="attr changemod"></subchars>
+</usetext>
+<usetext source="\modification \">
+<subchars charsubsetref="attr gentext changemod"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="modcond" attloc="mod" attval="pre">
+<specval attname="change" attloc="mod" attval="add">
+<charsubset>
+<usetext source="separateur.txt"></usetext>
+<savetext textid="separateur.txt" conrule="\ - \">
+<usetext source="\Avant \">
+<subchars charsubsetref="attr changeadd"></subchars>
+</usetext>
+<usetext source="\modification \">
+<subchars charsubsetref="attr gentext changeadd"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="modcond" attloc="mod" attval="pre">
+<specval attname="change" attloc="mod" attval="#NONE">
+<charsubset>
+<usetext source="separateur.txt"></usetext>
+<savetext textid="separateur.txt" conrule="\ - \">
+<usetext source="\Avant \">
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+<usetext source="\modification \">
+<subchars charsubsetref="attr gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="mod" attval="add">
+<fillval attname="modnb" attloc="mod" fillcat="usetext" fillchar="source">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attr changeadd"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="mod" attval="mod">
+<fillval attname="modnb" attloc="mod" fillcat="usetext" fillchar="source">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attr changemod"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="mod" attval="#NONE">
+<fillval attname="modnb" attloc="mod" fillcat="usetext" fillchar="source">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="mod"><?Pub Lcl _id="f297">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@"></charlist>
+<att>
+<specval attname="modcond" attloc="mod" attval="post">
+<specval attname="change" attloc="mod" attval="add">
+<charsubset>
+<usetext source="separateur.txt">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="separateur.txt" conrule="\ - \">
+<usetext source="\Après \">
+<subchars charsubsetref="attr changeadd"></subchars>
+</usetext>
+<usetext source="\modification \">
+<subchars charsubsetref="attr changeadd gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="modcond" attloc="mod" attval="post">
+<specval attname="change" attloc="mod" attval="mod">
+<charsubset>
+<usetext source="separateur.txt">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="separateur.txt" conrule="\ - \">
+<usetext source="\Après \">
+<subchars charsubsetref="attr changemod"></subchars>
+</usetext>
+<usetext source="\modification \">
+<subchars charsubsetref="attr changemod gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="modcond" attloc="mod" attval="post">
+<specval attname="change" attloc="mod" attval="#NONE">
+<charsubset>
+<usetext source="separateur.txt">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="separateur.txt" conrule="\ - \">
+<usetext source="\Après \">
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+<usetext source="\modification \">
+<subchars charsubsetref="attr gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="modcond" attloc="mod" attval="pre">
+<specval attname="change" attloc="mod" attval="mod">
+<charsubset>
+<usetext source="separateur.txt">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="separateur.txt" conrule="\ - \">
+<usetext source="\Avant \">
+<subchars charsubsetref="attr changemod"></subchars>
+</usetext>
+<usetext source="\modification \">
+<subchars charsubsetref="attr gentext changemod"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="modcond" attloc="mod" attval="pre">
+<specval attname="change" attloc="mod" attval="add">
+<charsubset>
+<usetext source="separateur.txt">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="separateur.txt" conrule="\ - \">
+<usetext source="\Avant \">
+<subchars charsubsetref="attr changeadd"></subchars>
+</usetext>
+<usetext source="\modification \">
+<subchars charsubsetref="attr changeadd gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="modcond" attloc="mod" attval="pre">
+<specval attname="change" attloc="mod" attval="#NONE">
+<charsubset>
+<usetext source="separateur.txt">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="separateur.txt" conrule="\ - \">
+<usetext source="\Avant \">
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+<usetext source="\modification \">
+<subchars charsubsetref="attr gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="mod" attval="add">
+<fillval attname="modnb" attloc="mod" fillcat="usetext" fillchar="source">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attr changeadd"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="mod" attval="mod">
+<fillval attname="modnb" attloc="mod" fillcat="usetext" fillchar="source">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attr changemod"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="mod" attval="#NONE">
+<fillval attname="modnb" attloc="mod" fillcat="usetext" fillchar="source">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="norefs"><?Pub Lcl _id="f229">
+<charlist charsubsetref="paragraph"></charlist>
+<att>
+<specval attname="change" attloc="norefs" attval="add">
+<charsubset>
+<usetext source="\Aucune\" placemnt="before">
+<subchars charsubsetref="gentext changeadd">
+<indent inherit="1" leftind="@+30pt" firstln="@+30pt"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="norefs" attval="mod">
+<charsubset>
+<usetext source="\Aucune\" placemnt="before">
+<subchars charsubsetref="gentext changemod">
+<indent inherit="1" leftind="@+30pt" firstln="@+30pt"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="norefs" attval="#NONE">
+<charsubset>
+<usetext source="\Aucune\" placemnt="before">
+<subchars charsubsetref="gentext">
+<indent inherit="1" leftind="@+30pt" firstln="@+30pt"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="nti" context="* status"><?Pub Lcl _id="f283">
+<charlist>
+<indent inherit="1" leftind="@+30pt" firstln="@+30pt">
+<textbrk startln="1">
+<usetext source="\Niveau technique d'intervention: \" placemnt="before">
+<subchars>
+<highlt fontclr="brown"></subchars>
+</usetext>
+</charlist>
+<att>
+<specval attname="nti1" attloc="nti" attval="1">
+<specval attname="change" attloc="nti" attval="add">
+<charsubset>
+<usetext source="\NTI1\">
+<subchars charsubsetref="attr changeadd"></subchars>
+</usetext>
+<savetext textid="separateur.txt" conrule="\ - \"></charsubset>
+</att>
+<att>
+<specval attname="nti1" attloc="nti" attval="1">
+<specval attname="change" attloc="nti" attval="mod">
+<charsubset>
+<usetext source="\NTI1\">
+<subchars charsubsetref="attr changemod"></subchars>
+</usetext>
+<savetext textid="separateur.txt" conrule="\ - \"></charsubset>
+</att>
+<att>
+<specval attname="nti1" attloc="nti" attval="1">
+<specval attname="change" attloc="nti" attval="#NONE">
+<charsubset>
+<usetext source="\NTI1\">
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+<savetext textid="separateur.txt" conrule="\ - \"></charsubset>
+</att>
+<att>
+<specval attname="nti2" attloc="nti" attval="1">
+<specval attname="change" attloc="nti" attval="add">
+<charsubset>
+<usetext source="separateur.txt">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<usetext source="\NTI2\">
+<subchars charsubsetref="attr changeadd"></subchars>
+</usetext>
+<savetext textid="separateur.txt" conrule="\ - \"></charsubset>
+</att>
+<att>
+<specval attname="nti2" attloc="nti" attval="1">
+<specval attname="change" attloc="nti" attval="mod">
+<charsubset>
+<usetext source="separateur.txt">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<usetext source="\NTI2\">
+<subchars charsubsetref="attr changemod"></subchars>
+</usetext>
+<savetext textid="separateur.txt" conrule="\ - \"></charsubset>
+</att>
+<att>
+<specval attname="nti2" attloc="nti" attval="1">
+<specval attname="change" attloc="nti" attval="#NONE">
+<charsubset>
+<usetext source="separateur.txt">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<usetext source="\NTI2\">
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+<savetext textid="separateur.txt" conrule="\ - \"></charsubset>
+</att>
+<att>
+<specval attname="nti3" attloc="nti" attval="1">
+<specval attname="change" attloc="nti" attval="add">
+<charsubset>
+<usetext source="separateur.txt">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<usetext source="\NTI3\">
+<subchars charsubsetref="attr changeadd"></subchars>
+</usetext>
+<savetext textid="separateur.txt" conrule="\ - \"></charsubset>
+</att>
+<att>
+<specval attname="nti3" attloc="nti" attval="1">
+<specval attname="change" attloc="nti" attval="mod">
+<charsubset>
+<usetext source="separateur.txt">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<usetext source="\NTI3\">
+<subchars charsubsetref="attr changemod"></subchars>
+</usetext>
+<savetext textid="separateur.txt" conrule="\ - \"></charsubset>
+</att>
+<att>
+<specval attname="nti3" attloc="nti" attval="1">
+<specval attname="change" attloc="nti" attval="#NONE">
+<charsubset>
+<usetext source="separateur.txt">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<usetext source="\NTI3\">
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+<savetext textid="separateur.txt" conrule="\ - \"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="nti"><?Pub Lcl _id="f266">
+<charlist charsubsetref="attr">
+<indent inherit="1" leftind="@" firstln="@"></charlist>
+<att>
+<specval attname="nti1" attloc="nti" attval="\1\">
+<charsubset charsubsetref="attr">
+<usetext source="separateur.txt">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="separateur.txt" conrule="\ - \">
+<usetext source="\NTI1\">
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="nti2" attloc="nti" attval="\1\">
+<charsubset>
+<usetext source="separateur.txt">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="separateur.txt" conrule="\ - \">
+<usetext source="\NTI2\">
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="nti3" attloc="nti" attval="\1\">
+<charsubset>
+<usetext source="separateur.txt">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="separateur.txt" conrule="\ - \">
+<usetext source="\NTI3\">
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="note"><?Pub Lcl _id="f364">
+<charlist inherit="1" charsubsetref="paragraph">
+<indent inherit="1" leftind="@" firstln="@">
+<presp minimum="15pt" nominal="15pt" maximum="15pt">
+<postsp minimum="15pt" nominal="15pt" maximum="15pt"></charlist>
+<att>
+<specval attname="change" attloc="note" attval="add">
+<fillval attname="id" attloc="note" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="idnote.txt">
+<usetext source="\NOTA \,idnote.txt,\:\" placemnt="before">
+<subchars charsubsetref="gentext changeadd">
+<font weight="bold"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="note" attval="mod">
+<fillval attname="id" attloc="note" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="idnote.txt">
+<usetext source="\NOTA \,idnote.txt,\:\" placemnt="before">
+<subchars charsubsetref="gentext changemod">
+<font weight="bold"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="note" attval="#NONE">
+<fillval attname="id" attloc="note" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="idnote.txt">
+<usetext source="\NOTA \,idnote.txt,\:\" placemnt="before">
+<subchars charsubsetref="gentext">
+<font weight="bold"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="note" context="specpara" occur="first"><?Pub Lcl _id="f239">
+<charlist inherit="1" charsubsetref="paragraph">
+<indent inherit="1" leftind="@" firstln="@">
+<savetext textid="idnote.txt" conrule="\\"></charlist>
+<att>
+<fillval attname="id" attloc="note" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="idnote.txt"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="note" attval="add">
+<charsubset>
+<usetext source="\NOTA \,idnote.txt,\:\" placemnt="before">
+<subchars charsubsetref="gentext changeadd">
+<font weight="bold"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="note" attval="mod">
+<charsubset>
+<usetext source="\NOTA \,idnote.txt,\:\" placemnt="before">
+<subchars charsubsetref="gentext changemod">
+<font weight="bold"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="note" attval="#NONE">
+<charsubset>
+<usetext source="\NOTA \,idnote.txt,\:\" placemnt="before">
+<subchars charsubsetref="gentext">
+<font weight="bold"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="id" attloc="note" fillcat="savetext" fillchar="textid">
+<charsubset>
+<savetext conrule="\(Se reporter au nota \,idnote.txt,\)\"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="orig" context="* icns"><?Pub Lcl _id="f222">
+<charlist>
+<usetext source="\-\" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="orig" context="status"><?Pub Lcl _id="f192">
+<charlist charsubsetref="paragraph">
+<usetext source="\Emetteur: \" placemnt="before">
+<subchars>
+<font weight="bold">
+<highlt fontclr="brown"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="partno" context="* status"><?Pub Lcl _id="f200">
+<charlist>
+<savetext textid="passage.txt" conrule="passage.txt" placemnt="before">
+<savetext textid="passage.txt" conrule="\partno\" placemnt="before"></charlist>
+<att>
+<specval attname="change" attloc="partno" attval="add">
+<specval attname="passage.txt" attloc="#FOSI" attval="#NE#\partno\">
+<charsubset charsubsetref="changeadd">
+<indent inherit="1" leftind="@+70pt" firstln="@+70pt">
+<usetext source="@140pt" placemnt="after">
+<subchars>
+<highlt bckclr="bwhite"></subchars>
+</usetext>
+<savetext textid="passage.txt" conrule="\partno\" placemnt="after"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="partno" attval="mod">
+<specval attname="passage.txt" attloc="#FOSI" attval="#NE#\partno\">
+<charsubset charsubsetref="changemod">
+<indent inherit="1" leftind="@+70pt" firstln="@+70pt">
+<usetext source="@140pt" placemnt="after">
+<subchars>
+<highlt bckclr="bwhite"></subchars>
+</usetext>
+<savetext textid="passage.txt" conrule="\partno\" placemnt="after"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="partno" attval="#NONE">
+<specval attname="passage.txt" attloc="#FOSI" attval="#NE#\partno\">
+<charsubset>
+<indent inherit="1" leftind="@+70pt" firstln="@+70pt">
+<usetext source="@140pt" placemnt="after"></usetext>
+<savetext textid="passage.txt" conrule="\partno\" placemnt="after"></charsubset>
+</att>
+<att>
+<specval attname="passage.txt" attloc="#FOSI" attval="#EQ#\partno\">
+<specval attname="change" attloc="partno" attval="add">
+<charsubset charsubsetref="changeadd">
+<indent inherit="1" leftind="@+70pt" firstln="@+70pt">
+<textbrk startln="1" endln="0">
+<savetext textid="passage.txt" conrule="\partno\" placemnt="after">
+<usetext source="@100pt" placemnt="after">
+<subchars>
+<highlt bckclr="bwhite"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="passage.txt" attloc="#FOSI" attval="#EQ#\partno\">
+<specval attname="change" attloc="partno" attval="mod">
+<charsubset charsubsetref="changemod">
+<indent leftind="@+70pt" firstln="@+70pt">
+<textbrk startln="1" endln="0">
+<savetext textid="passage.txt" conrule="\partno\" placemnt="after">
+<usetext source="@100pt" placemnt="after">
+<subchars>
+<highlt bckclr="bwhite"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="passage.txt" attloc="#FOSI" attval="#EQ#\partno\">
+<specval attname="change" attloc="partno" attval="#NONE">
+<charsubset>
+<indent leftind="@+70pt" firstln="@+70pt">
+<textbrk startln="1" endln="0">
+<savetext textid="passage.txt" conrule="\partno\" placemnt="after">
+<usetext source="@100pt" placemnt="after">
+<subchars>
+<highlt bckclr="bwhite"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="partno"><?Pub Lcl _id="f291">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<usetext source="separateur.txt" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="separateur.txt" conrule="\ - \"></charlist>
+</e-i-c>
+<e-i-c gi="para0" context="descript"><?Pub Lcl _id="f235">
+<charlist>
+<font famname="Times" size="14pt" posture="upright" weight="bold">
+<indent leftind="30pt" rightind="0pt" firstln="0pt">
+<presp minimum="15pt" nominal="15pt" maximum="15pt">
+<postsp minimum="15pt" nominal="15pt" maximum="15pt"></charlist>
+<att>
+<fillval attname="id" attloc="para0" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="paraid.txt"></charsubset>
+</att>
+<att>
+<fillval attname="id" attloc="para0" fillcat="savetext" fillchar="textid">
+<charsubset>
+<savetext conrule="\(Se reporter au paragraphe \,paraid.txt,\)\"></charsubset>
+</att>
+<att>
+<fillval attname="id" attloc="para0" fillcat="usetext" fillchar="source">
+<specval attname="change" attloc="para0" attval="add">
+<charsubset>
+<usetext placemnt="before">
+<subchars charsubsetref="changeadd gentext">
+<font weight="bold">
+<highlt scoring="1" scorespc="1"></subchars>
+</usetext>
+<usetext source="@30pt"></usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="id" attloc="para0" fillcat="usetext" fillchar="source">
+<specval attname="change" attloc="para0" attval="mod">
+<charsubset>
+<usetext placemnt="before">
+<subchars charsubsetref="gentext changemod">
+<font weight="bold">
+<highlt scoring="1" scorespc="1">
+<textbrk startln="1" endln="0"></subchars>
+</usetext>
+<usetext source="@30pt"></usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="id" attloc="para0" fillcat="usetext" fillchar="source">
+<specval attname="change" attloc="para0" attval="#NONE">
+<charsubset>
+<usetext placemnt="before">
+<subchars charsubsetref="gentext">
+<font weight="bold">
+<highlt scoring="1" scorespc="1">
+<textbrk startln="1" endln="0"></subchars>
+</usetext>
+<usetext source="@30pt"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="para"><?Pub Lcl _id="f236">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<presp minimum="10pt" nominal="10pt" maximum="10pt">
+<postsp minimum="10pt" nominal="10pt" maximum="10pt">
+<textbrk startln="0" endln="1">
+<savetext textid="decalpara.txt" conrule="decalpara.txt" placemnt="before">
+</charlist>
+<att>
+<specval attname="decalpara.txt" attloc="#FOSI" attval="#EQ#\yes\">
+<charsubset>
+<indent inherit="1" leftind="@+12pt" firstln="@">
+<savetext textid="decalpara.txt" conrule="\no\" placemnt="before"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="para" context="* item"><?Pub Lcl _id="f418">
+<charlist inherit="1">
+<indent inherit="1" leftind="@" firstln="@">
+<postsp minimum="10pt" nominal="10pt" maximum="10pt">
+<textbrk startln="0" endln="1">
+<savetext textid="decalpara.txt" conrule="decalpara.txt">
+<savetext textid="decalpara2.txt" conrule="decalpara2.txt"></charlist>
+<att>
+<specval attname="decalpara.txt" attloc="#FOSI" attval="#EQ#\yes\">
+<charsubset>
+<indent inherit="1" leftind="@+12pt" firstln="@">
+<savetext textid="decalpara.txt" conrule="\no\">
+<savetext textid="decalpara2.txt" conrule="\yes\"></charsubset>
+</att>
+<att>
+<specval attname="decalpara2.txt" attloc="#FOSI" attval="#EQ#\yes\">
+<charsubset>
+<indent inherit="1" leftind="@+12pt" firstln="@+12pt">
+<savetext textid="decalpara.txt" conrule="\no\">
+<savetext textid="decalpara2.txt" conrule="\no\"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="para" context=" item list item list item"><?Pub Lcl _id="f419">
+<charlist inherit="1">
+<indent inherit="1" leftind="@" firstln="@">
+<postsp minimum="10pt" nominal="10pt" maximum="10pt">
+<textbrk startln="0" endln="1"></charlist>
+</e-i-c>
+<e-i-c gi="para" context="* proclist"><?Pub Lcl _id="f315">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<presp minimum="10pt" nominal="10pt" maximum="10pt">
+<postsp minimum="10pt" nominal="10pt" maximum="10pt">
+<textbrk startln="1" endln="1">
+<usetext source="\-\,@10pt" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="p" context="note"><?Pub Lcl _id="f237">
+<charlist charsubsetref="paragraph">
+<indent inherit="1" leftind="@+30pt" firstln="@+30pt">
+<textbrk startln="1" endln="1"></charlist>
+<att>
+<specval attname="change" attloc="p" attval="add">
+<charsubset charsubsetref="changeadd"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="p" attval="mod">
+<charsubset charsubsetref="changemod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="p" context="* warning"><?Pub Lcl _id="f310">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<quadding quad="center">
+<textbrk startln="1" endln="1"></charlist>
+<att>
+<specval attname="change" attloc="p" attval="add">
+<charsubset charsubsetref="changeadd"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="p" attval="mod">
+<charsubset charsubsetref="changemod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="p" context="* caution"><?Pub Lcl _id="f311">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<quadding quad="center">
+<textbrk startln="1" endln="1"></charlist>
+<att>
+<specval attname="change" attloc="p" attval="add">
+<charsubset charsubsetref="changeadd"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="p" attval="mod">
+<charsubset charsubsetref="changemod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="p" occur="all"><?Pub Lcl _id="f238">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<algroup></charlist>
+<att>
+<specval attname="change" attloc="p" attval="add">
+<charsubset charsubsetref="changeadd"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="p" attval="mod">
+<charsubset charsubsetref="changemod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="proclist"><?Pub Lcl _id="f312">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<textbrk startln="1" endln="1"></charlist>
+</e-i-c>
+<e-i-c gi="pitem"><?Pub Lcl _id="f313">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@"></charlist>
+<att>
+<specval attname="change" attloc="pitem" attval="add">
+<charsubset>
+<usetext source="\-\" placemnt="before">
+<subchars charsubsetref="gentext changeadd"></subchars>
+</usetext>
+<usetext source="@10pt"></usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="pitem" attval="mod">
+<charsubset>
+<usetext source="\-\" placemnt="before">
+<subchars charsubsetref="gentext changemod"></subchars>
+</usetext>
+<usetext source="@10pt"></usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="pitem" attval="#NONE">
+<charsubset>
+<usetext source="\-\" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<usetext source="@10pt"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="qa" context="* status"><?Pub Lcl _id="f196">
+<charlist charsubsetref="paragraph">
+<usetext source="\Etat d'assurance qualité: \,@140pt" placemnt="before">
+<subchars>
+<font weight="bold">
+<highlt fontclr="brown"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="refs"><?Pub Lcl _id="f408">
+<charlist>
+<usetext source="\Références\" placemnt="before">
+<subchars charsubsetref="title"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="reception" context="* status"><?Pub Lcl _id="f295">
+<charlist></charlist>
+<att>
+<specval attname="recept" attloc="reception" attval="0">
+<charsubset>
+<usetext source="\Réception non accusée \">
+<subchars>
+<indent leftind="170pt">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="recept" attloc="reception" attval="1">
+<charsubset>
+<usetext source="\Réception accusée \">
+<subchars>
+<indent leftind="170pt">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="receptdate" attloc="reception" attval="#ANY">
+<fillval attname="receptdate" attloc="reception" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="temp.txt" placemnt="before">
+<usetext source="\le \" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<usetext source="temp.txt,\ \" placemnt="before">
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="approv" attloc="reception" attval="0">
+<charsubset>
+<usetext source="\Approbation non prononcée \">
+<subchars charsubsetref="gentext">
+<indent leftind="140pt" firstln="140pt">
+<textbrk startln="1"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="approv" attloc="reception" attval="1">
+<charsubset>
+<usetext source="\Approbation prononcée le \">
+<subchars charsubsetref="gentext">
+<indent leftind="140pt" firstln="140pt">
+<textbrk startln="1"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="approvdate" attloc="reception" fillcat="usetext" fillchar="source">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+<usetext source="\ par \">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="authoapprov" attloc="reception" fillcat="usetext" fillchar="source">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="range" context="* versrank"><?Pub Lcl _id="f282">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<usetext source="ptvirgule.txt" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="ptvirgule.txt" conrule="\;\">
+<usetext source="\ de \">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+</charlist>
+<att>
+<fillval attname="from" attloc="range" fillcat="usetext" fillchar="source">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+<usetext source="\ à \">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="to" attloc="range" fillcat="usetext" fillchar="source">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="range" context="* serialnb"><?Pub Lcl _id="f338">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<usetext source="ptvirgule.txt" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="ptvirgule.txt" conrule="\;\">
+<usetext source="\ de \">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+</charlist>
+<att>
+<fillval attname="from" attloc="range" fillcat="usetext" fillchar="source">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+<usetext source="\ à \">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="to" attloc="range" fillcat="usetext" fillchar="source">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="rpc" context="* icns"><?Pub Lcl _id="f216">
+<charlist>
+<usetext source="\-\" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+</charlist>
+<att>
+<fillval attname="rpcname" attloc="rpc" fillcat="usetext" fillchar="source">
+<charsubset>
+<highlt fontclr="black" allcap="1">
+<usetext>
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="rpc" context="ipcn"><?Pub Lcl _id="f189">
+<charlist>
+<savetext textid="dmc.txt" conrule="temp.txt" placemnt="after" append="1">
+</charlist>
+<att>
+<fillval attname="rpcname" attloc="rpc" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="temp.txt" placemnt="before"></charsubset>
+</att>
+<att>
+<fillval attname="rpcname" attloc="rpc" fillcat="usetext" fillchar="source">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attr">
+<highlt allcap="1"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="rpc" context="status"><?Pub Lcl _id="f190">
+<charlist charsubsetref="paragraph">
+<usetext source="\Société partenaire responsable: \" placemnt="before">
+<subchars>
+<font weight="bold">
+<highlt fontclr="brown"></subchars>
+</usetext>
+</charlist>
+<att>
+<fillval attname="rpcname" attloc="rpc" fillcat="usetext" fillchar="source">
+<charsubset>
+<highlt fontclr="black" allcap="1">
+<usetext>
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="rfu" context="status"><?Pub Lcl _id="f206">
+<charlist charsubsetref="paragraph">
+<indent inherit="1" leftind="@" firstln="@">
+<usetext source="\Raison de la mise à jour: \" placemnt="before">
+<subchars>
+<font weight="bold">
+<highlt fontclr="brown"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="remarks" context="status"><?Pub Lcl _id="f209">
+<charlist charsubsetref="paragraph">
+<indent inherit="1" leftind="@" firstln="@">
+<usetext source="\Remarques: \" placemnt="before">
+<subchars>
+<font weight="bold">
+<highlt fontclr="brown"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="refipc"><?Pub Lcl _id="f245">
+<charlist inherit="1"></charlist>
+<att>
+<specval attname="change" attloc="refipc" attval="add">
+<charsubset>
+<usetext source="\ (\" placemnt="before">
+<subchars charsubsetref="attr changeadd"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="refipc" attval="mod">
+<charsubset>
+<usetext source="\ (\" placemnt="before">
+<subchars charsubsetref="attr changemod"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="refipc" attval="#NONE">
+<charsubset>
+<usetext source="\ (\" placemnt="before">
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="csn" attloc="refipc" fillcat="usetext" fillchar="source">
+<specval attname="change" attloc="refipc" attval="add">
+<charsubset>
+<usetext placemnt="before">
+<subchars charsubsetref="attr changeadd"></subchars>
+</usetext>
+<usetext source="\) \" placemnt="before">
+<subchars charsubsetref="attr changeadd"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="csn" attloc="refipc" fillcat="usetext" fillchar="source">
+<specval attname="change" attloc="refipc" attval="mod">
+<charsubset>
+<usetext placemnt="before">
+<subchars charsubsetref="attr changemod"></subchars>
+</usetext>
+<usetext source="\) \" placemnt="before">
+<subchars charsubsetref="attr changemod"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="csn" attloc="refipc" fillcat="usetext" fillchar="source">
+<specval attname="change" attloc="refipc" attval="#NONE">
+<charsubset>
+<usetext placemnt="before">
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+<usetext source="\) \" placemnt="before">
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="reporg"><?Pub Lcl _id="f246">
+<charlist inherit="1"></charlist>
+<att>
+<specval attname="change" attloc="reporg" attval="add">
+<charsubset>
+<usetext source="\(\" placemnt="before">
+<subchars charsubsetref="attr changeadd"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="reporg" attval="mod">
+<charsubset>
+<usetext source="\(\" placemnt="before">
+<subchars charsubsetref="attr changemod"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="reporg" attval="#NONE">
+<charsubset>
+<usetext source="\(\" placemnt="before">
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="reg" attloc="reporg" fillcat="usetext" fillchar="source">
+<specval attname="change" attloc="reporg" attval="add">
+<charsubset>
+<usetext placemnt="before">
+<subchars charsubsetref="attr changeadd"></subchars>
+</usetext>
+<usetext source="\)\" placemnt="before">
+<subchars charsubsetref="attr changeadd"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="reg" attloc="reporg" fillcat="usetext" fillchar="source">
+<specval attname="change" attloc="reporg" attval="mod">
+<charsubset>
+<usetext placemnt="before">
+<subchars charsubsetref="attr changemod"></subchars>
+</usetext>
+<usetext source="\)\" placemnt="before">
+<subchars charsubsetref="attr changemod"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="reg" attloc="reporg" fillcat="usetext" fillchar="source">
+<specval attname="change" attloc="reporg" attval="#NONE">
+<charsubset>
+<usetext placemnt="before">
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+<usetext source="\)\" placemnt="before">
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="sdc"><?Pub Lcl _id="f6">
+<charlist inherit="1">
+<usetext source="\-\" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="dmc.txt" conrule="\-\,#CONTENT" placemnt="after" append="1">
+</charlist>
+</e-i-c>
+<e-i-c gi="specpara"><?Pub Lcl _id="f228">
+<charlist inherit="1" charsubsetref="paragraph">
+<indent inherit="1" leftind="@" firstln="@">
+<postsp minimum="15pt" nominal="15pt" maximum="15pt"></charlist>
+</e-i-c>
+<e-i-c gi="supeqvc"><?Pub Lcl _id="f154">
+<charlist inherit="1">
+<usetext source="\-\" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="dmc.txt" conrule="\-\,#CONTENT" placemnt="after" append="1">
+</charlist>
+</e-i-c>
+<e-i-c gi="section"><?Pub Lcl _id="f11">
+<charlist inherit="1">
+<usetext source="\-\" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="dmc.txt" conrule="\-\,#CONTENT" placemnt="after" append="1">
+</charlist>
+</e-i-c>
+<e-i-c gi="subsect"><?Pub Lcl _id="f22">
+<charlist inherit="1">
+<savetext textid="dmc.txt" conrule="#CONTENT" placemnt="after" append="1">
+</charlist>
+</e-i-c>
+<e-i-c gi="subject"><?Pub Lcl _id="f12">
+<charlist inherit="1">
+<usetext source="\-\" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="dmc.txt" conrule="\-\,#CONTENT" placemnt="after" append="1">
+</charlist>
+</e-i-c>
+<e-i-c gi="security" context="status"><?Pub Lcl _id="f191">
+<charlist charsubsetref="paragraph">
+<usetext source="\Classification sécurité: \" placemnt="before">
+<subchars>
+<font weight="bold">
+<highlt fontclr="brown"></subchars>
+</usetext>
+</charlist>
+<att>
+<fillval attname="class" attloc="security" fillcat="usetext" fillchar="source">
+<charsubset>
+<highlt fontclr="black" allcap="1">
+<usetext>
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="systemid" context="* status"><?Pub Lcl _id="f35">
+<charlist charsubsetref="paragraph">
+<indent leftind="@30pt" firstln="@30pt">
+<usetext source="\Identification du système\" placemnt="before">
+<subchars charsubsetref="paragraph">
+<font weight="bold">
+<highlt fontclr="brown"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="serialnb" context="* status"><?Pub Lcl _id="f279">
+<charlist>
+<indent inherit="1" leftind="@+170pt" firstln="@+170pt">
+<textbrk endln="1">
+<usetext source="\No de série :\" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="ptvirgule.txt" conrule="\\"></charlist>
+</e-i-c>
+<e-i-c gi="single"><?Pub Lcl _id="f280">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<usetext source="ptvirgule.txt" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="ptvirgule.txt" conrule="\;\" placemnt="before">
+<usetext source="\ \"></usetext>
+</charlist>
+<att>
+<fillval attname="rank" attloc="single" fillcat="usetext" fillchar="source">
+<charsubset>
+<usetext placemnt="after">
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="single" context="* versrank"><?Pub Lcl _id="f346">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<usetext source="ptvirgule.txt" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="ptvirgule.txt" conrule="\;\" placemnt="before">
+<usetext source="\ \"></usetext>
+</charlist>
+<att>
+<fillval attname="rank" attloc="single" fillcat="usetext" fillchar="source">
+<charsubset>
+<usetext placemnt="after">
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="std" context="* status"><?Pub Lcl _id="f37">
+<charlist charsubsetref="paragraph">
+<indent inherit="1" leftind="@+30pt" firstln="@+30pt">
+<usetext source="\Standard/Cellule: \" placemnt="before">
+<subchars>
+<highlt fontclr="brown"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="std"><?Pub Lcl _id="f321">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@"></charlist>
+</e-i-c>
+<e-i-c gi="secur" context="* icns"><?Pub Lcl _id="f223">
+<charlist>
+<usetext source="\-\" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+</charlist>
+<att>
+<fillval attname="class" attloc="secur" fillcat="usetext" fillchar="source">
+<charsubset>
+<highlt fontclr="black" allcap="1">
+<usetext>
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="swprog" context="* status"><?Pub Lcl _id="f207">
+<charlist charsubsetref="paragraph">
+<indent inherit="1" leftind="@+30pt" firstln="@+30pt">
+<usetext source="\Version logiciel: \" placemnt="before">
+<subchars>
+<font weight="bold">
+<highlt bckclr="bwhite" fontclr="brown"></subchars>
+</usetext>
+</charlist>
+<att>
+<specval attname="change" attloc="swprog" attval="add">
+<charsubset charsubsetref="changeadd"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="swprog" attval="mod">
+<charsubset charsubsetref="changemod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="swprog"><?Pub Lcl _id="f294">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<usetext source="separateur.txt" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="separateur.txt" conrule="\ - \"></charlist>
+<att>
+<specval attname="change" attloc="swprog" attval="add">
+<charsubset charsubsetref="changeadd"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="swprog" attval="mod">
+<charsubset charsubsetref="changemod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="subpara1"><?Pub Lcl _id="f224">
+<charlist>
+<indent leftind="60pt" firstln="30pt">
+<presp minimum="15pt" nominal="15pt" maximum="15pt">
+<postsp minimum="15pt" nominal="15pt" maximum="15pt">
+<textbrk startln="1" endln="1"></charlist>
+<att>
+<fillval attname="id" attloc="subpara1" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="paraid.txt"></charsubset>
+</att>
+<att>
+<fillval attname="id" attloc="subpara1" fillcat="savetext" fillchar="textid">
+<charsubset>
+<savetext conrule="\(Se reporter au paragraphe \,paraid.txt,\)\"></charsubset>
+</att>
+<att>
+<fillval attname="id" attloc="subpara1" fillcat="usetext" fillchar="source">
+<specval attname="change" attloc="subpara1" attval="add">
+<charsubset>
+<usetext placemnt="before">
+<subchars charsubsetref="gentext changeadd">
+<textbrk startln="1" endln="0"></subchars>
+</usetext>
+<usetext source="@30pt"></usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="id" attloc="subpara1" fillcat="usetext" fillchar="source">
+<specval attname="change" attloc="subpara1" attval="mod">
+<charsubset>
+<usetext placemnt="before">
+<subchars charsubsetref="gentext changemod">
+<textbrk startln="1" endln="0"></subchars>
+</usetext>
+<usetext source="@30pt"></usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="id" attloc="subpara1" fillcat="usetext" fillchar="source">
+<specval attname="change" attloc="subpara1" attval="#NONE">
+<charsubset>
+<usetext placemnt="before">
+<subchars charsubsetref="gentext">
+<textbrk startln="1" endln="0"></subchars>
+</usetext>
+<usetext source="@30pt"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="subpara2"><?Pub Lcl _id="f225">
+<charlist>
+<indent leftind="90pt" firstln="60pt">
+<presp minimum="15pt" nominal="15pt" maximum="15pt">
+<postsp minimum="15pt" nominal="15pt" maximum="15pt">
+<textbrk startln="1" endln="1"></charlist>
+<att>
+<fillval attname="id" attloc="subpara2" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="paraid.txt"></charsubset>
+</att>
+<att>
+<fillval attname="id" attloc="subpara2" fillcat="savetext" fillchar="textid">
+<charsubset>
+<savetext conrule="\(Se reporter au paragraphe \,paraid.txt,\)\"></charsubset>
+</att>
+<att>
+<fillval attname="id" attloc="subpara2" fillcat="usetext" fillchar="source">
+<specval attname="change" attloc="subpara2" attval="add">
+<charsubset>
+<usetext placemnt="before">
+<subchars charsubsetref="gentext changeadd">
+<highlt scoring="1" scorespc="1">
+<textbrk startln="1" endln="0"></subchars>
+</usetext>
+<usetext source="@30pt"></usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="id" attloc="subpara2" fillcat="usetext" fillchar="source">
+<specval attname="change" attloc="subpara2" attval="mod">
+<charsubset>
+<usetext placemnt="before">
+<subchars charsubsetref="gentext changemod">
+<highlt scoring="1" scorespc="1">
+<textbrk startln="1" endln="0"></subchars>
+</usetext>
+<usetext source="@30pt"></usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="id" attloc="subpara2" fillcat="usetext" fillchar="source">
+<specval attname="change" attloc="subpara2" attval="#NONE">
+<charsubset>
+<usetext placemnt="before">
+<subchars charsubsetref="gentext">
+<highlt scoring="1" scorespc="1">
+<textbrk startln="1" endln="0"></subchars>
+</usetext>
+<usetext source="@30pt"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="subpara3"><?Pub Lcl _id="f226">
+<charlist>
+<indent leftind="120pt" firstln="90pt">
+<presp minimum="15pt" nominal="15pt" maximum="15pt">
+<postsp minimum="15pt" nominal="15pt" maximum="15pt">
+<textbrk startln="1" endln="1"></charlist>
+<att>
+<fillval attname="id" attloc="subpara3" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="paraid.txt"></charsubset>
+</att>
+<att>
+<fillval attname="id" attloc="subpara3" fillcat="savetext" fillchar="textid">
+<charsubset>
+<savetext conrule="\(Se reporter au paragraphe \,paraid.txt,\)\"></charsubset>
+</att>
+<att>
+<fillval attname="id" attloc="subpara3" fillcat="usetext" fillchar="source">
+<specval attname="change" attloc="subpara3" attval="add">
+<charsubset>
+<usetext placemnt="before">
+<subchars charsubsetref="gentext changeadd">
+<textbrk startln="1" endln="0"></subchars>
+</usetext>
+<usetext source="@30pt"></usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="id" attloc="subpara3" fillcat="usetext" fillchar="source">
+<specval attname="change" attloc="subpara3" attval="mod">
+<charsubset>
+<usetext placemnt="before">
+<subchars charsubsetref="gentext changemod">
+<textbrk startln="1" endln="0"></subchars>
+</usetext>
+<usetext source="@30pt"></usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="id" attloc="subpara3" fillcat="usetext" fillchar="source">
+<specval attname="change" attloc="subpara3" attval="#NONE">
+<charsubset>
+<usetext placemnt="before">
+<subchars charsubsetref="gentext">
+<textbrk startln="1" endln="0"></subchars>
+</usetext>
+<usetext source="@30pt"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="subpara4"><?Pub Lcl _id="f227">
+<charlist>
+<indent leftind="150pt" firstln="120pt">
+<presp minimum="15pt" nominal="15pt" maximum="15pt">
+<postsp minimum="15pt" nominal="15pt" maximum="15pt">
+<textbrk startln="1" endln="1"></charlist>
+<att>
+<fillval attname="id" attloc="subpara4" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="paraid.txt"></charsubset>
+</att>
+<att>
+<fillval attname="id" attloc="subpara4" fillcat="savetext" fillchar="textid">
+<charsubset>
+<savetext conrule="\(Se reporter au paragraphe \,paraid.txt,\)\"></charsubset>
+</att>
+<att>
+<fillval attname="id" attloc="subpara4" fillcat="usetext" fillchar="source">
+<specval attname="change" attloc="subpara4" attval="add">
+<charsubset>
+<usetext>
+<subchars charsubsetref="gentext changeadd">
+<font posture="italic">
+<highlt scoring="1" scorespc="1">
+<textbrk startln="1" endln="0"></subchars>
+</usetext>
+<usetext source="@30pt"></usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="id" attloc="subpara4" fillcat="usetext" fillchar="source">
+<specval attname="change" attloc="subpara4" attval="mod">
+<charsubset>
+<usetext placemnt="before">
+<subchars charsubsetref="gentext changemod">
+<font posture="italic">
+<highlt scoring="1" scorespc="1">
+<textbrk startln="1" endln="0"></subchars>
+</usetext>
+<usetext source="@30pt"></usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="subpara4" attval="#NONE">
+<fillval attname="id" attloc="subpara4" fillcat="usetext" fillchar="source">
+<charsubset>
+<usetext placemnt="before">
+<subchars charsubsetref="gentext">
+<font posture="italic">
+<highlt scoring="1" scorespc="1">
+<textbrk startln="1" endln="0"></subchars>
+</usetext>
+<usetext source="@30pt"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="standard" context="* status" occur="notfirst"><?Pub Lcl _id="f38">
+<charlist>
+<usetext source="\ - \" placemnt="before">
+<subchars charsubsetref="gentext">
+<highlt bckclr="bwhite"></subchars>
+</usetext>
+</charlist>
+<att>
+<specval attname="change" attloc="standard" attval="add">
+<charsubset charsubsetref="changeadd"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="standard" attval="mod">
+<charsubset charsubsetref="changemod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="standard" context="* status" occur="first"><?Pub Lcl _id="f290">
+<charlist></charlist>
+<att>
+<specval attname="change" attloc="standard" attval="add">
+<charsubset charsubsetref="changeadd"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="standard" attval="mod">
+<charsubset charsubsetref="changemod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="systemid"><?Pub Lcl _id="f254">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@"></charlist>
+</e-i-c>
+<e-i-c gi="standard"><?Pub Lcl _id="f262">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<usetext source="separateur.txt" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="separateur.txt" conrule="\ - \"></charlist>
+</e-i-c>
+<e-i-c gi="supscrpt"><?Pub Lcl _id="f253">
+<charlist inherit="1">
+<font size="8pt" offset="5pt"></charlist>
+<att>
+<specval attname="change" attloc="supscrpt" attval="add">
+<charsubset charsubsetref="changeadd"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="supscrpt" attval="mod">
+<charsubset charsubsetref="changemod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="subscrpt"><?Pub Lcl _id="f252">
+<charlist inherit="1">
+<font size="8pt" offset="-3pt"></charlist>
+<att>
+<specval attname="change" attloc="subscrpt" attval="add">
+<charsubset charsubsetref="changeadd"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="subscrpt" attval="mod">
+<charsubset charsubsetref="changemod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="serialnb"><?Pub Lcl _id="f261">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<usetext source="separateur.txt" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<usetext source="\No de série :\">
+<subchars charsubsetref="gentext attr"></subchars>
+</usetext>
+<savetext textid="separateur.txt" conrule="\ - \">
+<savetext textid="ptvirgule.txt" conrule="\\"></charlist>
+</e-i-c>
+<e-i-c gi="sb"><?Pub Lcl _id="f269">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@"></charlist>
+<att>
+<specval attname="sbcond" attloc="sb" attval="pre">
+<specval attname="change" attloc="sb" attval="add">
+<charsubset charsubsetref="changeadd">
+<usetext source="separateur.txt">
+<subchars charsubsetref="gentext">
+<highlt bckclr="bwhite"></subchars>
+</usetext>
+<savetext textid="separateur.txt" conrule="\ - \">
+<usetext source="\Avant \">
+<subchars charsubsetref="attr changeadd"></subchars>
+</usetext>
+<usetext source="\SB \">
+<subchars charsubsetref="attr changeadd gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="sbcond" attloc="sb" attval="pre">
+<specval attname="change" attloc="sb" attval="mod">
+<charsubset charsubsetref="changemod">
+<usetext source="separateur.txt">
+<subchars charsubsetref="gentext">
+<highlt bckclr="bwhite"></subchars>
+</usetext>
+<savetext textid="separateur.txt" conrule="\ - \">
+<usetext source="\Avant \">
+<subchars charsubsetref="attr changemod"></subchars>
+</usetext>
+<usetext source="\SB \">
+<subchars charsubsetref="attr changemod gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="sbcond" attloc="sb" attval="pre">
+<specval attname="change" attloc="sb" attval="#NONE">
+<charsubset>
+<usetext source="separateur.txt">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="separateur.txt" conrule="\ - \">
+<usetext source="\Avant \">
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+<usetext source="\SB \">
+<subchars charsubsetref="attr gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="sbcond" attloc="sb" attval="post">
+<specval attname="change" attloc="sb" attval="add">
+<charsubset charsubsetref="changeadd">
+<usetext source="separateur.txt">
+<subchars charsubsetref="gentext">
+<highlt bckclr="bwhite"></subchars>
+</usetext>
+<savetext textid="separateur.txt" conrule="\ - \">
+<usetext source="\Après \">
+<subchars charsubsetref="attr changeadd"></subchars>
+</usetext>
+<usetext source="\SB \">
+<subchars charsubsetref="attr changeadd gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="sbcond" attloc="sb" attval="post">
+<specval attname="change" attloc="sb" attval="mod">
+<charsubset charsubsetref="changemod">
+<usetext source="separateur.txt">
+<subchars charsubsetref="gentext">
+<highlt bckclr="bwhite"></subchars>
+</usetext>
+<savetext textid="separateur.txt" conrule="\ - \">
+<usetext source="\Après \">
+<subchars charsubsetref="attr changemod"></subchars>
+</usetext>
+<usetext source="\SB \">
+<subchars charsubsetref="attr changemod gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="sbcond" attloc="sb" attval="post">
+<specval attname="change" attloc="sb" attval="#NONE">
+<charsubset>
+<usetext source="separateur.txt">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+<savetext textid="separateur.txt" conrule="\ - \">
+<usetext source="\Après \">
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+<usetext source="\SB \">
+<subchars charsubsetref="attr gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="symbol"><?Pub Lcl _id="f349">
+<charlist>
+<putgraph width="12pt" placemnt="before"></putgraph>
+</charlist>
+</e-i-c>
+<e-i-c gi="tabref"><?Pub Lcl _id="f243">
+<charlist inherit="1">
+<indent inherit="1" leftind="@" firstln="@"></charlist>
+<att>
+<specval attname="change" attloc="tabref" attval="add">
+<charsubset>
+<usetext source="\(Se reporter au tableau \" placemnt="before">
+<subchars charsubsetref="attr gentext changeadd"></subchars>
+</usetext>
+<usetext source="\)\" placemnt="after">
+<subchars charsubsetref="attr gentext changeadd"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="tabref" attval="mod">
+<charsubset>
+<usetext source="\(Se reporter au tableau \" placemnt="before">
+<subchars charsubsetref="attr gentext changemod"></subchars>
+</usetext>
+<usetext source="\)\" placemnt="after">
+<subchars charsubsetref="attr changemod gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="tabref" attval="#NONE">
+<charsubset>
+<usetext source="\(Se reporter au tableau \" placemnt="before">
+<subchars charsubsetref="attr gentext"></subchars>
+</usetext>
+<usetext source="\)\" placemnt="after">
+<subchars charsubsetref="attr gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="refid" attloc="tabref" fillcat="usetext" fillchar="source">
+<specval attname="change" attloc="tabref" attval="add">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attr changeadd"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="refid" attloc="tabref" fillcat="usetext" fillchar="source">
+<specval attname="change" attloc="tabref" attval="mod">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attr changemod"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="refid" attloc="tabref" fillcat="usetext" fillchar="source">
+<specval attname="change" attloc="tabref" attval="#NONE">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="techname"><?Pub Lcl _id="f202">
+<charlist inherit="1"></charlist>
+</e-i-c>
+<e-i-c gi="techstd" context="* status"><?Pub Lcl _id="f42">
+<charlist charsubsetref="paragraph">
+<textbrk>
+<usetext source="\Standard technique\" placemnt="before">
+<subchars charsubsetref="paragraph">
+<font weight="bold">
+<highlt fontclr="brown"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="term"><?Pub Lcl _id="f271">
+<charlist inherit="1">
+<indent inherit="1" leftind="@" firstln="@">
+<textbrk startln="1" endln="0">
+<usetext source="\- \" placemnt="before">
+<subchars charsubsetref="gentext">
+<highlt bckclr="bwhite"></subchars>
+</usetext>
+<usetext source="\ : \" placemnt="after">
+<subchars charsubsetref="gentext">
+<highlt bckclr="bwhite"></subchars>
+</usetext>
+</charlist>
+<att>
+<specval attname="change" attloc="term" attval="add">
+<charsubset charsubsetref="changeadd"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="term" attval="mod">
+<charsubset charsubsetref="changemod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="tpbase" context="* status"><?Pub Lcl _id="f43">
+<charlist charsubsetref="paragraph">
+<indent inherit="1" leftind="@+30pt" firstln="@+30pt">
+<usetext source="\Publication technique de base: \" placemnt="before">
+<subchars>
+<font weight="bold">
+<highlt fontclr="brown"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="title" context="para0"><?Pub Lcl _id="f214">
+<charlist inherit="1" charsubsetref="paragraph">
+<font weight="bold">
+<indent inherit="1" leftind="@" firstln="@">
+<highlt scoring="1" allcap="1" scorespc="1">
+<postsp nominal="10pt">
+<textbrk startln="0" endln="1"></charlist>
+<att>
+<specval attname="change" attloc="title" attval="add">
+<charsubset charsubsetref="changeadd"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="title" attval="mod">
+<charsubset charsubsetref="changemod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="title" context="subpara1"><?Pub Lcl _id="f232">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<highlt allcap="1">
+<postsp nominal="10pt">
+<textbrk startln="0" endln="1"></charlist>
+<att>
+<specval attname="change" attloc="title" attval="add">
+<charsubset charsubsetref="changeadd"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="title" attval="mod">
+<charsubset charsubsetref="changemod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="title" context="subpara2"><?Pub Lcl _id="f300">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<highlt scoring="1" allcap="1" scorespc="1">
+<postsp nominal="10pt">
+<textbrk startln="0" endln="1"></charlist>
+<att>
+<specval attname="change" attloc="title" attval="add">
+<charsubset charsubsetref="changeadd"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="title" attval="mod">
+<charsubset charsubsetref="changemod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="title" context="subpara3"><?Pub Lcl _id="f301">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<highlt allcap="1">
+<postsp nominal="10pt">
+<textbrk startln="0" endln="1"></charlist>
+<att>
+<specval attname="change" attloc="title" attval="add">
+<charsubset charsubsetref="changeadd"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="title" attval="mod">
+<charsubset charsubsetref="changemod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="title" context="subpara4"><?Pub Lcl _id="f302">
+<charlist>
+<font posture="italic">
+<indent inherit="1" leftind="@" firstln="@">
+<highlt scoring="1" allcap="1" scorespc="1">
+<postsp nominal="10pt">
+<textbrk startln="0" endln="1"></charlist>
+<att>
+<specval attname="change" attloc="title" attval="add">
+<charsubset charsubsetref="changeadd"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="title" attval="mod">
+<charsubset charsubsetref="changemod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="title" context="figure"><?Pub Lcl _id="f249">
+<charlist charsubsetref="paragraph">
+<font famname="Helvetica" weight="bold">
+<indent inherit="1" leftind="@" firstln="@">
+<highlt fontclr="green"></charlist>
+<att>
+<specval attname="change" attloc="title" attval="add">
+<charsubset charsubsetref="changeadd"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="title" attval="mod">
+<charsubset charsubsetref="changemod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="title" context="table"><?Pub Lcl _id="f250">
+<charlist charsubsetref="paragraph">
+<font weight="bold">
+<indent inherit="1" leftind="@" firstln="@">
+<quadding quad="center">
+<savetext textid="ttable.txt" conrule="\\" placemnt="before"></charlist>
+<att>
+<specval attname="change" attloc="title" attval="add">
+<charsubset charsubsetref="changeadd"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="title" attval="mod">
+<charsubset charsubsetref="changemod"></charsubset>
+</att>
+<att>
+<fillval attname="id" attloc="table" fillcat="savetext" fillchar="textid">
+<charsubset>
+<savetext conrule="#CONTENT" placemnt="after"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="title" context="list"><?Pub Lcl _id="f420">
+<charlist>
+<font weight="bold">
+<indent inherit="1" leftind="@" firstln="@">
+<quadding quad="center">
+<textbrk startln="1" endln="1">
+<savetext textid="passetitre.txt" conrule="\yes\">
+<savetext textid="decalpara.txt" conrule="\yes\"></charlist>
+<att>
+<fillval attname="id" attloc="list" fillcat="savetext" fillchar="textid">
+<charsubset>
+<savetext conrule="#CONTENT" placemnt="after"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="title" attval="add">
+<charsubset charsubsetref="changeadd"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="title" attval="mod">
+<charsubset charsubsetref="changemod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="title" context="list item list item"><?Pub Lcl _id="f421">
+<charlist>
+<font weight="bold">
+<indent inherit="1" leftind="@" firstln="@">
+<quadding quad="center">
+<textbrk startln="1" endln="1"></charlist>
+</e-i-c>
+<e-i-c gi="title" context="proclist"><?Pub Lcl _id="f370">
+<charlist>
+<font weight="bold">
+<indent inherit="1" leftind="@" firstln="@">
+<quadding quad="center">
+<textbrk startln="1" endln="1"></charlist>
+</e-i-c>
+<e-i-c gi="table"><?Pub Lcl _id="f251">
+<charlist charsubsetref="paragraph">
+<indent inherit="1" leftind="@" firstln="@">
+<quadding quad="center">
+<presp nominal="15pt">
+<usetext source="ttable.txt">
+<subchars>
+<font weight="bold">
+<indent inherit="1" leftind="@" firstln="@">
+<quadding quad="center">
+<textbrk startln="1" endln="1"></subchars>
+</usetext>
+</charlist>
+<att>
+<fillval attname="id" attloc="table" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="ttable.txt"></charsubset>
+</att>
+<att>
+<fillval attname="id" attloc="table" fillcat="savetext" fillchar="textid">
+<fillval attname="id" attloc="table" fillcat="savetext" fillchar="conrule">
+</att>
+</e-i-c>
+<e-i-c gi="tpcode"><?Pub Lcl _id="f230">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<textbrk startln="1">
+<usetext source="@210pt" placemnt="after"></usetext>
+<savetext textid="dmc.txt" conrule="#CONTENT" placemnt="after"></charlist>
+</e-i-c>
+<e-i-c gi="tptitle"><?Pub Lcl _id="f231">
+<charlist></charlist>
+</e-i-c>
+<e-i-c gi="task"><?Pub Lcl _id="f335">
+<charlist></charlist>
+<att>
+<specval attname="change" attloc="task" attval="add">
+<charsubset charsubsetref="changeadd"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="task" attval="mod">
+<charsubset charsubsetref="changemod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="tgroup"><?Pub Lcl _id="f361">
+<charlist>
+<usetext source="\source\" placemnt="before">
+<subchars>
+<font weight="bold">
+<quadding quad="center"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="unverif" context="qa"><?Pub Lcl _id="f46">
+<charlist>
+<usetext source="\Non vérifié\" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="unitary" context="qa"><?Pub Lcl _id="f48">
+<charlist charsubsetref="attr">
+<usetext source="\Unitaire \" placemnt="before">
+<subchars charsubsetref="gentext"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="versrank"><?Pub Lcl _id="f298">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<savetext textid="ptvirgule.txt" conrule="\\" placemnt="before"></charlist>
+</e-i-c>
+<e-i-c gi="version" context="* status"><?Pub Lcl _id="f208">
+<charlist charsubsetref="paragraph">
+<indent inherit="1" leftind="@+30pt" firstln="@+30pt">
+<usetext source="\Version: \" placemnt="before">
+<subchars>
+<highlt bckclr="bwhite" fontclr="brown"></subchars>
+</usetext>
+</charlist>
+<att>
+<fillval attname="version" attloc="version" fillcat="usetext" fillchar="source">
+<specval attname="change" attloc="version" attval="add">
+<charsubset>
+<highlt allcap="1">
+<usetext>
+<subchars charsubsetref="attr changeadd"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="version" attloc="version" fillcat="usetext" fillchar="source">
+<specval attname="change" attloc="version" attval="mod">
+<charsubset>
+<highlt allcap="1">
+<usetext>
+<subchars charsubsetref="changemod attr"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="version" attloc="version" fillcat="usetext" fillchar="source">
+<specval attname="change" attloc="version" attval="#NONE">
+<charsubset>
+<highlt allcap="1">
+<usetext>
+<subchars charsubsetref="attr"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="version"><?Pub Lcl _id="f255">
+<charlist charsubsetref="attr">
+<indent inherit="1" leftind="@" firstln="@">
+<usetext source="separateur.txt"></usetext>
+<savetext textid="separateur.txt" conrule="\ - \"></charlist>
+<att>
+<fillval attname="version" attloc="version" fillcat="usetext" fillchar="source">
+<specval attname="change" attloc="version" attval="add">
+<charsubset charsubsetref="changeadd"></charsubset>
+</att>
+<att>
+<fillval attname="version" attloc="version" fillcat="usetext" fillchar="source">
+<specval attname="change" attloc="version" attval="mod">
+<charsubset charsubsetref="changemod"></charsubset>
+</att>
+<att>
+<fillval attname="version" attloc="version" fillcat="usetext" fillchar="source">
+<specval attname="change" attloc="version" attval="#NONE">
+<charsubset></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="warning"><?Pub Lcl _id="f219">
+<charlist>
+<indent inherit="1" leftind="@" firstln="@">
+<highlt fontclr="orange">
+<presp minimum="15pt" nominal="15pt" maximum="15pt">
+<postsp minimum="15pt" nominal="15pt" maximum="15pt">
+<textbrk startln="1" endln="1"></charlist>
+<att>
+<specval attname="change" attloc="warning" attval="add">
+<charsubset>
+<usetext source="\ ATTENTION DANGER \" placemnt="before">
+<subchars charsubsetref="paragraph changeadd">
+<font famname="Helvetica" size="13pt" weight="bold">
+<quadding quad="center">
+<highlt scoring="1" bckclr="borange" fontclr="red" scorespc="1"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="warning" attval="mod">
+<charsubset>
+<usetext source="\ ATTENTION DANGER \" placemnt="before">
+<subchars charsubsetref="paragraph changemod">
+<font famname="Helvetica" size="13pt" weight="bold">
+<quadding quad="center">
+<highlt scoring="1" bckclr="borange" fontclr="red" scorespc="1"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="warning" attval="#NONE">
+<charsubset>
+<usetext source="\ ATTENTION DANGER \" placemnt="before">
+<subchars charsubsetref="paragraph">
+<font famname="Helvetica" size="13pt" weight="bold">
+<quadding quad="center">
+<highlt scoring="1" bckclr="borange" fontclr="red" scorespc="1"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="xref"><?Pub Lcl _id="f244">
+<charlist inherit="1" charsubsetref="attr"></charlist>
+<att>
+<fillval attname="xrefid" attloc="xref" fillcat="usetext" fillchar="source">
+<charsubset>
+<usetext>
+<subchars charsubsetref="attr gentext"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+</styldesc>
+<ftndesc></ftndesc>
+</outspec>

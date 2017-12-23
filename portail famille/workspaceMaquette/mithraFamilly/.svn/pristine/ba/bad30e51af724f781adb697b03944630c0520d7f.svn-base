@@ -1,0 +1,251 @@
+<!ELEMENT para - - (applic?,specpara?,p,note*)>
+<!ATTLIST para id id #implied change (add|mod) #implied>
+<!ELEMENT qa - o ((unverif|(unitary?,context?)),reception?)>
+<!ELEMENT sb - o ((age|avee|ipcc|ipcn),issno?,dmtitle?)>
+<!ATTLIST sb change (add|mod) #implied sbcond (pre|post) #required>
+<!ELEMENT ipcc - o (modelic,sdc,chapnum,section,subsect,subject,fig,figv,incode,incodev,itemloc)>
+<!ELEMENT eidc - o (#pcdata)>
+<!ELEMENT section - o (#pcdata)>
+<!ELEMENT illnum - o (#pcdata)>
+<!ELEMENT chapnum - o (#pcdata)>
+<!ELEMENT note - - (applic?,(p|graphic)+)>
+<!ATTLIST note id id #implied type cdata #implied change (add|mod) #implied>
+<!ELEMENT avee - o (modelic,sdc,chapnum,section,subsect,subject,discode,discodev,incode,incodev,itemloc)>
+<!ELEMENT partno - - cdata>
+<!ATTLIST partno change (add|mod) #implied>
+<!ELEMENT caution - - (applic?,(p|graphic)+)>
+<!ATTLIST caution id id #implied type cdata #implied change (add|mod) #implied>
+<!ELEMENT xref - o empty>
+<!ATTLIST xref xrefid idref #required posttext cdata #implied pretext cdata #implied>
+<!ELEMENT symbol - o empty>
+<!ATTLIST symbol callicn ENTITY #required change (add|mod) #implied reprowid nutoken #implied reprodep nutoken #implied scalefit number #implied rotation number #implied hscale nutoken #implied vscale nutoken #implied offset nmtoken #implied>
+<!ELEMENT issno - o empty>
+<!ATTLIST issno type (n|c|d|r|s|t) "n" issno number #required>
+<!ELEMENT caption - - (#pcdata)>
+<!ATTLIST caption width cdata #implied change (add|mod) #implied toctype (none|redtoc|combtoc|ambertoc|greentoc) "none" align (left|right|justify|char|centre) "centre" colsep number #implied colour (red|amber|green|clear|white|grey|yellow|magenta) "clear" rowsep number #implied>
+<!ELEMENT orig - o (#pcdata)>
+<!ELEMENT refdm - - (dmcid+)>
+<!ATTLIST refdm change (add|mod) #implied>
+<!ELEMENT techpub - - (tpcode,tptitle)>
+<!ATTLIST techpub id id #implied change (add|mod) #implied>
+<!ELEMENT spanspec - o empty>
+<!ATTLIST spanspec change (add|mod) #implied spanname nmtoken #required align (left|right|center|justify) "center" nameend nmtoken #required colsep number #implied rowsep number #implied namest nmtoken #required>
+<!ELEMENT applic - o (systemid?,config?,swprog?)>
+<!ATTLIST applic change (add|mod) #implied>
+<!ELEMENT graphic - o empty>
+<!ATTLIST graphic callicn ENTITY #required change (add|mod) #implied reprowid nutoken #implied reprodep nutoken #implied scalefit number #implied rotation number #implied hscale nutoken #implied vscale nutoken #implied>
+<!ELEMENT task - - (#pcdata|dmcref|figref|tabref|supplref|supeqref|miscref|refipc|reporg|xref|listref|tpubref|indxflag|emphasis|symbol|subscrpt|supscrpt)+>
+<!ATTLIST task change (add|mod) #implied>
+<!ELEMENT link - o (libelle?,cible)>
+<!ATTLIST link role number #implied>
+<!ELEMENT tabref - o empty>
+<!ATTLIST tabref change (add|mod) #implied refid idref #required>
+<!ELEMENT supplref - o empty>
+<!ATTLIST supplref change (add|mod) #implied refid idref #required>
+<!ELEMENT tpubref - o empty>
+<!ATTLIST tpubref change (add|mod) #implied xrefid idref #required>
+<!ELEMENT issdate - o empty>
+<!ATTLIST issdate month number #required year number #required day number #required>
+<!ELEMENT warning - - (applic?,(p|graphic)+)>
+<!ATTLIST warning id id #implied type cdata #implied change (add|mod) #implied vital number "0">
+<!ELEMENT term - o (#pcdata|dmcref|figref|tabref|supplref|supeqref|miscref|refipc|reporg|xref|listref|tpubref|indxflag|emphasis|symbol|subscrpt|supscrpt)+>
+<!ATTLIST term change (add|mod) #implied>
+<!ELEMENT item - o (applic?,specpara?,(para|(list|deflist|proclist))+,note*)>
+<!ATTLIST item id id #implied change (add|mod) #implied>
+<!ELEMENT cible - o (xref|figref|dmcref)>
+<!ELEMENT swprog - o (#pcdata)>
+<!ATTLIST swprog change (add|mod) #implied>
+<!ELEMENT dmodule - - (idstatus,content)>
+<!ELEMENT dmcref - o empty>
+<!ATTLIST dmcref change (add|mod) #implied xrefid idref #required>
+<!ELEMENT figref - o empty>
+<!ATTLIST figref change (add|mod) #implied repnohot cdata #implied sheetno number #implied refid idref #required target idref #implied>
+<!ELEMENT indxflag - o empty>
+<!ATTLIST indxflag change (add|mod) #implied ref1 cdata #implied ref2 cdata #implied ref3 cdata #implied ref4 cdata #implied>
+<!ELEMENT ipcn - o (modelic,sdc,fixz,rpc,endippn,fig,figv,incode,incodev,itemloc)>
+<!ELEMENT standard - o (#pcdata)>
+<!ATTLIST standard change (add|mod) #implied>
+<!ELEMENT systemid - o (version*,(manufact,(partno,serialnb*)*)*,std?,customer?,nti?)>
+<!ATTLIST systemid change (add|mod) #implied>
+<!ELEMENT techstd - o (tpbase)>
+<!ELEMENT listref - o empty>
+<!ATTLIST listref change (add|mod) #implied refid idref #required>
+<!ELEMENT title - - (#pcdata|dmcref|figref|tabref|supplref|supeqref|miscref|refipc|reporg|xref|listref|tpubref|indxflag|emphasis|symbol|subscrpt|supscrpt)+>
+<!ATTLIST title change (add|mod) #implied>
+<!ELEMENT table - - (applic?,title?,(tgroup+|graphic+)) -(specpara)>
+<!ATTLIST table id id #implied change (add|mod) #implied frame (top|bottom|topbot|all|sides|none) #implied tocentry number "1">
+<!ELEMENT config - o (mod*,sb*)>
+<!ATTLIST config change (add|mod) #implied>
+<!ELEMENT techname - o (#pcdata)>
+<!ELEMENT entry - o (para|(list|deflist|proclist))+>
+<!ATTLIST entry change (add|mod) #implied colname nmtoken #implied spanname nmtoken #implied valign (top|bottom|middle) "top" align (left|right|center|justify) #implied colsep number #implied morerows number "0" rowsep number #implied>
+<!ELEMENT fixzz - o empty>
+<!ATTLIST fixzz fixzz (zz) "zz">
+<!ELEMENT tbody - o (row+)>
+<!ATTLIST tbody change (add|mod) #implied valign (top|middle|bottom) "top">
+<!ELEMENT unitary - o empty>
+<!ELEMENT icns - o (icn+)>
+<!ELEMENT refs - o (norefs|rdandrt|refdm|reftp)>
+<!ATTLIST refs change (add|mod) #implied>
+<!ELEMENT list - - (applic?,title?,specpara?,item+,note*)>
+<!ATTLIST list id id #implied type (simple|ordered) "simple" change (add|mod) #implied>
+<!ELEMENT figv - o (#pcdata)>
+<!ELEMENT status - o (security,dmsize?,rpc,orig,applic,techstd,qa,rfu,remarks,icns?)>
+<!ELEMENT customer - o empty>
+<!ATTLIST customer change (add|mod) #implied aaf number #implied anf number #implied>
+<!ELEMENT para0 - - ((applic?,title?,specpara?,(para|(list|deflist|proclist)|capgrp|figure|table)*),(subpara1,subpara1+,note*)?)>
+<!ATTLIST para0 id id #implied change (add|mod) #implied>
+<!ELEMENT reftp - - (techpub+)>
+<!ATTLIST reftp change (add|mod) #implied>
+<!ELEMENT fixz - o empty>
+<!ATTLIST fixz fixz (z) "z">
+<!ELEMENT idstatus - o (dmaddres,status)>
+<!ELEMENT illver - o (#pcdata)>
+<!ELEMENT emphasis - - (#pcdata|dmcref|figref|tabref|supplref|supeqref|miscref|refipc|reporg|xref|listref|tpubref|indxflag|emphasis|symbol|subscrpt|supscrpt)+>
+<!ATTLIST emphasis bold number #implied case (upper|lower|same) "same" italic number #implied change (add|mod) #implied underscr number #implied color (none|amber|blue|green|red|yellow|magenta) "none">
+<!ELEMENT dmaddres - o (dmc,dmtitle,issno,issdate)>
+<!ELEMENT deflist - - (applic?,title?,defitem+)>
+<!ATTLIST deflist id id #implied change (add|mod) #implied>
+<!ELEMENT context - o empty>
+<!ELEMENT content - o (refs,descript)>
+<!ELEMENT subject - o (#pcdata)>
+<!ELEMENT rdandrt - o (refdm,reftp)>
+<!ATTLIST rdandrt change (add|mod) #implied>
+<!ELEMENT caprow - - (caption+)>
+<!ATTLIST caprow change (add|mod) #implied toctype (none|redtoc|comdtoc|ambertoc|greentoc) "none" align (left) #required rowsep number #implied>
+<!ELEMENT versrank - o (single|range)+>
+<!ELEMENT rfa - o (#pcdata|dmcref|figref|tabref|supplref|supeqref|miscref|refipc|reporg|xref|listref|tpubref|indxflag|emphasis|symbol|subscrpt|supscrpt)+>
+<!ATTLIST rfa change (add|mod) #implied>
+<!ELEMENT sdc - o (#pcdata)>
+<!ELEMENT rpc - o empty>
+<!ATTLIST rpc rpcname (a|b|c|d|e|f|g|h|i|j|l|m|n|p|r|s|t|u|w|x) #required>
+<!ELEMENT cic - o (#pcdata)>
+<!ELEMENT dmc - o (avee)>
+<!ELEMENT mod - o empty>
+<!ATTLIST mod modnb nmtoken #required change (add|mod) #implied modcond (pre|post) #required>
+<!ELEMENT version - o (versrank*)>
+<!ATTLIST version change (add|mod) #implied version cdata #required>
+<!ELEMENT std - o (standard+)>
+<!ELEMENT defitem - - (applic?,term,def)>
+<!ATTLIST defitem id id #implied change (add|mod) #implied>
+<!ELEMENT age - o (modelic,supeqvc,ecscc,eidc,cic,discode,discodev,incode,incodev,itemloc)>
+<!ELEMENT endippn - o (#pcdata)>
+<!ELEMENT def - o (para|list)+ -(deflist)>
+<!ATTLIST def change (add|mod) #implied>
+<!ELEMENT dmcopen - - (#pcdata)>
+<!ATTLIST dmcopen change (add|mod) #implied dmco cdata #implied>
+<!ELEMENT action - o (para|specpara)+>
+<!ATTLIST action change (add|mod) #implied>
+<!ELEMENT icn-n - o (modelic,sdc,fixzz,endippn,rpc,orig,illnum,illver,illupdat,secur)>
+<!ATTLIST icn-n id id #implied>
+<!ELEMENT pitem - - (applic?,task,action?)>
+<!ATTLIST pitem id id #implied change (add|mod) #implied>
+<!ELEMENT fig - o (#pcdata)>
+<!ELEMENT serialnb - o (single|range)+>
+<!ELEMENT refipc - o empty>
+<!ATTLIST refipc change (add|mod) #implied ippn cdata #implied rpcname (a|b|c|d|e|f|g|h|i|j|l|m|n|p|r|s|t|u|w|x) #implied csn cdata #required isn cdata #implied>
+<!ELEMENT supeqvc - o (#pcdata)>
+<!ELEMENT nti - o empty>
+<!ATTLIST nti change (add|mod) #implied nti1 number #implied nti2 number #implied nti3 number #implied>
+<!ELEMENT icn-c - o (modelic,sdc,chapnum,section,subsect,subject,rpc,orig,illnum,illver,illupdat,secur)>
+<!ATTLIST icn-c id id #implied>
+<!ELEMENT modelic - o (#pcdata)>
+<!ELEMENT itemloc - o (#pcdata)>
+<!ELEMENT specpara - - (applic?,warning*,caution*,note*)>
+<!ATTLIST specpara change (add|mod) #implied>
+<!ELEMENT ecscc - o (#pcdata)>
+<!ELEMENT colspec - o empty>
+<!ATTLIST colspec colnum number #implied change (add|mod) #implied colname nmtoken #implied colwidth cdata #required align (left|right|center|justify) #implied colsep number #implied rowsep number #implied>
+<!ELEMENT supeqref - o empty>
+<!ATTLIST supeqref change (add|mod) #implied refid idref #required>
+<!ELEMENT dmcid - - (((age|avee|ipcc|ipcn),issno?,dmtitle?)|dmcopen)>
+<!ATTLIST dmcid id id #implied change (add|mod) #implied>
+<!ELEMENT unverif - o empty>
+<!ELEMENT incode - o (#pcdata)>
+<!ELEMENT infoname - o (#pcdata)>
+<!ELEMENT libelle - o (#pcdata)>
+<!ELEMENT reception - o empty>
+<!ATTLIST reception authoapprov cdata #implied approv number "0" receptdate number #implied approvdate number #implied recept number "0">
+<!ELEMENT reporg - o empty>
+<!ATTLIST reporg change (add|mod) #implied rpcname (a|b|c|d|e|f|g|h|i|j|l|m|n|p|r|s|t|u|w|x) #implied reg cdata #required>
+<!ELEMENT dmtitle - o (techname,infoname)>
+<!ELEMENT figure - o (applic?,((title,graphic,rfa*)|(sheet,title,graphic,rfa*)+),legend?)>
+<!ATTLIST figure id id #implied change (add|mod) #implied>
+<!ELEMENT legend - o (deflist)>
+<!ATTLIST legend change (add|mod) #implied>
+<!ELEMENT dmsize - o (#pcdata)>
+<!ELEMENT discode - o (#pcdata)>
+<!ELEMENT thead - o (row+)>
+<!ATTLIST thead change (add|mod) #implied valign (top|middle|bottom) "bottom">
+<!ELEMENT icn - o ((icn-c|icn-n),hotspot*)>
+<!ATTLIST icn id id #implied>
+<!ELEMENT miscref - o empty>
+<!ATTLIST miscref change (add|mod) #implied refid idref #required>
+<!ELEMENT single - o empty>
+<!ATTLIST single rank cdata #required>
+<!ELEMENT range - o empty>
+<!ATTLIST range from cdata #required to cdata #required>
+<!ELEMENT tptitle - - (#pcdata)>
+<!ATTLIST tptitle change (add|mod) #implied>
+<!ELEMENT tpcode - - (#pcdata)>
+<!ATTLIST tpcode change (add|mod) #implied>
+<!ELEMENT tpbase - o (#pcdata)>
+<!ELEMENT p - o (#pcdata|dmcref|figref|tabref|supplref|supeqref|miscref|refipc|reporg|xref|listref|tpubref|indxflag|emphasis|symbol|subscrpt|supscrpt)+>
+<!ATTLIST p change (add|mod) #implied>
+<!ELEMENT security - o empty>
+<!ATTLIST security class (np|dr|cd) #required>
+<!ELEMENT rfu - o (#pcdata)>
+<!ELEMENT row - o (entry+)>
+<!ATTLIST row change (add|mod) #implied rowsep number #implied>
+<!ELEMENT secur - o empty>
+<!ATTLIST secur class (1|2|3|4) #required>
+<!ELEMENT capgrp - - (caprow+)>
+<!ATTLIST capgrp change (add|mod) #implied toctype (none|redtoc|comdtoc|ambertoc|greentoc) "none" align (left|right|centre) "left" colsep number #implied rowsep number #implied>
+<!ELEMENT subpara2 - - ((applic?,title?,specpara?,(para|(list|deflist|proclist)|capgrp|figure|table)*),(subpara3,subpara3+,note*)?)>
+<!ATTLIST subpara2 id id #implied change (add|mod) #implied>
+<!ELEMENT subpara3 - - ((applic?,title?,specpara?,(para|(list|deflist|proclist)|capgrp|figure|table)*),(subpara4,subpara4+,note*)?)>
+<!ATTLIST subpara3 id id #implied change (add|mod) #implied>
+<!ELEMENT remarks - o (#pcdata)>
+<!ELEMENT norefs - o empty>
+<!ATTLIST norefs change (add|mod) #implied>
+<!ELEMENT tgroup - o (colspec*,spanspec*,thead?,tfoot?,tbody)>
+<!ATTLIST tgroup change (add|mod) #implied cols number #required align (left|right|center|justify) "left" colsep number #implied rowsep number #implied>
+<!ELEMENT subpara1 - - ((applic?,title?,specpara?,(para|(list|deflist|proclist)|capgrp|figure|table)*),(subpara2,subpara2+,note*)?)>
+<!ATTLIST subpara1 id id #implied change (add|mod) #implied>
+<!ELEMENT descript - o (specpara?,(para|(list|deflist|proclist)|capgrp|table|figure)*,para0+,(figure|table)*)>
+<!ATTLIST descript change (add|mod) #implied>
+<!ELEMENT illupdat - o (#pcdata)>
+<!ELEMENT manufact - - cdata>
+<!ATTLIST manufact change (add|mod) #implied>
+<!ELEMENT hotspot - o (link*)>
+<!ATTLIST hotspot id id #implied htgt number #required wtgt number #required xtgt number #required ytgt number #required>
+<!ELEMENT supscrpt - - rcdata>
+<!ATTLIST supscrpt change (add|mod) #implied>
+<!ELEMENT subsect - o (#pcdata)>
+<!ELEMENT subscrpt - - rcdata>
+<!ATTLIST subscrpt change (add|mod) #implied>
+<!ELEMENT sheet - o empty>
+<!ATTLIST sheet change (add|mod) #implied sheetno number #required total number #required>
+<!ELEMENT proclist - - (applic?,title?,(pitem|specpara|para)+)>
+<!ATTLIST proclist id id #implied change (add|mod) #implied>
+<!ELEMENT subpara4 - - (applic?,title?,specpara?,(para|(list|deflist|proclist)|capgrp|figure|table)*)>
+<!ATTLIST subpara4 id id #implied change (add|mod) #implied>
+<!ELEMENT tfoot - o (row+)>
+<!ATTLIST tfoot change (add|mod) #implied valign (top|middle|bottom) "top">
+<!ELEMENT discodev - o (#pcdata)>
+<!ELEMENT incodev - o (#pcdata)>
+<!NOTATION JPEG PUBLIC "+//ISBN 0-7923-9432-1::Graphic Notation//NOTATION Joint Photographic Experts Group Raster//EN">
+<!NOTATION CGM PUBLIC "-//USA-DOD//NOTATION Computer Graphics Metafile//EN">
+<!NOTATION TIFF PUBLIC "+//ISBN 0-7923-9432-1::Graphic Notation//NOTATION Aldus/Microsoft Tagged Interchange File Format//EN" >
+
+<!ENTITY  % ISOtech  PUBLIC    "ISO 8879-1986//ENTITIES General Technical//EN"            >
+<!ENTITY  % ISOpub   PUBLIC    "ISO 8879-1986//ENTITIES Publishing//EN"                   >
+<!ENTITY  % ISOnum   PUBLIC    "ISO 8879-1986//ENTITIES Numeric and Special Graphic//EN"  >
+<!ENTITY  % ISOgrk3  PUBLIC    "ISO 8879-1986//ENTITIES Greek Symbols//EN">
+<!ENTITY  % ISOlat1  PUBLIC    "ISO 8879-1986//ENTITIES Added Latin 1//EN">
+%ISOtech;
+%ISOpub;
+%ISOnum;
+%ISOgrk3;
+%ISOlat1;
+

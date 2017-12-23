@@ -1,0 +1,125 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                            RAFALE                                  *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                     Dated 23rd June 1997                           *
+    *                                                                    *
+    *  Amendment       :												 *
+    *   19/05/97  : Changed Public Identifier							 *
+	*               modified <list> : <title> is now before <specpara>	 *
+	*																	 *
+	*		 PROCEDURE LIST												 *
+	*		 added element <proclist>, containing <pitem>				 *
+    *        added element <pitem>, containing <task> and <action>		 *
+	*   	 added elements <task> and <action>.						 *
+	*																	 *
+    *        DEFINITION LIST											 *
+    *        added attribute ID to <deflist> (pointed by <listref>)		 *
+    *        modified <deflist>, containing several <defitem>.			 *
+    *        added <defitem>, containing couple <term> and <def>.		 *
+    *        modified <def>, can now contain <list> and <para> 			 *
+	*        excluded <deflist> from <def> .							 *
+	*        modified <item> : deleted "math" from content model         *
+    *                                                                    *
+    * 1. Update Public Identifier.                                       *
+    *                                                                    *
+    * Typical invocation :                                               *
+    * <!ENTITY % EXTLIST                                                 *
+    *   PUBLIC "-//RAFALE//ELEMENTS Lists Breakdown 971001//EN" >        *
+    * %EXTLIST;                                                          *
+    ********************************************************************** -->
+
+
+
+<!--*****************************************************************************
+    * Define Element LIST (List).						*
+    **************************************************************************-->
+<!ELEMENT list  - -  ((%applic;)?,title?,specpara?,item+,note*)
+		-- List. -->
+<!ATTLIST list
+            %bodyatt;  -- Unique identifier of the List. --
+            type	(simple | ordered) simple -- type of list --
+            >
+
+
+<!--*****************************************************************************
+    * Define Element ITEM (List Item).						*
+    **************************************************************************-->
+<!ELEMENT item  - O     ((%applic;)?,specpara?,(para | %list;)+,note*)
+		-- List Item.-->
+<!ATTLIST item
+            %bodyatt; 
+          >
+
+
+<!--*****************************************************************************
+    * Define Element DEFLIST (Definition List).					*
+    **************************************************************************-->
+<!ELEMENT deflist       - -     ((%applic;)?,title?,defitem+ )
+		-- Definition List. -->
+<!ATTLIST deflist
+            %bodyatt;  -- Unique identifier of the DefList.--
+	    >
+
+<!--*****************************************************************************
+    * Define Element DEFITEM (Definition List Item).				*
+    **************************************************************************-->
+<!ELEMENT defitem       - -     ((%applic;)?,term,def) 
+		-- Definition List Item.  -->
+<!ATTLIST defitem
+            %bodyatt;  -- Unique identifier of the DefItem.--
+	    >
+
+<!--*****************************************************************************
+    * Define Element TERM (Term).						*
+    **************************************************************************-->
+<!ELEMENT term          - O     (%text;)+  -- Term.-->
+<!ATTLIST term
+            %INSDEL; >
+
+
+<!--*****************************************************************************
+    * Define Element DEF (Definition).						*
+    **************************************************************************-->
+<!ELEMENT def           - O     (para | list)+  -(deflist)
+                              -- Definition.--
+                              -- exclusion: (deflist) -- >
+<!ATTLIST def
+            %INSDEL; >
+
+
+
+<!--*****************************************************************************
+    * Define Element PROCLIST (Procedure List)                                  *
+    **************************************************************************-->
+<!ELEMENT proclist  - - ((%applic;)?,title?,(pitem | specpara | para)+) 
+                         -- Procedure List. -->
+ 
+<!ATTLIST proclist 
+          %bodyatt;>
+<!--*****************************************************************************
+    * Define Element PITEM (Procedure List  Item)                               *
+    **************************************************************************-->
+<!ELEMENT pitem     - - ((%applic;)?, task , action?) -- Procedure List Item. -->
+ 
+<!ATTLIST pitem     
+          %bodyatt;>
+ 
+<!--*****************************************************************************
+    * Define Element TASK (Procedure Item Task )                               *
+    **************************************************************************-->
+<!ELEMENT task   - - (%text;)+ -- Procedure Item Task-->
+ 
+<!ATTLIST task   %INSDEL;>
+ 
+
+ 
+
+<!--*****************************************************************************
+    * Define Element ACTION   (Procedure Item Task Action)                *
+    **************************************************************************-->
+<!ELEMENT action   - O (para | specpara)+ -- Procedure Item Task Action-->
+<!ATTLIST action   %INSDEL;>
+ 

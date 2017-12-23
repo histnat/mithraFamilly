@@ -1,0 +1,30 @@
+package com.sonovision.openconv.wf;
+
+import java.io.Serializable;
+import java.util.HashMap;
+
+import com.sonovision.openconv.wf.exception.WorkflowException;
+import com.sonovision.openconv.wf.xmodel.Workflow;
+
+public interface WorkFlowService extends Serializable{
+	
+	/**
+	 * laod workflow files send in workFlowPath
+	 * @param workFlowPath - path to the workflow file
+	 * @return
+	 * @throws WorkflowException
+	 */
+	public Workflow loadWorkflow(String workFlowPath) throws WorkflowException;
+	
+	
+	/**
+	 * 
+	 * @param idSequence
+	 * @param worflow
+	 * @throws WorkflowException
+	 */
+	public void run(String idSequence, Workflow workflow, HashMap<String, Object> parameterHash) throws WorkflowException;
+
+	
+
+}

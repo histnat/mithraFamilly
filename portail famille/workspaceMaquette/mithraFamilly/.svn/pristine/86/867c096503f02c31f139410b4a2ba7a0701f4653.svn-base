@@ -1,0 +1,362 @@
+package com.sonovision.openconv.modules.xslprocess;
+
+import java.io.BufferedInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.URIResolver;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+import org.springframework.web.context.WebApplicationContext;
+import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
+
+import com.sedoc.dtdtoolbox.utils.DTDParsing;
+import com.sedoc.toolbox.SpringBeanProvider;
+import com.sedoc.toolbox.bean.UtilsService;
+import com.sedoc.toolbox.bean.XSLTransformService;
+import com.sonovision.openconv.db.vo.ConversionObject;
+import com.sonovision.openconv.log.model.LoggerLevel;
+import com.sonovision.openconv.mapper.TreatedObjectMapper;
+import com.sonovision.openconv.model.ObjectType;
+import com.sonovision.openconv.model.TreatedObject;
+import com.sonovision.openconv.modules.fileaccess.TaskLoadFile;
+import com.sonovision.openconv.modules.xslprocess.exception.XSLProcessException;
+import com.sonovision.openconv.modules.xslprocess.helper.XSLHelperMain;
+import com.sonovision.openconv.modules.xslprocess.resolver.XSLURIResolver;
+import com.sonovision.openconv.utils.FileAccess;
+import com.sonovision.openconv.wf.WFTask;
+import com.sonovision.openconv.wf.WFTaskHelper;
+import com.sonovision.openconv.wf.model.ParameterDetailled;
+import com.sonovision.openconv.wf.model.ParameterTypes;
+import com.sonovision.openconv.ws.controller.model.TaskParameterModel;
+import com.sonovision.openconv.ws.controller.util.ServiceMapper;
+import com.sonovision.openconv.ws.manager.AskParametersManager;
+import com.sonovision.openconv.ws.manager.ParametersManager;
+
+@Component("TaskXSLProcess")
+@Scope(value = WebApplicationContext.SCOPE_SESSION)
+public class TaskXSLProcess extends WFTaskHelper implements WFTask {
+
+	@Autowired
+	XSLTransformService xslTransformerService;
+
+	
+
+	static DTDParsing dtdParsing;
+
+	private URIResolver uriResolver;
+
+	//I must init spring composent, buti have loop on this class. this variable is for skip loop. I think it will be better if we use @Configure. next time
+	private static boolean initrun = false;
+	
+	
+	
+	static{
+		dtdParsing = new DTDParsing();
+	}
+
+	public TaskXSLProcess() {
+
+		super();
+	}
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7764367737889004545L;
+
+	public final static String PARAMETER_XSL_FILE_NAME="xslFileName";
+	private final static String PARAMETER_XSL_TRANSFORMER_ENGINE="xsltransformerEngine";
+	private final static String PARAMETER_XSL_URIRESOLVER_CLASS="uriresolver";
+	public final static String PARAMETER_LOADFILE_CODIFICATION_FILE="codificationFile";
+	public final static String PARAMETER_LOADFILE_CODIFICATION_CLASS = "codificationClass";
+	public final static String DEFAULT_XSL_URIRESOLVER_CLASS = "defaultUriresolver";
+
+	private final static String ASKPARAMETER_XSL_FILE_NAME="ask.xslFileName";
+	private final static String ASKPARAMETER_XSL_TRANSFORMER_ENGINE="ask.xsltransformerEngine";
+	
+	private final static String ASKPARAMETER_XSL_FILE_NAME2="ask.xslFileName";
+	private final static String ASKPARAMETER_XSL_TRANSFORMER_ENGINE2="ask.xsltransformerEngine";
+
+	
+	public final static String XSL_ENGINE_SAXON = "saxon";
+	public final static String XSL_ENGINE_DEFAULT = "default";
+
+	private String xslFileName;
+	private String codificationFilePath;
+	private String codificationClassUri;
+	private String xslEngine;
+	private String uriResolverParam;
+
+	public String run(HashMap<String, TreatedObject> treatedObjectHash) {
+		initClass();
+		if(!checkRequiredParams())
+			return LoggerLevel.FATAL.getValue().toString();
+		dbLogger.logTask("Debut de la transformation xsl", LoggerLevel.INFO);
+		if (treatedObjectHash == null || treatedObjectHash.isEmpty()) {
+			dbLogger.logTask("Aucun xml a traiter", LoggerLevel.FATAL);
+			return LoggerLevel.FATAL.getValue().toString();
+		}
+
+		if (!uriResolverParam.equals(DEFAULT_XSL_URIRESOLVER_CLASS)) {
+			try {
+				uriResolver = getURIResolver(uriResolverParam);
+			} catch (XSLProcessException e) {
+				dbLogger.logTask(e.getMessage(), LoggerLevel.FATAL);
+				return LoggerLevel.FATAL.getValue().toString();
+			}
+		} else {
+			uriResolver = new XSLURIResolver();
+		}
+
+//		addAskParameters(1); 
+
+        
+        XSLHelperMain.init();
+        XSLHelperMain.initializeCirTable(totalCirTable,dbLogger);
+		XSLHelperMain.initializeDMRLNodeList(treatedObjectHash.values(),dbLogger);
+//		treatedObjectHash.values().stream().parallel().forEach((to) -> doTransformation(to));//-->Concurrent modification exception
+		treatedObjectHash.values().stream().forEach((to) -> doTransformation(to));
+		XSLHelperMain.cleanCirTable();
+		XSLHelperMain.cleanDMRLNodeList();
+		return dbLogger.getTask().getLogResult();
+
+	}
+	
+	
+	private void addAskParameters(int step){
+		List<TaskParameterModel> askParams=serviceMapper.getListAskedParameter(this,step);
+		for(TaskParameterModel tpm:askParams){
+			askParametersManager.addOrUpdate(tpm);
+		}
+//		askParameter=askParametersManager.hasAskParameters();
+	}
+
+	private URIResolver getURIResolver(String classNameUriResolver) throws XSLProcessException {
+		Class clazz;
+		URIResolver uriResolver = null;
+		try {
+			clazz = ClassLoader.getSystemClassLoader().loadClass(classNameUriResolver);
+		} catch (ClassNotFoundException e1) {
+			dbLogger.logTask("Impossible de charger le resolver :" + classNameUriResolver, LoggerLevel.FATAL);
+			throw new XSLProcessException("Impossible de charger le resolver :" + classNameUriResolver);
+		}
+		if (clazz == null) {
+			throw new XSLProcessException("Impossible de charger le resolver :" + classNameUriResolver);
+		}
+		try {
+			uriResolver = (URIResolver) clazz.newInstance();
+		} catch (InstantiationException e) {
+			throw new XSLProcessException("Impossible de charger le resolver :" + classNameUriResolver);
+		} catch (IllegalAccessException e) {
+			throw new XSLProcessException("Impossible de charger le resolver :" + classNameUriResolver);
+		}
+
+		return uriResolver;
+
+	}
+
+	private TreatedObject doTransformation(TreatedObject to) {
+		if(to.getObjectType().equals(ObjectType.XML)){
+		if(to.getLastResultAction()!=null && (to.getLastResultAction().equals(LoggerLevel.FATAL.toString())  || to.getLastResultAction().equals(LoggerLevel.ERROR.toString())))
+		{
+			dbLogger.logObject("l'objet :" + to.getIdObject() +" n'est pas traité car il est en level : "+to.getLastResultAction(), LoggerLevel.INFO, to.getIdObject());
+			closeObject(dbLogger.getLoggerLevel(to.getLastResultAction()), to);
+			return to;
+		}
+		dbLogger.logObject("Debut conversion :" + to.getIdObject(), LoggerLevel.INFO, to.getIdObject());
+		ConversionObject co = dbLogger.getConversionObject(to.getIdObject());
+
+		InputStream xslInputSource = FileAccess.getResourceFileStream(xslFileName);
+
+		InputStream document = TreatedObjectMapper.getInputStream(to.getObjectConvert());
+		Document doc = null;
+		try {
+			if(document.markSupported())
+				document.reset();
+			doc = dtdParsing.getParseXML(document);
+//			utilsService.afficheXML(doc);
+		} catch (IOException | ParserConfigurationException | SAXException e1) {
+			to.setLastResultAction(LoggerLevel.ERROR.toString());
+			dbLogger.logObject("Impossible de parser l'object :" + to.getIdObject() + " erreur1:" + e1.getMessage(),	LoggerLevel.ERROR, to.getIdObject());
+			closeObject(LoggerLevel.ERROR, to);
+			return to;
+		}
+		ByteArrayOutputStream out = new ByteArrayOutputStream();
+		xslTransformerService.addTransformerParameter("objectid", co.getId());
+		xslTransformerService.addTransformerParameter("ataKey", co.getIdentification());
+		xslTransformerService.addTransformerParameter("codificationFilePath", codificationFilePath);
+		xslTransformerService.addTransformerParameter("codificationClassUri", codificationClassUri);
+		try {
+			xslTransformerService.transformWithEx(doc, xslInputSource, out, uriResolver);
+		} catch (TransformerException e) {
+			to.setLastResultAction(LoggerLevel.ERROR.toString());
+			dbLogger.logObject("Erreur durant la transformation xsl :" + to.getIdObject() + " erreur:" + e.getMessage(),
+					LoggerLevel.ERROR, to.getIdObject());
+			closeObject(LoggerLevel.ERROR, to);
+			return to;
+		}
+		InputStream ips = utilsService.outputStreamToInputStream(out);
+//		utilsService.ecritFile(ips, "d:\\test.xml");
+		to.setObjectConvert(ips);
+		to.setLastResultAction(LoggerLevel.INFO.toString());
+		closeObject(LoggerLevel.INFO, to);
+		}
+		
+		return to;
+	}
+
+	/**
+	 * It can be replaced by @Configuration with aspectj spring but i don't know
+	 * why it doesn't work TODO :make it generic in extends's class
+	 */
+	public void initClass() {
+		if (!initrun) {
+			initrun = true;
+			if (xslTransformerService == null) {
+				xslTransformerService = (XSLTransformService) SpringBeanProvider.getBean("XSLTransformService");
+			}
+			if (utilsService == null) {
+				utilsService = (UtilsService) SpringBeanProvider.getBean("UtilsService");
+			}
+//			if(askParametersManager ==null){
+//				askParametersManager = (AskParametersManager) SpringBeanProvider.getBean("AskParametersManager");
+//			}
+//			if(serviceMapper ==null){
+//				serviceMapper = (ServiceMapper) SpringBeanProvider.getBean("ServiceMapper");
+//			}
+			initrun = false;
+		}
+	}
+
+	/**
+	 * @return the xslTransformerService
+	 */
+	public XSLTransformService getXslTransformerService() {
+		return xslTransformerService;
+	}
+
+	/**
+	 * @param xslTransformerService
+	 *            the xslTransformerService to set
+	 */
+	public void setXslTransformerService(XSLTransformService xslTransformerService) {
+		this.xslTransformerService = xslTransformerService;
+	}
+
+//	/**
+//	 * @return the utilsService
+//	 */
+//	public UtilsService getUtilsService() {
+//		return utilsService;
+//	}
+//
+//	/**
+//	 * @param utilsService
+//	 *            the utilsService to set
+//	 */
+//	public void setUtilsService(UtilsService utilsService) {
+//		this.utilsService = utilsService;
+//	}
+	
+	@Override
+	public HashMap<String, ParameterTypes> getRequiredParams() {
+
+		parametersRequired=new HashMap<>();
+		parametersRequired.put(PARAMETER_XSL_FILE_NAME,ParameterTypes.TXT);
+		parametersRequired.put(PARAMETER_XSL_TRANSFORMER_ENGINE,ParameterTypes.TXT);
+		parametersRequired.put(PARAMETER_XSL_URIRESOLVER_CLASS,ParameterTypes.TXT);
+		parametersRequired.put(PARAMETER_LOADFILE_CODIFICATION_FILE,ParameterTypes.TXT);	
+		parametersRequired.put(PARAMETER_LOADFILE_CODIFICATION_CLASS,ParameterTypes.TXT);	
+		
+		return parametersRequired;
+	}
+//
+//	@Override
+//	public List<ParameterDetailled> getRequiredDetailledParameterList(Locale locale) {
+//		getRequiredParams();
+//		return super.procedeRequiredParameterList(locale);
+//	}
+
+	@Override
+	public boolean checkRequiredParams() {
+		// get parameter xsl file name
+		xslFileName = (String) parametersRunning.get(PARAMETER_XSL_FILE_NAME);
+		
+		// get parameter xsl file name
+		codificationFilePath = (String) parametersRunning.get(PARAMETER_LOADFILE_CODIFICATION_FILE);
+
+		// get parameter xsl file name
+		codificationClassUri = (String) parametersRunning.get(PARAMETER_LOADFILE_CODIFICATION_CLASS);
+
+
+		//non obligatoire
+		// get parameter xsl tranformer engine for change engine
+		 xslEngine = (String) parametersRunning.get(PARAMETER_XSL_TRANSFORMER_ENGINE);
+		if (xslEngine != null && !xslEngine.isEmpty()) {
+			switch (xslEngine) {
+			case XSL_ENGINE_SAXON:
+				System.setProperty("javax.xml.transform.TransformerFactory", "net.sf.saxon.TransformerFactoryImpl");
+			}
+		}else{
+			xslEngine=XSL_ENGINE_DEFAULT;
+			parametersRunning.put(PARAMETER_XSL_TRANSFORMER_ENGINE, xslEngine);
+		}
+		
+		uriResolverParam = (String) parametersRunning.get(PARAMETER_XSL_URIRESOLVER_CLASS);
+		if (uriResolverParam == null || uriResolverParam.isEmpty()) {
+			uriResolverParam=DEFAULT_XSL_URIRESOLVER_CLASS;
+			parametersRunning.put(PARAMETER_XSL_URIRESOLVER_CLASS, uriResolverParam);
+		} 
+		
+		return super.checkParams();
+	}
+
+	public boolean askParameter(){
+//		return true;
+//		return askParametersManager.hasAskParameters(id);
+		return askParametersManager.hasAskParameters();
+	}
+
+	@Override
+	public HashMap<String, ParameterTypes> getAskedParams(int step) {
+		parametersAsked=new HashMap<>();
+		
+		switch(step){
+			case 1:
+				parametersAsked.put(ASKPARAMETER_XSL_FILE_NAME,ParameterTypes.TXT);
+				parametersAsked.put(ASKPARAMETER_XSL_TRANSFORMER_ENGINE,ParameterTypes.TXT);
+				break;
+			case 2:
+				parametersAsked.put(ASKPARAMETER_XSL_FILE_NAME2,ParameterTypes.TXT);
+				parametersAsked.put(ASKPARAMETER_XSL_TRANSFORMER_ENGINE2,ParameterTypes.FILE);
+				break;
+			default:break;
+		}
+		return parametersAsked;
+	}
+
+
+
+
+//	@Override
+//	public List<ParameterDetailled> getAskedDetailledParameterList(Locale locale,int step) {
+//		getAskedParams(step);
+//		return super.procedeAskedParameterList(locale);
+//	}
+	
+	
+	
+}

@@ -1,0 +1,40 @@
+package com.sonovision.openconv.db.dao;
+
+import java.io.Serializable;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.stereotype.Repository;
+
+import com.sonovision.openconv.db.vo.user.OpUser;
+
+@Repository
+public interface OpUserDao extends CommonDao<OpUser>, Serializable  {
+
+
+	OpUser findOne(String id);
+
+	void deleteAll();
+
+	List<OpUser> findAll();
+
+	OpUser findByAll(String name, String login);
+
+	/**
+	 * return user by login
+	 * @param uid
+	 * @return
+	 */
+	OpUser findByLogin(String uid);
+	/**
+	 * return number of result for given filter
+	 * @param filters - filter applied
+	 * @param exactMatchOption - if true the matching will be exact
+	 * @return
+	 */
+	long countUser(Map<String, Object> filters, boolean exactMatchOption);
+	
+	List<OpUser> findUser(int first, int pageSize, Map<String, String> multiSortMeta, Map<String, Object> filters, boolean exactMatchOption);
+
+
+}

@@ -1,0 +1,46 @@
+package com.sonovision.openconv.modules.sgmlprocess;
+
+import static org.testng.AssertJUnit.assertEquals;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.HashMap;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.testng.annotations.Test;
+
+import com.sedoc.toolbox.bean.UtilsService;
+import com.sonovision.openconv.log.model.LoggerLevel;
+import com.sonovision.openconv.mapper.TreatedObjectMapper;
+import com.sonovision.openconv.model.TreatedObject;
+import com.sonovision.openconv.utils.ResourceTestPath;
+import com.sonovision.openconv.utils.TestHelperXslProcess;
+
+public class SGMLConverterTest extends  TestHelperXslProcess {
+
+	@Autowired
+	UtilsService utilservice;
+	
+	@Autowired
+	SGMLConverter sgmlConverter;
+	
+  @Test(enabled=true)
+  public void runSX() throws IOException {
+
+	  System.out.println("Test runSX");
+	  
+	  HashMap<String,TreatedObject> toList=getTreatedObjectList(ResourceTestPath.SGML);
+	  //InputStream document = TreatedObjectMapper.getInputStream(toList.get("DMC-A1Z780189C4F940AA_002.SGM").getObjectConvert());
+	  TreatedObject to=toList.get("PUBLISH-D198307000086R005.sgm");
+	  InputStream document = TreatedObjectMapper.getInputStream(to.getObjectConvert());
+	  //utilservice.ecritFile(document, "D:\\coco.sgml");
+	  System.out.println(getFilePath(ResourceTestPath.SGML.getXsl()));
+	  InputStream outputDocument=sgmlConverter.runSX(document, "D:\\developpement\\workspaceOpenConv\\openconv\\src\\test\\resources\\sgml\\dtd\\honeywell\\cmm.cat",getDBLogger(ResourceTestPath.SGML),to);//getFilePath(ResourceTestPath.SGML.getXsl())
+	  utilservice.ecritFile(outputDocument, "D:\\cocoResult.xml");
+	  
+//	  System.out.println(toList.get(key));
+	  assertEquals(toList.size(),2);
+    
+    
+  }
+}

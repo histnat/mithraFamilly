@@ -1,0 +1,118 @@
+package com.sonovision.openconv.db.dao.impl;
+
+import java.util.List;
+
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.stereotype.Repository;
+
+import com.sonovision.openconv.db.dao.ConversionObjectDao;
+import com.sonovision.openconv.db.vo.ConversionObject;
+import com.sonovision.openconv.db.vo.Task;
+
+/**
+ * 
+ * @author frebeche
+ *
+ */
+@Repository(value="ConversionObjectDao")
+public class ConversionObjectDaoImpl  extends CommonDaoImpl<ConversionObject> implements ConversionObjectDao{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6980940779272841L;
+	
+	@Override
+	public long countByTask(Task task) {
+		Query query = new Query();
+        query.addCriteria(
+                new Criteria().andOperator(
+                        Criteria.where("task").is(task)
+                )
+        );
+        return  mongoTemplate.count(query, ConversionObject.class);
+	}
+	
+	@Override
+	public long countByTaskLogResult(Task task, String logResult) {
+		Query query = new Query();
+        query.addCriteria(
+                new Criteria().andOperator(
+                        Criteria.where("task").is(task),
+                        Criteria.where("logResult").is(logResult)
+                )
+        );
+        return  mongoTemplate.count(query, ConversionObject.class);
+	}
+	
+	@Override
+	public long countByListTaskLogResult(List<Task> tasks, String logResult) {
+		Query query = new Query();
+		Criteria []orCriterias=new Criteria[tasks.size()];
+		for(int i=0;i<tasks.size();i++){
+			orCriterias[i]=Criteria.where("task").is(tasks.get(i));
+		}
+
+        query.addCriteria(
+                new Criteria().andOperator(
+                		 new Criteria().orOperator(orCriterias),
+                        Criteria.where("logResult").is(logResult)
+                )
+        );
+        return  mongoTemplate.count(query, ConversionObject.class);
+	}
+
+	@Override
+	public ConversionObject findByAll(String conversionId, String identification, Task task) {
+		
+        Query query = new Query();
+        query.addCriteria(
+                new Criteria().andOperator(
+                        Criteria.where("conversionId").is(conversionId),
+                        Criteria.where("identification").is(identification),
+                        Criteria.where("task").is(task)
+                )
+        );
+        List<ConversionObject> lll= mongoTemplate.find(query, ConversionObject.class);
+
+        if (lll != null && lll.size() > 0) {
+            return lll.get(0);
+        }
+        return null;
+	}
+	
+	@Override
+	public ConversionObject findOne(String id)
+	{
+		return super.findOne(id, ConversionObject.class);
+	}
+
+	@Override
+	public void deleteAll()
+	{
+		super.deleteAll(ConversionObject.class);
+	}
+	
+	@Override
+	public List<ConversionObject> findAll()
+	{
+		return super.findAll(ConversionObject.class);
+	}
+
+	@Override
+	public long countObjectDistinctByConversionId(String conversionId) {
+		Query query = new Query();
+        query.addCriteria(
+                new Criteria().andOperator(
+                        Criteria.where("conversionId").is(conversionId)
+                )
+        );
+        return mongoTemplate.getCollection(mongoTemplate.getCollectionName(ConversionObject.class))
+        	    .distinct("identification",query.getQueryObject()).size();
+	}
+
+	
+
+	
+}

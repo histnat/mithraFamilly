@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xsl:stylesheet
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:sonovision="com.sonovision.openconv.modules.xslprocess.helper.XSLHelperMain"
+	exclude-result-prefixes="xsi sonovision"
+	version="2.0">
+
+	<xsl:output method="xml" indent="no"/>
+
+	<xsl:param name="folderIn"/>
+	<xsl:param name="folderOut"/>
+	<xsl:param name="objectid"/><!-- only if from java -->
+	<xsl:param name="fromDOS" select=" 'false' "/><!-- not defined if from java, otherwise (DOS) set to true -->
+	<xsl:param name="forList" select=" 'false' "/>
+
+	<xsl:variable name="prefix">http://www.s1000d.org/S1000D_4-0-1/xml_schema_flat/</xsl:variable>
+
+	<!-- -->
+	<!-- ========== Draft de conversion COBRA => S1000D 4.01 ========== -->
+   <xsl:template match="@*|node()">
+        <xsl:copy>
+            <xsl:apply-templates select="@*|node()"/>
+        </xsl:copy>
+        <xsl:if test="@chg"><xsl:message>coco<xsl:value-of select='sonovision:getDMRL()'></xsl:value-of> </xsl:message></xsl:if>
+    </xsl:template>
+
+</xsl:stylesheet>

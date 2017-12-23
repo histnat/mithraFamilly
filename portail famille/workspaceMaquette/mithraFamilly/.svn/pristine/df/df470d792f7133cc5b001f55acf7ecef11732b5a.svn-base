@@ -1,0 +1,350 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN">
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>00</discode><discodev>A</discodev><incode>350</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmc>
+<dmtitle><techname>ROTOR DE TURBINE HP</techname><infoname>ESSAIS STRUCTURAUX</infoname></dmtitle>
+<issno type="C" issno="10">
+<issdate month="05" year="2012" day="30">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 4"></version>
+<customer aaf="1" anf="1">
+<nti nti3="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Reprise historique pi&egrave;ces</rfu>
+<remarks>RAS</remarks>
+</status>
+</idstatus><content><refs>
+<refdm>
+<dmcid id="A1A70320003A351AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>3</section><subsect>2</subsect><subject>00</subject><discode>03</discode><discodev>A</discodev><incode>351</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A70320004A351AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>3</section><subsect>2</subsect><subject>00</subject><discode>04</discode><discodev>A</discodev><incode>351</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A70320005A351AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>3</section><subsect>2</subsect><subject>00</subject><discode>05</discode><discodev>A</discodev><incode>351</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A70320001A351AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>3</section><subsect>2</subsect><subject>00</subject><discode>01</discode><discodev>A</discodev><incode>351</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A70320002A351AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>3</section><subsect>2</subsect><subject>00</subject><discode>02</discode><discodev>A</discodev><incode>351</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A70320006A351AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>3</section><subsect>2</subsect><subject>00</subject><discode>06</discode><discodev>A</discodev><incode>351</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A72520004A311AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>04</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A72520017A311AD"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>17</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmcid>
+<dmcid id="A1A72520003A311AD"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>03</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmcid>
+<dmcid id="A1A72520006A311AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>06</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A72520007A311AD"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>07</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmcid>
+<dmcid id="A1A72520008A311AD"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>08</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmcid>
+<dmcid id="A1A72520018A311AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>18</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A72520019A311AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>19</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A72520020A311AD"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>20</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmcid>
+<dmcid id="A1A72520002A300AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>02</discode><discodev>A</discodev><incode>300</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A72520002A311AD"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>02</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmcid>
+<dmcid id="A1B72520009A311AD"><avee><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>09</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmcid>
+<dmcid id="A1B72520014A311AD"><avee><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>14</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmcid>
+<dmcid id="A1B72520015A311AD"><avee><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>15</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmcid>
+<dmcid id="A1B72520021A310AC"><avee><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>21</discode><discodev>A</discodev><incode>310</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A72520022A311AD"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>22</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmcid>
+<dmcid id="A1A72520024A311AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>24</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+</refdm>
+</refs><proced><pmd>
+<manhour value="0,1"></manhour>
+<duration value="0,1"></duration>
+</pmd><prelreqs><reqconds>
+<noconds></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="0,1"></reqper>
+</reqpers><supequip><nosupeq><nosupeqs></supequip><supplies><nosupply></supplies><miscs><nomisc></miscs><safety>
+<specpara>
+<caution>
+<p>Signaler tout d&eacute;faut pr&eacute;sent sur une pi&egrave;ce n'ayant pas de renvois &agrave; un data module &ldquo;contr&ocirc;le visuel sans moyen sp&eacute;cial&ldquo; &agrave; Snecma.</p>
+</caution>
+</specpara>
+</safety></prelreqs><mainfunc>
+<step1 control="0" id="P10">
+<para><p>Effectuer le contr&ocirc;le sant&eacute; mati&egrave;re si demand&eacute; par les Data Module Limite de Fonctionnement et si n&eacute;cessaire aux op&eacute;rations de r&eacute;paration suivant les informations du tableau ci-dessous.</p>
+</para>
+<table tocentry="1">
+<tgroup cols="3" align="CENTER"><colspec colnum="1" colname="SQCOLUMN1" colwidth="5.50cm" align="CENTER" colsep="1" rowsep="1"><colspec colnum="2" colname="SQCOLUMN2" colwidth="5.5cm" align="LEFT" colsep="1" rowsep="1"><colspec colnum="3" colname="SQCOLUMN3" colwidth="5.50cm" align="LEFT" colsep="1" rowsep="1">
+<tbody valign="TOP">
+<row rowsep="1">
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><p>DESIGNATION PIECE</p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><p>METHODES DE CONTROLE</p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><p>Si d&eacute;faut se reporter &agrave; :</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><applic><config><mod modnb="250-78R1" modcond="PRE"></config></applic>
+<p>Disque-tourillon, turbine HP <refipc csn="72520001A028 " isn="00C"></p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="POST"></config></applic>
+<p>Disque-tourillon, turbine HP <refipc csn="72520001A028 " isn="00E"></p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><p><dmcref xrefid="A1A72520002A300AC"></p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><p><dmcref xrefid="A1A72520002A311AD"></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><p>Aube mobile, turbine HP <refipc csn="72520001A025 "></p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><p>Contr&ocirc;le visuel binoculaire grossissement X20</p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><p><dmcref xrefid="A1B72520021A310AC"></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><p>Flasque de turbine HP <refipc change="mod" csn="72520001A023 " isn="00A"></p>
+</para>
+<para><applic change="mod"><config><mod modnb="160-8" change="mod" modcond="post"></config></applic>
+<p>Flasque de turbine HP <refipc change="mod" csn="72520001A023 " isn="00C"></p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="POST"></config></applic>
+<p>Flasque de turbine HP <refipc change="mod" csn="72520001A023 " isn="00E"></p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><p><dmcref xrefid="A1A70320005A351AC"> ou <dmcref xrefid="A1A70320006A351AC"></p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><p><dmcref xrefid="A1B72520009A311AD">.</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><p>Disque-labyrinthe, turbine HP <refipc change="mod" csn="72520001A019 " isn="00A"></p>
+</para>
+<para><applic><config><mod modnb="160-8" change="mod" modcond="post"></config></applic>
+<p>Disque-labyrinthe, turbine HP <refipc change="mod" csn="72520001A019 " isn="00C"></p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="POST"></config></applic>
+<p>Disque-labyrinthe, turbine HP <refipc change="mod" csn="72520001A019 " isn="00E"></p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><p><dmcref xrefid="A1A70320005A351AC"> <dmcref xrefid="A1A70320006A351AC"></p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><p><dmcref xrefid="A1A72520003A311AD"></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry colname="SQCOLUMN1" valign="TOP" align="CENTER" colsep="1" rowsep="1"><para><p>Support, joint inter-arbres <refipc csn="72520001A007 "></p>
+</para>
+</entry>
+<entry colname="SQCOLUMN2" valign="TOP" align="CENTER" colsep="1" rowsep="1"><para><p><dmcref xrefid="A1A70320005A351AC"> <dmcref xrefid="A1A70320006A351AC"></p>
+</para>
+</entry>
+<entry colname="SQCOLUMN3" valign="TOP" align="CENTER" colsep="1" rowsep="1"><para><p></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><p>Fourreau, turbine HP <refipc csn="72520001A018 "></p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><p><dmcref xrefid="A1A70320001A351AC"> <dmcref xrefid="A1A70320002A351AC"></p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><p></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><p>Bague ext&eacute;rieur, joint inter-arbres <refipc csn="72520001A014 "></p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><p>Contr&ocirc;le visuel</p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><p><dmcref xrefid="A1A72520017A311AD"></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><applic><config><mod modnb="250-78R1" modcond="PRE"></config></applic>
+<p>Secteur d'arr&ecirc;t, turbine HP <refipc csn="72520001A027 " isn="00C"></p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><p><dmcref xrefid="A1A70320005A351AC"></p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><p><dmcref xrefid="A1B72520014A311AD"></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="CENTER" colsep="1" rowsep="1"><para><applic><config><mod modnb="250-78R1" modcond="POST"></config></applic>
+<p>Flasque amont, turbine HP <refipc csn="72520001A027 " isn="00E"></p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" colsep="1" rowsep="1"><para><p><dmcref xrefid="A1A70320005A351AC"></p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" colsep="1" rowsep="1"><para><p><dmcref xrefid="A1B72520015A311AD"></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><applic><config><mod modnb="250-78R1" modcond="PRE"></config></applic>
+<p>Couvercle, turbine HP <refipc csn="72520001A020 " isn="00A"></p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="POST"></config></applic>
+<p>Couvercle, turbine HP <refipc csn="72520001A020 " isn="00C"></p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><p><dmcref xrefid="A1A70320005A351AC"></p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><p><dmcref xrefid="A1A72520006A311AC"></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><applic><config><mod modnb="250-78R1" modcond="PRE"></config></applic>
+<p>Chemise &eacute;tanch&eacute;it&eacute;, turbine HP <refipc csn="72520001A026 " isn="00A"></p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="POST"></config></applic>
+<p>Chemise &eacute;tanch&eacute;it&eacute;, turbine HP <refipc csn="72520001A026 " isn="00C"></p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><p>Contr&ocirc;le visuel</p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><p><dmcref xrefid="A1A72520007A311AD"></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><p>Joint inter-arbres palier 4 <refipc csn="72520001A008 "> <refipc csn="72520001A006 "></p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><p>Contr&ocirc;le visuel</p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><p><dmcref xrefid="A1A72520008A311AD"></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><p>Bague filet&eacute;e, palier 4 <refipc csn="72520001A013 "></p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><p>Contr&ocirc;le visuel</p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><p><dmcref xrefid="A1A72520018A311AC"></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry colname="SQCOLUMN1" valign="TOP" align="CENTER" colsep="1" rowsep="1"><para><p>Jonc d'arr&ecirc;t, turbine HP <refipc csn="72520001A004 "></p>
+</para>
+</entry>
+<entry colname="SQCOLUMN2" valign="TOP" align="CENTER" colsep="1" rowsep="1"><para><p>Contr&ocirc;le visuel</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN3" valign="TOP" align="CENTER" colsep="1" rowsep="1"><para><p></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry colname="SQCOLUMN1" valign="TOP" align="CENTER" colsep="1" rowsep="1"><para><p>Jonc d'arr&ecirc;t, turbine HP <refipc csn="72520001A012 "></p>
+</para>
+</entry>
+<entry colname="SQCOLUMN2" valign="TOP" align="CENTER" colsep="1" rowsep="1"><para><p>Contr&ocirc;le visuel</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN3" valign="TOP" align="CENTER" colsep="1" rowsep="1"><para><p></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><p>Ecrou, joint AR inter-arbres <refipc csn="72520001A005 "></p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><p>Contr&ocirc;le visuel</p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><p><dmcref xrefid="A1A72520019A311AC"></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><p>Joint de fourreau <refipc csn="72520001A015 "> <refipc csn="72520001A016 "></p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><p>Contr&ocirc;le visuel</p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><p><dmcref xrefid="A1A72520020A311AD"></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><applic><config><mod modnb="250-78R1" modcond="PRE"></config></applic>
+<p>Goujon <refipc csn="72520001A022 " isn="00A"></p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="POST"></config></applic>
+<p>Goujon <refipc csn="72520001A022 " isn="00C"></p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><p><dmcref xrefid="A1A70320003A351AC"> <dmcref xrefid="A1A70320004A351AC"></p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><p><dmcref xrefid="A1A72520022A311AD"></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="CENTER" colsep="1" rowsep="1"><para><p>Jonc d'&eacute;tanch&eacute;it&eacute; turbine HP<refipc csn="72520001A024 "></p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" colsep="1" rowsep="1"><para><p>Contr&ocirc;le visuel</p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" colsep="1" rowsep="1"><para><p></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="SQCOLUMN1"><para><p>Amortisseur, fourreau<refipc csn="72520001A017 "></p>
+</para>
+</entry>
+<entry colname="SQCOLUMN2" align="center"><para><p>Contr&ocirc;le visuel</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN3" align="center"><para><p><dmcref xrefid="A1A72520004A311AC"></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="SQCOLUMN1"><para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>Ecrou cannel&eacute; chambre auto-frein&eacute; <refipc csn="72520001A021 "></p>
+</para>
+</entry>
+<entry colname="SQCOLUMN2" align="center"><para><p>Contr&ocirc;le visuel</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN3" align="center"><para><p><dmcref xrefid="A1A72520024A311AC"></p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step1>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule><?Pub Caret>
+<?Pub *0000020184 0>

@@ -1,0 +1,325 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1B725200SF030100234A011 SYSTEM "x-dm://0900f90b80072763,MYWORKING" NDATA cgm>
+<!ENTITY A1B725200SF030100221A011 SYSTEM "x-dm://0900f90b80072762,MYWORKING" NDATA cgm>
+<!ENTITY A1A725200SF030100221A011 SYSTEM "x-dm://0900f90b800085a8,MYWORKING" NDATA cgm>
+<!ENTITY A1A725200SF030100234A011 SYSTEM "x-dm://0900f90b8000312a,MYWORKING" NDATA cgm>
+]>
+<?Pub Inc>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>02</discode><discodev>A</discodev><incode>378</incode><incodev>B</incodev><itemloc>C</itemloc></avee></dmc>
+<dmtitle><techname>DISQUE TOURILLON TURBINE HP</techname><infoname>TESTS D'EQUILIBRAGE - AILETE</infoname></dmtitle>
+<issno type="r" issno="4">
+<issdate month="10" year="2011" day="15">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 4"></version>
+<customer aaf="1" anf="1">
+<nti nti3="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Prise en compte de modification 250-78R1</rfu>
+<remarks>RAS</remarks>
+<icns><icn id="A1A725200SF030100234A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00234</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A725200SF030100221A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00221</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1B725200SF030100234A011">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00234</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1B725200SF030100221A011">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00221</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<refdm>
+<dmcid id="A1A72520000A030AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>00</discode><discodev>A</discodev><incode>030</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A72520007A727AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>07</discode><discodev>A</discodev><incode>727</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+</refdm>
+</refs><proced><pmd>
+<manhour value="5,0"></manhour>
+<duration value="5,0"></duration>
+</pmd><prelreqs><reqconds><reqcondli><reqcond>
+<cond><para><applic><config><mod modnb="160.8" modcond="post"></config></applic>
+<p>Disque tourillon Turbine&nbsp;HP <refipc csn="72520001A028 " isn="00C"> mont&eacute; sur machine d'&eacute;quilibrage verticale et plateau <refipc csn="72016101 055 "> &eacute;quip&eacute; de l'adaptation <refipc csn="72016701 276 ">.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>Disque tourillon Turbine&nbsp;HP <refipc csn="72520001A028 " isn="00E"> mont&eacute; sur machine d'&eacute;quilibrage verticale et plateau <refipc csn="72016101 055 "> &eacute;quip&eacute; de l'adaptation <refipc csn="72016701 276 ">.</p>
+</para>
+</cond>
+</reqcond></reqcondli></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="5,0"></reqper>
+</reqpers><supequip><supeqli>
+<supequi id="O2.30214"><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<refipc csn="72016801 057 "><nomen>OUTILLAGE DE LEVAGE&nbsp;AR</nomen><quantity>6</quantity></supequi>
+<supequi id="O2.30214M"><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<refipc csn="72016801 057M"><nomen>OUTILLAGE DE LEVAGE&nbsp;AR</nomen><quantity>6</quantity></supequi>
+<supequi id="O2.30241"><refipc csn="72016101 020 "><?Pub Caret><nomen>ECROU EQUILIBRAGE MOD&nbsp;8</nomen><quantity>6</quantity></supequi>
+<supequi id="O2.30107"><refipc csn="72016101 055 "><nomen>PLATEAU D'EQUILIBRAGE&nbsp;M8/M10</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.30231"><refipc csn="72016701 283 "><nomen>OUTILLAGE D'ASSEMBLAGE AUBE MOD&nbsp;8</nomen><quantity>1</quantity></supequi>
+</supeqli><supeqlis>
+<supequis id="O2.C0178"><refipc csn="72016002 035 "><nomen>DOUILLE 12&nbsp;PANS CARRE&nbsp;1/4 DE&nbsp;8</nomen><quantity>1</quantity></supequis>
+<supequis id="O2.S0065"><refipc csn="72016001 007 "><nomen>CLE DYNAMO&nbsp;AV CLIQUET&nbsp;R302A</nomen><quantity>1</quantity></supequis>
+</supeqlis></supequip><supplies><nosupply></supplies><miscs><nomisc></miscs><safety><nosafety></safety></prelreqs><mainfunc>
+<step1 control="0" id="P10" change="MOD">
+<title>Lecture premi&egrave;re phase</title>
+<step2 control="0" id="P10-10">
+<para><p>Effectuer la lecture sur machine d'&eacute;quilibrage verticale avec coffret de mesure.</p>
+</para>
+</step2>
+<step2 control="0" id="P10-20">
+<para><p>Effectuer l'&eacute;quilibrage de la turbine&nbsp;HP disque ailet&eacute; en respectant les crit&egrave;res suivants&nbsp;:</p>
+</para>
+<list type="SIMPLE">
+<item><para><p>nombre de plans d'&eacute;quilibrage&nbsp;:&nbsp;1,</p>
+</para>
+</item>
+<item><para><p>mode de compensation&nbsp;:&nbsp;permutation des aubes,</p>
+</para>
+</item>
+<item change="ADD"><para><p>vitesse de rotation d'&eacute;quilibrage&nbsp;:&nbsp;&ge;&nbsp;900&nbsp;tr/mn,</p>
+</para>
+</item>
+<item change="ADD"><para><p>sens de rotation&nbsp;:&nbsp;sens horaire vue&nbsp;AR du module,</p>
+</para>
+</item>
+<item change="ADD"><para><p>entra&icirc;nement&nbsp;:&nbsp;par cardan fixe,</p>
+</para>
+</item>
+<item change="ADD"><para><p>pr&eacute;cisions&nbsp;:&nbsp;la machine d'&eacute;quilibrage&nbsp;1&nbsp;plan permettra de garantir un &eacute;quilibrage d'une pr&eacute;cision de&nbsp;:</p>
+</para>
+<list type="SIMPLE" change="ADD">
+<item><para><p>15&nbsp;cmg (outillages d'&eacute;quilibrage&nbsp;TU&nbsp;HP),</p>
+</para>
+</item>
+<item change="ADD"><para><p>&plusmn;&nbsp;5&deg; sur la d&eacute;termination de la position angulaire du balourd.</p>
+</para>
+</item>
+</list>
+</item>
+</list>
+</step2>
+<step2 control="0" id="P10-40">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>D&eacute;poser les 6&nbsp;&eacute;crous <supeqref refid="O2.30241"> <figref refid="A725200SF030100234A011">.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>D&eacute;poser les 6&nbsp;&eacute;crous <supeqref refid="O2.30241"> <figref refid="B725200SF030100234A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P10-50">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>Mettre en place dans le tourillon l'outillage <supeqref refid="O2.30214"> <figref refid="A725200SF030100221A011">.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>Mettre en place dans le tourillon l'outillage <supeqref refid="O2.30214M"> <figref refid="B725200SF030100221A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P10-60">
+<para><p>Soulever le disque ailet&eacute; &agrave; l'aide d'un palan.</p>
+</para>
+</step2>
+<step2 control="0" id="P10-70">
+<para><p>Descendre le disque ailet&eacute; et aligner le&nbsp;&ldquo;0&deg;&rdquo; (alv&eacute;ole&nbsp;1-1) de la pi&egrave;ce avec le &ldquo;180&deg;&rdquo; du plateau <supeqref refid="O2.30107">.</p>
+</para>
+</step2>
+<step2 control="0" id="P10-80">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>Retirer l'outillage <supeqref refid="O2.30214">.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>Retirer l'outillage <supeqref refid="O2.30214M">.</p>
+</para>
+</step2>
+<step2 control="0" id="P10-90">
+<para><specpara change="ADD">
+<note>
+<p>Le rep&egrave;re&nbsp;&ldquo;0&deg;&rdquo; du plateau d'&eacute;quilibrage <supeqref refid="O2.30107"> est vers l'op&eacute;rateur.</p>
+</note>
+</specpara><p>Tirer le disque vers soi pour rattraper du jeu entre pi&egrave;ce et montage au niveau des centrages.</p>
+</para>
+</step2>
+<step2 control="0" id="P10-100">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>Solidariser le disque sur le plateau <supeqref refid="O2.30107"> <supeqref refid="O2.30241"> <figref repnohot="25012" refid="A725200SF030100234A011">.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>Solidariser le disque sur le plateau <supeqref refid="O2.30107"> <supeqref refid="O2.30241"> <figref repnohot="25012" refid="B725200SF030100234A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P10-110">
+<para><p>Serrer au couple de 10&nbsp;N.m &agrave; l'aide de la cl&eacute; dynamom&eacute;trique <supeqref refid="O2.S0065"> et d'une douille <supeqref refid="O2.C0178">.</p>
+</para>
+</step2>
+<step2 control="0" id="P10-120">
+<para><p>Positionner le commutateur de rotation&nbsp;:&nbsp;sens moteur (horaire vu de l'arri&egrave;re).</p>
+</para>
+</step2>
+<step2 control="0" id="P10-130">
+<para><p>Fermer le couvercle.</p>
+</para>
+</step2>
+<step2 control="0" id="P10-133">
+<para><p>Mettre la machine en marche</p>
+</para>
+</step2>
+<step2 control="0" id="P10-137">
+<para><p>Effectuer 3 lanc&eacute;s minimum avant de passer &agrave; la phase &ldquo;retourner le rotor de 180&deg;&rdquo;.</p>
+</para>
+</step2>
+<step2 control="0" id="P10-140">
+<para><p>Arr&ecirc;ter la machine.</p>
+</para>
+</step2>
+<step2 control="0" id="P10-145">
+<para><p>Ouvrir le couvercle de la machine.</p>
+</para>
+</step2>
+<step2 control="0" id="P10-150">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>D&eacute;poser les 6&nbsp;&eacute;crous <supeqref refid="O2.30241"> <figref refid="A725200SF030100234A011"></p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>D&eacute;poser les 6&nbsp;&eacute;crous <supeqref refid="O2.30241"> <figref refid="B725200SF030100234A011"></p>
+</para>
+</step2>
+<step2 control="0" id="P10-160">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>Mettre en place dans le tourillon l'outillage de levage arri&egrave;re <figref refid="A725200SF030100221A011">.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>Mettre en place dans le tourillon l'outillage de levage arri&egrave;re <figref refid="B725200SF030100221A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P10-170">
+<para><p>D&eacute;solidariser le disque du plateau <supeqref refid="O2.30107">&agrave; l'aide d'un palan.</p>
+</para>
+</step2>
+<step2 control="0" id="P10-180">
+<para><p>Reposer le disque sur le plateau d'&eacute;quilibrage en alignant le&nbsp;&ldquo;0&rdquo; alv&eacute;ole&nbsp;(1-1) de la pi&egrave;ce avec le&nbsp;&ldquo;0&deg;&rdquo; plateau <supeqref refid="O2.30107">.</p>
+</para>
+</step2>
+<step2 control="0" id="P10-190">
+<para><p>Retirer l'outillage de levage arri&egrave;re.</p>
+</para>
+</step2>
+<step2 control="0" id="P10-200">
+<para><specpara>
+<note>
+<p>Le rep&egrave;re&nbsp;&ldquo;0&deg;&rdquo; du plateau d'&eacute;quilibrage <supeqref refid="O2.30107"> est vers l'op&eacute;rateur.</p>
+</note>
+</specpara><p>Tirer le disque vers soi pour rattraper du jeu entre pi&egrave;ce et montage au niveau des centrages.</p>
+</para>
+</step2>
+<step2 control="0" id="P10-210">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>Solidariser le disque au plateau <supeqref refid="O2.30107"> &agrave; l'aide de l'&eacute;crou <supeqref refid="O2.30241"> <figref repnohot="25012" refid="A725200SF030100234A011">.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>Solidariser le disque au plateau <supeqref refid="O2.30107"> &agrave; l'aide de l'&eacute;crou <supeqref refid="O2.30241"> <figref repnohot="25012" refid="B725200SF030100234A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P10-220">
+<para><p>Serrer les &eacute;crous <supeqref refid="O2.30241"> au couple de 10&nbsp;N.m &agrave; l'aide de la cl&eacute; dynamom&eacute;trique <supeqref refid="O2.S0065"> et d'une douille <supeqref refid="O2.C0178">..</p>
+</para>
+</step2>
+</step1>
+<step1 control="0" id="P20">
+<title>Lecture seconde phase</title>
+<step2 control="0" id="P20-10">
+<para><p>Fermer le couvercle.</p>
+</para>
+</step2>
+<step2 control="0" id="P20-13">
+<para><p>Mettre la machine en marche</p>
+</para>
+</step2>
+<step2 control="0" id="P20-17">
+<para><p>Effectuer 3 lanc&eacute;s minimum avant de passer &agrave; la phase &ldquo;retourner le rotor de 180&deg;&rdquo;.</p>
+</para>
+</step2>
+<step2 control="0" id="P20-20">
+<para><p>Arr&ecirc;ter la machine.</p>
+</para>
+</step2>
+<step2 control="0" id="P20-25">
+<para><p>Ouvrir le couvercle.</p>
+</para>
+</step2>
+<step2 control="0" id="P20-30">
+<para><p>Effectuer la lecture du balourd disque ailet&eacute;, tol&eacute;rance d'&eacute;quilibrage&nbsp;:&nbsp;25&nbsp;cmg.</p>
+</para>
+</step2>
+<step2 control="0" id="P20-40">
+<para><p>Compenser le balourd du disque par adjonction de mastic au point l&eacute;ger.</p>
+</para>
+</step2>
+<step2 control="0" id="P20-50">
+<para><p>Fermer le couvercle.</p>
+</para>
+</step2>
+<step2 control="0" id="P20-55">
+<para><p>Mettre la machine en marche</p>
+</para>
+</step2>
+<step2 control="0" id="P20-60">
+<para><p>Arr&ecirc;ter la machine.</p>
+</para>
+</step2>
+<step2 control="0" id="P20-65" change="ADD">
+<para><p>Ouvrir le couvercle.</p>
+</para>
+</step2>
+<step2 control="0" id="P20-70">
+<title>Sans permutation</title>
+<para><p>V&eacute;rifier que la valeur du balourd r&eacute;siduel du disque ailet&eacute; est inf&eacute;rieure &agrave; la tol&eacute;rance de 25&nbsp;cmg.</p>
+</para>
+<step3 control="0">
+<para><p>Renseigner la&nbsp;&ldquo;FSRC&rdquo; (point num&eacute;ro&nbsp;8 &eacute;quilibrage balourd disque ailet&eacute;), en y indiquant la valeur de l'angle et du balourd <dmcref xrefid="A1A72520000A030AC">.</p>
+</para>
+</step3>
+<step3 control="0">
+<para><p>Remonter les chemises d'&eacute;tanch&eacute;it&eacute; <dmcref xrefid="A1A72520007A727AC">.</p>
+</para>
+</step3>
+</step2>
+<step2 control="0" id="P20-80">
+<title>Avec permutation</title>
+<para><p>V&eacute;rifier que la valeur du balourd r&eacute;siduel du disque ailet&eacute; est sup&eacute;rieure &agrave; la tol&eacute;rance de 25&nbsp;cmg.</p>
+</para>
+<step3 control="0">
+<para><p>Retirer le mastic de compensation du disque.</p>
+</para>
+</step3>
+<step3 control="0">
+<para><p>Apr&egrave;s s'&ecirc;tre assur&eacute; des aubes &agrave; permuter sur le disque ainsi que leur identification, effectuer leur permutation.</p>
+</para>
+</step3>
+</step2>
+</step1>
+<figure id="A725200SF030100234A011">
+<title>INSTALLATION PLATEAU</title>
+<graphic callicn="A1A725200SF030100234A011">
+</figure>
+<figure id="A725200SF030100221A011">
+<title>INSTALLATION OUTIL DE LEVAGE</title>
+<graphic callicn="A1A725200SF030100221A011">
+</figure>
+<figure id="B725200SF030100234A011">
+<title>INSTALLATION PLATEAU</title>
+<graphic callicn="A1B725200SF030100234A011">
+</figure>
+<figure id="B725200SF030100221A011">
+<title>INSTALLATION OUTIL DE LEVAGE</title>
+<graphic callicn="A1B725200SF030100221A011">
+</figure>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000015816 0>

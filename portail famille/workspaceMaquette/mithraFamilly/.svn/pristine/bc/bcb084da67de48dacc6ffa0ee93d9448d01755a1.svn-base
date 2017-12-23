@@ -1,0 +1,22 @@
+package com.sonovision.openconv.wf.xmodel;
+
+
+public enum RunningStatus {
+	
+	RUNNING("En cours"),
+	FINISHED("Terminé"),
+	FAILED("Echec");
+	
+	private String codeLabel = "";
+	
+	RunningStatus(String codeLabel)
+	{
+		this.codeLabel = codeLabel;
+	}
+	
+	public String toString()
+	{
+		return codeLabel;
+	}
+
+}

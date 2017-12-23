@@ -1,0 +1,136 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Aircraft Ground Equipment Procedural 981222//EN">
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<dmodule><idstatus>
+<dmaddres>
+<dmc><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>TM</ecscc><eidc>37</eidc><cic>99</cic><discode>11</discode><discodev>A</discodev><incode>930</incode><incodev>A</incodev><itemloc>A</itemloc></age></dmc>
+<dmtitle><techname>SERVICE BULLETIN MODIFICATION 265C2<?Pub Caret>-S3 ENSEMBLE PROGRAMME CM88</techname><infoname>SERVICE BULLETIN - Application de modification suite &agrave; &eacute;volution du logiciel calculateur en VL08D</infoname></dmtitle>
+<issno issno="1" type="N">
+<issdate year="2010" month="03" day="15">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 4"></version>
+<manufact>F0302</manufact><partno>MRFT30A33-34</partno>
+<manufact>F0302</manufact><partno>MRFT30A33-35</partno>
+<customer aaf="1" anf="1">
+<nti nti2="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Version initiale</rfu>
+<remarks>RAS</remarks>
+</status>
+</idstatus><content><refs>
+<refdm>
+<dmcid id="A1ATM377301A750AA"><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>TM</ecscc><eidc>37</eidc><cic>73</cic><discode>01</discode><discodev>A</discodev><incode>750</incode><incodev>A</incodev><itemloc>A</itemloc></age></dmcid>
+</refdm>
+</refs><proced><pmd>
+<manhour value="0,5"></manhour>
+<duration value="0,5"></duration>
+</pmd><prelreqs><reqconds>
+<noconds></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="0,5"></reqper>
+</reqpers><supequip><nosupeq><supeqlis>
+<supequis id="O2.C0883"><ident><manufact>F4790</manufact><partno>140100</partno></ident><nomen>Stylo graveur FRAP'R</nomen><quantity>1</quantity></supequis>
+</supeqlis></supequip><supplies><supplyli exhaust="0">
+<supply id="RTR063" mand="1"><ident><manufact>FAQ15</manufact><partno>394-170-301-0</partno></ident><nomen>Trousse de rattrapage</nomen><quantity>1</quantity></supply>
+<supply id="RZBL00001" mand="1"><ident><manufact>FAQ15</manufact><partno>392-280-101-0</partno></ident><nomen>Support logiciel EP CM88 NG</nomen><quantity>Voir trousse</quantity></supply>
+<supply id="RZBA00B00" mand="1"><ident><manufact>FAQ15</manufact><partno>689-760-083-0</partno></ident><nomen>Plaque d'identification</nomen><quantity>Voir trousse </quantity></supply>
+</supplyli></supplies><miscs><miscli>
+<misc matiere="0" id="P0442"><refipc csn="72013002 009 "><nomen>Alcool isopropylique</nomen><quantity>SB</quantity></misc>
+</miscli></miscs><safety>
+<specpara>
+<caution>
+<p>LA MISE A NIVEAU DU LOGICIEL DES ENSEMBLES PROGRAMMES EST COMPATIBLE DES CALCULATEURS DE REFERENCE TYPE ETAT INAC6A34&ndash;36, INAC6A34&ndash;37 ET INAC6A34&ndash;38.</p>
+</caution>
+<caution>
+<p>CETTE PROCEDURE DOIT ETRE EFFECTUEE PAR UNE PERSONNE FORMEE AU TELECHARGEMENT D'UN CALCULATEUR PROGRAMME <refipc csn="72000001A021 ">.</p>
+</caution>
+<note>
+<p>Le CD-ROM<supplref refid="RZBL00001"> fourni dans la trousse<supplref refid="RTR063"> est utile &agrave; l'exploitation en maintenance des calculateurs programm&eacute;s<refipc csn="72000001A021 ">.</p>
+</note>
+</specpara>
+</safety></prelreqs><mainfunc>
+<step1 id="P10" control="0">
+<title>OBJET DU SERVICE BULLETIN</title>
+<para><p>Mise &agrave; niveau du logiciel de l'Ensemble Programme (EP) CM88<refipc csn="72017701 002 "> pour rendre l'EP CM88 standard MS14-p2/LS21.0 compatible des calculateurs programm&eacute;s<refipc csn="72000001A021 "> pourvus de la version logiciel VL08D.</p>
+</para>
+</step1>
+<step1 id="P20" control="0">
+<title>CONDITIONS D'APPLICATION</title>
+<para><p>Application imm&eacute;diate sur mat&eacute;riel sur site.</p>
+</para>
+</step1>
+<step1 id="P30" control="0">
+<title>INSTRUCTIONS DETAILLEES D'APPLICATION</title>
+<para><p>T&eacute;l&eacute;charger la nouvelle version de logiciel &agrave; partir du CD-ROM <supplref refid="RZBL00001"> fourni dans la trousse<supplref refid="RTR063"><dmcref xrefid="A1ATM377301A750AA">.</p>
+</para>
+</step1>
+<step1 id="P40" control="0">
+<title>IDENTIFICATION DU MATERIEL MODIFIE</title>
+<specpara>
+<note>
+<p>L' ancienne plaque d'identification ne doit pas &ecirc;tre d&eacute;pos&eacute;e.</p>
+</note>
+</specpara>
+<step2 id="P40-10" control="0">
+<title>Gravage de la nouvelle plaque d'identification</title>
+<step3 control="0">
+<para><p>D&eacute;coller le papier de protection de la plaque d'identification<supplref refid="RZBA00B00"> fournie dans la trousse<supplref refid="RTR063">.</p>
+</para>
+</step3>
+<step3 control="0">
+<para><p>Graver la nouvelle r&eacute;f&eacute;rence fabricant et la nouvelle identification type-&eacute;tat de l'EP &agrave; l'aide de l'outillage<supeqref refid="O2.C0883">&nbsp;:</p>
+</para>
+<list type="SIMPLE">
+<item><para><p>r&eacute;f&eacute;rence fabricant&nbsp;ATE pour les calculateurs INAC6A34&ndash;36 : 889-501-250-0,</p>
+</para>
+</item>
+<item><para><p>r&eacute;f&eacute;rence fabricant&nbsp;ATE pour les calculateurs INAC6A34&ndash;37 : 889-501-270-0,</p>
+</para>
+</item>
+<item><para><p>r&eacute;f&eacute;rence fabricant&nbsp;ATE pour les calculateurs INAC6A34&ndash;38 : 889-501-280-0,</p>
+</para>
+</item>
+<item><para><p>identification type-&eacute;tat&nbsp;ATE : MRFT30B34-36 pour les calculateurs INAC6A34&ndash;36 ,</p>
+</para>
+</item>
+<item><para><p>identification type-&eacute;tat&nbsp;ATE : MRFT30B34-37 pour les calculateurs INAC6A34&ndash;37 ,</p>
+</para>
+</item>
+<item><para><p>identification type-&eacute;tat&nbsp;ATE : MRFT30B34-38 pour les calculateurs INAC6A34&ndash;38 ,</p>
+</para>
+</item>
+<item><para><p>num&eacute;ro de s&eacute;rie de l'EP (voir ancienne plaque),</p>
+</para>
+</item>
+<item><para><p>date (voir ancienne plaque).</p>
+</para>
+</item>
+</list>
+</step3>
+</step2>
+<step2 id="P40-20" control="0">
+<title>Installation de la nouvelle plaque d'identification</title>
+<step3 control="0">
+<para><p>Nettoyer l'emplacement d&eacute;fini sur l'EP o&ugrave; sera coll&eacute;e la plaque d'identification &agrave; l'aide d'un chiffon imbib&eacute; d'alcool <miscref refid="P0442">.</p>
+</para>
+</step3>
+<step3 control="0">
+<para><p>D&eacute;coller le papier de protection de l'autocollant de la plaque d'identification.</p>
+</para>
+</step3>
+<step3 control="0">
+<para><p>Coller la plaque d'identification.</p>
+</para>
+</step3>
+</step2>
+</step1>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000006470 0>

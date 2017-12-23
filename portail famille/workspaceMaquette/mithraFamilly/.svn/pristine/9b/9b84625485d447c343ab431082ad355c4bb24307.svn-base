@@ -1,0 +1,44 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN">
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<dmodule><?Pub Caret1><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>2</subsect><subject>10</subject><discode>32</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmc>
+<dmtitle><techname>ELECTRO ROBINET BLOC HYDROMECANIQUE PC</techname><infoname>CONTROLE VISUEL SANS MOYEN SPECIAL</infoname></dmtitle>
+<issno type="N" issno="1">
+<issdate month="06" year="2002" day="30">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 1"></version>
+<version version="M88-2 ETAPE 4"></version>
+<nti nti3="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Version initiale</rfu>
+<remarks>RAS</remarks>
+</status>
+</idstatus><content><refs>
+<norefs>
+</refs><proced><pmd>
+<manhour value="0,17"></manhour>
+<duration value="0,17"></duration>
+</pmd><prelreqs><reqconds>
+<noconds></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="0,17"></reqper>
+</reqpers><supequip><nosupeq><nosupeqs></supequip><supplies><nosupply></supplies><miscs><nomisc></miscs><safety><nosafety></safety></prelreqs><mainfunc>
+<step1 control="0" id="P10">
+<para><p>Contr&ocirc;ler visuellement l'&eacute;lectro robinet bloc hydrom&eacute;canique PC.</p>
+</para>
+</step1>
+<step1 control="0" id="P20">
+<para><p>Contr&ocirc;ler l'absence d'extrusion de l'isolant translucide.</p>
+</para>
+</step1>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>

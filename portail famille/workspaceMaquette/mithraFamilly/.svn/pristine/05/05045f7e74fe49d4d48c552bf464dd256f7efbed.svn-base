@@ -1,0 +1,51 @@
+#-----------------------------------------------------------------------------
+# /*@(#) Fichier: unc_entity_naming.acl Release: 2.3 DEV Date: 06/10/03*
+#-----------------------------------------------------------------------------
+# =============================================================================
+# Modifications
+# -------------
+#****************************************************************
+# $Id: unc_entity_naming.acl,v 1.14 2002/07/26 10:18:12 puch Exp $
+#
+# pour importer plusieurs documents dans documentum
+#
+# This ACL code will burst multiple files and add
+# them to the docbase.
+#
+# do_burst_multiple:
+#
+function do_burst_multiple()
+{
+   local rc;
+	
+   # Initialize the Documentum Adapter 
+   
+	dms::init();
+	local adapt_id = sess_initialize($dms::adapt_dlls["Documentum Adapter"]);
+	
+   # Set values for userid, password, docbase name
+   
+	local userId = "p0un608";
+	local passwd = "unitec319";
+	local docbase = "basem882simu";
+	local ud = "";
+   
+   # Connect the user to the docbase
+   
+	local hSess 	  = sess_connect(adapt_id, userId, passwd, docbase, ud);
+   	dms::currentAdapter =  "Documentum Adapter";
+	dms::currentAdaptId = adapt_id;
+	dms::sess[dms::currentAdapter] = hSess;
+	
+   # Burst files.  The wildcard would burst files named:
+   # test1.sgm, test2.sgm, testfile.sgm, etc.
+   
+	burst_multiple("D:/M88_data/EPIDOC/*.sgm", "D:/M88_data/EPIDOC/burst1.log");
+   
+   # Disconnect from the docbase
+   
+	rc = sess_disconnect(hSess);
+}
+do_burst_multiple();
+
+

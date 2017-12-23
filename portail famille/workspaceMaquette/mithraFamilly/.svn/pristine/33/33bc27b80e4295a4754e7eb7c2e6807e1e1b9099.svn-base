@@ -1,0 +1,353 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1A723300SF030100166A011 SYSTEM "x-dm://0900f90b800028c3,MYWORKING" NDATA cgm>
+<!ENTITY A1A723300SF030100167A011 SYSTEM "x-dm://0900f90b800028c4,MYWORKING" NDATA cgm>
+<!ENTITY A1A723300SF030100168A011 SYSTEM "x-dm://0900f90b800028c5,MYWORKING" NDATA cgm>
+<!ENTITY A1A723300SF030100171A011 SYSTEM "x-dm://0900f90b800028c8,MYWORKING" NDATA cgm>
+<!ENTITY A1A723300SF030100172A011 SYSTEM "x-dm://0900f90b800028c9,MYWORKING" NDATA cgm>
+<!ENTITY A1A723300SF030100173A011 SYSTEM "x-dm://0900f90b800028ca,MYWORKING" NDATA cgm>
+<!ENTITY A1A723300SF030100174A011 SYSTEM "x-dm://0900f90b800028cb,MYWORKING" NDATA cgm>
+]>
+<?Pub Inc>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><discode>07</discode><discodev>A</discodev><incode>527</incode><incodev>A</incodev><itemloc>B</itemloc></avee></dmc>
+<dmtitle><techname>DEMI CARTER SUPERIEUR ASSEMBLE COMPRESSEUR HP ETAPE 4</techname><infoname>PROCEDURES DE DEPOSE PROPREMENT DITE</infoname></dmtitle>
+<issno type="c" issno="7">
+<issdate month="06" year="2010" day="23">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 4"></version>
+<nti nti2="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Correction du DM suite &agrave; anomalie canevas</rfu>
+<remarks>RAS</remarks>
+<icns><icn id="A1A723300SF030100166A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00166</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A723300SF030100167A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00167</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A723300SF030100168A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00168</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A723300SF030100171A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00171</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A723300SF030100172A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00172</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A723300SF030100173A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00173</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A723300SF030100174A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00174</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<refdm>
+<dmcid id="A1B72330000A361AC"><avee><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><discode>00</discode><discodev>A</discodev><incode>361</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1B72330094A527AD"><avee><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><discode>94</discode><discodev>A</discodev><incode>527</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmcid>
+<dmcid id="A1A72330098A921AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><discode>98</discode><discodev>A</discodev><incode>921</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A72330035A527AD"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><discode>35</discode><discodev>A</discodev><incode>527</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmcid>
+<dmcid id="A1AHA720800A527AC"><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>HA</ecscc><eidc>72</eidc><cic>08</cic><discode>00</discode><discodev>A</discodev><incode>527</incode><incodev>A</incodev><itemloc>C</itemloc></age></dmcid>
+<dmcid id="A1AHA720800A727AD"><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>HA</ecscc><eidc>72</eidc><cic>08</cic><discode>00</discode><discodev>A</discodev><incode>727</incode><incodev>A</incodev><itemloc>D</itemloc></age></dmcid>
+</refdm>
+</refs><proced><pmd>
+<manhour value="3,0"></manhour>
+<duration value="1,5"></duration>
+</pmd><prelreqs><reqconds change="MOD"><reqcondli><reqcond>
+<cond><para><p>- GTR sur 3 points sur chariot de transport <supeqref refid="O2.00199">.</p>
+</para>
+</cond>
+</reqcond><reqcond>
+<cond><para><p>- Maintien canal en place <supeqref refid="O2.00429">.</p>
+</para>
+</cond>
+</reqcond></reqcondli></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="2"><perstime value="1,5"></reqper>
+</reqpers><supequip><supeqli>
+<supequi id="O2.00199"><applic><config><mod modnb="240" modcond="post"></config></applic>
+<refipc csn="72016801 031 " isn="00E"><nomen>Chariot de transport</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.00429"><refipc csn="72016701 086 "><nomen>Maintien canal</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.00467"><refipc csn="72016801 019 "><nomen>Palonnier 1/2 carter compresseur HP</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.00513"><refipc csn="72016601 044 "><nomen>Outillage d&apos;obturation mod 4  gauche</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.00553"><refipc csn="72016601 045 "><nomen>Outillage d&apos;obturation mod 4  droit</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.00556"><refipc csn="72016601 048 "><nomen>Outillage d&apos;obturation trou disque 5</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.00555"><applic><config><mod modnb="235" modcond="post"></config></applic>
+<refipc csn="72016601 047 " isn="00C"><nomen>Protecteur amont mod 5</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.00554"><refipc csn="72016601 046 "><nomen>Protecteur aval mod 3</nomen><quantity>1</quantity></supequi>
+</supeqli><supeqlis>
+<supequis id="O2.S0043"><refipc csn="72016001 005 "><nomen>Peson</nomen><quantity>1</quantity></supequis>
+<supequis id="O2.S0677"><refipc csn="72016001 038 "><nomen>Cl&eacute; &agrave; oeil 8-9</nomen><quantity>1</quantity></supequis>
+<supequis id="O2.C0020"><refipc csn="72016002 049 "><nomen>Cliquet r&eacute;versible carr&eacute; 3/8</nomen><quantity>1</quantity></supequis>
+<supequis id="O2.C0009"><refipc csn="72016002 038 "><nomen>Douille carr&eacute;e 3/8 12 pans de 10</nomen><quantity>1</quantity></supequis>
+<supequis id="O2.C0087"><refipc csn="72016002 103 "><nomen>Cl&eacute; mixte courte de 10</nomen><quantity>1</quantity></supequis>
+<supequis id="O2.C0038"><refipc csn="72016002 015 "><nomen>Cliquet r&eacute;versible carr&eacute; 1/4</nomen><quantity>1</quantity></supequis>
+<supequis id="O2.C0178"><refipc csn="72016002 035 "><nomen>Douille 12 pans carr&eacute;e 1/4 de 8</nomen><quantity>1</quantity></supequis>
+<supequis id="O2.C0008"><refipc csn="72016002 037 "><nomen>Douille carr&eacute;e 3/8 12 pans de 9</nomen><quantity>1</quantity></supequis>
+<supequis id="O2.C0011"><refipc csn="72016002 040 "><nomen>Douille carr&eacute;e 3/8 12 pans de 12</nomen><quantity>1</quantity></supequis>
+<supequis id="O2.C0089"><refipc csn="72016002 105 "><nomen>Cl&eacute; mixte courte de 12</nomen><quantity>1</quantity></supequis>
+</supeqlis></supequip><supplies><supplyli exhaust="0">
+<supply id="RUD008" mand="0"><refipc csn="72330001A017 "><nomen>Tube pr&eacute;l&egrave;vement AIR redresseur 4</nomen><quantity>1</quantity></supply>
+<supply id="RUD007" mand="0"><refipc csn="72330001A009 "><nomen>Tube pr&eacute;l&egrave;vement AIR redresseur 4</nomen><quantity>1</quantity></supply>
+<supply id="R20539" mand="0"><applic><config><mod modnb="192" modcond="post"></config></applic>
+<refipc csn="72330001A087 " isn="00C"><nomen>M&eacute;canisme gauche, commande stator</nomen><quantity>1</quantity></supply>
+<supply id="R20434" mand="0"><applic><config><mod modnb="192" modcond="post"></config></applic>
+<refipc csn="72330001A063 " isn="00C"><nomen>M&eacute;canisme droit, commande stator</nomen><quantity>1</quantity></supply>
+<supply id="R20545A" mand="0"><refipc csn="72330001A055 "><nomen>Vis &agrave; t&ecirc;te bihexagonale</nomen><quantity>SB</quantity></supply>
+<supply id="R20543A" mand="0"><refipc csn="72330001A043 "><nomen>Vis &agrave; t&ecirc;te bihexagonale</nomen><quantity>SB</quantity></supply>
+<supply id="R20590" mand="0"><refipc csn="72330001A095 "><nomen>Vis &agrave; t&ecirc;te bihexagonale</nomen><quantity>SB</quantity></supply>
+<supply id="R20588" mand="0"><refipc csn="72330001A093 "><nomen>Vis &agrave; t&ecirc;te bihexagonale</nomen><quantity>SB</quantity></supply>
+<supply id="R20586" mand="0"><refipc csn="72330001A091 "><nomen>Vis &agrave; t&ecirc;te bihexagonale</nomen><quantity>SB</quantity></supply>
+<supply id="R20400-18" mand="0"><refipc csn="72330001 242A"><nomen>Vis &agrave; t&ecirc;te bihexagonale</nomen><quantity>SB</quantity></supply>
+<supply id="R09065" mand="0"><refipc csn="72320001 002H"><nomen>Vis &agrave; t&ecirc;te bihexagonale</nomen><quantity>SB</quantity></supply>
+<supply id="R14002" mand="0"><refipc csn="72420001A003 "><nomen>Vis &agrave; t&ecirc;te bihexagonale</nomen><quantity>SB</quantity></supply>
+<supply id="R20544A" mand="0"><refipc csn="72330001A049 "><nomen>Vis &agrave; t&ecirc;te bihexagonale</nomen><quantity>SB</quantity></supply>
+<supply id="R20545B" mand="0"><refipc csn="72330001A079 "><nomen>Vis &agrave; t&ecirc;te bihexagonale</nomen><quantity>1</quantity></supply>
+<supply id="R20544B" mand="0"><refipc csn="72330001A073 "><nomen>Vis &agrave; t&ecirc;te bihexagonale</nomen><quantity>1</quantity></supply>
+<supply id="R20543B" mand="0"><refipc csn="72330001A067 "><nomen>Vis &agrave; t&ecirc;te bihexagonale</nomen><quantity>1</quantity></supply>
+<supply id="R20471A" mand="0"><refipc csn="72330001A056 "><nomen>Vis &agrave; t&ecirc;te bihexagonale</nomen><quantity>1</quantity></supply>
+<supply id="R20457A" mand="0"><refipc csn="72330001A050 "><nomen>Vis &agrave; t&ecirc;te bihexagonale</nomen><quantity>1</quantity></supply>
+<supply id="R20443A" mand="0"><refipc csn="72330001A044 "><nomen>Vis &agrave; t&ecirc;te bihexagonale</nomen><quantity>1</quantity></supply>
+<supply id="R20589" mand="0"><refipc csn="72330001 154 "><nomen>Ecrou bihexagonal</nomen><quantity>SB</quantity></supply>
+<supply id="R20591" mand="0"><refipc csn="72330001A094 "><nomen>Ecrou bihexagonal</nomen><quantity>SB</quantity></supply>
+<supply id="R20587" mand="0"><refipc csn="72330001A092 "><nomen>Ecrou bihexagonal</nomen><quantity>SB</quantity></supply>
+<supply id="R20400-07" mand="0"><refipc csn="72330001 243A"><nomen>Ecrou bihexagonal</nomen><quantity>SB</quantity></supply>
+<supply id="R14003" mand="0"><refipc csn="72420001A002 "><nomen>Ecrou bihexagonal</nomen><quantity>SB</quantity></supply>
+<supply id="R20472A" mand="0"><refipc csn="72330001A057 "><nomen>Ecrou bihexagonal chambre</nomen><quantity>1</quantity></supply>
+<supply id="R20458A" mand="0"><refipc csn="72330001A051 "><nomen>Ecrou bihexagonal chambre</nomen><quantity>1</quantity></supply>
+<supply id="R20444A" mand="0"><refipc csn="72330001A045 "><nomen>Ecrou bihexagonal chambre</nomen><quantity>1</quantity></supply>
+<supply id="R20455" mand="0"><refipc csn="72330001A127 "><nomen>Douille</nomen><quantity>SB</quantity></supply>
+<supply id="R20469" mand="0"><refipc csn="72330001A107 "><nomen>Douille</nomen><quantity>SB</quantity></supply>
+<supply id="R20441" mand="0"><refipc csn="72330001A147 "><nomen>Douille</nomen><quantity>SB</quantity></supply>
+<supply id="R20470B" mand="0"><refipc csn="72330001A082 "><nomen>Douille, guidage RDE REDRESSEUR 1-2</nomen><quantity>SB</quantity></supply>
+<supply id="R20456B" mand="0"><refipc csn="72330001A076 "><nomen>Douille, guidage RDE REDRESSEUR 1-2</nomen><quantity>SB</quantity></supply>
+<supply id="R20442B" mand="0"><refipc csn="72330001A070 "><nomen>Douille, guidage RDE REDRESSEUR 1-2</nomen><quantity>SB</quantity></supply>
+<supply id="R20470A" mand="0"><refipc csn="72330001A058 "><nomen>Douille, guidage RDE REDRESSEUR 1-2</nomen><quantity>SB</quantity></supply>
+<supply id="R20456A" mand="0"><refipc csn="72330001A052 "><nomen>Douille, guidage RDE REDRESSEUR 1-2</nomen><quantity>SB</quantity></supply>
+<supply id="R20442A" mand="0"><refipc csn="72330001A046 "><nomen>Douille, guidage RDE REDRESSEUR 1-2</nomen><quantity>SB</quantity></supply>
+<supply id="R20479A" mand="0"><refipc csn="72330001A054 "><nomen>Pontet de commande, redresseur 1-2</nomen><quantity>1</quantity></supply>
+<supply id="R20465A" mand="0"><refipc csn="72330001A048 "><nomen>Pontet de commande, redresseur 1-2</nomen><quantity>1</quantity></supply>
+<supply id="R20451A" mand="0"><refipc csn="72330001A042 "><nomen>Pontet de commande, redresseur 1-2</nomen><quantity>1</quantity></supply>
+<supply id="R20479B" mand="0"><refipc csn="72330001A078 "><nomen>Pontet de commande, redresseur 1-2</nomen><quantity>1</quantity></supply>
+<supply id="R20465B" mand="0"><refipc csn="72330001A072 "><nomen>Pontet de commande, redresseur 1-2</nomen><quantity>1</quantity></supply>
+<supply id="R20451B" mand="0"><refipc csn="72330001A066 "><nomen>Pontet de commande, redresseur 1-2</nomen><quantity>1</quantity></supply>
+</supplyli></supplies><miscs><nomisc></miscs><safety><nosafety></safety></prelreqs><mainfunc>
+<step1 control="0" id="P10">
+<note>
+<p>Les outillages  <supeqref refid="O2.C0008">,  <supeqref refid="O2.C0009">,  <supeqref refid="O2.C0011">,  <supeqref refid="O2.C0020">,  <supeqref refid="O2.C0038">,  <supeqref refid="O2.C0087">,  <supeqref refid="O2.C0089"> et  <supeqref refid="O2.C0178"> sont n&eacute;cessaires pour cette proc&eacute;dure.</p>
+</note>
+</step1>
+<step1 control="0" id="P20">
+<title>DEPOSE DES TUBES RD4</title>
+<para><p>D&eacute;poser les 2 tubes sup&eacute;rieurs <supplref refid="RUD007">   <supplref refid="RUD008"> <dmcref xrefid="A1A72330035A527AD">.</p>
+</para>
+</step1>
+<step1 control="0" id="P30">
+<title>DECONNECTION DU MECANISME DROIT COMMANDE STATOR</title>
+<step2 control="0" id="P30-10">
+<para><p>D&eacute;poser l'&eacute;crou <supplref refid="R20444A">, les douilles <supplref refid="R20442A"> et la vis de fixation <supplref refid="R20443A"> de la biellette de m&eacute;canisme droit <supplref refid="R20434">sur le pontet de commande RDE  <supplref refid="R20451B"> <figref repnohot="20444, 20442, 20443 20451 DETAILA" refid="A723300SF030100166A011"> .</p>
+</para>
+</step2>
+<step2 control="0" id="P30-20">
+<para><p>D&eacute;poser l'&eacute;crou <supplref refid="R20458A">, les douilles <supplref refid="R20456A"> et la vis de fixation <supplref refid="R20457A"> de la biellette de m&eacute;canisme droit <supplref refid="R20434"> sur le pontet de commande RD1  <supplref refid="R20465B"> <figref repnohot="20458, 20456, 20457 20465 DETAILB" refid="A723300SF030100166A011"> .</p>
+</para>
+</step2>
+<step2 control="0" id="P30-40">
+<para><p>D&eacute;poser l'&eacute;crou <supplref refid="R20472A">, les douilles <supplref refid="R20471A"> et la vis de fixation <supplref refid="R20472A"> de la biellette de m&eacute;canisme droit <supplref refid="R20434"> sur le pontet de commande RD2  <supplref refid="R20479B"> <figref repnohot="20472, 20470, 20471 20479 DETAILC" refid="A723300SF030100166A011"> .</p>
+</para>
+</step2>
+<step2 control="0" id="P30-50">
+<specpara>
+<caution>
+<p>MAINTENIR LES ROTULES SUR LES BIELLETTES DU MECANISME DROIT COMMANDE STATOR.</p>
+</caution>
+</specpara>
+<para><p>D&eacute;gager les 3 biellettes des 3 pontets de commande  redresseurs  droits. <figref repnohot="20451, 20465 20479" refid="A723300SF030100166A011">.</p>
+</para>
+</step2>
+</step1>
+<step1 control="0" id="P40">
+<title>DEPOSE DES PONTETS DE COMMANDE STATOR DROIT RDE RD1 RD2</title>
+<step2 control="0" id="P40-10">
+<para><p>D&eacute;poser les 4 vis <supplref refid="R20543B"> de fixation du pontet de commande RDE  <figref repnohot="20543 20451" refid="A723300SF030100167A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P40-20">
+<specpara>
+<caution>
+<p>MAINTENIR LES 4 DOUILLES SUR LE PONTET RDE LORS DE SA DEPOSE.</p>
+</caution>
+</specpara>
+<para><p>D&eacute;poser le pontet de commande RDE &eacute;quip&eacute; des 4 douilles <supplref refid="R20441"> <figref repnohot="20451 20441" refid="A723300SF030100168A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P40-30">
+<para><p>D&eacute;poser les 4 vis <supplref refid="R20544B">de fixation du pontet de commande RD1 <figref repnohot="20544 20465" refid="A723300SF030100167A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P40-40">
+<specpara>
+<caution>
+<p>MAINTENIR LES 4 DOUILLES SUR LE PONTET RD1 LORS DE SA DEPOSE.</p>
+</caution>
+</specpara>
+<para><p>D&eacute;poser le pontet de commande RD1 &eacute;quip&eacute; des 4 douilles <supplref refid="R20455"> <figref repnohot="20465 20455" refid="A723300SF030100168A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P40-50">
+<para><p>D&eacute;poser les 4 vis <supplref refid="R20545B"> de fixation du pontet de commande RD2  <figref repnohot="20545 20479" refid="A723300SF030100167A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P40-60">
+<specpara>
+<caution>
+<p>MAINTENIR LES 4 DOUILLES SUR LE PONTET RD2 LORS DE SA DEPOSE.</p>
+</caution>
+</specpara>
+<para><p>D&eacute;poser le pontet de commande RD2 &eacute;quip&eacute; des 4 douilles <supplref refid="R20469"> <figref repnohot="20479 20469" refid="A723300SF030100168A011">.</p>
+</para>
+</step2>
+</step1>
+<step1 control="0" id="P50">
+<title>DEPOSE DU MECANISME COMMANDE STATOR GAUCHE</title>
+<para><p>D&eacute;poser le m&eacute;canisme gauche <supplref refid="R20539"> <dmcref xrefid="A1B72330094A527AD">.</p>
+</para>
+</step1>
+<step1 control="0" id="P60">
+<title>DEPOSE DES PONTETS DE COMMANDE STATOR GAUCHE RDE RD1 RD2</title>
+<step2 control="0" id="P60-10">
+<para><p>D&eacute;poser les 4 vis <supplref refid="R20543A"> de fixation du pontet de commande RDE  <supplref refid="R20451A"> <figref repnohot="20543 ET 20451" refid="A723300SF030100171A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P60-20">
+<specpara>
+<caution>
+<p>MAINTENIR LES 4 DOUILLES SUR LE PONTET RDE LORS DE SA DEPOSE.</p>
+</caution>
+</specpara>
+<para><p>D&eacute;poser le pontet de commande RDE &eacute;quip&eacute; des 4 douilles <figref repnohot="20451 20441" refid="A723300SF030100171A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P60-30">
+<para><p>D&eacute;poser les 4 vis <supplref refid="R20544A"> de fixation du pontet de commande RD1 <supplref refid="R20465A"> <figref repnohot="20544 20465" refid="A723300SF030100171A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P60-40">
+<specpara>
+<caution>
+<p>MAINTENIR LES 4 DOUILLES SUR LE PONTET RD1 LORS DE SA DEPOSE.</p>
+</caution>
+</specpara>
+<para><p>D&eacute;poser le pontet de commande RD1 &eacute;quip&eacute; des 4 douilles <figref repnohot="20465 20441" refid="A723300SF030100171A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P60-50">
+<para><p>D&eacute;poser les 4 vis <supplref refid="R20545A"> de fixation du pontet de commande RD2 <supplref refid="R20479A"> <figref repnohot="20545 20479" refid="A723300SF030100171A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P60-60">
+<specpara>
+<caution>
+<p>MAINTENIR LES 4 DOUILLES SUR LE PONTET RD2 LORS DE SA DEPOSE.</p>
+</caution>
+</specpara>
+<para><p>D&eacute;poser le pontet de commande RD2 &eacute;quip&eacute; des 4 douilles <figref repnohot="20479 20441" refid="A723300SF030100171A011">.</p>
+</para>
+</step2>
+</step1>
+<step1 control="0" id="P65">
+<para><p>En cas de d&eacute;t&eacute;rioration des filets rapport&eacute;s<dmcref xrefid="A1A72330098A921AC"></p>
+</para>
+</step1>
+<step1 control="0" id="P70">
+<title>DEPOSE DU 1/2 CARTER CHP SUPERIEUR</title>
+<step2 control="0" id="P70-10">
+<para><p>D&eacute;poser les 30 vis <supplref refid="R14002"> et les 30 &eacute;crous <supplref refid="R14003"> de la demi-coupe sup&eacute;rieure M4/M5 <figref repnohot="14002 ET 14003" refid="A723300SF030100172A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P70-20">
+<para><p>D&eacute;poser les 27 vis <supplref refid="R09065"> de  la demi-coupe sup&eacute;rieure M3/M4  <figref repnohot="09065" refid="A723300SF030100172A011"> .</p>
+</para>
+</step2>
+<step2 control="0" id="P70-30">
+<para><p>D&eacute;poser les 4 vis <supplref refid="R20400-18"> et les 4 &eacute;crous <supplref refid="R20400-07"> des demi-carters compresseur HP <figref repnohot="20400(REP.18) ET 20400(REP.07)" refid="A723300SF030100172A011"> .</p>
+</para>
+</step2>
+<step2 control="0" id="P70-40">
+<para><p>D&eacute;poser les 12 vis <supplref refid="R20586"> et les 12 &eacute;crous <supplref refid="R20587"> des brides longitudinales du carter compresseur HP <figref repnohot="20586 ET 20587" refid="A723300SF030100172A011"> .</p>
+</para>
+</step2>
+<step2 control="0" id="P70-50">
+<para><p>D&eacute;poser les 6 vis <supplref refid="R20588"> et les 6 &eacute;crous <supplref refid="R20589"> des brides longitudinales du carter compresseur HP <figref repnohot="20588 ET 20589" refid="A723300SF030100172A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P70-60">
+<para><p>D&eacute;poser les 10 vis <supplref refid="R20590"> et les 10 &eacute;crous <supplref refid="R20591"> des brides longitudinales du carter compresseur HP <figref repnohot="20590 ET 20591" refid="A723300SF030100172A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P70-70">
+<para><p>Installer le palonnier <supeqref refid="O2.00467"> sur le demi-carter compresseur HP sup&eacute;rieur <dmcref xrefid="A1AHA720800A727AD">.</p>
+</para>
+</step2>
+<step2 control="0" id="P70-80">
+<specpara>
+<caution>
+<p>Ne pas mettre le palonnier en tension au-dessus de 35 kg.</p>
+</caution>
+</specpara>
+<para><p>Lever le demi-carter compresseur HP sup&eacute;rieur avec pr&eacute;caution &agrave; l'aide du palonnier du palan et d'un peson <supeqref refid="O2.S0043"> <figref refid="A723300SF030100173A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P70-90">
+<para><p>Amener le demi-carter compresseur HP sup&eacute;rieur au-dessus de la table d'atelier, pivoter le demi-carter, l'amener bride AV vers le bas, le bloquer en position en pla&ccedil;ant la broche &agrave; bille du palonnier dans le logement du bras du palonnier. <figref repnohot="2.00467REP.12 ET 2.00467REP.02" refid="A723300SF030100174A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P70-100">
+<para><p>Poser le demi-carter compresseur HP sup&eacute;rieur sur la table d'atelier (bride AV en appui) <figref refid="A723300SF030100174A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P70-110">
+<para><p>D&eacute;gager le palan, d&eacute;poser le palonnier <dmcref xrefid="A1AHA720800A527AC">.</p>
+</para>
+</step2>
+</step1>
+<step1 control="0" id="P80"><?Pub Caret>
+<title>OBTURATION.</title>
+<para><p>Placer les outillages d&apos;obturation module 4 gauche <supeqref refid="O2.00513">, module 4 droit <supeqref refid="O2.00553">, trou disque 5 <supeqref refid="O2.00556"> et les protecteurs amont module 5 <supeqref refid="O2.00555"> et aval module 3 <supeqref refid="O2.00554">.</p>
+</para>
+</step1>
+<figure id="A723300SF030100166A011">
+<title>DECONNECTION DU MECANISME DROIT</title>
+<graphic callicn="A1A723300SF030100166A011">
+</figure>
+<figure id="A723300SF030100167A011">
+<title>PONTETS DROITS</title>
+<graphic callicn="A1A723300SF030100167A011">
+</figure>
+<figure id="A723300SF030100168A011">
+<title>PONTETS DROITS</title>
+<graphic callicn="A1A723300SF030100168A011">
+</figure>
+<figure id="A723300SF030100171A011">
+<title>PONTETS GAUCHES</title>
+<graphic callicn="A1A723300SF030100171A011">
+</figure>
+<figure id="A723300SF030100172A011">
+<title>FIXATION DEMI-CARTER CHP</title>
+<graphic callicn="A1A723300SF030100172A011">
+</figure>
+<figure id="A723300SF030100173A011">
+<title>EXTRACTION DEMI-CARTER CHP</title>
+<graphic callicn="A1A723300SF030100173A011">
+</figure>
+<figure id="A723300SF030100174A011">
+<title>DEMI-CARTER CHP SUR TABLE</title>
+<graphic callicn="A1A723300SF030100174A011">
+</figure>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000024999 0>

@@ -1,0 +1,408 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN">
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>0</subsect><subject>99</subject><discode>26</discode><discodev>A</discodev><incode>930</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmc>
+<dmtitle><techname>SERVICE BULLETIN MODIFICATION 265C2 CALCULATEUR PROGRAMME</techname><infoname>SERVICE BULLETIN - Application de modification suite &agrave; &eacute;volution du logiciel en VL08D</infoname></dmtitle>
+<issno type="N" issno="1">
+<issdate month="03" year="2010" day="15">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 4"></version>
+<manufact>F0302</manufact><partno>INAC6A33-34</partno>
+<manufact>F0302</manufact><partno>INAC6A33-35</partno>
+<customer aaf="1" anf="1">
+<nti nti1="1" nti2="1" nti3="0"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Version initiale</rfu>
+<remarks>RAS</remarks>
+</status>
+</idstatus><content><refs>
+<refdm>
+<dmcid id="DM1"><dmcopen dmco="A1A45713100A320AA">MOTEURS - TESTS DECLENCHES</dmcopen></dmcid>
+<dmcid id="A1A73201000A510AD"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>0</subsect><subject>10</subject><discode>00</discode><discodev>A</discodev><incode>510</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmcid>
+<dmcid id="A1A73201000A730AD"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>0</subsect><subject>10</subject><discode>00</discode><discodev>A</discodev><incode>730</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmcid>
+<dmcid id="A1A73201000A510BD"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>0</subsect><subject>10</subject><discode>00</discode><discodev>A</discodev><incode>510</incode><incodev>B</incodev><itemloc>D</itemloc></avee></dmcid>
+<dmcid id="A1A73201000A730BD"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>0</subsect><subject>10</subject><discode>00</discode><discodev>A</discodev><incode>730</incode><incodev>B</incodev><itemloc>D</itemloc></avee></dmcid>
+<dmcid id="A1A73201010A527AD"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>0</subsect><subject>10</subject><discode>10</discode><discodev>A</discodev><incode>527</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmcid>
+<dmcid id="A1A73201010A727AD"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>0</subsect><subject>10</subject><discode>10</discode><discodev>A</discodev><incode>727</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmcid>
+<dmcid id="A1A73201011A750AD"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>0</subsect><subject>10</subject><discode>11</discode><discodev>A</discodev><incode>750</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmcid>
+<dmcid id="A1A73201011A750BC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>0</subsect><subject>10</subject><discode>11</discode><discodev>A</discodev><incode>750</incode><incodev>B</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A73201011A750CA"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>0</subsect><subject>10</subject><discode>11</discode><discodev>A</discodev><incode>750</incode><incodev>C</incodev><itemloc>A</itemloc></avee></dmcid>
+<dmcid id="A1A73201012A550BD"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>0</subsect><subject>10</subject><discode>12</discode><discodev>A</discodev><incode>550</incode><incodev>B</incodev><itemloc>D</itemloc></avee></dmcid>
+<dmcid id="A1ARF720100A100AC"><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>RF</ecscc><eidc>72</eidc><cic>01</cic><discode>00</discode><discodev>A</discodev><incode>100</incode><incodev>A</incodev><itemloc>C</itemloc></age></dmcid>
+<dmcid id="A1ARF720100A150AC"><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>RF</ecscc><eidc>72</eidc><cic>01</cic><discode>00</discode><discodev>A</discodev><incode>150</incode><incodev>A</incodev><itemloc>C</itemloc></age></dmcid>
+<dmcid id="A1ARF720100A510AC"><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>RF</ecscc><eidc>72</eidc><cic>01</cic><discode>00</discode><discodev>A</discodev><incode>510</incode><incodev>A</incodev><itemloc>C</itemloc></age></dmcid>
+<dmcid id="A1ARF720100A730AC"><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>RF</ecscc><eidc>72</eidc><cic>01</cic><discode>00</discode><discodev>A</discodev><incode>730</incode><incodev>A</incodev><itemloc>C</itemloc></age></dmcid>
+<dmcid id="A1ARF720100A830AC"><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>RF</ecscc><eidc>72</eidc><cic>01</cic><discode>00</discode><discodev>A</discodev><incode>830</incode><incodev>A</incodev><itemloc>C</itemloc></age></dmcid>
+<dmcid id="A1ARF720100A840AC"><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>RF</ecscc><eidc>72</eidc><cic>01</cic><discode>00</discode><discodev>A</discodev><incode>840</incode><incodev>A</incodev><itemloc>C</itemloc></age></dmcid>
+<dmcid id="A1ARF720112A100AC"><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>RF</ecscc><eidc>72</eidc><cic>01</cic><discode>12</discode><discodev>A</discodev><incode>100</incode><incodev>A</incodev><itemloc>C</itemloc></age></dmcid>
+<dmcid id="A1ARF720114A100AC"><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>RF</ecscc><eidc>72</eidc><cic>01</cic><discode>14</discode><discodev>A</discodev><incode>100</incode><incodev>A</incodev><itemloc>C</itemloc></age></dmcid>
+<dmcid id="A1ARF720500A100FC"><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>RF</ecscc><eidc>72</eidc><cic>05</cic><discode>00</discode><discodev>A</discodev><incode>100</incode><incodev>F</incodev><itemloc>C</itemloc></age></dmcid>
+</refdm>
+</refs><proced><pmd>
+<manhour value="1,0"></manhour>
+<duration value="1,0"></duration>
+</pmd><prelreqs><reqconds>
+<noconds></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="1,0"></reqper>
+</reqpers><supequip><supeqli>
+<supequi id="O1"><refipc csn="72017701 001 "><nomen>Moyen De Dialogue</nomen><quantity>1</quantity></supequi>
+</supeqli><nosupeqs></supequip><supplies><supplyli exhaust="0">
+<supply id="RTR061" mand="1"><ident><manufact>FAQ15</manufact><partno>394-168-301-0</partno></ident><nomen>Trousse de rattrapage</nomen><quantity>1</quantity></supply>
+<supply id="RHA022" mand="1"><ident><manufact>FAQ15</manufact><partno>689-760-085-0</partno></ident><nomen>Plaquette d'identification</nomen><quantity>Cf trousse TR061</quantity></supply>
+<supply id="RHA017" mand="1"><ident><manufact>F0301</manufact><partno>689-502-273-0</partno></ident><nomen>Vis</nomen><quantity>Cf trousse TR061</quantity></supply>
+<supply id="RHA018" mand="1"><ident><manufact>F0111</manufact><partno>23111CA030</partno></ident><nomen>Rondelle plate</nomen><quantity>Cf trousse TR061</quantity></supply>
+<supply id="RTR062" mand="1"><ident><manufact>FAQ15</manufact><partno>394-169-301-0</partno></ident><nomen>Trousse de rattrapage</nomen><quantity>1</quantity></supply>
+<supply id="RHA950" mand="1"><ident><manufact>FAQ15</manufact><partno>392-278-701-0</partno></ident><nomen>Disquette A</nomen><quantity>Cf trousse TR062</quantity></supply>
+<supply id="RHA951" mand="1"><ident><manufact>FAQ15</manufact><partno>392-278-801-0</partno></ident><nomen>Disquette B</nomen><quantity>Cf trousse TR062</quantity></supply>
+<supply id="RHA952" mand="1"><ident><manufact>FAQ15</manufact><partno>392-278-901-0</partno></ident><nomen>Disquette C</nomen><quantity>Cf trousse TR062</quantity></supply>
+<supply id="RHA953" mand="1"><ident><manufact>FAQ15</manufact><partno>392-279-001-0</partno></ident><nomen>Disquette D</nomen><quantity>Cf trousse TR062</quantity></supply>
+</supplyli></supplies><miscs><nomisc></miscs><safety>
+<specpara>
+<caution>
+<p>Effectuer les manipulations sur un poste prot&eacute;g&eacute;, avec port d'un bracelet antistatique&nbsp;: ce mat&eacute;riel est sensible &agrave; l'&eacute;lectricit&eacute; statique.</p>
+</caution>
+</specpara>
+</safety></prelreqs><mainfunc>
+<step1 control="0" id="P10">
+<title>OBJET DU SERVICE BULLETIN</title>
+<para><p>Mise &agrave; niveau du logiciel des calculateurs programm&eacute;s <refipc csn="72000001A021 "> par t&eacute;l&eacute;chargement de la version logiciel VL08D en lieu et place de la version VL08C.</p>
+</para>
+</step1>
+<step1 control="0" id="P20">
+<title>CONDITIONS D'APPLICATION</title>
+<para><p>Modification applicable en r&eacute;trofit par t&eacute;l&eacute;chargement des calculateurs sur site.</p>
+</para>
+</step1>
+<step1 control="0" id="P30">
+<title>INSTRUCTION DETAILLEE D'APPLICATION</title>
+<step2 control="0" id="P30-10">
+<title>Pr&eacute;paration au t&eacute;l&eacute;chargement avec le Moyen de Dialogue (MDD) <supeqref refid="O1"></title>
+<step3 control="0">
+<para><p>Sortir le MDD de son conteneur <dmcref xrefid="A1ARF720100A840AC">.</p>
+</para>
+</step3>
+<step3 control="0">
+<para><p>Connecter le MDD au 28&nbsp;V atelier ou utiliser le MDD sur batteries <dmcref xrefid="A1ARF720100A730AC">.</p>
+</para>
+</step3>
+<step3 control="0">
+<para><p>Mettre sous tension le MDD <dmcref xrefid="A1ARF720100A100AC">.</p>
+</para>
+</step3>
+<step3 control="0">
+<para><p>Charger le logiciel pr&eacute;sent sur les disquettes <supplref refid="RHA950"> <supplref refid="RHA951"> <supplref refid="RHA952"> <supplref refid="RHA953"> fournies dans la trousse <supplref refid="RTR062">, sur le disque dur du MDD <dmcref xrefid="A1A73201011A750BC">.</p>
+</para>
+</step3>
+<step3 control="0">
+<para><p>Sortir de l'application du MDD <dmcref xrefid="A1ARF720100A150AC">.</p>
+</para>
+</step3>
+<step3 control="0">
+<para><p>D&eacute;connecter le MDD du 28&nbsp;V, s'il ne fonctionne pas sur batteries <dmcref xrefid="A1ARF720100A510AC">.</p>
+</para>
+</step3>
+<step3 control="0">
+<para><p>Ranger le MDD dans son conteneur <dmcref xrefid="A1ARF720100A830AC">.</p>
+</para>
+</step3>
+</step2>
+<step2 control="0" id="P30-20">
+<title>Pr&eacute;paration des calculateurs avant t&eacute;l&eacute;chargement</title>
+<step3 control="0">
+<applic><systemid><nti nti1="1"></systemid></applic>
+<title>Calculateurs sur moteur, moteur avionn&eacute;</title>
+<para><p>V&eacute;rifier l'int&eacute;grit&eacute; des calculateurs &agrave; t&eacute;l&eacute;charger.</p>
+</para>
+</step3>
+<step3 control="0">
+<para><p>Mettre hors tension le (les) calculateur(s) &agrave; t&eacute;l&eacute;charger.</p>
+</para>
+</step3>
+<step3 control="0">
+<title>Calculateurs sur moteur, moteur avionn&eacute; ou d&eacute;pos&eacute;</title>
+<para><p>D&eacute;poser les plaques d'identification des deux calculateurs &agrave; t&eacute;l&eacute;charger sur un m&ecirc;me moteur <dmcref xrefid="A1A73201010A527AD">. </p>
+</para>
+</step3>
+<step3 control="0">
+<applic><systemid><nti nti2="1"></systemid></applic>
+<title>Calculateur d&eacute;pos&eacute;</title>
+<para><p>D&eacute;poser la plaque d'identification du calculateur &agrave; t&eacute;l&eacute;charger <dmcref xrefid="A1A73201010A527AD">.</p>
+</para>
+</step3>
+<step3 control="0">
+<para><p>Sortir le MDD de son conteneur <dmcref xrefid="A1ARF720100A840AC">.</p>
+</para>
+</step3>
+<step3 control="0">
+<para><p>Connecter le calculateur &agrave; t&eacute;l&eacute;charger en configuration t&eacute;l&eacute;chargement avec le MDD <dmcref xrefid="A1A73201000A730BD">.</p>
+</para>
+</step3>
+<step3 control="0">
+<applic><systemid><nti nti1="1"></systemid></applic>
+<title>Calculateurs sur moteur, moteur avionn&eacute;</title>
+<para><p>D&eacute;connecter le harnais avion moteur de la prise J07 de l'autre calculateur du moteur.</p>
+</para>
+</step3>
+<step3 control="0">
+<applic><systemid><nti nti1="1"></systemid></applic>
+<para><p>Connecter le MDD au 28&nbsp;V externe.</p>
+</para>
+</step3>
+<step3 control="0">
+<applic><systemid><nti nti2="1"></systemid></applic>
+<para><p>Connecter le MDD au 28&nbsp;V atelier <dmcref xrefid="A1ARF720100A730AC">.</p>
+</para>
+</step3>
+<step3 control="0">
+<para><p>Mettre sous tension le MDD <dmcref xrefid="A1ARF720100A100AC">.</p>
+</para>
+</step3>
+</step2>
+<step2 control="0" id="P30-30">
+<title>T&eacute;l&eacute;chargement</title>
+<step3 control="0">
+<title>Calculateurs sur moteur, moteur avionn&eacute;</title>
+<para><p>Charger le logiciel &agrave; t&eacute;l&eacute;charger du MDD vers le calculateur <dmcref xrefid="A1A73201011A750CA">.</p>
+</para>
+</step3>
+<step3 control="0">
+<title>Calculateurs sur moteur, moteur d&eacute;pos&eacute;, ou calculateur d&eacute;pos&eacute;</title>
+<para><p>Charger le logiciel &agrave; t&eacute;l&eacute;charger du MDD vers le calculateur <dmcref xrefid="A1A73201011A750AD">.</p>
+</para>
+</step3>
+</step2>
+<step2 control="0" id="P30-40">
+<title>Mesures post&eacute;rieures au t&eacute;l&eacute;chargement du calculateur</title>
+<step3 control="0">
+<para><p>Sortir de l'application du MDD <dmcref xrefid="A1ARF720100A150AC">.</p>
+</para>
+</step3>
+<step3 control="0">
+<para><p>D&eacute;connecter le calculateur de la configuration t&eacute;l&eacute;chargement avec MDD <dmcref xrefid="A1A73201000A510BD">.</p>
+</para>
+</step3>
+<step3 control="0">
+<title>Calculateur d&eacute;pos&eacute;</title>
+<para><p>Continuer la proc&eacute;dure avec un seul calculateur <xref xrefid="P30-80">.</p>
+</para>
+</step3>
+</step2>
+<step2 control="0" id="P30-50">
+<title>Calculateurs sur moteur&nbsp;: Pr&eacute;paration des calculateurs avant poursuite du t&eacute;l&eacute;chargement</title>
+<specpara>
+<note>
+<p>Cette pr&eacute;paration est effectu&eacute;e dans le cas du t&eacute;l&eacute;chargement du deuxi&egrave;me calculateur d'un m&ecirc;me moteur.</p>
+</note>
+</specpara>
+<step3 control="0">
+<para><p>Connecter l'autre calculateur &agrave; t&eacute;l&eacute;charger en configuration t&eacute;l&eacute;chargement avec MDD <dmcref xrefid="A1A73201000A730BD">.</p>
+</para>
+</step3>
+<step3 control="0">
+<applic><systemid><nti nti1="1"></systemid></applic>
+<title>Calculateurs sur moteur, moteur avionn&eacute;</title>
+<step4 control="0">
+<para><p>D&eacute;connecter le harnais avion moteur de la prise J07 du calculateur d&eacute;j&agrave; t&eacute;l&eacute;charg&eacute;.</p>
+</para>
+</step4>
+<step4 control="0">
+<para><p>Connecter le harnais avion moteur sur la prise J07 du calculateur &agrave; t&eacute;l&eacute;charger.</p>
+</para>
+</step4>
+</step3>
+<step3 control="0">
+<para><p>Mettre sous tension le MDD <dmcref xrefid="A1ARF720100A100AC">.</p>
+</para>
+</step3>
+</step2>
+<step2 control="0" id="P30-60">
+<title>Calculateurs sur moteur&nbsp;: T&eacute;l&eacute;chargement autre calculateur</title>
+<specpara>
+<note>
+<p>Ce t&eacute;l&eacute;chargement est effectu&eacute; sur le deuxi&egrave;me calculateur d'un m&ecirc;me moteur.</p>
+</note>
+</specpara>
+<step3 control="0">
+<title>Calculateurs sur moteur, moteur avionn&eacute;&nbsp;</title>
+<para><p>Charger le logiciel &agrave; t&eacute;l&eacute;charger du MDD vers le calculateur <dmcref xrefid="A1A73201011A750CA">.</p>
+</para>
+</step3>
+<step3 control="0">
+<title>Calculateurs sur moteur, moteur d&eacute;pos&eacute;&nbsp;</title>
+<para><p>Charger le logiciel &agrave; t&eacute;l&eacute;charger du MDD vers le calculateur <dmcref xrefid="A1A73201011A750AD">.</p>
+</para>
+</step3>
+</step2>
+<step2 control="0" id="P30-70">
+<title>Calculateurs sur moteur&nbsp;: Mesures post&eacute;rieures au t&eacute;l&eacute;chargement du calculateur</title>
+<specpara>
+<note>
+<p>Ces mesures ne s'appliquent que dans le cas du t&eacute;l&eacute;chargement du deuxi&egrave;me calculateur d'un m&ecirc;me moteur.</p>
+</note>
+</specpara>
+<step3 control="0">
+<para><p>Sortir de l'application du MDD <dmcref xrefid="A1ARF720100A150AC">.</p>
+</para>
+</step3>
+<step3 control="0">
+<para><p>D&eacute;connecter le calculateur de la configuration t&eacute;l&eacute;chargement avec MDD <dmcref xrefid="A1A73201000A510BD">.</p>
+</para>
+</step3>
+<step3 control="0">
+<title>Calculateurs sur moteur, moteur avionn&eacute;</title>
+<para><p>Connecter le harnais avion moteur de la prise J07 du calculateur t&eacute;l&eacute;charg&eacute;.</p>
+</para>
+</step3>
+</step2>
+<step2 control="0" id="P30-80">
+<title>V&eacute;rification de l'int&eacute;grit&eacute; calculateur apr&egrave;s t&eacute;l&eacute;chargement</title>
+<step3 control="0">
+<applic><systemid><nti nti1="1"></systemid></applic>
+<title>Calculateurs sur moteur, moteur avionn&eacute;</title>
+<step4 control="0">
+<para><p>Mettre les calculateurs t&eacute;l&eacute;charg&eacute;s &agrave; la nouvelle version de logiciel sous tension.</p>
+</para>
+</step4>
+<step4 control="0">
+<para><p>V&eacute;rifier le voyant panne sur la VTL avion.</p>
+</para>
+</step4>
+<step4 control="0">
+<para><p>Si le voyant panne est OK, v&eacute;rifier l'absence de message de pannes.</p>
+<note>
+<p>Le voyant panne OK et l'absence de message de pannes garantissent l'int&eacute;grit&eacute; des calculateurs apr&egrave;s t&eacute;l&eacute;chargement.</p>
+</note>
+</para>
+</step4>
+<step4 control="0">
+<para><p>Mettre les calculateurs hors tension.</p>
+</para>
+</step4>
+</step3>
+<step3 control="0">
+<title>Calculateurs sur moteur, moteur d&eacute;pos&eacute;</title>
+<step4 control="0">
+<para><p>Connecter les calculateurs en configuration MI/MCS avec le MDD <dmcref xrefid="A1A73201000A730AD">.</p>
+</para>
+</step4>
+<step4 control="0">
+<para><p>Mettre sous tension le MDD <dmcref xrefid="A1ARF720100A100AC">.</p>
+</para>
+</step4>
+<step4 control="0">
+<para><p>Mettre en oeuvre les fonctions de maintenance moteur du MDD <dmcref xrefid="A1ARF720112A100AC">.</p>
+</para>
+</step4>
+<step4 control="0">
+<para><p>Mettre en oeuvre la fonction d'affichage des pannes instantan&eacute;es moteur du MDD <dmcref xrefid="A1ARF720114A100AC">.</p>
+</para>
+</step4>
+<step4 control="0">
+<para><p>V&eacute;rifier le voyant panne sur l'&eacute;cran du MDD.</p>
+</para>
+</step4>
+<step4 control="0">
+<para><p>Si le voyant panne est OK, v&eacute;rifier l'absence de message de pannes.</p>
+<note>
+<p>Le voyant panne OK et l'absence de message de pannes garantissent l'int&eacute;grit&eacute; des calculateurs apr&egrave;s t&eacute;l&eacute;chargement.</p>
+</note>
+</para>
+</step4>
+</step3>
+<step3 control="0">
+<applic><systemid><nti nti2="1"></systemid></applic>
+<title>Calculateur d&eacute;pos&eacute;</title>
+<step4 control="0">
+<para><p>Connecter le calculateur en configuration MI/MCS avec le MDD <dmcref xrefid="A1A73201000A730AD">.</p>
+</para>
+</step4>
+<step4 control="0">
+<para><p>Mettre sous tension le MDD <dmcref xrefid="A1ARF720100A100AC">.</p>
+</para>
+</step4>
+<step4 control="0">
+<para><p>Mettre en oeuvre les fonctions de maintenance moteur du MDD <dmcref xrefid="A1ARF720112A100AC">.</p>
+</para>
+</step4>
+<step4 control="0">
+<para><p>Mettre en oeuvre la fonction d'affichage de pannes instantan&eacute;es moteur du MDD <dmcref xrefid="A1ARF720114A100AC">.</p>
+</para>
+</step4>
+<step4 control="0">
+<para><p>V&eacute;rifier le voyant panne sur l'&eacute;cran du MDD.</p>
+<note>
+<p>Le voyant panne OK garantit l'int&eacute;grit&eacute; du calculateur apr&egrave;s t&eacute;l&eacute;chargement.</p>
+</note>
+</para>
+</step4>
+</step3>
+</step2>
+<step2 control="0" id="P30-90">
+<title>Mesures post&eacute;rieures &agrave; la v&eacute;rification des calculateurs : RAZ des fichiers de maintenance</title>
+<step3 control="0">
+<title>Calculateurs sur moteur, moteur avionn&eacute;</title>
+<para><p>Effectuer une RAZ des fichiers de maintenance du calculateur programm&eacute; <dmcref xrefid="DM1">.</p>
+</para>
+</step3>
+<step3 control="0">
+<title>Calculateurs sur moteur, moteur d&eacute;pos&eacute;, ou calculateur d&eacute;pos&eacute;</title>
+<step4 control="0">
+<para><p>Effectuer une RAZ des fichiers de maintenance du (des) calculateur(s) programm&eacute;(s) <dmcref xrefid="A1A73201012A550BD">.</p>
+</para>
+</step4>
+<step4 control="0">
+<para><p>Sortir de l'application du MDD <dmcref xrefid="A1ARF720100A150AC">.</p>
+</para>
+</step4>
+<step4 control="0">
+<para><p>D&eacute;connecter le(s) calculateur(s) de la configuration MI/MCS avec le MDD <dmcref xrefid="A1A73201000A510AD">.</p>
+</para>
+</step4>
+</step3>
+<step3 control="0">
+<para><p>Mettre le MDD dans son conteneur &agrave; la fin des op&eacute;rations de t&eacute;l&eacute;chargement <dmcref xrefid="A1ARF720100A830AC">.</p>
+</para>
+</step3>
+</step2>
+</step1>
+<step1 control="0" id="P40">
+<title>IDENTIFICATION DU MATERIEL MODIFIE</title>
+<specpara>
+<caution>
+<p>LES CALCULATEURS DE REFERENCES TYPE-ETAT INAC6A33-34 (326-908-142-0) ET (326-908-144-0) ou INAC6A33-35 (326-908-141-0) ET (326-908-143-0) EVOLUENT RESPECTIVEMENT EN INAC6A34-36 (326-908-162-0) ET (326-908-164-0) ou INAC6A34-37 (326-908-161-0) ET (326-908-163-0) APRES TELECHARGEMENT DE LA NOUVELLE VERSION DE LOGICIEL VL08D.</p>
+</caution>
+</specpara>
+<step2 control="0" id="P40-10">
+<title>Calculateurs sur moteur, moteur avionn&eacute; ou d&eacute;pos&eacute;</title>
+<para><p>Installer les plaquettes d'identification <supplref refid="RHA022"> &agrave; l'aide des vis <supplref refid="RHA017"> et des rondelles <supplref refid="RHA018"> fournies dans la trousse <supplref refid="RTR061"> sur les deux calculateurs t&eacute;l&eacute;charg&eacute;s sur un m&ecirc;me moteur <dmcref xrefid="A1A73201010A727AD">.</p>
+<note>
+<p>Toutes les informations d'identification des calculateurs doivent &ecirc;tre grav&eacute;es sur les plaques avant installation.</p>
+</note>
+</para>
+</step2>
+<step2 control="0" id="P40-20">
+<title>Calculateur d&eacute;pos&eacute;</title>
+<para><p>Installer les plaquettes d'identification <supplref refid="RHA022"> &agrave; l'aide des vis <supplref refid="RHA017"> et des rondelles <supplref refid="RHA018"> fournies dans la trousse <supplref refid="RTR061"> sur le calculateur t&eacute;l&eacute;charg&eacute; <dmcref xrefid="A1A73201010A727AD">.</p>
+<note>
+<p>Toutes les informations d'identification du calculateur doivent &ecirc;tre grav&eacute;es sur la plaque avant installation sur moteur.</p>
+</note>
+</para>
+</step2>
+<step2 control="0" id="P40-30">
+<para><p>Renseigner le(s) livret(s) module informatis&eacute;(s) du (des) calculateur(s) t&eacute;l&eacute;charg&eacute;(s)<dmcref xrefid="A1ARF720500A100FC">.</p>
+</para>
+</step2>
+</step1>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000022527 0>

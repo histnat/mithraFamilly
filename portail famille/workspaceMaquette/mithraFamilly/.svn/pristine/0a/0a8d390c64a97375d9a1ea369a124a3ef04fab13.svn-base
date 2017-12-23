@@ -1,0 +1,103 @@
+package com.sonovision.openconv.modules.xslprocess.helper.table.model;
+
+public class Table {
+	
+	private TableModel model=null;
+	private String paramWidth=null;
+	private String paramBorder=null;
+	private String paramBorderColor=null;
+	private String paramFrame=null;
+	
+	private String paramID=null;
+	private String paramTitle=null;
+	
+
+	public Table(int height, int width){
+		this.model=new TableModel(height, width);
+	}
+	
+	public String getParamTitle() {
+		return paramTitle;
+	}
+
+	public void setParamTitle(String paramTitle) {
+		this.paramTitle = paramTitle;
+	}
+
+	public String getParamWidth() {
+		return paramWidth;
+	}
+
+	public void setParamWidth(String paramWidth) {
+		this.paramWidth = paramWidth;
+	}
+
+	public String getParamBorder() {
+		return paramBorder;
+	}
+
+	public void setParamBorder(String paramBorder) {
+		this.paramBorder = paramBorder;
+	}
+
+	public String getParamBorderColor() {
+		return paramBorderColor;
+	}
+
+	public void setParamBorderColor(String paramBorderColor) {
+		this.paramBorderColor = paramBorderColor;
+	}
+
+	public String getParamFrame() {
+		return paramFrame;
+	}
+
+	public void setParamFrame(String paramFrame) {
+		this.paramFrame = paramFrame;
+	}
+
+	public String getParamID() {
+		return paramID;
+	}
+
+	public void setParamID(String paramID) {
+		this.paramID = paramID;
+	}
+
+	public TableModel getModel() {
+		return model;
+	}
+
+	public void setModel(TableModel model) {
+		this.model = model;
+	}
+	
+	
+	public TableCell getCell(int x, int y){
+		if(model.isEmpty(x, y)){
+			TableCell tc=new TableCell();
+			model.insertObject(tc,x,y);
+			return tc;
+		}
+		else{
+			return (TableCell)model.getObject(x, y);
+		}
+	}
+	
+	public void setCell(int x, int y, TableCell tc){
+		model.insertObject(tc, x, y);
+	}
+
+	
+	public void display(){
+		/*System.out.println("\nparamID="+paramID);
+		System.out.println("\nparamWidth="+paramWidth);
+		System.out.println("\nparamTitle="+paramTitle);
+		System.out.println("\nparamBorder="+paramBorder);
+		System.out.println("\nparamBorderColor="+paramBorderColor);
+		System.out.println("\nparamFrame="+paramFrame);
+		System.out.println("\nContent:=\n\n");*/
+		model.printMatrice();
+	}
+	
+}

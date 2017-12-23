@@ -1,0 +1,23 @@
+package com.sonovision.openconv.modules.xslprocess.model;
+
+import java.io.Serializable;
+
+import com.sedoc.toolbox.LogMes;
+
+public enum CirTypeKey implements Serializable {
+
+	TOOLS("tools"){public String getKey(String key1,String key2){return ("sp-"+key1+key2);}},
+	SPARE("spare"){public String getKey(String key1,String key2){return (key1+"_"+key2);}},
+	INGREDIENT("ingredient"){public String getKey(String key1,String key2){return (key1+"_"+key2);}};
+	
+	private String key;
+	
+
+	private CirTypeKey(String key){
+		this.key=key;
+	}
+
+	
+	 public abstract String getKey(String key1,String key2);
+	
+}

@@ -1,0 +1,10 @@
+package com.sonovision.openconv.log.model;
+
+import java.io.Serializable;
+
+public enum LoggerType implements Serializable {
+
+	CONVERSION,TASK,CONVERSION_OBJECT;
+	
+	private LoggerType(){};
+}

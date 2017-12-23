@@ -1,0 +1,18 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        RAFALE                                      *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.2d                           *
+    *                   Dated 12th January 2014                          *
+    *                  M.DOMEON - Dassault-Aviation                      *
+    *                                                                    *
+    * Amendment :-                                                       *
+    * 1. Update Public Identifier                                        *
+    *                                                                    *
+    ********************************************************************** -->
+
+<!DOCTYPE dmodule PUBLIC
+ "-//RAFALE CSDB//DTD Aircraft Ground Equipment Schedule information 140112//EN"
+ [
+ ]>

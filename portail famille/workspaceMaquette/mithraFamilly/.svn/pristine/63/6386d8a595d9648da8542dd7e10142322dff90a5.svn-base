@@ -1,0 +1,94 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Aircraft Ground Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1ARF7201SF030100239A011 SYSTEM "x-dm://0900f90b8005be9b,MYWORKING" NDATA jpeg>
+<!ENTITY A1ARF7201SF030100238A011 SYSTEM "x-dm://0900f90b8005be9a,MYWORKING" NDATA jpeg>
+<!ENTITY A1ARF7201SF030100237A011 SYSTEM "x-dm://0900f90b8005be99,MYWORKING" NDATA jpeg>
+<!ENTITY A1ARF7201SF030100031A011 SYSTEM "x-dm://0900f90b80002f52,MYWORKING" NDATA cgm>
+<!ENTITY A1ARF7201SF030100043A021 SYSTEM "x-dm://0900f90b8000426d,MYWORKING" NDATA jpeg>
+<!ENTITY A1ARF7201SF030100044A021 SYSTEM "x-dm://0900f90b8000426e,MYWORKING" NDATA jpeg>
+]>
+<?Pub Inc>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>RF</ecscc><eidc>72</eidc><cic>06</cic><discode>00</discode><discodev>A</discodev><incode>150</incode><incodev>A</incodev><itemloc>C</itemloc></age></dmc>
+<dmtitle><techname>MOYEN DE DIALOGUE M88</techname><infoname>PROCEDURES ET MESURES POSTERIEURES A LA MISE EN OEUVRE ET A L'UTILISATION - SORTIE DE L'APPLICATION DU MDD</infoname></dmtitle>
+<issno issno="1" type="N">
+<issdate year="2010" month="06" day="15">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88 ETAPE 4"><?Pub Caret></version>
+<customer aaf="1" anf="1">
+<nti nti1="1" nti2="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Version initiale</rfu>
+<remarks>MDD V10</remarks>
+<icns><icn id="A1ARF7201SF030100237A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>RF</chapnum><section>7</section><subsect>2</subsect><subject>01</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00237</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1ARF7201SF030100238A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>RF</chapnum><section>7</section><subsect>2</subsect><subject>01</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00238</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1ARF7201SF030100239A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>RF</chapnum><section>7</section><subsect>2</subsect><subject>01</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00239</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<norefs>
+</refs><proced><pmd>
+<manhour value="0,1"></manhour>
+<duration value="0,1"></duration>
+</pmd><prelreqs><reqconds>
+<noconds></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="0,1"></reqper>
+</reqpers><supequip><nosupeq><nosupeqs></supequip><supplies><nosupply></supplies><miscs><nomisc></miscs><safety><nosafety></safety></prelreqs><mainfunc>
+<step1 id="P10" control="0">
+<para><p>Cliquer sur le bouton "Annuler" &agrave; partir de n'importe quelle fonction du Moyen de Dialogue (MDD) pour revenir &agrave; l'&eacute;cran principal <figref refid="ARF7201SF030100237A011">.</p>
+</para>
+<note>
+<p>Cela entra&icirc;ne la coupure automatique de l'alimentation des calculateurs moteur.</p>
+</note>
+</step1>
+<step1 id="P20" control="0">
+<para><p>Cliquer sur "Quitter" pour sortir de l'application "moyen de dialogue" <figref refid="ARF7201SF030100237A011">.</p>
+</para>
+<note>
+<p>Cela entra&icirc;ne l'affichage d'une fen&ecirc;tre de confirmation de sortie de l'application du MDD <figref refid="ARF7201SF030100238A011">. </p>
+</note>
+</step1>
+<step1 id="P30" control="0">
+<para><p>Cliquer sur "Oui" pour confirmer la sortie de l'application <figref refid="ARF7201SF030100238A011">.</p>
+</para>
+<note>
+<p>Cela entra&icirc;ne le retour sous la fen&ecirc;tre "bureau" de WINDOWS</p>
+<p>.</p>
+</note>
+</step1>
+<step1 id="P40" control="0">
+<para><p>Eteindre le PC portable programm&eacute;.</p>
+</para>
+</step1>
+<step1 id="P50" control="0">
+<para><p>Basculer l'interrupteur g&eacute;n&eacute;ral de mise sous tension du MDD sur "OFF" <figref refid="ARF7201SF030100239A011">.</p>
+</para>
+</step1>
+<figure id="ARF7201SF030100237A011">
+<title>ECRAN PRINCIPAL DE L'APPLICATION MDD</title>
+<graphic callicn="A1ARF7201SF030100237A011">
+</figure>
+<figure id="ARF7201SF030100238A011">
+<title>CONFIRMATION DE SORTIE DE L'APPLICATION MDD</title>
+<graphic callicn="A1ARF7201SF030100238A011">
+</figure>
+<figure id="ARF7201SF030100239A011">
+<title>MISE HORS TENSION DU MDD</title>
+<graphic callicn="A1ARF7201SF030100239A011">
+</figure>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000004599 0>

@@ -1,0 +1,75 @@
+package com.sonovision.openconv.wf;
+
+import java.lang.reflect.Method;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+import com.sonovision.openconv.utils.TestHelper;
+import com.sonovision.openconv.wf.exception.WorkflowException;
+import com.sonovision.openconv.wf.xmodel.Sequence;
+import com.sonovision.openconv.wf.xmodel.Sequences;
+import com.sonovision.openconv.wf.xmodel.Wf;
+import com.sonovision.openconv.wf.xmodel.Workflow;
+
+import static org.testng.Assert.*;
+
+public class WorkFlowServiceTest  extends TestHelper {
+
+    @Autowired
+    @Qualifier("WorkFlowService")
+    WorkFlowService workFlowService;
+    
+    
+    @AfterMethod
+    public void afterMethod(Method method) throws Exception {
+    }
+
+    @BeforeClass
+    public void beforeClass() throws Exception {
+    	
+    }
+
+    
+    @Test
+    public void test_save() throws WorkflowException {
+    	System.out.println("system.out");
+
+		String pathWFFile = getFilePath("/workflow/exTitusWF.xml");
+    	Workflow wf = workFlowService.loadWorkflow(pathWFFile);
+    	assertNotNull(wf);
+    	
+    	//test structure wf
+    	assertEquals(wf.getDescription(), "workflow pour la convertion titus");
+    	assertEquals(wf.getName(),"titus");
+    	
+    	Wf rewf = wf.getWf();
+    	Sequences sequences = rewf.getSequences();
+    	assertEquals(sequences.getSequence().size(),1);
+    	for(Sequence s:sequences.getSequence())
+    	{
+    		assertNotNull(s);
+    	}
+    	
+    }
+
+	/**
+	 * @return the workFlowService
+	 */
+	public WorkFlowService getWorkFlowService() {
+		return workFlowService;
+	}
+
+	/**
+	 * @param workFlowService the workFlowService to set
+	 */
+	public void setWorkFlowService(WorkFlowService workFlowService) {
+		this.workFlowService = workFlowService;
+		
+	}
+
+    
+}

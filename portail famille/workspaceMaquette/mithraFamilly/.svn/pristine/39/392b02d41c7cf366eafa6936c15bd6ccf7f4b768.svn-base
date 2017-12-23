@@ -1,0 +1,155 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1B723399SF030100043A011 SYSTEM "x-dm://0900f90b8006453b,MYWORKING" NDATA cgm>
+<!ENTITY A1B723399SF030100042A011 SYSTEM "x-dm://0900f90b8006453a,MYWORKING" NDATA cgm>
+<!ENTITY A1B723399SF030100041A011 SYSTEM "x-dm://0900f90b80064539,MYWORKING" NDATA cgm>
+<!ENTITY A1B723399SF030100040A011 SYSTEM "x-dm://0900f90b80057938,MYWORKING" NDATA tiff>
+<!ENTITY A1B723399SF030100039A011 SYSTEM "x-dm://0900f90b80057937,MYWORKING" NDATA tiff>
+<!ENTITY A1B723399SF030100038A011 SYSTEM "x-dm://0900f90b80055346,MYWORKING" NDATA jpeg>
+<!ENTITY A1B723399SF030100037A011 SYSTEM "x-dm://0900f90b80055345,MYWORKING" NDATA jpeg>
+<!ENTITY A1B723399SF030100036A011 SYSTEM "x-dm://0900f90b80055344,MYWORKING" NDATA cgm>
+<!ENTITY A1A725299SF030100005A011 SYSTEM "x-dm://0900f90b8001c128,MYWORKING" NDATA cgm>
+<!ENTITY A1A725200SF030100280A011 SYSTEM "x-dm://0900f90b80003daf,MYWORKING" NDATA cgm>
+<!ENTITY A1B723399SF030100024A011 SYSTEM "x-dm://0900f90b80013b2f,MYWORKING" NDATA cgm>
+<!ENTITY A1B723399SF030100023A011 SYSTEM "x-dm://0900f90b80013b2e,MYWORKING" NDATA cgm>
+<!ENTITY A1B723399SF030100022A011 SYSTEM "x-dm://0900f90b80013b2d,MYWORKING" NDATA cgm>
+<!ENTITY A1B723399SF030100021A011 SYSTEM "x-dm://0900f90b80013b2c,MYWORKING" NDATA cgm>
+<!ENTITY A1B723399SF030100020A011 SYSTEM "x-dm://0900f90b80013b2b,MYWORKING" NDATA cgm>
+<!ENTITY A1B723399SF030100019A011 SYSTEM "x-dm://0900f90b80013b2a,MYWORKING" NDATA cgm>
+<!ENTITY A1B723399SF030100018A011 SYSTEM "x-dm://0900f90b80013b29,MYWORKING" NDATA cgm>
+<!ENTITY A1A723300SF030100397A011 SYSTEM "x-dm://0900f90b8000354a,MYWORKING" NDATA cgm>
+<!ENTITY A1B723300SF030100399A011 SYSTEM "x-dm://0900f90b80003694,MYWORKING" NDATA cgm>
+<!ENTITY A1A720000SF030100092A011 SYSTEM "x-dm://0900f90b80003d6f,MYWORKING" NDATA cgm>
+]>
+<?Pub EntList alpha bull copy rArr sect trade micro middot>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>3</section><subsect>3<?Pub Caret></subsect><subject>99</subject><discode>03</discode><discodev>A</discodev><incode>930</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmc>
+<dmtitle><techname>SERVICE BULLETIN SECTEUR ANNEAU REDRESSEUR ETAPE 4</techname><infoname>SERVICE BULLETIN - TYPE IMS</infoname></dmtitle>
+<issno type="N" issno="1">
+<issdate month="12" year="2010" day="15">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 4"></version>
+<manufact>F 0301</manufact>
+<customer aaf="1" anf="1">
+<nti nti1="0" nti2="0" nti3="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Version initiale</rfu>
+<remarks>RAS</remarks>
+<icns><icn id="A1B723399SF030100041A011">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>99</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00041</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1B723399SF030100042A011">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>99</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00042</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1B723399SF030100043A011">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>99</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00043</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<refdm>
+<dmcid id="A1A72330000A250AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><discode>00</discode><discodev>A</discodev><incode>250</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A72330000A350AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><discode>00</discode><discodev>A</discodev><incode>350</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A70530002A649AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>5</section><subsect>3</subsect><subject>00</subject><discode>02</discode><discodev>A</discodev><incode>649</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A70470006A612AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>4</section><subsect>7</subsect><subject>00</subject><discode>06</discode><discodev>A</discodev><incode>612</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+</refdm>
+</refs><proced><pmd>
+<manhour value="0,1"></manhour>
+<duration value="0,1"></duration>
+</pmd><prelreqs><reqconds><reqcondli><reqcond>
+<cond><para><p>Secteurs anneau redresseur RD2 d&eacute;pos&eacute;s, nettoy&eacute;s et contr&ocirc;l&eacute;s.</p>
+</para>
+</cond>
+</reqcond></reqcondli></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="2,0"></reqper>
+</reqpers><supequip><nosupeq><nosupeqs></supequip><supplies><nosupply></supplies><miscs><nomisc></miscs><safety>
+<specpara>
+<caution>
+<p>Pi&egrave;ce en alliage de titane, emploi de produits halog&egrave;nes interdit.</p>
+</caution>
+<caution>
+<p>Secteurs anneau redresseur RD2 nettoy&eacute;s <dmcref xrefid="A1A72330000A250AC"> et contr&ocirc;l&eacute;s <dmcref xrefid="A1A72330000A350AC">.</p>
+</caution>
+</specpara>
+</safety></prelreqs><mainfunc>
+<step1 control="0" id="P10">
+<title>CONSTAT</title>
+<para><p>Application de la modification n&ordm; 104841 ouverture du jeu axial &agrave; l'aval de l'anneau RD2 (G150).</p>
+</para>
+</step1>
+<step1 control="0" id="P20">
+<title>ANALYSE</title>
+<para><p>Sur tous les secteurs anneau redresseur RD2 <refipc csn="72330001A118 "> et <refipc csn="72330001A119 "> dans le cadre normal de la maintenance NTI3 en fonction du niveau de d&eacute;montage.</p>
+</para>
+</step1>
+<step1 control="0" id="P30">
+<title>ACTIONS</title>
+<step2 id="P30-10">
+<para><p>Usiner la plate-forme afin d'obtenir la cote de 3,2&nbsp;&plusmn; 0,1 apr&egrave;s m&eacute;talisation suivant les indications de <figref refid="B723399SF030100041A011">.</p>
+</para>
+</step2>
+<step2 id="P30-20">
+<para><p>Masquer les zones &agrave; ne pas sabler et &agrave; ne pas m&eacute;taliser <figref refid="B723399SF030100042A011">.</p>
+</para>
+</step2>
+<step2 id="P30-30">
+<para><p>Sablage sec au coridon blanc 180 <dmcref xrefid="A1A70530002A649AC">.</p>
+</para>
+</step2>
+<step2 id="P30-40">
+<para><p>V&eacute;rifier l'&eacute;tat du masquage et le reconditionner si n&eacute;cessaire.</p>
+</para>
+</step2>
+<step2 id="P30-50">
+<para><p>Effectuer une projection plasma cote finie <dmcref xrefid="A1A70470006A612AC"> <figref refid="B723399SF030100042A011">.</p>
+</para>
+<list>
+<item><para><p>sous couche NiAl &agrave; 5% type 2 &eacute;paisseur 0,07 &agrave; 0,12&nbsp;mm</p>
+</para>
+</item>
+<item><para><p>Rev&ecirc;tement de Al2O3 type 1 &eacute;paisseur 0,1 &agrave; 0,15&nbsp;mm</p>
+</para>
+</item>
+</list>
+</step2>
+<step2 id="P30-60">
+<para><p>Effectuer un contr&ocirc;le g&eacute;om&eacute;trique suivant les indications <figref refid="B723399SF030100043A011">.</p>
+</para>
+</step2>
+<step2 id="P30-70">
+<para><p>V&eacute;rifier l'absence de d&eacute;t&eacute;rioration sur la m&eacute;tallisation de la face amont suivant les indications <figref refid="B723399SF030100041A011">.</p>
+</para>
+</step2>
+</step1>
+<step1 control="0" id="P40">
+<title>IDENTIFICATION DU MATERIEL MODIFIE</title>
+<para><p>R&eacute;identifier les pi&egrave;ces modifi&eacute;es en rayant les 3 chiffres 301 et 102 et en gravant desssous 302 et 103 au crayon vibreur.</p>
+</para>
+</step1>
+<step1 id="P50">
+<title>OPERATIONS COMPLEMENTAIRES</title>
+<para><p>Aucune</p>
+</para>
+</step1>
+<figure id="B723399SF030100041A011">
+<title>USINAGE - Figure 1</title>
+<graphic callicn="A1B723399SF030100041A011">
+</figure>
+<figure id="B723399SF030100042A011">
+<title>MASQUAGE - Figure 2</title>
+<graphic callicn="A1B723399SF030100042A011">
+</figure>
+<figure id="B723399SF030100043A011">
+<title>CONTROLE GEOMETRIQUE - Figure 3</title>
+<graphic callicn="A1B723399SF030100043A011">
+</figure>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000008486 0>

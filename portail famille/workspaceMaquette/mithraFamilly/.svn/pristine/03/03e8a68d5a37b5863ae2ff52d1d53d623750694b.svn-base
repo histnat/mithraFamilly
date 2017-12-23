@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+	<TABLE FRAME="BOX">
+									<TTITLE>SMR Codes</TTITLE>
+									<COLGROUP>
+										<COL WIDTH="8.43MM"/>
+										<COL WIDTH="30.91MM"/>
+										<COL WIDTH="7.11MM"/>
+										<COL WIDTH="56.72MM"/>
+										<COL WIDTH="9.91MM"/>
+										<COL WIDTH="40.34MM"/>
+										<COL WIDTH="8.43MM"/>
+										<COL WIDTH="43.15MM"/>
+										<COL WIDTH="8.25MM"/>
+										<COL WIDTH="42.32MM"/>
+									</COLGROUP>
+									<THEAD>
+										<TR>
+											<TH ROWSPAN="2" COLSPAN="4">
+												Source
+											</TH>
+											<TH COLSPAN="4">
+												Maintenance
+											</TH>
+											<TH ROWSPAN="2" COLSPAN="2">
+												Recoverability
+											</TH>
+										</TR>
+										<TR>
+											<TH COLSPAN="2">
+												Use
+											</TH>
+											<TH COLSPAN="2">
+												Repair
+											</TH>
+										</TR>
+										<TR>
+											<TH COLSPAN="2">
+												1st Position
+											</TH>
+											<TH COLSPAN="2">
+												2nd Position
+											</TH>
+											<TH COLSPAN="2">
+												3rd Position
+											</TH>
+											<TH COLSPAN="2">
+												4th Position
+											</TH>
+											<TH COLSPAN="2">
+												5th Position
+											</TH>
+										</TR>
+									</THEAD>
+									<TBODY>
+										<TR>
+											<TD ROWSPAN="7">
+												P
+											</TD>
+											<TD ROWSPAN="7">
+												Procurable
+											</TD>
+											<TD>
+												A
+											</TD>
+											<TD><para><p><emphasis gras="oui">Stocked</emphasis></p> </para> 
+											fguvgyu
+											</TD>
+											<TD ROWSPAN="4">
+												O
+											</TD>
+											<TD ROWSPAN="4">
+												Remove/replace at Organisational Level
+											</TD>
+											<TD ROWSPAN="3">
+												Z
+											</TD>
+											<TD ROWSPAN="3">
+												No Repair
+											</TD>
+											<TD ROWSPAN="3">
+												Z
+											</TD>
+											<TD ROWSPAN="3">
+												Non-repairable Condemn at 3rd Position
+											</TD>
+										</TR>
+										<TR>
+											<TD>
+												B
+											</TD>
+											<TD>
+												Insurance
+											</TD>
+										</TR>
+										<TR>
+											<TD>
+												C
+											</TD>
+											<TD>
+												Deteriorative
+											</TD>
+										</TR>
+										<TR>
+											<TD>
+												E
+											</TD>
+											<TD>
+												Support Equipment Stocked
+											</TD>
+											<TD ROWSPAN="2">
+												B
+											</TD>
+											<TD ROWSPAN="2">
+												No repair Recondition
+											</TD>
+											<TD ROWSPAN="3">
+												O
+											</TD>
+											<TD ROWSPAN="3">
+												Repairable Condemn at Organisational (or Field) Depot
+											</TD>
+										</TR>
+										<TR>
+											<TD>
+												F
+											</TD>
+											<TD>
+												Support Equipment
+											</TD>
+											<TD ROWSPAN="3">
+												F
+											</TD>
+											<TD ROWSPAN="3">
+												Remove/replace at Intermediate Level
+											</TD>
+										</TR>
+										<TR>
+											<TD/>
+											<TD>
+												Non-stocked
+											</TD>
+											<TD ROWSPAN="2">
+												O
+											</TD>
+											<TD ROWSPAN="2">
+												Repair at Organisational
+											</TD>
+										</TR>
+										<TR>
+											<TD>
+												G
+											</TD>
+											<TD>
+												Life of System Support
+											</TD>
+											<TD>
+												F
+											</TD>
+											<TD>
+												Repairable Condemn at Intermediate (or Depot)
+											</TD>
+										</TR>
+									</TBODY>
+								</TABLE>

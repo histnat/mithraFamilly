@@ -1,0 +1,25 @@
+package com.sonovision.openconv.modules.xslprocess.resolver;
+
+import java.io.IOException;
+
+import javax.xml.transform.Source;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.URIResolver;
+
+import com.sedoc.toolbox.LogMes;
+
+public class XSLURIResolver implements URIResolver {
+
+	@Override
+	public Source resolve(String href, String base) throws TransformerException {
+		LogMes.log(XSLURIResolver.class, LogMes.DEBUG, "resolve: href:" + href + " base:" + base);
+
+		try {
+			return new org.apache.xpath.SourceTreeManager().resolveURI(href, base, null);
+		} catch (IOException e) {
+			e.printStackTrace();
+			return null;
+		}
+
+	}
+}

@@ -1,0 +1,11 @@
+package com.sonovision.openconv.service;
+
+import java.io.File;
+
+public interface FileService {
+
+	
+//	void cleanDirectory(File dir);
+	
+	
+}

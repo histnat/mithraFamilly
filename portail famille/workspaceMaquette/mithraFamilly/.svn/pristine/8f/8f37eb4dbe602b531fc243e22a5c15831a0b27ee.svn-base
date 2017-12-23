@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TABLE ID="TTAB0001" width="100%" border="1" border-color="#FFFFFF" FRAME="BOX">
+	<TTITLE>SMR Codes</TTITLE>
+	<COLGROUP>
+		<COL WIDTH="30"/>
+		<COL WIDTH="20"/>
+		<COL WIDTH="20"/>
+		<COL WIDTH="20"/>
+		<COL WIDTH="20"/>
+	</COLGROUP>
+	<THEAD>
+		<TR>
+			<TD COLSPAN="5">1</TD>
+		</TR>
+		<TR>
+			<TD>2</TD>
+			<TD COLSPAN="2" ROWSPAN="2" ALIGN="CENTER">3</TD>
+			<TD ALIGN="CENTER">4</TD>
+			<TD ALIGN="CENTER">5</TD>
+		</TR>
+		<TR>
+			<TD>6</TD>
+			<TD ALIGN="CENTER">7</TD>
+			<TD ALIGN="CENTER">8</TD>
+		</TR>
+	</THEAD>
+	<TBODY>
+		<TR>
+			<TD>9</TD>
+			<TD ALIGN="CENTER">10</TD>
+			<TD ALIGN="CENTER">11 </TD>
+			<TD ALIGN="CENTER">12</TD>
+			<TD ALIGN="CENTER">17</TD>
+		</TR>
+		<TR>
+			<TD>Switch setting</TD>
+			<TD>Closed</TD>
+			<TD>Closed</TD>
+			<TD>Closed</TD>
+			<TD>Open</TD>
+		</TR>
+	</TBODY>
+</TABLE>

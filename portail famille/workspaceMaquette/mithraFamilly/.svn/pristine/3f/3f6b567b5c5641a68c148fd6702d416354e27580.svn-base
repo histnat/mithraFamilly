@@ -1,0 +1,163 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN">
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<?Pub EntList alpha bull copy rArr sect trade nbsp>
+<?Pub Inc>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>0</subsect><subject>00</subject><discode>04</discode><discodev>A</discodev><incode>340</incode><incodev>A</incodev><itemloc>A</itemloc></avee></dmc>
+<dmtitle><techname>EQUIPEMENTS HYDROELECTRIQUES</techname><infoname>TESTS DE BON FONCTIONNEMENT </infoname></dmtitle>
+<issno type="r" issno="2">
+<issdate month="03" year="2011" day="14">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 1"></version>
+<version version="M88-2 ETAPE 4"></version>
+<customer aaf="1" anf="1">
+<nti nti1="1" nti2="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Correction du r&eacute;gime de rotation de l&rsquo;Arm&eacute;e de l&rsquo;Air et et ajout de pas de proc&eacute;dures</rfu>
+<remarks>RAS</remarks>
+</status>
+</idstatus><content><refs>
+<refdm>
+<dmcid id="A1A72000000A120AB"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>0</section><subsect>0</subsect><subject>00</subject><discode>00</discode><discodev>A</discodev><incode>120</incode><incodev>A</incodev><itemloc>B</itemloc></avee></dmcid>
+<dmcid id="A1A72000000A120BB"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>0</section><subsect>0</subsect><subject>00</subject><discode>00</discode><discodev>A</discodev><incode>120</incode><incodev>B</incodev><itemloc>B</itemloc></avee></dmcid>
+<dmcid id="A1A72000000A150AB"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>0</section><subsect>0</subsect><subject>00</subject><discode>00</discode><discodev>A</discodev><incode>150</incode><incodev>A</incodev><itemloc>B</itemloc></avee></dmcid>
+<dmcid id="A1A72000000A150BB"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>0</section><subsect>0</subsect><subject>00</subject><discode>00</discode><discodev>A</discodev><incode>150</incode><incodev>B</incodev><itemloc>B</itemloc></avee></dmcid>
+<dmcid id="A1ARF720210A737AD"><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>RF</ecscc><eidc>72</eidc><cic>02</cic><discode>10</discode><discodev>A</discodev><incode>737</incode><incodev>A</incodev><itemloc>D</itemloc></age></dmcid>
+<dmcid id="A1ARF720210A510AD"><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>RF</ecscc><eidc>72</eidc><cic>02</cic><discode>10</discode><discodev>A</discodev><incode>510</incode><incodev>A</incodev><itemloc>D</itemloc></age></dmcid>
+<dmcid id="A1ARF720114A100AC"><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>RF</ecscc><eidc>72</eidc><cic>01</cic><discode>14</discode><discodev>A</discodev><incode>100</incode><incodev>A</incodev><itemloc>C</itemloc></age></dmcid>
+<dmcid id="A1A45007203A100AB"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>45</chapnum><section>0</section><subsect>0</subsect><subject>72</subject><discode>03</discode><discodev>A</discodev><incode>100</incode><incodev>A</incodev><itemloc>B</itemloc></avee></dmcid>
+<dmcid id="A1A45007230A738EA"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>45</chapnum><section>0</section><subsect>0</subsect><subject>72</subject><discode>30</discode><discodev>A</discodev><incode>738</incode><incodev>E</incodev><itemloc>A</itemloc></avee></dmcid>
+<dmcid id="A1A45007230A738AB"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>45</chapnum><section>0</section><subsect>0</subsect><subject>72</subject><discode>30</discode><discodev>A</discodev><incode>738</incode><incodev>A</incodev><itemloc>B</itemloc></avee></dmcid>
+<dmcid id="A1A72000000A738AA"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>0</section><subsect>0</subsect><subject>00</subject><discode>00</discode><discodev>A</discodev><incode>738</incode><incodev>A</incodev><itemloc>A</itemloc></avee></dmcid>
+<dmcid id="A1A72000000A738BB"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>0</section><subsect>0</subsect><subject>00</subject><discode>00</discode><discodev>A</discodev><incode>738</incode><incodev>B</incodev><itemloc>B</itemloc></avee></dmcid>
+<dmcid id="A1ADA720100A100AC"><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>DA</ecscc><eidc>72</eidc><cic>01</cic><discode>00</discode><discodev>A</discodev><incode>100</incode><incodev>A</incodev><itemloc>C</itemloc></age></dmcid>
+</refdm>
+</refs><proced><pmd>
+<manhour value="0,0"></manhour>
+<duration value="0,0"></duration>
+</pmd><prelreqs><reqconds><reqcondli><reqcond><applic><systemid><nti nti1="1"></systemid></applic>
+<cond><para><p>Les s&eacute;curit&eacute;s a&eacute;ronef doivent &ecirc;tre en place. </p>
+</para>
+</cond>
+</reqcond><reqcond>
+<cond><para><p>Le moteur assembl&eacute; doit &ecirc;tre avionn&eacute; et les portes de l'a&eacute;ronef doivent &ecirc;tre d&eacute;pos&eacute;es.</p>
+</para>
+</cond>
+</reqcond><reqcond><applic><systemid><customer aaf="1"><nti nti2="1"></systemid></applic>
+<cond><para><p>Le moteur assembl&eacute; doit &ecirc;tre pr&eacute;par&eacute; aux essais sur BMR.</p>
+</para>
+</cond>
+<dmcref xrefid="A1A72000000A120BB"></reqcond><reqcond><applic><systemid><customer anf="1"><nti nti2="1"></systemid></applic>
+<cond><para><p>Le moteur assembl&eacute; doit &ecirc;tre au banc d'essai.</p>
+</para>
+</cond>
+<dmcref xrefid="A1A72000000A120AB"></reqcond></reqcondli></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="0,0"></reqper>
+</reqpers><supequip><nosupeq><nosupeqs></supequip><supplies><nosupply></supplies><miscs><nomisc></miscs><safety><nosafety></safety></prelreqs><mainfunc>
+<step1 control="0" id="P10">
+<applic><systemid><nti nti1="1"></systemid></applic>
+<para><p>Valider la connexion &eacute;lectrique de l'&eacute;quipement par lecture des CRI<dmcref xrefid="A1A72000000A738AA">.</p>
+</para>
+</step1>
+<step1 control="0" id="P20">
+<applic><systemid><customer anf="1"><nti nti2="1"></systemid></applic>
+<para><p>Valider la connexion &eacute;lectrique de l'&eacute;quipement par lecture des CRI<dmcref xrefid="A1A72000000A738BB">.</p>
+</para>
+</step1>
+<step1 control="0" id="P30">
+<applic><systemid><customer aaf="1"><nti nti2="1"></systemid></applic>
+<para><p>Valider la connexion &eacute;lectrique de l'&eacute;quipement par lecture des CRI<dmcref xrefid="A1ARF720114A100AC">.</p>
+</para>
+</step1>
+<step1 control="0" id="P40">
+<para><p>Connecter les bretelles coupures SV BHMPR<refipc csn="72017702 008 "><dmcref xrefid="A1ARF720210A737AD">.</p>
+</para>
+</step1>
+<step1 control="0" id="P50">
+<applic><systemid><nti nti1="1"></systemid></applic>
+<para><p>Valider l'installation de l'&eacute;quipement  par un test d&eacute;clench&eacute; &eacute;tanch&eacute;it&eacute; globale &agrave; 5&nbsp;000&nbsp;tr/min<dmcref xrefid="A1A45007230A738EA">.</p>
+</para>
+</step1>
+<step1 control="0" id="P60">
+<applic><systemid><customer anf="1"><nti nti2="1"></systemid></applic>
+<para><p>Valider l'installation de l'&eacute;quipement  par un test d&eacute;clench&eacute; &eacute;tanch&eacute;it&eacute; globale &agrave; 5&nbsp;000&nbsp;tr/min<dmcref xrefid="A1A45007230A738AB">.</p>
+</para>
+</step1>
+<step1 control="0" id="P70">
+<applic><systemid><customer aaf="1"><nti nti2="1"></systemid></applic>
+<para><p>Valider l'installation de l'&eacute;quipement  par un test d&eacute;clench&eacute; &eacute;tanch&eacute;it&eacute; globale &agrave; 3&nbsp;000&nbsp;tr/min<dmcref xrefid="A1A45007203A100AB">.</p>
+</para>
+</step1>
+<step1 id="P75">
+<applic><systemid><customer aaf="1"><nti nti2="1"></systemid><config><mod modnb="275" modcond="post"></config></applic>
+<title>Validation de l&rsquo;installation du circuit de lubrification du palier basse pression de la pompe BHMPR</title>
+<step2 id="P75-10">
+<para><p>Effectuer un essai d&rsquo;&eacute;tanch&eacute;it&eacute; statique du bloc hydrom&eacute;canique principal<refipc csn="73211001 000 "> sous 0,5&nbsp;bar de pression et d&rsquo;une dur&eacute;e de 1&nbsp;min<dmcref xrefid="A1ADA720100A100AC">.</p>
+</para>
+</step2>
+<step2 id="P75-20">
+<para><p>V&eacute;rifier l&rsquo;absence de fuite carburant au niveau&nbsp;:</p>
+</para>
+<list>
+<item><para><p>du raccord banjo<refipc csn="73211008 017P">,</p>
+</para>
+</item>
+<item><para><p>du piquage &eacute;quip&eacute;<refipc csn="73211008 013N">,</p>
+</para>
+</item>
+<item><para><p>du raccord 3 voies<refipc csn="73211008 005 ">.<?Pub Caret></p>
+</para>
+</item>
+</list>
+</step2>
+<step2 id="P75-30">
+<para><p>Valider l'installation de l'&eacute;quipement  par un test d&eacute;clench&eacute; &eacute;tanch&eacute;it&eacute; globale &agrave; 3&nbsp;000&nbsp;tr/min<dmcref xrefid="A1A45007203A100AB">.</p>
+</para>
+</step2>
+</step1>
+<step1 control="0" id="P80">
+<para><p>D&eacute;connecter les bretelles coupures SV BHMPR <refipc csn="72017702 008 "><dmcref xrefid="A1ARF720210A510AD">. </p>
+</para>
+</step1>
+<step1 control="0" id="P90">
+<applic><systemid><nti nti1="1"></systemid></applic>
+<para><p>Valider la connexion &eacute;lectrique de l'&eacute;quipement par lecture des CRI<dmcref xrefid="A1A72000000A738AA">.</p>
+</para>
+</step1>
+<step1 control="0" id="P100">
+<applic><systemid><customer anf="1"><nti nti2="1"></systemid></applic>
+<para><p>Valider la connexion &eacute;lectrique de l'&eacute;quipement par lecture des CRI<dmcref xrefid="A1A72000000A738BB">.</p>
+</para>
+</step1>
+<step1 control="0" id="P110">
+<applic><systemid><customer aaf="1"><nti nti2="1"></systemid></applic>
+<para><p>Valider la connexion &eacute;lectrique de l'&eacute;quipement par lecture des CRI<dmcref xrefid="A1ARF720114A100AC">.</p>
+</para>
+</step1>
+<step1 id="P120">
+<applic><systemid><nti nti1="0" nti2="1" nti3="0"></systemid></applic>
+<title>Aucune autre validation</title>
+<step2 id="P120-10">
+<applic><systemid><customer aaf="1" anf="0"></systemid></applic>
+<para><p>Pr&eacute;parer le moteur assembl&eacute; pour la d&eacute;pose<dmcref xrefid="A1A72000000A150BB">.</p>
+</para>
+</step2>
+<step2 id="P120-20">
+<applic><systemid><customer aaf="0" anf="1"></systemid></applic>
+<para><p>Pr&eacute;parer le moteur assembl&eacute; pour la d&eacute;pose<dmcref xrefid="A1A72000000A150AB">.</p>
+</para>
+</step2>
+</step1>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000010416 0>

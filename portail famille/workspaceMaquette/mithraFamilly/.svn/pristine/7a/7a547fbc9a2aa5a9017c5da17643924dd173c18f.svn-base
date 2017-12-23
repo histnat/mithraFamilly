@@ -1,0 +1,44 @@
+package com.sonovision.openconv.ws.controller.model;
+
+import java.util.List;
+
+public class TaskModel extends CommonModel{
+
+	private String taskType;
+	private List<TaskParameterModel> parameterList;
+
+	public List<TaskParameterModel> getParameterList() {
+		return parameterList;
+	}
+
+
+	public void setParameterList(List<TaskParameterModel> parameterList) {
+		this.parameterList = parameterList;
+	}
+	
+	public TaskModel() {
+		super();
+	}
+
+
+	public TaskModel(List<TaskParameterModel> parameterList, String taskType) {
+		this.parameterList = parameterList;
+		this.taskType = taskType;
+	}
+	
+	public TaskModel(String name,List<TaskParameterModel> parameterList, String taskType) {
+		super(null,name);
+		this.taskType = taskType;
+	}
+
+	public String getTaskType() {
+		return taskType;
+	}
+
+	public void setTaskType(String taskType) {
+		this.taskType = taskType;
+	}
+	
+	
+	
+}

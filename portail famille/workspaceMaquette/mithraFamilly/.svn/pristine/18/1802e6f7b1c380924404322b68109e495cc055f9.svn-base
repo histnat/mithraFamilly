@@ -1,0 +1,21 @@
+profils.media.media_resource=D:/source/sysdoc/VBCID13/media
+profils.folder.data=D:/source/sysdoc
+
+ 
+
+profils.folder.base=D:/output/coco
+profils.folder.temp=D:/temp
+
+  
+
+#profils.public.host=http://localhost:8080
+#profils.cas.public.host=nexter-svn.sedoc.fr
+#profils.public.ssl=443
+#profils.cas.private.host=nexter-svn.sedoc.fr
+#profils.private.ssl=443
+
+
+#mongoDB parameters
+profils.mongo.host=localhost
+profils.mongo.port=27017
+profils.mongo.dbname=openconv

@@ -1,0 +1,216 @@
+package com.sonovision.openconv.wf;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+
+import javax.swing.Spring;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
+import org.springframework.stereotype.Component;
+
+import com.sedoc.toolbox.SpringBeanProvider;
+import com.sedoc.toolbox.bean.UtilsService;
+import com.sonovision.openconv.db.cir.TotalCirTable;
+import com.sonovision.openconv.log.model.DBLogger;
+import com.sonovision.openconv.log.model.LoggerLevel;
+import com.sonovision.openconv.model.TreatedObject;
+import com.sonovision.openconv.service.FileService;
+import com.sonovision.openconv.wf.model.ParameterDetailled;
+import com.sonovision.openconv.wf.model.ParameterId;
+import com.sonovision.openconv.wf.model.ParameterTypes;
+import com.sonovision.openconv.ws.controller.util.ServiceMapper;
+import com.sonovision.openconv.ws.manager.AskParametersManager;
+import com.sonovision.openconv.ws.manager.ParametersManager;
+
+
+public abstract class WFTaskHelper implements WFTask{
+
+	protected DBLogger dbLogger;
+	
+	protected String id;
+	
+	@Autowired
+    protected MessageSource messageSource;
+	
+	//@Autowired
+	protected AskParametersManager askParametersManager;	//-->> ne peut pas être autowired, car toutes les WFTask sont creer avec un "clazz.newInstance" et donc non référencé par spring
+															//-->> on récupère donc l'instance initialisé par spring (scopé session) via un set après la clazz.newInstance
+
+	//@Autowired
+	protected ServiceMapper serviceMapper;	//-->> ne peut pas être autowired, car toutes les WFTask sont creer avec un "clazz.newInstance" et donc non référencé par spring
+											//-->> on récupère donc l'instance initialisé par spring (scopé session) via un set après la clazz.newInstance
+
+//	@Autowired
+	protected TotalCirTable totalCirTable;
+	
+	
+	@Autowired
+	protected UtilsService utilsService;
+
+
+	protected boolean askParameter;
+	
+	protected HashMap<String,Object>   parametersRunning  =  new HashMap<>();
+	
+	protected final Locale DEFAULT_LOCAL=new Locale("fr");
+	
+	protected final static String PARAM_PREFFIX="param.";
+	protected final static String LABEL_SUFFIX=".label";
+	protected final static String DESCR_SUFFIX=".descr";
+	protected HashMap<String, ParameterTypes> parametersRequired=new HashMap<>();
+	
+	protected HashMap<String, ParameterTypes> parametersAsked=new HashMap<>();
+	
+
+	public MessageSource getMessageSource() {
+		return messageSource;
+	}
+	
+  
+	public void setMessageSource(MessageSource messageSource) {
+		this.messageSource = messageSource;
+	}
+	
+
+	public void setDBLogger(DBLogger dbLogger) {
+		this.dbLogger=dbLogger;
+
+	}
+	
+
+	public DBLogger getDbLogger() {
+		return dbLogger;
+	}
+
+
+	
+	public String getId() {
+		return id;
+	}
+
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+
+	public void setParameter(HashMap<String, Object> parameter) {
+		this.parametersRunning= parameter;
+
+	}
+
+	public void addParameter(String key, Object value) {
+		if(parametersRunning==null)
+		{
+			parametersRunning = new HashMap<>();
+		}
+		parametersRunning.put(key, value);
+
+	}
+	
+	protected void closeObject(LoggerLevel level, TreatedObject to)
+	{
+		dbLogger.logObject("fin conversion :"+to.getIdObject(),level,to.getIdObject());
+		dbLogger.logObject(level,to.getIdObject());
+		to.setLastResultAction(level.getValue().toString());
+	}
+
+	
+	private List<ParameterDetailled> procedeDetailled(Locale locale,HashMap<String, ParameterTypes> parameters){
+		Locale currLocale=(locale!=null)?locale:DEFAULT_LOCAL;
+		List<ParameterDetailled> listParameters=new ArrayList<>();
+		ParameterDetailled parameterDetailled;
+		for (Map.Entry<String, ParameterTypes> entry : parameters.entrySet()) {
+	    	parameterDetailled=new ParameterDetailled();
+	    	ParameterId parameterId=new ParameterId();
+	    	parameterId.setTaskId(getId());
+	    	parameterId.setParameterName(entry.getKey());
+	    	parameterDetailled.setId(parameterId);
+	    	parameterDetailled.setCode(entry.getKey());
+//	    	messageSource à null car WFTask a été créé par une clazz.newInstance() et non par bean Spring.class Spring ne sait fonctionner que dans son context chargé, en en faisant un newInstance, on est pas dans le context Spring...
+	    	parameterDetailled.setLabel(messageSource.getMessage(PARAM_PREFFIX+entry.getKey()+LABEL_SUFFIX, null, currLocale));
+	    	parameterDetailled.setDescr(messageSource.getMessage(PARAM_PREFFIX+entry.getKey()+DESCR_SUFFIX, null, currLocale));
+	    	parameterDetailled.setType(entry.getValue());
+	    	parameterDetailled.setValue((String)parametersRunning.get(entry.getKey()));
+	    	listParameters.add(parameterDetailled);
+		}
+		return listParameters;
+		
+	}
+	
+	
+	public List<ParameterDetailled> procedeRequiredParameterList(Locale locale) {
+		return procedeDetailled(locale,parametersRequired);
+	}
+	
+	
+	public List<ParameterDetailled> procedeAskedParameterList(Locale locale) {
+		return procedeDetailled(locale,parametersAsked);
+	}
+	
+	
+
+	public boolean checkParams() {
+		String currParam=null;
+		boolean ok=true;
+		
+		for (Map.Entry<String, ParameterTypes> entry : parametersRequired.entrySet()) {
+			currParam=(String)parametersRunning.get(entry.getKey());
+			if(currParam==null  || currParam.isEmpty())
+			{
+				dbLogger.logTask("ActionId :"+dbLogger.getTask().getActionId() +" -  taskName : "+ dbLogger.getTask().getName()+" -> Paramètre "+entry.getKey()+" obligatoire", LoggerLevel.FATAL);
+				ok=false;
+			}
+		}
+		return ok;
+	}
+	
+	public boolean askParameter(){
+		return false;
+	}
+	
+	@Override
+	public List<ParameterDetailled> getRequiredDetailledParameterList(Locale locale) {
+		getRequiredParams();
+		return procedeRequiredParameterList(locale);
+	}
+	
+	@Override
+	public List<ParameterDetailled> getAskedDetailledParameterList(Locale locale,int step) {
+		getAskedParams(step);
+		return procedeAskedParameterList(locale);
+	}
+	
+	@Override
+	public HashMap<String, ParameterTypes> getAskedParams(int step) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	public void setAskParametersManager(AskParametersManager askParametersManager) {
+		this.askParametersManager = askParametersManager;
+	}
+
+
+	public void setServiceMapper(ServiceMapper serviceMapper) {
+		this.serviceMapper = serviceMapper;
+	}
+
+
+	public TotalCirTable getTotalCirTable() {
+		return totalCirTable;
+	}
+
+
+	public void setTotalCirTable(TotalCirTable totalCirTable) {
+		this.totalCirTable = totalCirTable;
+	}
+	
+	
+	
+}

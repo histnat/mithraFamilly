@@ -1,0 +1,178 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1A725300SF030100115A031 SYSTEM "x-dm://0900f90b80070e73,MYWORKING" NDATA cgm>
+<!ENTITY A1A725300SF030100066A031 SYSTEM "x-dm://0900f90b80004025,MYWORKING" NDATA cgm>
+<!ENTITY A1A725300SF030100115A021 SYSTEM "x-dm://0900f90b80003dc0,MYWORKING" NDATA cgm>
+]>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>3</subsect><subject>00</subject><discode>05</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmc>
+<dmtitle><techname>CARTER EXTERNE, TURBINE HP</techname><infoname>CONTROLE VISUEL SANS MOYEN SPECIAL</infoname></dmtitle>
+<issno type="C" issno="5">
+<issdate month="12" year="2011" day="15">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 4"></version>
+<customer aaf="1" anf="1">
+<nti nti2="1" nti3="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Prise en compte CSC-V/2011-07/00072 et CSC-V/2011-07/00074</rfu>
+<remarks>RAS</remarks>
+<icns><icn id="A1A725300SF030100066A031">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>3</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00066</illnum><illver>A</illver><illupdat>03</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A725300SF030100115A031">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>3</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00115</illnum><illver>A</illver><illupdat>03</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<norefs>
+</refs><proced><pmd>
+<manhour value="0,1"></manhour>
+<duration value="0,1"></duration>
+</pmd><prelreqs><reqconds>
+<noconds></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="0,1"></reqper>
+</reqpers><supequip><nosupeq><nosupeqs></supequip><supplies><supplyli exhaust="0">
+<supply id="R28002" mand="0"><refipc csn="72530001 057 "><nomen>CARTER EXTERIEUR TURBINE&nbsp;HP</nomen><quantity>SB</quantity></supply>
+<supply id="R1" mand="0"><applic><config><mod modnb="68C1-2" modcond="POST"></config></applic>
+<refipc csn="72530002 013 "><nomen>CARTER EXTERIEUR TURBINE&nbsp;HP</nomen><quantity>SB</quantity></supply>
+<supply id="R2" mand="0"><applic><config><mod modnb="105C1-1" modcond="POST"></config></applic>
+<refipc csn="72530005 009 "><nomen>CARTER EXTERIEUR TURBINE&nbsp;HP</nomen><quantity>SB</quantity></supply>
+</supplyli></supplies><miscs><nomisc></miscs><safety>
+<specpara>
+<caution>
+<p>Signaler tout autre d&eacute;faut non r&eacute;pertori&eacute; dans la proc&eacute;dure &agrave; Snecma.</p>
+</caution>
+</specpara>
+</safety></prelreqs><mainfunc>
+<step1 control="0" id="P10">
+<para><p>Approvisionner en cas de remplacement le ou les rechanges <supplref refid="R28002">.</p>
+</para>
+<para><applic><config><mod modnb="68C1-2" modcond="POST"></config></applic>
+<p>Approvisionner en cas de remplacement le ou les rechanges <supplref refid="R1">.</p>
+</para>
+<para><applic><config><mod modnb="105C1-1" modcond="POST"></config></applic>
+<p>Approvisionner en cas de remplacement le ou les rechanges <supplref refid="R2">.</p>
+</para>
+</step1>
+<step1 control="0" id="P20">
+<para><p change="mod">Contr&ocirc;ler visuellement les pi&egrave;ces selon les informations du tableau ci-dessous <figref refid="A725300SF030100066A031"> <figref change="mod" refid="A725300SF030100115A031">&nbsp;:</p>
+</para>
+</step1>
+<table tocentry="1">
+<tgroup cols="3" align="LEFT"><colspec colnum="1" colname="SQCOLUMN1" colwidth="5cm" align="CENTER" colsep="1" rowsep="1"><colspec colnum="2" colname="SQCOLUMN2" colwidth="8cm" align="LEFT" colsep="1" rowsep="1"><colspec colnum="3" colname="SQCOLUMN3" colwidth="4cm" align="LEFT" colsep="1" rowsep="1">
+<tbody valign="TOP">
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>DEFAUTS</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>CRITERES D'ADMISSIBILITE NTI2 - NTI3</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>SANCTION</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Usure type A</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Admissible si P&nbsp;&le;&nbsp;0,4&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Au-del&agrave; d&eacute;calage angulaire du d&eacute;flecteur</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>UIP type B</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Admissible si P&nbsp;&le;&nbsp;0,2&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="SQCOLUMN1" valign="TOP" align="LEFT" morerows="0"><para><p>Usure type C</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN2" valign="TOP" morerows="0"><para><p>Admissible si P&nbsp;&le;&nbsp;0,2&nbsp;mm</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN3" valign="TOP" morerows="0"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Usure type D de l'encoche due au pion anti-rotation du d&eacute;flecteur</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Admissible si P&nbsp;&le;&nbsp;2&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+<para><p>Ne pas remonter l'anti-rotation du d&eacute;flecteur sur une encoche d&eacute;j&agrave; us&eacute;e</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="SQCOLUMN1" align="left"><para><p change="add">Usure type E  &agrave; l'ext&eacute;rieure de l&rsquo;encoche (due &agrave; la rotation du d&eacute;flecteur suite &agrave; l&rsquo;usure de son anti-rotation) en vue de dessus, c&ocirc;t&eacute; gauche sens moteur</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN2"><para><p change="add">Admissible si P&nbsp;&le;&nbsp;2&nbsp;mm</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN3"><para><p change="add">Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="SQCOLUMN1" align="left" rowsep="0"><para><p change="add">D&eacute;faut d&ucirc; &agrave; l&rsquo;interf&eacute;rence entre le pion de positionnement du secteur distributeur BP et l&rsquo;encoche de maintien du carter</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN2"><para><applic><systemid><nti nti2="1"></systemid></applic>
+<p change="add">Admissible</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN3"><para><p change="add"></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="SQCOLUMN1" align="left"><para><p change="add"></p>
+</para>
+</entry>
+<entry colname="SQCOLUMN2"><para><applic><systemid><nti nti3="1"></systemid></applic>
+<p change="add">Admissible si P&nbsp;&le;&nbsp;1&nbsp;mm</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN3"><para><p change="add">Retouche de la zone pour adoucissement du d&eacute;faut </p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<figure id="A725300SF030100066A031">
+<title>IDENTIFICATION DES DEFAUTS 1</title>
+<graphic callicn="A1A725300SF030100066A031">
+</figure>
+<figure id="A725300SF030100115A031" change="mod">
+<title>IDENTIFICATION DES DEFAUTS 2</title>
+<graphic callicn="A1A725300SF030100115A031" change="mod">
+</figure><?Pub Caret1>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000008112 0>

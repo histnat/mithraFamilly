@@ -1,0 +1,196 @@
+package com.sonovision.openconv.modules.sgmlprocess.model;
+
+import java.io.PrintStream;
+import java.util.Enumeration;
+import java.util.Hashtable;
+import java.util.Vector;
+
+import com.sonovision.openconv.modules.sgmlprocess.exception.SGMLException;
+import com.sonovision.openconv.modules.sgmlprocess.reader.SGMLStream;
+
+
+
+
+public class SGMLElement {
+    Hashtable attr_table;
+    Vector children = new Vector(); // shildren are elements and strings
+    SGMLElement parent = null;
+
+    SGMLElementSpec spec;	// specification for this element type
+    int required_count=0;	// record progress through required children
+    // For error recovery:
+    int saved_child_count, saved_required_count;
+    boolean is_illegal = false;	// true if it is in a bad context
+
+    public SGMLElement(SGMLElement _parent, 
+		SGMLElementSpec _spec, Hashtable _attr_table)
+    {
+	parent = _parent;
+	spec = _spec;
+	attr_table = _attr_table;
+    }
+
+    // Determine whether the child is legal at this point
+
+    public Vector getChildren() {
+		return children;
+	}
+
+	public SGMLElement getParent() {
+		return parent;
+	}
+
+	
+	public boolean isIs_illegal() {
+		return is_illegal;
+	}
+
+	public void setIs_illegal(boolean is_illegal) {
+		this.is_illegal = is_illegal;
+	}
+
+	public void setRequired_count(int required_count) {
+		this.required_count = required_count;
+	}
+
+	public int getRequired_count() {
+		return required_count;
+	}
+
+	public void setSaved_child_count(int saved_child_count) {
+		this.saved_child_count = saved_child_count;
+	}
+
+	public void setSaved_required_count(int saved_required_count) {
+		this.saved_required_count = saved_required_count;
+	}
+
+	public int getSaved_child_count() {
+		return saved_child_count;
+	}
+
+	public int getSaved_required_count() {
+		return saved_required_count;
+	}
+
+	public SGMLElementSpec getSpec() {
+		return spec;
+	}
+
+	public boolean allows(SGMLElementSpec child_spec)
+    {
+	boolean ok;
+
+	if(child_spec.faked ||
+	   spec.content_type == SGMLStream.any ||
+	   spec.allowed.get(child_spec) != null)
+	    ok = true;
+	else
+	{
+	    SGMLElementSpec next_spec = nextRequired();
+	    ok = (next_spec == child_spec);
+	}
+
+//	System.out.println("Is " + child_spec.name +
+//			   " allowed in " + spec.name + "? - " + ok);
+
+	return ok;
+    }
+
+    // Find the next required child
+
+    public SGMLElementSpec nextRequired()
+    {
+	if(required_count == spec.required.size())
+	    return null;
+	return (SGMLElementSpec)spec.required.elementAt(required_count);
+    }
+
+    // Determine whether all required children have been read
+
+    public boolean isFinished()
+    {
+	return required_count == spec.required.size();
+    }
+
+    // Add a child element
+
+    public SGMLElement add(SGMLElementSpec spec, Hashtable attr_table)
+    {
+	SGMLElement elt = new SGMLElement(this, spec, attr_table);
+	children.addElement(elt);
+	if(spec == nextRequired())
+	    required_count++;
+	return elt;
+    }
+
+    // Add a child string (cdata or pcdata).  Consecutive string children
+    // are merged (this only happens with erroneous cdata elements).
+
+    public void add(String text)
+    {
+	int size = children.size();
+	if(size != 0 && children.elementAt(size-1) instanceof String)
+	{
+	    String s = (String)children.elementAt(size-1);
+	    children.setElementAt(s.concat(text), size-1);
+	}
+	else
+	    children.addElement(text);
+    }
+
+    // Determine whether an attribute was specified in the element
+
+    public boolean hasAttr(String name)
+    {
+	return attr_table.containsKey(name.toLowerCase());
+    }
+
+    // Find the value of an attribute of the element
+
+    public String attrValue(String name)
+    {
+	Object value = attr_table.get(name.toLowerCase());
+
+	if(value == null)
+	    throw new SGMLException("Attempt to get non-existent attribute");
+
+	return value == StartTag.no_value ? null : (String)value;
+    }
+
+    // Return an enumeration of the element's attribute names
+
+    public Enumeration attributes()
+    {
+	return attr_table.keys();
+    }
+
+    // Print the element and its children
+
+    public void print(PrintStream out)
+    {
+	out.print("<" + spec.name);
+	for(Enumeration e = attributes(); e.hasMoreElements(); )
+	{
+	    String name = (String)e.nextElement();
+	    String value = attrValue(name);
+	    out.print(" " + name);
+	    if(value != null)
+		out.print("=\"" + value + "\"");
+	}
+	out.print(">");
+
+	for(Enumeration e = children.elements(); e.hasMoreElements(); )
+	{
+	    Object item = e.nextElement();
+	    if(item instanceof String)
+		out.print((String)item);
+	    else
+		((SGMLElement)item).print(out);
+	}
+
+	if(spec.content_type != SGMLStream.empty)
+	    out.print("</" + spec.name + ">");
+    }
+
+}

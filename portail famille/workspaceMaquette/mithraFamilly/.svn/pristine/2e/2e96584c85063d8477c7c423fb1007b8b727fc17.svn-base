@@ -1,0 +1,165 @@
+package com.sonovision.openconv.wf.impl;
+
+import java.util.HashMap;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
+
+import com.sedoc.toolbox.LogMes;
+import com.sonovision.openconv.db.bo.DBConversionService;
+import com.sonovision.openconv.db.vo.Conversion;
+import com.sonovision.openconv.log.TaskLoggerService;
+import com.sonovision.openconv.log.exception.LoggerException;
+import com.sonovision.openconv.log.model.DBLogger;
+import com.sonovision.openconv.wf.WorkFlowService;
+import com.sonovision.openconv.wf.dao.WorkFlowDao;
+import com.sonovision.openconv.wf.exception.WorkflowException;
+import com.sonovision.openconv.wf.thread.SequenceThread;
+import com.sonovision.openconv.wf.thread.WFThread;
+import com.sonovision.openconv.wf.xmodel.Sequence;
+import com.sonovision.openconv.wf.xmodel.Workflow;
+
+@Service("WorkFlowService")
+public class WorkFlowServiceImpl implements WorkFlowService {
+
+	private static HashMap<Integer, WFThread> threadMap = null;
+
+	public final static String REQUERED_PARAMETER_FOLDER_IN = "folderIn";
+	public final static String REQUERED_PARAMETER_FOLDER_OUT = "folderOut";
+
+	static {
+		threadMap = new HashMap<>();
+	}
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5381799908999460728L;
+
+	@Autowired
+	@Qualifier("WorkFlowDaoXML")
+	private WorkFlowDao wfd;
+
+	@Autowired
+	private DBConversionService dbConversionService;
+
+	@Autowired
+	private TaskLoggerService taskLoggerService;
+
+	@Override
+	public Workflow loadWorkflow(String workFlowPath) throws WorkflowException {
+		return wfd.loadWorkflow(workFlowPath);
+	}
+
+	@Override
+	public synchronized void run(String idSequence, Workflow workflow, HashMap<String, Object> parameterHash) throws WorkflowException {
+		if (parameterHash == null) {
+			LogMes.log(WorkFlowServiceImpl.class, LogMes.ERROR, "parameterHash must not be null");
+			throw new WorkflowException("parameterHash must not be null");
+		}
+		Sequence sequence = wfd.getSequence(workflow, idSequence);
+		if (sequence == null) {
+			LogMes.log(WorkFlowServiceImpl.class, LogMes.ERROR, "impossible to find idSequence:" + idSequence + " in workflow : " + workflow.getName());
+			throw new WorkflowException("impossible to find idSequence:" + idSequence + " in workflow : " + workflow.getName());
+		}
+
+		String folderIn = (String) parameterHash.get(REQUERED_PARAMETER_FOLDER_IN);
+		String folderOut = (String) parameterHash.get(REQUERED_PARAMETER_FOLDER_OUT);
+		if (folderIn == null) {
+			LogMes.log(WorkFlowServiceImpl.class, LogMes.ERROR, REQUERED_PARAMETER_FOLDER_IN + " is required");
+			throw new WorkflowException(REQUERED_PARAMETER_FOLDER_IN + " is required");
+		}
+		if (folderOut == null) {
+			LogMes.log(WorkFlowServiceImpl.class, LogMes.ERROR, REQUERED_PARAMETER_FOLDER_OUT + " is required");
+			throw new WorkflowException(REQUERED_PARAMETER_FOLDER_OUT + " is required");
+		}
+		String workFlowName = workflow.getName();
+		String workFlowSequence = sequence.getName();
+		Conversion conversion = new Conversion(folderIn, folderOut, workFlowName, workFlowSequence);
+		WFThread wfThread = threadMap.get(conversion.hashCodeReduce());
+		if (wfThread != null && wfThread.isAlive()) {
+			LogMes.log(WorkFlowServiceImpl.class, LogMes.ERROR, "Conversion with this paramter already running :" + folderIn + " " + folderOut + " " + workFlowName + " " + workFlowSequence);
+			throw new WorkflowException("Conversion with this paramter already running :" + folderIn + " " + folderOut + " " + workFlowName + " " + workFlowSequence);
+		}
+		if (dbConversionService.isAlsoRunning(folderIn, folderOut, workFlowName, workFlowSequence)) {
+			LogMes.log(WorkFlowServiceImpl.class, LogMes.ERROR, "Conversion with this paramter already running or not stopped cleanning :" + folderIn + " " + folderOut + " " + workFlowName + " " + workFlowSequence);
+			throw new WorkflowException("Conversion with this paramter already running or not stopped cleanning :" + folderIn + " " + folderOut + " " + workFlowName + " " + workFlowSequence);
+		}
+
+		DBLogger dbLogger = null;
+		try {
+			dbLogger = taskLoggerService.getLogger(folderIn, folderOut, workFlowName, workFlowSequence);
+		} catch (LoggerException e) {
+			throw new WorkflowException("probleme during initialisation of workflow:" + folderIn + " " + folderOut + " " + workFlowName + " " + workFlowSequence, e);
+		}
+		if (dbLogger == null) {
+			throw new WorkflowException("probleme during initialisation of workflow:" + folderIn + " " + folderOut + " " + workFlowName + " " + workFlowSequence);
+		}
+//		wfThread = new SequenceThread(dbLogger, parameterHash, sequence);
+		threadMap.put(dbLogger.hashCode(), wfThread);
+		wfThread.run();
+
+	}
+
+	/**
+	 * @return the taskLoggerService
+	 */
+	public TaskLoggerService getTaskLoggerService() {
+		return taskLoggerService;
+	}
+
+	/**
+	 * @param taskLoggerService
+	 *            the taskLoggerService to set
+	 */
+	public void setTaskLoggerService(TaskLoggerService taskLoggerService) {
+		this.taskLoggerService = taskLoggerService;
+	}
+
+	/**
+	 * @return the dbConversionService
+	 */
+	public DBConversionService getDbConversionService() {
+		return dbConversionService;
+	}
+
+	/**
+	 * @param dbConversionService
+	 *            the dbConversionService to set
+	 */
+	public void setDbConversionService(DBConversionService dbConversionService) {
+		this.dbConversionService = dbConversionService;
+	}
+
+	/**
+	 * @return the wfd
+	 */
+	public WorkFlowDao getWfd() {
+		return wfd;
+	}
+
+	/**
+	 * @param wfd
+	 *            the wfd to set
+	 */
+	public void setWfd(WorkFlowDao wfd) {
+		this.wfd = wfd;
+	}
+
+	/**
+	 * @return the threadMap
+	 */
+	public static HashMap<Integer, WFThread> getThreadMap() {
+		return threadMap;
+	}
+
+	/**
+	 * @param threadMap
+	 *            the threadMap to set
+	 */
+	public static void setThreadMap(HashMap<Integer, WFThread> threadMap) {
+		WorkFlowServiceImpl.threadMap = threadMap;
+	}
+
+}

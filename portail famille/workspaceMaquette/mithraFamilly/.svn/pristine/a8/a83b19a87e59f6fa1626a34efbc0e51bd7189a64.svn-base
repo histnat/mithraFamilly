@@ -1,0 +1,243 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1B725200SF030100199A011 SYSTEM "x-dm://0900f90b8007274c,MYWORKING" NDATA cgm>
+<!ENTITY A1B725200SF030100198A011 SYSTEM "x-dm://0900f90b8007274b,MYWORKING" NDATA cgm>
+<!ENTITY A1A725200SF030100198A011 SYSTEM "x-dm://0900f90b8000311e,MYWORKING" NDATA cgm>
+<!ENTITY A1A725200SF030100199A011 SYSTEM "x-dm://0900f90b800085b4,MYWORKING" NDATA cgm>
+]>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>02</discode><discodev>A</discodev><incode>527</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmc>
+<dmtitle><techname>DISQUE TOURILLON TURBINE HP</techname><infoname>PROCEDURES DE DEPOSE PROPREMENT DITE</infoname></dmtitle>
+<issno type="r" issno="6">
+<issdate month="10" year="2011" day="15">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 4"></version>
+<customer aaf="1" anf="1">
+<nti nti2="1" nti3="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Prise en compte de modification 250-78R1</rfu>
+<remarks>RAS</remarks>
+<icns><icn id="A1A725200SF030100198A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00198</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A725200SF030100199A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00199</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1B725200SF030100198A011">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00198</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1B725200SF030100199A011">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00199</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<refdm>
+<dmcid id="A1A72520002A311AD"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>02</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmcid>
+<dmcid id="A1A72520000A250AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>00</discode><discodev>A</discodev><incode>250</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A72520002A361AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>02</discode><discodev>A</discodev><incode>361</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A72520013A527AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>13</discode><discodev>A</discodev><incode>527</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A70820000A800AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>8</section><subsect>2</subsect><subject>00</subject><discode>00</discode><discodev>A</discodev><incode>800</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+</refdm>
+</refs><proced><pmd>
+<manhour value="0,5"></manhour>
+<duration value="0,5"></duration>
+</pmd><prelreqs><reqconds><reqcondli><reqcond>
+<cond><para><applic><config><mod modnb="160.8" modcond="PRE"></config></applic>
+<p>Le disque-tourillon turbine HP <refipc csn="72520001A028 " isn="00A"> est en appui arri&egrave;re sur b&acirc;ti <refipc csn="72016701 185 "> &eacute;quip&eacute; de l'adaptation <refipc csn="72016701 195 "> du protecteur disque <refipc csn="72016601 003 "> de l'adaptation <refipc csn="72016801 028 "> et du protecteur <refipc csn="72016601 058 "></p>
+</para>
+<para><applic><config><mod modnb="160.8" modcond="POST"></config></applic>
+<p>Le disque-tourillon turbine HP <refipc csn="72520001A028 " isn="00C"> est en appui arri&egrave;re sur b&acirc;ti <refipc csn="72016701 185 "> &eacute;quip&eacute; de l'adaptation <refipc csn="72016701 195 "> du protecteur disque <refipc csn="72016601 003 "> de l'adaptation <refipc csn="72016801 028 "> et du protecteur <refipc csn="72016601 058 "></p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>Le disque-tourillon turbine HP <refipc csn="72520001A028 " isn="00E"> est en appui arri&egrave;re sur b&acirc;ti <refipc csn="72016701 185 "> &eacute;quip&eacute; de l'adaptation <refipc csn="72016701 195 "> du protecteur disque <refipc csn="72016601 003 "> de l'adaptation <refipc csn="72016801 028 "> et du protecteur <refipc csn="72016601 058 "></p>
+</para>
+</cond>
+</reqcond><reqcond>
+<cond><para><applic><config><mod modnb="160.8" modcond="PRE"></config></applic>
+<p>Le disque-tourillon turbine HP <refipc csn="72520001A028 " isn="00A"> est nu ou &eacute;quip&eacute; des goujons.</p>
+</para>
+<para><applic><config><mod modnb="160.8" modcond="POST"></config></applic>
+<p>Le disque-tourillon turbine HP <refipc csn="72520001A028 " isn="00C"> est nu ou &eacute;quip&eacute; des goujons.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>Le disque-tourillon turbine HP <refipc csn="72520001A028 " isn="00E"> est nu ou &eacute;quip&eacute; des goujons.</p>
+</para>
+</cond>
+</reqcond></reqcondli></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="0,5"></reqper>
+</reqpers><supequip><supeqli>
+<supequi id="O2.00090"><refipc csn="72016701 185 "><nomen>B&acirc;ti d'assemblage tournant</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.00316"><refipc csn="72016601 003 "><nomen>Protecteur disque MOD&nbsp;8</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.00579"><refipc csn="72016601 058 "><nomen>Protecteur retournement MOD&nbsp;8</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.00570"><refipc csn="72016801 028 "><nomen>Adaptation arri&egrave;re retournement MOD 8</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.30214"><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<refipc csn="72016801 057 "><nomen>Outillage de levage&nbsp;AR</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.30214M"><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<refipc csn="72016801 057M"><nomen>Outillage de levage&nbsp;AR</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.30215"><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<refipc csn="72016801 056 "><nomen>Outillage de levage&nbsp;AV</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.30215M"><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<refipc csn="72016801 056M"><nomen>Outillage de levage&nbsp;AV</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.30375"><refipc csn="72016801 103 "><nomen>Outillage stockage disque&nbsp;MOD8</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.30392"><refipc csn="72016601 104 "><nomen>Protecteur disque&nbsp;TU&nbsp;HP&nbsp;MOD8</nomen><quantity>1</quantity></supequi>
+</supeqli><nosupeqs></supequip><supplies><nosupply></supplies><miscs><nomisc></miscs><safety>
+<specpara>
+<caution>
+<p>Disque-tourillon en MDP (m&eacute;tallurgie des poudres).</p>
+</caution>
+</specpara>
+</safety></prelreqs><mainfunc>
+<step1 control="0" id="P10">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>Lever l'outillage levage avant <supeqref refid="O2.30215"> &agrave; l'aide d'un palan et le pr&eacute;senter au-dessus du disque-tourillon.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>Lever l'outillage levage avant <supeqref refid="O2.30215M"> &agrave; l'aide d'un palan et le pr&eacute;senter au-dessus du disque-tourillon.</p>
+</para>
+</step1>
+<step1 control="0" id="P20">
+<para><p>S'assurer que les brides sont en position r&eacute;tract&eacute;es (tourn&eacute;es vers l'int&eacute;rieur).</p>
+</para>
+</step1>
+<step1 control="0" id="P30">
+<para><applic><config><mod modnb="160.8" modcond="PRE"></config></applic>
+<p>Installer l'outillage levage avant disque mod&nbsp;8 <supeqref refid="O2.30215">sur disque-tourillon <refipc csn="72520001A028 " isn="00A"> <figref repnohot="25012" refid="A725200SF030100198A011">.</p>
+</para>
+<para><applic><config><mod modnb="160.8" modcond="post"></config></applic>
+<p>Installer l'outillage levage avant disque mod&nbsp;8 <supeqref refid="O2.30215">sur disque-tourillon <refipc csn="72520001A028 " isn="00C"> <figref repnohot="25012" refid="A725200SF030100198A011">.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>Installer l'outillage levage avant disque mod&nbsp;8 <supeqref refid="O2.30215M">sur disque-tourillon <refipc csn="72520001A028 " isn="00E"> <figref repnohot="25012" refid="B725200SF030100198A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P40">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>Fixer &agrave; l'aide des brides et des &eacute;crous croisillons <supeqref refid="O2.30215"> <figref repnohot="2.30215REP04, 2.30215REP11" refid="A725200SF030100198A011">.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>Fixer &agrave; l'aide des brides et des &eacute;crous croisillons <supeqref refid="O2.30215M"> <figref repnohot="2.30215REP04, 2.30215REP11" refid="B725200SF030100198A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P50">
+<para><p>Desserrer les 4 vis molet&eacute;es sur l'adaptation <supeqref refid="O2.00570"> du BAT <supeqref refid="O2.00090">.</p>
+</para>
+</step1>
+<step1 control="0" id="P60">
+<para><p>Lever le disque-tourillon.</p>
+</para>
+</step1>
+<step1 control="0" id="P70">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>D&eacute;poser l'adaptation <supeqref refid="O2.00570"> du protecteur <supeqref refid="O2.00316"> <figref refid="A725200SF030100198A011">.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>D&eacute;poser l'adaptation <supeqref refid="O2.00570"> du protecteur <supeqref refid="O2.00316"> <figref refid="B725200SF030100198A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P80">
+<para><p>D&eacute;poser les protecteurs <supeqref refid="O2.00316"> <supeqref refid="O2.00579">.</p>
+</para>
+</step1>
+<step1 control="0" id="P90">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>Installer l'outillage levage arri&egrave;re <supeqref refid="O2.30214">.</p>
+<note>
+<p>S&rsquo;assurer que les 3 taquets sont sortis avant de visser l&rsquo;outillage dans la TuHP.</p>
+<p>Visser l&rsquo;outillage dans la TuHP.</p>
+<p>Positionner les taquets en face des cr&eacute;naux de la TuHP.</p>
+<p>Rentrer les 3 taquets et les serrer les vis de maintien.</p>
+</note>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>Installer l'outillage levage arri&egrave;re <supeqref refid="O2.30214M">.</p>
+<note>
+<p>S&rsquo;assurer que les 3 taquets sont sortis avant de visser l&rsquo;outillage dans la TuHP.</p>
+<p>Visser l&rsquo;outillage dans la TuHP.</p>
+<p>Positionner les taquets en face des cr&eacute;naux de la TuHP.</p>
+<p>Rentrer les 3 taquets et les serrer les vis de maintien.</p>
+</note>
+</para>
+</step1>
+<step1 control="0" id="P100">
+<para><p>Retourner l'ensemble disque de turbine HP de 180&deg; (face AR vers le haut).</p>
+</para>
+</step1>
+<step1 control="0" id="P110">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>D&eacute;poser l'outillage levage avant <supeqref refid="O2.30215"> du disque-tourillon.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>D&eacute;poser l'outillage levage avant <supeqref refid="O2.30215M"><?Pub Caret> du disque-tourillon.</p>
+</para>
+</step1>
+<step1 control="0" id="P120">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>Poser le disque-tourillon sur une table d'atelier &eacute;quip&eacute;e du support <supeqref refid="O2.30375"> <figref repnohot="25012" refid="A725200SF030100199A011">.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>Poser le disque-tourillon sur une table d'atelier &eacute;quip&eacute;e du support <supeqref refid="O2.30375"> <figref repnohot="25012" refid="B725200SF030100199A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P130">
+<para><p>D&eacute;poser &eacute;ventuellement les masselottes <dmcref xrefid="A1A72520013A527AC">.</p>
+</para>
+</step1>
+<step1 control="1" id="P140">
+<para><p>Effectuer le contr&ocirc;le visuel du disque tourillon <dmcref xrefid="A1A72520002A311AD">.</p>
+</para>
+</step1>
+<step1 control="0" id="P150">
+<para><p>Effectuer le nettoyage du disque <dmcref xrefid="A1A72520000A250AC">.</p>
+</para>
+</step1>
+<step1 control="0" id="P160">
+<applic><systemid><nti nti3="1"></systemid></applic>
+<para><p>Effectuer le contr&ocirc;le dimensionnel du disque <dmcref xrefid="A1A72520002A361AC">.</p>
+</para>
+</step1>
+<step1 control="0" id="P170">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>D&eacute;poser l'outillage levage arri&egrave;re <supeqref refid="O2.30214"> du disque-tourillon.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>D&eacute;poser l'outillage levage arri&egrave;re <supeqref refid="O2.30214M"> du disque-tourillon.</p>
+</para>
+</step1>
+<step1 control="0" id="P180">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>Installer le protecteur disque TUHP <supeqref refid="O2.30392"> sur le disque-tourillon <figref refid="A725200SF030100199A011">.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>Installer le protecteur disque TUHP <supeqref refid="O2.30392"> sur le disque-tourillon <figref refid="B725200SF030100199A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P190">
+<para><p>Proc&eacute;der au stockage du disque  <dmcref xrefid="A1A70820000A800AC"></p>
+</para>
+</step1>
+<figure id="A725200SF030100198A011">
+<title>INSTALLATION DE L'OUTILLAGE LEVAGE AVANT</title>
+<graphic callicn="A1A725200SF030100198A011">
+</figure>
+<figure id="A725200SF030100199A011">
+<title>DISQUE TOURILLON</title>
+<graphic callicn="A1A725200SF030100199A011">
+</figure>
+<figure id="B725200SF030100198A011">
+<title>INSTALLATION DE L'OUTILLAGE LEVAGE AVANT</title>
+<graphic callicn="A1B725200SF030100198A011">
+</figure>
+<figure id="B725200SF030100199A011">
+<title>DISQUE TOURILLON</title>
+<graphic callicn="A1B725200SF030100199A011">
+</figure>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000015440 0>

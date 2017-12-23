@@ -1,0 +1,14 @@
+UtilsService.path_ressource=com/sonovision/openconv/xsl/
+pubhelper-build-version=${project.version}
+pubhelper-build-date=${project.build.date}
+
+workflow_path=workflow/openconv/rafaleWF.xml
+
+#folder.base=D:/output/coco
+#folder.temp=D:/temp
+folder.base=${profils.folder.base}
+folder.temp=${profils.folder.temp}
+
+dblogger.logLevelWriter=4
+
+folder.sx=D:/developpement/workspaceOpenConv/openconv/externalLib/

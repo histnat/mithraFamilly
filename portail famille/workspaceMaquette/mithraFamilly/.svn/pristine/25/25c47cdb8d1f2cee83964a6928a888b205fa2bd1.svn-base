@@ -1,0 +1,84 @@
+package com.sonovision.openconv.modules.xslprocess;
+
+import static org.testng.AssertJUnit.assertEquals;
+import static org.testng.AssertJUnit.assertNotNull;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.HashMap;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.testng.annotations.Test;
+
+import com.sedoc.toolbox.bean.UtilsService;
+import com.sonovision.openconv.log.model.LoggerLevel;
+import com.sonovision.openconv.model.TreatedObject;
+import com.sonovision.openconv.utils.ResourceTestPath;
+import com.sonovision.openconv.utils.TestHelperXslProcess;
+
+public class TaskXSLProcessTest extends  TestHelperXslProcess {
+	@Autowired
+	UtilsService utilservice;
+
+  @Test
+  public void runMinTest() throws IOException {
+	  System.out.println("Test run Min");
+	  
+	  HashMap<String,TreatedObject> toList=getTreatedObjectList(ResourceTestPath.MIN);
+	  TaskXSLProcess txp = new TaskXSLProcess();
+	  txp.setDBLogger(getDBLogger(ResourceTestPath.MIN));
+	  String result=txp.run(toList);
+	  assertEquals(result,LoggerLevel.FATAL.getValue().toString());
+	  txp.setDBLogger(getDBLogger(ResourceTestPath.MIN));
+	  txp.addParameter(TaskXSLProcess.PARAMETER_XSL_FILE_NAME, ResourceTestPath.MIN.getXsl());
+	  txp.addParameter(TaskXSLProcess.PARAMETER_LOADFILE_CODIFICATION_FILE, getFilePath("/codification/listeInOut.xml"));
+	  result=txp.run(toList);
+	  assertEquals(result,LoggerLevel.INFO.getValue().toString());
+	  
+	  assertEquals(toList.size(),1);
+    
+  }
+  
+  //TODO:must be resolved
+  @Test(enabled=false)
+  public void runCobraTest() throws IOException {
+	  System.out.println("Test run Min");
+	//Set saxon as transformer.  
+      
+	  HashMap<String,TreatedObject> toList=getTreatedObjectList(ResourceTestPath.COBRA);
+	  TaskXSLProcess txp = new TaskXSLProcess();
+	  txp.setDBLogger(getDBLogger(ResourceTestPath.COBRA));
+	  txp.addParameter(TaskXSLProcess.PARAMETER_XSL_FILE_NAME, ResourceTestPath.COBRA.getXsl());
+	  //txp.addParameter(TaskXSLProcess.PARAMETER_XSL_TRANSFORMER_ENGINE, TaskXSLProcess.XSL_ENGINE_SAXON);
+	  String result=txp.run(toList);
+	  assertEquals(result,LoggerLevel.INFO.getValue().toString());
+	  assertEquals(toList.size(),3);
+	  TreatedObject to  =toList.get("COBRAAK000K01000D0000000000042AA.xml");
+	  assertNotNull(to.getObjectConvert());
+	  assertTrue(to.getObjectConvert() instanceof InputStream);
+	  
+	  //TODO:replace this write by xmlunit test
+	  utilservice.ecritFile((InputStream)to.getObjectConvert(), "d:\\test.xml");
+  }
+  
+  
+
+/**
+ * @return the utilservice
+ */
+public UtilsService getUtilservice() {
+	return utilservice;
+}
+
+/**
+ * @param utilservice the utilservice to set
+ */
+public void setUtilservice(UtilsService utilservice) {
+	this.utilservice = utilservice;
+}
+
+private void assertTrue(boolean b) {
+	// TODO Auto-generated method stub
+	
+}
+}

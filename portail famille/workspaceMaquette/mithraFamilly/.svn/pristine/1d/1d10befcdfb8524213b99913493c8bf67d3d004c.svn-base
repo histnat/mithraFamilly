@@ -1,0 +1,81 @@
+# Adept Editor atd file
+Version 5.2
+#
+
+DocTraits
+	Protected: No
+	UnprotectedTags:
+
+TagTypes
+	Divisions: 
+	DivisionHeads: 
+	Paragraphs:
+
+GraphicTraits
+	GraphicTag:graphic
+	GraphicEntityAttr:callicn
+  GraphicFileNameAttr:
+  GraphicProcTypeAttr:
+  GraphicMagAttr:
+  GraphicResAttr:
+  GraphicVertAdjAmt:
+  GraphicVertAdjPct:
+  GraphicCropH:
+  GraphicCropW:
+  GraphicCropLLX:
+  GraphicCropLLY:
+  GraphicScalefit:
+  GraphicReprodep:
+  GraphicReprowid:
+	GraphicTag:symbol
+	GraphicEntityAttr:callicn
+  GraphicFileNameAttr:
+  GraphicProcTypeAttr:
+  GraphicMagAttr:hscale
+  GraphicResAttr:
+  GraphicVertAdjAmt:
+  GraphicVertAdjPct:
+  GraphicCropH:
+  GraphicCropW:
+  GraphicCropLLX:
+  GraphicCropLLY:
+  GraphicScalefit:
+  GraphicReprodep:
+  GraphicReprowid:
+
+EqnTableModes
+	EqnMode: None
+	TableMode: CALS
+TagTraits
+	NoCharacterSubstitution:
+	NoSpellChecking:
+	NewlineAfterStartTag:
+	NewlineBeforeEndTag:
+	NoTagFullMode:
+	NoTagPartialMode:
+	NoTagNoTagsMode:
+	FullTagPartialMode:
+	FullTagNoTagsMode:
+	SmallIconFullMode:
+	SmallIconPartialMode:
+	SmallIconNoTagsMode:
+	IconFullMode:
+	IconPartialMode:
+	IconNoTagsMode:
+
+LinkTraits
+	LinkTag:
+	LinkUriAttr:
+
+ContextTransformations
+	InsertAroundToFix: 
+	Substitutions:
+	InsertAutoNested:
+	InsertAutoHeading:
+
+UserDictionary
+	DictionaryName:
+
+Options
+	AllowFosiMod: Yes
+	AllowTouchup: Yes

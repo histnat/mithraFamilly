@@ -1,0 +1,489 @@
+/**
+ * 
+ */
+package com.sonovision.openconv.db.bo.impl;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.apache.poi.ss.formula.eval.NotImplementedException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.stereotype.Service;
+
+import com.sedoc.toolbox.LogMes;
+import com.sonovision.openconv.db.bo.DBConversionService;
+import com.sonovision.openconv.db.dao.ConversionDao;
+import com.sonovision.openconv.db.dao.ConversionObjectDao;
+import com.sonovision.openconv.db.dao.LogLineDao;
+import com.sonovision.openconv.db.dao.TaskDao;
+import com.sonovision.openconv.db.exception.DBNONullException;
+import com.sonovision.openconv.db.exception.DBNOUniqueException;
+import com.sonovision.openconv.db.vo.Conversion;
+import com.sonovision.openconv.db.vo.ConversionObject;
+import com.sonovision.openconv.db.vo.LogLine;
+import com.sonovision.openconv.db.vo.Task;
+import com.sonovision.openconv.log.model.DBLogger;
+import com.sonovision.openconv.log.model.LoggerLevel;
+
+/**
+ * @author Frebeche
+ *
+ */
+@Service("DBConversionService")
+@PropertySource(value = "classpath:openconv.properties")
+public class DBConversionServiceImpl implements DBConversionService {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -698253837007835546L;
+
+	@Autowired
+	private ConversionDao conversionDao;
+
+	@Autowired
+	private ConversionObjectDao conversionObjectDao;
+
+	private SimpleDateFormat formater = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
+
+	@Value("${dblogger.logLevelWriter}")
+	int logLevelWriter;
+
+	@Autowired
+	private LogLineDao logLineDao;
+
+	@Autowired
+	private TaskDao taskDao;
+
+	@Override
+	public Conversion getConversion(Task task) {
+
+		return conversionDao.findOne(task.getConversionId());
+	}
+
+	@Override
+	public Conversion findByAll(Conversion conversion) {
+		return conversionDao.findByAll(conversion.getFolderIn(), conversion.getFolderOut(), conversion.getWorkFlowName(), conversion.getWorkFlowSequence(), conversion.getStartTime());
+	}
+
+	@Override
+	public LogLine findByAll(LogLine logLine) {
+		return logLineDao.findByAll(logLine.getLogResult(), logLine.getMessage(), logLine.getMessageLong());
+	}
+
+	@Override
+	public ConversionObject findByAll(ConversionObject conversionObject) {
+
+		return conversionObjectDao.findByAll(conversionObject.getConversionId(), conversionObject.getIdentification(), conversionObject.getTask());
+	}
+
+	@Override
+	public Task findByAll(Task task) {
+		return taskDao.findByAll(task.getActionId(), task.getName(), task.getTaskName(), task.getConversionId());
+	}
+
+	@Override
+	public LoggerLevel geLogLevelResult(Conversion conversion) {
+		String result = conversion.getLogResult();
+		return DBLogger.getLoggerLevel(result);
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * com.sonovision.openconv.db.bo.DBConversionService#getConversion(java.lang.
+	 * String)
+	 */
+	@Override
+	public Conversion getConversion(String id) {
+		Conversion conversion = null;
+		conversion = conversionDao.findOne(id);
+		return conversion;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * com.sonovision.openconv.db.bo.DBConversionService#getConversion(java.lang.
+	 * String, java.lang.String)
+	 */
+	@Override
+	public Conversion getConversion(String workFlowName, String workFlowSequence) {
+		throw new NotImplementedException(" getConversion(String workFlowName, String workFlowSequence) ");
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * com.sonovision.openconv.db.bo.DBConversionService#getConversion(java.lang.
+	 * String, java.lang.String, java.lang.String, java.lang.String)
+	 */
+	@Override
+	public Conversion getConversion(String folderIn, String folderOut, String workFlowName, String workFlowSequence) throws DBNONullException, DBNOUniqueException {
+		Conversion conversion = new Conversion();
+		conversion.setFolderIn(folderIn);
+		conversion.setFolderOut(folderOut);
+		conversion.setWorkFlowName(workFlowName);
+		conversion.setWorkFlowSequence(workFlowSequence);
+		conversion.setStartTime(Calendar.getInstance().getTimeInMillis());
+		conversionDao.save(conversion);
+		return conversion;
+	}
+
+	/**
+	 * @return the conversionDao
+	 */
+	public ConversionDao getConversionDao() {
+		return conversionDao;
+	}
+
+	@Override
+	public ConversionObject getConversionObject(Conversion conversion, Task task, String idObject) throws DBNONullException, DBNOUniqueException {
+		ConversionObject co = new ConversionObject();
+		co.setConversion(conversion);
+		co.setIdentification(idObject);
+		co.setTask(task);
+		co.setLogResult(conversion.getLogResult());
+		co = getOrSave(co);
+		return co;
+	}
+
+	@Override
+	public ConversionObject getConversionObjectById(String objectId) {
+		return conversionObjectDao.findOne(objectId);
+	}
+
+	/**
+	 * @return the conversionObjectDao
+	 */
+	public ConversionObjectDao getConversionObjectDao() {
+		return conversionObjectDao;
+	}
+
+	@Override
+	public int getCountConversionObjectByTask(Task t) {
+		return (int) conversionObjectDao.countByTask(t);
+	}
+
+	@Override
+	public int getCountConversionObjectByTaskOLogResult(Task t, String logLevel) {
+		return (int) conversionObjectDao.countByTaskLogResult(t, logLevel);
+	}
+
+	/**
+	 * @return the logLevelWriter
+	 */
+	@Override
+	public int getLogLevelWriter() {
+		return logLevelWriter;
+	}
+
+	/**
+	 * @return the logLine
+	 */
+	public LogLineDao getLogLineDao() {
+		return logLineDao;
+	}
+
+	@Override
+	public Conversion getOrSave(Conversion conversion) throws DBNONullException, DBNOUniqueException {
+		Conversion c = findByAll(conversion);
+		if (c == null) {
+			conversionDao.save(conversion);
+		} else {
+			conversion = c;
+		}
+
+		return conversion;
+	}
+
+	@Override
+	public ConversionObject getOrSave(ConversionObject conversionObject) throws DBNONullException, DBNOUniqueException {
+		ConversionObject c = findByAll(conversionObject);
+		if (c == null) {
+			conversionObjectDao.save(conversionObject);
+		} else {
+			conversionObject = c;
+		}
+
+		return conversionObject;
+	}
+
+	@Override
+	public LogLine getOrSave(LogLine logLine) throws DBNONullException, DBNOUniqueException {
+		LogLine c = findByAll(logLine);
+		if (c == null) {
+			logLineDao.save(logLine);
+		} else {
+			logLine = c;
+		}
+
+		return logLine;
+	}
+
+	@Override
+	public Task getOrSave(Task task) throws DBNONullException, DBNOUniqueException {
+		Task c = findByAll(task);
+		if (c == null) {
+			taskDao.save(task);
+		} else {
+			task = c;
+		}
+
+		return task;
+	}
+
+	@Override
+	public Task getTaskByConversionActionId(Conversion conversion, String actionId) {
+		return taskDao.findByConversionActionId(conversion, actionId);
+		
+
+	}
+
+	@Override
+	public StringBuffer getXML(Conversion conversion) {
+		if(conversion==null)
+		{
+			LogMes.log(DBConversionServiceImpl.class, LogMes.ERROR, "GetXML - conversion est null");
+			return new StringBuffer("<conversion/>");
+		}
+		Long stopTime;
+		if(conversion.getStopTime()==null)
+		{
+			//La conversion n'est pas terminée, on calcule le temps jusque maintenant. 
+			//conversion is not finish, we calcul since now.
+			stopTime = Calendar.getInstance().getTimeInMillis();
+		}
+		else
+		{
+			stopTime  = conversion.getStopTime();
+		}
+		Long millis = stopTime - conversion.getStartTime();
+		String duration = String.format("%d min %d sec", TimeUnit.MILLISECONDS.toMinutes(millis), TimeUnit.MILLISECONDS.toSeconds(millis) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis)));
+		StringBuffer xml = new StringBuffer();
+		xml.append("<conversion>");
+		xml.append("<name>").append(conversion.getWorkFlowName()).append("</name>");
+		xml.append("<sequence>").append(conversion.getWorkFlowSequence()).append("</sequence>");
+		xml.append("<folderIn>").append(conversion.getFolderIn()).append("</folderIn>");
+		xml.append("<folderOut>").append(conversion.getFolderOut()).append("</folderOut>");
+		xml.append("<duration>").append(duration).append("</duration>");
+		xml.append("<result>").append(conversion.getLogResult()).append("</result>");
+		// xml.append("<startTime>").append(conversion.getStartTime()).append("</startTime>");
+		// xml.append("<stopTime>").append(conversion.getStopTime()).append("</stopTime>");
+		if (conversion.getTaskList() != null) {
+			xml.append("<tasks>");
+			for (Task t : conversion.getTaskList()) {
+				xml.append(getXML(t));
+			}
+			xml.append("</tasks>");
+		}
+		if (conversion.getLogLineList() != null) {
+			xml.append("<logLines>");
+			for (LogLine t : conversion.getLogLineList()) {
+				xml.append(getXML(t));
+			}
+			xml.append("</logLines>");
+		}
+		xml.append("</conversion>");
+		return xml;
+	}
+
+	@Override
+	public StringBuffer getXML(ConversionObject conversionObject) {
+		StringBuffer xml = new StringBuffer();
+		xml.append("<conversionObject>");
+		xml.append("<identification>").append(conversionObject.getIdentification()).append("</identification>");
+		xml.append("<result>").append(conversionObject.getLogResult()).append("</result>");
+		xml.append("<logLine>");
+		// for(LogLine t:conversionObject.getLogLineList())
+		// {
+		// xml.append(getXML(t));
+		// }
+		xml.append("</logLine>");
+		xml.append("</conversionObject>");
+		return xml;
+	}
+
+	@Override
+	public StringBuffer getXML(LogLine logLine) {
+		StringBuffer xml = new StringBuffer();
+		xml.append("<logLine>");
+		xml.append("<level>").append(logLine.getLevel()).append("</level>");
+		xml.append("<result>").append(logLine.getLogResult()).append("</result>");
+		xml.append("<message>").append(logLine.getMessage()).append("</message>");
+		xml.append("<messageLong>").append(logLine.getMessageLong()).append("</messageLong>");
+		xml.append("<timeStamp>").append(formater.format(logLine.getTimeStamp())).append("</timeStamp>");
+		xml.append("</logLine>");
+		return xml;
+	}
+
+	@Override
+	public StringBuffer getXML(Task task) {
+		StringBuffer xml = new StringBuffer();
+		xml.append("<task>");
+		xml.append("<taskname>").append(task.getTaskName()).append("</taskname>");
+		xml.append("<acctionId>").append(task.getActionId()).append("</acctionId>");
+		xml.append("<name>").append(task.getName()).append("</name>");
+		xml.append("<description>").append(task.getDescription()).append("</description>");
+		xml.append("<xmlId>").append(task.getXmlId()).append("</xmlId>");
+		xml.append("<conversionObjects>");
+		for (ConversionObject t : task.getConversionObjectList()) {
+			xml.append(getXML(t));
+		}
+		xml.append("</conversionObjects>");
+		// xml.append("<nbConverted>").append(conversionObjectDao.findByTask(task).size()).append("</nbConverted>");
+		xml.append("<result>").append(task.getLogResult()).append("</result>");
+		xml.append("<logLines>");
+		List<LogLine> logLineListSorted = task.getLogLineList();
+		// Sorting
+		Collections.sort(task.getLogLineList(), new Comparator<LogLine>() {
+			@Override
+			public int compare(LogLine o1, LogLine o2) {
+				// TODO Auto-generated method stub
+				if (o1.getConversionObjectId() != null && o2.getConversionObjectId() != null)
+					return o1.getConversionObjectId().compareTo(o2.getConversionObjectId());
+				if (o1.getConversionObjectId() == null)
+					return -1;
+				else
+					return 1;
+			}
+		});
+		String currObj = null;
+		for (LogLine l : task.getLogLineList()) {
+			if (l.getConversionObjectId() != null) {
+				ConversionObject co = conversionObjectDao.findOne(l.getConversionObjectId());
+				if (!co.getIdentification().equals(currObj)) {
+					currObj = co.getIdentification();
+					xml.append(getXML(co));
+				}
+			}
+
+			xml.append(getXML(l));
+		}
+		xml.append("</logLines>");
+		xml.append("</task>");
+		return xml;
+	}
+
+	@Override
+	public boolean isAlsoRunning(String folderIn, String folderOut, String workFlowName, String workFlowSequence) {
+		Conversion conversion = conversionDao.findByAllWithLastTime(folderIn, folderOut, workFlowName, workFlowSequence);
+		if (conversion == null || conversion.getStopTime() != null)
+			return false;
+		else
+			return true;
+	}
+
+	@Override
+	public Conversion save(Conversion conversion) throws DBNONullException, DBNOUniqueException {
+		conversionDao.save(conversion);
+		return conversion;
+	}
+
+	@Override
+	public Task save(Task task) throws DBNONullException, DBNOUniqueException {
+		taskDao.save(task);
+		return task;
+	}
+
+	@Override
+	public ConversionObject save(ConversionObject conversionObject) throws DBNONullException, DBNOUniqueException {
+		conversionObjectDao.save(conversionObject);
+		return conversionObject;
+	}
+
+	@Override
+	public LogLine save(LogLine logLine) throws DBNONullException, DBNOUniqueException {
+
+		// Le controle se fait au moment de la sauvegarde pour etre sur d'etre
+		// au plus bas.
+		// le mettre au niveau superieur permettrait de gagner du temps en
+		// evitant la création des objets, mais le risque est plus grand
+		if (logLine.getLevel() <= logLevelWriter) {
+
+			logLineDao.save(logLine);
+		}
+		return logLine;
+	}
+
+	/**
+	 * @param conversionDao
+	 *            the conversionDao to set
+	 */
+	public void setConversionDao(ConversionDao conversionDao) {
+		this.conversionDao = conversionDao;
+	}
+
+	/**
+	 * @param conversionObjectDao
+	 *            the conversionObjectDao to set
+	 */
+	public void setConversionObjectDao(ConversionObjectDao conversionObjectDao) {
+		this.conversionObjectDao = conversionObjectDao;
+	}
+
+	/**
+	 * @param logLevelWriter
+	 *            the logLevelWriter to set
+	 */
+	public void setLogLevelWriter(int logLevelWriter) {
+		this.logLevelWriter = logLevelWriter;
+	}
+
+	/**
+	 * @param logLevelWriter
+	 *            the logLevelWriter to set
+	 */
+	public void setLogLevelWriter(String logLevelWriter) {
+		this.logLevelWriter = Integer.parseInt(logLevelWriter);
+	}
+
+	/**
+	 * @param logLine
+	 *            the logLine to set
+	 */
+	public void setLogLineDao(LogLineDao logLineDao) {
+		this.logLineDao = logLineDao;
+	}
+
+	@Override
+	public Conversion stopConversion(Conversion conversion) throws DBNONullException, DBNOUniqueException {
+		conversion.setStopTime(Calendar.getInstance().getTimeInMillis());
+		save(conversion);
+		return conversion;
+	}
+
+	@Override
+	public void update(Conversion conversion) throws DBNONullException, DBNOUniqueException {
+		conversionDao.save(conversion);
+	}
+
+	@Override
+	public void update(ConversionObject conversionObject) throws DBNONullException, DBNOUniqueException {
+		conversionObjectDao.save(conversionObject);
+	}
+
+	@Override
+	public Conversion updateOrSave(Conversion conversion) throws DBNONullException, DBNOUniqueException {
+		conversionDao.save(conversion);
+		return conversion;
+	}
+
+	public TaskDao getTaskDao() {
+		return taskDao;
+	}
+
+	public void setTaskDao(TaskDao taskDao) {
+		this.taskDao = taskDao;
+	}
+
+}

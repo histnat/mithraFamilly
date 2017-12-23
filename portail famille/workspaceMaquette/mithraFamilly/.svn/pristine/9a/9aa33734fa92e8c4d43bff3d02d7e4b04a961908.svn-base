@@ -1,0 +1,51 @@
+DocTraits
+	Protected: No
+	UnprotectedTags:
+
+TagTypes
+	Divisions: toc tbac
+	DivisionHeads: title
+	Paragraphs: title item para list
+
+GraphicTraits
+	GraphicTag: 
+	GraphicEntityAttr:
+	GraphicFileNameAttr:
+	GraphicProcTypeAttr:
+	GraphicMagAttr:
+	GraphicResAttr:
+
+EqnTableModes
+	EqnMode: None
+	TableMode: None
+
+TagTraits
+	NoCharacterSubstitution:
+	NewlineAfterStartTag: canvas specific idstatus addres status intr list tbaclist body generated
+	NewlineBeforeEndTag:/canvas /specific /idstatus /addres /status /intr /list /tbaclist /body /generated
+	NoTagFullMode:
+	NoTagPartialMode:
+	NoTagNoTagsMode:
+	FullTagPartialMode: loipd lomi nature lextp dmcref lose rpc fixz loh losu
+		 issno anchor low loi pubtype loedm issdate security hlt toc tbac section rfu fig endippn discodev infoname chapnum tpc incode title
+		 cic techname remarks resp systcode eidc incodev subject figv ietptitle
+		 itemloc tp-appli sdc p supeqvc modelic discode ecscc subsect
+	FullTagNoTagsMode: 
+	SmallIconFullMode:
+	SmallIconPartialMode:
+	SmallIconNoTagsMode:
+	IconFullMode:
+	IconPartialMode:
+	IconNoTagsMode:
+
+ContextTransformations
+	InsertAroundToFix: incode fig remarks chapnum p rfu subsect systcode eidc endippn
+		 ecscc tpc sdc techname itemloc tp-appli infoname discodev section incodev
+		 discode ietptitle cic title figv modelic resp subject supeqvc
+	Substitutions:
+	InsertAutoNested:
+	InsertAutoHeading:
+
+Options
+	AllowFosiMod: yes
+	AllowTouchup: yes

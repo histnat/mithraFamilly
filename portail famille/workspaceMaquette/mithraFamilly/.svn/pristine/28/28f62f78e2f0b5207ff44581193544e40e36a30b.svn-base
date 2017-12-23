@@ -1,0 +1,24 @@
+Log filename: "C:\epicuser\avee_sch\avee_sch.dtlog"
+Document type compile date: Mon Aug 29 12:16:39 2005
+Dtgen
+Platform: Windows NT 4.0
+
+Host: svst5457   Login: e077254
+
+Catalog path: "C:\epicuser;C:\Epicuser;C:\Program Files\Epic\doctypes;"
+
+
+Update (.ptd file written) or Validate (.ptd file not written): Update
+XML or SGML Application: SGML
+Force Compile: Yes
+Top level element: (not specified)
+Public ID: -//RAFALE CSDB//DTD Air Vehicle Engines Equipment Schedule information 981222//EN
+DTD Path: "C:\epicuser\avee_sch\avee_sch.dtd"
+ATD Path: "C:\epicuser\avee_sch\avee_sch.atd"
+PTD Path: "C:\epicuser\avee_sch\avee_sch.ptd"
+ATI Tag Path: "C:\Program Files\Epic\lib\dtgen\atitag.cf"
+Message File Path: (not specified)
+SGML Declaration Path: not specified - using "C:\Program Files\Epic\entities\ati-unc.dcl"
+
+DTD table model: none (invalid or unsupported model)
+

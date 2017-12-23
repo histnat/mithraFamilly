@@ -1,0 +1,198 @@
+package net.mithra.toolbox;
+
+import java.util.Enumeration;
+import java.util.HashMap;
+import org.apache.log4j.Appender;
+import org.apache.log4j.Logger;
+import org.apache.log4j.RollingFileAppender;
+
+/**
+ *
+ * @author F.REBECHE
+ */
+public class LogMes {
+    
+    public static final int DEBUG = 0;
+    public static final int FATAL = DEBUG+1;
+    public static final int ERROR = FATAL+1;
+    public static final int INFO = ERROR+1;
+    
+    
+    static HashMap<Class,Logger> mLogger = new HashMap<Class,Logger>();
+    
+    /**
+     * ajout au fichier log smesasge
+     * class lier au log
+     * @param sClass 
+     * DEBUG,FATAL,ERROR,INFO
+     * @param type 
+     * message ajoute au log
+     * @param message 
+     */
+    public static void log(Class sClass,int type, Object message )
+    {
+        Logger sLog =mLogger.get(sClass);
+        if(sLog==null)
+        {
+            sLog = Logger.getLogger(sClass);
+            mLogger.put(sClass,sLog);
+        }
+        switch(type)
+        {
+            case DEBUG : 
+                if(sLog.isDebugEnabled()){
+                    sLog.debug(message);
+                }
+                break;
+            case FATAL : 
+                sLog.fatal(message);
+                break;
+            case ERROR : 
+                sLog.error(message);
+                break;
+            case INFO : 
+                if(sLog.isInfoEnabled()){
+                    sLog.info(message);
+                }
+                break;
+        }
+        
+        
+    }
+    
+    /**
+     * ajout au fichier log smesasge
+     * class lier au log
+     * @param sClass 
+     * DEBUG,FATAL,ERROR,INFO
+     * @param type 
+     * message ajoute au log
+     * @param message 
+     */
+    public static void logError(Class sClass, Object message, Throwable error)
+    {
+        Logger sLog =mLogger.get(sClass);
+        if(sLog==null)
+        {
+            sLog = Logger.getLogger(sClass);
+            mLogger.put(sClass,sLog);
+        }
+        sLog.error(message, error);
+    }
+    
+    /**
+     * indique si la class est soumit au DEBUG
+     * @param sClass
+     * @return boolean
+     */
+    public static boolean isDebug(Class sClass)
+    {
+        Logger sLog =mLogger.get(sClass);
+        if(sLog==null)
+        {
+            sLog = Logger.getLogger(sClass);
+            mLogger.put(sClass,sLog);
+        }
+        return sLog.isDebugEnabled();
+    }
+    
+    /**
+     * indique si la class est soumit au INFO
+     * @param sClass
+     * @return boolean
+     */
+    public static boolean isInfo(Class sClass)
+    {
+        Logger sLog =mLogger.get(sClass);
+        if(sLog==null)
+        {
+            sLog = Logger.getLogger(sClass);
+            mLogger.put(sClass,sLog);
+        }
+        return sLog.isInfoEnabled();
+    }
+    
+    /**
+     * renvoie le repertoire ou sont ecrit les log de cette class
+     * @param sClass : class pour laquelle le répertoire est recherché
+     * @return String représentant le repertoire
+     */
+    public static String getFolderName(Class sClass)
+    {
+        Logger sLog =mLogger.get(sClass);
+        if(sLog==null)
+        {
+            sLog = Logger.getLogger(sClass);
+            mLogger.put(sClass,sLog);
+        }
+        
+        
+        String parent=sLog.getName();
+        String result=null;
+        String fileName=null;
+        while (fileName==null && parent!=null && !parent.equals("root"))
+        {
+            sLog = Logger.getLogger(parent);
+            Enumeration allAppenders=sLog.getAllAppenders();
+            while(allAppenders.hasMoreElements())
+            {
+                try{
+                    RollingFileAppender rfa=(RollingFileAppender)allAppenders.nextElement();
+                    fileName = rfa.getFile();
+                    
+                    
+                }
+                catch(ClassCastException e){
+                }
+
+            }
+            if(sLog.getParent()==null)
+            {
+                parent=null;
+            }
+            else
+            {
+                parent=sLog.getParent().getName();
+            }
+        }
+        if(fileName==null)
+        {
+            sLog=Logger.getRootLogger();
+            Enumeration allAppenders=sLog.getAllAppenders();
+            while(allAppenders.hasMoreElements())
+            {
+                try{
+                    RollingFileAppender rfa=(RollingFileAppender)allAppenders.nextElement();
+                    fileName = rfa.getFile();
+                    
+                }
+                catch(ClassCastException e){
+                }
+
+            }
+        }
+        if(fileName!=null)
+        {
+            if(fileName.contains("/"))
+            {
+                result = fileName.substring(0,fileName.indexOf("/")+1);
+            }
+            else if(fileName.contains("\\"))
+            {
+                result = fileName.substring(0,fileName.indexOf("\\")+1);
+            }
+            else
+            {
+                result="";
+            }
+        }
+        else
+        {
+            result="";
+        }
+        
+        return result;
+    }
+    
+}
+

@@ -1,0 +1,103 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Aircraft Ground Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1ARF7201SF030100241A011 SYSTEM "x-dm://0900f90b8005be66,MYWORKING" NDATA cgm>
+<!ENTITY A1ARF7201SF030100240A011 SYSTEM "x-dm://0900f90b8005be65,MYWORKING" NDATA cgm>
+<!ENTITY A1ARF7201SF030100039A011 SYSTEM "x-dm://0900f90b800085c0,MYWORKING" NDATA cgm>
+<!ENTITY A1ARF7201SF030100040A011 SYSTEM "x-dm://0900f90b800085bf,MYWORKING" NDATA cgm>
+]>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>RF</ecscc><eidc>72</eidc><cic>06</cic><discode>00</discode><discodev>A</discodev><incode>730</incode><incodev>A</incodev><itemloc>C</itemloc></age></dmc>
+<dmtitle><techname>MOYEN DE DIALOGUE M88</techname><infoname>PROCEDURES DE CONNEXION - AU 28 V</infoname></dmtitle>
+<issno issno="1" type="N">
+<issdate year="2010" month="06" day="15">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88 ETAPE 4 MDD v10"></version>
+<customer aaf="1" anf="1">
+<nti nti1="1" nti2="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Version initiale</rfu>
+<remarks>RAS</remarks>
+<icns><icn id="A1ARF7201SF030100240A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>RF</chapnum><section>7</section><subsect>2</subsect><subject>01</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00240</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1ARF7201SF030100241A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>RF</chapnum><section>7</section><subsect>2</subsect><subject>01</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00241</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<norefs>
+</refs><proced><pmd>
+<manhour value="0,2"></manhour>
+<duration value="0,2"></duration>
+</pmd><prelreqs><reqconds><reqcondli><reqcond>
+<cond><para><applic><systemid><nti nti1="1"></systemid></applic>
+<p>Moteur avionn&eacute;&nbsp;: connecteurs P07 des harnais avion/moteur d&eacute;branch&eacute;s des prises J07 des calculateurs <refipc csn="72000001 021 "> <refipc csn="72000001A021 "> pour connexion Moyen de Dialogue (MDD) au 28&nbsp;V avion.</p>
+</para>
+</cond>
+</reqcond></reqcondli></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="0,2"></reqper>
+</reqpers><supequip><nosupeq><nosupeqs></supequip><supplies><nosupply></supplies><miscs><nomisc></miscs><safety>
+<specpara>
+<caution>
+<p>EFFECTUER IMPERATIVEMENT LA CONNEXION AU 28&nbsp;V AVEC LE MOYEN DE DIALOGUE (MDD) HORS TENSION (INTERRUPTEUR PRINCIPAL DU MDD SUR "OFF") POUR GARANTIR LA SECURITE DU MDD.</p>
+</caution>
+</specpara>
+</safety></prelreqs><mainfunc>
+<step1 id="P10" control="0">
+<applic><systemid><nti nti1="1"></systemid></applic>
+<title>CONNEXION DU MDD AU 28&nbsp;V, MOTEUR AVIONNE OU DEPOSE SOUS L'AILE&nbsp;:</title>
+<step2 id="P10-10" control="0">
+<title>CONNEXION AU 28&nbsp;V AVION&nbsp;:</title>
+<step3 control="0">
+<para><p>Brancher le connecteur P45 <refipc csn="72017707 016 "> du harnais W45 <refipc csn="72017702 005 "> sur la prise J45 du MDD <refipc csn="72017702 xxx "> <figref refid="ARF7201SF030100240A011" repnohot="ZAE00001, ZAE00, ZA000">.</p>
+</para>
+</step3>
+<step3 control="0">
+<para><p>Brancher les connecteurs P49 D <refipc csn="72017707 002 "> et P49 G <refipc csn="72017707 009 "> du harnais W45 <refipc csn="72017702 005 "> respectivement sur les connecteurs P07 droit et gauche des harnais avion/moteur <figref refid="ARF7201SF030100240A011" repnohot="ZAE00003, ZAE00004, ZAE00">.</p>
+</para>
+</step3>
+</step2>
+<step2 id="P10-20" control="0">
+<title>CONNEXION AU 28&nbsp;V FORCES&nbsp;:</title>
+<step3 control="0">
+<para><p>Brancher le connecteur P45 <refipc csn="72017707 016 "> du harnais W50 <refipc csn="72017702 007 "> sur la prise J45 du MDD <figref refid="ARF7201SF030100241A011" repnohot="ZAK00002, ZAK00, ZA000">.</p>
+</para>
+</step3>
+<step3 control="0">
+<para><p>Raccorder le harnais W50 <refipc csn="72017702 007 "> au 28&nbsp;V Forces <figref refid="ARF7201SF030100241A011" repnohot="ZAK00">.</p>
+</para>
+</step3>
+</step2>
+</step1>
+<step1 id="P20" control="0">
+<applic><systemid><nti nti2="1"></systemid></applic>
+<title>CONNEXION DU MDD AU 28&nbsp;V FORCES ATELIER, MOTEUR DEPOSE SUR BMR OU SUR CHARIOT EN ATELIER, OU CALCULATEUR PROGRAMME <refipc csn="72000001 021 "> <refipc csn="72000001A021 "> DEPOSE EN ATELIER&nbsp;:</title>
+<step2 id="P20-10" control="0">
+<para><p>Brancher le connecteur P45 <refipc csn="72017707 016 "> du harnais W50 <refipc csn="72017702 007 "> sur la prise J45 du MDD <figref refid="ARF7201SF030100241A011" repnohot="ZAK00002, ZAK00, ZA000">.</p>
+</para>
+</step2>
+<step2 id="P20-20" control="0">
+<para><p>Raccorder le harnais W50 <refipc csn="72017702 007 "> au 28&nbsp;V Forces atelier <figref refid="ARF7201SF030100241A011" repnohot="ZAK00">.</p>
+</para>
+</step2>
+</step1>
+<figure id="ARF7201SF030100240A011">
+<title>CONNEXION DU MDD AU 28&nbsp;V AVION</title>
+<graphic callicn="A1ARF7201SF030100240A011">
+</figure>
+<figure id="ARF7201SF030100241A011">
+<title>CONNEXION DU MDD AU 28&nbsp;V FORCES</title>
+<graphic callicn="A1ARF7201SF030100241A011">
+</figure><?Pub Caret1>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000005443 0>

@@ -1,0 +1,110 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1A753210SF030100043A011 SYSTEM "x-dm://0900f90b80003656,MYWORKING" NDATA cgm>
+]>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>75</chapnum><section>3</section><subsect>2</subsect><subject>10</subject><discode>00</discode><discodev>A</discodev><incode>361</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmc>
+<dmtitle><techname>VERIN MAITRE STATOR</techname><infoname>CONTROLE DIMENSIONNEL</infoname></dmtitle>
+<issno type="C" issno="3">
+<issdate month="09" year="2008" day="30">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 1"></version>
+<version version="M88-2 ETAPE 4"></version>
+<customer aaf="1" anf="1">
+<nti nti1="0" nti2="0" nti3="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase><?Pub Caret>
+</techstd>
+<qa><context></qa>
+<rfu>Prise en compte du courrier AIA N&deg; 000730/SIA&eacute;/AIABX/DQ/08</rfu>
+<remarks>RAS</remarks>
+<icns><icn id="A1A753210SF030100043A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>75</chapnum><section>3</section><subsect>2</subsect><subject>10</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00043</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<refdm>
+<dmcid id="A1A75320002A361AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>75</chapnum><section>3</section><subsect>2</subsect><subject>00</subject><discode>02</discode><discodev>A</discodev><incode>361</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A75320001A361AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>75</chapnum><section>3</section><subsect>2</subsect><subject>00</subject><discode>01</discode><discodev>A</discodev><incode>361</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+</refdm>
+</refs><proced><pmd>
+<manhour value="0,1"></manhour>
+<duration value="0,1"></duration>
+</pmd><prelreqs><reqconds><reqcondli><reqcond>
+<cond><para><p>V&eacute;rin MST d&eacute;sassembl&eacute;</p>
+</para>
+</cond>
+</reqcond></reqcondli></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="0,1"></reqper>
+</reqpers><supequip><nosupeq><nosupeqs></supequip><supplies><nosupply></supplies><miscs><nomisc></miscs><safety><nosafety></safety></prelreqs><mainfunc>
+<step1 control="0" id="P10">
+<para><p>Effectuer d'apr&egrave;s le tableau suivant un contr&ocirc;le dimensionnel du carter de v&eacute;rin <refipc csn="75321001 072 "> <figref change="mod" repnohot="EU001" refid="A753210SF030100043A011">&nbsp;:</p>
+</para>
+<table tocentry="1">
+<tgroup cols="5" align="CENTER"><colspec colname="COL1" colwidth="3.40cm"><colspec colname="COL2" colwidth="3.40cm"><colspec colname="COL3" colwidth="3.40cm"><colspec colname="COL4" colwidth="3.40cm"><colspec colname="COL5" colwidth="3.40cm"><spanspec spanname="SPAN1" align="CENTER" nameend="COL4" namest="COL3">
+<tbody valign="TOP">
+<row>
+<entry colname="COL1" valign="MIDDLE" morerows="1"><para><p>REFERENCE COTE</p>
+</para>
+</entry>
+<entry colname="COL2" valign="MIDDLE" morerows="1"><para><p>DEFAUT</p>
+</para>
+</entry>
+<entry spanname="SPAN1" valign="MIDDLE" morerows="0"><para><p>CRITERES</p>
+</para>
+</entry>
+<entry colname="COL5" valign="MIDDLE" morerows="1"><para><p>SANCTION</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="COL3" valign="MIDDLE" morerows="0"><para><p>MINI ADMISSIBLE</p>
+</para>
+</entry>
+<entry colname="COL4" valign="MIDDLE" morerows="0"><para><p>MAXI ADMISSIBLE</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="COL1" valign="MIDDLE" morerows="0"><para><p>Dia. A <figref repnohot="DIA. A" refid="A1A753210SF030100043A011"></p>
+</para>
+</entry>
+<entry colname="COL2" valign="MIDDLE" morerows="0"><para><p>Fretting dans le diam&egrave;tre de la bague frett&eacute;e</p>
+</para>
+</entry>
+<entry colname="COL3" valign="MIDDLE" morerows="0"><para><p>20&nbsp;mm</p>
+</para>
+</entry>
+<entry colname="COL4" valign="MIDDLE" morerows="0"><para><p>20,071&nbsp;mm</p>
+</para>
+</entry>
+<entry colname="COL5" valign="MIDDLE" morerows="0"><para><p>Contacter Snecma</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step1>
+<step1 control="0" id="P20">
+<para><p>Effectuer un contr&ocirc;le dimensionnel de la chape &eacute;quip&eacute;e <refipc csn="75321001 001 "> <dmcref xrefid="A1A75320002A361AC">.</p>
+</para>
+</step1>
+<step1 control="0" id="P30">
+<para><p>Effectuer un contr&ocirc;le dimensionnel du palier &eacute;quip&eacute; <refipc csn="75321001 012 "> <dmcref xrefid="A1A75320001A361AC">.</p>
+</para>
+</step1>
+<figure id="A753210SF030100043A011">
+<title>CONTROLE DIMENSIONNEL DIAMETRE A</title>
+<graphic callicn="A1A753210SF030100043A011">
+</figure>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000004968 0>

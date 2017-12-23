@@ -1,0 +1,47 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                           RAFALE                                   *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.1                            *
+    *                    Dated 15th January 1998                         *
+    *                                                                    *
+    * Amendment :-                                                       *
+    *                                                                    *
+	*  15/01/98   : new public identifier                                *
+	*			                                                         *
+	*                                                                    *
+    * Typical invocation :                                               *
+    * <!ENTITY % IDENT                                                   *
+    *  PUBLIC "-//RAFALE//ELEMENTS Equipment identification 980115//EN" >*
+    * %IDENT;                                                           *
+    ********************************************************************* -->
+
+<!--**********************************************************************
+    * Define Entity %ident;	Equipment identification  containing:-       *
+    *   REFIPC     - mandatory single     IPC reference (ippn,csn,isn).  *
+    *                (define in common.ent                               *
+    *    or                                                              *
+	*   IDENT      - mandatory single     contains partnumber and manufac*
+    *                                                                    *
+	*   NOMEN      - optional  single     equipment designation          *
+	*                (define in common.ent                               *
+	********************************************************************** -->
+
+<!ENTITY % ident "(refipc|ident)" >
+ 
+
+<!--**********************************************************************
+    * Define Element ident (equipment identification ).		             *
+    **********************************************************************-->
+
+<!ELEMENT ident - - (manufact,partno)>
+<!ATTLIST ident     %INSDEL;>
+
+
+
+<!--*********************************************************************
+    * Define Element nomen (denomination).			                    *
+    *********************************************************************-->
+<!ELEMENT nomen - - (#PCDATA) >
+<!ATTLIST nomen     %INSDEL;>

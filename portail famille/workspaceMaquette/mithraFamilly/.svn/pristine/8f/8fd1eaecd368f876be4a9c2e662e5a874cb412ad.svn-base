@@ -1,0 +1,19 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                         RAFALE                                     *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.2d                           *
+    *                   Dated 12th January 2014                          *
+    *                  M.DOMEON - Dassault-Aviation                      *
+    *                                                                    *
+    *                                                                    *
+    * Amendment :-                                                       *
+    * 1. New CSDB Configuration List Public Identifier                   *
+    *                                                                    *
+    ********************************************************************** -->
+
+<!DOCTYPE ccl PUBLIC
+ "-//RAFALE CSDB//DTD CSDB Configuration List 140112//EN"
+ [
+ ]>

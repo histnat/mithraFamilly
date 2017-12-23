@@ -1,0 +1,456 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                         RAFALE CSDB                                *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.2                            *
+    *                   Dated 22th December 1998                         *
+    *                                                                    *
+    * Amendment :-                                                       *
+    * 1. New Public Identifier to support removal of marked sections.    *
+    * 2. Update Ifault/dfault Ofault attributes with mnemo,mot,bitnb     *
+    * 3. para mandatory instead of optionnal behind fdesc                *
+	* 4. testnomen with para instead of pcdata                           *
+	* 5. %applic for ifault,dfault,ofault                                *
+	* 6. repdesc with para behind repair                                 *
+	* 7. Applic and Reporg behind lru and sru                            *
+	* 8. ident mandatory behind lru and sru                              *
+	* 9. describe and detect and disolate repeatable (for applic)        *
+	*                                                                    *
+    * 15/01/98 :-                                                        *
+    * 1. Replace csn, isn by refipc in LRU and SRU elements              *
+	* 2. use %ident for equipment definition                             *
+	* 3. New Public Identifier                                           *
+	*                                                                    *
+    * 22/12/98 :-                                                        *
+    *       1. repair optional instead of mandatory for lruitem & sruitem*
+	*       2. dmcref instead of refdm (delete issno and dmtitle)        *
+	*       3. reporg optional single in sru like in lru                 *
+	*                                                                    *
+	* Typical invocation :                                               *
+    * <!ENTITY % AFR                                                     *
+    *   "-//RAFALE//ELEMENTS Air Fault Reporting 981222//EN" >           *
+    * %AFR;                                                              *
+    ********************************************************************** -->
+
+
+<!--**********************************************************************
+    * Define Entity %CONTENT (Content Breakdown) containing :- AFR       *
+    ********************************************************************** -->
+ 
+<!ENTITY % CONTENT "afr" >
+
+
+<!--**********************************************************************
+    * Define Element AFR (Air Fault Reporting) containing:-              *
+    *   IFAULT   - optionnal  repeatable  Isolated Fault                 *
+    *   DFAULT   - optionnal  repeatable  Detected Fault                 *
+    *   OFAULT   - optionnal  repeatable  Observed Fault                 *
+    **********************************************************************-->
+ 
+<!ELEMENT afr - o (ifault+ | dfault+ | ofault+) >
+
+
+ 
+<!--**********************************************************************
+    * Define Element IFAULT (Isolated fault) concern only one LRU        *
+	*    containing:-                                                    *
+    *   Describe   - Mandatory  repeatable  Fault description            *
+    *   Detect     - optionnal  single  Fault detection                  *
+    *   Locandrep  - Mandatory  single  Fault localisation               *
+	*   Remarks    - optionnal  single  Remarks                          *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  id    - ID    - REQUIRED - Fault ID                               *
+    *  fcode - CDATA - REQUIRED - Fault code                             *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+ 
+<!ELEMENT ifault  - O  ((%applic;)?,describe+ , detect* , locandrep , remarks?)>
+<!ATTLIST ifault
+             fcode	   ID  		#REQUIRED
+             mnemo  CDATA       #IMPLIED
+             mot    CDATA       #IMPLIED 
+			 bitnb  number       #IMPLIED
+			  %INSDEL; >
+ 
+<!--**********************************************************************
+    * Define Element DESCRIBE (Fault description) containing:-           *
+    *   Fdesc - mandatory  single  Fault description title               *
+    *                                                                    *
+	*   dmcref   - Mandatory  single  ref to descriptive (schematic) DM  *
+  	*   or                                                               *
+	*   Reftp    - optionnal  single  Remarks                            *
+	********************************************************************** -->
+
+<!ELEMENT describe  - O ((%applic;)?,fdesc , (dmcref | reftp)*)>
+
+
+<!--**********************************************************************
+    * Define Element FDESC (Fault Description) containing:-              *
+    *  No Other Tags.                                                    *
+    ********************************************************************** -->
+ <!ELEMENT fdesc  - O (para+)>
+
+
+<!--**********************************************************************
+    * Define Element DETECT (Fault detection) containing:-               *
+	*   lruitem - mandatory  single                                      * 
+	*              identification of the LRU/SRU wich detect the failure *
+ 	*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  type  - CDATA - IMPLIED - detection type : Unique, Dual...        *
+    * Attribute Definition list stored in entity %INSDEL;                *
+	********************************************************************** -->
+
+ <!ELEMENT detect  - O ((%applic;)?,lruitem) -(repair , test)>
+ <!ATTLIST detect
+              type  CDATA    #IMPLIED 
+              %INSDEL; >              
+
+<!--**********************************************************************
+    * Define Element LOCANDREP (LRU location and repair procedure)       * 
+	*   containing:-                                                     *
+	*   lruitem - mandatory  single                                      * 
+	*              identification of the LRU/SRU in failure              *
+	*        exclusion of test element not needed in ifault structure    *
+ 	*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  type  - CDATA - IMPLIED - detection type : Unique, Dual...        *
+    * Attribute Definition list stored in entity %INSDEL;                *
+	********************************************************************** -->
+
+ <!ELEMENT locandrep  - O (lruitem) -(test)>
+
+ 
+
+ <!--**********************************************************************
+    * Define Element LRUITEM (OnLine Repleaceable Unit item) containing:-*
+    *--------------------------------------------------------------------*
+    *  LRU      - mandatory single      Online repleaceable unit code    *
+    *  TEST     - optional  repeatable  tests to be performed            *
+    *  REPAIR   - optional  single      action of repair to be perform   *
+	*  REMARKS  - optional single       remarks                          *
+	*  SRUITEM  - optional single       on shop repleaceable unit(sublru)*
+	*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  probfac  - CDATA - IMPLIED -probability factor for LRU failure    *
+    * Attribute Definition list stored in entity %INSDEL;                *
+	********************************************************************** -->
+ <!ELEMENT lruitem  - O (lru , test* , repair? , remarks? , sruitem?)>
+ <!ATTLIST lruitem
+               probfac  CDATA    #IMPLIED 
+                %INSDEL; >  
+
+ <!--**********************************************************************
+    * Define Element SRUITEM (Onshop Repleaceable Unit item) containing:-*
+    *--------------------------------------------------------------------*
+    *  SRU      - mandatory single      OnShop repleaceable unit code    *
+    *  TEST     - optional  repeatable  tests to be performed            *
+    *  REPAIR   - optional  single      action of repair to be perform   *
+	*  REMARKS  - optional single       remarks                          *
+	*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  probfac  - CDATA - IMPLIED -probability factor for SRU failure    *
+    * Attribute Definition list stored in entity %INSDEL;                *
+	********************************************************************** -->
+ <!ELEMENT sruitem  - O (sru , test* , repair? , remarks?)+>
+ <!ATTLIST sruitem
+               probfac  CDATA    #IMPLIED 
+                %INSDEL; >  
+
+
+<!--**********************************************************************
+    * Define Element LRU (On Line Repleaceable Unit) containing:-        *
+    *--------------------------------------------------------------------*
+    *  REPORG   - optional single       organe                           *
+    *--------------------------------------------------------------------*
+    *  REFIPC   - mandatory single       reference to ippn,csn,isn       *
+	*  OR                                                                *
+	*  IDENT    - optional  repeatable   contains PARTNO, MANUFACT.      *
+    *  NOMEN    - mandatory single       contains Parsed Character Data. *
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+	********************************************************************** -->
+
+<!ELEMENT lru - o ((%applic;)?,reporg?,(%ident;),nomen?)>
+<!ATTLIST lru
+		%INSDEL; >
+
+
+
+<!--**********************************************************************
+    * Define Element SRU (On Shop Repleaceable Unit) containing:-        *
+    *--------------------------------------------------------------------*
+    *  REPORG   - optional single       organe                           *
+	*--------------------------------------------------------------------*
+    *  REFIPC   - mandatory single       reference to ippn,csn,isn       *
+	*  OR                                                                *
+	*  IDENT    - optional  repeatable   contains PARTNO, MANUFACT.      *
+    *  NOMEN    - mandatory single       contains Parsed Character Data. *
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+
+<!ELEMENT sru - o ((%applic;)?,reporg?,(%ident;),nomen?)>
+<!ATTLIST sru
+		%INSDEL; >
+
+
+
+<!--**********************************************************************
+    * Define Element DFAULT (Detected fault) concern only one LRU        *
+	*        detected but not localised fault                            *
+    *        this fault may concern more than one LRU                    *
+	*        and require more investigation to isolate the on failure LRU*
+	*    containing:-                                                    *
+	*   Describe   - Mandatory  repeatable  Fault description            *
+    *   Detect     - optionnal  repeatable  Fault detection              *
+    *   disolate  - Mandatory  repeatable  Fault localisation            *
+	*   Remarks    - optionnal  single  Remarks                          *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  id    - ID    - REQUIRED - Fault ID                               *
+    *  fcode - CDATA - REQUIRED - Fault code                             *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+ 
+<!ELEMENT dfault  - O  ((%applic;)?,describe+ , detect* , disolate+ , remarks?)>
+<!ATTLIST dfault
+             fcode	   ID  		#REQUIRED
+             mnemo  CDATA       #IMPLIED
+             mot    CDATA       #IMPLIED 
+			 bitnb  number       #IMPLIED
+             %INSDEL; >
+
+<!--**********************************************************************
+    * Define Element OFAULT (Observed fault) concern only one LRU        *
+	*        non detected by built-in test system                        *
+    *        this fault may concern more than one LRU                    *
+	*        and require more investigation to isolate the on failure LRU*
+	*    containing:-                                                    *
+	*   Describe   - Mandatory  single  Fault description                *
+    *--------------------------------------------------------------------*
+    * Mandatory Repeatable Group                                         *
+    *--------------------------------------------------------------------*
+	*   fcontext   - optionnal  single  Fault context                    *
+    *   isolate    - Mandatory  single  isolation procedure              *
+	*--------------------------------------------------------------------*
+	*   Remarks    - optionnal  single  Remarks                          *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  fcode    - ID    - REQUIRED - Fault ID                            *
+    *  fcode - CDATA - REQUIRED - Fault code                             *
+    *  ftype - CDATA - IMPLIED  - fault type for observed fault          *
+	*     allows to sort the faults depending of cabin / not cabin observ*
+	* Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+ <!ELEMENT ofault  - O ((%applic;)?,describe+, (fcontext? , isolate)+ ,remarks?)> 
+ <!ATTLIST ofault
+             fcode	   ID  		#REQUIRED
+             mnemo  CDATA       #IMPLIED
+             mot    CDATA       #IMPLIED 
+			 bitnb  number       #IMPLIED
+               %INSDEL; >
+
+
+<!--**********************************************************************
+    * Define Element DISOLATE (d fault location)                         *
+	*     for an ambiguous fault, this part allow to refer either to:    *
+	*			  the list of on failure lru                             *
+	*             a trouble shooting procedure                           * 
+	* containing:-                                                       *
+    *   afiref - mandatory  single          trouble shooting procedure   *
+  	*   lruitem- Mandatory  repeatable      the list of on failure lru   *
+  	********************************************************************** -->
+
+<!ELEMENT disolate  - O ((%applic;)?,(afiref | lruitem)+)>
+
+
+<!--**********************************************************************
+    * Define Element AFIREF (aircraft fault isolation reference)         *
+	*     for an ambiguous fault, reference to AFI DM for LRU isolation  *
+	* containing:-                                                       *
+    *--------------------------------------------------------------------*
+    *  DMCREF - mandatory single       procedural dm reference           *
+   	*####################################################################*
+    * OR                                                                 *
+    *  REFTP    - mandatory single      Technical publication reference. *
+  	********************************************************************** -->
+
+<!ELEMENT afiref  - O (dmcref  | reftp)>
+               
+
+<!--**********************************************************************
+    * Define Element REPAIR (action to be performed for repair)          * 
+	*            Reference to procedural data-module for fault repair    *
+	*   containing:-                                                     *
+	*  REPDESC  - Optional single       repair action description        *
+	*--------------------------------------------------------------------*
+    * Mandatory Repeatable Group                                         *
+    *--------------------------------------------------------------------*
+    *  DMCREF - mandatory single       procedural dm reference           *
+   	*####################################################################*
+    * OR                                                                 *
+    *  REFTP    - mandatory single      Technical publication reference. *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * NO Attribute(s):-                                                  *
+  	********************************************************************** -->
+
+  <!ELEMENT repair  - O (repdesc?,(dmcref | reftp))+>
+
+
+ <!--**********************************************************************
+    * Define Element REPDESC (Repair description) containing:-           *
+    *  PARA.                                                             *
+    ********************************************************************** -->
+ <!ELEMENT repdesc  - O (para+)>
+
+
+ <!--**********************************************************************
+    * Define Element TESTDESC (test description)                         * 
+	*            allow to describe the test to be performed              *
+	*             Text or ref to descriptive DM	                         *
+	*                ie for graphic test system presentation             *
+	*   containing:-                                                     *
+	*--------------------------------------------------------------------*
+	*  TESTNOMEN  - mandatory single    Test description                 *
+	*--------------------------------------------------------------------*
+    * Mandatory Repeatable Group                                         *
+    *--------------------------------------------------------------------*
+    *  DMCREF - mandatory single       procedural dm reference           *
+    *####################################################################*
+    * OR                                                                 *
+    *  REFTP    - mandatory single      Technical publication reference. *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * NO Attribute(s):-                                                  *
+  	********************************************************************** -->
+  
+  <!ELEMENT testdesc  - O (testnomen ,(dmcref |reftp)+)>                          
+ 
+ 
+ <!--**********************************************************************
+    * Define Element TESTNOMEN (test designation) containing:-           *
+    *  Para.                                                                *
+    ********************************************************************** -->
+ <!ELEMENT testnomen  - O (Para+)>
+
+<!--**********************************************************************
+    * Define Element TESTPROC (test procedure)                           * 
+	*        reference to procedural data modules describing             *
+	*         the way to perform the test                                *
+	*   containing:-                                                     *
+	*--------------------------------------------------------------------*
+    * Mandatory Repeatable Group                                         *
+    *--------------------------------------------------------------------*
+    *  DMCREF - mandatory single       procedural dm reference           *
+   	*####################################################################*
+    * OR                                                                 *
+    *  REFTP    - mandatory single      Technical publication reference. *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * NO Attribute(s):-                                                  *
+  	********************************************************************** -->
+<!ELEMENT testproc  - O (dmcref | reftp)+>
+
+
+<!--**********************************************************************
+    * Define Element ISOLATE (o fault location)                          *
+	*     for an ambiguous fault, this part allow to refer either to:    *
+	*			  the list of on failure lru                             *
+	*             a trouble shooting procedure                           * 
+	*             a diagnostic procedure                                 * 
+	* containing:-                                                       *
+    *   afiref - choice  single          trouble shooting procedure      *
+  	*   diagnost- choice single          a diagnostic procedure          * 
+	*   lruitem- choice  repeatable      the list of on failure lru      *
+  	********************************************************************** -->
+<!ELEMENT isolate  - O (afiref | diagnost | lruitem+)>
+
+
+<!--**********************************************************************
+    * Define Element DIAGNOST (Fault diagnostic)                         * 
+	*  contain either an LRU identification, or the reason of failure    *
+	*   containing:-                                                     *
+	*--------------------------------------------------------------------*
+    * Choice between                                                     *
+    *--------------------------------------------------------------------*
+    *  REASON  - mandatory single       reason of failure                *
+    *  REPAIR  - optional  single       action to be performed for repair*
+    *--------------------------------------------------------------------*
+   	*  LRUITEM  - mandatory  single     List of LRU in probable failure  *
+    *--------------------------------------------------------------------*
+    *  TESTS EXCLUDE                                                     *
+	*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * NO Attribute(s):-                                                  *
+  	********************************************************************** -->
+<!ELEMENT diagnost  - O ((reason , repair) | lruitem) -(test)>
+
+
+<!--**********************************************************************
+    * Define Element REASON (cause of failure) containing:-              *
+    *  text describing the fault diagnostic                              *
+	*    if not identifiable by an LRU/SRU ie: leak of fuel system       *
+	*Contains  No Other Tags.                                            *
+    ********************************************************************** -->
+ <!ELEMENT reason  - O (#PCDATA)>
+
+
+<!--**********************************************************************
+    * Define Element FCONTEXT (context for isolate proc determination)   *
+	*   refering to specific conditions under wich the fault occur       *
+	*   allows to isolate the on failure URL                             *
+	* containing:-                                                       *
+    *  No Other Tags.                                                    *
+    ********************************************************************** -->
+ 
+  <!ELEMENT fcontext  - O (para+)>
+    
+	
+<!--**********************************************************************
+    * Define Element TEST (test needed for lru isolation)                *
+	* containing:-                                                       *
+	*   Testdesc  - optionnal  single      Test description              *
+    *   Data      - optionnal  repeatable  data values for testing       *
+    *   testproc  - optionnal  single      test procedure                *
+	*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  type  - CDATA - REQUIRED - test type                              *
+    *  code  - CDATA - REQUIRED - test identifier                        *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+ <!ELEMENT test  - O (testdesc? , data* , testproc?)>
+ <!ATTLIST test 
+               type  CDATA    #REQUIRED 
+               code  CDATA    #REQUIRED 
+			    %INSDEL; >
+
+
+<!--**********************************************************************
+    * Define Element DATA (range of data to be set for testing)          *
+	*      (depending on test procedure)                                 *
+	*      ie: rotate from 24 to 60 degree, input 24 volts ...           *
+	* containing no other tags                                           *
+	*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  from  - CDATA - IMPLIED - range from                              *
+    *  to    - CDATA - IMPLIED - range to                                *
+    *  uom   - CDATA - IMPLIED - Unit Of Measure                         *
+	* Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+<!ELEMENT data  - O  EMPTY >
+<!ATTLIST data
+              from  CDATA    #IMPLIED 
+              to    CDATA    #IMPLIED 
+              uom   CDATA    #IMPLIED 
+               %INSDEL; > 
+            
+
+<!--**********************************************************************
+    * Call the Special Paragraphs Public Text.                           *
+    * The formal public identifier is stored in the entity %EXTSPEC;     *
+    ********************************************************************** -->
+
+%EXTSPEC;
+

@@ -1,0 +1,182 @@
+package com.sonovision.openconv.wf.dao;
+
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertNotNull;
+
+import java.lang.reflect.Method;
+import java.math.BigInteger;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+import com.sonovision.openconv.utils.TestHelper;
+import com.sonovision.openconv.wf.exception.WorkflowException;
+import com.sonovision.openconv.wf.xmodel.Action;
+import com.sonovision.openconv.wf.xmodel.Sequence;
+import com.sonovision.openconv.wf.xmodel.Sequences;
+import com.sonovision.openconv.wf.xmodel.Task;
+import com.sonovision.openconv.wf.xmodel.Wf;
+import com.sonovision.openconv.wf.xmodel.Workflow;
+
+public class WorkFlowDaoXMLTest  extends TestHelper {
+
+    @Autowired
+    @Qualifier("WorkFlowDaoXML")
+    WorkFlowDao workFlowDao;
+    
+    
+    @AfterMethod
+    public void afterMethod(Method method) throws Exception {
+    }
+
+    @BeforeClass
+    public void beforeClass() throws Exception {
+    	
+    }
+
+    
+    @Test
+    public void test_loadWorkflow() throws WorkflowException {
+    	System.out.println("loadWorkflow");
+
+		String pathWFFile = getFilePath("/workflow/exTitusWF.xml");
+    	Workflow wf = workFlowDao.loadWorkflow(pathWFFile);
+    	assertNotNull(wf);
+    	
+    	//test structure wf
+    	assertEquals(wf.getDescription(), "workflow pour la convertion titus");
+    	assertEquals(wf.getName(),"titus");
+    	
+    	Wf rewf = wf.getWf();
+    	Sequences sequences = rewf.getSequences();
+//    	assertEquals(sequences.getSequence().size(),1);
+//    	for(Sequence s:sequences.getSequence())
+//    	{
+//    		assertNotNull(s);
+//    	}
+    	assertNotNull(sequences.getSequence());
+    	
+    }
+    
+    @Test(dependsOnMethods="test_loadWorkflow")
+    public void test_getSequence() throws WorkflowException
+    {
+    	System.out.println("getSequence");
+    	String pathWFFile = getFilePath("/workflow/exTitusWF.xml");
+    	Workflow wf = workFlowDao.loadWorkflow(pathWFFile);
+    	assertNotNull(wf);
+    	
+    	Sequence s = workFlowDao.getSequence(wf, "1");
+    	assertNotNull(s);
+    	assertEquals(s.getName(),"conversion xsl");
+    	assertEquals(s.getDescription(),"conversion d'un fichier xsl");
+    	assertEquals(s.getCycle().get(0).getAction().size(),2);
+    }
+    
+    @Test(dependsOnMethods="test_getSequence")
+    public void test_getFirstAction() throws WorkflowException
+    {
+    	System.out.println("getFirstAction");
+    	String pathWFFile = getFilePath("/workflow/exTitusWF.xml");
+    	Workflow wf = workFlowDao.loadWorkflow(pathWFFile);
+    	assertNotNull(wf);
+    	
+    	Sequence s = workFlowDao.getSequence(wf, "1");
+    	assertNotNull(s);
+    	assertEquals(s.getName(),"conversion xsl");
+    	assertEquals(s.getDescription(),"conversion d'un fichier xsl");
+    	assertEquals(s.getCycle().get(0).getAction().size(),2);
+    	
+    	Action action = workFlowDao.getFirstAction(s.getCycle().get(0));
+    	assertNotNull(action);
+    	assertEquals(action.getActionid(),"1");
+    	
+    	
+    }
+    
+    @Test(dependsOnMethods="test_loadWorkflow")
+    public void test_getAction() throws WorkflowException
+    {
+    	System.out.println("getAction");
+    	String pathWFFile = getFilePath("/workflow/exTitusWF.xml");
+    	Workflow wf = workFlowDao.loadWorkflow(pathWFFile);
+    	assertNotNull(wf);
+    	
+    	Sequence s = workFlowDao.getSequence(wf, "1");
+    	assertNotNull(s);
+    	assertEquals(s.getName(),"conversion xsl");
+    	assertEquals(s.getDescription(),"conversion d'un fichier xsl");
+    	assertEquals(s.getCycle().get(0).getAction().size(),2);
+    	
+    	Action action = workFlowDao.getAction(s.getCycle().get(0), "2");
+    	assertNotNull(action);
+    	assertEquals(action.getActionid(),"2");
+    	assertEquals(action.getTaskid(),BigInteger.valueOf(2L));
+    }
+    
+    @Test(dependsOnMethods="test_getAction")
+    public void test_getActionForResult() throws WorkflowException
+    {
+    	System.out.println("getActionForResult");
+    	String pathWFFile = getFilePath("/workflow/exTitusWF.xml");
+    	Workflow wf = workFlowDao.loadWorkflow(pathWFFile);
+    	assertNotNull(wf);
+    	
+    	Sequence s = workFlowDao.getSequence(wf, "1");
+    	assertNotNull(s);
+    	assertEquals(s.getName(),"conversion xsl");
+    	assertEquals(s.getDescription(),"conversion d'un fichier xsl");
+    	assertEquals(s.getCycle().get(0).getAction().size(),2);
+    	
+    	Action action = workFlowDao.getAction(s.getCycle().get(0), "1");
+    	
+    	String result = workFlowDao.getActionForResult(action, "0");
+    	assertEquals(result,"2");
+    	
+    	result = workFlowDao.getActionForResult(action, null);
+    	assertEquals(result,"END");
+
+    	result = workFlowDao.getActionForResult(action, "");
+    	assertEquals(result,"END");
+    	
+
+    	result = workFlowDao.getActionForResult(action, "X");
+    	assertEquals(result,"END");
+    }
+    
+    @Test
+    public void test_getTaskById() throws WorkflowException
+    {
+    	System.out.println("getTaskNyId");
+    	String pathWFFile = getFilePath("/workflow/exTitusWF.xml");
+    	Workflow wf = workFlowDao.loadWorkflow(pathWFFile);
+    	assertNotNull(wf);
+    	
+    	
+    	Task task = workFlowDao.getTaskById(BigInteger.valueOf(1L), wf);
+    	assertNotNull(task);
+    	assertEquals(task.getId(),BigInteger.valueOf(1L));
+    	assertEquals(task.getName(),"conversion xsl");
+    }
+
+	/**
+	 * @return the workFlowDao
+	 */
+	public WorkFlowDao getWorkFlowDao() {
+		return workFlowDao;
+	}
+
+	/**
+	 * @param workFlowDao the workFlowDao to set
+	 */
+	public void setWorkFlowDao(WorkFlowDao workFlowDao) {
+		this.workFlowDao = workFlowDao;
+	}
+
+	
+
+    
+}

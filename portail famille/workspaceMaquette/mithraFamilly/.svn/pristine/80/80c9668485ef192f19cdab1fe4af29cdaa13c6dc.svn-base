@@ -1,0 +1,23 @@
+package com.sonovision.openconv.modules.xslprocess.exception;
+
+import com.sonovision.openconv.wf.exception.WorkflowException;
+
+public class XSLProcessException extends WorkflowException {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1543423731368063599L;
+
+	public XSLProcessException() {
+	}
+
+	public XSLProcessException(String message) {
+		super(message);
+	}
+
+	public XSLProcessException(String message, Throwable cause) {
+		super(message, cause);
+	}
+
+}

@@ -1,0 +1,80 @@
+package com.sonovision.openconv.wf.dao;
+
+import java.io.File;
+import java.io.InputStream;
+import java.io.Serializable;
+import java.math.BigInteger;
+
+import com.sonovision.openconv.wf.exception.WorkflowException;
+import com.sonovision.openconv.wf.xmodel.Action;
+import com.sonovision.openconv.wf.xmodel.Sequence;
+import com.sonovision.openconv.wf.xmodel.Task;
+import com.sonovision.openconv.wf.xmodel.Workflow;
+
+public interface WorkFlowDao extends Serializable {
+
+	/**
+	 * return sequence with the good idSequence
+	 * @param workflow
+	 * @param idSequence
+	 * @return
+	 * @throws WorkflowException
+	 */
+	Sequence getSequence(Workflow workflow, String idSequence) throws WorkflowException;
+
+	/**
+	 * laod workflow files send in workFlowPath
+	 * @param workFlowPath - path to the workflow file
+	 * @return
+	 * @throws WorkflowException
+	 */
+	Workflow loadWorkflow(String workFlowPath) throws WorkflowException;
+	
+	/**
+	 * laod workflow files send in workFlowPath
+	 * @param workFlowPath - file to the workflow file
+	 * @return
+	 * @throws WorkflowException
+	 */
+	Workflow loadWorkflow(File workflowName) throws WorkflowException;
+
+	/**
+	 * return action in sequence with the most lower ord
+	 * @param sequence
+	 * @return
+	 * @throws WorkflowException 
+	 */
+	Action getFirstAction(Sequence sequence) throws WorkflowException;
+	
+	/**
+	 * return action in sequence with good action id
+	 * @param sequence
+	 * @param actionId
+	 * @return
+	 * @throws WorkflowException
+	 */
+	Action getAction(Sequence sequence, String actionId) throws WorkflowException;
+
+	/**
+	 * Return actionid for result sending
+	 * @param action - action where the good condition is searched
+	 * @param resultAction - String searched in outValue of condition
+	 * @return
+	 * @throws WorkflowException 
+	 */
+	String getActionForResult(Action action, String resultAction) throws WorkflowException;
+
+	/**
+	 * find task with taskId
+	 * @param taskid
+	 * @param worflow - workflow where it try to find task
+	 * @return
+	 * @throws WorkflowException 
+	 */
+	Task getTaskById(BigInteger taskid, Workflow worflow) throws WorkflowException;
+
+	Workflow loadWorkflow(InputStream workFlowFile) throws WorkflowException;
+
+	
+
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1A723300SF030100342A011 SYSTEM "x-dm://0900f90b80002ffa,MYWORKING" NDATA cgm>
+<!ENTITY A1A723300SF030100344A011 SYSTEM "x-dm://0900f90b80002ffc,MYWORKING" NDATA cgm>
+]>
+<dmodule><?Pub Caret1><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><discode>11</discode><discodev>A</discodev><incode>361</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmc>
+<dmtitle><techname>DISQUE 3 TOURILLON, COMPRESSEUR HP</techname><infoname>CONTROLE DIMENSIONNEL</infoname></dmtitle>
+<issno type="C" issno="2">
+<issdate month="10" year="2003" day="10">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 1"></version>
+<nti nti3="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>MISE A JOUR COTES</rfu>
+<remarks>RAS</remarks>
+<icns><icn id="A1A723300SF030100344A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00344</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A723300SF030100342A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00342</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<norefs>
+</refs><proced><pmd>
+<manhour value="0,0"></manhour>
+<duration value="0,0"></duration>
+</pmd><prelreqs><reqconds>
+<noconds></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="0,0"></reqper>
+</reqpers><supequip><supeqli>
+<supequi id="O2.31028"><ident><manufact>F0301</manufact><partno>XXX-XXX-X</partno></ident><nomen>OUTILLAGE CONTROLE GEOMETRIQUE</nomen><quantity>1</quantity></supequi>
+</supeqli><nosupeqs></supequip><supplies><supplyli exhaust="0">
+<supply id="R20201" mand="0"><refipc csn="72330001 315 "><nomen>DISQUE 3 TOURILLON,COMPRESSEUR HP</nomen><quantity>1</quantity></supply>
+</supplyli></supplies><miscs><nomisc></miscs><safety><nosafety></safety></prelreqs><mainfunc>
+<step1 control="0" id="P10">
+<para><p>Effectuer le contr&ocirc;le g&eacute;om&eacute;trique si les surfaces pr&eacute;sententdes d&eacute;t&eacute;riorations <figref refid="A723300SF030100344A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P20">
+<para><p>Utiliser l'outillage de contr&ocirc;le g&eacute;om&eacute;trique  <supeqref refid="O2.31028"> <figref refid="A723300SF030100342A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P30">
+<table tocentry="1">
+<tgroup cols="4" align="LEFT"><colspec colname="COL1" colwidth="4.25cm"><colspec colname="COL2" colwidth="4.25cm"><colspec colname="COL3" colwidth="4.25cm"><colspec colname="COL4" colwidth="4.25cm">
+<tbody valign="TOP">
+<row>
+<entry colname="COL1" valign="TOP" morerows="0"><para><p>Rep&egrave;re</p>
+</para>
+</entry>
+<entry colname="COL2" valign="TOP" morerows="0"><para><p>C&ocirc;te mini</p>
+</para>
+</entry>
+<entry colname="COL3" valign="TOP" morerows="0"><para><p>C&ocirc;te maxi</p>
+</para>
+</entry>
+<entry colname="COL4" valign="TOP" morerows="0"><para><p>SANCTION</p>
+</para>
+</entry>
+</row>
+<row change="MOD">
+<entry colname="COL1" valign="TOP" morerows="0"><para><p>A</p>
+</para>
+</entry>
+<entry colname="COL2" valign="TOP" morerows="0"><para><p>Dia = 358,40 mm</p>
+</para>
+</entry>
+<entry colname="COL3" valign="TOP" morerows="0"><para><p>Dia = 358,46 mm</p>
+</para>
+</entry>
+<entry colname="COL4" valign="TOP" morerows="0"><para><p>Hors tol&eacute;rance avertir SNECMA MOTEUR</p>
+</para>
+</entry>
+</row>
+<row change="MOD">
+<entry colname="COL1" valign="TOP" morerows="0"><para><p>B</p>
+</para>
+</entry>
+<entry colname="COL2" valign="TOP" morerows="0"><para><p>Dia = 360 mm</p>
+</para>
+</entry>
+<entry colname="COL3" valign="TOP" morerows="0"><para><p>Dia = 360,06 mm</p>
+</para>
+</entry>
+<entry colname="COL4" valign="TOP" morerows="0"><para><p>Hors tol&eacute;rance avertir SNECMA MOTEUR</p>
+</para>
+</entry>
+</row>
+<row change="MOD">
+<entry colname="COL1" valign="TOP" morerows="0"><para><p>C</p>
+</para>
+</entry>
+<entry colname="COL2" valign="TOP" morerows="0"><para><p>Dia = 116 mm</p>
+</para>
+</entry>
+<entry colname="COL3" valign="TOP" morerows="0"><para><p>Dia = 116,40 mm</p>
+</para>
+</entry>
+<entry colname="COL4" valign="TOP" morerows="0"><para><p>Hors tol&eacute;rance avertir SNECMA MOTEUR</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step1>
+<figure id="A723300SF030100344A011">
+<title>FIGURE 1</title>
+<graphic callicn="A1A723300SF030100344A011">
+</figure>
+<figure id="A723300SF030100342A011">
+<title>FIGURE 2</title>
+<graphic callicn="A1A723300SF030100342A011">
+</figure>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>

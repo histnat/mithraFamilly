@@ -1,0 +1,96 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                           RAFALE                                   *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.2                            *
+    *                   Dated 22th December 1998                         *
+    *                                                                    *
+    * Amendment :-                                                       *
+    * 1. Reference new component definition public identifier.           *
+    * 2. Add extident entity call                                        *
+	*                                                                    *
+    * 98/12/22                                                           *
+    *    new comps doctype                                               *
+	*    Avoid reference to specific location for %Comps entity          *
+	*                                                                    *
+	* The following DOCTYPE statement may be used to call this set of    *
+    * declarations:-                                                     *
+    *                                                                    *
+    * <!DOCTYPE dmodule PUBLIC                                           *
+    *  "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Equipment list *
+    *  981222//EN" [                                                     *
+    *  ]>                                                                *
+    ********************************************************************** -->
+
+
+
+<!--**********************************************************************
+    * Define Entity %COMPS; (Components) containing:- the formal public  *
+    * identifier for the component definitions.                          *
+    ********************************************************************** -->
+
+<!ENTITY % COMPS
+ PUBLIC "-//RAFALE//ENTITIES Component Definitions 981222//EN"
+ >
+
+
+
+<!--**********************************************************************
+    * Call the Components Definition Public Text. The formal public      *
+    * identifier is stored in the entity %COMPS;                         *
+    ********************************************************************** -->
+
+%COMPS;
+
+
+
+<!--**********************************************************************
+    * Call the Air Vehicle,Engines,Equipment Specific Public Text.       *
+    * The formal public identifier is stored in the entity %AVEE;        *
+    ********************************************************************** -->
+
+%AVEE;
+
+
+
+<!--**********************************************************************
+    * Call the AECMA Configuration Public Text.                          *
+    * The formal public identifier is stored in the entity %AECMA;       *
+    ********************************************************************** -->
+
+%AECMA;
+
+
+
+<!--**********************************************************************
+    * Call the AECMA Base DTD Public Text. The formal public identifier  *
+    * is stored in the entity %BASE;                                     *
+    ********************************************************************** -->
+
+%BASE;
+
+                        
+<!--**********************************************************************
+    * Call the Ident DTD Public Text. The formal public identifier       *
+    * is stored in the entity %IDENT;                                   *
+    ********************************************************************** -->
+
+%EXTIDENT; 
+
+
+<!--**********************************************************************
+    * Call the Desription Content Public Text.                           *
+    * The formal public identifier is stored in the entity %DESCRPT;     *
+    ********************************************************************** -->
+
+%TO;
+
+
+
+<!--**********************************************************************
+    * Call the Content Breakdown Public Text. The formal public          *
+    * identifier is stored in the entity %EXTCONT;                       *
+    ********************************************************************** -->
+
+%EXTCONT;

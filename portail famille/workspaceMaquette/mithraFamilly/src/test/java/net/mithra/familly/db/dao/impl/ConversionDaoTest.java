@@ -1,0 +1,244 @@
+package net.mithra.familly.db.dao.impl;
+
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertNotNull;
+import static org.testng.Assert.assertNull;
+
+import java.lang.reflect.Method;
+import java.util.Calendar;
+import java.util.List;
+
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import net.mithra.familly.db.exception.DBNONullException;
+import net.mithra.familly.db.exception.DBNOUniqueException;
+import net.mithra.familly.db.vo.Conversion;
+import net.mithra.familly.utils.TestDBHelper;
+
+public class ConversionDaoTest extends TestDBHelper{
+
+	@AfterMethod
+    public void setAfterMethod(Method method) throws Exception {
+    	deleteAll();
+    }
+
+    @BeforeMethod
+    public void setUpMethod(Method method) throws Exception {
+    	deleteAll();
+    }
+    
+    @Test
+    public void test_save() throws DBNONullException, DBNOUniqueException {
+        System.out.println("*** TEST conversionDao.save ***");
+        Conversion conversion = getConversionWithoutSave();
+        conversionDao.save(conversion);
+        assertNotNull(conversion.getId());
+    }
+    
+    
+    
+    @Test
+    public void test_findByAllWithLastTime() throws DBNONullException, DBNOUniqueException {
+    	System.out.println("*** TEST conversionObjectDao.findByAllWithLastTime ***");
+    	List<Conversion> conversionlst = getConversionWithSave(4);
+    	Conversion conversion = getConversionWithoutSave(4);
+		conversion.setStartTime(Calendar.getInstance().getTimeInMillis());
+    	Conversion conversion1 = getConversionWithoutSave(4);
+		conversion1.setStartTime(1L+Calendar.getInstance().getTimeInMillis());
+    	conversionDao.save(conversion1);
+    	conversionDao.save(conversion);
+    	Conversion result = conversionDao.findByAllWithLastTime(conversion);
+    	assertNotNull(result);
+    	assertNotNull(result.getId());
+    	assertEquals(result.getId(), conversion1.getId());
+    	
+    	
+    }
+
+    /**
+     * test conversionDao.deleteAll. 
+     * @throws DBNOUniqueException 
+     * @throws DBNONullException 
+     *
+     * @throws DuplicateObjectException
+     * @throws UnexpectedDatabaseException
+     */
+    @Test(dependsOnMethods = {"test_save"})
+    public void test_deleteAll() throws DBNONullException, DBNOUniqueException{
+        System.out.println("*** TEST conversionDao.deleteAll ***");
+
+        List<Conversion> conversionList = getConversionWithSave(3);
+
+        conversionDao.deleteAll();
+
+        List<Conversion> conversionTest = (List<Conversion>) conversionDao.findAll();
+        assertEquals(conversionTest.size(), 0);
+    }
+
+    /**
+     * test conversionDao.delete
+     * @throws DBNOUniqueException 
+     * @throws DBNONullException 
+     *
+     * @throws DuplicateObjectException
+     * @throws UnexpectedDatabaseException
+     */
+    @Test(dependsOnMethods = {"test_save", "test_deleteAll"})
+    public void test_delete() throws DBNONullException, DBNOUniqueException  {
+        System.out.println("*** TEST conversionDao.delete ***");
+        String conversionId;
+
+        Conversion conversion = getConversionWithSave();
+        conversionId = conversion.getId();
+        assertNotNull(conversionId);
+
+        conversionDao.delete(conversion);
+
+        conversion = conversionDao.findOne(conversionId);
+        assertNull(conversion);
+    }
+
+    /**
+     * test conversionDao.update
+     * @throws DBNOUniqueException 
+     * @throws DBNONullException 
+     *
+     * @throws DuplicateObjectException
+     * @throws UnexpectedDatabaseException
+     */
+    @Test(dependsOnMethods = {"test_save", "test_delete", "test_deleteAll"})
+    public void test_Update() throws DBNONullException, DBNOUniqueException  {
+        System.out.println("*** TEST conversionDao.update ***");
+        String conversionId;
+
+        Conversion conversion = getConversionWithSave();
+        conversionId = conversion.getId();
+        assertNotNull(conversionId);
+
+        conversion.setWorkFlowName("TEST UPDATE");
+        conversionDao.save(conversion);
+
+        Conversion conversionTest = new Conversion();
+        conversionTest = conversionDao.findOne( conversionId);
+        assertEquals(conversionTest.getWorkFlowName(), "TEST UPDATE");
+
+    }
+
+    /**
+     * test conversionDao.get
+     * @throws DBNOUniqueException 
+     * @throws DBNONullException 
+     *
+     * @throws DuplicateObjectException
+     * @throws UnexpectedDatabaseException
+     */
+    @Test(dependsOnMethods = {"test_save", "test_delete", "test_deleteAll"})
+    public void test_get() throws DBNONullException, DBNOUniqueException  {
+        System.out.println("*** TEST conversionDao.get ***");
+        String conversionId;
+
+        Conversion conversion = getConversionWithSave();
+        conversionId = conversion.getId();
+        assertNotNull(conversionId);
+        String str = conversion.getWorkFlowName();
+        
+        conversion = getConversionWithoutSave(2);
+        conversionDao.save(conversion);
+        assertNotNull(conversion.getId());
+
+        Conversion conversionTest = new Conversion();
+        conversionTest = conversionDao.findOne(conversionId);
+        assertNotNull(conversionTest.getId());
+        assertEquals(conversionTest.getWorkFlowName(), str);
+
+
+    }
+
+    /**
+     * test conversionDao.findAll
+     * @throws DBNOUniqueException 
+     * @throws DBNONullException 
+     *
+     * @throws DuplicateObjectException
+     * @throws UnexpectedDatabaseException
+     */
+    @Test(dependsOnMethods = {"test_save", "test_delete", "test_deleteAll"})
+    public synchronized  void test_findAll() throws DBNONullException, DBNOUniqueException  {
+        System.out.println("*** TEST conversionDao.findAll ***");
+
+        conversionDao.deleteAll();
+
+        Conversion conversion = getConversionWithSave();
+        assertNotNull(conversion.getId());
+
+        List<Conversion> result = (List<Conversion>) conversionDao.findAll();
+        assertEquals(result.size(), 1);
+
+    
+
+    }
+
+    /**
+     * test conversionDao.findById
+     * @throws DBNOUniqueException 
+     * @throws DBNONullException 
+     *
+     * @throws DuplicateObjectException
+     * @throws UnexpectedDatabaseException
+     */
+    @Test(dependsOnMethods = {"test_save", "test_delete", "test_deleteAll"})
+    public synchronized void test_findById() throws DBNONullException, DBNOUniqueException  {
+        System.out.println("*** TEST conversionDao.findById ***");
+
+        conversionDao.deleteAll();
+
+        List<Conversion> conversion = getConversionWithSave(2);
+
+
+        List<Conversion> conversionList = (List<Conversion>) conversionDao.findAll();
+        assertEquals(conversionList.size(), conversion.size());
+
+        Conversion conversionTest = conversionDao.findOne(conversion.get(0).getId());//langue2.getScDmCodeId());
+        assertNotNull(conversionTest.getId());
+        assertEquals(conversionTest.getId(), conversion.get(0).getId());
+
+        
+    }
+
+    
+    
+    /**
+     * test conversionDao.findByAll
+     * @throws DBNOUniqueException 
+     * @throws DBNONullException 
+     *
+     * @throws DuplicateObjectException
+     * @throws UnexpectedDatabaseException
+     */
+    @Test(dependsOnMethods = {"test_save", "test_delete", "test_deleteAll"})
+    public synchronized void test_findByAll() throws DBNONullException, DBNOUniqueException  {
+        System.out.println("*** TEST conversionDao.findByAll ***");
+
+        conversionDao.deleteAll();
+        
+        Conversion conversion = getConversionWithoutSave();
+        conversionDao.save(conversion);
+        assertNotNull(conversion.getId());        
+
+        List<Conversion> conversionList = (List<Conversion>) conversionDao.findAll();
+        assertEquals(conversionList.size(), 1);
+
+        Conversion conversionTest = dbConversionService.findByAll(conversion);
+        assertNotNull(conversionTest.getId());
+
+        conversionList = (List<Conversion>) conversionDao.findAll();
+        assertEquals(conversionList.size(), 1);
+       
+        
+    }
+    
+
+    
+}

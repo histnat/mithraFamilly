@@ -1,0 +1,16 @@
+UtilsService.path_ressource=com/sonovision/openconv/xsl/
+pubhelper-build-version=${project.version}
+pubhelper-build-date=${project.build.date}
+
+workflow_path=workflow/openconv/rafaleWF.xml
+
+#folder.base=D:/output/coco
+#folder.temp=D:/temp
+folder.base=src/test/resources/out
+folder.temp=src/test/resources/temp
+
+
+############## make filter file for remove this hard parameter
+folder.sx=D:/developpement/workspaceOpenConv/openconv/externalLib/
+
+dblogger.logLevelWriter=4

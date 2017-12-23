@@ -1,0 +1,129 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1A704500SF030100001A011 SYSTEM "x-dm://0900f90b80002cae,MYWORKING" NDATA cgm>
+<!ENTITY A1A704500SF030100002A011 SYSTEM "x-dm://0900f90b80002cb0,MYWORKING" NDATA cgm>
+<!ENTITY A1A704500SF030100003A011 SYSTEM "x-dm://0900f90b80002cb1,MYWORKING" NDATA cgm>
+<!ENTITY A1A704500SF030100004A011 SYSTEM "x-dm://0900f90b80002cb2,MYWORKING" NDATA cgm>
+<!ENTITY A1A704500SF030100005A011 SYSTEM "x-dm://0900f90b80002cb3,MYWORKING" NDATA cgm>
+]>
+<?Pub EntList alpha bull copy rArr sect trade percnt>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>4</section><subsect>5</subsect><subject>00</subject><discode>03</discode><discodev>A</discodev><incode>390</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmc>
+<dmtitle><techname>CONTROLE DES PIECES SOUDEES PAR FUSION</techname><infoname>ESSAI PAR PRELEVEMENT</infoname></dmtitle>
+<issno type="N" issno="1">
+<issdate month="08" year="2001" day="31">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 1"></version>
+<version version="M88-2 ETAPE 4"></version>
+<nti nti3="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Version initiale</rfu>
+<remarks>RAS</remarks>
+<icns><icn id="A1A704500SF030100001A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>4</section><subsect>5</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00001</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A704500SF030100002A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>4</section><subsect>5</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00002</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A704500SF030100003A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>4</section><subsect>5</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00003</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A704500SF030100004A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>4</section><subsect>5</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00004</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A704500SF030100005A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>4</section><subsect>5</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00005</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<norefs>
+</refs><proced><pmd>
+<manhour value="0,0"></manhour>
+<duration value="0,0"></duration>
+</pmd><prelreqs><reqconds>
+<noconds></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="0,0"></reqper>
+</reqpers><supequip><nosupeq><nosupeqs></supequip><supplies><nosupply></supplies><miscs><nomisc></miscs><safety><nosafety></safety></prelreqs><mainfunc>
+<step1 control="0" id="P10">
+<title>Classification des soudures</title>
+<para><p>Diff&eacute;rencier la classification des soudures.</p>
+</para>
+<list type="SIMPLE">
+<item><para><p>si les soudures sont de cat&eacute;gorie J3-B1 se reporter aux crit&egrave;res d'acceptation <xref xrefid="P40">,</p>
+</para>
+</item>
+<item><para><p>si les soudures sont de cat&eacute;gorie B2-J2 ou B3-J1 se reporter &agrave; l'examen par radiographie <xref xrefid="P20">.</p>
+</para>
+</item>
+</list>
+</step1>
+<step1 control="0" id="P20">
+<title>Examen par radiographie</title>
+<para><p>Examiner les d&eacute;fauts internes par radiographie.</p>
+</para>
+</step1>
+<step1 control="0" id="P30">
+<title>Fr&eacute;quence d'ex&eacute;cution</title>
+<list type="SIMPLE">
+<item><para><p>soudures de cat&eacute;gorie J2-B2 ex&eacute;cut&eacute;es m&eacute;caniquement 10&percnt; des pi&egrave;ces,</p>
+</para>
+</item>
+<item><para><p>soudures de cat&eacute;gorie J2-B2 ex&eacute;cut&eacute;es manuellement 50&percnt; des pi&egrave;ces,</p>
+</para>
+</item>
+<item><para><p>soudures de cat&eacute;gorie J1-B3 ex&eacute;cut&eacute;es m&eacute;caniquement 30&percnt; des pi&egrave;ces,</p>
+</para>
+</item>
+<item><para><p>soudures de cat&eacute;gorie J1-B3 ex&eacute;cut&eacute;es manuellement 100&percnt; des pi&egrave;ces.</p>
+</para>
+</item>
+</list>
+</step1>
+<step1 control="0" id="P40">
+<title>Crit&egrave;res d'acceptation</title>
+<step2 control="0" id="P40-10">
+<para><p>Contr&ocirc;ler la totalit&eacute; (100&percnt;) des pi&egrave;ces dans le cas o&ugrave; les pi&egrave;ces contr&ocirc;l&eacute;es se sont r&eacute;v&eacute;l&eacute;es inacceptables.</p>
+</para>
+<list type="SIMPLE">
+<item><para><p>examen visuel,</p>
+</para>
+</item>
+<item><para><p>fr&eacute;quence d'ex&eacute;cution la totalit&eacute; (100&percnt;<?Pub Caret>) des pi&egrave;ces.</p>
+</para>
+</item>
+</list>
+</step2>
+<step2 control="0" id="P40-20">
+<para><p>Contr&ocirc;ler les crit&egrave;res d'acceptation des d&eacute;fauts <figref refid="A704500SF030100002A011"> <figref refid="A704500SF030100003A011"> <figref refid="A704500SF030100001A011"> <figref refid="A704500SF030100004A011"> <figref refid="A704500SF030100005A011">.</p>
+</para>
+</step2>
+</step1>
+<figure id="A704500SF030100001A011">
+<title>FIGURE 1</title>
+<graphic callicn="A1A704500SF030100001A011">
+</figure>
+<figure id="A704500SF030100002A011">
+<title>FIGURE 2</title>
+<graphic callicn="A1A704500SF030100002A011">
+</figure>
+<figure id="A704500SF030100003A011">
+<title>FIGURE 3</title>
+<graphic callicn="A1A704500SF030100003A011">
+</figure>
+<figure id="A704500SF030100004A011">
+<title>FIGURE 4</title>
+<graphic callicn="A1A704500SF030100004A011">
+</figure>
+<figure id="A704500SF030100005A011">
+<title>FIGURE 5</title>
+<graphic callicn="A1A704500SF030100005A011">
+</figure>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000006197 0>

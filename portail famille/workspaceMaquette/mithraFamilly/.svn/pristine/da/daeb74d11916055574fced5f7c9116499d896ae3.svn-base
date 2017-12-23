@@ -1,0 +1,53 @@
+#****************************************************************
+# $Id: unc_entity_naming.acl,v 1.14 2002/07/26 10:18:12 puch Exp $
+#
+# This package manages entity names creation for objects
+#
+
+$dms::entity_naming_function="unc_entity_naming"
+
+#package unc_entity_naming
+
+#
+# Function declaration
+#
+function unc_entity_naming() {}
+
+global gsEntityName=""
+
+#****************************************************************
+# NAME   : UNC_ENTITY_NAMING
+#
+# DESC   : Creates entity name for a new entity object inserting from the browser
+#
+# ARG    : -ACL session handle for the current Epic/adapter connection
+#          -Persistent Object ID for the entity to be created
+#          -a boolean value indicating whether the new entity object is a graphic.
+#          One (1) indicates a graphic entity;zero(0) indicates a non-graphic entity.
+#          -ACL document ID for the top level document object
+#
+# RETURN : The entity name
+#****************************************************************
+function unc_entity_naming(psSessHdl, psPoid, pbIsGraphic,psDoc) {
+
+   local lsCurrFunc = "unc_entity_naming()"
+   local lsEntityName
+  
+   local lnIdStatus
+   local lnDobj                ;# Dobj 
+   local lsTabAttrList[]       ;# Attributes list (apply the index to find)
+   local lsKey
+
+   lnDobj = dobj_construct(psPoid, 0, 0)         ;# find the Dobj from the Poid of the graphic 
+   
+   #lsTabAttrList["IO_ATTR_NAME"] = ""            ;# allow to find the name in the attributes list Documentum
+   #dobj_get_attrlist(lnDobj, "lsTabAttrList")
+   #lsEntityName = lsTabAttrList["IO_ATTR_NAME"]  ;# apply the entity name
+
+   
+   lsEntityName = dobj_get_attr(lnDobj,"IO_ATTR_NAME") ;# apply the entity name
+ 
+   return lsEntityName
+     
+}
+

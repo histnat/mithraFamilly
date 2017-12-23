@@ -1,0 +1,48 @@
+package com.sonovision.openconv.wf;
+
+import java.io.Serializable;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+
+import com.sonovision.openconv.log.model.DBLogger;
+import com.sonovision.openconv.model.TreatedObject;
+import com.sonovision.openconv.wf.model.ParameterDetailled;
+
+public interface WFTask extends Serializable {
+
+	/**
+	 * define dbLogger for register all log in database. dbLogger is initialised during creation of class
+	 * @param dbLogger
+	 */
+	void setDBLogger(DBLogger dbLogger);
+
+	public DBLogger getDbLogger();
+	/**
+	 * define parameter sender at beginning
+	 * @param parameter
+	 */
+	void setParameter(HashMap<String, Object> parameter);
+
+	/**
+	 * Execution of task
+	 * @param treatedObjectHash - all object used during excection
+	 * @return
+	 */
+	String run(HashMap<String, TreatedObject> treatedObjectHash);
+
+	/**
+	 * add parameter to task
+	 * @param key
+	 * @param value
+	 */
+	void addParameter(String key, Object value);
+	
+	public String getId();
+
+	public void setId(String id);
+	
+	
+	List<ParameterDetailled> getParameterList(Locale locale);
+
+}

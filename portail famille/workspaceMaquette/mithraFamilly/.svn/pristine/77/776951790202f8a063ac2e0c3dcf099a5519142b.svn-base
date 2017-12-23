@@ -1,0 +1,83 @@
+package com.sonovision.openconv.db.dao.user.impl;
+
+import java.util.List;
+
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.stereotype.Repository;
+
+import com.sedoc.toolbox.LogMes;
+import com.sonovision.openconv.db.dao.OpGroupDao;
+import com.sonovision.openconv.db.dao.OpRoleDao;
+import com.sonovision.openconv.db.dao.impl.CommonDaoImpl;
+import com.sonovision.openconv.db.exception.DBNONullException;
+import com.sonovision.openconv.db.exception.DBNOUniqueException;
+import com.sonovision.openconv.db.vo.common.Common;
+import com.sonovision.openconv.db.vo.user.OpGroup;
+import com.sonovision.openconv.db.vo.user.OpRole;
+
+@Repository(value="OpRoleDao")
+public class OpRoleDaoImpl  extends CommonDaoImpl<OpRole> implements OpRoleDao{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2559203684440841983L;
+	
+	   @Override
+	    public OpRole findByCode(String code) {
+	        if (code == null) {
+	            LogMes.log(OpRoleDaoImpl.class, LogMes.ERROR, "findByCode : code can't be null");
+	            return null;
+	        }
+	        Query query = new Query();
+	        query.addCriteria(
+	                new Criteria().andOperator(
+	                        Criteria.where("code").is(code)
+	                )
+	        );
+	        return mongoTemplate.findOne(query, OpRole.class);
+
+	    }
+
+
+	    /**
+	     * {@inheritDoc}
+	     *
+	     * @throws com.sedoc.sysdoc.dbno.exception.DBNONullException
+	     * @throws com.sedoc.sysdoc.dbno.exception.DBNOUniqueException
+	     */
+	    @Override
+	    public <T extends Common> void add(T t) throws DBNONullException, DBNOUniqueException {
+
+	    	OpRole u = (OpRole) t;
+	        if (!mongoTemplate.collectionExists(t.getClass())) {
+	            mongoTemplate.createCollection(t.getClass());
+	        }
+
+	        OpRole testU = find(u);
+
+	        if (u.getCode() == null || u.getCode().isEmpty()) {
+	            throw new DBNONullException("Code can't be null :" + u);
+	        }
+
+	        if (testU != null) {
+	            throw new DBNOUniqueException(" id  must be unique :" + testU.getId());
+	        }
+
+	        testU = findByCode(u.getCode());
+
+	        if (testU != null) {
+	            throw new DBNOUniqueException(" code  must be unique :" + testU.getCode());
+	        }
+
+
+	        ////System.out.println("CommonDao, add, t: " + t.toString());
+
+	        //////////////////////////////////////////////////////////////
+	        // très important ON NE SAUVEGARDE PAS testT MAIS t
+	        ///////////////////////////////////////////////////////////////
+	        mongoTemplate.insert(u);
+
+	    }
+}

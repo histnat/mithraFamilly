@@ -1,0 +1,26 @@
+package com.sonovision.openconv.ws.controller.model;
+
+import java.util.List;
+
+public class TaskLogModel extends CommonModel{
+
+
+	private String xmlLog;
+
+	
+	
+	public TaskLogModel(String name, String xmlLogs) {
+		super();
+		this.setName(name);
+		this.setXmlLog(xmlLogs);
+		// TODO Auto-generated constructor stub
+	}
+	public String getXmlLog() {
+		return xmlLog;
+	}
+	public void setXmlLog(String xmlLog) {
+		this.xmlLog = xmlLog;
+	}
+
+	
+}

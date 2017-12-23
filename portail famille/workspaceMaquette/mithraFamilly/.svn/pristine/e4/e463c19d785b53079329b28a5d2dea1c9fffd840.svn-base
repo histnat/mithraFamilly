@@ -1,0 +1,138 @@
+package com.sonovision.openconv.modules.xslprocess.helper;
+
+import static org.testng.Assert.*;
+
+import java.io.File;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.util.HashMap;
+
+//import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.testng.annotations.Test;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.*;
+import javax.xml.transform.stream.*;
+import org.xml.sax.*;
+
+import com.sedoc.dtdtoolbox.utils.DTDParsing;
+import com.sedoc.toolbox.SpringBeanProvider;
+import com.sedoc.toolbox.bean.XMLFactoryService;
+import com.sonovision.openconv.codification.Codification;
+import com.sonovision.openconv.codification.exception.CodificationException;
+import com.sonovision.openconv.log.model.LoggerLevel;
+import com.sonovision.openconv.model.TreatedObject;
+import com.sonovision.openconv.modules.xslprocess.TaskXSLProcess;
+import com.sonovision.openconv.modules.xslprocess.helper.table.impl.GetTableCals;
+import com.sonovision.openconv.modules.xslprocess.helper.table.impl.LoadHtmlTable;
+import com.sonovision.openconv.utils.ResourceTestPath;
+import com.sonovision.openconv.utils.TestHelper;
+
+public class XSLHelperTest extends TestHelper {
+	
+	@Autowired
+	@Qualifier("ListFileInOut")
+	Codification codificationOrg;
+//	@Test
+//	public void testTest() {
+//		fail("Not yet implemented");
+//	}
+//
+//	@Test
+//	public void testGetCompteur() {
+//		fail("Not yet implemented");
+//	}
+//
+//	@Test
+//	public void testLogMessage() {
+//		fail("Not yet implemented");
+//	}
+//
+//	@Test
+//	public void testMatches() {
+//		fail("Not yet implemented");
+//	}
+
+	/*public void testGetCalsTabFromHtml() throws SAXException, IOException, ParserConfigurationException {
+			XSLHelper xh=new XSLHelper();
+			DTDParsing dtdParsing = new DTDParsing();
+			XMLFactoryService xmlFactoryService=null;
+			File inFile = new File("D:/developpement/workspaceSysconv/sysconv/src/test/resources/xml/tableau/tableau2.xml");
+	
+			NodeList dNodeList=null;
+			Node nNode=null;
+			
+			Document document = null;
+			try {
+				document = dtdParsing.getParseXML(inFile);
+			} catch (Exception e) {
+				System.out.println(e);
+			}
+			NodeList objectNodeList = null;
+			if (xmlFactoryService == null) {
+				xmlFactoryService = (XMLFactoryService) SpringBeanProvider.getBean("XMLFactoryService");
+			}
+			try {
+				dNodeList=document.getElementsByTagName("TR");
+				objectNodeList = (NodeList) xmlFactoryService.executeXpathQuery(document, ".//TR", true);
+				//nNode = (Node) xmlFactoryService.executeXpathQuery(document, "/TR", 1);
+			} catch (Exception e) {
+				System.out.println(e);
+			}
+				
+		//	assertNotNull(objectNodeList);
+		//	assertEquals(objectNodeList.getLength(),1);
+
+			System.out.println("--------------------Element 1--------------------");
+			xh.getCalsTabFromHtml(objectNodeList.item(0));
+			System.out.println("--------------------Element 2--------------------");
+			xh.getCalsTabFromHtml(objectNodeList.item(1));
+			System.out.println("--------------------Element 3--------------------");
+			xh.getCalsTabFromHtml(objectNodeList.item(2));
+			
+			//Element eElement=(Element)(objectNodeList.item(1));
+			//System.out.println(eElement.getElementsByTagName("TD").getLength());
+			
+			Element eFirstTR=(Element)(objectNodeList.item(0));
+			NodeList listTD=eFirstTR.getElementsByTagName("TD");
+			int nbColumn=0;
+			for(int i=0;i<listTD.getLength();i++){
+				System.out.println(i+"="+((Element)listTD.item(i)).getAttribute("COLSPAN"));
+			}
+			
+			
+			fail("Not yet implemented");
+		}*/
+	
+	
+	
+//	@Test
+//	public void testGetCalsTabFromHtml() throws Exception, IOException, ParserConfigurationException {
+//		LoadHtmlTable lht=new LoadHtmlTable(new File("D:/developpement/workspaceSysconv/sysconv/src/test/resources/xml/tableau/tableau11.xml"));
+//		lht.initTable();
+//		lht.load();
+//		GetTableCals gtc=new GetTableCals(lht.getLoadedTable());
+//		gtc.initDocument();
+//		gtc.generate();
+//		gtc.display();
+////		fail("Not yet implemented");
+//	}
+	
+
+	@Test
+	public void testGetNewFileNameCodification(){
+		 String codificationFilePath = getFilePath("/codification/listeInOut.xml");
+		 SpringBeanProvider.setApplicationContext2(appContext);
+		 assertEquals(XSLHelperMain.getNewFileNameCodification("COBRAAK000K01000D0000000000042AA.xml",codificationFilePath,"com.sonovision.openconv.codification.impl.ListFileInOut"),"DMC-COBRAAK000-K01-000-D0-0000-00000-042A-A_002-00");
+		 assertEquals( XSLHelperMain.getNewFileNameCodification("COBRAAK000K01000D0000000000090AA.xml",codificationFilePath,"com.sonovision.openconv.codification.impl.ListFileInOut"),"DMC-COBRAAK000-K01-000-D0-0000-00000-090A-A_002-00");
+	}
+	
+}

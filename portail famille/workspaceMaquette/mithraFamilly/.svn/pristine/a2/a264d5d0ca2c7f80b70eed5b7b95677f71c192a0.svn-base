@@ -1,0 +1,430 @@
+package com.sonovision.openconv.modules.sgmlprocess.reader;
+
+//Copyright Richard Tobin, HCRC 1997
+
+//Read an SGML stream, returning "bits": start and end tags, pcdata,
+//comments, etc.
+
+//TODO:
+//CDATA, PIs, reasonable skipping of declarations
+
+import java.util.*;
+import java.io.*;
+
+import com.sonovision.openconv.modules.sgmlprocess.exception.*;
+import com.sonovision.openconv.modules.sgmlprocess.model.Bit;
+import com.sonovision.openconv.modules.sgmlprocess.model.StartTag;
+
+public class SGMLStream
+{
+ PushbackInputStream in;
+ int line = 1;
+ boolean just_read_cdata = false;
+
+ public static final int mixed=0, element=1, empty=2, cdata=3, any=4;
+
+ SGMLStream(PushbackInputStream _in)
+ {
+     in = _in;
+ }
+
+ SGMLStream(InputStream _in)
+ {
+     in = new PushbackInputStream(_in);
+ }
+
+ public int getLine() {
+	return line;
+}
+
+private int read()
+ {
+	int c;
+
+	try {
+	    c = in.read();
+	} catch(IOException e) {
+	    throw new SGMLException(this, e.toString());
+	}
+
+	if(c == '\n')
+	    line++;
+
+	return c;
+ }
+
+ private void unread(int c)
+ {
+	if(c == -1)		// don't push back EOF
+	    return;
+
+	try {
+	    in.unread(c);
+	} catch(IOException e) {
+	    throw new SGMLException(this, e.toString());
+	}
+	
+	if(c == '\n')
+	    line--;
+ }
+
+ Bit getNextBit(int content_type)
+ {
+	int c;
+
+	if(just_read_cdata)
+	{
+	    just_read_cdata = false;
+	    return readEndTag();
+	}
+
+	if(content_type == cdata)
+	    return readCDataOrEndTag();
+
+	if(content_type == element)
+	    skipWhiteSpace();
+	c = read();
+	switch(c)
+	{
+	case -1:
+	    return new EOF();
+	case '<':
+	    skipWhiteSpace();
+	    c = read();
+	    switch(c)
+	    {
+	    case '/':
+		return readEndTag();
+	    case '!':
+		return readPling();
+	    default:
+		unread(c);
+		return readStartTag();
+	    }
+	default:
+	    unread(c);
+	    return readPCData();
+	}
+ }
+
+
+ private Bit readCDataOrEndTag()
+ {
+	int c1=0, c2=0, c3=0;
+	StringBuffer buf = new StringBuffer();
+
+	do {
+	    c1 = c2;
+	    c2 = c3;
+	    c3 = read();
+	    if(c3 == -1)
+		return new CData(buf.toString());
+	    buf.append((char)c3);
+	} while(c1 != '<' || c2 != '/' || !isNameChar(c3));
+
+	unread(c3);
+	buf.setLength(buf.length() - 3);
+	
+	if(buf.length() == 0)
+	    return readEndTag();
+
+	just_read_cdata = true;
+
+	return new CData(buf.toString());
+ }
+
+ private PCData readPCData()
+ {
+	int c;
+	StringBuffer buf = new StringBuffer();
+
+	while((c = read()) != -1 && c != '<')
+	    buf.append((char)c);
+	unread(c);
+
+	return new PCData(buf.toString());
+ }
+
+ private StartTag readStartTag()
+ {
+	int c;
+	StartTag bit = new StartTag(readName());
+
+	while(true)
+	{
+	    skipWhiteSpace();
+	    c = read();
+
+	    switch(c)
+	    {
+	    case -1:
+		throw new SGMLException(this, "EOF in Start Tag");
+	    case '>':
+		return bit;
+	    default:
+		unread(c);
+		readAttrVal(bit);
+		break;
+	    }
+	}
+ }
+
+ private void readAttrVal(StartTag bit)
+ {
+	int c;
+	String name = readName();
+
+	skipWhiteSpace();
+	c = read();
+
+	if(c == '=')
+	{
+	    String value;
+
+	    skipWhiteSpace();
+	    c = read();
+
+	    switch(c)
+	    {
+	    case -1:
+		throw new SGMLException(this, "EOF after = in Start Tag");
+	    case '>':
+		throw new SGMLException(this, 
+					"Syntax error after = in Start Tag");
+	    case '"':
+	    case '\'':
+		value = readString(c);
+	        break;
+	    default:
+		unread(c);
+		value = readNameToken();
+		break;
+	    }
+
+	    bit.addAttr(name, value);
+	}
+	else
+	{
+	    unread(c);
+	    bit.addAttr(name);
+	}
+ }
+
+ private String readName()
+ {
+	int c;
+	StringBuffer buf = new StringBuffer();
+
+	while(isNameChar(c = read()))
+	    buf.append((char)c);
+	unread(c);
+
+	if(buf.length() == 0)
+	    throw new SGMLException(this, "Empty Name");
+
+	return buf.toString();
+ }
+
+ private String readNameToken()
+ {
+	int c;
+	StringBuffer buf = new StringBuffer();
+
+	while(isNameTokenChar(c = read()))
+	    buf.append((char)c);
+	unread(c);
+
+	if(buf.length() == 0)
+	    throw new SGMLException(this, "Empty Name Token");
+
+	return buf.toString();
+ }
+
+ private String readString(int delimeter)
+ {
+	int c;
+	StringBuffer buf = new StringBuffer();
+	
+	while((c = read()) != delimeter && c != -1)
+	    buf.append((char)c);
+
+	if(c == -1)
+	    throw new SGMLException(this, "EOF in String");
+
+	return buf.toString();
+ }
+
+ private EndTag readEndTag()
+ {
+	int c;
+
+	String name = readName();
+
+	skipWhiteSpace();
+	if((c = read()) != '>')
+	    throw new SGMLException(this, "Syntax error in End Tag");
+
+	return new EndTag(name);
+ }
+
+ private Bit readPling()
+ {
+	int c;
+
+	if((c = read()) == '-')
+	{
+	    if((c = read()) != '-')
+		throw new SGMLException(this, "Syntax error after <!-");
+	    return readComment();
+	}
+	else
+	{
+	    unread(c);
+	    return readDeclaration();
+	}
+ }
+
+ private Comment readComment()
+ {
+	int c1=0, c2=0, c3=0;
+	StringBuffer buf = new StringBuffer();
+
+	do {
+	    c1 = c2;
+	    c2 = c3;
+	    c3 = read();
+	    if(c3 == -1)
+		throw new SGMLException(this, "EOF in Comment");
+	    buf.append((char)c3);
+	} while(c1 != '-' || c2 != '-' || c3 != '>');
+
+	buf.setLength(buf.length() - 3);
+
+	return new Comment(buf.toString());
+ }
+
+ private Declaration readDeclaration()
+ {
+	StringBuffer buf = new StringBuffer();
+	int c;
+
+	// Feeble attempt to skip declaration
+
+	while((c = read()) != '>')
+	    buf.append((char)c);
+
+	return new Declaration(buf.toString());
+ }
+
+ private void skipWhiteSpace()
+ {
+     int c;
+
+     while(isWhiteSpace(c = read()))
+         ;
+     unread(c);
+ }
+
+ private boolean isWhiteSpace(int c)
+ {
+     return c == ' ' || c == '\t' || c == '\r' || c == '\n';
+ }
+
+ private boolean isNameChar(int c)
+ {
+     return (c >= 'a' && c <= 'z') ||
+            (c >= 'A' && c <= 'Z') ||
+            (c >= '0' && c <= '9') ||
+            c == '_' || c == '-' || c == '.';
+ }
+
+ private boolean isNameTokenChar(int c)
+ {
+	// We are very generous about what can occur in an attribute value!
+	return c != -1 && !isWhiteSpace(c) && c != '>';
+ }
+
+ public static void main(String argv[])
+ {
+	SGMLStream in = new SGMLStream(System.in);
+	Bit bit;
+
+	do {
+	    bit = in.getNextBit(mixed);
+	    bit.print(System.out);
+	} while(!(bit instanceof EOF));
+ }
+}
+
+
+
+class EOF extends Bit
+{
+}
+
+
+
+class EndTag extends Bit
+{
+ String name;
+
+ EndTag(String _name)
+ {
+	name = _name.toLowerCase().intern();
+ }
+
+ public void print(PrintStream out)
+ {
+	out.println("End " + name);
+ }
+
+public String getName() {
+	return name;
+}
+
+public void setName(String name) {
+	this.name = name;
+}
+ 
+}
+
+class PCData extends Bit
+{
+ String text;
+
+ PCData(String _text)
+ {
+	text = _text;
+ }
+}
+
+class Comment extends Bit
+{
+ String text;
+
+ Comment(String _text)
+ {
+	text = _text;
+ }
+}
+
+class CData extends Bit
+{
+ String text;
+
+ CData(String _text)
+ {
+	text = _text;
+ }
+}
+
+class Declaration extends Bit
+{
+ String text;
+
+ Declaration(String _text)
+ {
+	text = _text;
+ }
+}
+

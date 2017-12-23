@@ -1,0 +1,284 @@
+package com.sonovision.openconv.db.vo;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import com.sonovision.openconv.db.vo.common.Common;
+
+@Document(collection="task")
+public class Task extends Common {
+
+	private String actionId;
+	
+	private String logResult;
+	
+	private String name="";
+	
+	private String description;
+	
+	private String taskName="";
+	
+	private String xmlId;
+	
+	private String conversionId;
+	
+	@DBRef(lazy=false)
+	private List<ConversionObject> conversionObjectList= new ArrayList<ConversionObject>();
+	
+	private List<LogLine> logLineList= new ArrayList<LogLine>();
+
+	
+	public Task() {}
+
+
+	public Task(Integer idTask, String actionId, String logResult, 
+			List<ConversionObject> conversionObjectList, List<LogLine> logLineList) {
+		super();
+		this.actionId = actionId;
+		this.logResult = logResult;
+		this.conversionObjectList = conversionObjectList;
+		this.logLineList = logLineList;
+	}
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + ((actionId == null) ? 0 : actionId.hashCode());
+		result = prime * result + ((conversionId == null) ? 0 : conversionId.hashCode());
+		result = prime * result + ((conversionObjectList == null) ? 0 : conversionObjectList.hashCode());
+		result = prime * result + ((description == null) ? 0 : description.hashCode());
+		result = prime * result + ((logLineList == null) ? 0 : logLineList.hashCode());
+		result = prime * result + ((logResult == null) ? 0 : logResult.hashCode());
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + ((taskName == null) ? 0 : taskName.hashCode());
+		result = prime * result + ((xmlId == null) ? 0 : xmlId.hashCode());
+		return result;
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Task other = (Task) obj;
+		if (actionId == null) {
+			if (other.actionId != null)
+				return false;
+		} else if (!actionId.equals(other.actionId))
+			return false;
+		if (conversionId == null) {
+			if (other.conversionId != null)
+				return false;
+		} else if (!conversionId.equals(other.conversionId))
+			return false;
+		if (conversionObjectList == null) {
+			if (other.conversionObjectList != null)
+				return false;
+		} else if (!conversionObjectList.equals(other.conversionObjectList))
+			return false;
+		if (description == null) {
+			if (other.description != null)
+				return false;
+		} else if (!description.equals(other.description))
+			return false;
+		if (logLineList == null) {
+			if (other.logLineList != null)
+				return false;
+		} else if (!logLineList.equals(other.logLineList))
+			return false;
+		if (logResult == null) {
+			if (other.logResult != null)
+				return false;
+		} else if (!logResult.equals(other.logResult))
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		if (taskName == null) {
+			if (other.taskName != null)
+				return false;
+		} else if (!taskName.equals(other.taskName))
+			return false;
+		if (xmlId == null) {
+			if (other.xmlId != null)
+				return false;
+		} else if (!xmlId.equals(other.xmlId))
+			return false;
+		return true;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Task [actionId=" + actionId + ", logResult=" + logResult + ", name=" + name + ", description=" + description + ", taskName=" + taskName + ", xmlId=" + xmlId + ", conversionId=" + conversionId + ", conversionObjectList="
+				+ conversionObjectList + ", logLineList=" + logLineList + "]";
+	}
+
+
+	
+
+
+	/**
+	 * @return the conversionId
+	 */
+	public String getConversionId() {
+		return conversionId;
+	}
+
+
+	/**
+	 * @param conversionId the conversionId to set
+	 */
+	public void setConversionId(String conversionId) {
+		this.conversionId = conversionId;
+	}
+
+
+	/**
+	 * @return the actionId
+	 */
+	public String getActionId() {
+		return actionId;
+	}
+
+
+	/**
+	 * @param actionId the actionId to set
+	 */
+	public void setActionId(String actionId) {
+		this.actionId = actionId;
+	}
+
+
+	/**
+	 * @return the logResult
+	 */
+	public String getLogResult() {
+		return logResult;
+	}
+
+
+	/**
+	 * @param logResult the logResult to set
+	 */
+	public void setLogResult(String logResult) {
+		this.logResult = logResult;
+	}
+
+
+	
+
+	/**
+	 * @return the conversionObjectList
+	 */
+	public List<ConversionObject> getConversionObjectList() {
+		return conversionObjectList;
+	}
+
+
+	/**
+	 * @param conversionObjectList the conversionObjectList to set
+	 */
+	public void setConversionObjectList(List<ConversionObject> conversionObjectList) {
+		this.conversionObjectList = conversionObjectList;
+	}
+
+	public void addConversionObject(ConversionObject conversionObject){
+		this.conversionObjectList.add(conversionObject);
+	}
+	/**
+	 * @return the logLineList
+	 */
+	public List<LogLine> getLogLineList() {
+		return logLineList;
+	}
+
+
+	/**
+	 * @param logLineList the logLineList to set
+	 */
+	public void setLogLineList(List<LogLine> logLineList) {
+		this.logLineList = logLineList;
+	}
+
+	public void addLogLine(LogLine logLine){
+		this.logLineList.add(logLine);
+	}
+
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
+	}
+
+
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	/**
+	 * @return the description
+	 */
+	public String getDescription() {
+		return description;
+	}
+
+
+	/**
+	 * @param description the description to set
+	 */
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+
+	/**
+	 * @return the taskName
+	 */
+	public String getTaskName() {
+		return taskName;
+	}
+
+
+	/**
+	 * @param taskName the taskName to set
+	 */
+	public void setTaskName(String taskName) {
+		this.taskName = taskName;
+	}
+
+
+	/**
+	 * @return the xmlId
+	 */
+	public String getXmlId() {
+		return xmlId;
+	}
+
+
+	/**
+	 * @param xmlId the xmlId to set
+	 */
+	public void setXmlId(String xmlId) {
+		this.xmlId = xmlId;
+	}
+	
+	
+
+}

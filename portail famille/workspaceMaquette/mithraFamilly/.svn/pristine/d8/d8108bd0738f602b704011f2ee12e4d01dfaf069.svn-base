@@ -1,0 +1,302 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                            RAFALE                                  *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.1                            *
+    *                   Dated 15th January 1998                          *
+    *                                                                    *
+    * Amendment :-                                                       *
+    *    31/08/95  <reqpers>  optional in <prelreqs>					 *
+    *              attribute user of <perscat> optionnal				 *
+    *              attribute "value" of <perstime> cdata instead		 *
+    *              of numbers											 *
+    *              identification of equipement by <ident> and			 *
+    *              <nomen> in case of  unknown csn/isn					 *
+    *    19/05/97  : Change Public Identifier 							 *
+    *                deleted %EXTMATH (call to the Mathematical 		 *
+    *                               Expression Public Text)				 *
+	*                deleted <math> from <descript> content model.		 *
+	*                added attribute id (type ID) for <techpub>			 *
+	*     modified :													 *
+    *              <dmcref> made optionnal in <reqcondm>				 *
+	*              <reqcond> may now contain several <para>, and		 *
+    *              elements <dmcref>, <specpara> and <note> are			 *
+    *              excluded from the content model.						 *
+	*              <isn>    made optionnal in couples <csn>,<isn>		 *
+    *                       used in <misc>, <supequi> and <supply>		 *
+	*																	 *
+	*              <ident>  modified to (codefab,reffab) where both		 *
+    *              <codefab> and <reffab> contains #PCDATA.				 *
+    *                       codefab : manufacturer code					 *
+    *                       reffab  : manufacturer reference (part-number*
+	*																	 *
+    *     modified content models of elements 							 *
+    *              <supply> and <misc> :								 *
+    *              the supply  or  miscellaneous can be 				 *
+    *                    referenced either by a sequence (csn,isn?) 	 *
+    *                                   or by a sequence (ident?,nomen?) *
+	*																	 *
+    *																	 *
+    *          created <supeqlis>: standard equipment(<supequis>) list	 *
+    *                              used in <supequip>					 *
+    *          created <nosupeqs>: no standard equipment				 *
+    *                              used in <supequip>					 *
+    *          created <supequis>: standard equipment used in <supeqlis> *
+	*																	 *
+	*																	 *
+    *         added attribute %INSDEL; to elements						 *
+    *         proced,prelreqs,reqconds,noconds,reqcondm,reqcond,		 *
+    *         reqpers,perscat,subcat,persnum,perstime,supequip,nosupeq,	 *
+    *         nosupeqs,miscs,nomisc,miscli,supeqli,supeqlis,supequis,	 *
+    *         ident,codefab,reffab,nomen,csn,isn,quantity,supplies,		 *
+    *         nosupply,supplyli,safety,nosafety,mainfunc,closeup,noclose,*
+    *																	 *
+	*		Add pmdata to the specific procedural content				 *
+	*		Ident mandatory in misc and supply							 *
+    *		reqpers with applicability									 *
+	*		value aan/aaf removed from perscat							 *
+	*		added rate behind supply  									 *
+	*		added uom behind misc quantity								 *
+	*		removed man attribute from supply, misc, supeq				 *
+	*																	 *
+	*		Add applicability to pmdata elements (duration,avfcfg,manhour*	
+	*			these elements become repeatable                    	 *
+	*																	 *
+	* 1. New Public Identifier to support removal of marked sections.    *
+    *                                                                    *
+	*    15/01/98       : Change Public Identifier 						 *
+    *                     replace extftab by extfig and exttab      	 *
+	*                                                                    *
+	*                                                                    *
+    * Typical invocation :                                               *
+    * <!ENTITY % PROCED                                                  *
+    *   PUBLIC "-//RAFALE//ELEMENTS Procedural Breakdown 980115//EN" >   *
+    * %PROCED;                                                           *
+    ********************************************************************** -->
+
+
+
+<!--**********************************************************************
+    * Define Entity %CONTENT (Content Breakdown) containing :- PROCED    *
+    ********************************************************************** -->
+
+<!ENTITY % CONTENT "proced" >
+
+
+
+<!--**********************************************************************
+    * Define Element PROCED (Procedural Information) containing:-        *
+    *   PRELREQS - mandatory  single     contains REQCOND, REQPERS,      *
+    *                                    SUPEQUIP, SUPPLIES, SPARES,     *
+    *                                     SAFETY.                        *
+    *   MAINFUNC - mandatory  single     contains STEP1.                 *
+    *   CLOSEUP  - mandatory  single     contains NOCLOSE, STEP1, REFS.  *
+    ********************************************************************** -->
+
+<!ELEMENT proced - o (pmd?,prelreqs,mainfunc,closeup) >
+<!ATTLIST proced   %INSDEL;>
+
+
+<!--*****************************************************************************
+    *  Define Element PMD (Production Management Database).			*
+    * ************************************************************************-->
+<!ELEMENT pmd - O (zone*,accpnl*,avhcfg*,manhour*,duration*)>
+
+
+<!--*****************************************************************************
+    * Define Element ZONE (Air Vehicle Zone).					*
+    **************************************************************************-->
+<!ELEMENT zone - O (%applic;)? -- Air Vehicle Zone.-->
+
+<!ATTLIST zone
+	zoneid	NUTOKENS	#REQUIRED -- List of Zone Number.-->
+
+
+<!--*****************************************************************************
+    * Define Element ACCPNL (Access Panel).					*
+    **************************************************************************-->
+<!ELEMENT accpnl - O (%applic;)? -- Access Panel.-->
+<!ATTLIST accpnl
+	accessid NAMES      	#REQUIRED -- Access Identifier.-->
+
+
+<!--**********************************************************************
+    * Define element AVEHCFG (Air Vehicle Required Conditions) containing*
+    *  JACKED   - mandatory single  contains AIRVSTAT, POWER.            *
+    *  SAFEDEV  - mandatory single  contains AIRVSTAT, POWER.            *
+    *  ELECPWR  - mandatory single  contains AIRVSTAT, POWER.            *
+    *  HYDPWR   - mandatory single  contains AIRVSTAT, POWER.            *
+    *  AIRPWR   - mandatory single  contains AIRVSTAT, POWER.            *
+    *  FUEL     - mandatory single  contains AIRVSTAT, POWER.            *
+    *  WATER    - mandatory single  contains AIRVSTAT, POWER.            *
+    *  FCPOSN   - mandatory single  contains AIRVSTAT, POWER.            *
+    ********************************************************************** -->
+
+<!ELEMENT avhcfg - O ((%applic;)?,jacked?,safedev?,elecpwr?,hydpwr?,
+			airpwr?,fuel?,water?,fcposn?)
+				-- Air Vehicle Configuration.-->
+
+
+<!--*****************************************************************************
+    * Define Entity %PMDATT; (PMD attributes).					*
+    **************************************************************************-->
+<!ENTITY % pmdatt
+	"status	(Y|N|IND|NOTAPP)		#REQUIRED
+		-- Status : Yes | No | INDifferent | NOT APPlicable.--
+	 pwrsrc (E|A|X|I|P-IND|P-NOTAPP)	#REQUIRED
+		-- Power Source : Engine | Apu | eXternal | Internal |
+		   INDifferent | NOT APPlicable.-- ">
+
+
+<!--*****************************************************************************
+    * Define Element JACKED ( Air Vehicle on jacks).				*
+    **************************************************************************-->
+<!ELEMENT jacked 		- O EMPTY -- Air Vehicle on jacks.-->
+<!ATTLIST jacked
+	%pmdatt; >
+
+
+<!--*****************************************************************************
+    * Define Element SAFDEV ( Safety Devices).					*
+    **************************************************************************-->
+<!ELEMENT safedev 		- O EMPTY -- Safety Devices.-->
+<!ATTLIST safedev
+	%pmdatt; >
+
+
+<!--*****************************************************************************
+    * Define Element ELECPWR ( Electrical Power supply).			*
+    **************************************************************************-->
+<!ELEMENT elecpwr 	- O EMPTY -- Electrical Power supply.-->
+<!ATTLIST elecpwr
+	%pmdatt; >
+
+
+<!--*****************************************************************************
+    * Define Element HYDPWR ( Hydraulic Powe supplyr).				*
+    **************************************************************************-->
+<!ELEMENT hydpwr 	- O EMPTY -- Hydraulic Powe supplyr.-->
+<!ATTLIST hydpwr
+	%pmdatt; >
+
+
+<!--*****************************************************************************
+    * Define Element AIRPWR ( Pneumatic Power supply).				*
+    **************************************************************************-->
+<!ELEMENT airpwr 	- O EMPTY -- Pneumatic Power supply.-->
+<!ATTLIST airpwr
+	%pmdatt; >
+
+
+<!--*****************************************************************************
+    * Define Element FUEL ( Fueling).						*
+    **************************************************************************-->
+<!ELEMENT fuel 		- O EMPTY -- Fueling.-->
+<!ATTLIST fuel
+	%pmdatt; >
+
+
+<!--*****************************************************************************
+    * Define Element WATER ( Water supply).					*
+    **************************************************************************-->
+<!ELEMENT water 	- O EMPTY -- Water supply.-->
+<!ATTLIST water
+	%pmdatt; >
+
+
+<!--*****************************************************************************
+    * Define Element FCPOSN ( Specific position of the flight controls).	*
+    **************************************************************************-->
+<!ELEMENT fcposn	- O EMPTY -- Specific position of the flight controls.-->
+<!ATTLIST fcposn
+	%pmdatt; >
+
+
+<!--*****************************************************************************
+    * Define Element MANHOUR ( Maintenance Action Duration in Man/Hour).	*
+    **************************************************************************-->
+<!ELEMENT manhour - O (%applic;)? -- Maintenance Action Duration in Man/Hour.-->
+<!ATTLIST  manhour
+		value	CDATA	#REQUIRED 
+			-- Duration in Hour and 1/10 of Hour.-->
+
+
+<!--*****************************************************************************
+    * Define Element DURATION (Maintenance Task Duration).			*
+    **************************************************************************-->
+<!ELEMENT duration - O (%applic;)? -- Maintenance Task Duration.-->
+<!ATTLIST  duration
+		value	CDATA	#REQUIRED 
+			-- Duration in Hour and 1/10 of Hour.-->
+
+
+
+<!--*****************************************************************************
+    * Define Element MAINFUNC (Maintenance Function).				*
+    **************************************************************************-->
+<!ELEMENT mainfunc - O (step1+,(figure|table)*) -- Maintenance Function.-->
+<!ATTLIST mainfunc    %INSDEL;>
+
+
+<!--*****************************************************************************
+    *  Define Element CLOSEUP (Close up procedures).				*
+    **************************************************************************-->
+<!ELEMENT closeup - O (noclose | (step1+,(figure|table)*))
+		-- Close up procedures.-->
+<!ATTLIST closeup   %INSDEL;>
+
+
+<!--*****************************************************************************
+    *  Define Element NOCLOSE (No Close Up procedures).				*
+    **************************************************************************-->
+<!ELEMENT noclose - O EMPTY -- No Close Up procedures.-->
+<!ATTLIST noclose   %INSDEL;>
+
+
+
+<!--**********************************************************************
+    * Call the Steps Public Text.                                        *
+    * The formal public identifier is stored in the entity %EXTSTEP;     *
+    ********************************************************************** -->
+
+%EXTSTEP;
+
+
+
+<!--**********************************************************************
+    * Call the Lists Public Text.                                        *
+    * The formal public identifier is stored in the entity %EXTLIST;     *
+    ********************************************************************** -->
+
+%EXTLIST;
+
+
+
+<!--**********************************************************************
+    * Call the Figure Public Text.                                       *
+    * The formal public identifier is stored in the entity %EXTFIG;      *
+    ********************************************************************** -->
+
+%EXTFIG;
+
+
+<!--**********************************************************************
+    * Call the Table Public Text.                                        *
+    * The formal public identifier is stored in the entity %EXTTAB;      *
+    ********************************************************************** -->
+
+%EXTTAB;
+
+
+
+
+<!--**********************************************************************
+    * Call the Special Paragraphs Public Text.                           *
+    * The formal public identifier is stored in the entity %EXTSPEC;     *
+    ********************************************************************** -->
+
+%EXTSPEC;
+
+
+

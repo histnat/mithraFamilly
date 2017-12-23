@@ -1,0 +1,154 @@
+package com.sonovision.openconv.modules.dtdvalidator;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+
+import javax.xml.transform.Result;
+import javax.xml.transform.stream.StreamSource;
+import javax.xml.validation.Validator;
+
+import org.apache.commons.io.IOUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.xml.sax.SAXException;
+
+import com.sedoc.dtdtoolbox.utils.DTDParsing;
+import com.sedoc.toolbox.SpringBeanProvider;
+import com.sedoc.toolbox.bean.UtilsService;
+import com.sonovision.openconv.log.model.DBLogger;
+import com.sonovision.openconv.log.model.LoggerLevel;
+import com.sonovision.openconv.mapper.TreatedObjectMapper;
+import com.sonovision.openconv.model.TreatedObject;
+import com.sonovision.openconv.wf.WFTask;
+import com.sonovision.openconv.wf.WFTaskHelper;
+import com.sonovision.openconv.wf.model.ParameterDetailled;
+import com.sonovision.openconv.wf.model.ParameterTypes;
+
+@Component
+public class TaskDTDValidator extends WFTaskHelper implements WFTask {
+
+	@Autowired
+	UtilsService utilsService;
+
+	// I must init spring composent, buti have loop on this class. this variable
+	// is for skip loop. I think it will be better if we use @Configure. next
+	// time
+	private static boolean initrun = false;
+
+	public TaskDTDValidator() {
+		super();
+	}
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7764367737889004545L;
+
+	public String run(HashMap<String, TreatedObject> treatedObjectHash) {
+		initClass();
+		dbLogger.logTask("Debut de la validate de dtd", LoggerLevel.INFO);
+		if (treatedObjectHash == null || treatedObjectHash.isEmpty()) {
+			dbLogger.logTask("Aucun xml a traiter", LoggerLevel.FATAL);
+			return LoggerLevel.FATAL.getValue().toString();
+		}
+//		treatedObjectHash.values().stream().parallel().forEach((to) -> validate(to));
+		treatedObjectHash.values().stream().forEach((to) -> validate(to));
+		return dbLogger.getTask().getLogResult();
+
+	}
+
+	@SuppressWarnings("unused")
+	private TreatedObject validate(TreatedObject to) {
+		if (to == null)// It's not real FATAL, normaly it doesn't happen
+		{
+			return null;
+		}
+		if (to.getLastResultAction() != null && (to.getLastResultAction().equals(LoggerLevel.FATAL.toString())
+				|| to.getLastResultAction().equals(LoggerLevel.ERROR.toString()))) {
+			dbLogger.logObject("l'objet :" + to.getIdObject() + " n'est pas traité car il est en level : "
+					+ to.getLastResultAction(), LoggerLevel.INFO, to.getIdObject());
+			closeObject(DBLogger.getLoggerLevel(to.getLastResultAction()), to);
+			return to;
+		}
+		dbLogger.logObject("validation dtd :" + to.getIdObject(), LoggerLevel.INFO, to.getIdObject());
+		DTDParsing dtdParsing = new DTDParsing();
+		Validator validator = dtdParsing.getValidator();
+		Result result = null;
+		try {
+			InputStream document = TreatedObjectMapper.getInputStream(to.getObjectConvert());
+			ByteArrayOutputStream out = new ByteArrayOutputStream();
+			IOUtils.copy(document, out);
+			document = utilsService.outputStreamToInputStream(out);
+			to.setObjectConvert(utilsService.outputStreamToInputStream(out));
+			validator.validate(new StreamSource(document), result);
+			if (result == null) {
+				to.setLastResultAction(LoggerLevel.INFO.toString());
+				closeObject(LoggerLevel.INFO, to);
+			} else {
+				to.setLastResultAction(LoggerLevel.ERROR.toString());
+				dbLogger.logObject(
+						"Erreur durant la validation de dtd :" + to.getIdObject() + " erreur:" + result.toString(),
+						LoggerLevel.ERROR, to.getIdObject());
+				closeObject(LoggerLevel.ERROR, to);
+			}
+			document=null;
+		} catch (SAXException ex) {
+			to.setLastResultAction(LoggerLevel.ERROR.toString());
+			dbLogger.logObject("Erreur durant la validation de dtd :" + to.getIdObject() + " erreur:" + ex.getMessage(),
+					LoggerLevel.ERROR, to.getIdObject());
+			closeObject(LoggerLevel.ERROR, to);
+
+		} catch (IOException ex) {
+
+			to.setLastResultAction(LoggerLevel.ERROR.toString());
+			dbLogger.logObject("Erreur durant la validation de dtd :" + to.getIdObject() + " erreur:" + ex.getMessage(),
+					LoggerLevel.ERROR, to.getIdObject());
+			closeObject(LoggerLevel.ERROR, to);
+		}
+		
+		System.gc();
+		return to;
+	}
+
+	/**
+	 * It can be replaced by @Configuration with aspectj spring but i don't know
+	 * why it doesn't work TODO :make it generic in extends's class
+	 */
+	public void initClass() {
+		if (!initrun) {
+			initrun = true;
+			if (utilsService == null) {
+				utilsService = (UtilsService) SpringBeanProvider.getBean("UtilsService");
+			}
+			initrun = false;
+		}
+	}
+
+	/**
+	 * @return the utilsService
+	 */
+	public UtilsService getUtilsService() {
+		return utilsService;
+	}
+
+	/**
+	 * @param utilsService the utilsService to set
+	 */
+	public void setUtilsService(UtilsService utilsService) {
+		this.utilsService = utilsService;
+	}
+	
+	@Override
+	public List<ParameterDetailled> getParameterList(Locale locale) {
+
+		parametersRequired=new HashMap<>();
+
+		return super.procedeParameterList(locale);
+	}
+	
+	
+}

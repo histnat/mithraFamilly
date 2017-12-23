@@ -1,0 +1,46 @@
+[
+ {
+                    "id": {
+                        "taskId": "1",
+                        "parameterName": "inZipFile"
+                    },
+                    "label": "Fichier zip d'entrée",
+                    "value": "0",
+                    "code": "inZipFile",
+                    "type": "FILE",
+                    "descr": "Fichier zip à charger"
+    },
+    {
+          "id": {
+            "taskId": "1",
+            "parameterName": "extensionFilter"
+          },
+          "label": "Extension du filtre",
+          "value": null,
+          "code": "extensionFilter",
+          "type": "TXT",
+          "descr": "Description extension du filtre"
+       },
+       {
+          "id": {
+            "taskId": "2",
+            "parameterName": "codificationFile"
+          },
+          "label": "codificationFilelbl",
+          "value": "in/codification/listeInOut.xml",
+          "code": "codificationFile",
+          "type": "TXT",
+          "descr": "codificationFiledescr"
+        },
+       {
+          "id": {
+            "taskId": "2",
+            "parameterName": "codificationFile"
+          },
+          "label": "codificationFilelbl",
+          "value": "in/codification/listeInOut.xml",
+          "code": "codificationFile",
+          "type": "TXT",
+          "descr": "codificationFiledescr"
+        }
+  ]

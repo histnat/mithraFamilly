@@ -1,0 +1,32 @@
+package com.sonovision.openconv.ws.controller.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ScenarioExecutionHistoryDetailedModel extends ScenarioMiniModel{
+
+	private List<HistoryDetailedModel> listHistoryDetailedModel;
+	
+	public ScenarioExecutionHistoryDetailedModel() {
+		super();
+		// TODO Auto-generated constructor stub
+		listHistoryDetailedModel=new ArrayList<>();
+	}
+
+	public ScenarioExecutionHistoryDetailedModel(String scenarioId, String scenarioName) {
+		super(scenarioId, scenarioName);
+		// TODO Auto-generated constructor stub
+		listHistoryDetailedModel=new ArrayList<>();
+	}
+
+	public List<HistoryDetailedModel> getListHistoryDetailedModel() {
+		return listHistoryDetailedModel;
+	}
+
+	public void setListHistoryDetailedModel(List<HistoryDetailedModel> listHistoryDetailedModel) {
+		this.listHistoryDetailedModel = listHistoryDetailedModel;
+	}
+
+	
+	
+}

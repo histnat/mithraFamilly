@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ITEMS>
+  <ITEM>
+    <data>
+      <subData>cocoData12</subData>
+    </data>
+    <VISIBLE_KEY>coco1_coco2</VISIBLE_KEY>
+    <HASH_KEY>INGREDIENT</HASH_KEY>
+  </ITEM>
+  <ITEM>
+    <data>
+      <subData>cocoData34</subData>
+    </data>
+    <VISIBLE_KEY>coco3_coco4</VISIBLE_KEY>
+    <HASH_KEY>INGREDIENT</HASH_KEY>
+  </ITEM>
+</ITEMS>

@@ -1,0 +1,63 @@
+DocTraits
+	Protected: No
+	UnprotectedTags:
+
+TagTypes
+	Divisions: subpara1 subpara2 para0 subpara3 subpara4 para list deflist
+	DivisionHeads: p title
+	Paragraphs: specpara applic note title p caprow tptitle caption standard p specpara applic note list
+
+GraphicTraits
+	GraphicTag:graphic
+	GraphicEntityAttr:callicn
+	GraphicScalefit:scalefit
+	GraphicReprodep:reprodep
+	GraphicReprowid:reprowid			
+	GraphicTag:symbol
+	GraphicEntityAttr:callicn
+	GraphicFileNameAttr:
+	GraphicProcTypeAttr:
+	GraphicMagAttr:
+	GraphicResAttr:
+
+EqnTableModes
+	EqnMode: None
+	TableMode: CALS
+
+TagTraits
+	NoCharacterSubstitution:
+	NewlineAfterStartTag:idstatus dmaddres status refs rdandrt reftp refdm para0 subpara1 subpara2 subpara3 subpara4 figure graphic
+	NewlineBeforeEndTag:/idstatus /dmaddres /status /refs /rdandrt /reftp /refdm /para0 /subpara1 /subpara2 /subpara3 /subpara4 /figure 
+	NoTagFullMode:
+	NoTagPartialMode:
+	NoTagNoTagsMode:
+	FullTagPartialMode: fixzz subscrpt manufact symbol dmcref supscrpt nti norefs range mod
+		 rpc fixz customer issno supeqref unverif miscref partno reception secur
+		 single indxflag tabref figref graphic listref refipc xref context issdate
+		 reporg tpubref security sheet supplref unitary subpara1 subpara2 para0 subpara3 proclist subpara4 para list deflist illver rfa section rfu orig tptitle dmsize fig standard endippn
+		 swprog tpcode discodev dmcopen infoname illnum chapnum illupdat caption incode
+		 title cic techname remarks task eidc incodev subject figv term
+		 tpbase libelle itemloc sdc p supeqvc modelic discode ecscc subsect
+		
+	FullTagNoTagsMode:
+	SmallIconFullMode:
+	SmallIconPartialMode:
+	SmallIconNoTagsMode:
+	IconFullMode:
+	IconPartialMode:
+	IconNoTagsMode:
+
+ContextTransformations
+	InsertAroundToFix: incode fig remarks dmsize chapnum tpbase rfu subsect dmcopen
+		 rfa emphasis illnum eidc endippn ecscc tptitle task swprog caption
+		 standard sdc term techname itemloc infoname discodev section incodev discode
+		 orig libelle illupdat cic title figv modelic subject supeqvc tpcode
+		 illver
+	Substitutions:
+	InsertAutoNested:
+	InsertAutoHeading:title
+
+Options
+	AllowFosiMod: yes
+	AllowTouchup: yes
+

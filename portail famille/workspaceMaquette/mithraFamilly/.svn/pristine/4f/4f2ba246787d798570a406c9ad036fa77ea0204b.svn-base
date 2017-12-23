@@ -1,0 +1,23 @@
+package com.sonovision.openconv.db.dao;
+
+import java.io.Serializable;
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import com.sonovision.openconv.db.vo.user.OpGroup;
+import com.sonovision.openconv.db.vo.user.OpRole;
+
+@Repository
+public interface OpRoleDao extends CommonDao<OpRole>, Serializable  {
+
+
+	/**
+	 * find role by is code
+	 * @param code
+	 * @return
+	 */
+	OpRole findByCode(String code);
+
+	
+}

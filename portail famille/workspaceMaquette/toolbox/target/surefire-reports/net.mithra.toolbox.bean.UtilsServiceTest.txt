@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: net.mithra.toolbox.bean.UtilsServiceTest
+-------------------------------------------------------------------------------
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.664 sec

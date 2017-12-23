@@ -1,0 +1,310 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1A753220SF030100021A021 SYSTEM "x-dm://0900f90b80003e47,MYWORKING" NDATA cgm>
+]>
+<?Pub Inc>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>75</chapnum><section>3</section><subsect>2</subsect><subject>20</subject><discode>00</discode><discodev>A</discodev><incode>310</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmc>
+<dmtitle><techname>VERIN STATOR</techname><infoname>CONTROLES VISUELS</infoname></dmtitle>
+<issno type="C" issno="3">
+<issdate month="12" year="2010" day="15">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 1"></version>
+<version version="M88-2 ETAPE 4"></version>
+<customer aaf="1" anf="1">
+<nti nti1="0" nti2="0" nti3="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Prise en compte de la <?Pub Caret>FRD1003</rfu>
+<remarks>RAS</remarks>
+<icns><icn id="A1A753220SF030100021A021">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>75</chapnum><section>3</section><subsect>2</subsect><subject>20</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00021</illnum><illver>A</illver><illupdat>02</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<refdm>
+<dmcid id="A1A75320002A311AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>75</chapnum><section>3</section><subsect>2</subsect><subject>00</subject><discode>02</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A73210002A311AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>1</subsect><subject>00</subject><discode>02</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A73210003A311AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>1</subsect><subject>00</subject><discode>03</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A75300001A311AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>75</chapnum><section>3</section><subsect>0</subsect><subject>00</subject><discode>01</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A75320001A361AC" change="add"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>75</chapnum><section>3</section><subsect>2</subsect><subject>00</subject><discode>01</discode><discodev>A</discodev><incode>361</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A75322000A361AC" change="add"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>75</chapnum><section>3</section><subsect>2</subsect><subject>20</subject><discode>00</discode><discodev>A</discodev><incode>361</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A70370006A369AD"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>3</section><subsect>7</subsect><subject>00</subject><discode>06</discode><discodev>A</discodev><incode>369</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmcid>
+</refdm>
+</refs><proced><pmd>
+<manhour value="1,5"></manhour>
+<duration value="1,5"></duration>
+</pmd><prelreqs><reqconds><reqcondli><reqcond>
+<cond><para><p>V&eacute;rin stator d&eacute;sassembl&eacute;.</p>
+</para>
+</cond>
+</reqcond></reqcondli></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="1,5"></reqper>
+</reqpers><supequip><nosupeq><nosupeqs></supequip><supplies><nosupply></supplies><miscs><nomisc></miscs><safety><nosafety></safety></prelreqs><mainfunc>
+<step1 control="0" id="P10">
+<title>CONTROLE VISUEL DU VERIN PARTIELLEMENT DESASSEMBLE</title>
+<para><p>Contr&ocirc;ler visuellement le v&eacute;rin.</p>
+</para>
+<note>
+<p>Ce contr&ocirc;le s'applique suivant la profondeur d'intervention r&eacute;alis&eacute;e. Il s'effectue sur des &eacute;l&eacute;ments d&eacute;pos&eacute;s ou accessibles, suivant les consignes d&eacute;finies ci-dessous.</p>
+</note>
+</step1>
+<step1 control="0" id="P20">
+<title>CONTROLE VISUEL DES ELEMENTS DEPOSES</title>
+<step2 control="0" id="P20-10">
+<title>CARTER DE VERIN</title>
+<step3 control="0">
+<para><p>Contr&ocirc;ler visuellement le carter du v&eacute;rin <refipc csn="75322001 039 "> <figref repnohot="EK001" refid="A753220SF030100021A021">.</p>
+</para>
+</step3>
+<step3 control="0">
+<para><p>V&eacute;rifier les implantations suivant le tableau&nbsp;:</p>
+</para>
+<table tocentry="1">
+<tgroup cols="4" align="LEFT"><colspec colnum="1" colname="COL1" colwidth="4.25cm"><colspec colnum="2" colname="COL2" colwidth="4.25cm"><colspec colnum="3" colname="COL3" colwidth="4.25cm"><colspec colnum="4" colname="COL4" colwidth="4.25cm" colsep="1">
+<tbody valign="TOP">
+<row>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>ZONES</p>
+</para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>DEFAUTS</p>
+</para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>CRITERES D'ADMISSIBILITE</p>
+</para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>SANCTIONS</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0"><para><p>Bouchons filet&eacute;s</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>Ecaillage, choc</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>Inacceptable</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p change="mod">Contacter Snecma</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0"><para><p>Mamelons</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>Ecaillage, choc</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>Inacceptable</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p change="mod">Contacter Snecma</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0"><para><p>Filet rapport&eacute; <refipc csn="75322001 040 "> <figref repnohot="EK001-02" refid="A753220SF030100021A021"></p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>Absence de filet, d&eacute;faut de freinage</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p><dmcref xrefid="A1A70370006A369AD"></p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p change="mod">Contacter Snecma</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>ZONE D <figref repnohot="ZONE D" refid="A753220SF030100021A021"></p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>Rayure, &eacute;caillage, choc</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>Inacceptable</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p change="mod">Contacter Snecma</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step3>
+<step3 control="0">
+<para><p>V&eacute;rifier l'&eacute;tat de surface suivant le tableau&nbsp;:</p>
+</para>
+<table tocentry="1">
+<tgroup cols="4" align="CENTER"><colspec colnum="1" colname="COL1" colwidth="4.25cm" align="CENTER"><colspec colnum="2" colname="COL2" colwidth="4.25cm" align="CENTER"><colspec colnum="3" colname="COL3" colwidth="4.25cm" align="CENTER"><colspec colnum="4" colname="COL4" colwidth="4.25cm" align="CENTER" colsep="1">
+<tbody valign="TOP">
+<row>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>ZONES</p>
+</para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>DEFAUTS</p>
+</para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>CRITERES D'ADMISSIBILITE</p>
+</para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>SANCTIONS</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="COL1" valign="middle"><para><p change="add">Dia.A <figref repnohot="DIA.A" refid="A753220SF030100021A021"></p>
+</para>
+</entry>
+<entry colname="COL2" valign="middle"><para><p change="add">Rayure, choc</p>
+</para>
+</entry>
+<entry colname="COL3" valign="middle"><para><p change="add">Inacceptable</p>
+</para>
+</entry>
+<entry colname="COL4" valign="middle"><para><p change="add">Contacter Snecma</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>Dia.B <figref repnohot="DIA.B" refid="A753220SF030100021A021"></p>
+</para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>Rayure, choc</p>
+</para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>Inacceptable</p>
+</para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p change="mod">Contacter Snecma</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>Dia C <figref repnohot="DIA.C" refid="A753220SF030100021A021"></p>
+</para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>Rayure, &eacute;caillage, choc.</p>
+</para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>Inacceptable</p>
+</para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p change="mod">Contacter Snecma</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" morerows="0"><para><p>Toute la surface</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" morerows="0"><para><p>Pr&eacute;sence de particules de joints</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" morerows="0"><para><p>Inacceptable</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" morerows="0"><para><p>Nettoyer le carter de v&eacute;rin</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<para><p change="add">Effectuer un contr&ocirc;le dimensionnel du Dia.A <figref repnohot="DIA.A" refid="A753220SF030100021A021"> <dmcref xrefid="A1A75322000A361AC">.</p>
+</para>
+</step3>
+</step2>
+<step2 control="0" id="P20-20">
+<title>AUTRES COMPOSANTS</title>
+<para><p>Effectuer un contr&ocirc;le visuel&nbsp;:</p>
+</para>
+<list type="SIMPLE">
+<item><para><p>de la chape &eacute;quip&eacute;e <refipc csn="75321001 001 "> <dmcref xrefid="A1A75320002A311AC">,</p>
+</para>
+</item>
+<item><para><p>des mamelons <refipc csn="75322001 004 "> <refipc csn="75322001 006 "> <dmcref xrefid="A1A73210002A311AC">,</p>
+</para>
+</item>
+<item><para><p>du bouchon &agrave; t&ecirc;te cylindrique <refipc csn="75322001 037 "> <dmcref xrefid="A1A73210003A311AC">,</p>
+</para>
+</item>
+<item><para><p>de l'ensemble palier, piston, &eacute;crou <dmcref xrefid="A1A75300001A311AC">.</p>
+</para>
+</item>
+</list>
+<para><p>Effectuer d'apr&egrave;s le tableau suivant un contr&ocirc;le visuel de la vis <refipc csn="75322001 009 ">&nbsp;:</p>
+</para>
+<table tocentry="1">
+<tgroup cols="4" align="LEFT"><colspec colnum="1" colname="COL1" colwidth="4.25cm"><colspec colnum="2" colname="COL2" colwidth="4.25cm"><colspec colnum="3" colname="COL3" colwidth="4.25cm"><colspec colnum="4" colname="COL4" colwidth="4.25cm" colsep="1">
+<tbody valign="TOP">
+<row>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>ZONES</p>
+</para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>DEFAUTS</p>
+</para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>CRITERES D'ADMISSIBILITE</p>
+</para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>SANCTIONS</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0"><para><p>T&ecirc;te</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>D&eacute;formations, manque de mati&egrave;re</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>Inacceptable</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>Rebuter</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Filetage</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>Bavures, traces de chocs</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>Inacceptable</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>Rebuter</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<para><p change="add">Effectuer un contr&ocirc;le dimensionnel du palier &eacute;quip&eacute; (douille et bague)<dmcref xrefid="A1A75320001A361AC">.</p>
+</para>
+</step2>
+</step1>
+<figure id="A753220SF030100021A021">
+<title>CONTROLES VISUELS</title>
+<graphic callicn="A1A753220SF030100021A021">
+</figure>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000012502 0>

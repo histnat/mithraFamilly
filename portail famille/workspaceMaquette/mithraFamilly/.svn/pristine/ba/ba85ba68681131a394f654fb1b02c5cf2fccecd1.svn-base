@@ -1,0 +1,16 @@
+package com.sonovision.openconv.log.exception;
+
+public class LoggerException extends Exception {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3123126308244730965L;
+
+	public LoggerException() {
+	}
+
+	public LoggerException(String message) {
+		super(message);
+	}
+}

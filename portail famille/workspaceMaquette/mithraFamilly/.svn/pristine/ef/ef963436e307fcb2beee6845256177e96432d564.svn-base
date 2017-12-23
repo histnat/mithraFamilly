@@ -1,0 +1,20 @@
+package com.sonovision.openconv.ws.config;
+
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.ImportResource;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+
+import com.sonovision.openconv.ws.config.SecurityConfig;
+
+
+
+
+@ComponentScan(basePackages = {"com.sonovision.openconv.*"})
+@Configuration
+@EnableWebMvc
+//@Import({ SecurityConfig.class }) --------->>>>> Ne fonctionne pas... à revoir comment ça fonctionne
+@ImportResource("classpath:spring.xml")
+public class AppConfig {
+}

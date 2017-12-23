@@ -1,0 +1,75 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                              RAFALE                                *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.2b                           *
+    *                   Dated 12th January 2004                          *
+    *                                                                    *
+    * Amendment :-                                                       *
+    *  19/05/97        : Changed Public Identifier                       *
+    *                     deleted <math> from <entry> content model.	 *								   
+    *                     added attribute %INSDEL; to elements  	 *
+    *                     rfa,legend,table,tgroup,colspec,spanspec,thead,*
+    *                     tbody,row,entry				 *
+    *  15/01/98        : deleted table part                              *
+    *                    Changed Public Identifier                    	 *
+    *  12/01/03        : Add id attribute on sheet (FCR 3588)            *
+    *                    Changed Public Identifier                    	 *
+    *  12/01/04        : Add applicability on sheet element (FCR 3865)   *
+    *                    Changed Public Identifier                    	 *
+    *                                                                    *
+    *                                                                    *
+    * Typical invocation :                                               *
+    * <!ENTITY % EXTFIG                                                  *
+    * PUBLIC "-//RAFALE//ELEMENTS Figure Breakdown 040112//EN" >         *
+    * %EXTFIG;                                                           *
+    ********************************************************************** -->
+
+
+
+
+
+
+<!--**************************************************************************
+    * Define Element FIGURE (Figure).		                             *
+    **************************************************************************-->
+<!ELEMENT figure - O ((%applic;)?,((title,graphic,rfa*) | (sheet,(%applic;)?,title,graphic,rfa*)+),
+                       legend?)  -- Figure.-->
+<!ATTLIST figure
+          %bodyatt; >
+
+
+
+
+<!--**********************************************************************
+    * Define Element SHEET (Figure Sheet Number) containing:-            *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  SHEETNO  - NUMBER   - REQUIRED - Sheet number.                    *
+    *  TOTAL    - NUMBER   - REQUIRED - Total number of sheets.          *
+    *  Attribute Definition List stored in entity %bodyatt;              *
+    ********************************************************************** -->
+
+<!ELEMENT sheet - o EMPTY >
+<!ATTLIST sheet
+             sheetno NUMBER #REQUIRED
+             total   NUMBER #REQUIRED
+             %bodyatt; >
+
+
+
+<!--**************************************************************************
+    * Define RFA (Reason For Amendment).		                     *
+    **************************************************************************-->
+<!ELEMENT rfa - O (%text;)+ -- Reason For Amendment.-->
+<!ATTLIST rfa     %INSDEL;>
+
+
+<!--**************************************************************************
+    * Define Element LEGEND (Legend).				             *
+    **************************************************************************-->
+<!ELEMENT legend - O (deflist) -- Legend.-->
+<!ATTLIST legend     %INSDEL;>
+

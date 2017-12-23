@@ -1,0 +1,143 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1A725200SF030100172A021 SYSTEM "x-dm://0900f90b8000401f,MYWORKING" NDATA cgm>
+]>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>22</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmc>
+<dmtitle><techname>GOUJON</techname><infoname>CONTROLE VISUEL SANS MOYEN SPECIAL</infoname></dmtitle>
+<issno type="c" issno="5">
+<issdate month="10" year="2011" day="15">
+</dmaddres><status>
+<security class="np">
+<rpc rpcname="s">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 4"></version>
+<nti nti2="1" nti3="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Prise en compte de la MOD 250-78R1 + CSC2003 09/00106 et CSC V2005-11-00074</rfu>
+<remarks>RAS</remarks>
+<icns><icn id="A1A725200SF030100172A021">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="s"><orig>F0301</orig><illnum>00172</illnum><illver>A</illver><illupdat>02</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<norefs>
+</refs><proced><pmd>
+<manhour value="0,1"></manhour>
+<duration value="0,1"></duration>
+</pmd><prelreqs><reqconds>
+<noconds></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="0,1"></reqper>
+</reqpers><supequip><nosupeq><nosupeqs></supequip><supplies><supplyli exhaust="0">
+<supply id="R25020" mand="0" change="mod"><applic><config><mod modnb="250-78R1" change="mod" modcond="pre"></config></applic>
+<refipc change="mod" csn="72520001A022 " isn="00A"><nomen>GOUJON</nomen><quantity>SB</quantity></supply>
+<supply id="R1" mand="0" change="add"><applic><config><mod modnb="250-78R1" change="add" modcond="post"></config></applic>
+<refipc change="add" csn="72520001A022 " isn="00C"><nomen change="add">GOUJON</nomen><quantity change="add">SB</quantity></supply>
+</supplyli></supplies><miscs><nomisc></miscs><safety>
+<specpara>
+<caution>
+<p>Signaler tout autre d&eacute;faut non r&eacute;pertori&eacute; dans la proc&eacute;dure &agrave; Snecma.</p>
+</caution>
+</specpara>
+</safety></prelreqs><mainfunc>
+<step1 control="0" id="p10">
+<para change="mod"><applic><config><mod modnb="250-78R1" change="mod" modcond="pre"></config></applic>
+<p change="mod">Approvisionner en cas de remplacement la ou les rechanges <supplref refid="R25020">.</p>
+</para>
+<para change="add"><applic><config><mod modnb="250-78R1" change="add" modcond="post"></config></applic>
+<p change="add">Approvisionner en cas de remplacement la ou les rechanges <supplref refid="R1">.</p>
+</para>
+</step1>
+<step1 control="0" id="p20">
+<para><p>Contr&ocirc;ler visuellement les pi&egrave;ces selon les informations du tableau ci-dessous <figref refid="A725200SF030100172A021">.</p>
+</para>
+<table tocentry="1">
+<tgroup cols="3" align="left"><colspec colnum="1" colname="sqcolumn1" colwidth="5cm" align="center" colsep="1" rowsep="1"><colspec colnum="2" colname="sqcolumn2" colwidth="7cm" align="left" colsep="1" rowsep="1"><colspec colnum="3" colname="sqcolumn3" colwidth="5cm" align="left" colsep="1" rowsep="1">
+<tbody valign="top">
+<row rowsep="1">
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>DEFAUTS</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>CRITERES D'ADMISSIBILITE</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>SANCTION</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Crique</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Inadmissible</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Remplacement de la pi&egrave;ce</p>
+<note>
+<p>En cas de doute effectuer un contr&ocirc;le ressuage</p>
+</note>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>D&eacute;formation, rupture de la collerette</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Inadmissible</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Desserrage difficile (grippage)</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Inadmissible</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" align="left" colsep="1" rowsep="1"><para><p>Pr&eacute;sence d'&eacute;raflures (accompagn&eacute;es ou non de traces de bavures</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" rowsep="1"><para><p>Inadmissible</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" rowsep="1"><para><p>Remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="sqcolumn1" align="left"><para><p change="add">D&eacute;formation<?Pub Caret> des filets</p>
+</para>
+</entry>
+<entry colname="sqcolumn2"><para><p change="add">Inadmissible</p>
+</para>
+</entry>
+<entry colname="sqcolumn3"><para><p change="add">Remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step1>
+<figure id="A725200SF030100172A021">
+<title>IDENTIFICATION DES DEFAUTS</title>
+<graphic callicn="A1A725200SF030100172A021">
+</figure>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000006023 0>

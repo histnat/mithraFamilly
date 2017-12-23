@@ -1,0 +1,516 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                            RAFALE                                  *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.2                            *
+    *                   Dated 22th December 1998                         *
+    *                                                                    *
+    *  Amendment        :			                         *
+    *    19/05/97       : Change Public Identifier 	         	 *
+    *                        added attribute id (type ID) for <techpub>	 *
+    * 1. New Public Identifier to support removal of marked sections.    *
+    * 2. change from to wirefrom and to to wireto                        *
+    * 3. applic optional behind actwire and nactwire                     *
+    * 4. add applic behind sparepin                                      *
+    * 5. EITC become EG                                                  *
+    * 6. cableshem repeatable behind wire                                *
+    *									 *
+    *   15/01/98   : Update Public Identifier				 *
+    *                %applic optional in conitem and harness             *
+    *                delete mfrcode and termpnr elements                 *
+    *                change reg by reporg                                *
+    *                change csn,isn by refipc                            *
+    *                replace zone by localiz                             *
+    *                harnessid repeatable instead of single              *
+    *                add conrows, cableschs and extrows                  *
+    *                use %ident; entity to define equipment              *
+    *                                                                    *
+    *   12/12/98   : Update Public Identifier				 *
+    *                call %bodyatt in lowercase                          *
+    *                                                                    *
+    *   29/09/04   : Update Public Identifier				 *
+    *                change wirefrom/wireto/wire to wirefrom/wire/wireto *
+    *                dmcref optional under cablesch                      *
+    *                link element added for wirefrom wireto and wire     *
+    *                elemref element added for conitem wirefrom wireto wire*
+    *                         = %ident and dmcref for link to wire data  *
+    *                wirecode added (gather code and link to schema)     *
+    *                wireborne added (gather borne and link to schema)   *
+    *                                                                    *
+    * Typical invocation :                                               *
+    * <!ENTITY % WIRING                                                  *
+    *   PUBLIC "-//RAFALE//ELEMENTS WIRING Data 040929//EN" >            *
+    * %WIRING;                                                           *
+    ********************************************************************** -->
+
+<!--**********************************************************************
+    * Define Entity %CONTENT (Content Breakdown) containing :- WIRING    *
+    ********************************************************************** -->
+
+<!ENTITY % CONTENT "wiring" >
+
+<!--**********************************************************************
+    * Define Element WIRING (Wiring Content) containing:-                *
+    *  eqrow - mandatory  repeatable	equipment row			 *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+
+<!ELEMENT wiring - - (eqrow+)>
+<!ATTLIST wiring   %INSDEL;>
+
+
+<!--**********************************************************************
+    * Define Element EQROW (Equipment Row) containing:-                	 *
+    *  %applic; - optional  single  	effectivity			 *
+    *  eqitem - mandatory  single		equipment item		 *
+    *  conrows - mandatory  single	    connector table    		 *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %BODYATT;               *
+    ********************************************************************** -->
+
+<!ELEMENT eqrow - - ((%applic;)?,eqitem,conrows)>
+<!ATTLIST eqrow   %bodyatt;>
+
+
+<!--**********************************************************************
+    * Define Element CONROWS (Connector table) containing:-           	 *
+    *  conrow - mandatory  repeatable 	Connector Row		         *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+
+<!ELEMENT conrows - - (conrow+)>
+<!ATTLIST conrows   %INSDEL;>
+
+
+<!--**********************************************************************
+    * Define Element CONROW (Connector Row) containing:-             	 *
+    *  %applic; - optional  single  	effectivity			 *
+    *  conitem - mandatory  single		connector item		 *
+    *  harness - mandatory  single		harness			 *
+    *  cableschs - mandatory  single	harness schema			 *
+    *  extwrows - mandatory  single 	extremity wire rows 		 *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+
+<!ELEMENT conrow - - ((%applic;)?,conitem,harness,cableschs?,extwrows)>
+<!ATTLIST conrow   %INSDEL;>
+
+
+<!--**********************************************************************
+    * Define Element CONITEM (Connector Item) containing:-               *
+    *  %applic; - mandatory  single  	effectivity		         *
+    *  conid    - optional   single	connector Id		         *
+    *  dmcref   - optional   single	text dmc/target reference        *
+    *  nomen    - optional   single	nomenclature		         *
+    *  csn      - mandatory  single	catalog sequence number	         *
+    *  isn      - optional   single	item sequence number	         *
+    *  ident    - mandatory  single	identifier		         *
+    *  nomen    - optional   single	nomenclature		         *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+
+<!ELEMENT conitem  - - ((%applic;)?, conid?, elemref?, nomen?)>
+<!ATTLIST conitem   %INSDEL;>
+
+<!--**********************************************************************
+    * Define Element HARNESS (Harnais) containing:-                  	 *
+    *  %applic; - mandatory single  	effectivity			 *
+    *  harnessid - mandatory repeatable	harness id			 *
+    *  refipc    - mandatory  single    ref to ippn, csn,isn		 *
+    *  ident - mandatory  single		identifier		 *
+    *  nomen - optional  single		nomenclature			 *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+
+<!ELEMENT harness  - - ((%applic;)?, (harnessid, (%ident;)?,nomen?)+)>
+<!ATTLIST harness   %INSDEL;>
+
+
+<!--**********************************************************************
+    * Define Element CONID (Connector ID/Equipment/Wire/Designator)      * 
+	*  containing:-  No Other Tags.                                  *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %bodyatt;               *
+    ********************************************************************** -->
+
+
+<!ELEMENT conid  - O (#PCDATA) >
+<!ATTLIST conid   %bodyatt; >
+
+
+<!--**********************************************************************
+    * Define Element ELEMREF (Element reference)                         * 
+	*  containing:-  No Other Tags.                                  *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %bodyatt;               *
+    ********************************************************************** -->
+
+<!ELEMENT elemref  - - ((%ident;), dmcref?) >
+<!ATTLIST elemref   %INSDEL; >
+
+
+<!--**********************************************************************
+    * Define Element HARNESSID (HARNESS IDentifier) containing:-      	 *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+
+<!ELEMENT harnessid  - - (#PCDATA)>
+<!ATTLIST harnessid   %INSDEL;>
+
+<!--**********************************************************************
+    * Define Element EQITEM (Equipment) containing:-                	 *
+    *  %applic; - mandatory single  	effectivity			 *
+    *  reporg - mandatory single		end item termination code*
+    *  nomen - mandatory  single		nomenclature		 *
+    *  csn - mandatory  single		catalog sequence number		 *
+    *  isn - optional  single			item sequence number	 *
+    *  ident - mandatory  single		identifier		 *
+    *  localiz - optional repeatable		air vehicle localization *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+
+<!ELEMENT eqitem  - - ((%applic;)?, reporg, nomen,(%ident;)?,localiz*) 
+ --Equipment Item--
+ --Identifies a set of elements which together define all aspects of an equipment item.-->
+<!ATTLIST eqitem   %INSDEL;>
+
+<!--**********************************************************************
+    * Define Element LOCALIZ (Air Vehicle localization).		 *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    **************************************************************************-->
+
+<!ELEMENT localiz - O (#PCDATA) >
+<!ATTLIST localiz   %INSDEL;>
+
+<!--**********************************************************************
+    * Define Element EXTWROWS (Extremity Wire Table) containing:-        *
+    *  extwrow - mandatory  repeatable	Extremity Wire Row	    	 *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+
+<!ELEMENT extwrows - - (extwrow)+>
+<!ATTLIST extwrows   %INSDEL;>
+
+
+<!--**********************************************************************
+    * Define Element EXTWROW (Extremity Wire Row) containing:-           *
+    *  actwire - mandatory  single	active wire			 *
+    *  nactwire - mandatory  single	non active wire			 *
+    *  sparepin - mandatory  single	spare pin			 *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+
+<!ELEMENT extwrow - - (actwire|nactwire|sparepin)>
+<!ATTLIST extwrow   %INSDEL;>
+
+<!--**********************************************************************
+    * Define Element ACTWIRE (Active Wire) containing:-                	 *
+    *  %applic; - mandatory single  effectivity			 	 *
+    *  from - mandatory  single   define all aspects of a termination    *
+    *  wire - optional  single	    define all aspects of a wire 	 *
+    *  to - optional  single	    define all aspects of a termination  *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+
+<!ELEMENT actwire  - - ((%applic;)? ,wirefrom ,wire? ,wireto?) 
+ --A Wire that is terminated at both ends and is used in a circuit.-->
+<!ATTLIST actwire   %INSDEL;>
+
+<!--**********************************************************************
+    * Define Element FROM (From termination) containing:-                *
+    *  borne  - optional  single 	borne				 *
+    *  link   - optional  single 	link to schemas  		 *
+    *  dmcref - optional  single 	link to wiring data (text)	 *
+    *  ident  - optional  single	termination identifier (csn/isn or ident, nomen*
+    *  nomen  - optional  single	nomenclature		 	 *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+
+<!ELEMENT wirefrom  - - (wireborne?, elemref?,nomen?) 
+ --Identifies a set of elements which together define all aspects of a termination.--
+ --NOTE : the FROM and TO elements are identical structures that identify the terminated--
+ --ends of a wire. They are defined with different names for convenience and clarity.--   >
+<!ATTLIST wirefrom   %INSDEL;>
+
+
+<!--**********************************************************************
+    * Define Element WIREBORNE (Wire Borne) containing:-                 *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %bodyatt;               *
+    ********************************************************************** -->
+
+<!ELEMENT wireborne  - - (borne, link*) >
+<!ATTLIST wireborne   %bodyatt;>
+
+
+<!--**********************************************************************
+    * Define Element BORNE (Borne) containing:-       			 *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+
+<!ELEMENT borne  - - (#PCDATA) >
+<!ATTLIST borne   %INSDEL;>
+
+
+<!--**********************************************************************
+    * Define Element WIRETO (to termination) containing:-             	 *
+    *  reporg - mandatory  single	end item termination code	 *
+    *  conid  - optional  single	connector Id		 	 *
+    *  borne  - optional  single 	borne				 *
+    *  link   - optional  single 	link to schemas  		 *
+    *  dmcref - optional  single 	link to wiring data (text)	 *
+    *  ident  - optional  single	termination identifier (csn/isn or ident, nomen*
+    *  nomen  - optional  single	nomenclature			 *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+
+<!ELEMENT wireto  - - (reporg ,conid?, wireborne?, elemref?, nomen?) 
+               --Identifies a set of elements which together define all aspects of a termination.--
+               --NOTE : the FROM and TO elements are identical structures that identify the terminated--
+               --ends of a wire.--
+               --They are defined with different names for convienience and clarity.-- >
+<!ATTLIST wireto   %INSDEL;>
+
+<!--**********************************************************************
+    * Define Element WIRE (Wire Content) containing:-                	 *
+    *  wirecode - mandatory  single	wire code			 *
+    *  dmcref   - optional  single 	link to wiring data (text)	 *
+    *  csn      - mandatory  single	catalog sequence number		 *
+    *  isn      - optional  single	item sequence number	         *
+    *  ident    - mandatory  single	identifier		         *
+    *  nomen    - optional  single	nomenclature			 *
+    *  wireclr  - optional  single	wire color		         *
+    *  length   - optional  single	wire length		         *
+    *  wirerp   - optional  single	reprise code		         *
+    *  cableschs - optional  single	drawing (diagram) table          *
+    *  feedthru - optional  repeatable	feed through (id of an equipment *
+    *		through which a wire passes (not used currently)	 *
+    *  sensep - optional  single	required sensitivity/separation  *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  wiretype - LIST  - IMPLIED - wire type			         *
+    *  wirecode - CDATA  - REQUIRED - wire code				 *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+
+<!ELEMENT wire  - - (wirecode, elemref?, nomen?, wireclr?, length?, 
+               wirerp? , cableschs?, feedthru* , sensep?) 
+ --Identifies a set of elements which define all aspects of wire.-->
+<!ATTLIST wire
+               wiretype (c , b)   #IMPLIED 
+               wirecode  CDATA    #REQUIRED  
+		       %INSDEL;>
+
+<!--**********************************************************************
+    * Define Element WIRECODE (Wire Code) containing:-       		 *
+    *  code - mandatory  single	    wire code		  	         *
+    *  link - optional repeatable   link to schema	  	         *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %bodyatt;               *
+    ********************************************************************** -->
+
+<!ELEMENT wirecode  - - (code , link*) 
+ --The set of elements required to identify a unique wire.-->
+<!ATTLIST wirecode   %bodyatt;>
+
+
+<!--**********************************************************************
+    * Define Element CODE (Wire Code) containing:-       		 *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+
+<!ELEMENT code  - - (#PCDATA) 
+ --The set of elements required to identify a unique wire.-->
+<!ATTLIST code   %INSDEL;>
+
+
+
+<!--**********************************************************************
+    * Define Element WIRECLR (Wire Color) containing:-       		 *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+
+<!ELEMENT wireclr  - - (#PCDATA) 
+ --The color of the wire when necessary to uniquely identify a wire.-->
+<!ATTLIST wireclr   %INSDEL;>
+
+<!--**********************************************************************
+    * Define Element LENGTH (Wire Length) containing:-       		 *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  unit - LIST  - REQUIRED - unit				         *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+
+<!ELEMENT length  - - (#PCDATA) 
+ --The numerical value of the length of a wire.--
+ --Note : The Units of measure are given in the associated attribute UNIT.-->
+<!ATTLIST length
+        unit (ft , in , mn , cm , m)   #REQUIRED  
+		%INSDEL;>
+
+
+<!--**********************************************************************
+    * Define Element WIRERP (Wire reprise) containing:-       		 *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  codrep - NUMBER  - REQUIRED - reprise code 		         *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+
+<!ELEMENT wirerp  - O EMPTY 
+ --Reprise code for a wire.-->
+<!ATTLIST wirerp   
+          codrep   NUMBER      #REQUIRED
+		  %INSDEL;>
+
+<!--**********************************************************************
+    * Define Element cableschs (drawing/diagrams Table) containing:-     *
+    *  cablesch  - mandatory  repeatable	drawing/diagram		 *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+  	* Attribute Definition list stored in entity %INSDEL;            *
+    ********************************************************************** -->
+
+<!ELEMENT cableschs  - - (cablesch)+ >
+<!ATTLIST cableschs   
+           %INSDEL;>
+
+<!--**********************************************************************
+    * Define Element cablesch (Production drawing/diagram number) containing:-*
+    *  dmcref - optional  single	data module reference		 *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * cabschid  cable diagram identifier                                 *
+	* Attribute Definition list stored in entity %INSDEL;            *
+    ********************************************************************** -->
+
+<!ELEMENT cablesch  - - (dmcref?) >
+<!ATTLIST cablesch   
+          cabschid  CDATA    #IMPLIED
+		  %INSDEL;>
+
+<!--**********************************************************************
+    * Define Element FEEDTHRU (Feed Through) containing:-      	 	 *
+    *  ein - mandatory  single	end item number			 	 *
+    *  termnbr - mandatory  single	termination number	 	 *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+
+<!ELEMENT feedthru  - - (ein , termnbr)? 
+ --The set of elements which identifies an equipment item through which a wire passes.-->
+<!ATTLIST feedthru   %INSDEL;>
+
+<!--**********************************************************************
+    * Define Element EIN (Equipment Identification Number) containing:-  *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+
+<!ELEMENT ein  - O (#PCDATA) 
+ --Equipment Identification Number-->
+<!ATTLIST ein   %INSDEL;>
+
+<!--**********************************************************************
+    * Define Element TERMNBR (Termination Number) containing:-       	 *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+
+<!ELEMENT termnbr  - O (#PCDATA) 
+               --The identification of the termination within a parent equipment item (EIN) such as a Plug--
+               --Terminal Block, etc.-->
+<!ATTLIST termnbr   %INSDEL;>
+
+<!--**********************************************************************
+    * Define Element SENSEP (Sensitivity/Separation) containing:-        *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+
+<!ELEMENT sensep  - - (#PCDATA) 
+ --The code that is used to identify the separation or sensitivity requirements of a wire.-->
+<!ATTLIST sensep   %INSDEL;>
+
+
+<!--**********************************************************************
+    * Define Element NACTWIRE (Non Active Wire) containing:-        	 *
+    *  %applic; - mandatory single  effectivity			 	 *
+    *  from - optional  single	termination from			 *
+    *  wire - mandatory  single	wire			 	 	 *
+    *  to - optional  single		termination to		 	 *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+
+<!ELEMENT nactwire  - - ((%applic;)?, wirefrom?, wire, wireto?) --<Title>Non-Active Wire--
+  --A wire that is terminated at neither, one, or both ends and is not utilized in a circuit.-->
+<!ATTLIST nactwire   %INSDEL;>
+
+<!--**********************************************************************
+    * Define Element SPAREPIN (Spare Pin) containing:-        	 	 *
+    *  from - mandatory  single		termination from		 *
+    *  wirecode - mandatory  	single	termination to		 	 *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+
+<!ELEMENT sparepin  - - ((%applic;)?,(wirefrom | wirecode)) --<Title>Spare Pin--
+ --A termination that is not connected to any wire and therefore has no destination "TO".-->
+<!ATTLIST sparepin   %INSDEL;>

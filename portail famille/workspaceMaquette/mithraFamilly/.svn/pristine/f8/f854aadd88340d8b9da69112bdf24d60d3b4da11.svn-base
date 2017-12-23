@@ -1,0 +1,2315 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sn="http://www.snecma.com/techpub/schemas/addon" elementFormDefault="qualified">
+	<!-- XML SCHEMA based on RAFALE CTCG 2.2c             -->
+	<!-- Converted from INDIGO PROJECT                    -->
+	<!-- AUTHOR : P.BOYER  ATEXIS for SNECMA              -->
+	<!-- Date 02/22/2013  Version 1.0                     -->
+	<!-- Status : Discard Any previuos version            -->
+	<!-- Added sn NameSpace for attribute inwork          -->
+	<!-- Added inwork attribute in complexType issno      -->
+	<!-- ================================================ -->
+	<xs:import namespace="http://www.snecma.com/techpub/schemas/addon"  schemaLocation="../snAddOn/snAddOn.xsd"/>
+	<xs:complexType name="dmodule">
+		<xs:sequence>
+			<xs:element ref="idstatus"/>
+			<xs:element ref="content"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="dmodule" type="dmodule"/>
+	<xs:complexType name="idstatus">
+		<xs:sequence>
+			<xs:element ref="dmaddres"/>
+			<xs:element ref="status"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="idstatus" type="idstatus"/>
+	<xs:complexType name="dmaddres">
+		<xs:sequence>
+			<xs:element ref="dmc"/>
+			<xs:element ref="dmtitle"/>
+			<xs:element ref="issno"/>
+			<xs:element ref="issdate"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="dmaddres" type="dmaddres"/>
+	<xs:complexType name="dmc">
+		<xs:sequence>
+			<xs:element ref="ipcc"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="dmc" type="dmc"/>
+	<xs:complexType name="ipcc">
+		<xs:sequence>
+			<xs:element ref="modelic"/>
+			<xs:element ref="sdc"/>
+			<xs:element ref="chapnum"/>
+			<xs:element ref="section"/>
+			<xs:element ref="subsect"/>
+			<xs:element ref="subject"/>
+			<xs:element ref="fig"/>
+			<xs:element ref="figv"/>
+			<xs:element ref="incode"/>
+			<xs:element ref="incodev"/>
+			<xs:element ref="itemloc"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ipcc" type="ipcc"/>
+	<xs:complexType name="modelic" mixed="true"/>
+	<xs:element name="modelic" type="modelic"/>
+	<xs:complexType name="sdc" mixed="true"/>
+	<xs:element name="sdc" type="sdc"/>
+	<xs:complexType name="chapnum" mixed="true"/>
+	<xs:element name="chapnum" type="chapnum"/>
+	<xs:complexType name="section" mixed="true"/>
+	<xs:element name="section" type="section"/>
+	<xs:complexType name="subsect" mixed="true"/>
+	<xs:element name="subsect" type="subsect"/>
+	<xs:complexType name="subject" mixed="true"/>
+	<xs:element name="subject" type="subject"/>
+	<xs:complexType name="fig" mixed="true"/>
+	<xs:element name="fig" type="fig"/>
+	<xs:complexType name="figv" mixed="true"/>
+	<xs:element name="figv" type="figv"/>
+	<xs:complexType name="incode" mixed="true"/>
+	<xs:element name="incode" type="incode"/>
+	<xs:complexType name="incodev" mixed="true"/>
+	<xs:element name="incodev" type="incodev"/>
+	<xs:complexType name="itemloc" mixed="true"/>
+	<xs:element name="itemloc" type="itemloc"/>
+	<xs:complexType name="dmtitle">
+		<xs:sequence>
+			<xs:element ref="techname"/>
+			<xs:element ref="infoname"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="dmtitle" type="dmtitle"/>
+	<xs:complexType name="techname" mixed="true"/>
+	<xs:element name="techname" type="techname"/>
+	<xs:complexType name="infoname" mixed="true"/>
+	<xs:element name="infoname" type="infoname"/>
+	<xs:complexType name="issno">
+		<xs:attribute name="issno" use="required" type="xs:anySimpleType"/>
+		<xs:attribute name="type" default="n">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="c"/>
+					<xs:enumeration value="n"/>
+					<xs:enumeration value="d"/>
+					<xs:enumeration value="r"/>
+					<xs:enumeration value="s"/>
+					<xs:enumeration value="t"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attributeGroup ref="sn:indigoVersionManagement"/>
+	</xs:complexType>
+	<xs:element name="issno" type="issno"/>
+	<xs:complexType name="issdate">
+		<xs:attribute name="year" use="required" type="xs:anySimpleType"/>
+		<xs:attribute name="month" use="required" type="xs:anySimpleType"/>
+		<xs:attribute name="day" use="required" type="xs:anySimpleType"/>
+	</xs:complexType>
+	<xs:element name="issdate" type="issdate"/>
+	<xs:complexType name="status">
+		<xs:sequence>
+			<xs:element ref="security"/>
+			<xs:element ref="dmsize" minOccurs="0"/>
+			<xs:element ref="rpc"/>
+			<xs:element ref="orig"/>
+			<xs:element ref="applic"/>
+			<xs:element ref="techstd"/>
+			<xs:element ref="qa"/>
+			<xs:element ref="rfu"/>
+			<xs:element ref="remarks"/>
+			<xs:element ref="icns" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="status" type="status"/>
+	<xs:complexType name="security">
+		<xs:attribute name="class" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="dr"/>
+					<xs:enumeration value="cd"/>
+					<xs:enumeration value="np"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="security" type="security"/>
+	<xs:complexType name="dmsize" mixed="true"/>
+	<xs:element name="dmsize" type="dmsize"/>
+	<xs:complexType name="rpc">
+		<xs:attribute name="rpcname" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="5"/>
+					<xs:enumeration value="6"/>
+					<xs:enumeration value="7"/>
+					<xs:enumeration value="8"/>
+					<xs:enumeration value="9"/>
+					<xs:enumeration value="A"/>
+					<xs:enumeration value="B"/>
+					<xs:enumeration value="C"/>
+					<xs:enumeration value="D"/>
+					<xs:enumeration value="E"/>
+					<xs:enumeration value="F"/>
+					<xs:enumeration value="G"/>
+					<xs:enumeration value="H"/>
+					<xs:enumeration value="I"/>
+					<xs:enumeration value="J"/>
+					<xs:enumeration value="K"/>
+					<xs:enumeration value="L"/>
+					<xs:enumeration value="M"/>
+					<xs:enumeration value="N"/>
+					<xs:enumeration value="O"/>
+					<xs:enumeration value="P"/>
+					<xs:enumeration value="Q"/>
+					<xs:enumeration value="R"/>
+					<xs:enumeration value="S"/>
+					<xs:enumeration value="T"/>
+					<xs:enumeration value="U"/>
+					<xs:enumeration value="V"/>
+					<xs:enumeration value="W"/>
+					<xs:enumeration value="X"/>
+					<xs:enumeration value="Y"/>
+					<xs:enumeration value="Z"/>
+					<xs:enumeration value="0"/>
+					<xs:enumeration value="1"/>
+					<xs:enumeration value="2"/>
+					<xs:enumeration value="3"/>
+					<xs:enumeration value="4"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="rpc" type="rpc"/>
+	<xs:complexType name="orig" mixed="true"/>
+	<xs:element name="orig" type="orig"/>
+	<xs:complexType name="applic">
+		<xs:sequence>
+			<xs:element ref="systemid" minOccurs="0"/>
+			<xs:element ref="config" minOccurs="0"/>
+			<xs:element ref="swprog" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="applic" type="applic"/>
+	<xs:complexType name="systemid">
+		<xs:sequence>
+			<xs:element ref="version" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="manufact"/>
+				<xs:sequence minOccurs="0" maxOccurs="unbounded">
+					<xs:element ref="partno"/>
+					<xs:element ref="serialnb" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:sequence>
+			<xs:element ref="std" minOccurs="0"/>
+			<xs:element ref="customer" minOccurs="0"/>
+			<xs:element ref="nti" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="systemid" type="systemid"/>
+	<xs:complexType name="version">
+		<xs:sequence>
+			<xs:element ref="versrank" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="version" use="required" type="xs:anySimpleType"/>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="version" type="version"/>
+	<xs:complexType name="versrank">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="single"/>
+			<xs:element ref="range"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:element name="versrank" type="versrank"/>
+	<xs:complexType name="single">
+		<xs:attribute name="rank" use="required" type="xs:anySimpleType"/>
+	</xs:complexType>
+	<xs:element name="single" type="single"/>
+	<xs:complexType name="range">
+		<xs:attribute name="from" use="required" type="xs:anySimpleType"/>
+		<xs:attribute name="to" use="required" type="xs:anySimpleType"/>
+	</xs:complexType>
+	<xs:element name="range" type="range"/>
+	<xs:complexType name="manufact" mixed="true">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="manufact" type="manufact"/>
+	<xs:complexType name="partno" mixed="true">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="partno" type="partno"/>
+	<xs:complexType name="serialnb">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="single"/>
+			<xs:element ref="range"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:element name="serialnb" type="serialnb"/>
+	<xs:complexType name="std">
+		<xs:sequence>
+			<xs:element ref="standard" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="std" type="std"/>
+	<xs:complexType name="standard" mixed="true">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="standard" type="standard"/>
+	<xs:complexType name="customer">
+		<xs:attribute name="aaf" type="xs:anySimpleType"/>
+		<xs:attribute name="anf" type="xs:anySimpleType"/>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="customer" type="customer"/>
+	<xs:complexType name="nti">
+		<xs:attribute name="nti1" type="xs:anySimpleType"/>
+		<xs:attribute name="nti2" type="xs:anySimpleType"/>
+		<xs:attribute name="nti3" type="xs:anySimpleType"/>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="nti" type="nti"/>
+	<xs:complexType name="config">
+		<xs:sequence>
+			<xs:element ref="mod" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="sb" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="config" type="config"/>
+	<xs:complexType name="mod">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="modnb" use="required" type="xs:NMTOKEN"/>
+		<xs:attribute name="modcond" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="post"/>
+					<xs:enumeration value="pre"/>
+					<xs:enumeration value="prandpo"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="mod" type="mod"/>
+	<xs:complexType name="sb">
+		<xs:sequence>
+			<xs:choice>
+				<xs:element ref="age"/>
+				<xs:element ref="avee"/>
+				<xs:element ref="ipcc"/>
+				<xs:element ref="ipcn"/>
+			</xs:choice>
+			<xs:element ref="issno" minOccurs="0"/>
+			<xs:element ref="dmtitle" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="sbcond" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="post"/>
+					<xs:enumeration value="pre"/>
+					<xs:enumeration value="prandpo"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="sb" type="sb"/>
+	<xs:complexType name="age">
+		<xs:sequence>
+			<xs:element ref="modelic"/>
+			<xs:element ref="supeqvc"/>
+			<xs:element ref="ecscc"/>
+			<xs:element ref="eidc"/>
+			<xs:element ref="cic"/>
+			<xs:element ref="discode"/>
+			<xs:element ref="discodev"/>
+			<xs:element ref="incode"/>
+			<xs:element ref="incodev"/>
+			<xs:element ref="itemloc"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="age" type="age"/>
+	<xs:complexType name="supeqvc" mixed="true"/>
+	<xs:element name="supeqvc" type="supeqvc"/>
+	<xs:complexType name="ecscc" mixed="true"/>
+	<xs:element name="ecscc" type="ecscc"/>
+	<xs:complexType name="eidc" mixed="true"/>
+	<xs:element name="eidc" type="eidc"/>
+	<xs:complexType name="cic" mixed="true"/>
+	<xs:element name="cic" type="cic"/>
+	<xs:complexType name="discode" mixed="true"/>
+	<xs:element name="discode" type="discode"/>
+	<xs:complexType name="discodev" mixed="true"/>
+	<xs:element name="discodev" type="discodev"/>
+	<xs:complexType name="avee">
+		<xs:sequence>
+			<xs:element ref="modelic"/>
+			<xs:element ref="sdc"/>
+			<xs:element ref="chapnum"/>
+			<xs:element ref="section"/>
+			<xs:element ref="subsect"/>
+			<xs:element ref="subject"/>
+			<xs:element ref="discode"/>
+			<xs:element ref="discodev"/>
+			<xs:element ref="incode"/>
+			<xs:element ref="incodev"/>
+			<xs:element ref="itemloc"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="avee" type="avee"/>
+	<xs:complexType name="ipcn">
+		<xs:sequence>
+			<xs:element ref="modelic"/>
+			<xs:element ref="sdc"/>
+			<xs:element ref="fixz"/>
+			<xs:element ref="rpc"/>
+			<xs:element ref="endippn"/>
+			<xs:element ref="fig"/>
+			<xs:element ref="figv"/>
+			<xs:element ref="incode"/>
+			<xs:element ref="incodev"/>
+			<xs:element ref="itemloc"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ipcn" type="ipcn"/>
+	<xs:complexType name="fixz">
+		<xs:attribute name="fixz" default="z">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="z"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="fixz" type="fixz"/>
+	<xs:complexType name="endippn" mixed="true"/>
+	<xs:element name="endippn" type="endippn"/>
+	<xs:complexType name="swprog" mixed="true">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="swprog" type="swprog"/>
+	<xs:complexType name="techstd">
+		<xs:sequence>
+			<xs:element ref="tpbase"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="techstd" type="techstd"/>
+	<xs:complexType name="tpbase" mixed="true"/>
+	<xs:element name="tpbase" type="tpbase"/>
+	<xs:complexType name="qa">
+		<xs:sequence>
+			<xs:choice>
+				<xs:element ref="unverif"/>
+				<xs:sequence>
+					<xs:element ref="unitary" minOccurs="0"/>
+					<xs:element ref="context" minOccurs="0"/>
+				</xs:sequence>
+			</xs:choice>
+			<xs:element ref="reception" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="qa" type="qa"/>
+	<xs:complexType name="unverif"/>
+	<xs:element name="unverif" type="unverif"/>
+	<xs:complexType name="unitary"/>
+	<xs:element name="unitary" type="unitary"/>
+	<xs:complexType name="context"/>
+	<xs:element name="context" type="context"/>
+	<xs:complexType name="reception">
+		<xs:attribute name="recept" default="0" type="xs:anySimpleType"/>
+		<xs:attribute name="receptdate" type="xs:anySimpleType"/>
+		<xs:attribute name="approv" default="0" type="xs:anySimpleType"/>
+		<xs:attribute name="approvdate" type="xs:anySimpleType"/>
+		<xs:attribute name="authoapprov" type="xs:anySimpleType"/>
+	</xs:complexType>
+	<xs:element name="reception" type="reception"/>
+	<xs:complexType name="rfu" mixed="true"/>
+	<xs:element name="rfu" type="rfu"/>
+	<xs:complexType name="remarks" mixed="true"/>
+	<xs:element name="remarks" type="remarks"/>
+	<xs:complexType name="icns">
+		<xs:sequence>
+			<xs:element ref="icn" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="icns" type="icns"/>
+	<xs:complexType name="icn">
+		<xs:sequence>
+			<xs:choice>
+				<xs:element ref="icn-c"/>
+				<xs:element ref="icn-n"/>
+			</xs:choice>
+			<xs:element ref="hotspot" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID"/>
+	</xs:complexType>
+	<xs:element name="icn" type="icn"/>
+	<xs:complexType name="icn-c">
+		<xs:sequence>
+			<xs:element ref="modelic"/>
+			<xs:element ref="sdc"/>
+			<xs:element ref="chapnum"/>
+			<xs:element ref="section"/>
+			<xs:element ref="subsect"/>
+			<xs:element ref="subject"/>
+			<xs:element ref="rpc"/>
+			<xs:element ref="orig"/>
+			<xs:element ref="illnum"/>
+			<xs:element ref="illver"/>
+			<xs:element ref="illupdat"/>
+			<xs:element ref="secur"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID"/>
+	</xs:complexType>
+	<xs:element name="icn-c" type="icn-c"/>
+	<xs:complexType name="illnum" mixed="true"/>
+	<xs:element name="illnum" type="illnum"/>
+	<xs:complexType name="illver" mixed="true"/>
+	<xs:element name="illver" type="illver"/>
+	<xs:complexType name="illupdat" mixed="true"/>
+	<xs:element name="illupdat" type="illupdat"/>
+	<xs:complexType name="secur">
+		<xs:attribute name="class" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="1"/>
+					<xs:enumeration value="2"/>
+					<xs:enumeration value="3"/>
+					<xs:enumeration value="4"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="secur" type="secur"/>
+	<xs:complexType name="icn-n">
+		<xs:sequence>
+			<xs:element ref="modelic"/>
+			<xs:element ref="sdc"/>
+			<xs:element ref="fixzz"/>
+			<xs:element ref="endippn"/>
+			<xs:element ref="rpc"/>
+			<xs:element ref="orig"/>
+			<xs:element ref="illnum"/>
+			<xs:element ref="illver"/>
+			<xs:element ref="illupdat"/>
+			<xs:element ref="secur"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID"/>
+	</xs:complexType>
+	<xs:element name="icn-n" type="icn-n"/>
+	<xs:complexType name="fixzz">
+		<xs:attribute name="fixzz" default="zz">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="zz"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="fixzz" type="fixzz"/>
+	<xs:complexType name="hotspot">
+		<xs:sequence>
+			<xs:element ref="link" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="xtgt" use="required" type="xs:anySimpleType"/>
+		<xs:attribute name="ytgt" use="required" type="xs:anySimpleType"/>
+		<xs:attribute name="wtgt" use="required" type="xs:anySimpleType"/>
+		<xs:attribute name="htgt" use="required" type="xs:anySimpleType"/>
+		<xs:attribute name="id" type="xs:ID"/>
+	</xs:complexType>
+	<xs:element name="hotspot" type="hotspot"/>
+	<xs:complexType name="link">
+		<xs:sequence>
+			<xs:element ref="libelle" minOccurs="0"/>
+			<xs:element ref="cible"/>
+		</xs:sequence>
+		<xs:attribute name="role" type="xs:anySimpleType"/>
+	</xs:complexType>
+	<xs:element name="link" type="link"/>
+	<xs:complexType name="libelle" mixed="true"/>
+	<xs:element name="libelle" type="libelle"/>
+	<xs:complexType name="cible">
+		<xs:choice>
+			<xs:element ref="xref"/>
+			<xs:element ref="figref"/>
+			<xs:element ref="dmcref"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:element name="cible" type="cible"/>
+	<xs:complexType name="xref">
+		<xs:attribute name="xrefid" use="required" type="xs:IDREF"/>
+		<xs:attribute name="pretext" type="xs:anySimpleType"/>
+		<xs:attribute name="posttext" type="xs:anySimpleType"/>
+	</xs:complexType>
+	<xs:element name="xref" type="xref"/>
+	<xs:complexType name="figref">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="refid" use="required" type="xs:IDREF"/>
+		<xs:attribute name="sheetno" type="xs:anySimpleType"/>
+		<xs:attribute name="target" type="xs:IDREF"/>
+		<xs:attribute name="repnohot" type="xs:anySimpleType"/>
+	</xs:complexType>
+	<xs:element name="figref" type="figref"/>
+	<xs:complexType name="dmcref">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="xrefid" use="required" type="xs:IDREF"/>
+		<xs:attribute name="target" type="xs:anySimpleType"/>
+		<xs:attribute name="targettype">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="hs"/>
+					<xs:enumeration value="icn"/>
+					<xs:enumeration value="txt"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="dmcref" type="dmcref"/>
+	<xs:complexType name="content">
+		<xs:sequence>
+			<xs:element ref="refs"/>
+			<xs:element ref="ipc"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="content" type="content"/>
+	<xs:complexType name="refs">
+		<xs:choice>
+			<xs:element ref="norefs"/>
+			<xs:element ref="rdandrt"/>
+			<xs:element ref="refdm"/>
+			<xs:element ref="reftp"/>
+		</xs:choice>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="refs" type="refs"/>
+	<xs:complexType name="norefs">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="norefs" type="norefs"/>
+	<xs:complexType name="rdandrt">
+		<xs:sequence>
+			<xs:element ref="refdm"/>
+			<xs:element ref="reftp"/>
+		</xs:sequence>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="rdandrt" type="rdandrt"/>
+	<xs:complexType name="refdm">
+		<xs:sequence>
+			<xs:element ref="dmcid" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="refdm" type="refdm"/>
+	<xs:complexType name="dmcid">
+		<xs:choice>
+			<xs:sequence>
+				<xs:choice>
+					<xs:element ref="age"/>
+					<xs:element ref="avee"/>
+					<xs:element ref="ipcc"/>
+					<xs:element ref="ipcn"/>
+				</xs:choice>
+				<xs:element ref="issno" minOccurs="0"/>
+				<xs:element ref="dmtitle" minOccurs="0"/>
+			</xs:sequence>
+			<xs:element ref="dmcopen"/>
+		</xs:choice>
+		<xs:attribute name="id" type="xs:ID"/>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="dmcid" type="dmcid"/>
+	<xs:complexType name="dmcopen" mixed="true">
+		<xs:attribute name="dmco" type="xs:anySimpleType"/>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="dmcopen" type="dmcopen"/>
+	<xs:complexType name="reftp">
+		<xs:sequence>
+			<xs:element ref="techpub" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="reftp" type="reftp"/>
+	<xs:complexType name="techpub">
+		<xs:sequence>
+			<xs:element ref="tpcode"/>
+			<xs:element ref="tptitle"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID"/>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="techpub" type="techpub"/>
+	<xs:complexType name="tpcode" mixed="true">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="tpcode" type="tpcode"/>
+	<xs:complexType name="tptitle" mixed="true">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="tptitle" type="tptitle"/>
+	<xs:complexType name="ipc">
+		<xs:sequence>
+			<xs:element ref="figure"/>
+			<xs:element ref="ipp"/>
+			<xs:element ref="csn" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ipc" type="ipc"/>
+	<xs:complexType name="figure">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:choice>
+				<xs:sequence>
+					<xs:element ref="title"/>
+					<xs:element ref="graphic"/>
+					<xs:element ref="rfa" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:sequence minOccurs="0" maxOccurs="unbounded">
+					<xs:element ref="sheet"/>
+					<xs:element ref="applic" minOccurs="0"/>
+					<xs:element ref="title"/>
+					<xs:element ref="graphic"/>
+					<xs:element ref="rfa" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:choice>
+			<xs:element ref="legend" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID"/>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="figure" type="figure"/>
+	<xs:complexType name="title" mixed="true">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="dmcref"/>
+			<xs:element ref="figref"/>
+			<xs:element ref="tabref"/>
+			<xs:element ref="supplref"/>
+			<xs:element ref="supeqref"/>
+			<xs:element ref="miscref"/>
+			<xs:element ref="refipc"/>
+			<xs:element ref="reporg"/>
+			<xs:element ref="xref"/>
+			<xs:element ref="listref"/>
+			<xs:element ref="tpubref"/>
+			<xs:element ref="indxflag"/>
+			<xs:element ref="emphasis"/>
+			<xs:element ref="symbol"/>
+			<xs:element ref="subscrpt"/>
+			<xs:element ref="supscrpt"/>
+			<xs:element ref="applict"/>
+		</xs:choice>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="title" type="title"/>
+	<xs:complexType name="tabref">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="refid" use="required" type="xs:IDREF"/>
+	</xs:complexType>
+	<xs:element name="tabref" type="tabref"/>
+	<xs:complexType name="supplref">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="refid" use="required" type="xs:IDREF"/>
+	</xs:complexType>
+	<xs:element name="supplref" type="supplref"/>
+	<xs:complexType name="supeqref">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="refid" use="required" type="xs:IDREF"/>
+	</xs:complexType>
+	<xs:element name="supeqref" type="supeqref"/>
+	<xs:complexType name="miscref">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="refid" use="required" type="xs:IDREF"/>
+	</xs:complexType>
+	<xs:element name="miscref" type="miscref"/>
+	<xs:complexType name="refipc">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="rpcname">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="5"/>
+					<xs:enumeration value="6"/>
+					<xs:enumeration value="7"/>
+					<xs:enumeration value="8"/>
+					<xs:enumeration value="9"/>
+					<xs:enumeration value="A"/>
+					<xs:enumeration value="B"/>
+					<xs:enumeration value="C"/>
+					<xs:enumeration value="D"/>
+					<xs:enumeration value="E"/>
+					<xs:enumeration value="F"/>
+					<xs:enumeration value="G"/>
+					<xs:enumeration value="H"/>
+					<xs:enumeration value="I"/>
+					<xs:enumeration value="J"/>
+					<xs:enumeration value="K"/>
+					<xs:enumeration value="L"/>
+					<xs:enumeration value="M"/>
+					<xs:enumeration value="N"/>
+					<xs:enumeration value="O"/>
+					<xs:enumeration value="P"/>
+					<xs:enumeration value="Q"/>
+					<xs:enumeration value="R"/>
+					<xs:enumeration value="S"/>
+					<xs:enumeration value="T"/>
+					<xs:enumeration value="U"/>
+					<xs:enumeration value="V"/>
+					<xs:enumeration value="W"/>
+					<xs:enumeration value="X"/>
+					<xs:enumeration value="Y"/>
+					<xs:enumeration value="Z"/>
+					<xs:enumeration value="0"/>
+					<xs:enumeration value="1"/>
+					<xs:enumeration value="2"/>
+					<xs:enumeration value="3"/>
+					<xs:enumeration value="4"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="ippn" type="xs:anySimpleType"/>
+		<xs:attribute name="csn" use="required" type="xs:anySimpleType"/>
+		<xs:attribute name="isn" type="xs:anySimpleType"/>
+	</xs:complexType>
+	<xs:element name="refipc" type="refipc"/>
+	<xs:complexType name="reporg">
+		<xs:attribute name="rpcname">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="5"/>
+					<xs:enumeration value="6"/>
+					<xs:enumeration value="7"/>
+					<xs:enumeration value="8"/>
+					<xs:enumeration value="9"/>
+					<xs:enumeration value="A"/>
+					<xs:enumeration value="B"/>
+					<xs:enumeration value="C"/>
+					<xs:enumeration value="D"/>
+					<xs:enumeration value="E"/>
+					<xs:enumeration value="F"/>
+					<xs:enumeration value="G"/>
+					<xs:enumeration value="H"/>
+					<xs:enumeration value="I"/>
+					<xs:enumeration value="J"/>
+					<xs:enumeration value="K"/>
+					<xs:enumeration value="L"/>
+					<xs:enumeration value="M"/>
+					<xs:enumeration value="N"/>
+					<xs:enumeration value="O"/>
+					<xs:enumeration value="P"/>
+					<xs:enumeration value="Q"/>
+					<xs:enumeration value="R"/>
+					<xs:enumeration value="S"/>
+					<xs:enumeration value="T"/>
+					<xs:enumeration value="U"/>
+					<xs:enumeration value="V"/>
+					<xs:enumeration value="W"/>
+					<xs:enumeration value="X"/>
+					<xs:enumeration value="Y"/>
+					<xs:enumeration value="Z"/>
+					<xs:enumeration value="0"/>
+					<xs:enumeration value="1"/>
+					<xs:enumeration value="2"/>
+					<xs:enumeration value="3"/>
+					<xs:enumeration value="4"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="reg" use="required" type="xs:anySimpleType"/>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="reporg" type="reporg"/>
+	<xs:complexType name="listref">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="refid" use="required" type="xs:IDREF"/>
+	</xs:complexType>
+	<xs:element name="listref" type="listref"/>
+	<xs:complexType name="tpubref">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="xrefid" use="required" type="xs:IDREF"/>
+	</xs:complexType>
+	<xs:element name="tpubref" type="tpubref"/>
+	<xs:complexType name="indxflag">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="ref1" type="xs:anySimpleType"/>
+		<xs:attribute name="ref2" type="xs:anySimpleType"/>
+		<xs:attribute name="ref3" type="xs:anySimpleType"/>
+		<xs:attribute name="ref4" type="xs:anySimpleType"/>
+	</xs:complexType>
+	<xs:element name="indxflag" type="indxflag"/>
+	<xs:complexType name="emphasis" mixed="true">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="dmcref"/>
+			<xs:element ref="figref"/>
+			<xs:element ref="tabref"/>
+			<xs:element ref="supplref"/>
+			<xs:element ref="supeqref"/>
+			<xs:element ref="miscref"/>
+			<xs:element ref="refipc"/>
+			<xs:element ref="reporg"/>
+			<xs:element ref="xref"/>
+			<xs:element ref="listref"/>
+			<xs:element ref="tpubref"/>
+			<xs:element ref="indxflag"/>
+			<xs:element ref="emphasis"/>
+			<xs:element ref="symbol"/>
+			<xs:element ref="subscrpt"/>
+			<xs:element ref="supscrpt"/>
+			<xs:element ref="applict"/>
+		</xs:choice>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="bold" type="xs:anySimpleType"/>
+		<xs:attribute name="italic" type="xs:anySimpleType"/>
+		<xs:attribute name="underscr" type="xs:anySimpleType"/>
+		<xs:attribute name="case" default="same">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="same"/>
+					<xs:enumeration value="upper"/>
+					<xs:enumeration value="lower"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="color" default="none">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="amber"/>
+					<xs:enumeration value="green"/>
+					<xs:enumeration value="magenta"/>
+					<xs:enumeration value="blue"/>
+					<xs:enumeration value="none"/>
+					<xs:enumeration value="yellow"/>
+					<xs:enumeration value="red"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="emphasis" type="emphasis"/>
+	<xs:complexType name="symbol">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="callicn" use="required" type="xs:IDREF"/>
+		<xs:attribute name="reprowid" type="xs:anySimpleType"/>
+		<xs:attribute name="reprodep" type="xs:anySimpleType"/>
+		<xs:attribute name="hscale" type="xs:anySimpleType"/>
+		<xs:attribute name="vscale" type="xs:anySimpleType"/>
+		<xs:attribute name="scalefit" type="xs:anySimpleType"/>
+		<xs:attribute name="offset" type="xs:NMTOKEN"/>
+		<xs:attribute name="rotation" type="xs:anySimpleType"/>
+	</xs:complexType>
+	<xs:element name="symbol" type="symbol"/>
+	<xs:complexType name="subscrpt" mixed="true">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="subscrpt" type="subscrpt"/>
+	<xs:complexType name="supscrpt" mixed="true">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="supscrpt" type="supscrpt"/>
+	<xs:complexType name="applict">
+		<xs:sequence>
+			<xs:element ref="applic"/>
+			<xs:element ref="t"/>
+		</xs:sequence>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="applict" type="applict"/>
+	<xs:complexType name="t" mixed="true">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="dmcref"/>
+			<xs:element ref="figref"/>
+			<xs:element ref="tabref"/>
+			<xs:element ref="supplref"/>
+			<xs:element ref="supeqref"/>
+			<xs:element ref="miscref"/>
+			<xs:element ref="refipc"/>
+			<xs:element ref="reporg"/>
+			<xs:element ref="xref"/>
+			<xs:element ref="listref"/>
+			<xs:element ref="tpubref"/>
+			<xs:element ref="indxflag"/>
+			<xs:element ref="emphasis"/>
+			<xs:element ref="symbol"/>
+			<xs:element ref="subscrpt"/>
+			<xs:element ref="supscrpt"/>
+		</xs:choice>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="t" type="t"/>
+	<xs:complexType name="graphic">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="callicn" use="required" type="xs:IDREF"/>
+		<xs:attribute name="reprowid" type="xs:anySimpleType"/>
+		<xs:attribute name="reprodep" type="xs:anySimpleType"/>
+		<xs:attribute name="hscale" type="xs:anySimpleType"/>
+		<xs:attribute name="vscale" type="xs:anySimpleType"/>
+		<xs:attribute name="scalefit" type="xs:anySimpleType"/>
+		<xs:attribute name="rotation" type="xs:anySimpleType"/>
+	</xs:complexType>
+	<xs:element name="graphic" type="graphic"/>
+	<xs:complexType name="rfa" mixed="true">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="dmcref"/>
+			<xs:element ref="figref"/>
+			<xs:element ref="tabref"/>
+			<xs:element ref="supplref"/>
+			<xs:element ref="supeqref"/>
+			<xs:element ref="miscref"/>
+			<xs:element ref="refipc"/>
+			<xs:element ref="reporg"/>
+			<xs:element ref="xref"/>
+			<xs:element ref="listref"/>
+			<xs:element ref="tpubref"/>
+			<xs:element ref="indxflag"/>
+			<xs:element ref="emphasis"/>
+			<xs:element ref="symbol"/>
+			<xs:element ref="subscrpt"/>
+			<xs:element ref="supscrpt"/>
+			<xs:element ref="applict"/>
+		</xs:choice>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="rfa" type="rfa"/>
+	<xs:complexType name="sheet">
+		<xs:attribute name="sheetno" use="required" type="xs:anySimpleType"/>
+		<xs:attribute name="total" use="required" type="xs:anySimpleType"/>
+		<xs:attribute name="id" type="xs:ID"/>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="sheet" type="sheet"/>
+	<xs:complexType name="legend">
+		<xs:sequence>
+			<xs:element ref="deflist"/>
+		</xs:sequence>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="legend" type="legend"/>
+	<xs:complexType name="deflist">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="title" minOccurs="0"/>
+			<xs:element ref="defitem" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID"/>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="deflist" type="deflist"/>
+	<xs:complexType name="defitem">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="term"/>
+			<xs:element ref="def"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID"/>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="defitem" type="defitem"/>
+	<xs:complexType name="term" mixed="true">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="dmcref"/>
+			<xs:element ref="figref"/>
+			<xs:element ref="tabref"/>
+			<xs:element ref="supplref"/>
+			<xs:element ref="supeqref"/>
+			<xs:element ref="miscref"/>
+			<xs:element ref="refipc"/>
+			<xs:element ref="reporg"/>
+			<xs:element ref="xref"/>
+			<xs:element ref="listref"/>
+			<xs:element ref="tpubref"/>
+			<xs:element ref="indxflag"/>
+			<xs:element ref="emphasis"/>
+			<xs:element ref="symbol"/>
+			<xs:element ref="subscrpt"/>
+			<xs:element ref="supscrpt"/>
+			<xs:element ref="applict"/>
+		</xs:choice>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="term" type="term"/>
+	<xs:complexType name="def">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="para"/>
+			<xs:element ref="list"/>
+		</xs:choice>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="def" type="def"/>
+	<xs:complexType name="para">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="specpara" minOccurs="0"/>
+			<xs:element ref="p"/>
+			<xs:element ref="note" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID"/>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="para" type="para"/>
+	<xs:complexType name="specpara">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="warning" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="caution" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="note" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="specpara" type="specpara"/>
+	<xs:complexType name="warning">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="p"/>
+				<xs:element ref="graphic"/>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute name="type" type="xs:anySimpleType"/>
+		<xs:attribute name="id" type="xs:ID"/>
+		<xs:attribute name="vital" default="0" type="xs:anySimpleType"/>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="warning" type="warning"/>
+	<xs:complexType name="p" mixed="true">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="dmcref"/>
+			<xs:element ref="figref"/>
+			<xs:element ref="tabref"/>
+			<xs:element ref="supplref"/>
+			<xs:element ref="supeqref"/>
+			<xs:element ref="miscref"/>
+			<xs:element ref="refipc"/>
+			<xs:element ref="reporg"/>
+			<xs:element ref="xref"/>
+			<xs:element ref="listref"/>
+			<xs:element ref="tpubref"/>
+			<xs:element ref="indxflag"/>
+			<xs:element ref="emphasis"/>
+			<xs:element ref="symbol"/>
+			<xs:element ref="subscrpt"/>
+			<xs:element ref="supscrpt"/>
+			<xs:element ref="applict"/>
+		</xs:choice>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="p" type="p"/>
+	<xs:complexType name="caution">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="p"/>
+				<xs:element ref="graphic"/>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute name="type" type="xs:anySimpleType"/>
+		<xs:attribute name="id" type="xs:ID"/>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="caution" type="caution"/>
+	<xs:complexType name="note">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="p"/>
+				<xs:element ref="graphic"/>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute name="type" type="xs:anySimpleType"/>
+		<xs:attribute name="id" type="xs:ID"/>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="note" type="note"/>
+	<xs:complexType name="list">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="title" minOccurs="0"/>
+			<xs:element ref="specpara" minOccurs="0"/>
+			<xs:element ref="item" maxOccurs="unbounded"/>
+			<xs:element ref="note" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID"/>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="type" default="simple">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="ordered"/>
+					<xs:enumeration value="simple"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="list" type="list"/>
+	<xs:complexType name="item">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="specpara" minOccurs="0"/>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="para"/>
+				<xs:choice>
+					<xs:element ref="list"/>
+					<xs:element ref="deflist"/>
+					<xs:element ref="proclist"/>
+				</xs:choice>
+			</xs:choice>
+			<xs:element ref="note" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID"/>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="item" type="item"/>
+	<xs:complexType name="proclist">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="title" minOccurs="0"/>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="pitem"/>
+				<xs:element ref="specpara"/>
+				<xs:element ref="para"/>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID"/>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="proclist" type="proclist"/>
+	<xs:complexType name="pitem">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="task"/>
+			<xs:element ref="action" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID"/>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="pitem" type="pitem"/>
+	<xs:complexType name="task" mixed="true">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="dmcref"/>
+			<xs:element ref="figref"/>
+			<xs:element ref="tabref"/>
+			<xs:element ref="supplref"/>
+			<xs:element ref="supeqref"/>
+			<xs:element ref="miscref"/>
+			<xs:element ref="refipc"/>
+			<xs:element ref="reporg"/>
+			<xs:element ref="xref"/>
+			<xs:element ref="listref"/>
+			<xs:element ref="tpubref"/>
+			<xs:element ref="indxflag"/>
+			<xs:element ref="emphasis"/>
+			<xs:element ref="symbol"/>
+			<xs:element ref="subscrpt"/>
+			<xs:element ref="supscrpt"/>
+			<xs:element ref="applict"/>
+		</xs:choice>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="task" type="task"/>
+	<xs:complexType name="action">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="para"/>
+			<xs:element ref="specpara"/>
+		</xs:choice>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="action" type="action"/>
+	<xs:complexType name="ipp">
+		<xs:attribute name="ippn" use="required" type="xs:anySimpleType"/>
+		<xs:attribute name="ips" use="required" type="xs:anySimpleType"/>
+		<xs:attribute name="sid" type="xs:anySimpleType"/>
+		<xs:attribute name="sns" type="xs:anySimpleType"/>
+		<xs:attribute name="fid">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="s"/>
+					<xs:enumeration value="t"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="lge" type="xs:anySimpleType"/>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="ipp" type="ipp"/>
+	<xs:complexType name="csn">
+		<xs:sequence>
+			<xs:element ref="dfl"/>
+			<xs:element ref="isn" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="csn" use="required" type="xs:anySimpleType"/>
+		<xs:attribute name="ind" use="required" type="xs:anySimpleType"/>
+		<xs:attribute name="item" use="required" type="xs:anySimpleType"/>
+		<xs:attribute name="id" use="required" type="xs:ID"/>
+		<xs:attribute name="hotspref" type="xs:IDREF"/>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="csn" type="csn"/>
+	<xs:complexType name="dfl" mixed="true">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="dfl" type="dfl"/>
+	<xs:complexType name="isn">
+		<xs:sequence>
+			<xs:element ref="rfs"/>
+			<xs:element ref="qna"/>
+			<xs:element ref="mfc"/>
+			<xs:element ref="pnr"/>
+			<xs:element ref="pas"/>
+			<xs:element ref="nsn" minOccurs="0"/>
+			<xs:element ref="cbs" minOccurs="0"/>
+			<xs:element ref="ccs" minOccurs="0"/>
+			<xs:element ref="ctl" minOccurs="0"/>
+			<xs:element ref="ces" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="rfd" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="ils" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="can" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="isn" use="required" type="xs:anySimpleType"/>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="isn" type="isn"/>
+	<xs:complexType name="rfs">
+		<xs:attribute name="value" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="7"/>
+					<xs:enumeration value="8"/>
+					<xs:enumeration value="9"/>
+					<xs:enumeration value="0"/>
+					<xs:enumeration value="1"/>
+					<xs:enumeration value="2"/>
+					<xs:enumeration value="3"/>
+					<xs:enumeration value="4"/>
+					<xs:enumeration value="5"/>
+					<xs:enumeration value="6"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="rfs" type="rfs"/>
+	<xs:complexType name="qna" mixed="true">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="qna" type="qna"/>
+	<xs:complexType name="mfc" mixed="true">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="mfc" type="mfc"/>
+	<xs:complexType name="pnr" mixed="true">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="pnr" type="pnr"/>
+	<xs:complexType name="pas">
+		<xs:sequence>
+			<xs:element ref="dfp"/>
+			<xs:element ref="uoi" minOccurs="0"/>
+			<xs:element ref="pcs" minOccurs="0"/>
+			<xs:element ref="com" minOccurs="0"/>
+			<xs:element ref="haz" minOccurs="0"/>
+			<xs:element ref="ftc" minOccurs="0"/>
+			<xs:element ref="psc" minOccurs="0"/>
+			<xs:element ref="cmk" minOccurs="0"/>
+			<xs:element ref="size" minOccurs="0"/>
+			<xs:element ref="weight" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="pas" type="pas"/>
+	<xs:complexType name="dfp" mixed="true">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="dfp" type="dfp"/>
+	<xs:complexType name="uoi" mixed="true">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="uoi" type="uoi"/>
+	<xs:complexType name="pcs">
+		<xs:sequence>
+			<xs:element ref="qui" minOccurs="0"/>
+			<xs:element ref="uom" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="pcs" type="pcs"/>
+	<xs:complexType name="qui" mixed="true">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="qui" type="qui"/>
+	<xs:complexType name="uom" mixed="true">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="uom" type="uom"/>
+	<xs:complexType name="com">
+		<xs:attribute name="code">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="0"/>
+					<xs:enumeration value="1"/>
+					<xs:enumeration value="2"/>
+					<xs:enumeration value="3"/>
+					<xs:enumeration value="4"/>
+					<xs:enumeration value="5"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="com" type="com"/>
+	<xs:complexType name="haz" mixed="true">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="haz" type="haz"/>
+	<xs:complexType name="ftc">
+		<xs:attribute name="value" default="1">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="m"/>
+					<xs:enumeration value="1"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="ftc" type="ftc"/>
+	<xs:complexType name="psc" mixed="true">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="psc" type="psc"/>
+	<xs:complexType name="cmk" mixed="true">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="cmk" type="cmk"/>
+	<xs:complexType name="size">
+		<xs:sequence>
+			<xs:element ref="spu" minOccurs="0"/>
+			<xs:element ref="suu"/>
+		</xs:sequence>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="size" type="size"/>
+	<xs:complexType name="spu" mixed="true">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="spu" type="spu"/>
+	<xs:complexType name="suu" mixed="true">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="suu" type="suu"/>
+	<xs:complexType name="weight">
+		<xs:sequence>
+			<xs:element ref="wpu" minOccurs="0"/>
+			<xs:element ref="wuu"/>
+		</xs:sequence>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="weight" type="weight"/>
+	<xs:complexType name="wpu" mixed="true">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="wpu" type="wpu"/>
+	<xs:complexType name="wuu" mixed="true">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="wuu" type="wuu"/>
+	<xs:complexType name="nsn">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="nsc" type="xs:anySimpleType"/>
+		<xs:attribute name="nin" type="xs:anySimpleType"/>
+	</xs:complexType>
+	<xs:element name="nsn" type="nsn"/>
+	<xs:complexType name="cbs">
+		<xs:sequence>
+			<xs:element ref="asp" minOccurs="0"/>
+			<xs:element ref="nil" minOccurs="0"/>
+			<xs:element ref="rtx" minOccurs="0"/>
+			<xs:element ref="smf" minOccurs="0"/>
+			<xs:element ref="dfl" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="cbs" type="cbs"/>
+	<xs:complexType name="asp">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="asp">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="1"/>
+					<xs:enumeration value="2"/>
+					<xs:enumeration value="3"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="asp" type="asp"/>
+	<xs:complexType name="nil" mixed="true">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="nil" type="nil"/>
+	<xs:complexType name="rtx">
+		<xs:choice>
+			<xs:element ref="ippref"/>
+			<xs:element ref="csnref"/>
+		</xs:choice>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="rtx" type="rtx"/>
+	<xs:complexType name="ippref">
+		<xs:attribute name="refipp" use="required" type="xs:anySimpleType"/>
+		<xs:attribute name="rpcname">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="5"/>
+					<xs:enumeration value="6"/>
+					<xs:enumeration value="7"/>
+					<xs:enumeration value="8"/>
+					<xs:enumeration value="9"/>
+					<xs:enumeration value="A"/>
+					<xs:enumeration value="B"/>
+					<xs:enumeration value="C"/>
+					<xs:enumeration value="D"/>
+					<xs:enumeration value="E"/>
+					<xs:enumeration value="F"/>
+					<xs:enumeration value="G"/>
+					<xs:enumeration value="H"/>
+					<xs:enumeration value="I"/>
+					<xs:enumeration value="J"/>
+					<xs:enumeration value="K"/>
+					<xs:enumeration value="L"/>
+					<xs:enumeration value="M"/>
+					<xs:enumeration value="N"/>
+					<xs:enumeration value="O"/>
+					<xs:enumeration value="P"/>
+					<xs:enumeration value="Q"/>
+					<xs:enumeration value="R"/>
+					<xs:enumeration value="S"/>
+					<xs:enumeration value="T"/>
+					<xs:enumeration value="U"/>
+					<xs:enumeration value="V"/>
+					<xs:enumeration value="W"/>
+					<xs:enumeration value="X"/>
+					<xs:enumeration value="Y"/>
+					<xs:enumeration value="Z"/>
+					<xs:enumeration value="0"/>
+					<xs:enumeration value="1"/>
+					<xs:enumeration value="2"/>
+					<xs:enumeration value="3"/>
+					<xs:enumeration value="4"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="ippref" type="ippref"/>
+	<xs:complexType name="csnref">
+		<xs:attribute name="refcsn" use="required" type="xs:anySimpleType"/>
+		<xs:attribute name="refisn" type="xs:anySimpleType"/>
+	</xs:complexType>
+	<xs:element name="csnref" type="csnref"/>
+	<xs:complexType name="smf">
+		<xs:sequence>
+			<xs:element ref="mfm" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="value" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="m"/>
+					<xs:enumeration value="p"/>
+					<xs:enumeration value="f"/>
+					<xs:enumeration value="r"/>
+					<xs:enumeration value="t"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="smf" type="smf"/>
+	<xs:complexType name="mfm" mixed="true">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="mfm" type="mfm"/>
+	<xs:complexType name="ccs">
+		<xs:sequence>
+			<xs:element ref="uce" minOccurs="0"/>
+			<xs:element ref="uca" minOccurs="0"/>
+			<xs:element ref="icy" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ccs" type="ccs"/>
+	<xs:complexType name="uce" mixed="true">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="uce" type="uce"/>
+	<xs:complexType name="uca" mixed="true">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="uca" type="uca"/>
+	<xs:complexType name="icy" mixed="true">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="icy" type="icy"/>
+	<xs:complexType name="ctl">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="csn" use="required" type="xs:anySimpleType"/>
+		<xs:attribute name="isn" type="xs:anySimpleType"/>
+	</xs:complexType>
+	<xs:element name="ctl" type="ctl"/>
+	<xs:complexType name="ces">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="srv"/>
+			<xs:element ref="smr"/>
+			<xs:element ref="mov" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ces" type="ces"/>
+	<xs:complexType name="srv" mixed="true">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="srv" type="srv"/>
+	<xs:complexType name="smr" mixed="true">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="smr" type="smr"/>
+	<xs:complexType name="mov">
+		<xs:sequence>
+			<xs:element ref="efy" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="mov" use="required" type="xs:anySimpleType"/>
+		<xs:attribute name="hotspref" type="xs:IDREF"/>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="mov" type="mov"/>
+	<xs:complexType name="efy" mixed="true">
+		<xs:attribute name="hotspref" type="xs:IDREF"/>
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="efy" type="efy"/>
+	<xs:complexType name="rfd" mixed="true">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="rfd" type="rfd"/>
+	<xs:complexType name="ils" mixed="true">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="ils" type="ils"/>
+	<xs:complexType name="can" mixed="true">
+		<xs:attribute name="change">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="mod"/>
+					<xs:enumeration value="add"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="can" type="can"/>
+	<xs:notation name="cgm" public="-//usa-dod//notation computer graphics metafile//en"/>
+	<xs:notation name="fax" public="-//usa-dod//notation ccitt group 4 facsimile//en"/>
+	<xs:notation name="jpeg" public="+//isbn 0-7923-9432-1::graphic notation//notation joint photographic experts group raster//en"/>
+	<xs:notation name="tiff" public="-//aldus/microsoft tagged interchange file format//notation ccitt group 4 facsimile//en"/>
+</xs:schema>

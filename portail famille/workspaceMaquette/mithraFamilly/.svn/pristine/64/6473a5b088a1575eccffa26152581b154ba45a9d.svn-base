@@ -1,0 +1,57 @@
+DocTraits
+	Protected: No
+	UnprotectedTags:
+
+TagTypes
+	Divisions:
+	DivisionHeads:
+	Paragraphs:
+
+GraphicTraits
+	GraphicTag: 
+	GraphicEntityAttr:
+	GraphicFileNameAttr:
+	GraphicProcTypeAttr:
+	GraphicMagAttr:
+	GraphicResAttr:
+
+LinkTraits
+	LinkTag:
+	LinkUriAttr:
+
+EqnTableModes
+	EqnMode: None
+	TableMode: None
+
+TagTraits
+	NoCharacterSubstitution:
+	NoSpellChecking:
+	NewlineAfterStartTag:
+	NewlineBeforeEndTag:
+	NoTagFullMode:
+	NoTagPartialMode:
+	NoTagNoTagsMode:
+	FullTagPartialMode: NTI UNVERIF MISCREF SYMBOL DMCREF UNITARY XREF SECURITY NOREFS MOD
+		 RPC LISTREF FIXZZ CONTEXT SUPEQREF ISSDATE SUPERVIS RANGE TPUBREF TOLERANCE
+		 PARTNO SINGLE TABREF FIGREF REFINSPEC RECEPTION FIXZ REFIPC MANUFACT SUPPLREF
+		 ISSNO REPORG INDXFLAG SUBSCRPT CUSTOMER SECUR SUPSCRPT
+	FullTagNoTagsMode: NTI UNVERIF MISCREF SYMBOL DMCREF UNITARY XREF SECURITY NOREFS MOD
+		 RPC LISTREF FIXZZ CONTEXT SUPEQREF ISSDATE SUPERVIS RANGE TPUBREF TOLERANCE
+		 PARTNO SINGLE TABREF FIGREF REFINSPEC RECEPTION FIXZ REFIPC MANUFACT SUPPLREF
+		 ISSNO REPORG INDXFLAG SUBSCRPT CUSTOMER SECUR SUPSCRPT
+	SmallIconFullMode:
+	SmallIconPartialMode:
+	SmallIconNoTagsMode:
+	IconFullMode:
+	IconPartialMode:
+	IconNoTagsMode:
+
+ContextTransformations
+	InsertAroundToFix:
+	Substitutions:
+	InsertAutoNested:
+	InsertAutoHeading:
+
+Options
+	AllowFosiMod: yes
+	AllowTouchup: no

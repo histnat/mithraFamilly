@@ -1,0 +1,21 @@
+package com.sonovision.openconv.db.dao;
+
+import java.io.Serializable;
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import com.sonovision.openconv.db.vo.user.OpGroup;
+
+@Repository
+public interface OpGroupDao extends CommonDao<OpGroup>, Serializable  {
+
+	/**
+	 * find group by is code
+	 * @param code
+	 * @return
+	 */
+	OpGroup findByCode(String code);
+
+	
+}

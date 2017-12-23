@@ -1,0 +1,92 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                           RAFALE                                   *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.2d                           *
+    *                   Dated 12th January 2014                          *
+    *                  M.DOMEON - Dassault-Aviation                      *
+    *                                                                    *
+    * Amendment :-                                                       *
+    * 1. New Illustrated Part Catalog Public Identifier                  *
+    *                                                                    *
+    * 98/12/22   update comps public identifier                          *
+    *            Avoid reference to specific location for %Comps entity  *
+    * 03/01/12   update comps public identifier                          *
+    * 04/01/12   update comps public identifier                          *
+    * 04/09/29   update comps public identifier                          *
+    * 14/01/12   update comps public identifier                          *
+    *                                                                    *
+    * The following DOCTYPE statement may be used to call this set of    *
+    * declarations:-                                                     *
+    *                                                                    *
+    * <!DOCTYPE dmodule PUBLIC                                           *
+    *  "-//RAFALE CSDB//DTD Chapterized IPC 140112//EN" []>              *
+    ********************************************************************** -->
+
+
+
+<!--**********************************************************************
+    * Define Entity %COMPS; (Components) containing:- the formal public  *
+    * identifier for the component definitions.                          *
+    ********************************************************************** -->
+
+<!ENTITY % COMPS
+ PUBLIC "-//RAFALE//ENTITIES Component Definitions 140112//EN">
+
+
+
+<!--**********************************************************************
+    * Call the Components Definition Public Text. The formal public      *
+    * identifier is stored in the entity %COMPS;                         *
+    ********************************************************************** -->
+
+%COMPS;
+
+
+
+<!--**********************************************************************
+    * Call the chapterized IPC Specific Public Text.                     *
+    * The formal public identifier is stored in the entity %IPCC;        *
+    ********************************************************************** -->
+
+%IPCC;
+
+
+
+<!--**********************************************************************
+    * Call the AECMA 1000D Configuration Public Text.                    *
+    * The formal public identifier is stored in the entity %AECMA;       *
+    ********************************************************************** -->
+
+%AECMA;
+
+
+
+<!--**********************************************************************
+    * Call the AECMA Base DTD Public Text. The formal public identifier  *
+    * is stored in the entity %BASE;                                     *
+    ********************************************************************** -->
+
+%BASE;
+
+
+
+<!--**********************************************************************
+    * Call the Illustrated Parts Catalog Public Text.                    *
+    * The formal public identifier is stored in the entity %IPC;         *
+    ********************************************************************** -->
+
+%IPC;
+
+
+
+<!--**********************************************************************
+    * Call the Content Breakdown Public Text. The formal public          *
+    * identifier is stored in the entity %EXTCONT;                       *
+    ********************************************************************** -->
+
+%EXTCONT;  
+
+
+

@@ -1,0 +1,130 @@
+package com.sonovision.openconv.db.dao.execution.impl;
+
+import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.stereotype.Repository;
+
+import com.sedoc.toolbox.LogMes;
+import com.sonovision.openconv.db.dao.CoHistoryExeDao;
+import com.sonovision.openconv.db.dao.OpUserDao;
+import com.sonovision.openconv.db.dao.impl.CommonDaoImpl;
+import com.sonovision.openconv.db.exception.DBNONullException;
+import com.sonovision.openconv.db.exception.DBNOUniqueException;
+import com.sonovision.openconv.db.vo.Conversion;
+import com.sonovision.openconv.db.vo.execution.CoHistoryExe;
+import com.sonovision.openconv.db.vo.user.OpGroup;
+import com.sonovision.openconv.db.vo.user.OpRole;
+import com.sonovision.openconv.db.vo.user.OpUser;
+
+@Repository(value="CoHistoryExeDao")
+public class CoHistoryExeDaoImpl extends CommonDaoImpl<CoHistoryExe> implements CoHistoryExeDao{
+
+	@Override
+	public CoHistoryExe findByUser(OpUser opUser) {
+        return findByUserId(opUser.getId());
+	}
+	
+	@Override
+	public CoHistoryExe findByAll(int nbrFiles, int nbrOK, int nbrNOK, int nbrNBloquant, Date startTime, Date endTime) {
+    if (startTime == null) {
+    	LogMes.log(CoHistoryExeDaoImpl.class, LogMes.ERROR, "findByAll : startTime can't be null");
+        return null;
+    }
+    if (endTime == null) {
+    	LogMes.log(CoHistoryExeDaoImpl.class, LogMes.ERROR, "findByAll : endTime can't be null");
+        return null;
+    }
+    Query query = new Query();
+    query.addCriteria(
+            new Criteria().andOperator(
+                    Criteria.where("nbrFiles").in(nbrFiles),
+                    Criteria.where("nbrOK").is(nbrOK),
+                    Criteria.where("nbrNOK").is(nbrNOK),
+                    Criteria.where("nbrNBloquant").is(nbrNBloquant),
+                    Criteria.where("startTime").is(startTime),
+                    Criteria.where("endTime").is(endTime)
+            )
+    );
+    return mongoTemplate.findOne(query, CoHistoryExe.class);
+	}
+	
+
+	@Override
+	public void deleteAll()
+	{
+		super.deleteAll(CoHistoryExe.class);
+	}
+	
+	@Override
+	public CoHistoryExe getOrSave(CoHistoryExe coHistoryExe) throws DBNONullException, DBNOUniqueException {
+		CoHistoryExe ou = findByAll(coHistoryExe.getNbrFiles(),coHistoryExe.getNbrOK(),coHistoryExe.getNbrNOK(),coHistoryExe.getNbrNBloquant(),coHistoryExe.getStartTime(),coHistoryExe.getEndTime());
+		if (ou == null) {
+			save(coHistoryExe);
+		} else {
+			coHistoryExe = ou;
+		}
+
+		return coHistoryExe;
+	}
+
+	@Override
+	public List<CoHistoryExe> findAllBy(String idCoScenario, String idExeution) {
+	    if (idCoScenario == null) {
+	    	LogMes.log(CoHistoryExeDaoImpl.class, LogMes.ERROR, "findByAll : idCoScenario can't be null");
+	        return null;
+	    }
+	    if (idExeution == null) {
+	    	LogMes.log(CoHistoryExeDaoImpl.class, LogMes.ERROR, "findByAll : idExeution can't be null");
+	        return null;
+	    }
+	    Query query = new Query();
+	    query.addCriteria(
+	            new Criteria().andOperator(
+	                    Criteria.where("scenarioId").is(idCoScenario),
+	                    Criteria.where("executionId").is(idExeution)
+	            )
+	    );
+	    return mongoTemplate.find(query, CoHistoryExe.class);
+	}
+
+	@Override
+	public List<CoHistoryExe> findAll() {
+		// TODO Auto-generated method stub
+		return mongoTemplate.findAll(CoHistoryExe.class);
+	}
+
+	@Override
+	public CoHistoryExe findByScenarioIdExecId(String idCoScenario, String idExeution) {
+		// TODO Auto-generated method stub
+		  Query query = new Query();
+		    query.addCriteria(
+		            new Criteria().andOperator(
+		                    Criteria.where("scenarioId").is(idCoScenario),
+		                    Criteria.where("_id").is(idExeution)
+		            )
+		    );
+		    return mongoTemplate.findOne(query, CoHistoryExe.class);
+	}
+
+	@Override
+	public CoHistoryExe findByUserId(String userId) {
+	       if (userId == null) {
+	        	LogMes.log(CoHistoryExeDaoImpl.class, LogMes.ERROR, "findByUserId : login can't be null");
+	            return null;
+	        }
+	        Query query = new Query();
+	        query.addCriteria(
+	                new Criteria().andOperator(
+	                        Criteria.where("userId").is(userId)
+	                )
+	        );
+	        return mongoTemplate.findOne(query, CoHistoryExe.class);
+	}
+
+
+
+}

@@ -1,0 +1,306 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1A786000SF030100084A011 SYSTEM "x-dm://0900f90b80002d07,MYWORKING" NDATA cgm>
+<!ENTITY A1A786000SF030100089A011 SYSTEM "x-dm://0900f90b80003095,MYWORKING" NDATA cgm>
+]>
+<?Pub EntList alpha bull copy rArr sect trade nbsp>
+<?Pub Inc>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>78</chapnum><section>6</section><subsect>0</subsect><subject>00</subject><discode>10</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmc>
+<dmtitle><techname>CARTER PC, SUPPORT TUYERE</techname><infoname>CONTROLE VISUEL SANS MOYEN SPECIAL</infoname></dmtitle>
+<issno type="C" issno="5">
+<issdate month="12" year="2011" day="15">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 4"></version>
+<customer aaf="1" anf="1">
+<nti nti1="1" nti2="1" nti3="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Prise en compte CSC 2010-01/00010 - ATC045/KS/2009</rfu>
+<remarks>RAS</remarks>
+<icns><icn id="A1A786000SF030100089A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>78</chapnum><section>6</section><subsect>0</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00089</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A786000SF030100084A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>78</chapnum><section>6</section><subsect>0</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00084</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A786000SF030100176A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>78</chapnum><section>6</section><subsect>0</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00176</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<refdm>
+<dmcid id="A1A78600010A600AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>78</chapnum><section>6</section><subsect>0</subsect><subject>00</subject><discode>10</discode><discodev>A</discodev><incode>600</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+</refdm>
+</refs><proced><pmd>
+<manhour value="0,1"></manhour>
+<duration value="0,1"></duration>
+</pmd><prelreqs><reqconds>
+<noconds></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="0,1"></reqper>
+</reqpers><supequip><nosupeq><nosupeqs></supequip><supplies><supplyli exhaust="0">
+<supply id="R38001" mand="0"><refipc csn="78600001A221 "><nomen>Carter PC, support tuy&egrave;re</nomen><quantity>SB</quantity></supply>
+</supplyli></supplies><miscs><nomisc></miscs><safety>
+<specpara>
+<caution>
+<p>Signaler tout autre d&eacute;fauts non r&eacute;pertori&eacute; dans la proc&eacute;dure &agrave; SNECMA.</p>
+</caution>
+</specpara>
+</safety></prelreqs><mainfunc>
+<step1 control="0" id="P10">
+<para><p>Approvisionner en cas de remplacement le ou les rechanges <supplref refid="R38001">.</p>
+</para>
+</step1>
+<step1 control="0" id="P20">
+<para><p>Contr&ocirc;ler visuellement les pi&egrave;ces selon les informations des tableaux ci-dessous.</p>
+</para>
+</step1>
+<step1 control="0" id="P30">
+<applic><systemid><nti nti1="1"></systemid></applic>
+<para><p>Identifier les d&eacute;fauts <figref refid="A786000SF030100089A011">.</p>
+</para>
+<table tocentry="1">
+<tgroup cols="3" align="LEFT"><colspec colnum="1" colname="SQCOLUMN1" colwidth="5cm" align="CENTER" colsep="1" rowsep="1"><colspec colnum="2" colname="SQCOLUMN2" colwidth="8cm" align="LEFT" colsep="1" rowsep="1"><colspec colnum="3" colname="SQCOLUMN3" colwidth="4cm" align="LEFT" colsep="1" rowsep="1">
+<tbody valign="TOP">
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>DEFAUTS</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>CRITERES D'ADMISSIBILITE NTI1</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>SANCTION</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Gonflement type A</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Admissible en l'&eacute;tat si absence de crique</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step1>
+<step1 control="0" id="P40">
+<applic><systemid><nti nti2="1"></systemid></applic>
+<para><p>Identifier les d&eacute;fauts <figref refid="A786000SF030100084A011"> <figref refid="A786000SF030100176A011">.</p>
+</para>
+<table tocentry="1">
+<tgroup cols="3" align="LEFT"><colspec colnum="1" colname="SQCOLUMN1" colwidth="5cm" align="CENTER" colsep="1" rowsep="1"><colspec colnum="2" colname="SQCOLUMN2" colwidth="8cm" align="LEFT" colsep="1" rowsep="1"><colspec colnum="3" colname="SQCOLUMN3" colwidth="4cm" align="LEFT" colsep="1" rowsep="1">
+<tbody valign="TOP">
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>DEFAUTS</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>CRITERES D'ADMISSIBILITE NTI2</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>SANCTION</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Gonflement type A</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Admissible si fl&egrave;che&nbsp;&le;&nbsp;2&nbsp;mm et si absence de crique</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Usure type C1</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Admissible si P&nbsp;&le;&nbsp;0,30&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Usure type C2</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Admissible si P&nbsp;&le;&nbsp;0,30&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="SQCOLUMN1" align="left"><para><p change="mod">Coloration thermique bleue suite &agrave; feu PC hors zones soud&eacute;es</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN2"><para><p change="mod">Admissible si pas de d&eacute;t&eacute;rioration de la surface (fissure, craquelure et d&eacute;formation)</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN3"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="SQCOLUMN1" align="left"><para><p change="mod">Coloration thermique bleue suite &agrave; feu PC zones soud&eacute;es</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN2"><para><p change="mod">Admissible si&nbsp;:</p>
+</para>
+<list>
+<item><para><p change="mod">pas de d&eacute;t&eacute;rioration de la surface (fissure, craquelures et d&eacute;formation,</p>
+</para>
+</item>
+<item><para><p change="mod">chaque secteur bleui ne d&eacute;passe pas 150&nbsp;mm de long,</p>
+</para>
+</item>
+<item><para><p change="mod">persiste entre 2 secteurs bleuis un espace sain d'une longueur au moins &eacute;gale &agrave; celle du plus grand des 2 secteurs bleuis.</p>
+</para>
+</item>
+</list>
+<para><p change="mod">Pas de limitation du nombre de secteurs bleuis</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN3"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step1>
+<step1 control="0" id="P50">
+<applic><systemid><nti nti3="1"></systemid></applic>
+<para><p>Identifier les d&eacute;fauts <figref refid="A786000SF030100084A011"> <figref refid="A786000SF030100176A011">.</p>
+</para>
+<table tocentry="1">
+<tgroup cols="3" align="LEFT"><colspec colnum="1" colname="SQCOLUMN1" colwidth="5cm" align="CENTER" colsep="1" rowsep="1"><colspec colnum="2" colname="SQCOLUMN2" colwidth="8cm" align="LEFT" colsep="1" rowsep="1"><colspec colnum="3" colname="SQCOLUMN3" colwidth="4cm" align="LEFT" colsep="1" rowsep="1">
+<tbody valign="TOP">
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>DEFAUTS</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>CRITERES D'ADMISSIBILITE NTI3</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>SANCTION</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Gonflement type A</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Admissible si fl&egrave;che&nbsp;&le;&nbsp;2&nbsp;mm et si absence de crique</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Usure type C1</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Admissible si P&nbsp;&le;&nbsp;0,30&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Usure type C2</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Admissible si P&nbsp;&le;&nbsp;0,30&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="SQCOLUMN1" align="left"><para><p change="add">Coloration thermique bleue suite &agrave; feu PC hors zones soud&eacute;es</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN2"><para><p change="add">Admissible si pas de d&eacute;t&eacute;rioration de la surface (fissure, craquelure et d&eacute;formation)</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN3"><para><p change="add">Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="SQCOLUMN1" align="left"><para><p change="add">Coloration thermique bleue suite &agrave; feu PC zones soud&eacute;es</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN2"><para><p change="add">Admissible si&nbsp;:</p>
+</para>
+<list>
+<item><para><p change="add">pas de d&eacute;t&eacute;rioration de la surface (fissure, craquelures et d&eacute;formation,</p>
+</para>
+</item>
+<item><para><p change="add">chaque secteur bleui ne d&eacute;passe pas 150&nbsp;mm de long,</p>
+</para>
+</item>
+<item><para><p change="add">persiste entre 2 secteurs bleuis un espace sain d'une longueur au moins &eacute;gale &agrave; celle du plus grand des 2 secteurs bleuis.</p>
+</para>
+</item>
+</list>
+<para><p change="add">Pas de limitation du nombre de secteurs bleuis</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN3"><para><p change="add">Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row change="ADD">
+<entry colname="SQCOLUMN1" align="left"><para><p>Perte de rivet</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN2"><para><p>Inadmissible</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN3"><para><p>Au-del&agrave; remise en &eacute;tat de la pi&egrave;ce <dmcref xrefid="A1A78600010A600AC"></p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step1>
+<figure id="A786000SF030100089A011">
+<applic><systemid><nti nti1="1"></systemid></applic>
+<title>CARTER PC, SUPPORT TUYERE</title>
+<graphic callicn="A1A786000SF030100089A011">
+</figure>
+<figure id="A786000SF030100084A011">
+<applic><systemid><nti nti2="1" nti3="1"></systemid></applic>
+<title>CARTER PC, SUPPORT TUYERE</title>
+<graphic callicn="A1A786000SF030100084A011">
+</figure>
+<figure id="A786000SF030100176A011" change="add">
+<applic><systemid><nti nti2="1" nti3="1"></systemid></applic>
+<title>CARTER PC, SUPPORT TUYERE</title>
+<graphic callicn="A1A786000SF030100A011" change="add">
+</figure>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000013042 0>

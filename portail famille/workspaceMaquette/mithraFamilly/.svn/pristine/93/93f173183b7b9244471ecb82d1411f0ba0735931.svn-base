@@ -1,0 +1,258 @@
+package com.sonovision.openconv.db.vo;
+
+import java.util.Calendar;
+import java.util.Date;
+
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import com.sonovision.openconv.db.vo.common.Common;
+
+@Document(collection = "logLine")
+public class LogLine extends Common {
+
+	private String logResult;
+
+	private String message;
+
+	private String messageLong;
+
+	private int level;
+
+	@Indexed(unique=false)
+	private Date timeStamp;
+
+	private String conversionId;
+
+	private String conversionObjectId;
+
+	private String task;
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#hashCode()
+	 */
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + ((conversionId == null) ? 0 : conversionId.hashCode());
+		result = prime * result + ((conversionObjectId == null) ? 0 : conversionObjectId.hashCode());
+		result = prime * result + level;
+		result = prime * result + ((logResult == null) ? 0 : logResult.hashCode());
+		result = prime * result + ((message == null) ? 0 : message.hashCode());
+		result = prime * result + ((messageLong == null) ? 0 : messageLong.hashCode());
+		result = prime * result + ((task == null) ? 0 : task.hashCode());
+		result = prime * result + ((timeStamp == null) ? 0 : timeStamp.hashCode());
+		return result;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		LogLine other = (LogLine) obj;
+		if (conversionId == null) {
+			if (other.conversionId != null)
+				return false;
+		} else if (!conversionId.equals(other.conversionId))
+			return false;
+		if (conversionObjectId == null) {
+			if (other.conversionObjectId != null)
+				return false;
+		} else if (!conversionObjectId.equals(other.conversionObjectId))
+			return false;
+		if (level != other.level)
+			return false;
+		if (logResult == null) {
+			if (other.logResult != null)
+				return false;
+		} else if (!logResult.equals(other.logResult))
+			return false;
+		if (message == null) {
+			if (other.message != null)
+				return false;
+		} else if (!message.equals(other.message))
+			return false;
+		if (messageLong == null) {
+			if (other.messageLong != null)
+				return false;
+		} else if (!messageLong.equals(other.messageLong))
+			return false;
+		if (task == null) {
+			if (other.task != null)
+				return false;
+		} else if (!task.equals(other.task))
+			return false;
+		if (timeStamp == null) {
+			if (other.timeStamp != null)
+				return false;
+		} else if (!timeStamp.equals(other.timeStamp))
+			return false;
+		return true;
+	}
+
+	public LogLine() {
+		timeStamp = new Date(Calendar.getInstance().getTimeInMillis());
+	}
+
+	public LogLine(String logResult, String message, String messageLong, Conversion conversion, String task) {
+		super();
+		this.logResult = logResult;
+		this.message = message;
+		this.messageLong = messageLong;
+		this.conversionId = conversionId;
+		this.task = task;
+		timeStamp = new Date(Calendar.getInstance().getTimeInMillis());
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "LogLine [logResult=" + logResult + ", message=" + message + ", messageLong=" + messageLong + ", level=" + level + ", timeStamp=" + timeStamp + ", conversionId=" + conversionId + ", conversionObjectId=" + conversionObjectId
+				+ ", task=" + task + "]";
+	}
+
+	public String getConversionObjectId() {
+		return conversionObjectId;
+	}
+
+	public void setConversionObject(ConversionObject conversionObject) {
+		if (conversionObject != null)
+			this.conversionObjectId = conversionObject.getId();
+	}
+
+	public void setConversionObjectId(String conversionObjectId) {
+		this.conversionObjectId = conversionObjectId;
+	}
+
+	/**
+	 * @return the level
+	 */
+	public int getLevel() {
+		return level;
+	}
+
+	/**
+	 * @param level
+	 *            the level to set
+	 */
+	public void setLevel(int level) {
+		this.level = level;
+	}
+
+	/**
+	 * @return the logResult
+	 */
+	public String getLogResult() {
+		return logResult;
+	}
+
+	/**
+	 * @param logResult
+	 *            the logResult to set
+	 */
+	public void setLogResult(String logResult) {
+		this.logResult = logResult;
+	}
+
+	/**
+	 * @return the conversion
+	 */
+	public String getConversion() {
+		return conversionId;
+	}
+
+	/**
+	 * @param conversion
+	 *            the conversion to set
+	 */
+	public void setConversionId(String conversionId) {
+		this.conversionId = conversionId;
+	}
+
+	/**
+	 * @param conversion
+	 *            the conversion to set
+	 */
+	public void setConversion(Conversion conversion) {
+		if (conversion != null)
+			this.conversionId = conversion.getId();
+	}
+
+	/**
+	 * @return the task
+	 */
+	public String getTask() {
+		return task;
+	}
+
+	/**
+	 * @param task
+	 *            the task to set
+	 */
+	public void setTask(String task) {
+		this.task = task;
+	}
+
+	/**
+	 * @return the message
+	 */
+	public String getMessage() {
+		return message;
+	}
+
+	/**
+	 * @param message
+	 *            the message to set
+	 */
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	/**
+	 * @return the messageLong
+	 */
+	public String getMessageLong() {
+		return messageLong;
+	}
+
+	/**
+	 * @param messageLong
+	 *            the messageLong to set
+	 */
+	public void setMessageLong(String messageLong) {
+		this.messageLong = messageLong;
+	}
+
+	/**
+	 * @return the timeStamp
+	 */
+	public Date getTimeStamp() {
+		return timeStamp;
+	}
+
+	/**
+	 * @param timeStamp
+	 *            the timeStamp to set
+	 */
+	public void setTimeStamp(Date timeStamp) {
+		this.timeStamp = timeStamp;
+	}
+
+}

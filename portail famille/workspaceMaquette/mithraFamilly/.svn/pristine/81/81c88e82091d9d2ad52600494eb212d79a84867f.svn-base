@@ -1,0 +1,169 @@
+package com.sonovision.openconv.wf.thread;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+import org.springframework.web.context.WebApplicationContext;
+
+import com.sonovision.openconv.log.model.DBLogger;
+import com.sonovision.openconv.log.model.LoggerLevel;
+import com.sonovision.openconv.log.model.LoggerType;
+import com.sonovision.openconv.model.TreatedObject;
+import com.sonovision.openconv.wf.WFTask;
+import com.sonovision.openconv.wf.exception.WorkflowException;
+import com.sonovision.openconv.wf.service.WorkFlowBo;
+import com.sonovision.openconv.wf.xmodel.Action;
+import com.sonovision.openconv.wf.xmodel.Cycle;
+import com.sonovision.openconv.wf.xmodel.Sequence;
+
+//@Component
+//@Scope(value = WebApplicationContext.SCOPE_SESSION)
+public class SequenceThread extends WFThread {
+	
+	private static final Object RESULT_ACTION_FINISH = "END";
+	
+	//message
+	//it will be in properties file for multilingue
+	private static final String MESSAGE_START_CONVERSION="Début de la conversion %s";
+	
+	private Sequence sequence;
+	
+	public SequenceThread() {
+		super();
+	}
+
+	
+	public void init(DBLogger dbLogger, Sequence sequence) {
+		this.dbLogger = dbLogger;
+		this.sequence=sequence;
+	}
+
+	@Override
+	public void run(){
+		
+	//Bouclage sur cycle
+	for(Cycle cycle:sequence.getCycle()){
+		boolean hasAskParameter=false;
+		dbLogger.log(LoggerType.CONVERSION, MESSAGE_START_CONVERSION.replaceAll("%s", sequence.getName()));
+		Action action;
+		List<Action> actionHasAskParameter=null;
+		
+		while(actionHasAskParameter==null||actionHasAskParameter.size()>0){
+			
+			//si premier passage
+			if(actionHasAskParameter==null){
+				actionHasAskParameter=new ArrayList<Action>();
+				try {
+					action = wfd.getFirstAction(cycle);
+				} catch (WorkflowException e) {
+					dbLogger.logConversion("problem for getting first action :"+e.getMessage(),LoggerLevel.FATAL);
+					dbLogger.stopConversion();
+					return;
+				}
+			}
+			//sinon tous les passages suivants
+			else{
+				//FIFO-> on récupère tout le temps le premier action de la queue d'action
+				action=actionHasAskParameter.get(0);
+				actionHasAskParameter.remove(0);
+				
+			}
+				
+
+		HashMap<String,TreatedObject> treatedObjectHash = new HashMap<>();
+		WFTask wfTask;
+		try {
+			wfTask = workFlowBo.getWFTask(action,dbLogger);
+		} catch (WorkflowException e) {
+			dbLogger.logConversion("problem for gretting task :"+e.getMessage(),LoggerLevel.FATAL);
+			dbLogger.stopConversion();
+			return;
+		}
+		
+		//attente du front pour remplir les paramètres
+		while(wfTask.askParameter());
+		
+		String resultAction=wfTask.run(treatedObjectHash);
+		
+
+		
+		String actionId="";
+		//Bouclage sur action
+		while (!actionId.equals(RESULT_ACTION_FINISH))
+		{
+			
+			try {
+				actionId = wfd.getActionForResult(action,resultAction);
+				if(actionId.equals(RESULT_ACTION_FINISH)){
+					dbLogger.stopConversion();
+					break;
+				}
+			} catch (WorkflowException e2) {
+				dbLogger.logConversion("problem execution of :"+action+" "+e2.getMessage(),LoggerLevel.FATAL);
+				dbLogger.stopConversion();
+				return;
+			}
+			try {
+				action=wfd.getAction(cycle, actionId);
+			} catch (WorkflowException e1) {
+				dbLogger.logConversion("problem for gretting action :"+actionId+" "+e1.getMessage(),LoggerLevel.FATAL);
+				dbLogger.stopConversion();
+				return;
+			}
+			try {
+				wfTask = workFlowBo.getWFTask(action,dbLogger);
+			} catch (WorkflowException e) {
+				dbLogger.logConversion("problem for gretting task :"+e.getMessage(),LoggerLevel.FATAL);
+				dbLogger.stopConversion();
+				return;
+			}
+
+			
+			resultAction=wfTask.run(treatedObjectHash);
+			
+			if(wfTask.askParameter()){
+				actionHasAskParameter.add(action);
+			}
+			
+			hasAskParameter=hasAskParameter|wfTask.askParameter();
+		}
+		}
+	
+	
+	
+	
+		
+	}
+		
+	}
+	
+
+	
+	/**
+	 * @return the sequence
+	 */
+	public Sequence getSequence() {
+		return sequence;
+	}
+
+	/**
+	 * @param sequence the sequence to set
+	 */
+	public void setSequence(Sequence sequence) {
+		this.sequence = sequence;
+	}
+
+	
+
+	
+	
+	
+	
+	
+
+}

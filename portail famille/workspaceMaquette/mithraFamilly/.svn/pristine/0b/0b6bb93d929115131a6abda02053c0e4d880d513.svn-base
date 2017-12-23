@@ -1,0 +1,15 @@
+package com.sonovision.openconv.wf.exception;
+
+public class WFAlreadyRunningException extends Exception {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3123126308244730965L;
+
+	public WFAlreadyRunningException() {}
+	
+	public WFAlreadyRunningException(String message){
+		super(message);
+	}
+	}

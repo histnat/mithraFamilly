@@ -1,0 +1,342 @@
+package com.sonovision.openconv.modules.xslprocess.helper.table.impl;
+
+import java.io.File;
+
+import org.w3c.dom.Attr;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+
+import com.sedoc.dtdtoolbox.utils.DTDParsing;
+import com.sedoc.toolbox.SpringBeanProvider;
+import com.sedoc.toolbox.bean.XMLFactoryService;
+import com.sonovision.openconv.modules.xslprocess.helper.table.LoadTable;
+import com.sonovision.openconv.modules.xslprocess.helper.table.model.Table;
+import com.sonovision.openconv.modules.xslprocess.helper.table.model.TableCell;
+
+
+public class LoadHtmlTable implements LoadTable{
+		
+	private Table loadedTable=null;
+	private int currentRowCount=0;
+	
+	private Document document=null;
+	private XMLFactoryService xmlFactoryService=null;
+	private File inFile=null;
+	private Node inNode;
+
+	
+	public Table getLoadedTable() {
+		return loadedTable;
+	}
+
+	
+	public LoadHtmlTable(File inHtmlFile){
+		this.inFile=inHtmlFile;
+		document=null;
+		loadedTable=null;
+		xmlFactoryService=null;
+	}
+	
+	public LoadHtmlTable(Node inHtmlNode){
+		this.inFile=null;
+		this.inNode=inHtmlNode;
+		document=null;
+		loadedTable=null;
+		xmlFactoryService=null;
+	}
+	
+	public void initTable() throws Exception{
+		
+		if (xmlFactoryService == null) {
+			xmlFactoryService = (XMLFactoryService) SpringBeanProvider.getBean("XMLFactoryService");
+		}
+		
+		if(inFile!=null){
+			DTDParsing dtdParsing = new DTDParsing();
+			document = dtdParsing.getParseXML(inFile);
+		}
+		else{
+			document=xmlFactoryService.getDOMDocumentFromNode(inNode);
+		}
+
+
+		NodeList objectNodeList = null;
+
+		objectNodeList = (NodeList) xmlFactoryService.executeXpathQuery(document, ".//TR|.//tr", true);
+	
+		//retrieve number of line by counting number of TR
+		int nbLine=objectNodeList.getLength();
+		
+		//retrieve number of column by counting number of TD and colspan under the first TR
+		Element eFirstTR=(Element)(objectNodeList.item(0));
+		//NodeList listTD=eFirstTR.getElementsByTagName("td");
+		NodeList listTD = getElementsByTagNameUpperLowerCase(eFirstTR,"TD");
+		//if no TD found, search for TH
+		if(listTD.getLength()==0)
+			listTD=getElementsByTagNameUpperLowerCase(eFirstTR,"TH");
+			//listTD=eFirstTR.getElementsByTagName("TH");
+
+		
+	
+		int nbColumn=0;
+		String colspan=null;
+		for(int i=0;i<listTD.getLength();i++){
+			colspan=((Element)listTD.item(i)).getAttribute("colspan");
+			if(colspan.isEmpty())
+				colspan=((Element)listTD.item(i)).getAttribute("COLSPAN");
+			nbColumn=nbColumn+(colspan.isEmpty()?1 : Integer.parseInt(colspan));	
+		}
+
+		//initialize table
+		loadedTable=new Table(nbLine, nbColumn);
+	}
+	
+	
+
+	private void loadTableParam() throws Exception{
+		NodeList objectNodeList = (NodeList) xmlFactoryService.executeXpathQuery(document, ".//TABLE |.//table", true);
+		if(objectNodeList!=null){
+			Element eTable=(Element)(objectNodeList.item(0));
+
+			NamedNodeMap attributes = eTable.getAttributes();
+			String attr_value=null;
+
+			for (int i=0;i<attributes.getLength();i++){
+				Attr attr = (Attr) attributes.item(i);
+				attr_value=attr.getNodeValue();
+
+				switch(attr.getNodeName()){
+				case "ID" :loadedTable.setParamID(attr_value);break;
+				case "width" :loadedTable.setParamWidth(attr_value);break;
+				case "border" : loadedTable.setParamBorder(attr_value);break;
+				case "border-color" : loadedTable.setParamBorderColor(attr_value);break;
+				case "FRAME" : loadedTable.setParamFrame(attr_value);break;
+				default:break;
+				}
+			}
+		}
+	}
+	
+
+	private void loadColGroup() throws Exception{
+		NodeList objectNodeList = (NodeList) xmlFactoryService.executeXpathQuery(document, ".//TABLE/COLGROUP/COL|.//table/colgroup/col", true);
+		if(objectNodeList!=null){
+			String colWidth=null;
+				
+			for(int i=0;i<objectNodeList.getLength();i++){
+				colWidth=((Element)(objectNodeList.item(i))).getAttribute("WIDTH");
+				if(colWidth.isEmpty())
+					colWidth=((Element)(objectNodeList.item(i))).getAttribute("width");
+				if(!colWidth.isEmpty()){
+					for(int j=0;j<loadedTable.getModel().getHeight();j++){
+						loadedTable.getCell(j, i).setParamColWidth(colWidth);
+					}
+				}
+			}		
+		}
+	}
+
+	private void loadTH_TD(Element eThTd,TableCell tableCell) throws Exception{
+		int colspan=0;
+		int rowspan=0;
+		int x,y;
+		
+		//retrieve the attributes
+		NamedNodeMap attributes = eThTd.getAttributes();
+		Attr attr=null;
+		String attr_value=null;
+		for (int k=0;k<attributes.getLength();k++){
+			attr = (Attr) attributes.item(k);
+			attr_value=attr.getNodeValue();
+
+			switch(attr.getNodeName().toLowerCase()){
+			case "colspan" :{
+				colspan=Integer.parseInt(attr_value);
+				tableCell.setColspan(colspan);
+			}break;
+
+			case "rowspan" :{
+				rowspan=Integer.parseInt(attr_value);
+				tableCell.setRowspan(rowspan);
+				if(tableCell.getColspan()==0)
+					tableCell.setColspan(1);
+			}break;
+			case "align" : tableCell.setParamH_Align(attr_value);break;
+			case "valign" : tableCell.setParamV_Align(attr_value);break;
+			case "width" : tableCell.setParamColWidth(attr_value);break;
+			case "char" : tableCell.setParamChar(attr_value);break;
+			case "charoff" : tableCell.setParamCharoff(attr_value);break;
+			case "id" : tableCell.setParamId(attr_value);break;
+			default:break;
+			}
+		}
+		//retrieve the element content
+		//tableCell.setContent(eThTd.getChildNodes().item(0).getTextContent());
+		//Node node=eThTd.getChildNodes().item(0);
+		tableCell.setContent(eThTd.getChildNodes());
+		
+		x=tableCell.getX_spanned();
+		y=tableCell.getY_spanned();
+		
+		/*
+		 * Copy the tableCells 
+		 * */
+		if(colspan!=0 && rowspan!=0){
+			//copy all the spanned cells into the other columns and rows
+			for(int m=0;m<colspan;m++){
+				for(int n=0;n<rowspan;n++){
+					loadedTable.setCell(y+n, x+m, tableCell);
+				}
+			}
+		}
+		else{
+			//if only colspan
+			if(colspan!=0){
+				for(int m=1;m<colspan;m++){
+					//only copy  the spanned cells into the other columns 
+					//loadedTable.setCell(x+m, y, tableCell);
+					loadedTable.setCell(y, x+m, tableCell);
+				}
+			}
+			//if only rowspan
+			for(int n=1;n<rowspan;n++){
+				//only copy  the spanned cells into the other rows 
+				//loadedTable.setCell(x, y+n, tableCell);
+				loadedTable.setCell(y+n, x, tableCell);
+			}
+		}
+	}
+	
+	private NodeList getElementsByTagNameUpperLowerCase(Element e,String tagName){
+		NodeList nodeList= e.getElementsByTagName(tagName.toLowerCase());
+		if(nodeList.getLength()>0)
+			return nodeList;
+		return e.getElementsByTagName(tagName.toUpperCase());
+			
+		
+	}
+	
+	
+	private void loadTR(Element eTr, boolean isThead) throws Exception{
+	
+		int currentColCount=0;
+		TableCell tableCell;
+		//NodeList listTD = ((Element)eTr).getElementsByTagName("TD");
+		NodeList listTD = getElementsByTagNameUpperLowerCase(eTr,"TD");
+		//if no TD found, search for TH
+		if(listTD.getLength()==0)
+			 listTD = getElementsByTagNameUpperLowerCase(eTr,"TH");
+			//listTD= ((Element)eTr).getElementsByTagName("TH");
+
+		currentColCount=0;
+		//for each TD in the html document
+		for(int j=0;j<listTD.getLength();j++){
+
+			Element eTD=(Element)(listTD.item(j));
+			
+				//get the next tableCell to fill in the memory
+			 tableCell=loadedTable.getCell(currentRowCount, currentColCount);
+			//if the tableCell is spanned (already filled previously by a spanned cell)
+			while(tableCell.isSpanned()){
+				//get the next cell after the whole spanned
+				currentColCount=tableCell.getX_spanned()+tableCell.getColspan();
+				tableCell=loadedTable.getCell(currentRowCount, currentColCount);
+			}
+			tableCell.setXY_spanned(currentColCount,currentRowCount);
+			
+			loadTH_TD(eTD,tableCell);
+			
+			tableCell.setCellPartType(isThead?TableCell.HEAD_PART_TYPE:TableCell.BODY_PART_TYPE);
+			
+			currentColCount++;
+		}	
+		
+	}
+	
+	
+	/*
+	 * return true if THEAD tag has been treated
+	 * 
+	 */
+	private boolean loadTHEAD() throws Exception{
+		NodeList theadNodeList = (NodeList) xmlFactoryService.executeXpathQuery(document, ".//THEAD|.//thead", true);
+		
+		currentRowCount=0;
+		if(theadNodeList!=null && theadNodeList.getLength()>0){
+			NodeList listTR = getElementsByTagNameUpperLowerCase(((Element)(theadNodeList.item(0))),"TR");
+		//	NodeList listTR = ((Element)(theadNodeList.item(0))).getElementsByTagName("TR|tr");
+
+			if(listTR!=null){
+				for(int i=0;i<listTR.getLength();i++){
+					loadTR((Element)(listTR.item(i)),true);
+					currentRowCount++;
+				}
+			}
+			return true;
+		}
+		return false;
+	}
+
+	
+	/*
+	 * return true if TBODY tag has been treated
+	 * 
+	 */
+	private boolean loadTBODY() throws Exception{
+		NodeList theadNodeList = (NodeList) xmlFactoryService.executeXpathQuery(document, ".//TBODY|tbody", true);
+		
+		if(theadNodeList!=null && theadNodeList.getLength()>0){
+			NodeList listTR = getElementsByTagNameUpperLowerCase(((Element)(theadNodeList.item(0))),"TR");
+			//NodeList listTR = ((Element)(theadNodeList.item(0))).getElementsByTagName("TR|tr");
+
+			if(listTR!=null){
+				for(int i=0;i<listTR.getLength();i++){
+					loadTR((Element)(listTR.item(i)),false);
+					currentRowCount++;
+				}
+			}
+			return true;
+		}
+		return false;
+	}
+	
+	
+	/*
+	 * to be used when no THEAD and TBODY tags are used
+	 * 
+	 */
+	private void loadDirectBody() throws Exception{
+		NodeList theadNodeList = (NodeList) xmlFactoryService.executeXpathQuery(document, ".//TABLE|table", true);
+		
+		if(theadNodeList!=null && theadNodeList.getLength()>0){
+			NodeList listTR = getElementsByTagNameUpperLowerCase(((Element)(theadNodeList.item(0))),"TR");
+			//NodeList listTR = ((Element)(theadNodeList.item(0))).getElementsByTagName("TR|tr");
+
+			if(listTR!=null){
+				for(int i=0;i<listTR.getLength();i++){
+					loadTR((Element)(listTR.item(i)),false);
+					currentRowCount++;
+				}
+			}
+		}
+	}
+
+	
+
+	@Override
+	public void load() throws Exception {
+		// TODO Auto-generated method stub
+		loadTableParam();
+		loadColGroup();
+		if(!(loadTHEAD()&&loadTBODY()))
+			loadDirectBody();
+		
+//		loadedTable.display();
+		
+	}
+
+	
+}

@@ -1,0 +1,28 @@
+package com.sonovision.openconv.wf.thread;
+
+import java.util.HashMap;
+
+import org.testng.annotations.Test;
+
+import com.sonovision.openconv.log.model.DBLogger;
+import com.sonovision.openconv.utils.ResourceTestPath;
+import com.sonovision.openconv.utils.TestHelperWF;
+import com.sonovision.openconv.wf.xmodel.Sequence;
+
+public class SequenceThreadTest extends TestHelperWF{
+
+  @Test
+  public void runTestCobraSequence() {
+    System.out.println("test de la séquence Cobra");
+    
+    Sequence s = getSequence(ResourceTestPath.COBRA,"COBRA_TO_S1000D",null);
+    DBLogger dbLogger = getDBLogger(ResourceTestPath.COBRA, "COBRA_TO_S1000D");
+    
+    HashMap<String, Object> parameter = new HashMap<>();
+	SequenceThread st = new SequenceThread(dbLogger, parameter ,s);
+    st.run();
+    
+    
+    
+  }
+}

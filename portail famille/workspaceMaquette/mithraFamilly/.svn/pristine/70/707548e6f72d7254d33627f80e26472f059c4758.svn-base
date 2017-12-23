@@ -1,0 +1,155 @@
+-- 1986 Entities resolved in the directory ENT1986--
+
+PUBLIC "ISO 8879-1986//ENTITIES Greek Symbols//EN"                                          "ISO\ENT1986\ISOGRK3.ENT"
+PUBLIC "ISO 8879-1986//ENTITIES Added Latin 1//EN"                                          "ISO\ENT1986\ISOLAT1.ENT"
+PUBLIC "ISO 8879-1986//ENTITIES Numeric and Special Graphic//EN"                            "ISO\ENT1986\ISONUM.ENT"
+PUBLIC "ISO 8879-1986//ENTITIES Publishing//EN"                                             "ISO\ENT1986\ISOPUB.ENT"
+PUBLIC "ISO 8879-1986//ENTITIES General Technical//EN"                                      "ISO\ENT1986\ISOTECH.ENT"
+
+-- RAFALE V2.2 Entities resolved in the directory DTDV2.2 --
+
+PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Air Fault Reporting 981222//EN"   "DTDV2.2\dmodule\dtd\Avee_afr.dtd"
+PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment AirCrew 981222//EN"               "DTDV2.2\dmodule\dtd\avee_c.dtd"
+PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Description 981222//EN"           "DTDV2.2\dmodule\dtd\avee_d.dtd"
+PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN"            "DTDV2.2\dmodule\dtd\avee_p.dtd"
+PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Schedule information 981222//EN"  "DTDV2.2\dmodule\dtd\Avee_sch.dtd"
+PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment organes 981222//EN"               "DTDV2.2\dmodule\dtd\avee_to.dtd"
+PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment WIRING 981222//EN"                "DTDV2.2\dmodule\dtd\avee_w.dtd"
+
+PUBLIC "-//RAFALE CSDB//DTD Aircraft Ground Equipment Description 981222//EN"               "DTDV2.2\dmodule\dtd\age_d.dtd"
+PUBLIC "-//RAFALE CSDB//DTD Aircraft Ground Equipment Procedural 981222//EN"                "DTDV2.2\dmodule\dtd\age_p.dtd"
+PUBLIC "-//RAFALE CSDB//DTD Aircraft Ground Equipment Schedule information 981222//EN"      "DTDV2.2\dmodule\dtd\Age_sch.dtd"
+PUBLIC "-//RAFALE CSDB//DTD Aircraft Ground Equipment organes 981222//EN"                   "DTDV2.2\dmodule\dtd\age_to.dtd"
+
+PUBLIC "-//RAFALE CSDB//DTD Chapterized IPC 981222//EN"                                     "DTDV2.2\dmodule\dtd\ipcc.dtd"
+PUBLIC "-//RAFALE CSDB//DTD Non chapterized IPC 981222//EN"                                 "DTDV2.2\dmodule\dtd\ipcn.dtd"
+
+PUBLIC "-//RAFALE//ENTITIES AECMA Configuration 971001//EN"                                 "DTDV2.2\dmodule\dtd\aecma.cfg"
+PUBLIC "-//RAFALE//ELEMENTS Aircraft Fault Reporting 981222//EN"                            "DTDV2.2\dmodule\dtd\afr.ent"
+PUBLIC "-//RAFALE//ENTITIES Aircraft Ground Equipment 971001//EN"                           "DTDV2.2\dmodule\dtd\age.ent"
+PUBLIC "-//RAFALE//ELEMENTS AirCrew Breakdown 980115//EN"                                   "DTDV2.2\dmodule\dtd\aircrew.ent"
+PUBLIC "-//RAFALE//ENTITIES Air Vehicle Engines Equipment 971001//EN"                       "DTDV2.2\dmodule\dtd\avee.ent"
+PUBLIC "-//RAFALE//ELEMENTS Applicability Breakdown 980115//EN"                             "DTDV2.2\dmodule\dtd\Applic.ent"
+PUBLIC "-//RAFALE//ELEMENTS AECMA Base DTD 971001//EN"                                      "DTDV2.2\dmodule\dtd\Base.ent"
+PUBLIC "-//RAFALE//ENTITIES Common Entities 981222//EN"                                     "DTDV2.2\dmodule\dtd\common.ent"
+PUBLIC "-//RAFALE//ENTITIES Component Definitions 981222//EN"                               "DTDV2.2\dmodule\dtd\comps.ent"
+PUBLIC "-//RAFALE//ELEMENTS Content Breakdown 980115//EN"                                   "DTDV2.2\dmodule\dtd\Content.ent"
+PUBLIC "-//RAFALE//ELEMENTS Data Module Code Breakdown 981222//EN"                          "DTDV2.2\dmodule\dtd\Dmc.ent"
+PUBLIC "-//RAFALE//ELEMENTS Description Breakdown 980115//EN"                               "DTDV2.2\dmodule\dtd\descript.ent"
+PUBLIC "-//RAFALE//ELEMENTS Figure Breakdown 980115//EN"                                    "DTDV2.2\dmodule\dtd\Fig.ent"
+PUBLIC "-//RAFALE//ELEMENTS Equipment identification 980115//EN"                            "DTDV2.2\dmodule\dtd\ident.ent"
+PUBLIC "-//RAFALE//ELEMENTS Illustrated Parts Catalog 981222//EN"                           "DTDV2.2\dmodule\dtd\ipc.ent"
+PUBLIC "-//RAFALE//ENTITIES Chapterized IPC 971001//EN"                                     "DTDV2.2\dmodule\dtd\ipcc.ent"
+PUBLIC "-//RAFALE//ENTITIES Non chapterized IPC 971001//EN"                                 "DTDV2.2\dmodule\dtd\ipcn.ent"
+PUBLIC "-//RAFALE//ELEMENTS Lists Breakdown 971001//EN"                                     "DTDV2.2\dmodule\dtd\Lists.ent"
+PUBLIC "-//RAFALE//ELEMENTS Numbered Paragraphs Breakdown 980115//EN"                       "DTDV2.2\dmodule\dtd\Paras.ent"
+PUBLIC "-//RAFALE//ELEMENTS Preliminary requirements 981222//EN"                            "DTDV2.2\dmodule\dtd\prelreqs.ent"
+PUBLIC "-//RAFALE//ELEMENTS Procedural Breakdown 980115//EN"                                "DTDV2.2\dmodule\dtd\proced.ent"
+PUBLIC "-//RAFALE//ELEMENTS Schedule information 981222//EN"                                "DTDV2.2\dmodule\dtd\sched.ent"
+PUBLIC "-//RAFALE//ELEMENTS Special Paragraphs Breakdown 971001//EN"                        "DTDV2.2\dmodule\dtd\specpara.ent"
+PUBLIC "-//RAFALE//ELEMENTS Status Breakdown 980115//EN"                                    "DTDV2.2\dmodule\dtd\status.ent"
+PUBLIC "-//RAFALE//ELEMENTS Steps Breakdown 971001//EN"                                     "DTDV2.2\dmodule\dtd\steps.ent"
+PUBLIC "-//RAFALE//ELEMENTS Table Breakdown 980115//EN"                                     "DTDV2.2\dmodule\dtd\tab.ent"
+PUBLIC "-//RAFALE//ELEMENTS Tableau organes 981222//EN"                                     "DTDV2.2\dmodule\dtd\to.ent"
+PUBLIC "-//RAFALE//ELEMENTS Wiring 981222//EN"                                              "DTDV2.2\dmodule\dtd\wiring.ent"
+
+PUBLIC "-//RAFALE CSDB//DTD Data Dispatch Note 971001//EN"                                  "DTDV2.2\ddn\dtd\ddn.dtd"
+
+-- RAFALE V2.2a Entities resolved in the directory DTDV2.2a --
+
+-- BUGGY: The idiots at Romo modified the content without changing the public ID string --
+PUBLIC "-//RAFALE IETP//DTD IETP Canvas 981222//EN"                                         "DTDV2.2a\Canvas\dtd\Canvas.dtd"
+PUBLIC "-//RAFALE IETP//ENTITIES CANVAS Configuration 981222//EN"                           "DTDV2.2a\Canvas\dtd\Canvas.cfg"
+
+-- BUGGY: The idiots at Romo modified the content without changing the public ID string --
+PUBLIC "-//RAFALE CSDB//DTD CSDB Configuration List 981222//EN"                             "DTDV2.2a\CCL\dtd\Ccl.dtd"
+PUBLIC "-//RAFALE CSDB//ENTITIES CCL Configuration 981222//EN"                              "DTDV2.2a\CCL\dtd\ccl.cfg"
+
+-- BUGGY: The idiots at Romo modified the content without changing the public ID string --
+PUBLIC "-//RAFALE CSDB//DTD Configuration Status List 981222//EN"                           "DTDV2.2a\CSL\dtd\csl.dtd"
+
+PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Air Fault Reporting 030112//EN"   "DTDV2.2a\dmodule\dtd\Avee_afr.dtd"
+PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment AirCrew 030112//EN"               "DTDV2.2a\dmodule\dtd\avee_c.dtd"
+PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Description 030112//EN"           "DTDV2.2a\dmodule\dtd\avee_d.dtd"
+PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 030112//EN"            "DTDV2.2a\dmodule\dtd\avee_p.dtd"
+PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Schedule Information 030112//EN"  "DTDV2.2a\dmodule\dtd\Avee_sch.dtd"
+PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Equipment list 030112//EN"        "DTDV2.2a\dmodule\dtd\avee_to.dtd"
+PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment WIRING DATA 030112//EN"           "DTDV2.2a\dmodule\dtd\avee_w.dtd"
+
+PUBLIC "-//RAFALE CSDB//DTD Aircraft Ground Equipment Description 030112//EN"               "DTDV2.2a\dmodule\dtd\age_d.dtd"
+PUBLIC "-//RAFALE CSDB//DTD Aircraft Ground Equipment Procedural 030112//EN"                "DTDV2.2a\dmodule\dtd\age_p.dtd"
+PUBLIC "-//RAFALE CSDB//DTD Aircraft Ground Equipment Schedule Information 030112//EN"      "DTDV2.2a\dmodule\dtd\Age_sch.dtd"
+PUBLIC "-//RAFALE CSDB//DTD Aircraft Ground Equipment Organes 030112//EN"                   "DTDV2.2a\dmodule\dtd\age_to.dtd"
+
+PUBLIC "-//RAFALE CSDB//DTD Chapterized IPC 030112//EN"                                     "DTDV2.2a\dmodule\dtd\ipcc.dtd"
+PUBLIC "-//RAFALE CSDB//DTD Non chapterized IPC 030112//EN"                                 "DTDV2.2a\dmodule\dtd\ipcn.dtd"
+
+PUBLIC "-//RAFALE//ELEMENTS Applicability Breakdown 030112//EN"                             "DTDV2.2a\dmodule\dtd\Applic.ent"
+PUBLIC "-//RAFALE//ENTITIES Common Entities 030112//EN"                                     "DTDV2.2a\dmodule\dtd\common.ent"
+PUBLIC "-//RAFALE//ENTITIES Component Definitions 030112//EN"                               "DTDV2.2a\dmodule\dtd\comps.ent"
+PUBLIC "-//RAFALE//ELEMENTS Figure Breakdown 030112//EN"                                    "DTDV2.2a\dmodule\dtd\Fig.ent"
+PUBLIC "-//RAFALE//ELEMENTS Illustrated Parts Catalog 030112//EN"                           "DTDV2.2a\dmodule\dtd\ipc.ent"
+
+PUBLIC "-//RAFALE REMARK//DTD Remark 980303//EN"                                            "DTDV2.2a\REMARK\dtd\remark.dtd"
+PUBLIC "-//RAFALE//ENTITIES Remark Configuration 980303//EN"                                "DTDV2.2a\REMARK\dtd\remark.ent"
+
+-- RAFALE Release Version 2.2d  DM DTDs --
+
+PUBLIC "-//RAFALE CSDB//DTD Aircraft Ground Equipment Description 140112//EN" 			"dtdv2.2d\Dmodule\dtd\age_d.dtd"
+PUBLIC "-//RAFALE CSDB//DTD Aircraft Ground Equipment Procedural 140112//EN"			"dtdv2.2d\Dmodule\dtd\age_p.dtd"
+PUBLIC "-//RAFALE CSDB//DTD Aircraft Ground Equipment Schedule information 140112//EN"		"dtdv2.2d\Dmodule\dtd\age_sch.dtd"
+PUBLIC "-//RAFALE CSDB//DTD Aircraft Ground Equipment organes 140112//EN"			"dtdv2.2d\Dmodule\dtd\age_to.dtd"
+PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Air Fault Reporting 140112//EN"	"dtdv2.2d\Dmodule\dtd\avee_afr.dtd"
+PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment AirCrew 140112//EN"			"dtdv2.2d\Dmodule\dtd\avee_c.dtd"
+PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Description 140112//EN"		"dtdv2.2d\Dmodule\dtd\avee_d.dtd"
+PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 140112//EN"		"dtdv2.2d\Dmodule\dtd\avee_p.dtd"
+PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Schedule information 140112//EN"	"dtdv2.2d\Dmodule\dtd\avee_sch.dtd"
+PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment organes 140112//EN"			"dtdv2.2d\Dmodule\dtd\avee_to.dtd"
+PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment WIRING 140112//EN"			"dtdv2.2d\Dmodule\dtd\avee_w.dtd"
+PUBLIC "-//RAFALE CSDB//DTD Chapterized IPC 140112//EN"						"dtdv2.2d\Dmodule\dtd\ipcc.dtd"
+PUBLIC "-//RAFALE CSDB//DTD Non chapterized IPC 140112//EN"					"dtdv2.2d\Dmodule\dtd\ipcn.dtd"
+PUBLIC "-//RAFALE//ELEMENTS Equipment identification 980115//EN"	"dtdv2.2d\Dmodule\dtd\ident.ent"
+PUBLIC "-//RAFALE//ELEMENTS Schedule information 981222//EN"		"dtdv2.2d\Dmodule\dtd\sched.ent"
+
+-- RAFALE 140112 DM DTD Entities --
+
+PUBLIC "-//RAFALE//ENTITIES Component Definitions 140112//EN"		           "dtdv2.2d\Dmodule\dtd\comps.ent"
+PUBLIC "-//RAFALE//ENTITIES Common Entities 140112//EN"                    "dtdv2.2d\Dmodule\dtd\common.ent"
+PUBLIC "-//RAFALE//ELEMENTS Applicability Breakdown 140112//EN"            "dtdv2.2d\Dmodule\dtd\applic.ent"
+PUBLIC "-//RAFALE//ENTITIES Chapterized IPC 971001//EN"			               "dtdv2.2d\Dmodule\dtd\ipcc.ent"
+PUBLIC "-//RAFALE//ENTITIES AECMA Configuration 971001//EN"		             "dtdv2.2d\Dmodule\dtd\aecma.cfg"
+PUBLIC "-//RAFALE//ELEMENTS AECMA Base DTD 971001//EN"                     "dtdv2.2d\Dmodule\dtd\base.ent"
+PUBLIC "-//RAFALE//ELEMENTS Lists Breakdown 971001//EN"                    "dtdv2.2d\Dmodule\dtd\lists.ent"
+PUBLIC "-//RAFALE//ELEMENTS Special Paragraphs Breakdown 971001//EN"	     "dtdv2.2d\Dmodule\dtd\specpara.ent"
+PUBLIC "-//RAFALE//ELEMENTS Content Breakdown 980115//EN"                  "dtdv2.2d\Dmodule\dtd\content.ent"
+PUBLIC "-//RAFALE//ELEMENTS Data Module Code Breakdown 981222//EN"	       "dtdv2.2d\Dmodule\dtd\dmc.ent"
+PUBLIC "-//RAFALE//ELEMENTS Status Breakdown 980115//EN"                   "dtdv2.2d\Dmodule\dtd\status.ent"
+PUBLIC "-//RAFALE//ENTITIES Aircraft Ground Equipment 971001//EN"	         "dtdv2.2d\Dmodule\dtd\age.ent"
+PUBLIC "-//RAFALE//ENTITIES Air Vehicle Engines Equipment 971001//EN"	     "dtdv2.2d\Dmodule\dtd\avee.ent"
+PUBLIC "-//RAFALE//ELEMENTS AirCrew Breakdown 980115//EN"		               "dtdv2.2d\Dmodule\dtd\aircrew.ent"
+PUBLIC "-//RAFALE//ELEMENTS Numbered Paragraphs Breakdown 980115//EN"	     "dtdv2.2d\Dmodule\dtd\paras.ent"
+PUBLIC "-//RAFALE//ELEMENTS Table Breakdown 980115//EN"			               "dtdv2.2d\Dmodule\dtd\tab.ent"
+PUBLIC "-//RAFALE//ELEMENTS Preliminary requirements 981222//EN"	         "dtdv2.2d\Dmodule\dtd\prelreqs.ent"
+PUBLIC "-//RAFALE//ELEMENTS Procedural Breakdown 980115//EN"		           "dtdv2.2d\Dmodule\dtd\proced.ent"
+PUBLIC "-//RAFALE//ELEMENTS Steps Breakdown 971001//EN"			               "dtdv2.2d\Dmodule\dtd\steps.ent"
+PUBLIC "-//RAFALE//ELEMENTS Description Breakdown 980115//EN"		           "dtdv2.2d\Dmodule\dtd\descript.ent"
+
+
+- RAFALE 040112 DM DTD Entities --
+
+PUBLIC "-//RAFALE//ELEMENTS Figure Breakdown 040112//EN"			"dtdv2.2d\Dmodule\dtd\fig.ent"
+PUBLIC "-//RAFALE//ELEMENTS Illustrated Parts Catalog 040112//EN"	"dtdv2.2d\Dmodule\dtd\ipc.ent"
+
+-- RAFALE 040112 DM DTD Entities --
+
+PUBLIC "-//RAFALE//ELEMENTS Figure Breakdown 040112//EN"			"dtdv2.2d\Dmodule\dtd\fig.ent"
+PUBLIC "-//RAFALE//ELEMENTS Illustrated Parts Catalog 040112//EN"	"dtdv2.2d\Dmodule\dtd\ipc.ent"
+
+
+SGMLDECL "dtdv2.2d\Dmodule\dcl\aecma.dcl"
+-- SGMLDECL "DTDV2.2a\sgmldec.txt"
+
+-- vim: syntax=catalog
+--
+
+-- End of file--

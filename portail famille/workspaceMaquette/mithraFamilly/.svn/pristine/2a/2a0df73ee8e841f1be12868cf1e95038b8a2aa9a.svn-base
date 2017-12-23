@@ -1,0 +1,195 @@
+package com.sonovision.openconv.modules.sgmlprocess;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+
+import javax.xml.transform.URIResolver;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+import org.springframework.web.context.WebApplicationContext;
+
+import com.sedoc.dtdtoolbox.utils.DTDParsing;
+import com.sedoc.toolbox.SpringBeanProvider;
+import com.sedoc.toolbox.bean.UtilsService;
+import com.sonovision.openconv.db.vo.ConversionObject;
+import com.sonovision.openconv.log.model.LoggerLevel;
+import com.sonovision.openconv.mapper.TreatedObjectMapper;
+import com.sonovision.openconv.model.TreatedObject;
+import com.sonovision.openconv.wf.WFTask;
+import com.sonovision.openconv.wf.WFTaskHelper;
+import com.sonovision.openconv.wf.model.ParameterDetailled;
+import com.sonovision.openconv.wf.model.ParameterTypes;
+
+
+@Component
+@Scope(value = WebApplicationContext.SCOPE_SESSION)
+public class TaskSGMLProcess extends WFTaskHelper implements WFTask {
+
+//	@Autowired
+//	XSLTransformService xslTransformerService;
+
+	@Autowired
+	UtilsService utilsService;
+	
+	static DTDParsing dtdParsing;
+
+	private URIResolver uriResolver;
+
+	//I must init spring composent, buti have loop on this class. this variable is for skip loop. I think it will be better if we use @Configure. next time
+	private static boolean initrun = false;
+	
+
+	public TaskSGMLProcess() {
+		super();
+	}
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7764367737889004545L;
+
+	public final static String PARAMETER_XSL_FILE_NAME = "xslFileName";
+	public final static String PARAMETER_XSL_TRANSFORMER_ENGINE = "xsltransformerEngine";
+	public final static String PARAMETER_XSL_URIRESOLVER_CLASS = "uriresolver";
+	public final static String PARAMETER_LOADFILE_CODIFICATION_FILE = "codificationFile";
+
+	public final static String PARAMETER_LOADFILE_INPUT_FOLDER = "inputFolder";
+	public final static String PARAMETER_LOADFILE_OUTPUT_FOLDER = "outputFolder";
+	
+	public final static String XSL_ENGINE_SAXON = "saxon";
+
+//	private String xslFileName;
+
+	public String run(HashMap<String, TreatedObject> treatedObjectHash) {
+		initClass();
+		if(!checkRequiredParams())
+			return LoggerLevel.FATAL.getValue().toString();
+		dbLogger.logTask("Debut de la transformation sgml", LoggerLevel.INFO);
+		
+		if (treatedObjectHash == null || treatedObjectHash.isEmpty()) {
+			dbLogger.logTask("Aucun sgml a traiter", LoggerLevel.FATAL);
+			return LoggerLevel.FATAL.getValue().toString();
+		}
+
+
+		treatedObjectHash.values().stream().forEach((to) -> doTransformation(to));
+		return dbLogger.getTask().getLogResult();
+
+	}
+
+	
+
+	private TreatedObject doTransformation(TreatedObject to) {
+		if(to.getLastResultAction()!=null && (to.getLastResultAction().equals(LoggerLevel.FATAL.toString())  || to.getLastResultAction().equals(LoggerLevel.ERROR.toString())))
+		{
+			dbLogger.logObject("l'objet :" + to.getIdObject() +" n'est pas traité car il est en level : "+to.getLastResultAction(), LoggerLevel.INFO, to.getIdObject());
+			closeObject(dbLogger.getLoggerLevel(to.getLastResultAction()), to);
+			return to;
+		}
+		dbLogger.logObject("Debut conversion :" + to.getIdObject(), LoggerLevel.INFO, to.getIdObject());
+		ConversionObject co = dbLogger.getConversionObject(to.getIdObject());
+
+
+		InputStream document = TreatedObjectMapper.getInputStream(to.getObjectConvert());
+	
+
+		InputStream ips;
+		try {
+			SGMLConverter sdm=new SGMLConverter();
+			ips = sdm.runSX(document,"la dtd");
+		} catch (IOException e) {
+			dbLogger.logObject("l'objet :" + to.getIdObject() +" n'a pas pu etre converti en xml: "+to.getLastResultAction(), LoggerLevel.ERROR, to.getIdObject());
+			closeObject(dbLogger.getLoggerLevel(to.getLastResultAction()), to);
+			return to;
+			
+		}
+		to.setObjectConvert(ips);
+		to.setLastResultAction(LoggerLevel.INFO.toString());
+		closeObject(LoggerLevel.INFO, to);
+		
+		return to;
+	}
+
+	/**
+	 * It can be replaced by @Configuration with aspectj spring but i don't know
+	 * why it doesn't work TODO :make it generic in extends's class
+	 */
+	public void initClass() {
+		if (!initrun) {
+			initrun = true;
+//			if (xslTransformerService == null) {
+//				xslTransformerService = (XSLTransformService) SpringBeanProvider.getBean("XSLTransformService");
+//			}
+			if (utilsService == null) {
+				utilsService = (UtilsService) SpringBeanProvider.getBean("UtilsService");
+			}
+			initrun = false;
+		}
+	}
+
+
+
+//	/**
+//	 * @return the utilsService
+//	 */
+//	public UtilsService getUtilsService() {
+//		return utilsService;
+//	}
+//
+//	/**
+//	 * @param utilsService
+//	 *            the utilsService to set
+//	 */
+//	public void setUtilsService(UtilsService utilsService) {
+//		this.utilsService = utilsService;
+//	}
+	
+	@Override
+	public HashMap<String, ParameterTypes> getRequiredParams() {
+
+		parametersRequired=new HashMap<>();
+		parametersRequired.put(PARAMETER_XSL_FILE_NAME,ParameterTypes.TXT);
+		parametersRequired.put(PARAMETER_XSL_TRANSFORMER_ENGINE,ParameterTypes.TXT);
+		parametersRequired.put(PARAMETER_XSL_URIRESOLVER_CLASS,ParameterTypes.TXT);
+		parametersRequired.put(PARAMETER_LOADFILE_CODIFICATION_FILE,ParameterTypes.TXT);
+		parametersRequired.put(PARAMETER_LOADFILE_INPUT_FOLDER,ParameterTypes.TXT);
+		parametersRequired.put(PARAMETER_LOADFILE_OUTPUT_FOLDER,ParameterTypes.TXT);	
+		return parametersRequired;
+	}
+	
+//	@Override
+//	public List<ParameterDetailled> getRequiredDetailledParameterList(Locale locale) {
+//		getRequiredParams();
+//		return super.procedeRequiredParameterList(locale);
+//	}
+
+
+
+	@Override
+	public boolean checkRequiredParams() {
+		// TODO Auto-generated method stub
+		return super.checkParams();
+	}
+
+
+
+//	@Override
+//	public HashMap<String, ParameterTypes> getAskedParams(int step) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+
+
+
+//	@Override
+//	public List<ParameterDetailled> getAskedDetailledParameterList(Locale locale,int step) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+
+}

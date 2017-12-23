@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scworkflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/developpement/workspaceSysconv/document/wf.xsd">
+	<name>cobra</name>
+	<description>workflow pour la convertion cobra</description>
+	<wf> 
+		<sequences>
+			<sequence>
+				<id>COBRA_TO_S1000D</id>
+				<name>conversion xsl</name>
+				<description>conversion d'un fichier xml cobra</description>
+				<action>
+					<actionid>1</actionid>
+					<ord>1</ord>
+					<taskid>1</taskid>
+					<condition>
+						<outputValue>0</outputValue>
+						<actionid>0</actionid>
+					</condition>
+					<condition>
+						<outputValue>1</outputValue>
+						<actionid>2</actionid>
+					</condition>
+					<condition>
+						<outputValue>2</outputValue>
+						<actionid>2</actionid>
+					</condition>
+					<condition>
+						<outputValue>3</outputValue>
+						<actionid>2</actionid>
+					</condition>
+					<condition>
+						<outputValue/>
+						<actionid>0</actionid>
+					</condition>
+				</action>
+				<action>
+					<actionid>2</actionid>
+					<ord>2</ord>
+					<taskid>2</taskid>
+					 <condition>
+						<outputValue>0</outputValue>
+						<actionid>0</actionid>
+					</condition>
+					<condition>
+						<outputValue>1</outputValue>
+						<actionid>3</actionid>
+					</condition>
+					<condition>
+						<outputValue>2</outputValue>
+						<actionid>3</actionid>
+					</condition>
+					<condition>
+						<outputValue>3</outputValue>
+						<actionid>3</actionid>
+					</condition> 
+					<condition>
+						<outputValue/>
+						<actionid>0</actionid>
+					</condition>
+				</action>
+				 <action>
+					<actionid>3</actionid>
+					<ord>3</ord>
+					<taskid>3</taskid>
+					<condition>
+						<outputValue>0</outputValue>
+						<actionid>0</actionid>
+					</condition>
+					<condition>
+						<outputValue>1</outputValue>
+						<actionid>4</actionid>
+					</condition>
+					<condition>
+						<outputValue>2</outputValue>
+						<actionid>4</actionid>
+					</condition>
+					<condition>
+						<outputValue>3</outputValue>
+						<actionid>4</actionid>
+					</condition> 
+					<condition>
+						<outputValue/>
+						<actionid>0</actionid>
+					</condition>
+				</action>
+				<action>
+					<actionid>4</actionid>
+					<ord>4</ord>
+					<taskid>4</taskid>
+					<!-- <condition>
+						<outputValue>0</outputValue>
+						<actionid>0</actionid>
+					</condition>
+					<condition>
+						<outputValue>1</outputValue>
+						<actionid>5</actionid>
+					</condition>
+					<condition>
+						<outputValue>2</outputValue>
+						<actionid>5</actionid>
+					</condition>
+					<condition>
+						<outputValue>3</outputValue>
+						<actionid>5</actionid>
+					</condition> -->
+					<condition>
+						<outputValue/>
+						<actionid>5</actionid>
+					</condition>
+				</action>
+				<!-- <action>
+					<actionid>5</actionid>
+					<ord>5</ord>
+					<taskid>5</taskid>
+					<condition>
+						<outputValue>0</outputValue>
+						<actionid>0</actionid>
+					</condition>
+					<condition>
+						<outputValue>1</outputValue>
+						<actionid>5</actionid>
+					</condition>
+					<condition>
+						<outputValue>2</outputValue>
+						<actionid>5</actionid>
+					</condition>
+					<condition>
+						<outputValue>3</outputValue>
+						<actionid>5</actionid>
+					</condition>
+					<condition>
+						<outputValue/>
+						<actionid>0</actionid>
+					</condition>
+				</action>-->
+				<action>
+					<actionid>5</actionid>
+					<ord>5</ord>
+					<taskid>5</taskid>
+					<condition>
+						<outputValue/>
+						<actionid>0</actionid>
+					</condition>
+				</action>
+				<action>
+					<actionid>0</actionid>
+					<ord>99</ord>
+					<taskid>6</taskid>
+					<condition>
+						<outputValue/>
+						<actionid>END</actionid>
+					</condition>
+				</action>
+			</sequence>
+		</sequences>
+		<tasks>
+		
+			<task>
+				<id>1</id>
+				<name>lecture des fichiers</name>
+				<description>lecture des fichiers dans le repertoire d'entrée</description>
+				<className>com.sonovision.openconv.modules.fileaccess.TaskLoadFile</className>
+				<parameters>
+					<parameter>
+						<key>inputFolder</key>
+						<value>/xml/cobra</value>
+					</parameter>
+					<parameter>
+						<key>codificationClass</key>
+						<value>com.sonovision.openconv.codification.impl.ListFileInOut</value>
+					</parameter>
+					<parameter>
+						<key>codificationFile</key>
+						<value>D:/output/coco/codification/listeInOut.xml</value>
+					</parameter>
+				</parameters>
+			</task>
+			<task>
+				<id>2</id>
+				<name>conversion xsl</name>
+				<description>conversion d'un fichier xsl</description>
+				<className>com.sonovision.openconv.modules.xslprocess.TaskXSLProcess</className>
+				<parameters>
+					<parameter>
+						<key>xslFileName</key>
+						<value>xsl/cobra/convCobra2ASD.xsl</value>
+					</parameter>
+				</parameters>
+			</task>
+			<task>
+				<id>3</id>
+				<name>conversion xsl</name>
+				<description>conversion d'un fichier xsl</description>
+				<className>com.sonovision.openconv.modules.xslprocess.TaskXSLProcess</className>
+				<parameters>
+					<parameter>
+						<key>xslFileName</key>
+						<value>xsl/cobra/convCobra2ASDaddDoctype.xsl</value>
+					</parameter>
+				</parameters>
+			</task>
+			
+			<task>
+				<id>4</id>
+				<name>validation S1000D du resultat</name>
+				<description>validation S1000D du resultat</description>
+				<className>com.sonovision.openconv.modules.dtdvalidator.TaskDTDValidator</className>
+			</task>
+			<task>
+				<id>5</id>
+				<name>ecriture des fichiers</name>
+				<description>Ecriture des fichier dans le répertoire de sortie</description>
+				<className>com.sonovision.openconv.modules.fileaccess.TaskWriter</className>
+				<parameters>
+					<parameter>
+						<key>outputFolder</key>
+						<value>D:/work/openconv/cobraout</value>
+					</parameter>
+				</parameters>
+			</task>
+						<task>
+				<id>6</id>
+				<name>ecriture des log en PDF</name>
+				<description>Ecriture des log dans un fichier PDF</description>
+				<className>com.sonovision.openconv.modules.loganalyser.TaskLogToPDFProcess</className>
+				<parameters>
+					<parameter>
+						<key>outputPDF</key>
+						<value>D:/output/coco/log/log.pdf</value>
+					</parameter>
+				</parameters>
+			</task>
+		</tasks>
+		
+	</wf>
+</scworkflow>

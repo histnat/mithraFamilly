@@ -1,0 +1,232 @@
+package com.sonovision.openconv.modules.xslprocess.helper.table.model;
+
+public class TableCell extends Object{
+	
+	public static final short HEAD_PART_TYPE = 1;
+	public static final short BODY_PART_TYPE = 2;
+/*
+	public static final short PARAM_V_ALIGN_CENTER = 1;
+	public static final short PARAM_V_ALIGN_LEFT = 2;
+	public static final short PARAM_V_ALIGN_RIGHT = 3;
+	
+	public static final short PARAM_H_ALIGN_CENTER = 1;
+	public static final short PARAM_H_ALIGN_TOP = 2;
+	public static final short PARAM_H_ALIGN_BOTTOM = 3;
+	*/
+	/**
+	 * 	HEAD_PART_TYPE -> THEAD ;
+	 *  BODY_PART_TYPE -> TBODY;
+	 */
+	private short cellPartType=0;
+	
+	
+
+	/**
+	 * Cell parameters column width, backgroundColor, and so on
+	 */
+	private String paramColWidth;
+	private String paramBackgroundColor;
+	private String paramBorder;
+	private String paramV_Align;
+	private String paramH_Align;
+	private String paramRowHeight;
+	private String paramChar;
+	private String paramCharoff;
+	private String paramId;
+	
+
+	/**
+	 * For spanned Cells
+	 */
+	private int colspan=0;
+		private int rowspan=0;
+	//position of the main cell of the spanned cells (upper left cell)
+	private int x_spanned=0;
+	private int y_spanned=0;
+	
+	/**
+	 * String or something else
+	 * 
+	 */
+	private Object content=null;
+	
+	
+	
+	public boolean isSpanned() {
+		return ((rowspan!=0)||(colspan!=0));
+	}
+
+	
+	public int getColspan() {
+		return colspan;
+	}
+
+	public void setColspan(int colspan) {
+		this.colspan = colspan;
+	}
+
+
+	public int getRowspan() {
+		return rowspan;
+	}
+
+
+	public void setRowspan(int rowspan) {
+		this.rowspan = rowspan;
+	}
+
+
+	public int getX_spanned() {
+		return x_spanned;
+	}
+
+
+	public void setX_spanned(int x_spanned) {
+		this.x_spanned = x_spanned;
+	}
+
+
+	public int getY_spanned() {
+		return y_spanned;
+	}
+
+
+	public void setY_spanned(int y_spanned) {
+		this.y_spanned = y_spanned;
+	}
+
+
+	public void setXY_spanned(int x_spanned,int y_spanned){
+		this.x_spanned = x_spanned;
+		this.y_spanned = y_spanned;
+	}
+
+	public String getParamRowHeight() {
+		return paramRowHeight;
+	}
+
+
+	public void setParamRowHeight(String paramRowHeight) {
+		this.paramRowHeight = paramRowHeight;
+	}
+
+
+	
+	public short getCellPartType() {
+		return cellPartType;
+	}
+
+
+
+	public void setCellPartType(short cellPartType) {
+		this.cellPartType = cellPartType;
+	}
+
+
+
+	public String getParamColWidth() {
+		return paramColWidth;
+	}
+
+
+
+	public void setParamColWidth(String paramColWidth) {
+		this.paramColWidth = paramColWidth;
+	}
+
+
+
+	public String getParamBackgroundColor() {
+		return paramBackgroundColor;
+	}
+
+
+
+	public void setParamBackgroundColor(String paramBackgroundColor) {
+		this.paramBackgroundColor = paramBackgroundColor;
+	}
+
+
+
+	public String getParamBorder() {
+		return paramBorder;
+	}
+
+
+
+	public void setParamBorder(String paramBorder) {
+		this.paramBorder = paramBorder;
+	}
+
+
+	public Object getContent() {
+		return content;
+	}
+
+
+
+	public void setContent(Object content) {
+		this.content = content;
+	}
+
+	
+	public String getParamV_Align() {
+		return paramV_Align;
+	}
+
+
+
+	public void setParamV_Align(String paramV_Align) {
+		this.paramV_Align = paramV_Align;
+	}
+
+	public String getParamH_Align() {
+		return paramH_Align;
+	}
+
+
+
+	public void setParamH_Align(String paramH_Align) {
+		this.paramH_Align = paramH_Align;
+	}
+
+	
+	
+	
+	public String getParamChar() {
+		return paramChar;
+	}
+
+
+	public void setParamChar(String paramChar) {
+		this.paramChar = paramChar;
+	}
+
+
+	public String getParamCharoff() {
+		return paramCharoff;
+	}
+
+
+	public void setParamCharoff(String paramCharoff) {
+		this.paramCharoff = paramCharoff;
+	}
+
+
+	public String getParamId() {
+		return paramId;
+	}
+
+
+	public void setParamId(String paramId) {
+		this.paramId = paramId;
+	}
+
+
+	public String toString(){
+		if(content!=null)
+			return content.toString();
+		return "";
+	}
+
+}

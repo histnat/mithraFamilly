@@ -1,0 +1,30 @@
+package com.sonovision.openconv.codification;
+
+import java.io.Serializable;
+import java.util.HashMap;
+
+import com.sonovision.openconv.codification.exception.CodificationException;
+
+public interface Codification extends Serializable {
+	
+	
+	/**
+	 * return new FileName for oldFileName
+	 * @param oldFileName
+	 * @return
+	 * @throws CodificationException 
+	 */
+	String  getNewFileName(String oldFileName) throws CodificationException;
+
+	/**
+	 * return old file name for new file name
+	 * @param newFileName
+	 * @return
+	 * @throws CodificationException
+	 */
+	String getOldFileName(String newFileName) throws CodificationException;
+
+	
+	void setCodificationParameter(HashMap<String,Object>  parameter) throws CodificationException;
+
+}

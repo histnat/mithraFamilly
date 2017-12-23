@@ -1,0 +1,985 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1B725200SF030100510A011 SYSTEM "x-dm://0900f90b800779d5,MYWORKING" NDATA cgm>
+<!ENTITY A1B725200SF030100326A021 SYSTEM "x-dm://0900f90b800779d2,MYWORKING" NDATA cgm>
+<!ENTITY A1B725200SF030100320A021 SYSTEM "x-dm://0900f90b800779d1,MYWORKING" NDATA cgm>
+<!ENTITY A1B725200SF030100321A031 SYSTEM "x-dm://0900f90b8006824f,MYWORKING" NDATA cgm>
+<!ENTITY A1B725200SF030100411A011 SYSTEM "x-dm://0900f90b80061e57,MYWORKING" NDATA jpeg>
+<!ENTITY A1B725200SF030100266A061 SYSTEM "x-dm://0900f90b80058dbd,MYWORKING" NDATA cgm>
+<!ENTITY A1B725200SF030100267A041 SYSTEM "x-dm://0900f90b8004a298,MYWORKING" NDATA cgm>
+<!ENTITY A1B725200SF030100262A031 SYSTEM "x-dm://0900f90b8004a297,MYWORKING" NDATA cgm>
+<!ENTITY A1B725200SF030100326A011 SYSTEM "x-dm://0900f90b80045baa,MYWORKING" NDATA cgm>
+<!ENTITY A1B725200SF030100266A051 SYSTEM "x-dm://0900f90b80045ba9,MYWORKING" NDATA cgm>
+<!ENTITY A1B725200SF030100266A041 SYSTEM "x-dm://0900f90b8003c632,MYWORKING" NDATA cgm>
+<!ENTITY A1B725200SF030100266A031 SYSTEM "x-dm://0900f90b800399d5,MYWORKING" NDATA cgm>
+<!ENTITY A1B725200SF030100321A011 SYSTEM "x-dm://0900f90b8003126b,MYWORKING" NDATA cgm>
+<!ENTITY A1B725200SF030100286A031 SYSTEM "x-dm://0900f90b80031269,MYWORKING" NDATA cgm>
+<!ENTITY A1B725200SF030100267A031 SYSTEM "x-dm://0900f90b80031268,MYWORKING" NDATA cgm>
+<!ENTITY A1B725200SF030100320A011 SYSTEM "x-dm://0900f90b8003126a,MYWORKING" NDATA cgm>
+<!ENTITY A1B725200SF030100263A021 SYSTEM "x-dm://0900f90b800027de,MYWORKING" NDATA cgm>
+<!ENTITY A1B725200SF030100265A031 SYSTEM "x-dm://0900f90b8002b9c8,MYWORKING" NDATA cgm>
+<!ENTITY A1B725200SF030100262A021 SYSTEM "x-dm://0900f90b80018c04,MYWORKING" NDATA cgm>
+<!ENTITY A1B725200SF030100294A011 SYSTEM "x-dm://0900f90b8000dabf,MYWORKING" NDATA jpeg>
+<!ENTITY A1B725200SF030100264A011 SYSTEM "x-dm://0900f90b80003ec3,MYWORKING" NDATA cgm>
+]>
+<?Pub EntList alpha bull copy rArr sect trade nbsp>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>21</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmc>
+<dmtitle><techname>AUBE MOBILE, TURBINE HP ETAPE 4</techname><infoname>CONTROLE VISUEL SANS MOYEN SPECIAL</infoname></dmtitle>
+<issno type="c" issno="13">
+<issdate month="05" year="2012" day="30">
+</dmaddres><status>
+<security class="np">
+<rpc rpcname="s">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 4"></version>
+<customer aaf="1" anf="1">
+<nti nti1="1" nti2="1" nti3="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Prise en compte note YM/ 2131/conf/2011 (RAT Moteur 252/18) - ETIAR 61.590 - AT 1221-10 - CSCM88DMM/200/10 - CSCM88DMM/493/11 - CSCM88DMM/113/12</rfu>
+<remarks>RAS</remarks>
+<icns><icn id="A1B725200SF030100262A031">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="s"><orig>F0301</orig><illnum>00262</illnum><illver>A</illver><illupdat>03</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1B725200SF030100263A021">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="s"><orig>F0301</orig><illnum>00263</illnum><illver>A</illver><illupdat>02</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1B725200SF030100264A011">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="s"><orig>F0301</orig><illnum>00264</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1B725200SF030100265A031">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="s"><orig>F0301</orig><illnum>00265</illnum><illver>A</illver><illupdat>03</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1B725200SF030100266A061">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="s"><orig>F0301</orig><illnum>00266</illnum><illver>A</illver><illupdat>06</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1B725200SF030100267A041">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="s"><orig>F0301</orig><illnum>00267</illnum><illver>A</illver><illupdat>04</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1B725200SF030100286A031">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="s"><orig>F0301</orig><illnum>00286</illnum><illver>A</illver><illupdat>03</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1B725200SF030100294A011">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="s"><orig>F0301</orig><illnum>00294</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1B725200SF030100320A021">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="s"><orig>F0301</orig><illnum>00320</illnum><illver>A</illver><illupdat>02</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1B725200SF030100321A011">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="s"><orig>F0301</orig><illnum>00321</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1B725200SF030100326A021">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="s"><orig>F0301</orig><illnum>00326</illnum><illver>A</illver><illupdat>02</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1B725200SF030100510A011">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="s"><orig>F0301</orig><illnum>00510</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<norefs>
+</refs><proced><pmd>
+<manhour value="0,1"></manhour>
+<duration value="0,1"></duration>
+</pmd><prelreqs><reqconds>
+<noconds></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="0,1"></reqper>
+</reqpers><supequip><nosupeq><nosupeqs></supequip><supplies><supplyli exhaust="0">
+<supply id="R25003" mand="0" change="mod"><refipc change="mod" csn="72520001A025 " isn="00A"><nomen>Aube mobile, turbine HP</nomen><quantity>SB</quantity></supply>
+<supply id="R1" mand="0"><applic change="mod"><config><mod modnb="205C3-1" change="mod" modcond="post"></config></applic>
+<refipc csn="72520001A025 " isn="00C"><nomen>Aube mobile, turbine HP</nomen><quantity>SB</quantity></supply>
+<supply id="R2" mand="0"><applic><config><mod modnb="238C3-1" change="mod" modcond="post"></config></applic>
+<refipc csn="72520001A025 " isn="00E"><nomen>Aube mobile, turbine HP</nomen><quantity>SB</quantity></supply>
+</supplyli></supplies><miscs><nomisc></miscs><safety>
+<specpara>
+<caution>
+<p>Signaler tout autre d&eacute;faut non r&eacute;pertori&eacute; dans la proc&eacute;dure &agrave; SNECMA.</p>
+</caution>
+<note>
+<p>Cette proc&eacute;dure doit &ecirc;tre r&eacute;alis&eacute;e par du personnel sensibilis&eacute; au contr&ocirc;le endoscopique ou binoculaire M88.</p>
+</note>
+</specpara>
+</safety></prelreqs><mainfunc>
+<step1 control="0" id="p10">
+<para><p change="mod">Approvisionner en cas de remplacement la ou les rechanges n&eacute;cessaires <supplref refid="R25003"> <supplref refid="R1"> <supplref refid="R2">.</p>
+</para>
+</step1>
+<step1 control="0" id="p20">
+<applic><systemid><nti nti1="1"></systemid></applic>
+<para><p>Contr&ocirc;ler visuellement les pi&egrave;ces selon les informations du tableau ci-dessous <figref refid="b725200sf030100294a011"><figref refid="b725200sf030100262a031"> <figref refid="b725200sf030100264a011"> <figref refid="b725200sf030100265a031"> <figref refid="b725200sf030100266a061"> <figref change="mod" refid="B725200SF030100320A021"><figref refid="b725200sf030100321a011"><figref change="mod" refid="B725200SF030100326A021">&nbsp; <figref change="add" refid="B725200SF030100510A011">:</p>
+</para>
+<table tocentry="1">
+<tgroup cols="3" align="center"><colspec colnum="1" colname="sqcolumn1" colwidth="4cm" align="left" colsep="1" rowsep="1"><colspec colnum="2" colname="sqcolumn2" colwidth="6.95cm" align="left" colsep="1" rowsep="1"><colspec colnum="3" colname="sqcolumn3" colwidth="6.00cm" colsep="1" rowsep="1">
+<tbody valign="middle">
+<row rowsep="1">
+<entry valign="middle" align="center" colsep="1" morerows="0" rowsep="1"><para><p>DEFAUTS</p>
+</para>
+</entry>
+<entry valign="middle" align="center" colsep="1" morerows="0" rowsep="1"><para><p>CRITERES D'ADMISSIBILITE</p>
+</para>
+</entry>
+<entry valign="middle" align="center" colsep="1" morerows="0" rowsep="1"><para><p>SANCTION</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry colname="sqcolumn1" valign="top" align="left" colsep="1" rowsep="1"><para><p>Ecaillage pleine pale extrados, type Pe</p>
+</para>
+</entry>
+<entry colname="sqcolumn2" valign="top" align="left" colsep="1" rowsep="1"><para><p>Admissible si la surface &eacute;caill&eacute;e&nbsp;&le;&nbsp;50&nbsp;mm<supscrpt>&sup2;</supscrpt></p>
+</para>
+</entry>
+<entry colname="sqcolumn3" valign="top" align="left" colsep="1" rowsep="1"><para><p>Au-del&agrave;, contacter l'assistance technique SNECMA avant d&eacute;pose</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="sqcolumn1"><para><p>Crique type Ai au niveau des per&ccedil;ages sous baignoire intrados</p>
+</para>
+</entry>
+<entry colname="sqcolumn2"><para><p>Admissible si la plus grande longueur &le;&nbsp;4&nbsp;mm</p>
+</para>
+</entry>
+<entry colname="sqcolumn3" align="left"><para><p>Au-del&agrave;, d&eacute;pose moteur</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry colname="sqcolumn1" valign="top" align="left" colsep="1" rowsep="1"><para><p>Crique baignoire intrados type Bi</p>
+</para>
+</entry>
+<entry colname="sqcolumn2" valign="top" align="left" colsep="1" rowsep="1"><para><p>Admissible si longueur&nbsp;&le;&nbsp;4&nbsp;mm</p>
+</para>
+</entry>
+<entry colname="sqcolumn3" valign="top" align="left" colsep="1" rowsep="1"><para><p>Au-del&agrave;, d&eacute;pose moteur</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry colname="sqcolumn1" valign="top" align="left" colsep="1" rowsep="1"><para><p>Crique baignoire extrados type Be</p>
+</para>
+</entry>
+<entry colname="sqcolumn2" valign="top" align="left" colsep="1" rowsep="1"><para><p>Admissible si longueur&nbsp;&le;&nbsp;5&nbsp;mm</p>
+</para>
+</entry>
+<entry colname="sqcolumn3" valign="top" align="left" colsep="1" rowsep="1"><para><p>Au-del&agrave;, d&eacute;pose moteur</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Crique type SH</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Admissible si longueur&nbsp;&le;&nbsp;1,5&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Au-del&agrave;, d&eacute;pose moteur</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Crique type C</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Admissible si longueur&nbsp;&le;&nbsp;1,5&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Au-del&agrave;, d&eacute;pose moteur</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Crique type Di</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p change="mod">Admissible si longueur &le;&nbsp;5&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Au-del&agrave;, d&eacute;pose moteur</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="sqcolumn1"><para><p change="add">Crique type De</p>
+</para>
+</entry>
+<entry colname="sqcolumn2"><para><p change="add">Admissible si longueur &le;&nbsp;5&nbsp;mm quelle que soit la quantit&eacute;</p>
+</para>
+</entry>
+<entry colname="sqcolumn3" align="left"><para><p change="add">Au-del&agrave;, d&eacute;pose moteur</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="sqcolumn1"><para><p>Crique type U</p>
+</para>
+</entry>
+<entry colname="sqcolumn2"><para><p>Admissible si longueur&nbsp;&le;&nbsp;1&nbsp;mm</p>
+</para>
+</entry>
+<entry colname="sqcolumn3" align="left"><para><p>Au-del&agrave;, d&eacute;pose moteur</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Ecaillage au niveau de la baignoire extrados</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Admissible</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Ecaillage au niveau de la baignoire intrados</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Admissible</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Ecaillage BA</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Admissible</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" colsep="1" morerows="0" rowsep="1"><para><p>Ecaillage pleine pale intrados, type Pi</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Admissible</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" colsep="1" morerows="0" rowsep="1"><para><p>Br&ucirc;lure toutes zones</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Inadmissible</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Contacter l'assistance technique SNECMA</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Erosion de la barri&egrave;re thermique, type O</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Admissible si pas de br&ucirc;lure</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Au-del&agrave;, d&eacute;pose moteur</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Perte du coin BF au sommet de la pale</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Admissible</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="sqcolumn1"><para><p>D&eacute;formation du bord de fuite</p>
+</para>
+</entry>
+<entry colname="sqcolumn2"><para><p>Admissible</p>
+</para>
+</entry>
+<entry colname="sqcolumn3" align="left"><para><p></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="sqcolumn1"><para><p>Obturation des fentes BF</p>
+</para>
+</entry>
+<entry colname="sqcolumn2"><para><p>Inadmissible</p>
+</para>
+</entry>
+<entry colname="sqcolumn3" align="left"><para><p>Contacter l'assistance technique SNECMA</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="sqcolumn1"><para><p>Oxydation du bord de fuite en sommet de p&acirc;le</p>
+</para>
+</entry>
+<entry colname="sqcolumn2"><para><p>Admissible</p>
+</para>
+</entry>
+<entry colname="sqcolumn3" align="left"><para><p></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="sqcolumn1"><para><p change="mod">Crique de type Te en bord de trou plate forme extrados</p>
+</para>
+</entry>
+<entry colname="sqcolumn2"><para><p>Admissible si longueur&nbsp;&le;&nbsp;taille du grand axe de l&rsquo;ellipse</p>
+</para>
+</entry>
+<entry colname="sqcolumn3" align="left"><para><p>Au-del&agrave;, d&eacute;pose moteur</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="sqcolumn1"><para><p>Protub&eacute;rance en forme de goutte au bord des per&ccedil;ages du bord d'attaque</p>
+</para>
+</entry>
+<entry colname="sqcolumn2"><para><p>Admissible</p>
+</para>
+</entry>
+<entry colname="sqcolumn3" align="left"><para><p></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="sqcolumn1"><para><p>Impact avec d&eacute;chirure &agrave; l'extrados de lapale</p>
+</para>
+</entry>
+<entry colname="sqcolumn2"><para><p>Inadmissible</p>
+</para>
+</entry>
+<entry colname="sqcolumn3" align="left"><para><p>Contacter l'assistance technique SNECMA</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="sqcolumn1"><para><p>Criques de type S</p>
+</para>
+</entry>
+<entry colname="sqcolumn2"><para><p>Admissible si longueur&nbsp;&le;&nbsp;4&nbsp;mm</p>
+</para>
+</entry>
+<entry colname="sqcolumn3" align="left"><para><p>Au-del&agrave;, d&eacute;pose moteur</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="sqcolumn1"><para><p change="add">Erosion thermique en sommet de pale</p>
+</para>
+</entry>
+<entry colname="sqcolumn2"><para><p change="add">Admissible</p>
+</para>
+</entry>
+<entry colname="sqcolumn3" align="left"><para><p change="add"></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="sqcolumn1"><para><p change="add">Coloration base-pale</p>
+</para>
+</entry>
+<entry colname="sqcolumn2"><para><p change="add">Admissible</p>
+</para>
+</entry>
+<entry colname="sqcolumn3" align="left"><para><p change="add"></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="sqcolumn1"><para><p change="add">Pollution sur pale</p>
+</para>
+</entry>
+<entry colname="sqcolumn2"><para><p change="add">Admissible</p>
+</para>
+</entry>
+<entry colname="sqcolumn3" align="left"><para><p change="add"></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="sqcolumn1"><para><p change="add">Coloration verd&acirc;tre de la pale</p>
+</para>
+</entry>
+<entry colname="sqcolumn2"><para><p change="add">Admissible</p>
+</para>
+</entry>
+<entry colname="sqcolumn3" align="left"><para><p change="add"></p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step1>
+<step1 control="0" id="p30">
+<applic><systemid><nti nti2="1" nti3="1"></systemid></applic>
+<para><p>Contr&ocirc;ler visuellement les pi&egrave;ces selon les informations du tableau ci-dessous <figref refid="b725200sf030100294a011"><figref refid="b725200sf030100262a031"> <figref refid="b725200sf030100263a021"> <figref refid="b725200sf030100264a011"> <figref refid="b725200sf030100265a031"> <figref refid="b725200sf030100266a061"> <figref refid="b725200sf030100267a041"> <figref refid="b725200sf030100286a031"><figref change="mod" refid="B725200SF030100320A021"><figref refid="b725200sf030100321a011"><figref change="mod" refid="B725200SF030100326A021">&nbsp; <figref change="add" refid="B725200SF030100510A011">:</p>
+</para>
+<table tocentry="1">
+<tgroup cols="3" align="center"><colspec colnum="1" colname="sqcolumn1" colwidth="4cm" align="left" colsep="1" rowsep="1"><colspec colnum="2" colname="sqcolumn2" colwidth="6.95cm" align="left" colsep="1" rowsep="1"><colspec colnum="3" colname="sqcolumn3" colwidth="6.00cm" colsep="1" rowsep="1">
+<tbody valign="middle">
+<row rowsep="1">
+<entry valign="middle" align="center" colsep="1" morerows="0" rowsep="1"><para><p>DEFAUTS</p>
+</para>
+</entry>
+<entry valign="middle" align="center" colsep="1" morerows="0" rowsep="1"><para><p>CRITERES D'ADMISSIBILITE</p>
+</para>
+</entry>
+<entry valign="middle" align="center" colsep="1" morerows="0" rowsep="1"><para><p>SANCTION</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Crique type SH</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Admissible si longueur&nbsp;&le;&nbsp;1&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Au-del&agrave;, remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Crique type C</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Admissible si longueur&nbsp;&le;&nbsp;1&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Au-del&agrave;, remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Crique type Di</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p change="mod">Admissible si longueur&nbsp;&le;&nbsp;2<?Pub Caret>&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Au-del&agrave;, remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="sqcolumn1"><para><p change="add">Crique type De</p>
+</para>
+</entry>
+<entry colname="sqcolumn2"><para><p change="add">Admissible si longueur &le;&nbsp;4&nbsp;mm quelle que soit la quantit&eacute;</p>
+</para>
+</entry>
+<entry colname="sqcolumn3" align="left"><para><p change="add">Au-del&agrave;, d&eacute;pose moteur</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="sqcolumn1"><para><p>Craquelure et crique non traversante sur la plate forme type PFe (extrados) et type PFi (intrados)</p>
+</para>
+</entry>
+<entry colname="sqcolumn2"><para><p>Admissible</p>
+</para>
+</entry>
+<entry colname="sqcolumn3" align="left"><para><p></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="sqcolumn1"><para><p>Crique type U</p>
+</para>
+</entry>
+<entry colname="sqcolumn2"><para><p>Admissible si longueur&nbsp;&le;&nbsp;0,5&nbsp;mm</p>
+</para>
+</entry>
+<entry colname="sqcolumn3" align="left"><para><p>Au-del&agrave;, remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Ecaillage au niveau de la baignoire extrados</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Admissible</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Ecaillage au niveau de la baignoire intrados</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Admissible</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Ecaillage BA</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Admissible si la surface &eacute;caill&eacute;e&nbsp;&le;&nbsp;70&nbsp;mm <supscrpt>2</supscrpt></p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Au-del&agrave;, remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" colsep="1" morerows="0" rowsep="1"><para><p>Ecaillage pleine pale intrados, type Pi</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Admissible si la surface &eacute;caill&eacute;e&nbsp;&le;&nbsp;445&nbsp;mm <supscrpt>2</supscrpt></p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Au-del&agrave;, remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" colsep="1" morerows="0" rowsep="1"><para><p>Ecaillage pleine pale extrados, type Pe</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Admissible si la surface &eacute;caill&eacute;e&nbsp;&le;&nbsp;40&nbsp;mm <supscrpt>2</supscrpt></p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Au-del&agrave;, contacter l'assistance technique SNECMA</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" colsep="1" morerows="0" rowsep="1"><para><p>Br&ucirc;lure toutes zones</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Inadmissible</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Contacter l'assistance technique SNECMA</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" colsep="1" morerows="0" rowsep="1"><para><p>Oxydation bouchon type N</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Admissible</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" colsep="1" rowsep="1"><para><p>Crique bouchon type BO</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="0"><para><p>Admissible</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" rowsep="0"><para><p></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" colsep="1" morerows="0" rowsep="1"><para><p>Perte bouchon</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="0"><para><p></p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="0"><para><p></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" colsep="1" morerows="0" rowsep="1"><para><p>D&eacute;collement bouchon</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p></p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Erosion de la barri&egrave;re thermique, type O</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Admissible dans la zone cambrure extrados sommet et si pas de br&ucirc;lure</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Au-del&agrave;, remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Obturation des trous d'&eacute;vent</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Inadmissible si 2 trous cons&eacute;cutifs bouch&eacute;s tant sur la hauteur que sur le long du profil.</p>
+</para>
+<para><p>Admissible si 2 trous bouch&eacute;s par rang&eacute;e de per&ccedil;age.</p>
+</para>
+<para><p>Admissible si 3 trous au maximum par zone.</p>
+</para>
+<para><p>Inadmissible si trous sous-baignoire bouch&eacute;s.</p>
+</para>
+<para><p>Inadmissible si trous de d&eacute;poussi&eacute;rage bouch&eacute;s.</p>
+</para>
+<para><p>Inadmissible si les 4 trous &eacute;vas&eacute;s bas de pale proximit&eacute; fente bouch&eacute;s.</p>
+</para>
+<para><p>Admissible si le nombre total de trous bouch&eacute;s pour la pale compl&egrave;te est de 6 au maximum.</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Au-del&agrave;, remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>UIP type A&nbsp;: contact avec les flasques</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Admissible</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Crique plaquette type P</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Admissible si L&nbsp;&le;&nbsp;4&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Au-del&agrave;, remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="sqcolumn1"><para><p>Crique type Pb</p>
+</para>
+<para><p>(Crique au niveau de la brasure de la plaquette inf&eacute;rieure)</p>
+</para>
+</entry>
+<entry colname="sqcolumn2"><para><p>Admissible si non d&eacute;collement de la plaquette</p>
+</para>
+</entry>
+<entry colname="sqcolumn3" align="left"><para><p>Au-del&agrave;, remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Usure du sommet d'aube</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Admissible</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Perte du coin BF au sommet de la pale</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Admissible si&nbsp;&le;&nbsp;5&nbsp;mm <supscrpt>2</supscrpt></p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Au-del&agrave;, remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="sqcolumn1"><para><p>Obturation des fentes BF</p>
+</para>
+</entry>
+<entry colname="sqcolumn2"><para><p>Inadmissible</p>
+</para>
+</entry>
+<entry colname="sqcolumn3" align="left"><para><p>Remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Crique fond de baignoire type Bg</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Admissible si L&nbsp;&le;&nbsp;5&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Au-del&agrave;, remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Crique W sur plaquette de baignoire</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Admissible si&nbsp;&le;&nbsp;1,5&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Au-del&agrave;, remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Perte de la plaquette WP</p>
+</para>
+</entry>
+<entry colname="sqcolumn2" valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Inadmissible</p>
+</para>
+</entry>
+<entry colname="sqcolumn3" valign="top" align="left" colsep="1" morerows="0" rowsep="1"><para><p>Remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="sqcolumn1"><para><p>Blessure Type L <supplref refid="R25003"></p>
+</para>
+</entry>
+<entry colname="sqcolumn2"><para><p change="mod">Admissible si p &le;&nbsp;0,10&nbsp;mm</p>
+</para>
+</entry>
+<entry colname="sqcolumn3" align="left"><para><p>Au-del&agrave;, remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="sqcolumn1"><para><p>Blessure Type L <supplref refid="R1"> <supplref refid="R2"></p>
+</para>
+</entry>
+<entry colname="sqcolumn2"><para><p>Admissible si P&nbsp;&le;&nbsp;0,1&nbsp;mm</p>
+</para>
+</entry>
+<entry colname="sqcolumn3" align="left"><para><p>Au-del&agrave;, remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="sqcolumn1"><para><p>Crique type Ai au niveau des per&ccedil;ages sous baignoire intrados</p>
+</para>
+</entry>
+<entry colname="sqcolumn2"><para><p>Admissible si la plus grande longueur &le;&nbsp;3 mm</p>
+</para>
+</entry>
+<entry colname="sqcolumn3" align="left"><para><p>Au-del&agrave;, remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" align="left" colsep="1" rowsep="1"><para><p>Crique baignoire intrados type Bi</p>
+</para>
+</entry>
+<entry valign="top" align="left" colsep="1" morerows="1" rowsep="1"><para><p>Admissible si longueur&nbsp;&le;&nbsp;3&nbsp;mm</p>
+</para>
+</entry>
+<entry colname="sqcolumn3" valign="top" align="left" colsep="1" morerows="1" rowsep="1"><para><p>Au-del&agrave;, remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="top" align="left" colsep="1" rowsep="1"><para><p>Crique baignoire extrados type Be</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="sqcolumn1"><para><p>D&eacute;formation du bord de fuite</p>
+</para>
+</entry>
+<entry colname="sqcolumn2"><para><p>Admissible</p>
+</para>
+</entry>
+<entry colname="sqcolumn3" align="left"><para><p></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="sqcolumn1"><para><p>Oxydation du bord de fuite en sommet de p&acirc;le</p>
+</para>
+</entry>
+<entry colname="sqcolumn2"><para><p>Admissible sur les 3 derniers pontets du bord de fuite</p>
+</para>
+</entry>
+<entry colname="sqcolumn3" align="left"><para><p>Au-del&agrave;, remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="sqcolumn1"><para><p>Oxydation de la plaquette de la baignoire WP</p>
+</para>
+</entry>
+<entry colname="sqcolumn2"><para><p>Admissible</p>
+</para>
+</entry>
+<entry colname="sqcolumn3" align="left"><para><p></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="sqcolumn1"><para><p>D&eacute;collement de la plaquette de la baignoire WP</p>
+</para>
+</entry>
+<entry colname="sqcolumn2"><para><p>Admissible</p>
+</para>
+</entry>
+<entry colname="sqcolumn3" align="left"><para><p></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="sqcolumn1"><para><p change="mod">Crique de type Te en bord de trou plate forme extrados</p>
+</para>
+</entry>
+<entry colname="sqcolumn2"><para><p>Admissible si longueur&nbsp;&le;&nbsp; taille du grand axe de l&rsquo;ellipse</p>
+</para>
+</entry>
+<entry colname="sqcolumn3" align="left"><para><p>Au-del&agrave;, remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="sqcolumn1"><para><p>Protub&eacute;rance en forme de goutte au bord des per&ccedil;ages du bord d'attaque</p>
+</para>
+</entry>
+<entry colname="sqcolumn2"><para><p>Admissible</p>
+</para>
+</entry>
+<entry colname="sqcolumn3" align="left"><para><p></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="sqcolumn1"><para><p>Impact avec d&eacute;chirure &agrave; l'extrados de la pale</p>
+</para>
+</entry>
+<entry colname="sqcolumn2"><para><p>Inadmissible</p>
+</para>
+</entry>
+<entry colname="sqcolumn3" align="left"><para><p>Contacter l'assistance technique SNECMA</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="sqcolumn1"><para><p>Criques de type S</p>
+</para>
+</entry>
+<entry colname="sqcolumn2"><para><p>Admissible si longueur&nbsp;&le;&nbsp;3&nbsp;mm</p>
+</para>
+</entry>
+<entry colname="sqcolumn3" align="left"><para><p>Au-del&agrave;, remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="sqcolumn1"><para><p change="add">Erosion thermique en sommet de pale</p>
+</para>
+</entry>
+<entry colname="sqcolumn2"><para><p change="add">Admissible sur une hauteur de 3&nbsp;mm en partant du sommet de pale</p>
+</para>
+</entry>
+<entry colname="sqcolumn3" align="left"><para><p change="add">Au-del&agrave;, remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="sqcolumn1"><para><p change="add">Coloration base-pale</p>
+</para>
+</entry>
+<entry colname="sqcolumn2"><para><p change="add">Admissible</p>
+</para>
+</entry>
+<entry colname="sqcolumn3" align="left"><para><p></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="sqcolumn1"><para><p change="add">Pollution sur pale</p>
+</para>
+</entry>
+<entry colname="sqcolumn2"><para><p change="add">Admissible</p>
+</para>
+</entry>
+<entry colname="sqcolumn3" align="left"><para><p></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="sqcolumn1"><para><p change="add">Coloration verd&acirc;tre de la pale</p>
+</para>
+</entry>
+<entry colname="sqcolumn2"><para><p change="add">Admissible</p>
+</para>
+</entry>
+<entry colname="sqcolumn3" align="left"><para><p change="add"></p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step1>
+<figure id="B725200SF030100294A011">
+<title>IDENTIFICATION DES DEFAUTS 1/12</title>
+<graphic callicn="A1B725200SF030100294A011">
+</figure>
+<figure id="B725200SF030100262A031">
+<title>IDENTIFICATION DES DEFAUTS 2/12</title>
+<graphic callicn="A1B725200SF030100262A031">
+</figure>
+<figure id="B725200SF030100320A021" change="mod">
+<title>IDENTIFICATION DES DEFAUTS 3/12</title>
+<graphic callicn="A1B725200SF030100320A021" change="mod">
+</figure>
+<figure id="B725200SF030100263A021">
+<title>IDENTIFICATION DES DEFAUTS 4/12 - NTI2 / NTI3</title>
+<graphic callicn="A1B725200SF030100263A021">
+</figure>
+<figure id="B725200SF030100264A011">
+<title>IDENTIFICATION DES DEFAUTS 5/12</title>
+<graphic callicn="A1B725200SF030100264A011">
+</figure>
+<figure id="B725200SF030100265A031">
+<title>IDENTIFICATION DES DEFAUTS 6/12</title>
+<graphic callicn="A1B725200SF030100265A031">
+</figure>
+<figure id="B725200SF030100266A061">
+<title>IDENTIFICATION DES DEFAUTS 7/12</title>
+<graphic callicn="A1B725200SF030100266A061">
+</figure>
+<figure id="B725200SF030100267A041">
+<title>IDENTIFICATION DES DEFAUTS 8/12 - NTI2 / NTI3</title>
+<graphic callicn="A1B725200SF030100267A041">
+</figure>
+<figure id="B725200SF030100286A031">
+<title>IDENTIFICATION DES DEFAUTS 9/12 - NTI2 / NTI3</title>
+<graphic callicn="A1B725200SF030100286A031">
+</figure>
+<figure id="B725200SF030100321A011">
+<title>IDENTIFICATION DES DEFAUTS 10/12</title>
+<graphic callicn="A1B725200SF030100321A011">
+</figure>
+<figure id="B725200SF030100326A021" change="mod">
+<title>IDENTIFICATION DES DEFAUTS 11/12</title>
+<graphic callicn="A1B725200SF030100326A021" change="mod">
+</figure>
+<figure id="B725200SF030100510A011" change="add">
+<title>IDENTIFICATION DES DEFAUTS 12/12</title>
+<graphic callicn="A1B725200SF030100510A011" change="add">
+</figure>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000038968 0>

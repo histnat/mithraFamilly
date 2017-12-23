@@ -1,0 +1,235 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1A723200SF030100106A011 SYSTEM "x-dm://0900f90b800028bb,MYWORKING" NDATA cgm>
+<!ENTITY A1A723200SF030100107A021 SYSTEM "x-dm://0900f90b80004161,MYWORKING" NDATA cgm>
+<!ENTITY A1A723200SF030100108A021 SYSTEM "x-dm://0900f90b800041be,MYWORKING" NDATA cgm>
+]>
+<?Pub Inc>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>3</section><subsect>2</subsect><subject>00</subject><discode>11</discode><discodev>A</discodev><incode>361</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmc>
+<dmtitle><techname>PIGNON CONIQUE, PRISE MOUVEMENT</techname><infoname>CONTROLE DIMENSIONNEL</infoname></dmtitle>
+<issno type="C" issno="3">
+<issdate month="05" year="2009" day="31">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 1"></version>
+<version version="M88-2 ETAPE 4"></version><?Pub Caret1>
+<customer aaf="1" anf="1">
+<nti nti1="0" nti2="0" nti3="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>R&eacute;f&eacute;rence outillage actualis&eacute;e</rfu>
+<remarks>RAS</remarks>
+<icns><icn id="A1A723200SF030100106A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>3</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00106</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A723200SF030100107A021">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>3</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00107</illnum><illver>A</illver><illupdat>02</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A723200SF030100108A021">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>3</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00108</illnum><illver>A</illver><illupdat>02</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<refdm>
+<dmcid id="A1A72320000A030AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>3</section><subsect>2</subsect><subject>00</subject><discode>00</discode><discodev>A</discodev><incode>030</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+</refdm>
+</refs><proced><pmd>
+<manhour value="2,0"></manhour>
+<duration value="2,0"></duration>
+</pmd><prelreqs><reqconds><reqcondli><reqcond>
+<cond><para><p>Module&nbsp;03 sur b&acirc;ti de montage polyvalent <supeqref refid="O2.30393">&eacute;quip&eacute; de l'adaptation <supeqref refid="O2.30022"> avec capotage <supplref refid="R09014"> d&eacute;pos&eacute; et protecteur palier&nbsp;3 <supeqref refid="O2.00466"> en place.</p>
+</para>
+</cond>
+</reqcond></reqcondli></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="2,0"></reqper>
+</reqpers><supequip><supeqli>
+<supequi id="O2.30054"><refipc change="mod" csn="72016101 054 "><nomen>Contr&ocirc;le battement denture MOD&nbsp;3</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.30055"><refipc csn="72016101 019 "><nomen>Masse de placage controle MOD&nbsp;3</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.30393"><refipc csn="72016701 234 "><nomen>Bati de montage polyvalent</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.30022"><refipc csn="72016701 244 "><nomen>Plateau adaptation MOD&nbsp;3</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.00466"><refipc csn="72016601 017 "><nomen>Protecteur palier&nbsp;3</nomen><quantity>1</quantity></supequi>
+</supeqli><nosupeqs></supequip><supplies><supplyli exhaust="0">
+<supply id="R09014" mand="0"><refipc csn="72320001 062 "><nomen>Capotage enceinte huile</nomen><quantity>1</quantity></supply>
+</supplyli></supplies><miscs><miscli>
+<misc id="P0801" matiere="0"><refipc csn="72013002 005 "><nomen>Essence&nbsp;F</nomen><quantity>SB</quantity></misc>
+<misc id="P0250" matiere="0"><refipc csn="72013002 033 "><nomen>Bleu de prusse</nomen><quantity>SB</quantity></misc>
+</miscli></miscs><safety><nosafety></safety></prelreqs><mainfunc>
+<step1 control="0" id="P10">
+<para><p>Le carter  <refipc csn="72320001 107 "> &eacute;tant sur le b&acirc;ti <supeqref refid="O2.30393"> avec face&nbsp;AR vers le haut, mettre en place la masse de placage <supeqref refid="O2.30055"> &agrave; l'aide du palan apr&egrave;s avoir d&eacute;pos&eacute; le protecteur de palier&nbsp;3 <supeqref refid="O2.00466"> <figref repnohot="09001" refid="A723200SF030100106A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P20">
+<para><p>Verrouiller les pieds <supeqref refid="O2.30055">.</p>
+</para>
+</step1>
+<step1 control="0" id="P30">
+<para><p>Mise en place de l'indexeur &agrave; l'aide des broches et orienter l'encoche de la masse de placage <supeqref refid="O2.30055"> avec l'indexeur <supeqref refid="O2.30054"> <figref repnohot="2.30054REP01, 2.30054REP03" refid="A723200SF030100107A021">.</p>
+</para>
+</step1>
+<step1 control="0" id="P40">
+<para><p>Introduire la pince dans le pignon 38&nbsp;dents <supeqref refid="O2.30054">  <refipc csn="72320001 095 "> <figref repnohot="2.30054REP06, 09003" refid="A723200SF030100107A021">.</p>
+</para>
+</step1>
+<step1 control="0" id="P50">
+<para><p>Orienter convenablement le support en vue de sa fixation <supeqref refid="O2.30054"> <figref repnohot="2.30054REP04" refid="A723200SF030100107A021">.</p>
+</para>
+</step1>
+<step1 control="0" id="P60">
+<para><p>Visser et bloquer manuellement les 2&nbsp;broches <supeqref refid="O2.30054"> <figref repnohot="2.30054REP02" refid="A723200SF030100107A021">.</p>
+</para>
+</step1>
+<step1 control="0" id="P70">
+<para><p>Mettre l'&eacute;crou en position interm&eacute;diaire jeu de 4&nbsp;mm&nbsp;+/-&nbsp;1&nbsp;mm,l'indexeur &eacute;tant en place dans l'encoche de la masse de placage <supeqref refid="O2.30055"> <supeqref refid="O2.30054"> <figref repnohot="2.30054REP08, 2.30054REP01" refid="A723200SF030100107A021">.</p>
+</para>
+</step1>
+<step1 control="0" id="P80">
+<para><p>Amener le levier en contact avec la touche du comparateur en l'enfon&ccedil;ant d'environ&nbsp;2&nbsp;mm <supeqref refid="O2.30054"> <figref repnohot="2.30054REP09" refid="A723200SF030100107A021">.</p>
+</para>
+</step1>
+<step1 control="0" id="P90">
+<para><p>Bloquer la pince dans le pignon  <refipc csn="72320001 095 "> en tournant l'&eacute;crou croisillon <supeqref refid="O2.30054"> <figref repnohot="2.30054REP06, 09003" refid="A723200SF030100107A021">.</p>
+</para>
+</step1>
+<step1 control="0" id="P100">
+<para><p>Tourner l'&eacute;crou molet&eacute; d'un demi-tour dans le sens  horaire  (jusqu'&agrave; but&eacute;e) par rapport &agrave; l'indexation pour obtenir un effort sur le pignon suivant la fl&egrave;che&nbsp;F2 (fonctionnement normal), mettre le cadran du comparateur &agrave; z&eacute;ro, relever le jeu&nbsp;B128 en tournant le corps et renseigner la Fiche Suiveuse de Relev&eacute; de Contr&ocirc;le&nbsp;"FSRC" au point num&eacute;ro&nbsp;22 <supeqref refid="O2.30054"> <dmcref xrefid="A1A72320000A030AC"> <figref repnohot="2.30054REP08, 2.30054REP07" refid="A723200SF030100107A021">.</p>
+</para>
+</step1>
+<step1 control="0" id="P110">
+<para><p>Revenir en position interm&eacute;diaire.</p>
+</para>
+</step1>
+<step1 control="0" id="P120">
+<para><p>Tourner l'&eacute;crou molet&eacute; d'un demi-tour dans le sens anti-horaire par rapport &agrave; l'indexation pour obtenir un effort sur le pignon suivant la fl&egrave;che&nbsp;F3 (d&eacute;marrage),relever le jeu&nbsp;B128 en tournant le corps et renseigner la "FSRC" au point  num&eacute;ro&nbsp;23 <supeqref refid="O2.30054"> <dmcref xrefid="A1A72320000A030AC"> <figref repnohot="2.30054REP08, 2.30054REP07" refid="A723200SF030100107A021">.</p>
+</para>
+<para><p>Le jeu relev&eacute; au comparateur est le jeu de battement circulaire.</p>
+</para>
+<list type="SIMPLE">
+<item><para><p>F2&nbsp;: FONCTIONNEMENT NORMAL&nbsp;=&nbsp;0,41&nbsp;&agrave;&nbsp;0,55&nbsp;mm,</p>
+</para>
+</item>
+<item><para><p>F3&nbsp;: DEMARRAGE&nbsp;=&nbsp;0,41&nbsp;&agrave;&nbsp;0,65&nbsp;mm,</p>
+</para>
+</item>
+<item><para><p>F1&nbsp;: POSITION INTERMEDIAIRE.</p>
+</para>
+</item>
+</list>
+</step1>
+<step1 control="0" id="P130">
+<para><p>Remettre l'&eacute;crou molet&eacute; en&nbsp;FI, d&eacute;bloquer l'&eacute;crou croisillon, d&eacute;verrouiller l'indexeur. Maintenir manuellement le levier en contact avec le comparateur, faire 1/3&nbsp;de&nbsp;tour, reverrouiller l'indexeur et bloquer l'&eacute;crou croisillon <supeqref refid="O2.30054"> <figref repnohot="2.30054REP03, 2.30054REP09, 2.30054REP01, 2.30054REP05" refid="A723200SF030100107A021">.</p>
+</para>
+</step1>
+<step1 control="0" id="P140">
+<para><p>Reprendre la proc&eacute;dure &agrave; l'op&eacute;ration&nbsp;90 et r&eacute;p&eacute;ter cette proc&eacute;dure 3&nbsp;fois pour le contr&ocirc;le du jeu en 3&nbsp;endroits en tournant la masse de placage <supeqref refid="O2.30055">.</p>
+</para>
+</step1>
+<step1 control="0" id="P150">
+<para><p>D&eacute;bloquer l'&eacute;crou croisillon, d&eacute;visser compl&egrave;tement l'&eacute;crou molet&eacute;  et reculer le levier <supeqref refid="O2.30054"> <figref repnohot="2.30054REP05, 2.30054REP10, 2.30054REP09" refid="A723200SF030100107A021">.</p>
+</para>
+</step1>
+<step1 control="0" id="P160">
+<para><p>Bloquer l'&eacute;crou croisillon <supeqref refid="O2.30054"> <figref repnohot="2.30054REP09, 2.30054REP05" refid="A723200SF030100107A021">.</p>
+</para>
+</step1>
+<step1 control="0" id="P170">
+<para><p>Tourner le bouton molet&eacute;  dans le sens horaire  par rapport &agrave; l'indexation pour obtenir un effort sur le pignon suivant la fl&egrave;che&nbsp;F2 (fonctionnement normal) <supeqref refid="O2.30054"> <figref repnohot="2.30054REP08" refid="A723200SF030100107A021">.</p>
+</para>
+</step1>
+<step1 control="0" id="P180">
+<para><p>D&eacute;poser l'indexeur et les broches <supeqref refid="O2.30054"> <figref repnohot="2.30054REP01, 2.30054REP03" refid="A723200SF030100107A021">.</p>
+</para>
+</step1>
+<step1 control="0" id="P190">
+<para><p>Basculer le b&acirc;ti de 180&deg;.</p>
+</para>
+</step1>
+<step1 control="0" id="P200">
+<para><p>Enduire l&eacute;g&egrave;rement de bleu de prusse <miscref refid="P0250">2 &agrave; 3&nbsp;dents de la roue  <refipc csn="72320001 071 "> <figref repnohot="09009" refid="A723200SF030100108A021">.</p>
+</para>
+</step1>
+<step1 control="0" id="P210">
+<para><p>Remettre le B.A.T. en position initiale.</p>
+</para>
+</step1>
+<step1 control="0" id="P220">
+<para><p>Tourner le pignon 53&nbsp;dents par la masse de placage <supeqref refid="O2.30055">dans le sens horaire, tout en retenant manuellement le corps <supeqref refid="O2.30054"> <figref repnohot="2.30054REP07" refid="A723200SF030100107A021">.</p>
+</para>
+</step1>
+<step1 control="0" id="P230">
+<para><p>Rebasculer le B.A.T. de 180&deg;.</p>
+</para>
+</step1>
+<step1 control="0" id="P240">
+<para><p>V&eacute;rifier sur le petit pignon la port&eacute;e sur le bomb&eacute; de la dent <figref refid="A723200SF030100108A021">.</p>
+</para>
+</step1>
+<step1 control="0" id="P250">
+<para><p>Nettoyage des port&eacute;es de denture des 2&nbsp;roues avec <miscref refid="P0801">.</p>
+</para>
+</step1>
+<step1 control="0" id="P260">
+<para><p>R&eacute;enduire l&eacute;g&egrave;rement de bleu de prusse <miscref refid="P0250"> les 2 &agrave; 3&nbsp;dents du pignon  <refipc csn="72320001 095 "> <figref repnohot="09003" refid="A723200SF030100107A021">.</p>
+</para>
+</step1>
+<step1 control="0" id="P270">
+<para><p>Rebasculer le B.A.T. de 180&deg;.</p>
+</para>
+</step1>
+<step1 control="0" id="P280">
+<para><p>Remettre l'&eacute;crou en position interm&eacute;diaire <supeqref refid="O2.30054"> <figref repnohot="2.30054REP08" refid="A723200SF030100107A021">.</p>
+</para>
+</step1>
+<step1 control="0" id="P290">
+<para><p>Tourner l'&eacute;crou molet&eacute; d'un demi-tour dans le sens anti-horaire par rapport &agrave; l'indexation pour obtenir un effort sur le pignon suivant&nbsp;F3(d&eacute;marrage) <supeqref refid="O2.30054"> <figref repnohot="2.30054REP08" refid="A723200SF030100107A021">.</p>
+</para>
+</step1>
+<step1 control="0" id="P300">
+<para><p>Tourner le corps dans le sens anti-horaire en exer&ccedil;ant un effort de retenu sur la roue  <refipc csn="72320001 071 ">, par l'interm&eacute;diaire de la masse de placage <supeqref refid="O2.30055"> <supeqref refid="O2.30054"> <figref repnohot="2.30054REP07" refid="A723200SF030100107A021"> <figref repnohot="09009" refid="A723200SF030100108A021">.</p>
+</para>
+</step1>
+<step1 control="0" id="P310">
+<para><p>Rebasculer le B.A.T. de 180&deg;.</p>
+</para>
+</step1>
+<step1 control="0" id="P320">
+<para><p>V&eacute;rifier sur la roue  <refipc csn="72320001 071 "> la port&eacute;e sur le bomb&eacute; de la dent&nbsp;: le milieu de la port&eacute;e doit &ecirc;tre contenu dans la zone ombr&eacute;e <figref repnohot="09009" refid="A723200SF030100108A021">.</p>
+</para>
+</step1>
+<step1 control="0" id="P330">
+<para><p>Nettoyer le bleu de prusse <miscref refid="P0250"> des dents des 2&nbsp;pignons  avec de l'essence <miscref refid="P0801">.</p>
+</para>
+</step1>
+<step1 control="0" id="P340">
+<para><p>Rebasculer le BAT de 180&deg;.</p>
+</para>
+</step1>
+<step1 control="0" id="P350">
+<para><p>D&eacute;poser l'outillage de contr&ocirc;le battement <supeqref refid="O2.30054"> <figref refid="A723200SF030100107A021">.</p>
+</para>
+</step1>
+<step1 control="0" id="P360">
+<para><p>D&eacute;poser la masse <supeqref refid="O2.30055">.</p>
+</para>
+</step1>
+<figure id="A723200SF030100106A011">
+<title>POSE OUTILLAGE DE PLACAGE</title>
+<graphic callicn="A1A723200SF030100106A011">
+</figure>
+<figure id="A723200SF030100107A021">
+<title>CONTROLE BATTEMENT DE DENTURE</title>
+<graphic callicn="A1A723200SF030100107A021">
+</figure>
+<figure id="A723200SF030100108A021">
+<title>CONTROLE PORTEE DE DENTURE</title>
+<graphic callicn="A1A723200SF030100108A021">
+</figure>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000014159 0>

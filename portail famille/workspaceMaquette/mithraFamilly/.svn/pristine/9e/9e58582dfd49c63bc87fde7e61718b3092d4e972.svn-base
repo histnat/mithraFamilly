@@ -1,0 +1,92 @@
+package com.sonovision.openconv.modules.sgmlprocess.model;
+
+import java.util.Hashtable;
+import java.util.Vector;
+
+import com.sonovision.openconv.modules.sgmlprocess.exception.SGMLException;
+
+
+public class SGMLElementSpec {
+
+    String name;
+    // If we faked this spec (because it was an unknown element) we need
+    // to know so we can allow it anywhere
+    boolean faked = false;
+
+    // Simplified content model:
+
+    int content_type;		// SGMLStream.mixed/element/empty/cdata/any
+
+    // required is a list of specs of required children, in order
+    Vector required = new Vector();
+    // allowed is a list of specs of other allowed children
+    Hashtable allowed = new Hashtable();
+    boolean allowsPCData, startOptional, endOptional;
+
+    public SGMLElementSpec(SGMLDoctype doctype, String _name, int _content_type,
+		    boolean _startOptional, boolean _endOptional)
+    {
+	name = _name.toLowerCase().intern();
+	if(doctype != null && doctype.findSpec(name) != null)
+	    throw new SGMLException("Duplicate element spec for " + name);
+	content_type = _content_type;
+	startOptional = _startOptional;
+	endOptional = _endOptional;
+	if(doctype != null)
+	    doctype.add(this);
+	// System.out.println("New element " + name);
+    }
+
+    
+    // Add an allowed child
+
+    public boolean isFaked() {
+		return faked;
+	}
+
+
+	public void setFaked(boolean faked) {
+		this.faked = faked;
+	}
+
+
+	public boolean isEndOptional() {
+		return endOptional;
+	}
+
+	public void setEndOptional(boolean endOptional) {
+		this.endOptional = endOptional;
+	}
+
+	public boolean isStartOptional() {
+		return startOptional;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setStartOptional(boolean startOptional) {
+		this.startOptional = startOptional;
+	}
+
+	public int getContent_type() {
+		return content_type;
+	}
+
+	public void addAllowed(SGMLElementSpec spec)
+    {
+	allowed.put(spec, spec);
+    }
+
+    // Add a required child (in correct order!)
+
+    public void addRequired(SGMLElementSpec spec)
+    {
+	required.addElement(spec);
+    }
+}

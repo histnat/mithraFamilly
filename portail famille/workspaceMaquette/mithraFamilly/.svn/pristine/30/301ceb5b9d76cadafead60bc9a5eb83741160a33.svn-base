@@ -1,0 +1,51 @@
+Log filename: "C:\indigo\application\com.ptc.arbortext.m88\age_d\age_d.log"
+Document type compile date: Fri Aug 19 11:56:24 2016
+Version "PTC Arbortext Editor 6.1 M050 February 16, 2015"   R61M050-1047
+Platform: Windows 7
+
+Host: SFI3075   Login: rlemuid
+
+Catalog path: "C:\indigo\application\com.ptc.arbortext.ata2200\doctypes;C:\indigo\application\com.ptc.arbortext.m88;C:\indigo\application\com.ptc.arbortext.indigo.common\doctypes;C:\indigo\application\com.ptc.arbortext.slmaad;C:\indigo\application\com.ptc.arbortext.slmaad\doctypes;C:\Program Files\PTC\Arbortext Editor\adapters\com.ptc.prowt.arbortext\doctypes;C:\Program Files\PTC\Arbortext Editor\application\com.arbortext.sma\doctypes;C:\Program Files\PTC\Arbortext Editor\application\com.ptc.arbortext.techinfo\doctypes;C:\Program Files\PTC\Arbortext Editor\doctypes;C:\Program Files\PTC\Arbortext Editor\doctypes;"
+
+
+Update (.ptd file written) or Validate (.ptd file not written): Update
+XML or SGML Application: SGML
+Force Compile: Yes
+Top level element: DMODULE
+Public ID: (not specified)
+DTD Path: "C:\indigo\application\com.ptc.arbortext.m88\age_d\age_d.dtd"
+PTD Path: "C:\indigo\application\com.ptc.arbortext.m88\age_d\age_d.ptd"
+ATI Tag Path: "C:\Program Files\PTC\Arbortext Editor\lib\dtgen\atitag.cf"
+Message File Path: (not specified)
+SGML Declaration Path: (not specified) using "C:\Users\Public\Desktop"
+
+Entity Name: %ISOtech
+Public Identifier: "ISO 8879-1986//ENTITIES General Technical//EN"
+System Identifier: (none)
+Resolved Path: "C:\Program Files\PTC\Arbortext Editor\entities\iso-tech.gml"
+Catalog File: "C:\Program Files\PTC\Arbortext Editor\doctypes\catalog"
+
+Entity Name: %ISOpub
+Public Identifier: "ISO 8879-1986//ENTITIES Publishing//EN"
+System Identifier: (none)
+Resolved Path: "C:\Program Files\PTC\Arbortext Editor\entities\iso-pub.gml"
+Catalog File: "C:\Program Files\PTC\Arbortext Editor\doctypes\catalog"
+
+Entity Name: %ISOnum
+Public Identifier: "ISO 8879-1986//ENTITIES Numeric and Special Graphic//EN"
+System Identifier: (none)
+Resolved Path: "C:\Program Files\PTC\Arbortext Editor\entities\iso-num.gml"
+Catalog File: "C:\Program Files\PTC\Arbortext Editor\doctypes\catalog"
+
+Entity Name: %ISOgrk3
+Public Identifier: "ISO 8879-1986//ENTITIES Greek Symbols//EN"
+System Identifier: (none)
+Resolved Path: "C:\Program Files\PTC\Arbortext Editor\entities\iso-grk3.gml"
+Catalog File: "C:\Program Files\PTC\Arbortext Editor\doctypes\catalog"
+
+Entity Name: %ISOlat1
+Public Identifier: "ISO 8879-1986//ENTITIES Added Latin 1//EN"
+System Identifier: (none)
+Resolved Path: "C:\Program Files\PTC\Arbortext Editor\entities\iso-lat1.gml"
+Catalog File: "C:\Program Files\PTC\Arbortext Editor\doctypes\catalog"
+

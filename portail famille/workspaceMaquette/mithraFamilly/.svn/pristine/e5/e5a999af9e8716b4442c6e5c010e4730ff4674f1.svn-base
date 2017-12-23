@@ -1,0 +1,51 @@
+package com.sonovision.openconv.modules.xmlprocess.model;
+
+import com.sedoc.dtdtoolbox.resource.model.Entity;
+import com.sedoc.dtdtoolbox.resource.model.Resource;
+
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+
+public final class ResourcesModel {
+
+
+    private static HashMap<String, Map<String, Resource<Entity>>> toList;
+
+
+    private ResourcesModel() {
+        toList = new HashMap<>();
+    }
+
+    public static void setResoucesModel(HashMap<String, Map<String,Resource<Entity>>> to_List)
+    {
+        toList = to_List;
+    }
+
+    public static HashMap<String, Map<String,Resource<Entity>>> getResourcesModel() {
+        return toList;
+    }
+
+
+    public static void add(String dmXmlFileName, Map<String,Resource<Entity>> listResource) {
+        toList.put(dmXmlFileName, listResource);
+    }
+
+    public static Map<String,Resource<Entity>> get(String dmXmlFileName)
+    {
+        return toList.get(dmXmlFileName);
+    }
+
+
+    public static Resource<Entity> get(String xmlDmFilename, String codeFab, String refFab) {
+        Map<String,Resource<Entity>> resourceMap = toList.get(xmlDmFilename);
+        if(resourceMap!=null)
+        {
+            return resourceMap.get(codeFab+refFab);
+        }
+        else
+        {
+            return resourceMap.get("tmi");
+        }
+    }
+}

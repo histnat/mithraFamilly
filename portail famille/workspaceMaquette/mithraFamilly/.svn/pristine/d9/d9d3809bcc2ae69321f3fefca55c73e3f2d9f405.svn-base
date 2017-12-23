@@ -1,0 +1,17 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                         RAFALE                                     *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.2                            *
+    *                   Dated 22th December 1998                         *
+    *                                                                    *
+    * Amendment :-                                                       *
+    * 1. New Publication canvas Public Identifier                        *
+    *                                                                    *
+    ********************************************************************** -->
+
+<!DOCTYPE canvas PUBLIC
+ "-//RAFALE IETP//DTD IETP Canvas 981222//EN"
+ [
+ ]>

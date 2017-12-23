@@ -1,0 +1,88 @@
+package com.sonovision.openconv.utils;
+
+import static org.testng.Assert.assertTrue;
+import static org.testng.Assert.fail;
+import static org.testng.AssertJUnit.assertNotNull;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.DirectoryIteratorException;
+import java.nio.file.DirectoryStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.HashMap;
+
+import com.sonovision.openconv.db.exception.DBNONullException;
+import com.sonovision.openconv.db.exception.DBNOUniqueException;
+import com.sonovision.openconv.db.vo.Conversion;
+import com.sonovision.openconv.db.vo.Task;
+import com.sonovision.openconv.log.model.DBLogger;
+import com.sonovision.openconv.model.TreatedObject;
+
+public class TestHelperXslProcess extends TestHelper {
+
+	protected HashMap<String, TreatedObject> getTreatedObjectList(ResourceTestPath rtp) throws IOException {
+		String folder = getFilePath(rtp.getXml());
+		File folderFile = new File(folder);
+		assertTrue(folderFile.exists());
+
+		Path folderPath = (new File(folder)).toPath();
+		HashMap<String, TreatedObject> result = new HashMap<>();
+
+		try (DirectoryStream<Path> stream = Files.newDirectoryStream(folderPath, "*.{xml,XML,SGM,sgm}")) {
+			for (Path entry : stream) {
+				TreatedObject to = getTreatedObject(entry);
+				assertNotNull(to);
+				result.put(to.getIdObject(), to);
+			}
+		} catch (DirectoryIteratorException ex) {
+			ex.printStackTrace();
+			fail(ex.getMessage());
+		}
+		return result;
+
+	}
+
+	private TreatedObject getTreatedObject(Path entry) {
+		TreatedObject to = new TreatedObject();
+		String xmlName = entry.getFileName().toString();
+		to.setIdObject(xmlName);
+		to.setObjectConvert(entry);
+		return to;
+	}
+
+	protected DBLogger getDBLogger(ResourceTestPath rtp) {
+		String folder = getFilePath(rtp.getXml());
+		Conversion c = getConversion(folder);
+		Task t = getTask(c);
+//		c.addTask(t);
+		return super.getDBLoggerTask(c, t);
+	}
+
+	private Task getTask(Conversion c) {
+		Task task = new Task();
+		task.setActionId("1");
+		task.setConversionId(c.getId());
+		task.setName("transformationxsl");
+		task.setTaskName("transformationxsl");
+		task.setDescription("Conversion XSL");
+			try {
+				task = dbConversionService.getOrSave(task);
+			} catch (DBNONullException | DBNOUniqueException e) {
+				fail(e.getMessage());
+			}
+		return task;
+	}
+
+	private Conversion getConversion(String folderin) {
+		Conversion conversion=null;
+		try {
+			conversion = dbConversionService.getConversion(folderin, "c:/testout/", "Workflow de test xslprocess", "xxx");
+			conversion.setFolderOut("c:/testout/");
+		} catch (DBNONullException | DBNOUniqueException e) {
+			fail(e.getMessage());
+		}
+		return conversion;
+	}
+
+}

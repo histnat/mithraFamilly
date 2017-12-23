@@ -1,0 +1,65 @@
+package com.sonovision.openconv.modules.fileaccess;
+
+import static org.testng.Assert.assertNotNull;
+import static org.testng.AssertJUnit.assertEquals;
+
+import java.io.IOException;
+import java.util.HashMap;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.testng.annotations.Test;
+
+import com.sedoc.toolbox.bean.UtilsService;
+import com.sonovision.openconv.codification.impl.ListFileInOut;
+import com.sonovision.openconv.log.model.DBLogger;
+import com.sonovision.openconv.log.model.LoggerLevel;
+import com.sonovision.openconv.model.TreatedObject;
+import com.sonovision.openconv.utils.ResourceTestPath;
+import com.sonovision.openconv.utils.TestHelperXslProcess;
+
+public class TaskLoadFileTest extends  TestHelperXslProcess {
+	@Autowired
+	UtilsService utilservice;
+
+  
+  
+  @Test
+  public void runLoadFileTest() throws IOException {
+	  System.out.println("run Load File Test");
+	//Set saxon as transformer.  
+	    String codificationFilePath = getFilePath("/codification/listeInOut.xml");
+	    HashMap<String, TreatedObject> toList=new HashMap<>();
+      
+	  TaskLoadFile txp = new TaskLoadFile();
+	  DBLogger dbLogger=getDBLogger(ResourceTestPath.COBRA);
+	  txp.setDBLogger(dbLogger);
+//	  txp.addParameter(TaskLoadFile.PARAMETER_LOADFILE_CODIFICATION_CLASS, "com.sonovision.openconv.codification.impl.ListFileInOut");
+	  txp.addParameter(ListFileInOut.PARAMETER_LOADFILE_CODIFICATION_FILE, codificationFilePath);
+	  txp.addParameter(TaskLoadFile.PARAMETER_LOADFILE_INPUT_FOLDER, dbLogger.getFolderIn());
+	  String result=txp.run(toList);
+	  assertEquals(result,LoggerLevel.INFO.getValue().toString());
+	  assertEquals(toList.size(),4);
+	  TreatedObject to  =toList.get("COBRAAK000K01000D0000000000042AA.xml");
+	  assertNotNull(to);
+//	    assertEquals("DMC-COBRAAK000-K01-000-D0-0000-00000-042A-A_002-00.xml",to.getOutputName());
+	  
+  }
+  
+  
+
+/**
+ * @return the utilservice
+ */
+public UtilsService getUtilservice() {
+	return utilservice;
+}
+
+/**
+ * @param utilservice the utilservice to set
+ */
+public void setUtilservice(UtilsService utilservice) {
+	this.utilservice = utilservice;
+}
+
+
+}

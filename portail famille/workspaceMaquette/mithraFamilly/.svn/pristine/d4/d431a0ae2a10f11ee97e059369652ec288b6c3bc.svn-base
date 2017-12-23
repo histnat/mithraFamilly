@@ -1,0 +1,205 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Aircraft Ground Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1AJA7207SF030100002A011 SYSTEM "x-dm://0900f90b80003eb3,MYWORKING" NDATA cgm>
+<!ENTITY A1AJA7207SF030100003A011 SYSTEM "x-dm://0900f90b80003927,MYWORKING" NDATA cgm>
+<!ENTITY A1AJA7207SF030100006A011 SYSTEM "x-dm://0900f90b80003929,MYWORKING" NDATA cgm>
+<!ENTITY A1AJA7207SF030100008A011 SYSTEM "x-dm://0900f90b8000392b,MYWORKING" NDATA cgm>
+]>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>JA</ecscc><eidc>72</eidc><cic>07</cic><discode>00</discode><discodev>A</discodev><incode>120</incode><incodev>B</incodev><itemloc>A</itemloc></age></dmc>
+<dmtitle><techname>ENSEMBLE MOBILE CHAUFFAGE INDUCTION</techname><infoname>PREPARATION A LA MISE EN OEUVRE ET A L'UTILISATION</infoname></dmtitle>
+<issno issno="2" type="r">
+<issdate year="2008" month="11" day="04">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 1"></version>
+<version version="M88-2 ETAPE 4"></version>
+<customer aaf="1" anf="1">
+<nti nti2="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Reprise du d&eacute;roul&eacute; op&eacute;ratoire suite &agrave; validation des inducteurs apr&egrave;s modification 242<?Pub Caret></rfu>
+<remarks>RAS</remarks>
+<icns><icn id="A1AJA7207SF030100002A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>JA</chapnum><section>7</section><subsect>2</subsect><subject>07</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00002</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1AJA7207SF030100003A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>JA</chapnum><section>7</section><subsect>2</subsect><subject>07</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00003</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1AJA7207SF030100006A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>JA</chapnum><section>7</section><subsect>2</subsect><subject>07</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00006</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1AJA7207SF030100008A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>JA</chapnum><section>7</section><subsect>2</subsect><subject>07</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00008</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<refdm>
+<dmcid id="A1AJA720700A340AA"><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>JA</ecscc><eidc>72</eidc><cic>07</cic><discode>00</discode><discodev>A</discodev><incode>340</incode><incodev>A</incodev><itemloc>A</itemloc></age></dmcid>
+<dmcid id="A1AJA720701A720AD"><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>JA</ecscc><eidc>72</eidc><cic>07</cic><discode>01</discode><discodev>A</discodev><incode>720</incode><incodev>A</incodev><itemloc>D</itemloc></age></dmcid>
+<dmcid id="A1AJA720700A200AA"><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>JA</ecscc><eidc>72</eidc><cic>07</cic><discode>00</discode><discodev>A</discodev><incode>200</incode><incodev>A</incodev><itemloc>A</itemloc></age></dmcid>
+<dmcid id="A1AJA720700A216AA"><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>JA</ecscc><eidc>72</eidc><cic>07</cic><discode>00</discode><discodev>A</discodev><incode>216</incode><incodev>A</incodev><itemloc>A</itemloc></age></dmcid>
+<dmcid id="A1AJA720700A750AA"><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>JA</ecscc><eidc>72</eidc><cic>07</cic><discode>00</discode><discodev>A</discodev><incode>750</incode><incodev>A</incodev><itemloc>A</itemloc></age></dmcid>
+</refdm>
+</refs><proced><prelreqs><reqconds><reqcondli><reqcond>
+<cond><para><p>Les op&eacute;rations de maintenance de l'ensemble mobile chauffage induction doivent &ecirc;tre effectu&eacute;es.</p>
+</para>
+</cond>
+<dmcref xrefid="A1AJA720700A200AA"></reqcond></reqcondli></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="1,0"></reqper>
+</reqpers><supequip><supeqli>
+<supequi id="O2.00685"><refipc csn="72016901 006 "><nomen>Ensemble mobile chauffage induction</nomen><quantity>1</quantity></supequi>
+</supeqli><nosupeqs></supequip><supplies><nosupply></supplies><miscs><nomisc></miscs><safety><nosafety></safety></prelreqs><mainfunc>
+<step1 id="P05" control="0">
+<title>Proc&eacute;dure d'installation</title>
+<specpara>
+<caution>
+<p>Ne pas installer l'outillage<supeqref refid="O2.00685"> dans un local ferm&eacute; sans une ventilation suffisante.</p>
+</caution>
+<caution>
+<p>Pr&eacute;voir une zone pour l'aspiration et le refoulement de l'air de refroidissement.</p>
+</caution>
+<note>
+<p>L'air chaud produit par le condensateur ne doit pas &ecirc;tre r&eacute;aspir&eacute;.</p>
+</note>
+</specpara>
+<step2 id="P05-10" control="0">
+<para><p>Installer l'outillage<supeqref refid="O2.00685"> sur un sol plat.</p>
+</para>
+</step2>
+<step2 id="P05-20" control="0">
+<para><p>Bloquer les deux roues munies de frein.</p>
+</para>
+</step2>
+<step2 id="P05-30" control="0">
+<para><p>Amarrer l'outillage<supeqref refid="O2.00685"> par les anneaux de saisinage en cas de n&eacute;cessit&eacute;.</p>
+</para>
+</step2>
+</step1>
+<step1 id="P10" control="0">
+<title>Proc&eacute;dures avant la premi&egrave;re mise en service</title>
+<step2 id="P10-10" control="0">
+<para><p>Installer une prise &eacute;lectrique sur le cordon d'alimentation<dmcref xrefid="A1AJA720701A720AD">.</p>
+</para>
+</step2>
+<step2 id="P10-20" control="0">
+<para><p>Remplir le circuit d'eau de refroidissement<dmcref xrefid="A1AJA720700A216AA">.</p>
+</para>
+</step2>
+<step2 id="P10-30" control="0">
+<para><p>Programmer les consignes de puissance W et les temps de chauffe s<dmcref xrefid="A1AJA720700A750AA">.</p>
+</para>
+</step2>
+<step2 id="P10-40" control="0">
+<para><p>Tester le fonctionnement de l'outillage<supeqref refid="O2.00685"> avant son utilisation sur le moteur assembl&eacute;<dmcref xrefid="A1AJA720700A340AA">.</p>
+</para>
+</step2>
+</step1>
+<step1 id="P20" control="0">
+<title>Proc&eacute;dures avant toute mise en service</title>
+<step2 id="P20-10" control="0">
+<para><p>Ouvrir la porte d'acc&egrave;s au groupe de refroidissement<figref refid="AJA7207SF030100006A011">.</p>
+</para>
+</step2>
+<step2 id="P20-30" control="0">
+<para><p>V&eacute;rifier le niveau de l'eau sur la face arri&egrave;re du r&eacute;servoir du groupe de refroidissement <figref refid="AJA7207SF030100006A011">&nbsp;.</p>
+</para>
+<note>
+<p>le niveau de l'eau doit &ecirc;tre situ&eacute; entre le niveau minimum et 290&nbsp;mm.</p>
+</note>
+</step2>
+<step2 id="P20-40" control="0">
+<para><p>Compl&eacute;ter le niveau de l'eau en cas de n&eacute;cessit&eacute;<dmcref xrefid="A1AJA720700A216AA">.</p>
+</para>
+</step2>
+<step2 id="P20-50" control="0">
+<para><p>Regarder l'&eacute;tat g&eacute;n&eacute;ral du groupe froid.</p>
+</para>
+</step2>
+<step2 id="P20-60" control="0">
+<para><p>Fermer la porte d'acc&egrave;s au groupe de refroidissement<figref refid="AJA7207SF030100006A011">.</p>
+</para>
+</step2>
+<step2 id="P20-70">
+<para><p>Connecter le c&acirc;ble d'alimentation &eacute;lectrique au r&eacute;seau du local.</p>
+</para>
+</step2>
+</step1>
+<step1 id="P30" control="0">
+<title>Proc&eacute;dures apr&egrave;s une p&eacute;riode de stockage ou d'inutilisation prolong&eacute;e</title>
+<step2 id="P30-10" control="0">
+<para><p>Regarder l'&eacute;tat des composants &eacute;lectriques situ&eacute;s dans le compartiment &eacute;lectrique <figref refid="AJA7207SF030100008A011">.</p>
+</para>
+</step2>
+<step2 id="P30-20" control="0">
+<para><p>Souffler l'int&eacute;rieur du compartiment &eacute;lectrique &agrave; l'air comprim&eacute; pour enlever les poussi&egrave;res.</p>
+</para>
+</step2>
+<step2 id="P30-30">
+<para><p>Eliminer l'humidit&eacute; r&eacute;siduelle &agrave; l'aide d'un chiffon.</p>
+</para>
+</step2>
+<step2 id="P30-40">
+<title>Temps n&eacute;cessaire au s&eacute;chage du compartiment &eacute;lectrique</title>
+<para><p>Attendre 1&nbsp;h avant d'utiliser l'outillage<supeqref refid="O2.00685">.</p>
+</para>
+</step2>
+<step2 id="P30-50" control="0">
+<para><p>Actionner l'interrupteur de mise sous tension<figref refid="AJA7207SF030100003A011">&nbsp;.</p>
+</para>
+<note>
+<p>Le voyant SOUS TENSION s'allume.</p>
+</note>
+</step2>
+<step2 id="P30-60" control="0">
+<para><p>Activer les auxiliaires par appui sur la touche F7<figref refid="AJA7207SF030100002A011" repnohot="F7">.</p>
+</para>
+</step2>
+<step2 id="P30-70" control="0">
+<para><p>Tester le fonctionnement de l'outillage<supeqref refid="O2.00685"> avant son utilisation sur le moteur assembl&eacute;<dmcref xrefid="A1AJA720700A340AA">.</p>
+</para>
+</step2>
+</step1>
+<step1 id="P40" control="0">
+<title>Proc&eacute;dures apr&egrave;s une p&eacute;riode prolong&eacute;e de stockage en ambiance froide </title>
+<step2 id="P40-10" control="0">
+<para><p>Actionner l'interrupteur de mise sous tension<figref refid="AJA7207SF030100003A011">&nbsp;.</p>
+</para>
+<note>
+<p>Le voyant SOUS TENSION s'allume.</p>
+</note>
+</step2>
+<step2 id="P40-20">
+<para><p>Laisser sous tension l'ensemble chauffage induction au moins&nbsp;3&nbsp;h.</p>
+</para>
+</step2>
+<step2 id="P40-30" control="0">
+<title>Purge des points hauts du circuit d'eau</title>
+<para><p>Activer les auxiliaires par impulsions sur la touche F7<figref refid="AJA7207SF030100002A011" repnohot="F7">.</p>
+</para>
+</step2>
+</step1>
+<figure id="AJA7207SF030100002A011">
+<title>Ensemble mobile chauffage induction</title>
+<graphic callicn="A1AJA7207SF030100002A011">
+</figure>
+<figure id="AJA7207SF030100003A011">
+<title>Ensemble mobile chauffage induction</title>
+<graphic callicn="A1AJA7207SF030100003A011">
+</figure>
+<figure id="AJA7207SF030100006A011">
+<title>Ensemble mobile chauffage induction</title>
+<graphic callicn="A1AJA7207SF030100006A011">
+</figure>
+<figure id="AJA7207SF030100008A011">
+<title>Ensemble mobile chauffage induction</title>
+<graphic callicn="A1AJA7207SF030100008A011">
+</figure>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000010245 0>

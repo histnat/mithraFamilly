@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+			 <table width="100%" border="1" border-color="#FFFFFF"> 
+				<tr> 
+				  <th colspan="2" width="778" background-color="#D1D2D4" border="#FFFFFF"> 
+					 <para><p><emphasis gras="oui">Compressed-air system </emphasis></p>
+					 </para> 
+				  </th> 
+				</tr> 
+				<tr> 
+				  <td width="600" background-color="#D1D2D4" border="#FFFFFF"> 
+					 <para><p>Service brake </p>
+					 </para> 
+				  </td> 
+				  <td width="273" background-color="#E1E2E4" border="#FFFFFF"> 
+					 <para><p> 18.3 bar</p>
+					 </para> 
+				  </td> 
+				</tr> 
+				<tr> 
+				  <td width="600" background-color="#D1D2D4" border="#FFFFFF"> 
+					 <para><p>Brake circuit 1 </p>
+					 </para> 
+				  </td> 
+				  <td width="273" background-color="#E1E2E4" border="#FFFFFF"> 
+					 <para><p> min. 8.1 bar</p>
+					 </para> 
+				  </td> 
+				</tr> 
+				<tr> 
+				  <td width="600" background-color="#D1D2D4" border="#FFFFFF"> 
+					 <para><p>Brake circuit 2 </p>
+					 </para> 
+				  </td> 
+				  <td width="273" background-color="#E1E2E4"> 
+					 <para><p> min. 8.1 bar</p>
+					 </para> 
+				  </td> 
+				</tr> 
+				<tr> 
+				  <td width="600" background-color="#D1D2D4" border="#FFFFFF"> 
+					 <para><p>Trailer brake circuit </p>
+					 </para> 
+				  </td> 
+				  <td width="273" background-color="#E1E2E4" border="#FFFFFF"> 
+					 <para><p> min. 5.5 bar</p>
+					 </para> 
+				  </td> 
+				</tr> 
+				<tr> 
+				  <td width="600" background-color="#D1D2D4" border="#FFFFFF"> 
+					 <para><p>Pressure regulator (activation/deactivation pressure) </p>
+					 </para> 
+				  </td> 
+				  <td width="273" background-color="#E1E2E4" border="#FFFFFF"> 
+					 <para><p>approx. 15.8/18.3 bar</p>
+					 </para> 
+				  </td> 
+				</tr> 
+			 </table> 

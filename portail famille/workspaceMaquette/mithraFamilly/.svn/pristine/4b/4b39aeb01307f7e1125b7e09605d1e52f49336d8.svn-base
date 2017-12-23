@@ -1,0 +1,188 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1A723300SF030100492A011 SYSTEM "x-dm://0900f90b80018b63,MYWORKING" NDATA cgm>
+<!ENTITY A1A723300SF030100491A011 SYSTEM "x-dm://0900f90b80018b62,MYWORKING" NDATA cgm>
+<!ENTITY A1A723300SF030100384A011 SYSTEM "x-dm://0900f90b80003107,MYWORKING" NDATA cgm>
+]>
+<?Pub EntList alpha bull copy rArr sect trade nbsp percnt>
+<?Pub Inc>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><discode>08</discode><discodev>A</discodev><incode>600</incode><incodev>B</incodev><itemloc>C</itemloc></avee></dmc>
+<dmtitle><techname>TAMBOUR ETAGE 4 6, COMPRESSEUR HP</techname><infoname>REPARATIONS ET PROCEDURES ET INFORMATIONS DE FABRICATION LOCALE-REP 17-80203 RETOUCHE POIREAU</infoname></dmtitle>
+<issno type="C" issno="3">
+<issdate month="11" year="2012" day="30">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic change="MOD">
+<systemid>
+<version version="M88-2 ETAPE 4"></version>
+<manufact>F0301</manufact><partno>307-264-702-0</partno>
+<manufact>F0301</manufact><partno>307-264-703-0</partno>
+<manufact>F0301</manufact><partno>307-264-704-0 </partno>
+<manufact>F0301</manufact><partno>307-264-706-0</partno>
+<customer aaf="1" anf="1">
+<nti nti3="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Prise en compte de la MAJ du REP 17 80203-003</rfu>
+<remarks>RAS</remarks>
+<icns><icn id="A1A723300SF030100491A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00491</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A723300SF030100492A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00492</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<refdm>
+<dmcid id="A1A70510002A040AC" change="add"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>5</section><subsect>1</subsect><subject>00</subject><discode>02</discode><discodev>A</discodev><incode>040</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A70510004A649AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>5</section><subsect>1</subsect><subject>00</subject><discode>04</discode><discodev>A</discodev><incode>649</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A72330008A251AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><discode>08</discode><discodev>A</discodev><incode>251</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A72330008A351AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><discode>08</discode><discodev>A</discodev><incode>351</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1B72330008A353BC"><avee><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><discode>08</discode><discodev>A</discodev><incode>353</incode><incodev>B</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A72330008A600AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><discode>08</discode><discodev>A</discodev><incode>600</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+</refdm>
+</refs><proced><pmd>
+<manhour value="1,5"></manhour>
+<duration value="0,1"></duration>
+</pmd><prelreqs><reqconds>
+<noconds></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="0"><perstime value="0,1"></reqper>
+</reqpers><supequip><nosupeq><nosupeqs></supequip><supplies><nosupply></supplies><miscs><miscli>
+<misc id="P0776" matiere="0"><refipc csn="72013001 108 "><nomen>ADHESIF DE MASQUAGE</nomen><quantity>SB</quantity></misc>
+<misc id="P0894"><refipc csn="72013001 124 "><nomen>RESINE POUR PRISE D'EMPREINTE</nomen><quantity>SB</quantity></misc>
+<misc id="P0840"><ident><manufact>F0301</manufact><partno></partno></ident><nomen>ABRASIF AGLOMERE AU CARBURE DE SILICIUM</nomen><quantity>SB</quantity></misc>
+</miscli></miscs><safety>
+<specpara>
+<caution>
+<p>Pi&egrave;ce &eacute;labor&eacute;e en m&eacute;tallurgie des poudres, prendre toutes les pr&eacute;cautions n&eacute;cessaires pour ne pas rayer la pi&egrave;ce lors des op&eacute;rations de manutention.</p>
+</caution>
+<caution>
+<p>Signaler &agrave; SNECMA tout autre d&eacute;faut non r&eacute;pertori&eacute; dans la proc&eacute;dure.</p>
+</caution>
+<note><applic><config><mod modnb="248-4R1" modcond="pre"></config></applic>
+<p>Mati&egrave;re de la pi&egrave;ce&nbsp;:&nbsp; NK16CDTA (N18) : Disques 5 et 6 et NC19FeNb (INCO718) : Disque 4.</p>
+</note>
+<note><applic><config><mod modnb="248-4R1" modcond="post"></config></applic>
+<p>Mati&egrave;re de la pi&egrave;ce&nbsp;:&nbsp;NK16CDTA (N18) : Disque 6 et NC19FeNb (INCO718) : Disques 4 et 5.</p>
+</note>
+</specpara>
+</safety></prelreqs><mainfunc>
+<step1 control="0" id="P10">
+<title>Analyse du d&eacute;faut</title>
+<step2 id="P10-10">
+<para><p>R&eacute;aliser une empreinte avec la r&eacute;sine <miscref refid="P0894">.</p>
+</para>
+</step2>
+<step2 id="P10-20">
+<para><p>Effectuer la topographie du d&eacute;faut.</p>
+</para>
+</step2>
+</step1>
+<step1 control="0" id="P20">
+<title>Retouche du d&eacute;faut</title>
+<step2 id="P20-10">
+<para><p>Eliminer le d&eacute;faut suivant indication avec une fraise carbure <figref refid="A723300SF030100491A011">.</p>
+<note>
+<p>La retouche doit &ecirc;tre de profondeur P&nbsp;&le;&nbsp;0,1&nbsp;mm.</p>
+</note>
+</para>
+</step2>
+<step2 id="P20-20">
+<para><p>Affiner la retouche avec un abrasif aglom&eacute;r&eacute; <miscref refid="P0840">, dans le sens circonf&eacute;rentiel.</p>
+</para>
+<note>
+<p>Ajuster la grosseur du grain en fonction du d&eacute;faut, pour obtenir en finition un &eacute;tat de surface &eacute;quivalant aux zones adjacentes.</p>
+</note>
+</step2>
+<note>
+<p>En cours de retouche, inspecter fr&eacute;quemment le d&eacute;faut avec une loupe ou la binoculaire grossissement X10, pour s'assurer de l'absence de crique.</p>
+</note>
+</step1>
+<step1 control="0" id="P30">
+<title>D&eacute;graissage</title>
+<para><p>Effectuer un d&eacute;graissage <dmcref xrefid="A1A72330008A251AC">.</p>
+</para>
+</step1>
+<step1 id="P40">
+<title>Contr&ocirc;le visuel et dimensionnel</title>
+<step2 id="P40-10">
+<para><p>Contr&ocirc;ler l'absence de d&eacute;faut r&eacute;siduel et la conformit&eacute; de la retouche.</p>
+</para>
+</step2>
+<step2 id="P40-20">
+<para><p>R&eacute;aliser une empreinte de la retouche avec la r&eacute;sine <miscref refid="P0894">.</p>
+</para>
+</step2>
+<step2 id="P40-30">
+<para><p>Effectuer une topographie de la retouche.</p>
+</para>
+</step2>
+</step1>
+<step1 id="P50">
+<title>Contr&ocirc;le sant&eacute;</title>
+<specpara>
+<caution>
+<p>Toute indication de crique est inadmissible.</p>
+</caution>
+</specpara>
+<step2 id="P50-10">
+<para><p>Effectuer un contr&ocirc;le par courant de Foucault de la zone retouch&eacute;e <dmcref xrefid="A1B72330008A353BC">pour :</p>
+</para>
+<list>
+<item><applic><config><mod modnb="248-4R1" modcond="pre"></config></applic>
+<para><p>les disques 5 et 6 pour les tambours.</p>
+</para>
+</item>
+<item><applic><config><mod modnb="248-4R1" modcond="post"></config></applic>
+<para><p>les disques 6.</p>
+</para>
+</item>
+</list>
+</step2>
+<step2 id="P50-20">
+<para><p>Effectuer un contr&ocirc;le ressuage sensibilit&eacute; S4 <dmcref xrefid="A1A72330008A351AC">.</p>
+</para>
+</step2>
+</step1>
+<step1 id="P60">
+<title>Mise en contrainte</title>
+<step2 id="P60-10">
+<para><p>Masquer avec l'adh&eacute;sif <miscref refid="P0776"> les zones non concern&eacute;es par cette op&eacute;ration, soit la zone de retouche avec un d&eacute;bord &nbsp;&le;&nbsp;3&nbsp;mm.</p>
+</para>
+</step2>
+<step2 id="P60-20">
+<specpara>
+<caution>
+<p>Prendre toutes les pr&eacute;cautions n&eacute;cessaires pour ne pas impacter les zones adjences.</p>
+</caution>
+</specpara>
+<para><p change="mod">Effectuer un grenaillage des zones retouch&eacute;es, d'intensit&eacute; F10A, recouvrement 125&nbsp;&percnt; <dmcref change="add" xrefid="A1A70510002A040AC"> et <dmcref xrefid="A1A70510004A649AC">.</p>
+</para>
+</step2>
+<step2 id="P60-30">
+<para><p>D&eacute;masquer.</p>
+</para>
+</step2>
+</step1>
+<step1 id="P70">
+<title>Traitement de surface</title>
+<para><p>Proc&eacute;der au reconditionnemen<?Pub Caret>t du vernis <dmcref xrefid="A1A72330008A600AC">et les indications <figref refid="A723300SF030100492A011">.</p>
+</para>
+</step1>
+<figure id="A723300SF030100491A011">
+<title>DEFINITION DE LA RETOUCHE</title>
+<graphic callicn="A1A723300SF030100491A011">
+</figure>
+<figure id="A723300SF030100492A011">
+<title>TRAITEMENT DE SURFACE</title>
+<graphic callicn="A1A723300SF030100492A011">
+</figure>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000009371 0>

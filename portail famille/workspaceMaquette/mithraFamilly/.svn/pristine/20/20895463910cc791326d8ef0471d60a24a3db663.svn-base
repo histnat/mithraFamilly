@@ -1,0 +1,152 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1A720000SF030190029A011 SYSTEM "x-dm://0900f90b8000275f,MYWORKING" NDATA tiff>
+<!ENTITY A1A720000SF030190030A011 SYSTEM "x-dm://0900f90b80002760,MYWORKING" NDATA tiff>
+]>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>0</section><subsect>0</subsect><subject>00</subject><discode>00</discode><discodev>A</discodev><incode>150</incode><incodev>A</incodev><itemloc>B</itemloc></avee></dmc>
+<dmtitle><techname>MOTEUR ASSEMBLE</techname><infoname>PROCEDURES ET MESURES POSTERIEURES A LA MISE EN OEUVRE ET A L'UTILISATION</infoname></dmtitle>
+<issno type="r" issno="4">
+<issdate month="01" year="2010" day="26">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 1"></version>
+<version version="M88-2 ETAPE 4"></version>
+<customer aaf="0" anf="1">
+<nti nti1="0" nti2="1" nti3="0"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Mise &agrave; jour de ce Data-Module suite &agrave; t&eacute;l&eacute;copie num&eacute;ro 1113DEF/SIMMAD/FLOT/RAFALE/M88 du 30/11/2009 et note technique num&eacute;ro 04 CDG/COMTEHAERO/NP du 27/11/2009</rfu>
+<remarks>RAS</remarks>
+<icns><icn id="A1A720000SF030190030A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>0</section><subsect>0</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>90030</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A720000SF030190029A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>0</section><subsect>0</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>90029</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<rdandrt>
+<refdm>
+<dmcid id="A1A72000000A727MB"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>0</section><subsect>0</subsect><subject>00</subject><discode>00</discode><discodev>A</discodev><incode>727</incode><incodev>M</incodev><itemloc>B</itemloc></avee></dmcid>
+<dmcid id="A1A72000000A810AB"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>0</section><subsect>0</subsect><subject>00</subject><discode>00</discode><discodev>A</discodev><incode>810</incode><incodev>A</incodev><itemloc>B</itemloc></avee></dmcid>
+<dmcid id="A1ADA720205A150AD"><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>DA</ecscc><eidc>72</eidc><cic>02</cic><discode>05</discode><discodev>A</discodev><incode>150</incode><incodev>A</incodev><itemloc>D</itemloc></age></dmcid>
+</refdm><reftp>
+<techpub id="A8894010001"><tpcode>A889-401-000-1</tpcode><tptitle>Banc polyvalent sur base</tptitle></techpub>
+<techpub id="A8894000001"><tpcode>A889-400-000-1</tpcode><tptitle>Banc polyvalent sur PA CdG</tptitle></techpub>
+</reftp>
+</rdandrt>
+</refs><proced><pmd>
+<manhour value="0,2"></manhour>
+<duration value="0,1"></duration>
+</pmd><prelreqs><reqconds>
+<noconds></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="2"><perstime value="0,1"></reqper>
+</reqpers><supequip><supeqli change="mod">
+<supequi id="O2.00746"><refipc csn="72016601 066 "><nomen>Out obturation RD6</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.00833"><refipc csn="72016701 233 "><nomen>Outillage mise &agrave; l'air libre d&eacute;shuileur</nomen><quantity>1</quantity></supequi>
+<supequi id="O1"><ident><manufact>Client</manufact><partno>Sans</partno></ident><nomen>Ensemble r&eacute;cup&eacute;ration de drainage tuyau diam&egrave;tre 6 mm</nomen><quantity>6</quantity></supequi>
+<supequi id="O2"><ident><manufact>Client</manufact><partno>Sans</partno></ident><nomen>Ensemble r&eacute;cup&eacute;ration de drainage tuyau diam&egrave;tre 7 mm</nomen><quantity>1</quantity></supequi>
+</supeqli><supeqlis>
+<supequis id="O2.C0166"><refipc csn="72016002 033 "><nomen>Douille tournevis radio carr&eacute; 1/4 de 10</nomen><quantity>1</quantity></supequis>
+<supequis id="O2.C0038"><refipc csn="72016002 015 "><nomen>Cliquet r&eacute;versible carr&eacute; 1/4</nomen><quantity>1</quantity></supequis>
+<supequis id="O2.C0039"><refipc csn="72016002 016 "><nomen>Rallonge carr&eacute; 1/4 LG75MM</nomen><quantity>1</quantity></supequis>
+</supeqlis></supequip><supplies><supplyli exhaust="0">
+<supply id="R97795" mand="0"><applic><systemid><version version="M88-2 ETAPE 1"></version></systemid></applic>
+<refipc csn="72330001 008 "><nomen>Obturateur souple</nomen><quantity>1</quantity></supply>
+<supply id="R97795E4" mand="0"><applic><systemid><version version="M88-2 ETAPE 4"></version></systemid></applic>
+<refipc csn="72330001A008 "><nomen>Obturateur souple</nomen><quantity>1</quantity></supply>
+<supply id="R97895" mand="0"><refipc csn="72610001 071 "><nomen>Obturateur souple</nomen><quantity>1</quantity></supply>
+</supplyli></supplies><miscs><nomisc></miscs><safety><nosafety></safety></prelreqs><mainfunc>
+<step1 id="P05">
+<title>Ensemble de r&eacute;cup&eacute;ration de drainage install&eacute;s</title>
+<para><p>Effectuer les proc&eacute;dure et mesures post&eacute;rieures &agrave; l'utilisation des outillages<supeqref refid="O1"><supeqref refid="O2"><dmcref xrefid="A1ADA720205A150AD">.</p>
+</para>
+</step1>
+<step1 control="0" id="P10">
+<title>D&eacute;pose de l'outillage d'obturation RD6</title>
+<step2>
+<applic><systemid><version version="M88-2 ETAPE 1"></version></systemid></applic>
+<step3>
+<para><p>D&eacute;poser l'outillage<supeqref refid="O2.00746"> du tube de pr&eacute;l&egrave;vement d'air <refipc csn="72330001 003 "> &agrave; l'aide des outillages<supeqref refid="O2.C0038"> <supeqref refid="O2.C0039"> <supeqref refid="O2.C0166">.</p>
+</para>
+</step3>
+<step3>
+<para><p>Obturer le tube de pr&eacute;l&egrave;vement d'air<refipc csn="72330001 003 "> &agrave; l'aide de l'obturateur<supplref refid="R97795"><figref repnohot="98004" refid="A720000SF030190030A011">.</p>
+</para>
+</step3>
+</step2>
+<step2>
+<applic><systemid><version version="M88-2 ETAPE 4"></version></systemid></applic>
+<step3>
+<para><p>D&eacute;poser l'outillage<supeqref refid="O2.00746"> du tube de pr&eacute;l&egrave;vement d'air <refipc csn="72330001A003 "> &agrave; l'aide des outillages<supeqref refid="O2.C0038"> <supeqref refid="O2.C0039"> <supeqref refid="O2.C0166">.</p>
+</para>
+</step3>
+<step3>
+<para><p>Obturer le tube de pr&eacute;l&egrave;vement d'air<refipc csn="72330001A003 "> &agrave; l'aide de l'obturateur<supplref refid="R97795E4"><figref repnohot="98004" refid="A720000SF030190030A011">.</p>
+</para>
+</step3>
+</step2>
+</step1>
+<step1 control="0" id="P20">
+<step2>
+<para><p>D&eacute;poser l'outillage de mise &agrave; l'air libre du d&eacute;shuileur<refipc csn="72016701 233 "> du tube de mise &agrave; l'air libre<refipc csn="72610001 062 ">, &agrave; l'aide des outillages<supeqref refid="O2.C0038"> <supeqref refid="O2.C0039"> <supeqref refid="O2.C0166">.</p>
+</para>
+</step2>
+<step2>
+<para><p>Obturer le tube de mise &agrave; l'air libre <refipc csn="72610001 062 "> &agrave; l'aide de l'obturateur souple<supplref refid="R97895"><figref repnohot="98002" refid="A720000SF030190029A011">.</p>
+</para>
+</step2>
+</step1>
+<step1 control="0" id="P50">
+<title>D&eacute;pose de l'arbre d'entra&icirc;nement</title>
+<step2 control="0" id="P50-10">
+<para><p>D&eacute;sserer les 3&nbsp;vis du&nbsp;&frac12; arbre cannel&eacute;.</p>
+</para>
+</step2>
+<step2 control="0" id="P50-20">
+<para><p>D&eacute;poser le &frac12; arbre cannel&eacute; du sous ensemble arbre &agrave; plateau PMA<refipc csn="72610002 067M">.</p>
+</para>
+</step2>
+</step1>
+<step1>
+<title>D&eacute;pose du moteur assembl&eacute;</title>
+<step2>
+<para><p>D&eacute;poser le moteur assembl&eacute; du banc d'essai&nbsp;:</p>
+</para>
+<list type="SIMPLE">
+<item><para><p>sur base&nbsp;: lire notice "Banc polyvalent" <tpubref xrefid="A8894010001"> paragraphe 3.2.2,</p>
+</para>
+</item>
+<item><para><p>sur PA CdG&nbsp;: lire notice "Banc polyvalent" <tpubref xrefid="A8894000001"> paragraphe 3.2.2.</p>
+</para>
+</item>
+</list>
+</step2>
+<step2>
+<para><p>Installer le moteur assembl&eacute; sous arceaux<dmcref xrefid="A1A72000000A727MB">.</p>
+</para>
+</step2>
+<step2>
+<para><p>Installer les protecteurs<dmcref xrefid="A1A72000000A810AB">.</p>
+</para>
+</step2>
+</step1>
+<figure id="A720000SF030190030A011">
+<title>Obturateur souple sur tube de pr&eacute;l&egrave;vement d'air</title>
+<graphic callicn="A1A720000SF030190030A011">
+</figure>
+<figure id="A720000SF030190029A011">
+<title>Obturateur souple sur tube de mise &agrave; l'air libre</title>
+<graphic callicn="A1A720000SF030190029A011">
+</figure>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule><?Pub Caret>
+<?Pub *0000008895 0>

@@ -1,0 +1,456 @@
+package com.sonovision.openconv.ws.controller.util;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
+import java.lang.reflect.Method;
+import java.net.MalformedURLException;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
+
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.Scope;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.stereotype.Service;
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.sedoc.toolbox.LogMes;
+import com.sedoc.toolbox.SpringBeanProvider;
+import com.sonovision.openconv.codification.Codification;
+import com.sonovision.openconv.db.bo.DBConversionService;
+import com.sonovision.openconv.db.dao.CoScenarioDao;
+import com.sonovision.openconv.db.exception.DBNONullException;
+import com.sonovision.openconv.db.exception.DBNOUniqueException;
+import com.sonovision.openconv.db.vo.execution.CoHistoryExe;
+import com.sonovision.openconv.db.vo.execution.CoParameterExe;
+import com.sonovision.openconv.db.vo.execution.CoScenario;
+import com.sonovision.openconv.db.vo.user.OpUser;
+import com.sonovision.openconv.log.exception.LoggerException;
+import com.sonovision.openconv.log.model.DBLogger;
+import com.sonovision.openconv.log.model.LoggerLevel;
+import com.sonovision.openconv.modules.fileaccess.exception.LoadFileException;
+import com.sonovision.openconv.service.FileService;
+import com.sonovision.openconv.service.OpenConvService;
+import com.sonovision.openconv.utils.FileAccess;
+import com.sonovision.openconv.wf.WFTask;
+import com.sonovision.openconv.wf.exception.WorkflowException;
+import com.sonovision.openconv.wf.model.ParameterDetailled;
+import com.sonovision.openconv.wf.model.ParameterTypes;
+import com.sonovision.openconv.wf.model.RunningStatus;
+import com.sonovision.openconv.wf.service.WorkFlowBo;
+import com.sonovision.openconv.wf.thread.SequenceThread;
+import com.sonovision.openconv.wf.xmodel.Parameter;
+import com.sonovision.openconv.wf.xmodel.Parameters;
+import com.sonovision.openconv.wf.xmodel.Sequence;
+import com.sonovision.openconv.wf.xmodel.Task;
+import com.sonovision.openconv.wf.xmodel.Tasks;
+import com.sonovision.openconv.wf.xmodel.Workflow;
+import com.sonovision.openconv.ws.controller.model.HistoryDetailedModel;
+import com.sonovision.openconv.ws.controller.model.HistoryProgressDetailedModel;
+import com.sonovision.openconv.ws.controller.model.ScenarioDetailledModel;
+import com.sonovision.openconv.ws.controller.model.ScenarioExecutionHistoryDetailedModel;
+import com.sonovision.openconv.ws.controller.model.ScenarioMiniModel;
+import com.sonovision.openconv.ws.controller.model.TaskLogModel;
+import com.sonovision.openconv.ws.controller.model.TaskModel;
+import com.sonovision.openconv.ws.controller.model.TaskParameterModel;
+import com.sonovision.openconv.ws.controller.model.UserInfoModel;
+import com.sonovision.openconv.ws.manager.AskParametersManager;
+
+@Service("ServiceMapper")
+@Scope(value = WebApplicationContext.SCOPE_SESSION)
+public class ServiceMapper {
+	
+	@Autowired
+	private ApplicationContext appContext;
+	
+	@Autowired
+	protected FileService fileService;
+	
+	@Autowired
+	protected AskParametersManager askParametersManager;
+
+	
+	public ScenarioDetailledModel getScenarioDetailledModel(CoScenario coScenario){
+		if(coScenario==null)
+			return null;
+		return new ScenarioDetailledModel(coScenario);
+	}
+	
+	public ScenarioMiniModel getScenarioModel(CoScenario coScenario){
+		if(coScenario==null)
+			return null;
+		return new ScenarioMiniModel(coScenario.getId(),coScenario.getName("Fr_fr"),coScenario.getUserId(),coScenario.getNbrStep(),coScenario.getDescr("Fr_fr"),coScenario.getCreationDate());
+		
+	}
+	
+	public List<ScenarioMiniModel> getScenarioListModel(List<CoScenario> list){
+		if(list==null) 
+			return null;
+		List<ScenarioMiniModel> listScen=new ArrayList<ScenarioMiniModel>();
+		for(CoScenario scen:list){
+			listScen.add(getScenarioModel(scen));
+		}
+		return listScen;
+	}
+	
+	
+	public CoScenario getOrUpdateCoScenario(CoScenario coScenario,ScenarioDetailledModel scenarioDetailledModel){
+		if(scenarioDetailledModel==null)
+			return coScenario;
+		if(coScenario==null)
+			coScenario=new CoScenario();
+//		coScenario.setFileName(scenarioDetailledModel.getf);
+		coScenario.setCreationDate(scenarioDetailledModel.getCreationDate());
+//		coScenario.setModificationdate();
+		coScenario.setNbrStep(scenarioDetailledModel.getNbSteps());
+//		coScenario.setShared();
+		coScenario.setUserId(scenarioDetailledModel.getCreatorName());
+		coScenario.setId(scenarioDetailledModel.getId());
+//		coScenario.setHistoryList();
+		coScenario.addDescr("Fr_fr", scenarioDetailledModel.getDescr());
+		return coScenario;
+	}
+	
+	public HistoryDetailedModel getHistoryDetailedModel(CoHistoryExe coHistory){
+		if(coHistory==null)
+			return null;
+		return new HistoryDetailedModel(coHistory.getNbrFiles(),
+				coHistory.getNbrOK(),
+				coHistory.getNbrNOK(),
+				coHistory.getNbrNBloquant(),
+				coHistory.getStartTime(),
+				coHistory.getEndTime(),
+				coHistory.getUserId(),
+				coHistory.getId()
+				);
+	}
+	public List<HistoryDetailedModel> getHistoryDetailedModelList(List<CoHistoryExe> coHistoryList){
+		if(coHistoryList==null) 
+			return null;
+		List<HistoryDetailedModel> listHist=new ArrayList<HistoryDetailedModel>();
+		for(CoHistoryExe hist:coHistoryList){
+			listHist.add(getHistoryDetailedModel(hist));
+		}
+		return listHist;
+	}
+	
+	public UserInfoModel getUserInfo(OpUser user){
+		if(user!=null){
+			UserInfoModel userInfo=new UserInfoModel();
+			userInfo.setName(user.getName());
+			userInfo.setLogin(user.getLogin());
+			userInfo.setAvatar(user.getAvatar());
+			userInfo.setEmail(user.getEmail());
+			return userInfo;
+		}
+		return null;
+	}
+	
+	public List<TaskModel> getListTaskModel(Workflow workflow, boolean parametrable) throws LoadFileException{
+		if(workflow==null) 
+			return null;
+		List<Task> tasks=workflow.getWf().getTasks().getTask();
+		List<TaskModel> listTaskModel=new ArrayList<>();
+		for(Task tsk:tasks){
+			listTaskModel.add(getTaskModel(tsk,parametrable));
+		}
+		return listTaskModel;
+	}
+
+	private TaskModel getTaskModel(Task task, boolean parametrable) throws LoadFileException{
+		if(task==null) 
+			return null;
+		TaskModel taskModel=new TaskModel();
+		taskModel.setName(task.getName());
+		taskModel.setId(task.getId().toString());
+//		taskModel.setTaskType(task.get);
+		taskModel.setParameterList(getListParameter(task,parametrable));
+		return taskModel;
+	}
+	
+	public List<CoParameterExe> getCoParameterExeList(Workflow workflow, CoHistoryExe coHistoryExe) throws LoadFileException{
+		List<CoParameterExe> listCoParameterExe=new ArrayList<>();
+		List<TaskModel> listTaskModel=getListTaskModel(workflow,false);
+		for(TaskModel taskModel:listTaskModel){
+			List<TaskParameterModel> listTaskParameterModel=taskModel.getParameterList();
+			for(TaskParameterModel taskParameterModel:listTaskParameterModel){
+				CoParameterExe coParameterExe=new CoParameterExe();
+				coParameterExe.setCoHistoryExe(coHistoryExe);
+				coParameterExe.setTaskId(taskModel.getId());
+				coParameterExe.setParamName(taskParameterModel.getCode());
+				coParameterExe.setParamValue(taskParameterModel.getValue());
+				listCoParameterExe.add(coParameterExe);
+			}
+		}
+		 return listCoParameterExe;
+	}
+	
+	public List<CoParameterExe> getCoParameterExeList(List<TaskParameterModel> listTaskParameterModel, CoHistoryExe coHistoryExe){
+		List<CoParameterExe> listCoParameterExe=new ArrayList<>();
+			for(TaskParameterModel taskParameterModel:listTaskParameterModel){
+				CoParameterExe coParameterExe=new CoParameterExe();
+				coParameterExe.setCoHistoryExe(coHistoryExe);
+				coParameterExe.setTaskId(taskParameterModel.getId().getTaskId());
+				coParameterExe.setParamName(taskParameterModel.getCode());
+				coParameterExe.setParamValue(taskParameterModel.getValue());
+				listCoParameterExe.add(coParameterExe);
+			}
+		 return listCoParameterExe;
+	}
+	
+	
+	public List<TaskParameterModel> extractListTaskParameterModel(Workflow workflow) throws LoadFileException{
+		List<TaskParameterModel> toReturn=new ArrayList<>();
+		List<TaskModel> listTaskModel=getListTaskModel(workflow,false);
+		for(TaskModel taskModel:listTaskModel){
+			List<TaskParameterModel> listTaskParameterModel=taskModel.getParameterList();
+			for(TaskParameterModel taskParameterModel:listTaskParameterModel){
+				toReturn.add(taskParameterModel);
+			}
+		}
+		 return toReturn;
+	}
+	
+	private WFTask getWFTask(Task task) throws LoadFileException{
+		Class clazz;
+		try {
+			 clazz = Thread.currentThread().getContextClassLoader().loadClass(task.getClassName());
+			
+		} catch (ClassNotFoundException e1) {
+			throw new LoadFileException("Impossible de charger la class :" + task.getClassName());
+		}
+		if (clazz == null) {
+			throw new LoadFileException("Impossible de charger la class :" + task.getClassName());
+		}
+
+		/*
+		 * 
+		 * JWL : 	Exception lancé : ServletContext is required to configure default servlet handling
+		 * 			Exception lancé au premier appel SpringBeanProvider, car SpringBeanProvider essaie de charger lui-même le context, mais plante
+		 * 			Exception catché pour l'instant dans toolbox, et affiché
+		 * 			Le context n'est pas rechargé par SpringBeanProvider, on lui affecte celui courant via setApplicationContext2
+		 * */
+		
+//		if(SpringBeanProvider.getAP()==null)
+			SpringBeanProvider.setApplicationContext2(appContext);
+			WFTask wfTask=(WFTask) SpringBeanProvider.getBean(clazz);
+			wfTask.setId(task.getId().toString());
+			if(task.getParameters()!=null && task.getParameters().getParameter()!=null && !task.getParameters().getParameter().isEmpty())
+			{
+				for(Parameter p:task.getParameters().getParameter())
+				{
+					wfTask.addParameter(p.getKey(),p.getValue());
+				}
+			}
+			
+			return wfTask;	
+	}
+	
+
+	private List<TaskParameterModel> getListParameter(Task task, boolean parametrable) throws LoadFileException{
+		WFTask wfTask=getWFTask(task);
+		return getListParameter(wfTask.getRequiredDetailledParameterList(null),parametrable);
+	}
+	
+	
+	public List<TaskParameterModel> getListAskedParameter(WFTask wfTask,int step){
+		return getListParameter(wfTask.getAskedDetailledParameterList(null, step));
+	}
+	
+	
+	private List<TaskParameterModel> getListParameter(List<ParameterDetailled> listParamsTmp,boolean parametrable){
+		List<TaskParameterModel> toReturn=new ArrayList<>();
+		for(ParameterDetailled param:listParamsTmp){
+			TaskParameterModel tpm=getTaskParameterModel(param);
+			if(parametrable){
+				if(tpm.getValue()==null)
+					toReturn.add(tpm);
+			}
+			else{
+				if(tpm.getValue()!=null)
+					toReturn.add(tpm);
+				}
+			}
+		return toReturn;
+	}
+	
+	
+	private List<TaskParameterModel> getListParameter(List<ParameterDetailled> listParamsTmp){
+		List<TaskParameterModel> toReturn=new ArrayList<>();
+		for(ParameterDetailled param:listParamsTmp){
+			TaskParameterModel tpm=getTaskParameterModel(param);
+			toReturn.add(tpm);
+		}
+		return toReturn;
+	}
+	
+	
+	private TaskParameterModel getTaskParameterModel(ParameterDetailled parameter){
+		if(parameter==null) 
+			return null;
+		TaskParameterModel taskParameterModel=new TaskParameterModel();
+		taskParameterModel.setId(parameter.getId());
+		taskParameterModel.setCode(parameter.getCode());
+		taskParameterModel.setDescr(parameter.getDescr());
+		taskParameterModel.setLabel(parameter.getLabel());
+		taskParameterModel.setType(parameter.getType());
+		taskParameterModel.setValue(parameter.getValue());
+		return taskParameterModel;
+	}
+	
+	public List<ScenarioExecutionHistoryDetailedModel> getScenarioExecutionHistoryDetailedModeList(List<CoScenario> list){
+		if(list==null) 
+			return null;
+		List<ScenarioExecutionHistoryDetailedModel> listScen=new ArrayList<ScenarioExecutionHistoryDetailedModel>();
+		for(CoScenario scen:list){
+			listScen.add(getScenarioExecutionHistoryDetailedModel(scen));
+		}
+		return listScen;
+	}
+	
+	private ScenarioExecutionHistoryDetailedModel getScenarioExecutionHistoryDetailedModel(CoScenario coScenario){
+		if(coScenario==null)
+			return null;
+		ScenarioExecutionHistoryDetailedModel toReturn=new ScenarioExecutionHistoryDetailedModel();
+		toReturn.setId(coScenario.getId());
+		toReturn.setCreatorName(coScenario.getUserId());
+		toReturn.setName(coScenario.getName("Fr_fr"));
+		toReturn.setListHistoryDetailedModel(getHistoryDetailedModelList(coScenario.getHistoryList()));
+		return toReturn;
+	}
+	public HistoryProgressDetailedModel getHistoryProgressDetailedModel(CoHistoryExe coHistoryExe){
+		if(coHistoryExe==null)
+			return null;
+		HistoryProgressDetailedModel histProgres=new HistoryProgressDetailedModel(coHistoryExe.getNbrFiles(),
+				coHistoryExe.getNbrOK(),
+				coHistoryExe.getNbrNOK(),
+				coHistoryExe.getNbrNBloquant(),
+				coHistoryExe.getStartTime(),
+				coHistoryExe.getEndTime(),
+				coHistoryExe.getUserId(),
+				coHistoryExe.getId());
+		if(coHistoryExe.getEndTime()==null)
+			histProgres.setStatus(RunningStatus.RUNNING);
+		else if(coHistoryExe.getEndTime()!=null && coHistoryExe.getNbrNOK()!=0)
+			histProgres.setStatus(RunningStatus.FAILED);
+		else if(coHistoryExe.getEndTime()!=null && coHistoryExe.getNbrNOK()==0)
+			histProgres.setStatus(RunningStatus.FINISHED);
+				
+		return histProgres;
+	}
+
+	
+	public HttpHeaders getResponseHeaderFileDownload(File file) throws MalformedURLException, IOException{
+	    String type=file.toURL().openConnection().guessContentTypeFromName(file.getName());
+        HttpHeaders responseHeaders = new HttpHeaders();
+        responseHeaders.add("content-disposition", "attachment; filename=" + file.getName());
+        responseHeaders.add("Content-Type",type);
+	    return responseHeaders;
+	    
+	}
+	
+	public InputStreamResource getInputStreamResourceFileDownload(File file) throws FileNotFoundException{
+		return new InputStreamResource(new FileInputStream(file));
+	}
+	
+	public File zipDirectory(File inDir, String zipFilePath) throws IOException{
+		 byte[] buffer;
+		 FileInputStream in = null;
+		 int bytes_read;
+		File tempFile=new File(zipFilePath);
+    	if(!tempFile.exists()){
+    		tempFile.createNewFile();
+    	}
+    	
+    	ZipOutputStream z = new ZipOutputStream(new FileOutputStream(tempFile));
+    	
+    	for(File currFile:inDir.listFiles()){
+    		ZipEntry zipEntry=new ZipEntry(currFile.getName());
+    		z.putNextEntry(zipEntry);
+    		buffer = new byte[Math.toIntExact(currFile.length())];
+    		in = new FileInputStream(currFile);
+    		 while ((bytes_read = in.read(buffer)) != -1) {
+    	            z.write(buffer, 0, bytes_read);
+    	        }
+    		z.closeEntry();
+    	}
+    	z.close();
+    	return tempFile;
+	}
+	
+	public List<TaskLogModel> getListTaskLogModel(Workflow workflow) throws LoadFileException, UnsupportedEncodingException{
+		if(workflow==null) 
+			return null;
+		
+		List<Task> tasks=workflow.getWf().getTasks().getTask();
+		List<TaskLogModel> listTaskLogModel=new ArrayList<>();
+		for(Task tsk:tasks){
+			listTaskLogModel.add(new TaskLogModel(tsk.getName(),getListLog(tsk)));
+		}
+		return listTaskLogModel;
+	}
+	
+	
+	public String getListLog(Task task) throws LoadFileException, UnsupportedEncodingException{
+		WFTask wfTask=getWFTask(task);
+		DBLogger dbLogger=wfTask.getDbLogger();
+		if(dbLogger!=null)
+			return new String(dbLogger.getDbConversionService().getXML(dbLogger.getConversion()).toString().getBytes("UTF-8"));
+		return null;
+	}
+	
+	
+	public File[] multipartFilesToFiles(MultipartFile[] multipartFiles) throws IllegalStateException, IOException{
+		List<File> files=new ArrayList<File>();
+		String fileName = null;
+		File file=null;
+		if (multipartFiles != null && multipartFiles.length >0) {
+			for(int i =0 ;i< multipartFiles.length; i++){
+		    fileName = multipartFiles[i].getOriginalFilename();
+		    file=new File(fileService.getFolderTemp()+fileName);
+		    //transfert downloaded file to temp directory
+		    multipartFiles[i].transferTo(file);	
+		    files.add(file);
+			}
+		}
+		return files.toArray(new File[0]);
+	}
+	
+	public List<TaskParameterModel> updateTypeFileParameters(List<TaskParameterModel> parameterList,File[] files){
+		for(TaskParameterModel taskParameterModel : parameterList){
+			if(taskParameterModel.getType().equals(ParameterTypes.FILE)){
+				taskParameterModel.setValue(files[Integer.parseInt(taskParameterModel.getValue())].getAbsolutePath());
+			}
+		}
+		return parameterList;
+	}
+	
+	public List<TaskParameterModel> getAllAskParameters(){
+		return askParametersManager.getAllParams();
+	}
+	
+	public boolean getWaitingAskParameters(){
+		return askParametersManager.hasAskParameters();
+	}
+	
+	public void initAskParameters(){
+		askParametersManager.clean();
+	}
+	
+	
+}

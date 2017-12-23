@@ -1,0 +1,200 @@
+package com.sonovision.openconv.db.dao.user.impl;
+
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertNotNull;
+import static org.testng.Assert.assertNull;
+
+import java.lang.reflect.Method;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import com.sonovision.openconv.db.dao.OpGroupDao;
+
+import com.sonovision.openconv.db.exception.DBNONullException;
+import com.sonovision.openconv.db.exception.DBNOUniqueException;
+import com.sonovision.openconv.db.vo.user.OpGroup;
+import com.sonovision.openconv.utils.TestDBHelper;
+
+public class OpGroupDaoTest extends TestDBHelper {
+
+	@Autowired
+	OpGroupDao opGroupDao;
+
+	@AfterMethod
+	public void setAfterMethod(Method method) throws Exception {
+		deleteAll();
+	}
+
+	@BeforeMethod
+	public void setUpMethod(Method method) throws Exception {
+		deleteAll();
+	}
+
+	@Test
+	public void test_save() throws DBNONullException, DBNOUniqueException {
+		System.out.println("*** TEST opGroupDao.save ***");
+		OpGroup opGroup = getOpGroupWithoutSave();
+		opGroupDao.save(opGroup);
+		assertNotNull(opGroup.getId());
+		OpGroup result = opGroupDao.find(opGroup);
+        assertNotNull(result);
+        opGroupDao.delete(opGroup);
+	}
+	
+	@Test
+	public void test_add() throws DBNONullException, DBNOUniqueException {
+		System.out.println("*** TEST opGroupDao.add ***");
+		OpGroup opGroup = getOpGroupWithoutSave();
+		assertNotNull(opGroup);
+		opGroupDao.add(opGroup);
+		assertNotNull(opGroup.getId());
+	}
+	
+	@Test
+    public void testfindByCode() throws DBNONullException, DBNOUniqueException {
+        System.out.println("*** TEST opGroupDao.findByCode ***");
+        OpGroup opGroup = getOpGroupWithSave();
+        assertNotNull(opGroup);
+        assertNotNull(opGroup.getId());
+        OpGroup opGroupTest = opGroupDao.findByCode(opGroup.getCode());
+        assertNotNull(opGroupTest);
+        assertEquals(opGroupTest.getCode(),opGroup.getCode());
+    }
+
+	/**
+	 * test opUserDao.deleteAll.
+	 * 
+	 * @throws DBNOUniqueException
+	 * @throws DBNONullException
+	 *
+	 * @throws DuplicateObjectException
+	 * @throws UnexpectedDatabaseException
+	 */
+	@Test(dependsOnMethods = { "test_save" })
+	public void test_deleteAll() throws DBNONullException, DBNOUniqueException {
+		System.out.println("*** TEST opGroupDao.deleteAll ***");
+
+		getOpGroupWithSave(3);
+		opGroupDao.deleteAll(OpGroup.class);
+
+		List<OpGroup> opGroupTest = (List<OpGroup>) opGroupDao.findAll(OpGroup.class);
+		assertEquals(opGroupTest.size(), 0);
+	}
+
+	/**
+	 * test opUserDao.delete
+	 * 
+	 * @throws DBNOUniqueException
+	 * @throws DBNONullException
+	 *
+	 * @throws DuplicateObjectException
+	 * @throws UnexpectedDatabaseException
+	 */
+	@Test(dependsOnMethods = { "test_save", "test_deleteAll" })
+	public void test_delete() throws DBNONullException, DBNOUniqueException {
+		System.out.println("*** TEST opUserDao.delete ***");
+		String opGroupId;
+
+		OpGroup opGroup = getOpGroupWithSave();
+		opGroupId = opGroup.getId();
+		assertNotNull(opGroupId);
+
+		opGroupDao.delete(opGroup);
+
+		OpGroup result = opGroupDao.find(opGroup);
+		assertNull(result);
+	}
+
+	/**
+	 * test opUserDao.update
+	 * 
+	 * @throws DBNOUniqueException
+	 * @throws DBNONullException
+	 *
+	 * @throws DuplicateObjectException
+	 * @throws UnexpectedDatabaseException
+	 */
+	@Test(dependsOnMethods = { "test_save", "test_delete", "test_deleteAll" })
+	public void test_Update() throws DBNONullException, DBNOUniqueException {
+		System.out.println("*** TEST opGroupDao.update ***");
+		String opGroupId;
+
+		OpGroup opGroup = getOpGroupWithSave();
+		opGroupId = opGroup.getId();
+		assertNotNull(opGroupId);
+
+		opGroup.setCode("test");
+		opGroupDao.update(opGroup);
+
+
+		OpGroup result = opGroupDao.find(opGroup);
+        assertNotNull(result);
+        assertEquals(result.getCode(),"test");
+
+	}
+
+
+	/**
+	 * test opUserDao.findAll
+	 * 
+	 * @throws DBNOUniqueException
+	 * @throws DBNONullException
+	 *
+	 * @throws DuplicateObjectException
+	 * @throws UnexpectedDatabaseException
+	 */
+	@Test(dependsOnMethods = { "test_add"})
+	public void test_find() throws DBNONullException, DBNOUniqueException {
+		System.out.println("*** TEST opGroupDao.find ***");
+		String opGroupId;
+		
+		OpGroup opGroup = getOpGroupWithSave();
+		opGroupId = opGroup.getId();
+		assertNotNull(opGroupId);
+		
+		OpGroup result = opGroupDao.find(opGroup);
+        assertNotNull(result);    
+        assertEquals(result.getCode(), opGroup.getCode());
+        assertEquals(result.getDescrs().size(), opGroup.getDescrs().size());
+        assertEquals(2, opGroup.getDescrs().size());
+        assertEquals(result.getName().size(), opGroup.getName().size());
+        assertEquals(2, opGroup.getName().size());
+
+	}
+	
+	
+
+
+	/**
+	 * test opUserDao.findById
+	 * 
+	 * @throws DBNOUniqueException
+	 * @throws DBNONullException
+	 *
+	 * @throws DuplicateObjectException
+	 * @throws UnexpectedDatabaseException
+	 */
+	@Test(dependsOnMethods = { "test_save", "test_delete", "test_deleteAll" })
+	public void test_findById() throws DBNONullException, DBNOUniqueException {
+		System.out.println("*** TEST opGroupDao.findById ***");
+
+		opGroupDao.deleteAll(OpGroup.class);
+
+		List<OpGroup> opGroup = getOpGroupWithSave(2);
+
+		List<OpGroup> opGroupList = (List<OpGroup>) opGroupDao.findAll(OpGroup.class);
+		assertEquals(opGroupList.size(), opGroup.size());
+
+		OpGroup opGroupTest = opGroupDao.findOne(opGroup.get(0).getId(),OpGroup.class);// langue2.getScDmCodeId());
+		assertNotNull(opGroupTest.getId());
+		assertEquals(opGroupTest.getId(), opGroup.get(0).getId());
+
+	}
+
+
+
+}

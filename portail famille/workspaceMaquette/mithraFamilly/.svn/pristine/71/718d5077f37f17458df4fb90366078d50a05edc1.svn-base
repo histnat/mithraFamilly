@@ -1,0 +1,139 @@
+package com.sonovision.openconv.modules.sgmlprocess;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.PrintStream;
+import java.io.Writer;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.function.Consumer;
+import java.util.stream.Stream;
+
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang3.StringEscapeUtils;
+
+
+//TODO: Doit etre refait pour ne plus faire d'accès disque et avoir une bonne gestion des exceptions
+public class SGMLConverter {
+	
+	
+	
+	public synchronized InputStream runSX(InputStream in) throws IOException
+	{
+		ByteArrayOutputStream out1 = new ByteArrayOutputStream();
+    	String home = System.getProperty("user.dir");
+    	System.out.println(home);
+		File workDir = new File(home+"/sgml/");
+    	if(workDir.exists() && !workDir.isDirectory())
+    	{
+    		workDir = new File(home+"/sgmlDir/");
+    	}
+    	if(!workDir.exists())
+    	{
+    		workDir.mkdir();
+    	}
+		File fileTemp = new File(workDir.getAbsolutePath()+"/xml"+in.toString()+".xml");
+    	File errorTemp = new File(workDir.getAbsolutePath()+"/xml"+in.toString()+".err");
+    	File fileTemp1 = new File(workDir.getAbsolutePath()+"/xml1"+in.toString()+".xml");
+    	File fileTemp2 = new File(workDir.getAbsolutePath()+"/xml2"+in.toString()+".xml");
+    	System.out.println(fileTemp2.getAbsolutePath());
+		    try {
+		    	PrintStream out=new PrintStream(out1);
+		    	
+		    	
+	        	String[] commande = {"D:\\Work\\OpenConv\\Rafale\\sx\\bin\\sx.exe", "-c", "D:\\Work\\OpenConv\\Rafale\\dtd\\NewRafale.cat", "-x","lower"};
+			    FileUtils.copyInputStreamToFile(in, fileTemp1);
+	        	
+	        	ProcessBuilder pb = new ProcessBuilder()
+				        .command(commande)
+				        .redirectError(errorTemp)
+				        .redirectInput(fileTemp1)
+				        .redirectOutput(fileTemp);
+	        	Process p = pb.start();
+				
+	            p.waitFor();
+	            
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	        } 
+		    catch (InterruptedException e) {
+	            e.printStackTrace();
+	        }
+		    
+		    BufferedWriter out = null;
+		    Writer  fw = new OutputStreamWriter(new FileOutputStream(fileTemp2), StandardCharsets.UTF_8);
+		    
+		    
+		    //FileWriter fw= new FileWriter(fileTemp2);
+		    try (Stream<String> stream = Files.lines(Paths.get(fileTemp.getAbsolutePath()))) {
+		    	
+				stream.forEach(x->{
+					try {
+						fw.write(StringEscapeUtils.unescapeHtml4(x).replaceAll("“", "\"").replaceAll("”", "\"").replaceAll("&dash;", "-").replaceAll(" < ", " &lt; ").replaceAll(" < ", " &lt; ").replaceAll(" > ", "&gt;")+"\n");
+						fw.flush();
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				});
+
+			} 
+		    fw.close();
+	    System.out.println("runSX file :"+fileTemp2.getAbsolutePath());
+	        return new FileInputStream(fileTemp2);
+	}
+	
+    
+    private static class StreamWriter implements Runnable {
+        private OutputStream outputStream;
+        private InputStream inputStream;
+     
+        public StreamWriter(OutputStream outputStream, InputStream inputStream) {
+            this.outputStream = outputStream;
+            this.inputStream = inputStream;
+        }
+     
+        @Override
+        public void run() {
+        	try{
+        	 byte[] buffer = new byte[1024]; // Adjust if you want
+        	    int bytesRead;
+        	    while ((bytesRead = inputStream.read(buffer)) != -1)
+        	    {
+        	    	outputStream.write(buffer, 0, bytesRead);
+        	    }
+        	}
+        	catch(IOException e)
+        	{
+        		e.printStackTrace();
+        	}
+        }
+    }
+    
+    private static class StreamGobbler implements Runnable {
+        private InputStream inputStream;
+        private Consumer<String> consumer;
+     
+        public StreamGobbler(InputStream inputStream, Consumer<String> consumer) {
+            this.inputStream = inputStream;
+            this.consumer = consumer;
+        }
+     
+        @Override
+        public void run() {
+            new BufferedReader(new InputStreamReader(inputStream)).lines()
+              .forEach(consumer);
+        }
+    }
+
+}

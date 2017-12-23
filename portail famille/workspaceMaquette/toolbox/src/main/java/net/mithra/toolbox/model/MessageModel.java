@@ -1,0 +1,90 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package net.mithra.toolbox.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ *
+ * @author FRebeche
+ */
+public class MessageModel {
+    
+    public final static int RESULTAT_OK=0;
+    public final static int RESULTAT_PROBLEME_NONBLOCANT=RESULTAT_OK+1;
+    public final static int RESULTAT_NOK=RESULTAT_PROBLEME_NONBLOCANT+1;
+    
+    /**
+     * isOK
+     */
+    private int ok;
+    
+    /**
+     * message
+     */
+    private List<String> messages;
+
+    public MessageModel() {
+        ok = RESULTAT_OK;
+        messages = new ArrayList<String>();
+    }
+
+    public MessageModel(int ok, List<String> message) {
+        this.ok = ok;
+        this.messages = message;
+    }
+
+    public MessageModel(int ok, String string) {
+    	this.ok = ok;
+        this.messages= new ArrayList<String>();
+        messages.add(string);
+	}
+
+	public void addMessage(String message)
+    {
+        this.messages.add(message);
+    }
+    
+    public void addMessage(MessageModel messageModel)
+    {
+    	
+        this.messages.addAll(messageModel.getMessages());
+        this.ok=(messageModel.getOk()>this.ok)?messageModel.getOk():this.ok;
+    }
+    
+    public List<String> getMessages() {
+        return messages;
+    }
+
+    public void setMessages(List<String> message) {
+        this.messages = message;
+    }
+
+    public boolean isOk() {
+        return ok==RESULTAT_OK;
+    }
+    
+    public int getOk() {
+        return ok;
+    }
+
+    public void setOk(boolean ok) {
+        this.ok = (ok?RESULTAT_OK:RESULTAT_NOK);
+    }
+    
+    public void setOk(int ok) {
+        this.ok = ok;
+    }
+
+    @Override
+    public String toString() {
+        return "MessageModel{" + "ok=" + ok + ", messages=" + messages + '}';
+    }
+    
+    
+}

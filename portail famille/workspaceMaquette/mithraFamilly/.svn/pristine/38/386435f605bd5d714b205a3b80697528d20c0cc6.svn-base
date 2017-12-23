@@ -1,0 +1,101 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                           RAFALE                                   *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.2d                           *
+    *                   Dated 12th January 2014                          *
+    *                  M.DOMEON - Dassault-Aviation                      *
+    *                                                                    *
+    * Amendment :-                                                       *
+    * 1. Reference new component definition public identifier.           *
+    * 2. Delete prelreqs entity call                                     *
+    * 3. Add extident entity call                                        *
+    *                                                                    *
+    *                                                                    *
+    * 98/12/22   update comps public identifier                          *
+    * 03/01/12   update comps public identifier                          *
+    * 04/01/12   update comps public identifier                          *
+    * 04/09/29   update comps public identifier                          *
+    * 14/01/12   update comps public identifier                          *
+    *                                                                    *
+    * The following DOCTYPE statement may be used to call this set of    *
+    * declarations:-                                                     *
+    *                                                                    *
+    * <!DOCTYPE dmodule PUBLIC                                           *
+    *"-//RAFALE CSDB//DTD Aircraft Ground Equipment Schedule Information 140112//EN" []> *
+    ********************************************************************** -->
+
+
+
+<!--**********************************************************************
+    * Define Entity %COMPS; (Components) containing:- the formal public  *
+    * identifier for the component definitions.                          *
+    ********************************************************************** -->
+
+<!ENTITY % COMPS
+ PUBLIC "-//RAFALE//ENTITIES Component Definitions 140112//EN" 
+>
+
+
+
+<!--**********************************************************************
+    * Call the Components Definition Public Text. The formal public      *
+    * identifier is stored in the entity %COMPS;                         *
+    ********************************************************************** -->
+
+%COMPS;
+
+
+
+<!--**********************************************************************
+    * Call the Aircraft Ground Equipment Specific Public Text.           *
+    * The formal public identifier is stored in the entity %AGE;         *
+    ********************************************************************** -->
+
+%AGE;
+
+
+
+<!--**********************************************************************
+    * Call the AECMA Configuration Public Text.                          *
+    * The formal public identifier is stored in the entity %AECMA;       *
+    ********************************************************************** -->
+
+%AECMA;
+
+
+
+<!--**********************************************************************
+    * Call the AECMA Base DTD Public Text. The formal public identifier  *
+    * is stored in the entity %BASE;                                     *
+    ********************************************************************** -->
+
+%BASE;
+
+
+                        
+<!--**********************************************************************
+    * Call the Ident DTD Public Text. The formal public identifier       *
+    * is stored in the entity %IDENT;                                   *
+    ********************************************************************** -->
+
+%EXTIDENT; 
+
+
+
+<!--**********************************************************************
+    * Call the Schedule information Content Public Text.                 *
+    * The formal public identifier is stored in the entity %SCHED;       *
+    ********************************************************************** -->
+
+%SCHED;
+
+
+<!--**********************************************************************
+    * Call the Content Breakdown Public Text. The formal public          *
+    * identifier is stored in the entity %EXTCONT;                       *
+    ********************************************************************** -->
+
+%EXTCONT;
+

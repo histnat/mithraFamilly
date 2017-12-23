@@ -1,0 +1,1063 @@
+
+
+<!DOCTYPE DMODULE [
+<!ENTITY % ALLDMC  "(age | avee | ipcc | ipcn)" >
+
+<!ENTITY % APPLIC  "(applic)" >
+
+<!ENTITY % BODYATT  "id ID #IMPLIED
+   change (add | mod) #IMPLIED" >
+
+<!ENTITY % CONTENT  "schedule" >
+
+<!ENTITY % DMC  "avee" >
+
+<!ENTITY % ICN  "icn-c | icn-n" >
+
+<!ENTITY % IDENT  "(refipc|ident)" >
+
+<!ENTITY % INSDEL  "change (add | mod) #IMPLIED" >
+
+<!ENTITY % LIST  "(list | deflist | proclist)" >
+
+<!ENTITY % REF  
+               "dmcref | figref  | tabref | supplref | supeqref | miscref | 
+    	  	refipc | reporg | xref | listref | tpubref " >
+
+<!ENTITY % RPCNAME  "(A|B|C|D|E|F|G|H|I|J|L|M|N|P|R|S|T|U|W|X)" >
+
+<!ENTITY % SECUR  " class  (1 | 2 | 3 | 4)  #REQUIRED " >
+
+<!ENTITY % SECURIT  " class  (NP | DR | CD )  #REQUIRED " >
+
+<!ENTITY % STATUS  
+               "security,dmsize?,rpc,orig,(applic),techstd,qa,rfu,remarks,icns?" >
+
+<!ENTITY % TEXT  
+               "(#PCDATA | dmcref | figref  | tabref | supplref | supeqref | miscref | 
+    	  	refipc | reporg | xref | listref | tpubref   | indxflag | emphasis  
+                          | symbol | subscrpt | supscrpt  )" >
+
+<!ENTITY % YESORNO  "NUMBER" >
+
+<!ELEMENT DMODULE  - - (IDSTATUS,CONTENT) >
+
+<!ELEMENT IDSTATUS  - O (DMADDRES,STATUS) >
+
+<!ELEMENT CONTENT  - O (REFS,SCHEDULE) >
+
+<!ELEMENT DMADDRES  - O (DMC,DMTITLE,ISSNO,ISSDATE) >
+
+<!ELEMENT STATUS  - O (SECURITY,DMSIZE?,RPC,ORIG,APPLIC,TECHSTD,QA,RFU,REMARKS,ICNS?) >
+
+<!ELEMENT REFS  - O (NOREFS | RDANDRT | REFDM | REFTP) >
+
+<!ATTLIST REFS
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!ELEMENT SCHEDULE  - O (DEFINSPEC+ | DEFTASK+ | TIMELIM+) >
+
+<!ATTLIST SCHEDULE
+               TYPE  CDATA    #IMPLIED  >
+
+<!ELEMENT DMC  - O (AVEE) >
+
+<!ELEMENT DMTITLE  - O (TECHNAME,INFONAME) >
+
+<!ELEMENT ISSNO  - O  EMPTY  >
+
+<!ATTLIST ISSNO
+               ISSNO  NUMBER    #REQUIRED 
+               TYPE (N | C | D | R | S | T)  "N" >
+
+<!ELEMENT ISSDATE  - O  EMPTY  >
+
+<!ATTLIST ISSDATE
+               YEAR  NUMBER    #REQUIRED 
+               MONTH  NUMBER    #REQUIRED 
+               DAY  NUMBER    #REQUIRED  >
+
+<!ELEMENT SECURITY  - O  EMPTY  >
+
+<!ATTLIST SECURITY
+               CLASS (NP | DR | CD)   #REQUIRED  >
+
+<!ELEMENT DMSIZE  - O (#PCDATA) >
+
+<!ELEMENT RPC  - O  EMPTY  >
+
+<!ATTLIST RPC
+               RPCNAME (A | B | C | D | E | F | G | H | I | J | L | M | N | P | R | 
+               S | T | U | W | X)   #REQUIRED  >
+
+<!ELEMENT ORIG  - O (#PCDATA) >
+
+<!ELEMENT APPLIC  - O (SYSTEMID?,CONFIG?,SWPROG?) >
+
+<!ATTLIST APPLIC
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!ELEMENT TECHSTD  - O (TPBASE) >
+
+<!ELEMENT QA  - O ((UNVERIF | (UNITARY?,CONTEXT?)),RECEPTION?) >
+
+<!ELEMENT RFU  - O (#PCDATA) >
+
+<!ELEMENT REMARKS  - O (#PCDATA) >
+
+<!ELEMENT ICNS  - O (ICN+) >
+
+<!ELEMENT NOREFS  - O  EMPTY  >
+
+<!ATTLIST NOREFS
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!ELEMENT RDANDRT  - O (REFDM,REFTP) >
+
+<!ATTLIST RDANDRT
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!ELEMENT REFDM  - - (DMCID+) >
+
+<!ATTLIST REFDM
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!ELEMENT REFTP  - - (TECHPUB+) >
+
+<!ATTLIST REFTP
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!ELEMENT DEFINSPEC  - O (APPLIC?,TITLE?,INSPECTION,TASKLIST?) >
+
+<!ATTLIST DEFINSPEC
+               TYPE  ID    #REQUIRED  >
+
+<!ELEMENT DEFTASK  - O (APPLIC?,DMCREF,NTI?,EQUIP*,SUPERVIS?,LIMIT*) >
+
+<!ATTLIST DEFTASK
+               TASKID  CDATA    #REQUIRED 
+               AIRWORTHLIM (RECOMMENDED | MANDATORY | NONE)   #IMPLIED 
+               REDUCEM  CDATA    #IMPLIED 
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!ELEMENT TIMELIM  - O (EQUIP,TIMELIMIT+,DMCREF?) >
+
+<!ATTLIST TIMELIM
+               IDENTIFIER  CDATA    #REQUIRED 
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!ELEMENT AVEE  - O (MODELIC,SDC,CHAPNUM,SECTION,SUBSECT,SUBJECT,DISCODE,DISCODEV,
+               INCODE,INCODEV,ITEMLOC) >
+
+<!ELEMENT TECHNAME  - O (#PCDATA) >
+
+<!ELEMENT INFONAME  - O (#PCDATA) >
+
+<!ELEMENT SYSTEMID  - O (VERSION*,(MANUFACT,(PARTNO,SERIALNB*)*)*,STD?,CUSTOMER?,
+               NTI?) >
+
+<!ATTLIST SYSTEMID
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!ELEMENT CONFIG  - O (MOD*,SB*) >
+
+<!ATTLIST CONFIG
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!ELEMENT SWPROG  - O (#PCDATA) >
+
+<!ATTLIST SWPROG
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!ELEMENT TPBASE  - O (#PCDATA) >
+
+<!ELEMENT UNVERIF  - O  EMPTY  >
+
+<!ELEMENT UNITARY  - O  EMPTY  >
+
+<!ELEMENT CONTEXT  - O  EMPTY  >
+
+<!ELEMENT RECEPTION  - O  EMPTY  >
+
+<!ATTLIST RECEPTION
+               RECEPT  NUMBER   "0"
+               RECEPTDATE  NUMBER    #IMPLIED 
+               APPROV  NUMBER   "0"
+               APPROVDATE  NUMBER    #IMPLIED 
+               AUTHOAPPROV  CDATA    #IMPLIED  >
+
+<!ELEMENT ICN  - O ((ICN-C | ICN-N),HOTSPOT*) >
+
+<!ATTLIST ICN
+               ID  ID    #IMPLIED  >
+
+<!ELEMENT DMCID  - - (((AGE | AVEE | IPCC | IPCN),ISSNO?,DMTITLE?) | DMCOPEN) >
+
+<!ATTLIST DMCID
+               ID  ID    #IMPLIED 
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!ELEMENT TECHPUB  - - (TPCODE,TPTITLE) >
+
+<!ATTLIST TECHPUB
+               ID  ID    #IMPLIED 
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!ELEMENT TITLE  - - (#PCDATA | DMCREF | FIGREF | TABREF | SUPPLREF | SUPEQREF | 
+               MISCREF | REFIPC | REPORG | XREF | LISTREF | TPUBREF | INDXFLAG | 
+               EMPHASIS | SYMBOL | SUBSCRPT | SUPSCRPT)+ >
+
+<!ATTLIST TITLE
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!ELEMENT INSPECTION  - O (LIMIT*,REMARKS*) >
+
+<!ATTLIST INSPECTION
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!ELEMENT TASKLIST  - O (TASKITEM+) >
+
+<!ELEMENT DMCREF  - O  EMPTY  >
+
+<!ATTLIST DMCREF
+               CHANGE (ADD | MOD)   #IMPLIED 
+               XREFID  IDREF    #REQUIRED  >
+
+<!ELEMENT NTI  - O  EMPTY  >
+
+<!ATTLIST NTI
+               NTI1  NUMBER    #IMPLIED 
+               NTI2  NUMBER    #IMPLIED 
+               NTI3  NUMBER    #IMPLIED 
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!ELEMENT EQUIP  - O (APPLIC?,REPORG?,(REFIPC | IDENT),NOMEN?) >
+
+<!ATTLIST EQUIP
+               ID  ID    #IMPLIED 
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!ELEMENT SUPERVIS  - O  EMPTY  >
+
+<!ATTLIST SUPERVIS
+               SUP.LEV (1 | 2 | 3 | 4)   #IMPLIED 
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!ELEMENT LIMIT  - O (APPLIC?,SAMPLING?,THRESHOLD*,REFINSPEC*,TRIGGER*,LIMRANGE?,
+               REMARKS*) >
+
+<!ATTLIST LIMIT
+               TYPEX (PO | EV | PE)  "PE"
+               CONDITION  CDATA    #IMPLIED 
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!ELEMENT TIMELIMIT  - O (LIMITTYPE+ | REMARKS*) >
+
+<!ELEMENT MODELIC  - O (#PCDATA) >
+
+<!ELEMENT SDC  - O (#PCDATA) >
+
+<!ELEMENT CHAPNUM  - O (#PCDATA) >
+
+<!ELEMENT SECTION  - O (#PCDATA) >
+
+<!ELEMENT SUBSECT  - O (#PCDATA) >
+
+<!ELEMENT SUBJECT  - O (#PCDATA) >
+
+<!ELEMENT DISCODE  - O (#PCDATA) >
+
+<!ELEMENT DISCODEV  - O (#PCDATA) >
+
+<!ELEMENT INCODE  - O (#PCDATA) >
+
+<!ELEMENT INCODEV  - O (#PCDATA) >
+
+<!ELEMENT ITEMLOC  - O (#PCDATA) >
+
+<!ELEMENT VERSION  - O (VERSRANK*) >
+
+<!ATTLIST VERSION
+               VERSION  CDATA    #REQUIRED 
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!ELEMENT MANUFACT  - -  CDATA  >
+
+<!ATTLIST MANUFACT
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!ELEMENT PARTNO  - -  CDATA  >
+
+<!ATTLIST PARTNO
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!ELEMENT SERIALNB  - O (SINGLE | RANGE)+ >
+
+<!ELEMENT STD  - O (STANDARD+) >
+
+<!ELEMENT CUSTOMER  - O  EMPTY  >
+
+<!ATTLIST CUSTOMER
+               AAF  NUMBER    #IMPLIED 
+               ANF  NUMBER    #IMPLIED 
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!ELEMENT MOD  - O  EMPTY  >
+
+<!ATTLIST MOD
+               CHANGE (ADD | MOD)   #IMPLIED 
+               MODNB  NMTOKEN    #REQUIRED 
+               MODCOND (PRE | POST)   #REQUIRED  >
+
+<!ELEMENT SB  - O ((AGE | AVEE | IPCC | IPCN),ISSNO?,DMTITLE?) >
+
+<!ATTLIST SB
+               CHANGE (ADD | MOD)   #IMPLIED 
+               SBCOND (PRE | POST)   #REQUIRED  >
+
+<!ELEMENT ICN-C  - O (MODELIC,SDC,CHAPNUM,SECTION,SUBSECT,SUBJECT,RPC,ORIG,ILLNUM,
+               ILLVER,ILLUPDAT,SECUR) >
+
+<!ATTLIST ICN-C
+               ID  ID    #IMPLIED  >
+
+<!ELEMENT ICN-N  - O (MODELIC,SDC,FIXZZ,ENDIPPN,RPC,ORIG,ILLNUM,ILLVER,ILLUPDAT,
+               SECUR) >
+
+<!ATTLIST ICN-N
+               ID  ID    #IMPLIED  >
+
+<!ELEMENT HOTSPOT  - O (LINK*) >
+
+<!ATTLIST HOTSPOT
+               XTGT  NUMBER    #REQUIRED 
+               YTGT  NUMBER    #REQUIRED 
+               WTGT  NUMBER    #REQUIRED 
+               HTGT  NUMBER    #REQUIRED 
+               ID  ID    #IMPLIED  >
+
+<!ELEMENT AGE  - O (MODELIC,SUPEQVC,ECSCC,EIDC,CIC,DISCODE,DISCODEV,INCODE,INCODEV,
+               ITEMLOC) >
+
+<!ELEMENT IPCC  - O (MODELIC,SDC,CHAPNUM,SECTION,SUBSECT,SUBJECT,FIG,FIGV,INCODE,
+               INCODEV,ITEMLOC) >
+
+<!ELEMENT IPCN  - O (MODELIC,SDC,FIXZ,RPC,ENDIPPN,FIG,FIGV,INCODE,INCODEV,ITEMLOC) >
+
+<!ELEMENT DMCOPEN  - - (#PCDATA) >
+
+<!ATTLIST DMCOPEN
+               DMCO  CDATA    #IMPLIED 
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!ELEMENT TPCODE  - - (#PCDATA) >
+
+<!ATTLIST TPCODE
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!ELEMENT TPTITLE  - - (#PCDATA) >
+
+<!ATTLIST TPTITLE
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!ELEMENT FIGREF  - O  EMPTY  >
+
+<!ATTLIST FIGREF
+               CHANGE (ADD | MOD)   #IMPLIED 
+               REFID  IDREF    #REQUIRED 
+               SHEETNO  NUMBER    #IMPLIED 
+               TARGET  IDREF    #IMPLIED 
+               REPNOHOT  CDATA    #IMPLIED  >
+
+<!ELEMENT TABREF  - O  EMPTY  >
+
+<!ATTLIST TABREF
+               CHANGE (ADD | MOD)   #IMPLIED 
+               REFID  IDREF    #REQUIRED  >
+
+<!ELEMENT SUPPLREF  - O  EMPTY  >
+
+<!ATTLIST SUPPLREF
+               CHANGE (ADD | MOD)   #IMPLIED 
+               REFID  IDREF    #REQUIRED  >
+
+<!ELEMENT SUPEQREF  - O  EMPTY  >
+
+<!ATTLIST SUPEQREF
+               CHANGE (ADD | MOD)   #IMPLIED 
+               REFID  IDREF    #REQUIRED  >
+
+<!ELEMENT MISCREF  - O  EMPTY  >
+
+<!ATTLIST MISCREF
+               CHANGE (ADD | MOD)   #IMPLIED 
+               REFID  IDREF    #REQUIRED  >
+
+<!ELEMENT REFIPC  - O  EMPTY  >
+
+<!ATTLIST REFIPC
+               CHANGE (ADD | MOD)   #IMPLIED 
+               RPCNAME (A | B | C | D | E | F | G | H | I | J | L | M | N | P | R | 
+               S | T | U | W | X)   #IMPLIED 
+               IPPN  CDATA    #IMPLIED 
+               CSN  CDATA    #REQUIRED 
+               ISN  CDATA    #IMPLIED  >
+
+<!ELEMENT REPORG  - O  EMPTY  >
+
+<!ATTLIST REPORG
+               RPCNAME (A | B | C | D | E | F | G | H | I | J | L | M | N | P | R | 
+               S | T | U | W | X)   #IMPLIED 
+               REG  CDATA    #REQUIRED 
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!ELEMENT XREF  - O  EMPTY  >
+
+<!ATTLIST XREF
+               XREFID  IDREF    #REQUIRED 
+               PRETEXT  CDATA    #IMPLIED 
+               POSTTEXT  CDATA    #IMPLIED  >
+
+<!ELEMENT LISTREF  - O  EMPTY  >
+
+<!ATTLIST LISTREF
+               CHANGE (ADD | MOD)   #IMPLIED 
+               REFID  IDREF    #REQUIRED  >
+
+<!ELEMENT TPUBREF  - O  EMPTY  >
+
+<!ATTLIST TPUBREF
+               CHANGE (ADD | MOD)   #IMPLIED 
+               XREFID  IDREF    #REQUIRED  >
+
+<!ELEMENT INDXFLAG  - O  EMPTY  >
+
+<!ATTLIST INDXFLAG
+               CHANGE (ADD | MOD)   #IMPLIED 
+               REF1  CDATA    #IMPLIED 
+               REF2  CDATA    #IMPLIED 
+               REF3  CDATA    #IMPLIED 
+               REF4  CDATA    #IMPLIED  >
+
+<!ELEMENT EMPHASIS  - - (#PCDATA | DMCREF | FIGREF | TABREF | SUPPLREF | SUPEQREF | 
+               MISCREF | REFIPC | REPORG | XREF | LISTREF | TPUBREF | INDXFLAG | 
+               EMPHASIS | SYMBOL | SUBSCRPT | SUPSCRPT)+ >
+
+<!ATTLIST EMPHASIS
+               CHANGE (ADD | MOD)   #IMPLIED 
+               BOLD  NUMBER    #IMPLIED 
+               ITALIC  NUMBER    #IMPLIED 
+               UNDERSCR  NUMBER    #IMPLIED 
+               CASE (UPPER | LOWER | SAME)  "SAME"
+               COLOR (NONE | AMBER | BLUE | GREEN | RED | YELLOW | MAGENTA)  "NONE"
+                >
+
+<!ELEMENT SYMBOL  - O  EMPTY  >
+
+<!ATTLIST SYMBOL
+               CHANGE (ADD | MOD)   #IMPLIED 
+               CALLICN  ENTITY   #REQUIRED 
+               REPROWID  NUTOKEN    #IMPLIED 
+               REPRODEP  NUTOKEN    #IMPLIED 
+               HSCALE  NUTOKEN    #IMPLIED 
+               VSCALE  NUTOKEN    #IMPLIED 
+               SCALEFIT  NUMBER    #IMPLIED 
+               OFFSET  NMTOKEN    #IMPLIED 
+               ROTATION  NUMBER    #IMPLIED  >
+
+<!ELEMENT SUBSCRPT  - -  RCDATA  >
+
+<!ATTLIST SUBSCRPT
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!ELEMENT SUPSCRPT  - -  RCDATA  >
+
+<!ATTLIST SUPSCRPT
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!ELEMENT TASKITEM  - O (APPLIC?,DMCREF) >
+
+<!ATTLIST TASKITEM
+               SEQNUM  CDATA    #REQUIRED 
+               TASKID  CDATA    #REQUIRED  >
+
+<!ELEMENT IDENT  - - (MANUFACT,PARTNO) >
+
+<!ATTLIST IDENT
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!ELEMENT NOMEN  - - (#PCDATA) >
+
+<!ATTLIST NOMEN
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!ELEMENT SAMPLING  - O (#PCDATA) >
+
+<!ELEMENT THRESHOLD  - O (VALUE,UOM?,TOLERANCE?) >
+
+<!ELEMENT REFINSPEC  - O  EMPTY  >
+
+<!ATTLIST REFINSPEC
+               INSPTYPE  CDATA    #REQUIRED 
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!ELEMENT TRIGGER  - O (DMCREF | THRESHOLD | REFINSPEC) >
+
+<!ATTLIST TRIGGER
+               RELEASE (BEFORE | WITH | AFTER)   #IMPLIED 
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!ELEMENT LIMRANGE  - O (LIMFROM,LIMTO?) >
+
+<!ELEMENT LIMITTYPE  - O (THRESHOLD+,REMARKS*) >
+
+<!ATTLIST LIMITTYPE
+               TYPE (TBO | HT | SLM | OTL | OC | CM | FC)   #IMPLIED 
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!ELEMENT VERSRANK  - O (SINGLE | RANGE)+ >
+
+<!ELEMENT SINGLE  - O  EMPTY  >
+
+<!ATTLIST SINGLE
+               RANK  CDATA    #REQUIRED  >
+
+<!ELEMENT RANGE  - O  EMPTY  >
+
+<!ATTLIST RANGE
+               FROM  CDATA    #REQUIRED 
+               TO  CDATA    #REQUIRED  >
+
+<!ELEMENT STANDARD  - O (#PCDATA) >
+
+<!ATTLIST STANDARD
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!ELEMENT ILLNUM  - O (#PCDATA) >
+
+<!ELEMENT ILLVER  - O (#PCDATA) >
+
+<!ELEMENT ILLUPDAT  - O (#PCDATA) >
+
+<!ELEMENT SECUR  - O  EMPTY  >
+
+<!ATTLIST SECUR
+               CLASS (1 | 2 | 3 | 4)   #REQUIRED  >
+
+<!ELEMENT FIXZZ  - O  EMPTY  >
+
+<!ATTLIST FIXZZ
+               FIXZZ (ZZ)  "ZZ" >
+
+<!ELEMENT ENDIPPN  - O (#PCDATA) >
+
+<!ELEMENT LINK  - O (LIBELLE?,CIBLE) >
+
+<!ATTLIST LINK
+               ROLE  NUMBER    #IMPLIED  >
+
+<!ELEMENT SUPEQVC  - O (#PCDATA) >
+
+<!ELEMENT ECSCC  - O (#PCDATA) >
+
+<!ELEMENT EIDC  - O (#PCDATA) >
+
+<!ELEMENT CIC  - O (#PCDATA) >
+
+<!ELEMENT FIG  - O (#PCDATA) >
+
+<!ELEMENT FIGV  - O (#PCDATA) >
+
+<!ELEMENT FIXZ  - O  EMPTY  >
+
+<!ATTLIST FIXZ
+               FIXZ (Z)  "Z" >
+
+<!ELEMENT VALUE  - O (#PCDATA) >
+
+<!ELEMENT UOM  - - (#PCDATA) >
+
+<!ATTLIST UOM
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!ELEMENT TOLERANCE  - O  EMPTY  >
+
+<!ATTLIST TOLERANCE
+               MINUS  NUMBER    #IMPLIED 
+               PLUS  NUMBER    #IMPLIED  >
+
+<!ELEMENT LIMFROM  - O (THRESHOLD) >
+
+<!ELEMENT LIMTO  - O (THRESHOLD) >
+
+<!ELEMENT LIBELLE  - O (#PCDATA) >
+
+<!ELEMENT CIBLE  - O (XREF | FIGREF | DMCREF) >
+
+<!NOTATION CGM PUBLIC "-//USA-DOD//NOTATION Computer Graphics Metafile//EN" >
+
+<!NOTATION TIFF PUBLIC "+//ISBN 0-7923-9432-1::Graphic Notation//NOTATION Aldus/Microsoft Tagged Interchange File Format//EN" >
+
+<!NOTATION JPEG PUBLIC "+//ISBN 0-7923-9432-1::Graphic Notation//NOTATION Joint Photographic Experts Group Raster//EN" >
+
+<!ENTITY % AECMA   PUBLIC "-//RAFALE//ENTITIES AECMA Configuration 971001//EN"    >
+
+<!ENTITY % AFR   PUBLIC "-//RAFALE//ELEMENTS Aircraft Fault Reporting 981222//EN"    >
+
+<!ENTITY % AGE   PUBLIC "-//RAFALE//ENTITIES Aircraft Ground Equipment 971001//EN"    >
+
+<!ENTITY % AIRCREW   PUBLIC "-//RAFALE//ELEMENTS AirCrew Breakdown 980115//EN"    >
+
+<!ENTITY % AVEE   PUBLIC 
+               "-//RAFALE//ENTITIES Air Vehicle Engines Equipment 971001//EN"    >
+
+<!ENTITY % BASE   PUBLIC "-//RAFALE//ELEMENTS AECMA Base DTD 971001//EN"    >
+
+<!ENTITY % COMMON   PUBLIC "-//RAFALE//ENTITIES Common Entities 981222//EN"    >
+
+<!ENTITY % COMPS   PUBLIC "-//RAFALE//ENTITIES Component Definitions 981222//EN"    >
+
+<!ENTITY % DESCRPT   PUBLIC "-//RAFALE//ELEMENTS Description Breakdown 980115//EN"    >
+
+<!ENTITY % EXTAPPL   PUBLIC 
+               "-//RAFALE//ELEMENTS Applicability Breakdown 980115//EN"    >
+
+<!ENTITY % EXTCONT   PUBLIC "-//RAFALE//ELEMENTS Content Breakdown 980115//EN"    >
+
+<!ENTITY % EXTDMC   PUBLIC 
+               "-//RAFALE//ELEMENTS Data Module Code Breakdown 981222//EN"    >
+
+<!ENTITY % EXTFIG   PUBLIC "-//RAFALE//ELEMENTS Figure Breakdown 980115//EN"    >
+
+<!ENTITY % EXTIDENT   PUBLIC 
+               "-//RAFALE//ELEMENTS Equipment identification 980115//EN"    >
+
+<!ENTITY % EXTLIST   PUBLIC "-//RAFALE//ELEMENTS Lists Breakdown 971001//EN"    >
+
+<!ENTITY % EXTPARA   PUBLIC 
+               "-//RAFALE//ELEMENTS Numbered Paragraphs Breakdown 980115//EN"    >
+
+<!ENTITY % EXTSPEC   PUBLIC 
+               "-//RAFALE//ELEMENTS Special Paragraphs Breakdown 971001//EN"    >
+
+<!ENTITY % EXTSTAT   PUBLIC "-//RAFALE//ELEMENTS Status Breakdown 980115//EN"    >
+
+<!ENTITY % EXTSTEP   PUBLIC "-//RAFALE//ELEMENTS Steps Breakdown 971001//EN"    >
+
+<!ENTITY % EXTTAB   PUBLIC "-//RAFALE//ELEMENTS Table Breakdown 980115//EN"    >
+
+<!ENTITY % IPC   PUBLIC "-//RAFALE//ELEMENTS Illustrated Parts Catalog 981222//EN"    >
+
+<!ENTITY % IPCC   PUBLIC "-//RAFALE//ENTITIES Chapterized IPC 971001//EN"    >
+
+<!ENTITY % IPCN   PUBLIC "-//RAFALE//ENTITIES Non chapterized IPC 971001//EN"    >
+
+<!ENTITY % ISOGRK3   PUBLIC "ISO 8879-1986//ENTITIES Greek Symbols//EN"    >
+
+<!ENTITY % ISOLAT1   PUBLIC "ISO 8879-1986//ENTITIES Added Latin 1//EN"    >
+
+<!ENTITY % ISONUM   PUBLIC 
+               "ISO 8879-1986//ENTITIES Numeric and Special Graphic//EN"    >
+
+<!ENTITY % ISOPUB   PUBLIC "ISO 8879-1986//ENTITIES Publishing//EN"    >
+
+<!ENTITY % ISOTECH   PUBLIC "ISO 8879-1986//ENTITIES General Technical//EN"    >
+
+<!ENTITY % PRELREQS   PUBLIC 
+               "-//RAFALE//ELEMENTS Preliminary requirements 981222//EN"    >
+
+<!ENTITY % PROCED   PUBLIC "-//RAFALE//ELEMENTS Procedural Breakdown 980115//EN"    >
+
+<!ENTITY % SCHED   PUBLIC "-//RAFALE//ELEMENTS Schedule information 981222//EN"    >
+
+<!ENTITY % TO   PUBLIC "-//RAFALE//ELEMENTS Tableau organes 981222//EN"    >
+
+<!ENTITY % WIRING   PUBLIC "-//RAFALE//ELEMENTS Wiring 981222//EN"    >
+
+  <!--  (C)  International   Organization   for   Standardization   1986
+    Permission to copy in any form is granted for use with conforming SGML
+    systems and applications as defined in ISO 8879, provided this  notice
+    is included in all copies.  -->
+
+    <!-- Character entity set. Typical invocation:
+
+    <!ENTITY % ISOgrk3 PUBLIC "ISO 8879-1986//ENTITIES Greek Symbols//EN">
+    %ISOgrk3;
+    -->
+
+    <!ENTITY alpha    SDATA "[alpha ]"--=small alpha, Greek-->
+    <!ENTITY beta     SDATA "[beta  ]"--=small beta, Greek-->
+    <!ENTITY gamma    SDATA "[gamma ]"--=small gamma, Greek-->
+    <!ENTITY Gamma    SDATA "[Gamma ]"--=capital Gamma, Greek-->
+    <!ENTITY gammad   SDATA "[gammad]"--/digamma-->
+    <!ENTITY delta    SDATA "[delta ]"--=small delta, Greek-->
+    <!ENTITY Delta    SDATA "[Delta ]"--=capital Delta, Greek-->
+    <!ENTITY epsi     SDATA "[epsi  ]"--=small epsilon, Greek-->
+    <!ENTITY epsiv    SDATA "[epsiv ]"--/varepsilon-->
+    <!ENTITY epsis    SDATA "[epsis ]"--/straightepsilon-->
+    <!ENTITY zeta     SDATA "[zeta  ]"--=small zeta, Greek-->
+    <!ENTITY eta      SDATA "[eta   ]"--=small eta, Greek-->
+    <!ENTITY thetas   SDATA "[thetas]"--straight theta-->
+     <!ENTITY Theta    SDATA "[Theta ]"--=capital Theta, Greek-->
+     <!ENTITY thetav   SDATA "[thetav]"--/vartheta - curly or open theta-->
+     <!ENTITY iota     SDATA "[iota  ]"--=small iota, Greek-->
+     <!ENTITY kappa    SDATA "[kappa ]"--=small kappa, Greek-->
+     <!ENTITY kappav   SDATA "[kappav]"--/varkappa-->
+     <!ENTITY lambda   SDATA "[lambda]"--=small lambda, Greek-->
+     <!ENTITY Lambda   SDATA "[Lambda]"--=capital Lambda, Greek-->
+     <!ENTITY mu       SDATA "[mu    ]"--=small mu, Greek-->
+     <!ENTITY nu       SDATA "[nu    ]"--=small nu, Greek-->
+     <!ENTITY xi       SDATA "[xi    ]"--=small xi, Greek-->
+     <!ENTITY Xi       SDATA "[Xi    ]"--=capital Xi, Greek-->
+     <!ENTITY pi       SDATA "[pi    ]"--=small pi, Greek-->
+     <!ENTITY piv      SDATA "[piv   ]"--/varpi-->
+     <!ENTITY Pi       SDATA "[Pi    ]"--=capital Pi, Greek-->
+     <!ENTITY rho      SDATA "[rho   ]"--=small rho, Greek-->
+     <!ENTITY rhov     SDATA "[rhov  ]"--/varrho-->
+     <!ENTITY sigma    SDATA "[sigma ]"--=small sigma, Greek-->
+     <!ENTITY Sigma    SDATA "[Sigma ]"--=capital Sigma, Greek-->
+     <!ENTITY sigmav   SDATA "[sigmav]"--/varsigma-->
+     <!ENTITY tau      SDATA "[tau   ]"--=small tau, Greek-->
+     <!ENTITY upsi     SDATA "[upsi  ]"--=small upsilon, Greek-->
+     <!ENTITY Upsi     SDATA "[Upsi  ]"--=capital Upsilon, Greek-->
+     <!ENTITY phis     SDATA "[phis  ]"--/straightphi - straight phi-->
+     <!ENTITY Phi      SDATA "[Phi   ]"--=capital Phi, Greek-->
+     <!ENTITY phiv     SDATA "[phiv  ]"--/varphi - curly or open phi-->
+     <!ENTITY chi      SDATA "[chi   ]"--=small chi, Greek-->
+     <!ENTITY psi      SDATA "[psi   ]"--=small psi, Greek-->
+     <!ENTITY Psi      SDATA "[Psi   ]"--=capital Psi, Greek-->
+     <!ENTITY omega    SDATA "[omega ]"--=small omega, Greek-->
+     <!ENTITY Omega    SDATA "[Omega ]"--=capital Omega, Greek-->
+     <!--  (C)  International   Organization   for   Standardization   1986
+     Permission to copy in any form is granted for use with conforming SGML
+     systems and applications as defined in ISO 8879, provided this  notice
+     is included in all copies.  -->
+
+     <!-- Character entity set. Typical invocation:
+
+     <!ENTITY % ISOlat1 PUBLIC "ISO 8879-1986//ENTITIES Added Latin 1//EN">
+     %ISOlat1;
+     -->
+
+     <!ENTITY aacute SDATA "[aacute]"--=small a, acute accent-->
+     <!ENTITY Aacute SDATA "[Aacute]"--=capital A, acute accent-->
+     <!ENTITY acirc  SDATA "[acirc ]"--=small a, circumflex accent-->
+     <!ENTITY Acirc  SDATA "[Acirc ]"--=capital A, circumflex accent-->
+     <!ENTITY agrave SDATA "[agrave]"--=small a, grave accent-->
+     <!ENTITY Agrave SDATA "[Agrave]"--=capital A, grave accent-->
+     <!ENTITY aring  SDATA "[aring ]"--=small a, ring-->
+     <!ENTITY Aring  SDATA "[Aring ]"--=capital A, ring-->
+     <!ENTITY atilde SDATA "[atilde]"--=small a, tilde-->
+     <!ENTITY Atilde SDATA "[Atilde]"--=capital A, tilde-->
+     <!ENTITY auml   SDATA "[auml  ]"--=small a, dieresis or umlaut mark-->
+     <!ENTITY Auml   SDATA "[Auml  ]"--=capital A, dieresis or umlaut mark-->
+     <!ENTITY aelig  SDATA "[aelig ]"--=small ae diphthong (ligature)-->
+     <!ENTITY AElig  SDATA "[AElig ]"--=capital AE diphthong (ligature)-->
+     <!ENTITY ccedil SDATA "[ccedil]"--=small c, cedilla-->
+     <!ENTITY Ccedil SDATA "[Ccedil]"--=capital C, cedilla-->
+     <!ENTITY eth    SDATA "[eth   ]"--=small eth, Icelandic-->
+     <!ENTITY ETH    SDATA "[ETH   ]"--=capital Eth, Icelandic-->
+     <!ENTITY eacute SDATA "[eacute]"--=small e, acute accent-->
+     <!ENTITY Eacute SDATA "[Eacute]"--=capital E, acute accent-->
+     <!ENTITY ecirc  SDATA "[ecirc ]"--=small e, circumflex accent-->
+     <!ENTITY Ecirc  SDATA "[Ecirc ]"--=capital E, circumflex accent-->
+     <!ENTITY egrave SDATA "[egrave]"--=small e, grave accent-->
+     <!ENTITY Egrave SDATA "[Egrave]"--=capital E, grave accent-->
+     <!ENTITY euml   SDATA "[euml  ]"--=small e, dieresis or umlaut mark-->
+     <!ENTITY Euml   SDATA "[Euml  ]"--=capital E, dieresis or umlaut mark-->
+     <!ENTITY iacute SDATA "[iacute]"--=small i, acute accent-->
+     <!ENTITY Iacute SDATA "[Iacute]"--=capital I, acute accent-->
+     <!ENTITY icirc  SDATA "[icirc ]"--=small i, circumflex accent-->
+     <!ENTITY Icirc  SDATA "[Icirc ]"--=capital I, circumflex accent-->
+     <!ENTITY igrave SDATA "[igrave]"--=small i, grave accent-->
+     <!ENTITY Igrave SDATA "[Igrave]"--=capital I, grave accent-->
+     <!ENTITY iuml   SDATA "[iuml  ]"--=small i, dieresis or umlaut mark-->
+     <!ENTITY Iuml   SDATA "[Iuml  ]"--=capital I, dieresis or umlaut mark-->
+     <!ENTITY ntilde SDATA "[ntilde]"--=small n, tilde-->
+     <!ENTITY Ntilde SDATA "[Ntilde]"--=capital N, tilde-->
+     <!ENTITY oacute SDATA "[oacute]"--=small o, acute accent-->
+     <!ENTITY Oacute SDATA "[Oacute]"--=capital O, acute accent-->
+     <!ENTITY ocirc  SDATA "[ocirc ]"--=small o, circumflex accent-->
+     <!ENTITY Ocirc  SDATA "[Ocirc ]"--=capital O, circumflex accent-->
+     <!ENTITY ograve SDATA "[ograve]"--=small o, grave accent-->
+     <!ENTITY Ograve SDATA "[Ograve]"--=capital O, grave accent-->
+     <!ENTITY oslash SDATA "[oslash]"--=small o, slash-->
+     <!ENTITY Oslash SDATA "[Oslash]"--=capital O, slash-->
+     <!ENTITY otilde SDATA "[otilde]"--=small o, tilde-->
+     <!ENTITY Otilde SDATA "[Otilde]"--=capital O, tilde-->
+     <!ENTITY ouml   SDATA "[ouml  ]"--=small o, dieresis or umlaut mark-->
+     <!ENTITY Ouml   SDATA "[Ouml  ]"--=capital O, dieresis or umlaut mark-->
+     <!ENTITY szlig  SDATA "[szlig ]"--=small sharp s, German (sz ligature)-->
+     <!ENTITY thorn  SDATA "[thorn ]"--=small thorn, Icelandic-->
+     <!ENTITY THORN  SDATA "[THORN ]"--=capital THORN, Icelandic-->
+     <!ENTITY uacute SDATA "[uacute]"--=small u, acute accent-->
+     <!ENTITY Uacute SDATA "[Uacute]"--=capital U, acute accent-->
+     <!ENTITY ucirc  SDATA "[ucirc ]"--=small u, circumflex accent-->
+     <!ENTITY Ucirc  SDATA "[Ucirc ]"--=capital U, circumflex accent-->
+     <!ENTITY ugrave SDATA "[ugrave]"--=small u, grave accent-->
+     <!ENTITY Ugrave SDATA "[Ugrave]"--=capital U, grave accent-->
+     <!ENTITY uuml   SDATA "[uuml  ]"--=small u, dieresis or umlaut mark-->
+     <!ENTITY Uuml   SDATA "[Uuml  ]"--=capital U, dieresis or umlaut mark-->
+     <!ENTITY yacute SDATA "[yacute]"--=small y, acute accent-->
+     <!ENTITY Yacute SDATA "[Yacute]"--=capital Y, acute accent-->
+     <!ENTITY yuml   SDATA "[yuml  ]"--=small y, dieresis or umlaut mark-->
+     <!--  (C)  International   Organization   for   Standardization   1986
+     Permission to copy in any form is granted for use with conforming SGML
+     systems and applications as defined in ISO 8879, provided this  notice
+     is included in all copies.  -->
+
+     <!-- Character entity set. Typical invocation:
+
+     <!ENTITY % ISOnum PUBLIC "ISO 8879-1986//ENTITIES Numeric and  Special
+     Graphic//EN">
+     %ISOnum;
+     -->
+
+     <!ENTITY half   SDATA "[half  ]"--=fraction one-half-->
+     <!ENTITY frac12 SDATA "[frac12]"--=fraction one-half-->
+     <!ENTITY frac14 SDATA "[frac14]"--=fraction one-quarter-->
+     <!ENTITY frac34 SDATA "[frac34]"--=fraction three-quarters-->
+     <!ENTITY frac18 SDATA "[frac18]"--=fraction one-eighth-->
+     <!ENTITY frac38 SDATA "[frac38]"--=fraction three-eighths-->
+     <!ENTITY frac58 SDATA "[frac58]"--=fraction five-eighths-->
+     <!ENTITY frac78 SDATA "[frac78]"--=fraction seven-eighths-->
+     <!ENTITY sup1   SDATA "[sup1  ]"--=superscript one-->
+     <!ENTITY sup2   SDATA "[sup2  ]"--=superscript two-->
+     <!ENTITY sup3   SDATA "[sup3  ]"--=superscript three-->
+     <!ENTITY plus   SDATA "[plus  ]"--=plus sign B:-- >
+     <!ENTITY plusmn SDATA "[plusmn]"--/pm B: =plus-or-minus sign-->
+     <!ENTITY lt     SDATA "[lt    ]"--=less-than sign R:-->
+     <!ENTITY equals SDATA "[equals]"--=equals sign R:-->
+     <!ENTITY gt     SDATA "[gt    ]"--=greater-than sign R:-->
+     <!ENTITY divide SDATA "[divide]"--/div B: =divide sign-->
+     <!ENTITY times  SDATA "[times ]"--/times B: =multiply sign-->
+     <!ENTITY curren SDATA "[curren]"--=general currency sign-->
+     <!ENTITY pound  SDATA "[pound ]"--=pound sign-->
+     <!ENTITY dollar SDATA "[dollar]"--=dollar sign-->
+     <!ENTITY cent   SDATA "[cent  ]"--=cent sign-->
+     <!ENTITY yen    SDATA "[yen   ]"--/yen =yen sign-->
+     <!ENTITY num    SDATA "[num   ]"--=number sign-->
+     <!ENTITY percnt SDATA "[percnt]"--=percent sign-->
+     <!ENTITY amp    SDATA "[amp   ]"--=ampersand-->
+     <!ENTITY ast    SDATA "[ast   ]"--/ast B: =asterisk-->
+     <!ENTITY commat SDATA "[commat]"--=commercial at-->
+     <!ENTITY lsqb   SDATA "[lsqb  ]"--/lbrack O: =left square bracket-->
+     <!ENTITY bsol   SDATA "[bsol  ]"--/backslash =reverse solidus-->
+     <!ENTITY rsqb   SDATA "[rsqb  ]"--/rbrack C: =right square bracket-->
+     <!ENTITY lcub   SDATA "[lcub  ]"--/lbrace O: =left curly bracket-->
+     <!ENTITY horbar SDATA "[horbar]"--=horizontal bar-->
+     <!ENTITY verbar SDATA "[verbar]"--/vert =vertical bar-->
+     <!ENTITY rcub   SDATA "[rcub  ]"--/rbrace C: =right curly bracket-->
+     <!ENTITY micro  SDATA "[micro ]"--=micro sign-->
+     <!ENTITY ohm    SDATA "[ohm   ]"--=ohm sign-->
+     <!ENTITY deg    SDATA "[deg   ]"--=degree sign-->
+     <!ENTITY ordm   SDATA "[ordm  ]"--=ordinal indicator, masculine-->
+     <!ENTITY ordf   SDATA "[ordf  ]"--=ordinal indicator, feminine-->
+     <!ENTITY sect   SDATA "[sect  ]"--=section sign-->
+     <!ENTITY para   SDATA "[para  ]"--=pilcrow (paragraph sign)-->
+     <!ENTITY middot SDATA "[middot]"--/centerdot B: =middle dot-->
+     <!ENTITY larr   SDATA "[larr  ]"--/leftarrow /gets A: =leftward arrow-->
+     <!ENTITY rarr   SDATA "[rarr  ]"--/rightarrow /to A: =rightward arrow-->
+     <!ENTITY uarr   SDATA "[uarr  ]"--/uparrow A: =upward arrow-->
+     <!ENTITY darr   SDATA "[darr  ]"--/downarrow A: =downward arrow-->
+     <!ENTITY copy   SDATA "[copy  ]"--=copyright sign-->
+     <!ENTITY reg    SDATA "[reg   ]"--/circledR =registered sign-->
+     <!ENTITY trade  SDATA "[trade ]"--=trade mark sign-->
+     <!ENTITY brvbar SDATA "[brvbar]"--=broken (vertical) bar-->
+     <!ENTITY not    SDATA "[not   ]"--/neg /lnot =not sign-->
+     <!ENTITY sung   SDATA "[sung  ]"--=music note (sung text sign)-->
+     <!ENTITY excl   SDATA "[excl  ]"--=exclamation mark-->
+     <!ENTITY iexcl  SDATA "[iexcl ]"--=inverted exclamation mark-->
+     <!ENTITY quot   SDATA "[quot  ]"--=quotation mark-->
+     <!ENTITY apos   SDATA "[apos  ]"--=apostrophe-->
+     <!ENTITY lpar   SDATA "[lpar  ]"--O: =left parenthesis-->
+     <!ENTITY rpar   SDATA "[rpar  ]"--C: =right parenthesis-->
+     <!ENTITY comma  SDATA "[comma ]"--P: =comma-->
+     <!ENTITY lowbar SDATA "[lowbar]"--=low line-->
+     <!ENTITY hyphen SDATA "[hyphen]"--=hyphen-->
+     <!ENTITY period SDATA "[period]"--=full stop, period-->
+     <!ENTITY sol    SDATA "[sol   ]"--=solidus-->
+     <!ENTITY colon  SDATA "[colon ]"--/colon P:-->
+     <!ENTITY semi   SDATA "[semi  ]"--=semicolon P:-->
+     <!ENTITY quest  SDATA "[quest ]"--=question mark-->
+     <!ENTITY iquest SDATA "[iquest]"--=inverted question mark-->
+     <!ENTITY laquo  SDATA "[laquo ]"--=angle quotation mark, left-->
+     <!ENTITY raquo  SDATA "[raquo ]"--=angle quotation mark, right-->
+     <!ENTITY lsquo  SDATA "[lsquo ]"--=single quotation mark, left-->
+     <!ENTITY rsquo  SDATA "[rsquo ]"--=single quotation mark, right-->
+     <!ENTITY ldquo  SDATA "[ldquo ]"--=double quotation mark, left-->
+     <!ENTITY rdquo  SDATA "[rdquo ]"--=double quotation mark, right-->
+     <!ENTITY nbsp   SDATA "[nbsp  ]"--=no break (required) space-->
+     <!ENTITY shy    SDATA "[shy   ]"--=soft hyphen-->
+     <!--  (C)  International   Organization   for   Standardization   1986
+     Permission to copy in any form is granted for use with conforming SGML
+     systems and applications as defined in ISO 8879, provided this  notice
+     is included in all copies.  -->
+
+     <!-- Character entity set. Typical invocation:
+
+     <!ENTITY % ISOpub PUBLIC "ISO 8879-1986//ENTITIES Publishing//EN">
+     %ISOpub;
+     -->
+
+     <!ENTITY emsp   SDATA "[emsp  ]"--=em space-->
+     <!ENTITY ensp   SDATA "[ensp  ]"--=en space (1/2-em)-->
+     <!ENTITY emsp13 SDATA "[emsp3 ]"--=1/3-em space-->
+     <!ENTITY emsp14 SDATA "[emsp4 ]"--=1/4-em space-->
+     <!ENTITY numsp  SDATA "[numsp ]"--=digit space (width of a number)-->
+     <!ENTITY puncsp SDATA "[puncsp]"--=punctuation space (width of comma)-->
+     <!ENTITY thinsp SDATA "[thinsp]"--=thin space (1/6-em)-->
+     <!ENTITY hairsp SDATA "[hairsp]"--=hair space-->
+     <!ENTITY mdash  SDATA "[mdash ]"--=em dash-->
+     <!ENTITY ndash  SDATA "[ndash ]"--=en dash-->
+     <!ENTITY dash   SDATA "[dash  ]"--=hyphen (true graphic)-->
+     <!ENTITY blank  SDATA "[blank ]"--=significant blank symbol-->
+     <!ENTITY hellip SDATA "[hellip]"--=ellipsis (horizontal)-->
+     <!ENTITY nldr   SDATA "[nldr  ]"--=double baseline dot (en leader)-->
+     <!ENTITY frac13 SDATA "[frac13]"--=fraction one-third-->
+     <!ENTITY frac23 SDATA "[frac23]"--=fraction two-thirds-->
+     <!ENTITY frac15 SDATA "[frac15]"--=fraction one-fifth-->
+     <!ENTITY frac25 SDATA "[frac25]"--=fraction two-fifths-->
+     <!ENTITY frac35 SDATA "[frac35]"--=fraction three-fifths-->
+     <!ENTITY frac45 SDATA "[frac45]"--=fraction four-fifths-->
+     <!ENTITY frac16 SDATA "[frac16]"--=fraction one-sixth-->
+     <!ENTITY frac56 SDATA "[frac56]"--=fraction five-sixths-->
+     <!ENTITY incare SDATA "[incare]"--=in-care-of symbol-->
+     <!ENTITY block  SDATA "[block ]"--=full block-->
+     <!ENTITY uhblk  SDATA "[uhblk ]"--=upper half block-->
+     <!ENTITY lhblk  SDATA "[lhblk ]"--=lower half block-->
+     <!ENTITY blk14  SDATA "[blk14 ]"--=25% shaded block-->
+     <!ENTITY blk12  SDATA "[blk12 ]"--=50% shaded block-->
+     <!ENTITY blk34  SDATA "[blk34 ]"--=75% shaded block-->
+     <!ENTITY marker SDATA "[marker]"--=histogram marker-->
+     <!ENTITY cir    SDATA "[cir   ]"--/circ B: =circle, open-->
+     <!ENTITY squ    SDATA "[squ   ]"--=square, open-->
+     <!ENTITY rect   SDATA "[rect  ]"--=rectangle, open-->
+     <!ENTITY utri   SDATA "[utri  ]"--/triangle =up triangle, open-->
+     <!ENTITY dtri   SDATA "[dtri  ]"--/triangledown =down triangle, open-->
+     <!ENTITY star   SDATA "[star  ]"--=star, open-->
+     <!ENTITY bull   SDATA "[bull  ]"--/bullet B: =round bullet, filled-->
+     <!ENTITY squf   SDATA "[squf  ]"--/blacksquare =sq bullet, filled-->
+     <!ENTITY utrif  SDATA "[utrif ]"--/blacktriangle =up tri, filled-->
+     <!ENTITY dtrif  SDATA "[dtrif ]"--/blacktriangledown =dn tri, filled-->
+     <!ENTITY ltrif  SDATA "[ltrif ]"--/blacktriangleleft R: =l tri, filled-->
+     <!ENTITY rtrif  SDATA "[rtrif ]"--/blacktriangleright R: =r tri, filled-->
+     <!ENTITY clubs  SDATA "[clubs ]"--/clubsuit =club suit symbol-->
+     <!ENTITY diams  SDATA "[diams ]"--/diamondsuit =diamond suit symbol-->
+     <!ENTITY hearts SDATA "[hearts]"--/heartsuit =heart suit symbol-->
+     <!ENTITY spades SDATA "[spades]"--/spadesuit =spades suit symbol-->
+     <!ENTITY malt   SDATA "[malt  ]"--/maltese =maltese cross-->
+     <!ENTITY dagger SDATA "[dagger]"--/dagger B: =dagger-->
+     <!ENTITY Dagger SDATA "[Dagger]"--/ddagger B: =double dagger-->
+     <!ENTITY check  SDATA "[check ]"--/checkmark =tick, check mark-->
+     <!ENTITY cross  SDATA "[ballot]"--=ballot cross-->
+     <!ENTITY sharp  SDATA "[sharp ]"--/sharp =musical sharp-->
+     <!ENTITY flat   SDATA "[flat  ]"--/flat =musical flat-->
+     <!ENTITY male   SDATA "[male  ]"--=male symbol-->
+     <!ENTITY female SDATA "[female]"--=female symbol-->
+     <!ENTITY phone  SDATA "[phone ]"--=telephone symbol-->
+     <!ENTITY telrec SDATA "[telrec]"--=telephone recorder symbol-->
+     <!ENTITY copysr SDATA "[copysr]"--=sound recording copyright sign-->
+     <!ENTITY caret  SDATA "[caret ]"--=caret (insertion mark)-->
+     <!ENTITY lsquor SDATA "[lsquor]"--=rising single quote, left (low)-->
+     <!ENTITY ldquor SDATA "[ldquor]"--=rising dbl quote, left (low)-->
+     <!ENTITY fflig  SDATA "[fflig ]"--small ff ligature-->
+     <!ENTITY filig  SDATA "[filig ]"--small fi ligature-->
+     <!ENTITY fjlig  SDATA "[fjlig ]"--small fj ligature-->
+     <!ENTITY ffilig SDATA "[ffilig]"--small ffi ligature-->
+     <!ENTITY ffllig SDATA "[ffllig]"--small ffl ligature-->
+     <!ENTITY fllig  SDATA "[fllig ]"--small fl ligature-->
+     <!ENTITY mldr   SDATA "[mldr  ]"--em leader-->
+     <!ENTITY rdquor SDATA "[rdquor]"--rising dbl quote, right (high)-->
+     <!ENTITY rsquor SDATA "[rsquor]"--rising single quote, right (high)-->
+     <!ENTITY vellip SDATA "[vellip]"--vertical ellipsis-->
+     <!ENTITY hybull SDATA "[hybull]"--rectangle, filled (hyphen bullet)-->
+     <!ENTITY loz    SDATA "[loz   ]"--/lozenge - lozenge or total mark-->
+     <!ENTITY lozf   SDATA "[lozf  ]"--/blacklozenge - lozenge, filled-->
+     <!ENTITY ltri   SDATA "[ltri  ]"--/triangleleft B: l triangle, open-->
+     <!ENTITY rtri   SDATA "[rtri  ]"--/triangleright B: r triangle, open-->
+     <!ENTITY starf  SDATA "[starf ]"--/bigstar - star, filled-->
+     <!ENTITY natur  SDATA "[natur ]"--/natural - music natural-->
+     <!ENTITY rx     SDATA "[rx    ]"--pharmaceutical prescription (Rx)-->
+     <!ENTITY sext   SDATA "[sext  ]"--sextile (6-pointed star)-->
+     <!ENTITY target SDATA "[target]"--register mark or target-->
+     <!ENTITY dlcrop SDATA "[dlcrop]"--downward left crop mark -->
+     <!ENTITY drcrop SDATA "[drcrop]"--downward right crop mark -->
+     <!ENTITY ulcrop SDATA "[ulcrop]"--upward left crop mark -->
+     <!ENTITY urcrop SDATA "[urcrop]"--upward right crop mark -->
+     <!--  (C)  International   Organization   for   Standardization   1986
+     Permission to copy in any form is granted for use with conforming SGML
+     systems and applications as defined in ISO 8879, provided this  notice
+     is included in all copies.  -->
+
+     <!-- Character entity set. Typical invocation:
+
+     <!ENTITY   %   ISOtech   PUBLIC   "ISO   8879-1986//ENTITIES   General
+     Technical//EN">
+     %ISOtech;
+     -->
+
+     <!ENTITY aleph  SDATA "[aleph ]"--/aleph =aleph, Hebrew-->
+     <!ENTITY and    SDATA "[and   ]"--/wedge /land B: =logical and-->
+     <!ENTITY ang90  SDATA "[ang90 ]"--=right (90 degree) angle-->
+     <!ENTITY angsph SDATA "[angsph]"--/sphericalangle =angle-spherical-->
+     <!ENTITY ap     SDATA "[ap    ]"--/approx R: =approximate-->
+     <!ENTITY becaus SDATA "[becaus]"--/because R: =because-->
+     <!ENTITY bottom SDATA "[bottom]"--/bot B: =perpendicular-->
+     <!ENTITY cap    SDATA "[cap   ]"--/cap B: =intersection-->
+     <!ENTITY cong   SDATA "[cong  ]"--/cong R: =congruent with-->
+     <!ENTITY conint SDATA "[conint]"--/oint L: =contour integral operator-->
+     <!ENTITY cup    SDATA "[cup   ]"--/cup B: =union or logical sum-->
+     <!ENTITY equiv  SDATA "[equiv ]"--/equiv R: =identical with-->
+     <!ENTITY exist  SDATA "[exist ]"--/exists =at least one exists-->
+     <!ENTITY forall SDATA "[forall]"--/forall =for all-->
+     <!ENTITY fnof   SDATA "[fnof  ]"--=function of (italic small f)-->
+     <!ENTITY ge     SDATA "[ge    ]"--/geq /ge R: =greater-than-or-equal-->
+     <!ENTITY iff    SDATA "[iff   ]"--/iff =if and only if-->
+     <!ENTITY infin  SDATA "[infin ]"--/infty =infinity-->
+     <!ENTITY int    SDATA "[int   ]"--/int L: =integral operator-->
+     <!ENTITY isin   SDATA "[isin  ]"--/in R: =set membership-->
+     <!ENTITY lang   SDATA "[lang  ]"--/langle O: =left angle bracket-->
+     <!ENTITY lArr   SDATA "[lArr  ]"--/Leftarrow A: =is implied by-->
+     <!ENTITY le     SDATA "[le    ]"--/leq /le R: =less-than-or-equal-->
+     <!ENTITY minus  SDATA "[minus ]"--B: =minus sign-->
+     <!ENTITY mnplus SDATA "[mnplus]"--/mp B: =minus-or-plus sign-->
+     <!ENTITY nabla  SDATA "[nabla ]"--/nabla =del, Hamilton operator-->
+     <!ENTITY ne     SDATA "[ne    ]"--/ne /neq R: =not equal-->
+     <!ENTITY ni     SDATA "[ni    ]"--/ni /owns R: =contains-->
+     <!ENTITY or     SDATA "[or    ]"--/vee /lor B: =logical or-->
+     <!ENTITY par    SDATA "[par   ]"--/parallel R: =parallel-->
+     <!ENTITY part   SDATA "[part  ]"--/partial =partial differential-->
+     <!ENTITY permil SDATA "[permil]"--=per thousand-->
+     <!ENTITY perp   SDATA "[perp  ]"--/perp R: =perpendicular-->
+     <!ENTITY prime  SDATA "[prime ]"--/prime =prime or minute-->
+     <!ENTITY Prime  SDATA "[Prime ]"--=double prime or second-->
+     <!ENTITY prop   SDATA "[prop  ]"--/propto R: =is proportional to-->
+     <!ENTITY radic  SDATA "[radic ]"--/surd =radical-->
+     <!ENTITY rang   SDATA "[rang  ]"--/rangle C: =right angle bracket-->
+     <!ENTITY rArr   SDATA "[rArr  ]"--/Rightarrow A: =implies-->
+     <!ENTITY sim    SDATA "[sim   ]"--/sim R: =similar-->
+     <!ENTITY sime   SDATA "[sime  ]"--/simeq R: =similar, equals-->
+     <!ENTITY square SDATA "[square]"--/square B: =square-->
+     <!ENTITY sub    SDATA "[sub   ]"--/subset R: =subset or is implied by-->
+     <!ENTITY sube   SDATA "[sube  ]"--/subseteq R: =subset, equals-->
+     <!ENTITY sup    SDATA "[sup   ]"--/supset R: =superset or implies-->
+     <!ENTITY supe   SDATA "[supe  ]"--/supseteq R: =superset, equals-->
+     <!ENTITY there4 SDATA "[there4]"--/therefore R: =therefore-->
+     <!ENTITY Verbar SDATA "[Verbar]"--/Vert =dbl vertical bar-->
+     <!ENTITY angst  SDATA "[angst ]"--Angstrom =capital A, ring-->
+     <!ENTITY bernou SDATA "[bernou]"--Bernoulli function (script capital B)-->
+     <!ENTITY compfn SDATA "[compfn]"--B: composite function (small circle)-->
+     <!ENTITY Dot    SDATA "[Dot   ]"--=dieresis or umlaut mark-->
+     <!ENTITY DotDot SDATA "[DotDot]"--four dots above-->
+     <!ENTITY hamilt SDATA "[hamilt]"--Hamiltonian (script capital H)-->
+     <!ENTITY lagran SDATA "[lagran]"--Lagrangian (script capital L)-->
+     <!ENTITY lowast SDATA "[lowast]"--low asterisk-->
+     <!ENTITY notin  SDATA "[notin ]"--N: negated set membership-->
+     <!ENTITY order  SDATA "[order ]"--order of (script small o)-->
+     <!ENTITY phmmat SDATA "[phmmat]"--physics M-matrix (script capital M)-->
+     <!ENTITY tdot   SDATA "[tdot  ]"--three dots above-->
+     <!ENTITY tprime SDATA "[tprime]"--triple prime-->
+     <!ENTITY wedgeq SDATA "[wedgeq]"--R: corresponds to (wedge, equals)-->
+
+]>

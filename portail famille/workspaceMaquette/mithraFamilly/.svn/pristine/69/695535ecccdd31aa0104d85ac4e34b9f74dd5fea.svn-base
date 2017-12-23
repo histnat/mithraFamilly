@@ -1,0 +1,195 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                           RAFALE                                   *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.2                            *
+    *                   Dated 22th December 1998                         *
+    *                                                                    *
+    * Amendment :-                                                       *
+    * 1. New Public Identifier to support removal of marked sections.    *
+    * 2. Figure repeatable instead of single                             *
+    * 3 ident mandatory for comp                                         *
+	* 4. avoid refdm and reftp from ccprelim and orgdesc                 *
+	* 5. change all org tag definition to comp                           *
+	*                                                                    *
+	*   15/01/98   : Update Public Identifier				             *
+    *                change reg to reporg                                *
+	*                change csn,isn to refipc                            *
+	*                replace extftab by extfig and exttab           	 *
+	*                para | list inside location                         *
+	*                delete first nomen of compitem  (duplication)       *
+	*                                                                    *
+	*   22/12/98   : Update Public Identifier				             *
+    *                org became comp in comments                         *
+	*                                                                    *
+	* Typical invocation :                                               *
+    * <!ENTITY % TO                                                      *
+    *   "-//RAFALE//ELEMENTS comps breakdown 981222//EN" >               *
+    * %TO;                                                               *
+    ********************************************************************** -->
+
+
+<!--**********************************************************************
+    * Define Entity %CONTENT (Content Breakdown) containing :- COMPCH    *
+    ********************************************************************** -->
+ 
+<!ENTITY % CONTENT "compch" >
+
+
+<!--**********************************************************************
+    * Define Element TO (Tableau comps) containing:-                     *
+    *   ccprelim   - optionnal  single      preliminaires                *
+    *   comps    - mandatory  repeatable  organe                         *
+    *   figure     - optionnal  repeatable  figure                       *
+    **********************************************************************-->
+ 
+<!ELEMENT compch - o (ccprelim? , comps , figure*) >
+<!ATTLIST compch
+             id	   ID  		#REQUIRED
+             %INSDEL; > 
+ 
+ 
+<!--**********************************************************************
+    * Define Element ccprelim (Preambule TO) containing:-                *
+    *   para     - mandatory  repeatable  text                           *
+    *                                                                    *
+	********************************************************************** -->
+
+<!ELEMENT ccprelim  - O (specpara?,(para|%list;|table|figure)*)>
+
+
+
+<!--*****************************************************************************
+    * Define Element ORGLI (Organe list).				*
+    **************************************************************************-->
+<!ELEMENT comps - O (compitem+) -- comps list.-->
+<!ATTLIST comps    %INSDEL;>
+
+ <!--**********************************************************************
+    * Define Element compitem (Organe item) containing:-                  *
+    *--------------------------------------------------------------------*
+    *  ORG      - mandatory single      Organe code                      *
+    *  ORGDESC  - mandatory single      Organe description               *
+    *  ORGLOC   - mandatory single      Organe location                  *
+	*  REMARKS  - optional single       remarks                          *
+	*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+	********************************************************************** -->
+ <!ELEMENT compitem  - O ((%applic;)?,comp , compdesc , comploc , remarks? )>
+ <!ATTLIST compitem
+               %bodyatt;>  
+
+ 
+<!--**********************************************************************
+    * Define Element COMP (Component) containing:-                       *
+    *--------------------------------------------------------------------*
+    * Mandatory Repeatable Group                                         *
+    *--------------------------------------------------------------------*
+    *  NOMEN    - mandatory single       contains Parsed Character Data. *
+    *  IDENT    - mandatory  single   contains PARTNO, MANUFACT.         *
+    *####################################################################*
+    * Optional Repeatable Group                                          *
+    *####################################################################*
+    *  REFIPC   - mandatory single       contains refs to ippn,csn,isn   *
+    *####################################################################*
+    *  reporg   - mandatory single       contains Parsed Character Data. *
+    *--------------------------------------------------------------------*
+    ********************************************************************** -->
+
+<!ELEMENT comp - o ((%applic;)?,reporg,%ident;,nomen)>
+<!ATTLIST comp
+		type  CDATA    #IMPLIED 
+		%bodyatt;>
+
+
+
+
+
+
+
+ <!--**********************************************************************
+    * Define Element compdesc (Organe description)                        * 
+	*            allow to describe the organe function                   *
+	*             Text or ref to descriptive DM	                         *
+	*   containing:-                                                     *
+	*--------------------------------------------------------------------*
+	* Mandatory Repeatable Group                                         *
+    *--------------------------------------------------------------------*
+    *  PARA  - mandatory single        text paragraphs                   *
+	*  list  - mandatory single       list                               *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * NO Attribute(s):-                                                  *
+  	********************************************************************** -->
+  
+  <!ELEMENT compdesc  - O (para|%list;)* >                          
+
+
+ 
+<!--*****************************************************************************
+    *  Define Element comploc (Organe location).	                      		*
+    * ************************************************************************-->
+<!ELEMENT comploc - O (reporg?,zone*,accpnl*,location?)>
+
+
+
+<!--*****************************************************************************
+    *  Define Element location (Organe location with text).	                      		*
+    * ************************************************************************-->
+<!ELEMENT location - O (para|%list;)+>
+
+
+
+<!--*****************************************************************************
+    * Define Element ZONE (Air Vehicle Zone).					*
+    **************************************************************************-->
+<!ELEMENT zone - O (%applic;)? -- Air Vehicle Zone.-->
+
+<!ATTLIST zone
+	zoneid	NUTOKENS	#REQUIRED -- List of Zone Number.-->
+
+
+<!--*****************************************************************************
+    * Define Element ACCPNL (Access Panel).					*
+    **************************************************************************-->
+<!ELEMENT accpnl - O (%applic;)? -- Access Panel.-->
+<!ATTLIST accpnl
+	accessid NAMES      	#REQUIRED -- Access Identifier.-->
+
+
+
+
+<!--**********************************************************************
+    * Call the Lists Public Text.                                        *
+    * The formal public identifier is stored in the entity %EXTLIST;     *
+    ********************************************************************** -->
+
+%EXTLIST;
+
+
+
+<!--**********************************************************************
+    * Call the Figure Public Text.                                       *
+    * The formal public identifier is stored in the entity %EXTFIG;      *
+    ********************************************************************** -->
+
+%EXTFIG;
+
+
+<!--**********************************************************************
+    * Call the Table Public Text.                                        *
+    * The formal public identifier is stored in the entity %EXTTAB;      *
+    ********************************************************************** -->
+
+%EXTTAB;
+
+             
+
+<!--**********************************************************************
+    * Call the Special Paragraphs Public Text.                           *
+    * The formal public identifier is stored in the entity %EXTSPEC;     *
+    ********************************************************************** -->
+
+%EXTSPEC;
+

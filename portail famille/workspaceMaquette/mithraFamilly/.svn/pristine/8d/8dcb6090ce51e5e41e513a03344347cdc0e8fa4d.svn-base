@@ -1,0 +1,124 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1B786000SF030100161A011 SYSTEM "x-dm://0900f90b8002a30c,MYWORKING" NDATA cgm>
+<!ENTITY A1A786000SF030100054A021 SYSTEM "x-dm://0900f90b80028665,MYWORKING" NDATA cgm>
+<!ENTITY A1A786000SF030100054A011 SYSTEM "x-dm://0900f90b80002ae8,MYWORKING" NDATA cgm>
+]>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>B</sdc><chapnum>78</chapnum><section>6</section><subsect>0</subsect><subject>00</subject><discode>15</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmc>
+<dmtitle><techname>ATTELLE TUYERE ETAPE 4</techname><infoname>CONTROLE VISUEL SANS MOYEN SPECIAL</infoname></dmtitle>
+<issno type="c" issno="2">
+<issdate month="12" year="2011" day="15">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 4"></version>
+<nti nti2="1" nti3="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Prise en compte ATC045/KS/2009 - 2009-12/00014</rfu>
+<remarks>RAS</remarks>
+<icns><icn id="A1B786000SF030100161A011">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>78</chapnum><section>6</section><subsect>0</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00161</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<norefs>
+</refs><proced><pmd>
+<manhour value="0,1"></manhour>
+<duration value="0,1"></duration>
+</pmd><prelreqs><reqconds>
+<noconds></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="0,1"></reqper>
+</reqpers><supequip><nosupeq><nosupeqs></supequip><supplies><supplyli exhaust="0">
+<supply id="R38002" mand="0" change="mod"><refipc change="mod" csn="78600001A194 "><nomen>Attelle tuyere</nomen><quantity>1</quantity></supply>
+<supply id="R38003" mand="0" change="mod"><refipc change="mod" csn="78600001A189 "><nomen>Attelle tuyere</nomen><quantity>1</quantity></supply>
+<supply id="R38004" mand="0" change="mod"><refipc change="mod" csn="78600001A201 "><nomen>Attelle tuyere</nomen><quantity>1</quantity></supply>
+<supply id="R38005" mand="0" change="mod"><refipc change="mod" csn="78600001A206 "><nomen>Attelle tuyere</nomen><quantity>1</quantity></supply>
+</supplyli></supplies><miscs><nomisc></miscs><safety>
+<specpara>
+<caution>
+<p>SIGNALER TOUT AUTRE DEFAUT NON REPERTORIE DANS LA PROCEDURE A SNECMA .</p>
+</caution>
+</specpara>
+</safety></prelreqs><mainfunc>
+<step1 control="0" id="P10">
+<para><p change="mod">Approvisionner en cas de remplacem<?Pub Caret>ent le ou les rechanges <supplref change="mod" refid="R38002"> <supplref change="mod" refid="R38003"><supplref change="mod" refid="R38004"><supplref change="mod" refid="R38005">.</p>
+</para>
+</step1>
+<step1 control="0" id="P20">
+<para><p>Contr&ocirc;ler visuellement les pi&egrave;ces selon les informations des tableaux ci-dessous.</p>
+</para>
+</step1>
+<step1 control="0" id="P30">
+<para><p>Identifier les d&eacute;fauts <figref refid="B786000SF030100161A011">.</p>
+</para>
+<table tocentry="1">
+<tgroup cols="3" align="LEFT"><colspec colnum="1" colname="SQCOLUMN1" colwidth="5cm" align="CENTER" colsep="1" rowsep="1"><colspec colnum="2" colname="SQCOLUMN2" colwidth="8cm" align="LEFT" colsep="1" rowsep="1"><colspec colnum="3" colname="SQCOLUMN3" colwidth="4cm" align="LEFT" colsep="1" rowsep="1">
+<tbody valign="TOP">
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>DEFAUTS</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>CRITERES D'ADMISSIBILITE NTI2-NTI3</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>SANCTION</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="SQCOLUMN1" align="left"><para><p>Usure type A</p>
+</para>
+<para><p> (Usure des port&eacute;es des axes de volets chauds)</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN2"><para><p>Usure admissible si non arrachement de m&eacute;tal et/ou non &eacute;caillage et diam&egrave;tre &lt;&nbsp;15,065&nbsp;mm</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN3"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Usure type B</p>
+</para>
+<para><p> (Usure lat&eacute;rale en vis &agrave; vis du levier de commande)</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Admissible si surface plane et usure &lt;&nbsp;0,2&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="SQCOLUMN1" align="left"><para><p change="add">Coloration thermique bleue suite &agrave; feu PC</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN2"><para><p change="add">Coloration bleue admissible si absence de d&eacute;t&eacute;rioration de la surface (fissure, craquelure, d&eacute;formation)</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN3"><para><p change="add">Si d&eacute;t&eacute;rioration de la surface remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step1>
+<figure id="B786000SF030100161A011">
+<title>Figure 1</title>
+<graphic callicn="A1B786000SF030100161A011">
+</figure>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000005646 0>

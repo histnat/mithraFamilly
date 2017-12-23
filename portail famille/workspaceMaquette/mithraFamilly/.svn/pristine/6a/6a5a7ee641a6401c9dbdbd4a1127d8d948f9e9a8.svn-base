@@ -1,0 +1,72 @@
+package com.sonovision.openconv.ws.manager;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Service;
+
+import com.sonovision.openconv.wf.model.ParameterId;
+import com.sonovision.openconv.ws.controller.model.TaskParameterModel;
+
+@Service("ParametersManager")
+@Scope(value = ConfigurableBeanFactory.SCOPE_SINGLETON)
+public class ParametersManager {
+	/*
+	 * hashmap de :
+	 *  key 	-> taskId_parameterCode = parameterId
+	 *  value	-> TaskParameterModel
+	 * 
+	 */
+	private HashMap<String, TaskParameterModel> parametersHashMap;
+
+	public ParametersManager() {
+		super();
+		parametersHashMap= new HashMap<>();
+	}
+	
+	public ParametersManager(List<TaskParameterModel> listParams) {
+		super();
+		parametersHashMap= new HashMap<>();
+		for(TaskParameterModel taskParam:listParams){
+			parametersHashMap.put(taskParam.getId().toString(), taskParam);
+		}
+	}
+	
+	public void clean(){
+		parametersHashMap= new HashMap<>();
+	}
+	
+	
+	/*
+	 * update current parameterList with datas from listParams<TaskParamameterModel>
+	 *
+	 * 
+	 */
+	
+	public void update(List<TaskParameterModel> listParams) {
+		if(parametersHashMap==null)
+			parametersHashMap= new HashMap<>();
+		for(TaskParameterModel taskParam:listParams){
+			parametersHashMap.put(taskParam.getId().toString(), taskParam);
+		}
+	}
+	
+	public void addOrUpdate(TaskParameterModel param){
+		if(parametersHashMap==null)
+			parametersHashMap= new HashMap<>();
+		parametersHashMap.put(param.getId().toString(), param);
+	}
+	
+	
+	public TaskParameterModel getParam(ParameterId id){
+		return parametersHashMap.get(id.toString());
+	}
+	
+	public List<TaskParameterModel> getAllParams(){
+		return new ArrayList<>(parametersHashMap.values());
+	}
+	
+}

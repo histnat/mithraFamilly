@@ -1,0 +1,161 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN">
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<?Pub EntList alpha bull copy rArr sect trade nbsp>
+<?Pub Inc>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>0</section><subsect>0</subsect><subject>00</subject><discode>00</discode><discodev>A</discodev><incode>130</incode><incodev>A</incodev><itemloc>B</itemloc></avee></dmc>
+<dmtitle><techname>MOTEUR ASSEMBLE</techname><infoname>MISE EN OEUVRE ET UTILISATION EN MODE NORMAL - MISE SOUS TENSION DES CALCULATEURS AU BANC</infoname></dmtitle>
+<issno type="r" issno="2">
+<issdate month="03" year="2006" day="24">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 1"></version>
+<version version="M88-2 ETAPE 4"></version>
+<customer anf="1">
+<nti nti2="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Ajout d'une consigne et prise en compte des remarques Snecma</rfu>
+<remarks>RAS</remarks>
+</status>
+</idstatus><content><refs>
+<rdandrt>
+<refdm>
+<dmcid id="A1A72000000A900BB"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>0</section><subsect>0</subsect><subject>00</subject><discode>00</discode><discodev>A</discodev><incode>900</incode><incodev>B</incodev><itemloc>B</itemloc></avee></dmcid>
+<dmcid id="A1A72000000B900BB"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>0</section><subsect>0</subsect><subject>00</subject><discode>00</discode><discodev>B</discodev><incode>900</incode><incodev>B</incodev><itemloc>B</itemloc></avee></dmcid>
+<dmcid id="A1A72000000A140AB"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>0</section><subsect>0</subsect><subject>00</subject><discode>00</discode><discodev>A</discodev><incode>140</incode><incodev>A</incodev><itemloc>B</itemloc></avee></dmcid>
+<dmcid id="A1A72000000A140BB"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>0</section><subsect>0</subsect><subject>00</subject><discode>00</discode><discodev>A</discodev><incode>140</incode><incodev>B</incodev><itemloc>B</itemloc></avee></dmcid>
+</refdm><reftp>
+<techpub id="A-889-401-000-1"><tpcode>A-889-401-000-1</tpcode><tptitle>BANC POLYVALENT</tptitle></techpub>
+<techpub id="A-889-400-000-1"><tpcode>A-889-400-000-1</tpcode><tptitle>BANC POLYVALENT</tptitle></techpub>
+</reftp>
+</rdandrt>
+</refs><proced><pmd>
+<manhour value="0,2"></manhour>
+<duration value="0,1"></duration>
+</pmd><prelreqs><reqconds><reqcondli><reqcond>
+<cond><para><p>Le banc d'essai doit &ecirc;tre sous tension.</p>
+</para>
+</cond>
+</reqcond><reqcond>
+<cond><para><p>Le programme M88 doit &ecirc;tre ouvert avec supervision et EATI.</p>
+</para>
+</cond>
+</reqcond><reqcond>
+<cond><para><p>Le moteur est install&eacute; au banc.</p>
+</para>
+</cond>
+</reqcond></reqcondli></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="2"><perstime value="0,1"></reqper>
+</reqpers><supequip><nosupeq><nosupeqs></supequip><supplies><nosupply></supplies><miscs><nomisc></miscs><safety>
+<specpara>
+<caution>
+<p>APPLIQUER IMMEDIATEMENT LES MESURES DE SECURITE EN CAS D'ALARME ROUGE <dmcref xrefid="A1A72000000A140AB">.</p>
+</caution>
+<note>
+<p>Appliquer imm&eacute;diatement les mesures de s&eacute;curit&eacute; en cas d'alarme ambre <dmcref xrefid="A1A72000000A140BB">.</p>
+</note>
+</specpara>
+</safety></prelreqs><mainfunc>
+<step1 control="0" id="P10">
+<specpara>
+<caution><applic><systemid><version version="M88-2 ETAPE 1"></version></systemid></applic>
+<p>R&eacute;p&eacute;ter la mise sous tension du moteur assembl&eacute; jusqu'&agrave; initialisation sans panne de perte d'int&eacute;grit&eacute; des calculateurs programm&eacute;s (3&nbsp;fois au maximum), sinon remplacer le calculateur incrimin&eacute;<dmcref xrefid="A1A72000000A900BB">. </p>
+</caution>
+<caution><applic><systemid><version version="M88-2 ETAPE 4"></version></systemid></applic>
+<p>R&eacute;p&eacute;ter la mise sous tension du moteur assembl&eacute; jusqu'&agrave; initialisation sans panne de perte d'int&eacute;grit&eacute; des calculateurs programm&eacute;s (3&nbsp;fois au maximum), sinon remplacer le calculateur incrimin&eacute;<dmcref xrefid="A1A72000000B900BB"><?Pub Caret>. </p>
+</caution>
+<caution>
+<p>Laisser les calculateurs sous tension environ 15&nbsp;min, pour mise en temp&eacute;rature, en cas de non r&eacute;p&eacute;titivit&eacute; de l'avarie en MCS.</p>
+</caution>
+</specpara>
+<para><p>Mettre sous tension les calculateurs programm&eacute;s&nbsp;:</p>
+</para>
+<list type="SIMPLE">
+<item><para><p>sur base&nbsp;: lire notice &rdquo;Banc Polyvalent&rdquo; <tpubref xrefid="A-889-401-000-1"> paragraphe 3.1.3.1, classeur 5,</p>
+</para>
+</item>
+<item><para><p>sur PA CdG&nbsp;: lire notice &rdquo;Banc Polyvalent&rdquo; <tpubref xrefid="A-889-400-000-1"> paragraphe 3.1.3.1, classeur 5.</p>
+</para>
+</item>
+</list>
+<note>
+<p>La panne d&apos;initialisation des calculateurs programm&eacute;s &agrave; la mise sous tension du moteur assembl&eacute; n&apos;est pas syst&eacute;matique.</p>
+</note>
+</step1>
+<step1 control="0" id="P20">
+</step1>
+<step1 control="0" id="P30">
+<para><p>S&eacute;lectionner l&apos;onglet Visu_M&eacute;canicien.</p>
+</para>
+</step1>
+<step1 control="0" id="P40">
+<para><p>V&eacute;rifier la validit&eacute; &eacute;lectrique par la non pr&eacute;sence des alarmes suivantes, sur l'E.A.T.I.&nbsp;:</p>
+</para>
+<list type="SIMPLE">
+<item><para><p>pression d'huile,</p>
+</para>
+</item>
+<item><para><p>barreau magn&eacute;tique,</p>
+</para>
+</item>
+<item><para><p>voie calculateur.</p>
+</para>
+</item>
+</list>
+<list type="SIMPLE">
+<item><para><p>sur base&nbsp;: lire notice &rdquo;Banc Polyvalent&rdquo; <tpubref xrefid="A-889-401-000-1">,</p>
+</para>
+</item>
+<item><para><p>sur PA CdG&nbsp;: lire notice &rdquo;Banc Polyvalent&rdquo; <tpubref xrefid="A-889-400-000-1">.</p>
+</para>
+</item>
+</list>
+</step1>
+<step1 control="0" id="P50">
+<para><p>V&eacute;rifier l&apos;absence d&apos;alarme niveaux d&apos;huile sur Supervision&nbsp;:</p>
+</para>
+<list type="SIMPLE">
+<item><para><p>sur base&nbsp;: lire notice &rdquo;Banc Polyvalent&rdquo; <tpubref xrefid="A-889-401-000-1">,</p>
+</para>
+</item>
+<item><para><p>sur PA CdG&nbsp;: lire notice &rdquo;Banc Polyvalent&rdquo; <tpubref xrefid="A-889-400-000-1">.</p>
+</para>
+</item>
+</list>
+</step1>
+<step1 control="0" id="P60">
+<para><p>V&eacute;rifier l&apos;absence de Compte Rendu Instantann&eacute; sur l&apos;E.A.T.I.&nbsp;:</p>
+</para>
+<list type="SIMPLE" change="ADD">
+<item><para><p>sur base&nbsp;: lire notice &rdquo;Banc Polyvalent&rdquo; <tpubref xrefid="A-889-401-000-1">,</p>
+</para>
+</item>
+<item><para><p>sur PA CdG&nbsp;: lire notice &rdquo;Banc Polyvalent&rdquo; <tpubref xrefid="A-889-400-000-1">.</p>
+</para>
+</item>
+</list>
+</step1>
+<step1 control="0" id="P70">
+<para><p>Enregistrer les param&egrave;tres v&eacute;rifi&eacute;s&nbsp;:</p>
+</para>
+<list type="SIMPLE">
+<item><para><p>sur base : lire notice &rdquo;Banc Polyvalent&rdquo; <tpubref xrefid="A-889-401-000-1"> paragraphe 3.4.12, classeur 8,</p>
+</para>
+</item>
+<item><para><p>sur PA CdG : lire notice &rdquo;Banc Polyvalent&rdquo; <tpubref xrefid="A-889-400-000-1"> paragraphe 3.4.12, classeur 8.</p>
+</para>
+</item>
+</list>
+</step1>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000007454 0>

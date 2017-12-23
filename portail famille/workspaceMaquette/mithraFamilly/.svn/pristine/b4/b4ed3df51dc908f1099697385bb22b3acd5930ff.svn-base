@@ -1,0 +1,275 @@
+package com.sonovision.openconv.modules.sgmlprocess.reader;
+// Copyright Richard Tobin, HCRC 1997
+
+// Read an SGML stream, using a simplified content model, returning a
+// single SGMLElement containing the whole instance.
+
+import java.util.*;
+
+import com.sonovision.openconv.modules.sgmlprocess.exception.SGMLException;
+import com.sonovision.openconv.modules.sgmlprocess.model.Bit;
+import com.sonovision.openconv.modules.sgmlprocess.model.SGMLDoctype;
+import com.sonovision.openconv.modules.sgmlprocess.model.SGMLElement;
+import com.sonovision.openconv.modules.sgmlprocess.model.SGMLElementSpec;
+import com.sonovision.openconv.modules.sgmlprocess.model.StartTag;
+
+import java.io.*;
+
+public class SGMLReader
+{
+    SGMLStream stream;
+    SGMLDoctype doctype;
+    SGMLElement current;
+    boolean abort_on_structure_error = false; // should we abort on errors?
+    SGMLElement saved_current;	// for error recovery
+
+    // Create a reader connected to an input stream
+
+    public SGMLReader(InputStream in, SGMLDoctype _doctype)
+    {
+	stream = new SGMLStream(in);
+	doctype = _doctype;
+    }
+
+    // Read an instance
+
+    public SGMLElement read(SGMLElementSpec top)
+    {
+	// Create a dummy element to provide context for the top-level
+
+	SGMLElementSpec dummy_spec = 
+	    new SGMLElementSpec(null, "top level", SGMLStream.element,
+				false, true);
+	dummy_spec.addRequired(top);
+	SGMLElement dummy = new SGMLElement(null, dummy_spec, null);
+
+	// Loop getting bits, and building the tree.
+	// current is the element whose children we are reading.
+
+	current = dummy;
+
+	while(current != null &&
+	      !(current == dummy && current.isFinished()))
+	{
+	    Bit bit = stream.getNextBit(current.getSpec().getContent_type());
+	    if(bit instanceof EOF)
+		processEOF();
+	    else if(bit instanceof PCData)
+		processPCData((PCData)bit);
+	    else if(bit instanceof CData)
+		processCData((CData)bit);
+	    else if(bit instanceof StartTag)
+		processStart((StartTag)bit);
+	    else if(bit instanceof EndTag)
+		processEndTag((EndTag)bit);
+	}
+
+	return (SGMLElement)dummy.getChildren().firstElement();
+    }
+
+    // Save the current state of the tree, for error recovery
+
+    private void save()
+    {
+	saved_current = current;
+	for(SGMLElement s = current; s != null; s = s.getParent())
+	{
+		s.setSaved_child_count(s.getChildren().size());
+		s.setSaved_required_count(s.getRequired_count());
+	}
+    }
+
+    // Restore the state of the tree, after finding something illegal
+
+    private void restore()
+    {
+	current = saved_current;
+	for(SGMLElement s = current; s != null; s = s.getParent())
+	{
+	    s.getChildren().setSize(s.getSaved_child_count());
+	    s.setRequired_count(s.getSaved_required_count());
+	}
+    }
+
+    // Open the next required child, if any
+
+    private boolean openIfForced()
+    {
+	SGMLElementSpec next_spec = current.nextRequired();
+	if(next_spec != null && next_spec.isStartOptional())
+	{
+	    current = current.add(next_spec, new Hashtable());
+	    return true;
+	}
+	return false;
+    }
+
+    // Close the current element, checking that it has its required children
+
+    private void close()
+    {
+	if(!current.isFinished())
+	    error("Element \"" + current.getSpec().getName() +
+		  "\" ended before it was complete");
+	current = current.getParent();
+    }
+
+    // Close the current element, checking that it allows omission of
+    // the end tag
+
+    private void implicitClose()
+    {
+	if(!current.getSpec().isEndOptional())
+	    error("Missing non-optional end tag for \"" + 
+		  current.getSpec().getName() + "\"");
+	close();
+    }
+
+    // Close the current element if it is finished and doesn't require
+    // an end tag
+
+    private boolean closeIfAllowed()
+    {
+	if(current.isFinished() && current.getSpec().isEndOptional())
+	{
+	    current = current.getParent();
+	    return true;
+	}
+	return false;
+    }
+
+    // Determine whether an element is currently open
+
+    private boolean isOpen(String name)
+    {
+	for(SGMLElement s = current; s != null; s = s.getParent())
+	    if(s.getSpec().getName() == name)
+		return true;
+	return false;
+    }
+
+    // Process EOF by closing any open elements
+
+    private void processEOF()
+    {
+	while(current != null)
+	    implicitClose();
+    }
+
+    // Process an end tag
+
+    private void processEndTag(EndTag bit)
+    {
+	if(!isOpen(bit.getName()))
+	{
+	    error("End tag for \"" + bit.getName() + "\" which is not open");
+	    return;
+	}
+
+	while(bit.getName() != current.getSpec().getName())
+	    implicitClose();
+	
+	close();
+    }
+
+    // Process PCData
+
+    private void processPCData(PCData bit)
+    {
+	save();
+
+	// Find a legal place to insert it
+
+	while(current != null)
+	{
+	    if(current.getSpec().getContent_type() == SGMLStream.mixed ||
+	       current.getSpec().getContent_type() == SGMLStream.any)
+	    {
+		current.add(bit.text);
+		return;
+	    }
+	    if(!closeIfAllowed() && !openIfForced())
+		break;
+	}
+
+	error("PCData in bad context");
+
+	// If we couldn't find a legal place for it, just insert it here
+
+	restore();
+	current.add(bit.text);
+    }
+
+    // Process CData
+
+    private void processCData(CData bit)
+    {
+	// We only get CData if we asked for it, so nothing to check
+
+	current.add(bit.text);
+    }
+
+    // Process a start tag
+
+    private void processStart(StartTag bit)
+    {
+	// Look up the specification for this element
+
+	SGMLElementSpec spec = doctype.findSpec(bit.getName());
+
+	if(spec == null)
+	{
+	    error("Unknown element name \"" + bit.getName() + "\" ");
+	    spec = doctype.addAny(bit.getName(), false, true);
+	    spec.setFaked(true);
+	}
+
+	save();
+
+	// Find a legal place to insert it
+
+	while(current != null)
+	{
+	    if(current.allows(spec))
+	    {
+		current = current.add(spec, bit.getAttr_table());
+		if(spec.getContent_type() == SGMLStream.empty)
+		    current = current.getParent();
+		return;
+	    }
+	    if(!closeIfAllowed() && !openIfForced())
+		break;
+	}
+
+	error("Element \"" + bit.getName() + "\" start in bad context");
+
+	// If we couldn't find a legal place for it, insert it anyway
+	// after closing the current element if it too was illegal
+	// and has an optional end tag (so we don't nest <li> for example)
+
+	restore();
+
+	if(current.isIs_illegal())
+	    closeIfAllowed();
+
+	current = current.add(spec, bit.getAttr_table());
+	current.setIs_illegal(true);
+	if(spec.getContent_type() == SGMLStream.empty)
+	    current = current.getParent();
+    }
+
+    // Either print a warning or throw an exception
+
+    private void error(String message)
+    {
+	if(abort_on_structure_error)
+	    throw new SGMLException(stream, message);
+	else
+	    System.err.println("Warning at line " + stream.line +
+			       ": " + message);
+    }
+}
+
+
+
+    

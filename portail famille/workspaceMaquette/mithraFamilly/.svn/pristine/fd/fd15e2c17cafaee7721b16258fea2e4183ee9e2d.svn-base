@@ -1,0 +1,301 @@
+<!-- ********************************************************************
+     *								        *
+     *				              RAFALE		        *
+     *								        *
+     *				         Release Version 2.2		*
+     *				        Dated 22th December 1998        *
+     *									*
+     *									*
+     *	Company in charge of :						*
+     *									*
+     *	Dtd Object : Configuration Status List.        		        *
+     *  Amendment	:                                               *
+     *  19/05/97		: Change public Identifier              *
+     *                     add reference to  public entities ISO Latin 1*
+     *									*
+     *  15/01/98		: Change public Identifier              *
+     *                    add value "p" to rpcname attribute list values*
+     *								        *
+     *  22/12/98		: Change public Identifier              *
+     *                    remove one definition of subsect              *
+     *			    change comments inside IPCN definition      *
+     *									*
+     *	19/04/99        : Add ISOpub, ISOgrk3, ISOnum, ISOtech entities *
+     *								        *
+     *  15/03/01        : Extension de la liste de l'attribut rpcname   *
+     *   Motif: Fiche de Changement Rafale Num 3485 Ind A du 06/10/2000 *
+     *									*
+     *The following DOCTYPE statement may be used to call this set of	*
+     *  declarations:					                *
+     *							               	*
+     *	 <!DOCTYPE csl PUBLIC					       	*
+     *   "-//RAFALE CSDB//DTD Configuration Status List 981222//EN"     *
+     *	 []>							        *
+     *									*
+     ********************************************************************-->
+
+<!--**********************************************************************
+    * Define Entity %ISOlat1; (ISO Added Latin 1) containing:-  the      *
+    * formal public identifier for the ISO Added Latin 1 public text.    *
+    ********************************************************************** -->
+
+<!ENTITY % ISOlat1
+  PUBLIC "ISO 8879-1986//ENTITIES Added Latin 1//EN" >
+
+
+
+<!--**********************************************************************
+    * Define Entity %ISOpub; (ISO Publishing) containing:- the formal    *
+    * public identifier for the ISO Publishing public text.              *
+    ********************************************************************** -->
+
+<!ENTITY % ISOpub
+  PUBLIC "ISO 8879-1986//ENTITIES Publishing//EN" > 
+
+
+
+
+<!--**********************************************************************
+    * Define Entity %ISOgrk3; (ISO Greek Symbols) containing:- the       *
+    * formal public identifier for the ISO Greek Symbols public text.    *
+    ********************************************************************** -->
+
+<!ENTITY % ISOgrk3
+  PUBLIC "ISO 8879-1986//ENTITIES Greek Symbols//EN" >
+
+
+
+
+<!--**********************************************************************
+    * Define Entity %ISOnum; (ISO Numeric and Special Symbols)           *
+    * containing:- the formal public identifier for the ISO Numeric and  *
+    * Special Symbols public text.                                       *
+    ********************************************************************** -->
+
+<!ENTITY % ISOnum
+  PUBLIC "ISO 8879-1986//ENTITIES Numeric and Special Graphic//EN" >
+
+<!--**********************************************************************
+    * Define Entity %ISOtech; (ISO General Technical) containing:- the   *
+    * formal public identifier for the ISO General Technical public text.*
+    ********************************************************************** -->
+
+<!ENTITY % ISOtech
+  PUBLIC "ISO 8879-1986//ENTITIES General Technical//EN" >
+
+
+
+<!--**********************************************************************
+    * Call the ISO Added Latin 1 Public Text. The formal public          *
+    * identifier is stored in the entity %ISOlat1;                       *
+    ********************************************************************** -->
+
+%ISOlat1;
+
+
+
+<!--**********************************************************************
+    * Call the ISO Publishing Public Text. The formal public identifier  *
+    * is stored in the entity %ISOpub;                                   *
+    ********************************************************************** -->
+
+%ISOpub;
+
+
+
+<!--**********************************************************************
+    * Call the ISO Greek Symbols Public Text. The formal public          *
+    * identifier is stored in the entity %ISOgrk3;                       *
+    ********************************************************************** -->
+
+%ISOgrk3;
+
+
+
+<!--**********************************************************************
+    * Call the ISO Numeric and Special Symbols Public Text. The formal   *
+    * public identifier is stored in the entity %ISOnum;                 *
+    ********************************************************************** -->
+
+%ISOnum;
+
+
+
+<!--**********************************************************************
+    * Call the ISO General Technical Public Text. The formal public      *
+    * identifier is stored in the entity %ISOtech;                       *
+    ********************************************************************** -->
+
+%ISOtech;
+
+
+<!--*****************************************************************************
+    * Define Entity %RPCNAME (Responsible Partner Company Names).              	*
+    *   Responsible Partner Company Names.                                      *
+    *   See "CTG annexe 2" for details about the above letters.                 *
+    **************************************************************************-->
+<!ENTITY % RPCNAME "(A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z|0|1|2|3|4|5|6|7|8|9)"  >
+
+<!--*****************************************************************************
+    * Define Element CSL (Configuration Status List).				*
+    **************************************************************************-->
+<!ELEMENT csl - O (srcsys,listdm) -- Configuration Status List.-->
+
+
+<!--*****************************************************************************
+    * Define Element srcsys (SOURCE SYSTEM).				  	*
+    **************************************************************************-->
+<!ELEMENT srcsys - O (#PCDATA) -- Source System.-->
+
+
+<!--*****************************************************************************
+    * Define Element LISTDM (List of DM).					*
+    **************************************************************************-->
+<!ELEMENT listdm - O (dm+) -- List of DM existing in the  CSDB.-->
+
+
+<!--*****************************************************************************
+    * Define Element DM (Data Module).						*
+    **************************************************************************-->
+<!ELEMENT dm - O ((avee|age|ipcc|ipcn),issno,issdate,bexpno) 
+		-- Data for each DM in the List.-->
+
+
+<!--*****************************************************************************
+    * Define Element AGE (Aircraft Ground Equipment).				*
+    **************************************************************************-->
+<!ELEMENT age - O (modelic,supeqvc,ecscc,eidc,cic,discode,
+                  discodev,incode,incodev,itemloc)
+		-- Aircraft Ground Equipment.-->
+
+
+<!--*****************************************************************************
+    * Define Element AVEE (Air Vehicle, Engines, Equipment).			*
+    **************************************************************************-->
+<!ELEMENT avee - O (modelic,sdc,chapnum,section,subsect,subject,discode,
+                   discodev,incode,incodev,itemloc)
+		-- Air Vehicle, Engines, Equipment.-->
+
+
+
+<!--**********************************************************************
+    * Define Element IPCC (Chapterized Illustrated parts Catalog) containing:- *
+    *--------------------------------------------------------------------*
+    * This defines the structure of the data module code for             *
+    * Chapterized IPC.                                                   *
+    *--------------------------------------------------------------------*
+    *   MODELIC  - mandatory single     contains Parsed Character Data.  *
+    *   SDC      - mandatory single     contains Parsed Character Data.  *
+    *   CHAPNUM  - mandatory single     contains Parsed Character Data.  *
+    *   SECTION  - mandatory single     contains Parsed Character Data.  *
+    *   SUBSECT  - mandatory single     contains Parsed Character Data.  *
+    *   SUBJECT  - mandatory single     contains Parsed Character Data.  *
+    *   FIG      - mandatory single     contains Parsed Character Data.  *
+    *   FIGV     - mandatory single     contains Parsed Character Data.  *
+    *   INCODE   - mandatory single     contains Parsed Character Data.  *
+    *   INCODEV  - mandatory single     contains Parsed Character Data.  *
+    *   ITEMLOC  - mandatory single     contains Parsed Character Data.  *
+    ********************************************************************** -->
+
+<!ELEMENT ipcc - o (modelic,sdc,chapnum,section,subsect,subject,fig,
+                   figv,incode,incodev,itemloc) >
+
+
+
+<!--**********************************************************************
+    * Define Element IPCN (Non Chapterized Illustrated parts Catalog)    *
+    *--------------------------------------------------------------------*
+    * This defines the structure of the data module code for             *
+    * Non Chapterized IPC.                                               *
+    *--------------------------------------------------------------------*
+    *   MODELIC  - mandatory single     contains Parsed Character Data.  *
+    *   SDC      - mandatory single     contains Parsed Character Data.  *
+    *   FIXZ     - mandatory single     'Z'                              *
+    *   RPC      - mandatory single     Responnsible Partner Company     *
+    *   ENDIPPN  - mandatory single     IPPN last digit                  *
+    *   FIG      - mandatory single     Figure Number                    *
+    *   FIGV     - mandatory single     Figure variant                   *
+    *   INCODEV  - mandatory single     contains Parsed Character Data.  *
+    *   ITEMLOC  - mandatory single     contains Parsed Character Data.  *
+    ********************************************************************** -->
+
+<!ELEMENT ipcn - o (modelic,sdc,fixz,rpc,endippn,fig,
+                   figv,incode,incodev,itemloc) >
+
+<!--**********************************************************************
+    * Define the following elements.                                     *
+    *  MODELIC  - Model Identification Code.                             *
+    *  SDC      - System Difference code                                 *
+    *  FIXZ     - Z                                                      *
+    *  RPC      - RPCNAME                                                *
+    *  ENDIPPN  - Four Last IPPN digits                                  *
+    *  FIG      - FIGURE NUMBER                                          *
+    *  FIGV     - FIGURE VARIANT                                         *
+    *  INCODE   - Information Code.                                      *
+    *  INCODEV  - Information Code Variant.                              *
+    *  ITEMLOC  - Item Location Code.                                    *
+    ********************************************************************** -->
+
+<!ELEMENT (modelic | supeqvc | ecscc | eidc | cic | discode | discodev |
+          incode | incodev | itemloc | subject | sdc | chapnum | section |
+          subsect| fig | figv | endippn) - o (#PCDATA)>
+
+					 
+<!--**********************************************************************
+    * Define Element FIXZ (FIXE A "Z") containing:-                      *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  fixz    - DECLARED  - Z- Issue Number.                            *
+    ********************************************************************** -->
+
+<!ELEMENT fixz - o  EMPTY >
+<!ATTLIST fixz
+            fixz   (Z)	"Z"   >
+
+<!--**********************************************************************
+    * Define Element RPC (Responsible Partner Company) containing:-      *
+    *  Parsed Character Data.                                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  RPCNAME  - %RPCNAME - The name or CAGE code of the responsible    *
+    *                        partner company.                            *
+    ********************************************************************** -->
+<!ELEMENT rpc      - O EMPTY -- Responsible Partner Company.-->
+<!ATTLIST rpc
+            rpcname	%RPCNAME;	#REQUIRED --  The name of the Responsible
+						     Partner Company.-->
+
+
+<!--*****************************************************************************
+    * Define Element ISSNO (Issue Number).					*
+    **************************************************************************-->
+<!ELEMENT issno - O  EMPTY -- Issue Number.-->
+<!ATTLIST issno
+            issno   NUMBER      #REQUIRED --  Issue Number.--
+            type    (N | C | R | S | T)	"N" 
+		-- Status of this issue of the data module :
+		- "N"   - New
+		- "C"	- Changed
+		- "R"	- Completely Revised
+		- "S"	- Status Changed
+		- "T" 	- Reinstated.-->
+<!-- D supprime ds CSL -->
+
+
+<!--*****************************************************************************
+    * Define ISSDATE (Issue Date).						*
+    **************************************************************************-->
+<!ELEMENT issdate  - O  EMPTY -- Issue Date.-->
+<!ATTLIST issdate
+            year 	NUMBER  #REQUIRED -- The year.--
+            month 	NUMBER	#REQUIRED -- The month of the year.--
+            day  	NUMBER  #REQUIRED -- The day of the month. -->
+
+
+<!--*****************************************************************************
+    * Define Element BEXPNO (Bordereau expedition number).	             	*
+    **************************************************************************-->
+<!ELEMENT bexpno - O  (#PCDATA) -- Bordereau expedition number for a DM.-->
+
+

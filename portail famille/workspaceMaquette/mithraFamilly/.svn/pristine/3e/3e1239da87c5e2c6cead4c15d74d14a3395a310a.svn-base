@@ -1,0 +1,100 @@
+package com.sonovision.openconv.modules.xslprocess;
+
+import static org.junit.Assert.assertTrue;
+import static org.testng.Assert.assertNotNull;
+import static org.testng.AssertJUnit.assertEquals;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.StringWriter;
+import java.net.URISyntaxException;
+import java.util.HashMap;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.apache.commons.io.IOUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.xml.sax.SAXException;
+
+import com.sedoc.toolbox.bean.UtilsService;
+import com.sonovision.openconv.db.cir.TotalCirTable;
+import com.sonovision.openconv.log.model.LoggerLevel;
+import com.sonovision.openconv.mapper.TreatedObjectMapper;
+import com.sonovision.openconv.model.TreatedObject;
+import com.sonovision.openconv.modules.fileaccess.TaskLoadFile;
+import com.sonovision.openconv.modules.sgmlprocess.TaskSGMLProcess;
+import com.sonovision.openconv.modules.xslprocess.model.CirTypeKey;
+import com.sonovision.openconv.modules.xslprocess.service.CirService;
+import com.sonovision.openconv.utils.ResourceTestPath;
+import com.sonovision.openconv.utils.TestHelperXslProcess;
+
+public class TaskCIRProcessTest extends TestHelperXslProcess {
+	
+	private Node node1,node2;
+	
+    final private String pathTestFile1="/in/cir/dataXml1.xml";
+    final private String pathTestFile2="/in/cir/dataXml2.xml";
+    final private String pathTestFile3="/in/cir/dataXml3.xml";
+	
+    @Autowired
+    private CirService cirService;
+    @Autowired
+    private TotalCirTable totalCirTable;
+	@Autowired
+	UtilsService utilservice;
+    
+    @BeforeClass
+    public void prebuild() throws ParserConfigurationException, IOException, SAXException, URISyntaxException {
+        node1 = loadNode(pathTestFile1);
+        node2 = loadNode(pathTestFile2);
+    }
+    
+	@Test
+  public void run() throws IOException {
+	  System.out.println("Test run TaskCIRProcessTest");
+	  
+	  //fill in totalCirTable
+	  String returnkey1=cirService.push(totalCirTable,node1,CirTypeKey.INGREDIENT);
+	  String returnkey2=cirService.push(totalCirTable,node2, CirTypeKey.INGREDIENT);
+	  
+	  
+	  HashMap<String,TreatedObject> toList=getTreatedObjectList(ResourceTestPath.CIR);
+	  assertEquals(3, toList.size());
+	  TaskCIRProcess tcp = new TaskCIRProcess();
+	  tcp.setTotalCirTable(totalCirTable);
+	  tcp.setDBLogger(getDBLogger(ResourceTestPath.CIR));
+	  tcp.addParameter(TaskCIRProcess.PARAMETER_CIR_TYPE, "INGREDIENT");
+	  tcp.addParameter(TaskCIRProcess.PARAMETER_CIR_SNS, "tsa_name");
+	  tcp.addParameter(TaskCIRProcess.PARAMETER_CIR_XSL_FILE, "xsl/cir/min.xsl");
+	  String result=tcp.run(toList);
+	  assertEquals(result,LoggerLevel.INFO.getValue().toString());
+	  assertEquals(4, toList.size());
+	  assertNotNull(toList.get("tsa_name"));
+	  InputStream document = TreatedObjectMapper.getInputStream(toList.get("tsa_name").getObjectConvert());
+//	  utilservice.ecritFile(document, "D:\\coco.xml");
+	  StringWriter writer = new StringWriter();
+	  IOUtils.copy(document, writer, "UTF-8");
+	  assertTrue(writer.toString().contains("passed"));
+//	  System.out.println(toList.get(key));
+//	  assertEquals(toList.size(),1);
+  }
+	
+	  private Node loadNode(String filePath) throws URISyntaxException, ParserConfigurationException, SAXException, IOException{
+	      File xml = new File(this.getClass().getResource(filePath).toURI());
+
+	      DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+	      DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+	      Document doc = dBuilder.parse(xml);
+
+	      doc.getDocumentElement().normalize();
+
+	      return doc.getFirstChild();
+	  }
+}

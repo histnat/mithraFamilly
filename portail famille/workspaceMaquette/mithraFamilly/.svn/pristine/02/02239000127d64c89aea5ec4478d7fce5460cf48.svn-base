@@ -1,0 +1,982 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1A753210SF030100003A011 SYSTEM "x-dm://0900f90b80002cfd,MYWORKING" NDATA cgm>
+<!ENTITY A1Z753220SF030100003A011 SYSTEM "x-dm://0900f90b80002dd3,MYWORKING" NDATA cgm>
+<!ENTITY A1Z753210SF030100003A021 SYSTEM "x-dm://0900f90b8000372b,MYWORKING" NDATA cgm>
+<!ENTITY A1Z753210SF030100004A031 SYSTEM "x-dm://0900f90b8000372d,MYWORKING" NDATA cgm>
+<!ENTITY A1Z726100SF030100043A011 SYSTEM "x-dm://0900f90b80019d6e,MYWORKING" NDATA cgm>
+<!ENTITY A1Z726100SF030100042A011 SYSTEM "x-dm://0900f90b80002d31,MYWORKING" NDATA cgm>
+<!ENTITY A1A726199SF030100011A011 SYSTEM "x-dm://0900f90b8000283c,MYWORKING" NDATA cgm>
+<!ENTITY A1A720099SF030100015A011 SYSTEM "x-dm://0900f90b8000dabe,MYWORKING" NDATA jpeg>
+<!ENTITY A1A723400SF030190069A011 SYSTEM "x-dm://0900f90b800025cd,MYWORKING" NDATA tiff>
+<!ENTITY A1A723400SF030190068A011 SYSTEM "x-dm://0900f90b800025cc,MYWORKING" NDATA tiff>
+<!ENTITY A1A780000SF030100051A011 SYSTEM "x-dm://0900f90b80002aa7,MYWORKING" NDATA cgm>
+]>
+<?Pub EntList bull copy rArr sect trade nbsp>
+<?Pub Inc>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>2</subsect><subject>99</subject><discode>08</discode><discodev>A</discodev><incode>930</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmc>
+<dmtitle><techname>SERVICE BULLETIN BLOC HYDROMECANIQUE PC CARTER</techname><infoname>SERVICE BULLETIN - OPERATION EXCEPTIONNELLE DE MAINTENANCE REMPLACEMENT RONDELLE PORTE JOINT</infoname></dmtitle>
+<issno type="c" issno="2">
+<issdate month="09" year="2011" day="16"><?Pub Caret1>
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 4"></version>
+<customer aaf="1" anf="1">
+<nti nti1="1" nti2="1" nti3="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Prise en compte CR UMR 017/11/M88 du 11/03/11 et de la SPEC VSEL N&deg; 8088.</rfu>
+<remarks>RAS</remarks>
+</status>
+</idstatus><content><refs>
+<refdm>
+<dmcid id="A1ARF720500A100FC"><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>RF</ecscc><eidc>72</eidc><cic>05</cic><discode>00</discode><discodev>A</discodev><incode>100</incode><incodev>F</incodev><itemloc>C</itemloc></age></dmcid>
+<dmcid id="A1A73221031A527AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>2</subsect><subject>10</subject><discode>31</discode><discodev>A</discodev><incode>527</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A73221046A527AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>2</subsect><subject>10</subject><discode>46</discode><discodev>A</discodev><incode>527</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A73221046A727AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>2</subsect><subject>10</subject><discode>46</discode><discodev>A</discodev><incode>727</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A73221075A527AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>2</subsect><subject>10</subject><discode>75</discode><discodev>A</discodev><incode>527</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A73221075A727AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>2</subsect><subject>10</subject><discode>75</discode><discodev>A</discodev><incode>727</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A73221075A527BC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>2</subsect><subject>10</subject><discode>75</discode><discodev>A</discodev><incode>527</incode><incodev>B</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A73221075A727BC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>2</subsect><subject>10</subject><discode>75</discode><discodev>A</discodev><incode>727</incode><incodev>B</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A73221051A527AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>2</subsect><subject>10</subject><discode>51</discode><discodev>A</discodev><incode>527</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A73221051A727AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>2</subsect><subject>10</subject><discode>51</discode><discodev>A</discodev><incode>727</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A73221051A527BC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>2</subsect><subject>10</subject><discode>51</discode><discodev>A</discodev><incode>527</incode><incodev>B</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A73221051A727BC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>2</subsect><subject>10</subject><discode>51</discode><discodev>A</discodev><incode>727</incode><incodev>B</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A73221073A527AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>2</subsect><subject>10</subject><discode>73</discode><discodev>A</discodev><incode>527</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A73221073A727AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>2</subsect><subject>10</subject><discode>73</discode><discodev>A</discodev><incode>727</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A73221075A537AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>2</subsect><subject>10</subject><discode>75</discode><discodev>A</discodev><incode>537</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A73221075A717AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>2</subsect><subject>10</subject><discode>75</discode><discodev>A</discodev><incode>717</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A73221075A537BC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>2</subsect><subject>10</subject><discode>75</discode><discodev>A</discodev><incode>537</incode><incodev>B</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A73221075A717BC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>2</subsect><subject>10</subject><discode>75</discode><discodev>A</discodev><incode>717</incode><incodev>B</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A73221000A520AD"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>2</subsect><subject>10</subject><discode>00</discode><discodev>A</discodev><incode>520</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmcid>
+<dmcid id="A1A73221045A527AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>2</subsect><subject>10</subject><discode>45</discode><discodev>A</discodev><incode>527</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A73221045A727AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>2</subsect><subject>10</subject><discode>45</discode><discodev>A</discodev><incode>727</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A70210001A251AD"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>2</section><subsect>1</subsect><subject>00</subject><discode>01</discode><discodev>A</discodev><incode>251</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmcid>
+<dmcid id="A1A70210023A253AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>2</section><subsect>1</subsect><subject>00</subject><discode>23</discode><discodev>A</discodev><incode>253</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A73221001A527AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>2</subsect><subject>10</subject><discode>01</discode><discodev>A</discodev><incode>527</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A73221001A727AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>2</subsect><subject>10</subject><discode>01</discode><discodev>A</discodev><incode>727</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A73221059A527AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>2</subsect><subject>10</subject><discode>59</discode><discodev>A</discodev><incode>527</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A73221059A727AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>2</subsect><subject>10</subject><discode>59</discode><discodev>A</discodev><incode>727</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+</refdm>
+</refs><proced><pmd>
+<manhour value="3,0"></manhour>
+<duration value="3,0"></duration>
+</pmd><prelreqs><reqconds><reqcondli><reqcond><applic><systemid><nti nti1="1"></systemid></applic>
+<cond><para><p>Le moteur assembl&eacute; doit &ecirc;tre avionn&eacute; et les portes avion doivent &ecirc;tre d&eacute;pos&eacute;es.</p>
+</para>
+</cond>
+</reqcond><reqcond>
+<cond><para><p>Le moteur assembl&eacute; doit &ecirc;tre sur un chariot de transport et d'avionnage.</p>
+</para>
+</cond>
+</reqcond><reqcond><applic><systemid><nti nti1="0" nti2="1"></systemid></applic>
+<cond><para><p>Le moteur assembl&eacute; doit &ecirc;tre sur un b&acirc;ti de maintenance.</p>
+</para>
+</cond>
+</reqcond><reqcond><applic><systemid><nti nti1="0" nti2="0" nti3="1"></systemid></applic>
+<cond><para><p>Le BHMPC doit &ecirc;tre sur platine.</p>
+</para>
+</cond>
+</reqcond></reqcondli></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="3,0"></reqper>
+</reqpers><supequip><nosupeq><nosupeqs></supequip><supplies><supplyli exhaust="0">
+<supply id="RGF020" mand="1"><refipc csn="73221004 008 "><nomen>PORTE JOINT APPARIE</nomen><quantity>1</quantity></supply>
+<supply id="RGY023" mand="1"><refipc csn="73221001 005 "><nomen>JOINT TORIQUE</nomen><quantity>1</quantity></supply>
+<supply id="RGF025" mand="1"><refipc csn="73221004 007 "><nomen>JOINT TORIQUE</nomen><quantity>1</quantity></supply>
+<supply id="RGF026" mand="1"><refipc csn="73221004 006 "><nomen>JOINT TORIQUE</nomen><quantity>1</quantity></supply>
+<supply id="RGF027" mand="1"><refipc csn="73221004 005 "><nomen>JOINT TORIQUE</nomen><quantity>1</quantity></supply>
+<supply id="RGF106" mand="1"><refipc csn="73221004 010 "><nomen>JOINT TORIQUE</nomen><quantity>1</quantity></supply>
+<supply id="RGF049" mand="0"><refipc csn="73221004 109 "><nomen>JOINT TORIQUE</nomen><quantity>1</quantity></supply>
+<supply id="RGF040" mand="0"><refipc csn="73221004 106 "><nomen>JOINT TORIQUE</nomen><quantity>1</quantity></supply>
+<supply id="RGF034" mand="0"><refipc csn="73221004 036 "><nomen>JOINT TORIQUE</nomen><quantity>1</quantity></supply>
+<supply id="RGF035" mand="0"><refipc csn="73221004 037 "><nomen>JOINT TORIQUE</nomen><quantity>1</quantity></supply>
+<supply id="RGF036" mand="0"><refipc csn="73221004 038 "><nomen>JOINT TORIQUE</nomen><quantity>1</quantity></supply>
+<supply id="RGF094" mand="0"><refipc csn="73221004 033 "><nomen>JOINT TORIQUE</nomen><quantity>1</quantity></supply>
+<supply id="RGF096" mand="0"><refipc csn="73221004 032 "><nomen>JOINT TORIQUE</nomen><quantity>1</quantity></supply>
+<supply id="RGF043" mand="0"><refipc csn="73221004 089 "><nomen>JOINT TORIQUE</nomen><quantity>2</quantity></supply>
+<supply id="RGF044A" mand="0"><refipc csn="73221004 083 "><nomen>JOINT TORIQUE</nomen><quantity>1</quantity></supply>
+<supply id="RGF044B" mand="0"><refipc csn="73221004 088 "><nomen>JOINT TORIQUE</nomen><quantity>1</quantity></supply>
+<supply id="RGF039A" mand="0"><refipc csn="73221004 072 "><nomen>JOINT TORIQUE</nomen><quantity>1</quantity></supply>
+<supply id="RGF039B" mand="0"><refipc csn="73221004 077 "><nomen>JOINT TORIQUE</nomen><quantity>3</quantity></supply>
+<supply id="RGF011" mand="0"><refipc csn="73221004 087 "><nomen>JOINT TORIQUE</nomen><quantity>1</quantity></supply>
+<supply id="RGF012" mand="0"><refipc csn="73221004 086 "><nomen>JOINT V</nomen><quantity>1</quantity></supply>
+<supply id="RGF013" mand="0"><refipc csn="73221004 091 "><nomen>JOINT TORIQUE</nomen><quantity>2</quantity></supply>
+<supply id="RGF014" mand="0"><refipc csn="73221004 090 "><nomen>JOINT V</nomen><quantity>2</quantity></supply>
+<supply id="RGF004" mand="0"><refipc csn="73221004 076 "><nomen>JOINT TORIQUE</nomen><quantity>1</quantity></supply>
+<supply id="RGF005" mand="0"><refipc csn="73221004 075 "><nomen>JOINT V</nomen><quantity>1</quantity></supply>
+<supply id="RGF006" mand="0"><refipc csn="73221004 079 "><nomen>JOINT TORIQUE</nomen><quantity>2</quantity></supply>
+<supply id="RGF007" mand="0"><refipc csn="73221004 078 "><nomen>JOINT V</nomen><quantity>2</quantity></supply>
+</supplyli></supplies><miscs><miscli>
+<misc id="P0325" matiere="0"><refipc csn="72013002 028 "><nomen>SOLVANT, DIMETHYLCETONE, QUALITE PURE</nomen><quantity>SB</quantity></misc>
+</miscli></miscs><safety>
+<specpara>
+<note>
+<p>La pr&eacute;sence de particules de joint dans le circuit carburant peut entra&icirc;ner un dysfonctionnement du BHMPC.</p>
+</note>
+<note><applic><systemid><nti nti1="0" nti2="0" nti3="1"></systemid></applic>
+<p>Les rechanges<tabref refid="tableau02"> sont de fourniture Snecma.</p>
+</note>
+</specpara>
+</safety></prelreqs><mainfunc>
+<step1 control="0" id="P10">
+<title>CONSTAT</title>
+<para><p>Des cas de fuite carburant &agrave; la purge BHMPC ont &eacute;t&eacute; constat&eacute;s en exploitation.</p>
+</para>
+</step1>
+<step1 control="0" id="P20">
+<title>ANALYSE</title>
+<para><p>Un examen des BHMPC d&eacute;fectueux a montr&eacute; que la d&eacute;faillance &eacute;tait due &agrave; une d&eacute;gradation du joint adh&eacute;ris&eacute; de la rondelle porte-joint<refipc csn="73221004 008 ">.</p>
+</para>
+<para><p change="mod">Une enqu&ecirc;te qualit&eacute;/tra&ccedil;abilit&eacute; a permis d'identifier 3 lots de rondelles porte-joint (LOTS 117998/1 et 142337/1 issus du m&ecirc;me lancement en fabrication ainsi que le 218345/1) potentiellement d&eacute;fectueux. Il est donc demand&eacute; de remplacer les rondelles porte-joint issues de ces lots &eacute;quipant les BHMPC suivants<tabref refid="tableau01"> :</p>
+</para>
+<table id="tableau01">
+<tgroup cols="4" align="center">
+<?PubTbl tgroup dispwid="19.17cm">
+<colspec colname="col1" colwidth="1.00*"><colspec colname="col2" colwidth="1.01*"><colspec colname="col3" colwidth="1.02*"><colspec colname="COLSPEC0" colwidth="1.02*">
+<tbody>
+<row>
+<?PubTbl row rht="1.20cm">
+<entry colname="col1" valign="middle"><para><p>YN045136</p>
+</para>
+</entry>
+<entry colname="col2" valign="middle"><para><p>YN045138</p>
+</para>
+</entry>
+<entry colname="col3" valign="middle"><para><p change="mod">**YN045139</p>
+</para>
+</entry>
+<entry colname="COLSPEC0" valign="middle"><para><p>YN045140</p>
+</para>
+</entry>
+</row>
+<row>
+<?PubTbl row rht="1.20cm">
+<entry colname="col1" valign="middle"><para><p change="add">*YN045141</p>
+</para>
+</entry>
+<entry colname="col2" valign="middle"><para><p>YN045162</p>
+</para>
+</entry>
+<entry colname="col3" valign="middle"><para><p>YN045163</p>
+</para>
+</entry>
+<entry colname="COLSPEC0" valign="middle"><para><p>YN045165</p>
+</para>
+</entry>
+</row>
+<row>
+<?PubTbl row rht="1.20cm">
+<entry colname="col1" valign="middle"><para><p>YN045166</p>
+</para>
+</entry>
+<entry colname="col2" valign="middle"><para><p change="mod">**YN045167</p>
+</para>
+</entry>
+<entry colname="col3" valign="middle"><para><p>YN045168</p>
+</para>
+</entry>
+<entry colname="COLSPEC0" valign="middle"><para><p>YN045169</p>
+</para>
+</entry>
+</row>
+<row>
+<?PubTbl row rht="1.20cm">
+<entry colname="col1" valign="middle"><para><p>YN045172</p>
+</para>
+</entry>
+<entry colname="col2" valign="middle"><para><p>YN045174</p>
+</para>
+</entry>
+<entry colname="col3" valign="middle"><para><p>YN045175</p>
+</para>
+</entry>
+<entry colname="COLSPEC0" valign="middle"><para><p>YN045176</p>
+</para>
+</entry>
+</row>
+<row>
+<?PubTbl row rht="1.20cm">
+<entry colname="col1" valign="middle"><para><p>YN045177</p>
+</para>
+</entry>
+<entry colname="col2" valign="middle"><para><p>YN045178</p>
+</para>
+</entry>
+<entry colname="col3" valign="middle"><para><p>YN045179</p>
+</para>
+</entry>
+<entry colname="COLSPEC0" valign="middle"><para><p>YN045180</p>
+</para>
+</entry>
+</row>
+<row>
+<?PubTbl row rht="1.20cm">
+<entry colname="col1" valign="middle"><para><p>YN045182</p>
+</para>
+</entry>
+<entry colname="col2" valign="middle"><para><p change="add">YN045286</p>
+</para>
+</entry>
+<entry colname="col3" valign="middle"><para><p change="add">YN045318</p>
+</para>
+</entry>
+<entry colname="COLSPEC0" valign="middle"><para><p change="add">YN045327</p>
+</para>
+</entry>
+</row>
+<row>
+<?PubTbl row rht="1.20cm">
+<entry colname="col1" valign="middle"><para><p change="add">YN045329</p>
+</para>
+</entry>
+<entry colname="col2" valign="middle"><para><p change="add">YN045331</p>
+</para>
+</entry>
+<entry colname="col3" valign="middle"><para><p change="add">YN045332</p>
+</para>
+</entry>
+<entry colname="COLSPEC0" valign="middle"><para><p change="add">YN045333</p>
+</para>
+</entry>
+</row>
+<row>
+<?PubTbl row rht="1.20cm">
+<entry colname="col1" valign="middle"><para><p change="add">YN045334</p>
+</para>
+</entry>
+<entry colname="col2" valign="middle"><para><p change="add">YN045335</p>
+</para>
+</entry>
+<entry colname="col3" valign="middle"><para><p change="add">YN045336</p>
+</para>
+</entry>
+<entry colname="COLSPEC0" valign="middle"><para><p change="add">YN045337</p>
+</para>
+</entry>
+</row>
+<row>
+<?PubTbl row rht="1.20cm">
+<entry colname="col1" valign="middle"><para><p change="add">YN045338</p>
+</para>
+</entry>
+<entry colname="col2" valign="middle"><para><p change="add">YN045339</p>
+</para>
+</entry>
+<entry colname="col3" valign="middle"><para><p change="add">YN045340</p>
+</para>
+</entry>
+<entry colname="COLSPEC0" valign="middle"><para><p change="add">YN045341</p>
+</para>
+</entry>
+</row>
+<row>
+<?PubTbl row rht="1.20cm">
+<entry colname="col1" valign="middle"><para><p change="add">YN045342</p>
+</para>
+</entry>
+<entry colname="col2" valign="middle"><para><p change="add">YN045343</p>
+</para>
+</entry>
+<entry colname="col3" valign="middle"><para><p change="add">YN045344</p>
+</para>
+</entry>
+<entry colname="COLSPEC0" valign="middle"><para><p change="add">YN045345</p>
+</para>
+</entry>
+</row>
+<row>
+<?PubTbl row rht="1.20cm">
+<entry colname="col1" valign="middle"><para><p change="add">YN045347</p>
+</para>
+</entry>
+<entry colname="col2" valign="middle"><para><p change="add">YN045349</p>
+</para>
+</entry>
+<entry colname="col3" valign="middle"><para><p></p>
+</para>
+</entry>
+<entry colname="COLSPEC0" valign="middle"><para><p></p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<note>
+<p change="add">BHMPC *YN045141 d&eacute;truit (crash Rafale N 316).</p>
+<p change="add">BHMPC **YN045139 et **YN045167 d&eacute;j&agrave; trait&eacute;s &agrave; ce jour par application du pr&eacute;sent SB version 1N ; doivent &ecirc;tre repris au titre du SB version 2C.</p>
+<p change="add">2 autres BHMPC potentiellement concern&eacute;s, non identifi&eacute;s.</p>
+</note>
+</step1>
+<step1 control="0" id="P30">
+<title>ACTIONS</title>
+<step2 id="P30-10">
+<applic><systemid><nti nti1="1" nti2="1"></systemid></applic>
+<para><p>D&eacute;poser les BHMPC de la liste <tabref refid="tableau01"><dmcref xrefid="A1A73221000A520AD">.</p>
+</para>
+</step2>
+<step2 id="P30-20">
+<applic><systemid><nti nti1="1" nti2="1"></systemid></applic>
+<para><p>Retourner les BHMPC d&eacute;pos&eacute;s vers le NTI3 pour proc&eacute;der au remplacement de la rondelle porte-joint.</p>
+</para>
+</step2>
+<step2 id="P30-30">
+<applic><systemid><nti nti1="0" nti2="0" nti3="1"></systemid></applic>
+<specpara>
+<note>
+<p>Liste des pi&egrave;ces rechanges de fourniture Snecma pouvant &ecirc;tre appel&eacute;es lors des op&eacute;rations d&eacute;crites ci-apr&egrave;s :</p>
+</note>
+</specpara>
+<table id="tableau02">
+<tgroup cols="4" align="center">
+<?PubTbl tgroup dispwid="23.00cm">
+<colspec colname="col1" colwidth="4.20cm"><colspec colname="col2" colwidth="5.20cm"><colspec colname="col3" colwidth="5.20cm"><colspec colname="COLSPEC0" colwidth="4.20cm">
+<tbody>
+<row>
+<entry colname="col1" valign="middle"><para><p>Rechanges syst&eacute;matiques</p>
+</para>
+</entry>
+<entry colname="col2" valign="middle"><para><p></p>
+</para>
+</entry>
+<entry colname="col3" valign="middle"><para><p></p>
+</para>
+</entry>
+<entry colname="COLSPEC0" valign="middle"><para><p></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1" valign="middle"><para><p>Code</p>
+</para>
+</entry>
+<entry colname="col2" valign="middle"><para><p>PNR</p>
+</para>
+</entry>
+<entry colname="col3" valign="middle"><para><p>D&eacute;signation</p>
+</para>
+</entry>
+<entry colname="COLSPEC0" valign="middle"><para><p>Quantit&eacute;</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1" valign="middle"><para><p><supplref refid="RGY023"></p>
+</para>
+</entry>
+<entry colname="col2" valign="middle"><para><p>650&ndash;393&ndash;268&ndash;0</p>
+</para>
+</entry>
+<entry colname="col3" valign="middle"><para><p>Joint torique</p>
+</para>
+</entry>
+<entry colname="COLSPEC0" valign="middle"><para><p>1</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1" valign="middle"><para><p><supplref refid="RGF025"></p>
+</para>
+</entry>
+<entry colname="col2" valign="middle"><para><p>EN3049A0437</p>
+</para>
+</entry>
+<entry colname="col3" valign="middle"><para><p>Joint torique</p>
+</para>
+</entry>
+<entry colname="COLSPEC0" valign="middle"><para><p>1</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1" valign="middle"><para><p><supplref refid="RGF026"></p>
+</para>
+</entry>
+<entry colname="col2" valign="middle"><para><p>EN3049A0437</p>
+</para>
+</entry>
+<entry colname="col3" valign="middle"><para><p>Joint torique</p>
+</para>
+</entry>
+<entry colname="COLSPEC0" valign="middle"><para><p>1</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1" valign="middle"><para><p><supplref refid="RGF027"></p>
+</para>
+</entry>
+<entry colname="col2" valign="middle"><para><p>EN3049A0315</p>
+</para>
+</entry>
+<entry colname="col3" valign="middle"><para><p>Joint torique</p>
+</para>
+</entry>
+<entry colname="COLSPEC0" valign="middle"><para><p>1</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1" valign="middle"><para><p><supplref refid="RGF106"></p>
+</para>
+</entry>
+<entry colname="col2" valign="middle"><para><p>EN3049A0345</p>
+</para>
+</entry>
+<entry colname="col3" valign="middle"><para><p>Joint torique</p>
+</para>
+</entry>
+<entry colname="COLSPEC0" valign="middle"><para><p>1</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1" valign="middle"><para><p><supplref refid="RGF020"></p>
+</para>
+</entry>
+<entry colname="col2" valign="middle"><para><p>443&ndash;349&ndash;00&ndash;C</p>
+</para>
+</entry>
+<entry colname="col3" valign="middle"><para><p>Porte-joint appari&eacute;</p>
+</para>
+</entry>
+<entry colname="COLSPEC0" valign="middle"><para><p>1</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1" valign="middle"><para><p>Rechanges &eacute;ventuels</p>
+</para>
+</entry>
+<entry colname="col2" valign="middle"><para><p></p>
+</para>
+</entry>
+<entry colname="col3" valign="middle"><para><p></p>
+</para>
+</entry>
+<entry colname="COLSPEC0" valign="middle"><para><p></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1" valign="middle"><para><p>Code</p>
+</para>
+</entry>
+<entry colname="col2" valign="middle"><para><p>PNR</p>
+</para>
+</entry>
+<entry colname="col3" valign="middle"><para><p>D&eacute;signation</p>
+</para>
+</entry>
+<entry colname="COLSPEC0" valign="middle"><para><p>Quantit&eacute;</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1" valign="middle"><para><p><supplref refid="RGF049"></p>
+</para>
+</entry>
+<entry colname="col2" valign="middle"><para><p>EN3049A0190</p>
+</para>
+</entry>
+<entry colname="col3" valign="middle"><para><p>Joint torique</p>
+</para>
+</entry>
+<entry colname="COLSPEC0" valign="middle"><para><p>1</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1" valign="middle"><para><p><supplref refid="RGF040"></p>
+</para>
+</entry>
+<entry colname="col2" valign="middle"><para><p>EN3049A0280</p>
+</para>
+</entry>
+<entry colname="col3" valign="middle"><para><p>Joint torique</p>
+</para>
+</entry>
+<entry colname="COLSPEC0" valign="middle"><para><p>1</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1" valign="middle"><para><p><supplref refid="RGF034"></p>
+</para>
+</entry>
+<entry colname="col2" valign="middle"><para><p>EN3049A0280</p>
+</para>
+</entry>
+<entry colname="col3" valign="middle"><para><p>Joint torique</p>
+</para>
+</entry>
+<entry colname="COLSPEC0" valign="middle"><para><p>1</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1" valign="middle"><para><p><supplref refid="RGF035"></p>
+</para>
+</entry>
+<entry colname="col2" valign="middle"><para><p>EN3049A0300</p>
+</para>
+</entry>
+<entry colname="col3" valign="middle"><para><p>Joint torique</p>
+</para>
+</entry>
+<entry colname="COLSPEC0" valign="middle"><para><p>1</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1" valign="middle"><para><p><supplref refid="RGF036"></p>
+</para>
+</entry>
+<entry colname="col2" valign="middle"><para><p>EN3049A0315</p>
+</para>
+</entry>
+<entry colname="col3" valign="middle"><para><p>Joint torique</p>
+</para>
+</entry>
+<entry colname="COLSPEC0" valign="middle"><para><p>1</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1" valign="middle"><para><p><supplref refid="RGF094"></p>
+</para>
+</entry>
+<entry colname="col2" valign="middle"><para><p>EN3049A0045</p>
+</para>
+</entry>
+<entry colname="col3" valign="middle"><para><p>Joint torique</p>
+</para>
+</entry>
+<entry colname="COLSPEC0" valign="middle"><para><p>1</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1" valign="middle"><para><p><supplref refid="RGF096"></p>
+</para>
+</entry>
+<entry colname="col2" valign="middle"><para><p>EN3049A0045</p>
+</para>
+</entry>
+<entry colname="col3" valign="middle"><para><p>Joint torique</p>
+</para>
+</entry>
+<entry colname="COLSPEC0" valign="middle"><para><p>1</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1" valign="middle"><para><p><supplref refid="RGF043"></p>
+</para>
+</entry>
+<entry colname="col2" valign="middle"><para><p>EN3049A0280</p>
+</para>
+</entry>
+<entry colname="col3" valign="middle"><para><p>Joint torique</p>
+</para>
+</entry>
+<entry colname="COLSPEC0" valign="middle"><para><p>2</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1" valign="middle"><para><p><supplref refid="RGF044A"></p>
+</para>
+</entry>
+<entry colname="col2" valign="middle"><para><p>EN3049A0300</p>
+</para>
+</entry>
+<entry colname="col3" valign="middle"><para><p>Joint torique</p>
+</para>
+</entry>
+<entry colname="COLSPEC0" valign="middle"><para><p>1</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1" valign="middle"><para><p><supplref refid="RGF044B"></p>
+</para>
+</entry>
+<entry colname="col2" valign="middle"><para><p>EN3049A0300</p>
+</para>
+</entry>
+<entry colname="col3" valign="middle"><para><p>Joint torique</p>
+</para>
+</entry>
+<entry colname="COLSPEC0" valign="middle"><para><p>1</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1" valign="middle"><para><p><supplref refid="RGF039A"></p>
+</para>
+</entry>
+<entry colname="col2" valign="middle"><para><p>EN3049A0355</p>
+</para>
+</entry>
+<entry colname="col3" valign="middle"><para><p>Joint torique</p>
+</para>
+</entry>
+<entry colname="COLSPEC0" valign="middle"><para><p>1</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1" valign="middle"><para><p><supplref refid="RGF039B"></p>
+</para>
+</entry>
+<entry colname="col2" valign="middle"><para><p>EN3049A0355</p>
+</para>
+</entry>
+<entry colname="col3" valign="middle"><para><p>Joint torique</p>
+</para>
+</entry>
+<entry colname="COLSPEC0" valign="middle"><para><p>3</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1" valign="middle"><para><p><supplref refid="RGF011"></p>
+</para>
+</entry>
+<entry colname="col2" valign="middle"><para><p>EN3049A0180</p>
+</para>
+</entry>
+<entry colname="col3" valign="middle"><para><p>Joint torique</p>
+</para>
+</entry>
+<entry colname="COLSPEC0" valign="middle"><para><p>1</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1" valign="middle"><para><p><supplref refid="RGF012"></p>
+</para>
+</entry>
+<entry colname="col2" valign="middle"><para><p>309&ndash;041&ndash;302&ndash;0</p>
+</para>
+</entry>
+<entry colname="col3" valign="middle"><para><p>Joint V</p>
+</para>
+</entry>
+<entry colname="COLSPEC0" valign="middle"><para><p>1</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1" valign="middle"><para><p><supplref refid="RGF013"></p>
+</para>
+</entry>
+<entry colname="col2" valign="middle"><para><p>EN3049A0250</p>
+</para>
+</entry>
+<entry colname="col3" valign="middle"><para><p>Joint torique</p>
+</para>
+</entry>
+<entry colname="COLSPEC0" valign="middle"><para><p>2</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1" valign="middle"><para><p><supplref refid="RGF014"></p>
+</para>
+</entry>
+<entry colname="col2" valign="middle"><para><p>309&ndash;041&ndash;402&ndash;0</p>
+</para>
+</entry>
+<entry colname="col3" valign="middle"><para><p>Joint V</p>
+</para>
+</entry>
+<entry colname="COLSPEC0" valign="middle"><para><p>2</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1" valign="middle"><para><p><supplref refid="RGF004"></p>
+</para>
+</entry>
+<entry colname="col2" valign="middle"><para><p>EN3049A0080</p>
+</para>
+</entry>
+<entry colname="col3" valign="middle"><para><p>Joint torique</p>
+</para>
+</entry>
+<entry colname="COLSPEC0" valign="middle"><para><p>1</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1" valign="middle"><para><p><supplref refid="RGF005"></p>
+</para>
+</entry>
+<entry colname="col2" valign="middle"><para><p>309&ndash;041&ndash;202&ndash;0</p>
+</para>
+</entry>
+<entry colname="col3" valign="middle"><para><p>Joint V</p>
+</para>
+</entry>
+<entry colname="COLSPEC0" valign="middle"><para><p>1</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1" valign="middle"><para><p><supplref refid="RGF006"></p>
+</para>
+</entry>
+<entry colname="col2" valign="middle"><para><p>EN3049A0315</p>
+</para>
+</entry>
+<entry colname="col3" valign="middle"><para><p>Joint torique</p>
+</para>
+</entry>
+<entry colname="COLSPEC0" valign="middle"><para><p>2</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1" valign="middle"><para><p><supplref refid="RGF007"></p>
+</para>
+</entry>
+<entry colname="col2" valign="middle"><para><p>309&ndash;041&ndash;502&ndash;0</p>
+</para>
+</entry>
+<entry colname="col3" valign="middle"><para><p>Joint V</p>
+</para>
+</entry>
+<entry colname="COLSPEC0" valign="middle"><para><p>2</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step2>
+<step2 id="P30-40">
+<applic><systemid><nti nti1="0" nti2="0" nti3="1"></systemid></applic>
+<title>DEPOSE ET CONTROLE DE LA RONDELLE PORTE-JOINT</title>
+<step3 id="P30-40-10">
+<title>DEPOSE DU CLAPET D'ENTREE</title>
+<para><p>D&eacute;poser le clapet d'entr&eacute;e<dmcref xrefid="A1A73221045A527AC">.</p>
+</para>
+</step3>
+<step3 id="P30-40-20">
+<title>DEPOSE DE L'ENSEMBLE ROTOR POMPE</title>
+<para><p>D&eacute;poser l'ensemble rotor pompe<dmcref xrefid="A1A73221001A527AC">.</p>
+</para>
+</step3>
+<step3 id="P30-40-30">
+<title>DEPOSE DE LA RONDELLE PORTE-JOINT</title>
+<para><p>D&eacute;poser la rondelle porte joint<dmcref xrefid="A1A73221046A527AC">.</p>
+</para>
+</step3>
+<step3 id="P30-40-40">
+<title>CONTROLE DE LA RONDELLE PORTE-JOINT DEPOSEE</title>
+<specpara>
+<caution>
+<p>S'assurer de l'absence de d&eacute;faut visuel sur le joint adh&eacute;ris&eacute; de la rondelle porte-joint (arrachement , secteur manquant)</p>
+</caution>
+</specpara>
+<para><p>Contr&ocirc;ler visuellement la rondelle porte-joint<refipc csn="73221004 008 ">.</p>
+</para>
+</step3>
+</step2>
+<step2 id="P30-50">
+<applic><systemid><nti nti1="0" nti2="0" nti3="1"></systemid></applic>
+<title>OPERATIONS EN L'ABSENCE DE DEFAUT SUR LA RONDELLE PORTE-JOINT</title>
+<step3 id="P30-50-10">
+<para><p>Rebuter la rondelle porte-joint<refipc csn="73221004 008 ">.</p>
+</para>
+</step3>
+<step3 id="P30-50-20">
+<para><p>Installer une rondelle porte-joint neuve<supplref refid="RGF020"><dmcref xrefid="A1A73221046A727AC">.</p>
+</para>
+</step3>
+<step3 id="P30-50-30">
+<para><p>Installer l'ensemble rotor pompe<dmcref xrefid="A1A73221001A727AC">.</p>
+</para>
+</step3>
+<step3 id="P30-50-40">
+<para><p>Installer le clapet d'entr&eacute;e<dmcref xrefid="A1A73221045A727AC">.</p>
+</para>
+</step3>
+</step2>
+<step2 id="P30-60">
+<applic><systemid><nti nti1="0" nti2="0" nti3="1"></systemid></applic>
+<title>OPERATIONS EN PRESENCE DE DEFAUT SUR LA RONDELLE PORTE-JOINT</title>
+<step3 id="P30-60-10">
+<para><p>Rebuter la rondelle porte-joint<refipc csn="73221004 008 ">.</p>
+</para>
+</step3>
+<step3 id="P30-60-20">
+<title>CONTROLE VISUEL DE L'ENSEMBLE ROTOR POMPE</title>
+<specpara>
+<note>
+<p>Le contr&ocirc;le s'effectue sur l'ensemble rotor pompe<refipc csn="73221001 001 "> non-d&eacute;sassembl&eacute;.</p>
+</note>
+</specpara>
+<step4>
+<para><p>Contr&ocirc;ler visuellement l'absence de particules de joint sur l'ensemble rouet appari&eacute;<refipc csn="73221002 006 "> (zone amont du rouet en contact avec le carter r&eacute;gulateur<refipc csn="73221001 015 ">).</p>
+</para>
+</step4>
+<step4>
+<title>Nettoyage en pr&eacute;sence de particules de joint.</title>
+<para><p>Effectuer un d&eacute;graissage aux solvants p&eacute;troliers<dmcref xrefid="A1A70210001A251AD">.</p>
+</para>
+</step4>
+</step3>
+<step3 id="P30-60-30">
+<title>DEPOSE DES ELEMENTS FILTRANTS ET SOUPAPES DES CIRCUITS FAN ET PRIMAIRE</title>
+<step4>
+<para><p>D&eacute;poser le filtre &agrave; carburant du circuit FAN <dmcref xrefid="A1A73221051A527BC">.</p>
+</para>
+</step4>
+<step4>
+<para><p>D&eacute;poser le filtre &agrave; carburant du circuit PRIMAIRE <dmcref xrefid="A1A73221051A527AC">.</p>
+</para>
+</step4>
+<step4>
+<para><p>D&eacute;poser le clapet de sortie<dmcref xrefid="A1A73221059A527AC">.</p>
+</para>
+</step4>
+<step4>
+<para><p>D&eacute;poser le filtre conique <dmcref xrefid="A1A73221073A527AC">.</p>
+</para>
+</step4>
+<step4>
+<para><p>D&eacute;poser la soupape FAN<dmcref xrefid="A1A73221075A527AC">.</p>
+</para>
+</step4>
+<step4>
+<para><p>D&eacute;poser la soupape PRIMAIRE <dmcref xrefid="A1A73221075A527BC">.</p>
+</para>
+</step4>
+<step4>
+<para><p>D&eacute;sassembler la soupape FAN<dmcref xrefid="A1A73221075A537AC">.</p>
+</para>
+</step4>
+<step4>
+<para><p>D&eacute;sassembler la soupape PRIMAIRE<dmcref xrefid="A1A73221075A537BC">.</p>
+</para>
+</step4>
+</step3>
+<step3 id="P30-60-40">
+<title>CONTROLE ET NETTOYAGE DES ELEMENTS FILTRANTS ET SOUPAPES DES CIRCUITS FAN ET PRIMAIRE</title>
+<step4>
+<title>Contr&ocirc;le.</title>
+<para><p>Contr&ocirc;ler visuellement l'absence de particules de joint:</p>
+</para>
+<list>
+<item><para><p>sur les filtres &agrave; carburant des circuits FAN et PRIMAIRE<refipc csn="73221004 104 "> <refipc csn="73221004 107 "> ,</p>
+</para>
+</item>
+<item><para><p>dans le logement du filtre conique<refipc csn="73221004 034 ">,</p>
+</para>
+</item>
+<item><para><p>sur les composants des soupapes FAN et PRIMAIRE.</p>
+</para>
+</item>
+</list>
+</step4>
+<step4>
+<title>Nettoyage en pr&eacute;sence de particules de joint sur les filtres<refipc csn="73221004 104 "> <refipc csn="73221004 107 ">.</title>
+<step5>
+<para><p>Effectuer un d&eacute;graissage aux solvants p&eacute;troliers<dmcref xrefid="A1A70210001A251AD">.</p>
+</para>
+</step5>
+<step5>
+<para><p>Effectuer un nettoyage par ultrasons aux produits alcalins<dmcref xrefid="A1A70210023A253AC">.</p>
+</para>
+</step5>
+</step4>
+<step4>
+<title>Nettoyage en pr&eacute;sence de particules de joint dans le logement du filtre conique.</title>
+<para><p>Effectuer un d&eacute;graissage aux solvants p&eacute;troliers<dmcref xrefid="A1A70210001A251AD">.</p>
+</para>
+</step4>
+<step4>
+<title>Nettoyage en pr&eacute;sence de particules de joint sur les composants des soupapes FAN et PRIMAIRE.</title>
+<step5>
+<para><p>Frotter les composants d&eacute;pos&eacute;s avec un chiffon non pelucheux imbib&eacute; d'ac&eacute;tone <miscref refid="P0325">.</p>
+</para>
+</step5>
+<step5>
+<para><p>S&eacute;cher &agrave; l'air comprim&eacute; sec.</p>
+</para>
+</step5>
+</step4>
+</step3>
+<step3 id="P30-60-50">
+<title>REMONTAGE DU BHMPC</title>
+<step4>
+<para><p>Installer le filtre conique <dmcref xrefid="A1A73221073A727AC">.</p>
+</para>
+</step4>
+<step4>
+<para><p>Installer le clapet de sortie<dmcref xrefid="A1A73221059A727AC">.</p>
+</para>
+</step4>
+<step4>
+<para><p>Installer le filtre &agrave; carburant du circuit PRIMAIRE<dmcref xrefid="A1A73221051A727AC">.</p>
+</para>
+</step4>
+<step4>
+<para><p>Installer le filtre &agrave; carburant du circuit FAN<dmcref xrefid="A1A73221051A727BC">.</p>
+</para>
+</step4>
+<step4>
+<para><p>Assembler la soupape PRIMAIRE<dmcref xrefid="A1A73221075A717BC">.</p>
+</para>
+</step4>
+<step4>
+<para><p>Assembler la soupape FAN<dmcref xrefid="A1A73221075A717AC">.</p>
+</para>
+</step4>
+<step4>
+<para><p>Installer la soupape PRIMAIRE<dmcref xrefid="A1A73221075A727BC">.</p>
+</para>
+</step4>
+<step4>
+<para><p>Installer la soupape FAN<dmcref xrefid="A1A73221075A727AC">.</p>
+</para>
+</step4>
+<step4>
+<para><p>Installer une rondelle porte-joint neuve<supplref refid="RGF020"><dmcref xrefid="A1A73221046A727AC">.</p>
+</para>
+</step4>
+<step4>
+<para><p>Installer l'ensemble rotor pompe<dmcref xrefid="A1A73221001A727AC">.</p>
+</para>
+</step4>
+<step4>
+<para><p>Installer le clapet d'entr&eacute;e<dmcref xrefid="A1A73221045A727AC">.</p>
+</para>
+</step4>
+</step3>
+</step2>
+</step1>
+<step1 control="0" id="P40">
+<title>INFORMATIONS COMPLEMENTAIRES</title>
+<para><applic><systemid><nti nti1="1" nti2="1"></systemid></applic>
+<p>Renseigner le Livret Informatis&eacute; Moteur du BHMPC<dmcref xrefid="A1ARF720500A100FC"> apr&egrave;s application du pr&eacute;sent service bulletin.</p>
+</para>
+<para><applic><systemid><nti nti3="1"></systemid></applic>
+<p>Renseigner le Livret Informatis&eacute; Moteur du BHMPC<dmcref xrefid="A1ARF720500A100FC"> apr&egrave;s application du pr&eacute;sent service bulletin.</p>
+</para>
+</step1>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000038707 0>

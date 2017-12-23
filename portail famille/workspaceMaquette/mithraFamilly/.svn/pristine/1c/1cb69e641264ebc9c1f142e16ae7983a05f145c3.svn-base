@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="../DTD/styles/module.xsl"?>
+<!DOCTYPE module PUBLIC "-//SEDOC//DTD UD GIAT industries module//FR" "../DTD/module.dtd">
+<module> 
+  <statutmodule langue="FR"><mi version="A">VB</mi>
+    <codeTSA>
+      <codegroupe>03</codegroupe><codessgroupe>10</codessgroupe><codedivision>10</codedivision>
+      <nomgroupe>STRUCTURE</nomgroupe><nomssgroupe>Portes</nomssgroupe><nomdivision>Porte Chef</nomdivision>
+    </codeTSA>
+    <nomtech>Réglage du contacteur porte chef équipée</nomtech>
+    <numordre>001</numordre>
+    <codeinfo>0540</codeinfo><nominfo>Procédures de réglage</nominfo>
+    <nrevision>A</nrevision><daterevision jour="01" mois="04" annee="2009"/>
+    <nmodif>C</nmodif><datemodif jour="26" mois="06" annee="2014"/>
+    <nti>1</nti>
+    <applicst><elementst id="MAT00000006" typemateriel="VBCI" versionmateriel="VCI" modele="ERYX 32T"/><elementst id="MAT00000005" typemateriel="VBCI" versionmateriel="VCI" modele="RANG 32T"/><elementst id="MAT00000001" typemateriel="VBCI" versionmateriel="VCI" modele="RANG"/><elementst id="MAT00000002" typemateriel="VBCI" versionmateriel="VPC" modele="00"/><elementst id="MAT00000003" typemateriel="VBCI" versionmateriel="VCI" modele="ERYX"/></applicst>
+    <logistique><lcn lcn="ASE40" alc="00" task="DGOAAAA"/><lcn lcn="ASE40" alc="01" task="DGOAAAA"/></logistique>
+    <refs> 
+	 </refs>
+  </statutmodule> 
+  <modcontenu> 
+	 <intervention> 
+		<operprincipal> 
+		  <operation id="OPE50002693"> 
+			 <appliccont></appliccont> 
+			 <title> 
+			 <p>Réglage du contacteur porte chef équipée</p>
+			 </title> 
+			 <prereqs> 
+				<condreq> 
+				  <outilstdli> 
+					 <outilstd id="OPE50002693_ART00000408"> 
+						<intitule>Jauge d'épaisseur de précision L 210 mm</intitule> 
+						<qte>1</qte> 
+						<fabricant> 
+						  <codefab>F0541</codefab> 
+						  <reffab>804.SL</reffab> 
+						</fabricant> 
+					 </outilstd> 
+				  </outilstdli> 
+				  <outilcomplli> <aucun/> 
+				  </outilcomplli> 
+				  <outilspecifli> <aucun/> 
+				  </outilspecifli> 
+				  <ingredientli> <aucun/> 
+				  </ingredientli> 
+				  <consoli> <aucun/> 
+				  </consoli> 
+				  <rechangeli> <aucun/> 
+				  </rechangeli> 
+				  <duree operation="0.167" cumul="0" tmi="0"></duree> <environnement condition="sans"/> 
+				</condreq> 
+				<persreq> <personne id="OPE50002693_MECANIC" clair="Mécanicien" nbre="1"/> 
+				</persreq> 
+			 </prereqs> 
+			 <tache1> 
+				<appliccont></appliccont> 
+				<figure principale="oui" id="FIG1"> 
+				  <title> 
+				  <p>Réglage du contacteur porte chef équipée</p>
+				  </title> <graphic hauteur="414" largeur="427" source="..\Illustration Travail\VB-A-031010-G-F0531-00021-A-02-1.jpg" type="jpg"/> 
+				</figure> 
+				<attention> 
+				  <para> 
+					 <p>Un mauvais réglage peut empêcher le signalement d'une mauvaise fermeture de la porte.</p>
+				  </para> 
+				</attention> 
+			 </tache1> 
+			 <tache1><appliccont></appliccont> 
+				<para><p>Verrouiller la porte chef (bille dans la gorge de la poignée).<refint refid="OPE50002693_MECANIC" type="personne">Mécanicien</refint></p>
+				</para> 
+			 </tache1> 
+			 <tache1> 
+				<appliccont></appliccont> 
+				<para> 
+				  <p>Desserrer l'écrou de blocage du contacteur afin de libérer le téton de la rondelle de blocage.</p>
+				</para> 
+			 </tache1> 
+			 <tache1><appliccont></appliccont> 
+				<para><p>Déplacer le contacteur jusqu'au changement d'état électrique du contacteur (vérification à l'EICU ou à l'aide d'une lampe témoin).</p>
+				</para> 
+			 </tache1> 
+			 <tache1><appliccont></appliccont> 
+				<nota> 
+				  <para><p>La cote nominale de positionnement de l'extrémité du galet par rapport à la butée du support du contacteur est de 11,4&nbsp;mm ± 0,3&nbsp;mm <refint type="figure" refid="FIG1"></refint>.</p>
+				  </para> 
+				</nota> 
+			 </tache1> 
+			 <tache1><appliccont></appliccont> 
+				<para><p>Lorsque le voyant s'allume, visser le contacteur dans son support afin d'obtenir un déplacement supplémentaire de 1,5&nbsp;mm ± 0,5&nbsp;mm, tout en assurant la bonne position de l'ergot de la rondelle de détrompage du contacteur.</p>
+				</para> 
+			 </tache1> 
+			 <tache1><appliccont></appliccont> 
+				<para><p>Vérifier l'orientation du détrompeur de la prise.</p>
+				</para> 
+			 </tache1> 
+			 <tache1><appliccont></appliccont> 
+				<para><p>Bloquer l'écrou du contacteur.</p>
+				</para> 
+			 </tache1> 
+			 <tache1><appliccont></appliccont> 
+				<para><p>Contrôler à nouveau l'état électrique du contacteur.</p>
+				</para> 
+			 </tache1> 
+			 <tache1><appliccont></appliccont> 
+				<para><p>Ouvrir la porte.</p>
+				</para> 
+			 </tache1> 
+			 <tache1><appliccont></appliccont> 
+				<para><p>Contrôler le jeu entre le galet du contacteur et la lame ressort ; le jeu doit être de 0,5&nbsp;mm minimum <refint type="figure" refid="FIG1"></refint>. Régler le support de la lame ressort si nécessaire.<refint refid="OPE50002693_ART00000408" type="outilstd">Jauge d'épaisseur de précision L 210 mm</refint></p>
+				</para> 
+			 </tache1> 
+			 <tache1><appliccont></appliccont> 
+				<para><p>Vérifier l'état des voyants à l'EICU porte ouverte puis porte fermée.</p>
+				</para> 
+			 </tache1> 
+		  </operation> 
+		</operprincipal> 
+	 </intervention> 
+  </modcontenu> 
+</module> 

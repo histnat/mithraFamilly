@@ -1,0 +1,1543 @@
+<!DOCTYPE OUTSPEC PUBLIC "-//ArborText//DTD OUTPUT SPEC MIL-PRF-28001 REV B AMEND 1 19961231//EN" [
+<!--ArborText, Inc., 1988-1998, v.4002-->
+<!ENTITY ident.fos PUBLIC "-//RAFALE CTG2.2//TEXT FOSI IDENT V3//EN">
+<!ENTITY dmodule.fos PUBLIC "-//RAFALE CTG2.2//TEXT FOSI DMODULE V3//EN">
+<!ENTITY capgrp.fos PUBLIC "-//RAFALE CTG2.2//TEXT FOSI CAPGRP V3//EN">
+<!ENTITY table.fos PUBLIC "-//RAFALE CTG2.2//TEXT FOSI TABLE V3//EN">
+<!ENTITY figure.fos PUBLIC "-//RAFALE CTG2.2//TEXT FOSI FIGURE V3//EN">
+<!ENTITY specpara.fos PUBLIC "-//RAFALE CTG2.2//TEXT FOSI SPECPARA V3//EN">
+<!ENTITY p.fos PUBLIC "-//RAFALE CTG2.2//TEXT FOSI P V3//EN">
+<!ENTITY para0.fos PUBLIC "-//RAFALE CTG2.2//TEXT FOSI PARA0 V3//EN">
+<!ENTITY proclist.fos PUBLIC "-//RAFALE CTG2.2//TEXT FOSI PROCLIST V3//EN">
+<!ENTITY list.fos PUBLIC "-//RAFALE CTG2.2//TEXT FOSI LIST V3//EN">
+<!ENTITY deflist.fos PUBLIC "-//RAFALE CTG2.2//TEXT FOSI DEFLIST V3//EN">
+<!ENTITY refs.fos PUBLIC "-//RAFALE CTG2.2//TEXT FOSI REFS V3//EN">
+<!ENTITY applic.fos PUBLIC "-//RAFALE CTG2.2//TEXT FOSI APPLIC V3//EN">
+<!ENTITY idstatus.fos PUBLIC "-//RAFALE CTG2.2//TEXT FOSI IDSTATUS V3//EN">
+<!ENTITY % COMPS "INCLUDE">
+<!ENTITY % AVEE "INCLUDE">
+<!ENTITY % PROCED "INCLUDE">
+<!ENTITY % AECMA "INCLUDE">
+<!ENTITY % BASE "INCLUDE">
+<!ENTITY % extrule "(0 | 1)">
+]>
+<outspec><?Pub Lcl _id="508" _label="Adept v8.0">
+<!--This comment contains conversion information. Please do not remove or modify. Version="8.0/Standard" Revision="3" SourcePI="-//ArborText//DTD OUTPUT SPEC 040300//EN" ConvPI="-//ArborText//DTD OUTPUT SPEC MIL-PRF-28001 REV B AMEND 1 19961231//EN" AdeptFosi="5.0" Status="Converting" NumConversions="1" NumInstalls="0"-->
+<?Pub Caret>
+<!--RESOURCE DESCRIPTIONS-->
+<rsrcdesc>
+<!-- compteurs globaux -->
+<counter initial="0" style="arabic" enumid="ctpage">
+<counter initial="0" style="arabic" seq="1" enumid="para0ct">
+<counter initial="0" style="arabic" seq="1" enumid="subpara1ct">
+<counter initial="0" style="arabic" seq="1" enumid="subpara2ct">
+<counter initial="0" style="arabic" seq="1" enumid="subpara3ct">
+<counter initial="0" style="arabic" seq="1" enumid="subpara4ct">
+<!-- compteurs pour figures, tables, etc.-->
+<counter initial="0" style="arabic" seq="1" enumid="figct"><?Pub Lcl _id="f104">
+<counter initial="0" style="arabic" seq="1" enumid="tabct"><?Pub Lcl _id="f105">
+<counter initial="0" style="arabic" seq="1" enumid="listct"><?Pub Lcl _id="f106">
+<stringdecl textid="figtitle" status="1"><?Pub Lcl _id="f290">
+<stringdecl textid="listvfig" status="1"><?Pub Lcl _id="f460">
+<stringdecl textid="listfig" status="1"><?Pub Lcl _id="f461"></rsrcdesc>
+<!-- Description de(s)  pages  -->
+<pagedesc>
+<pageset id="compoidstatus"><?Pub Lcl _id="f152">
+<rectopg width="21cm" nomdepth="25.82cm"><?Pub Lcl _convmesg1="2;1;45;58;1;3-1"
+_convcomm="Tue Dec 21 14:14:12 1999__N__Status changed to Updated.">
+<pageres>
+<enumerat increm="1" enumid="ctpage">
+<savetext textid="ctpagestr" conrule="ctpage"></pageres>
+<pagespec>
+<topmarg nomdepth="1.5cm">
+<botmarg nomdepth="1.5cm">
+<leftmarg width="1.5cm">
+<rtmarg width="1.5cm">
+<header nomdepth="1.5cm">
+<usetext source="\STATUS\">
+<subchars>
+<font famname="New Century Schoolbook" size="18pt" weight="sembold">
+<quadding quad="center" lastquad="lcenter">
+<textbrk startln="1" endln="1">
+<boxing toffset="4mm" boffset="4mm" loffset="4mm" roffset="4mm" siderel="text"
+tthick="0.6mm" bthick="0.6mm" lthick="0.6mm" rthick="0.6mm" inclr="iblack"
+inpct="15"></subchars>
+</usetext>
+</header>
+<footer nomdepth="1cm">
+<usetext source="1cm,pubdm,@16cm,\Page \,ctpagestr">
+<subchars>
+<font famname="New Century Schoolbook" weight="bold">
+<textbrk startln="1" endln="1">
+<boxing toffset="0.8mm" boffset="0.8mm" loffset="0.8mm" roffset="0.8mm" siderel="text"
+tthick="0.6mm" bthick="0.6mm" lthick="0.6mm" rthick="0.6mm" inclr="iblack"
+inpct="15"></subchars>
+</usetext>
+</footer>
+<flowtext>
+<column></flowtext>
+</pagespec>
+</rectopg>
+</pageset>
+<pageset id="compocontent"><?Pub Lcl _id="f231">
+<rectopg width="21cm" nomdepth="25.82cm"><?Pub Lcl _convmesg1="2;1;45;58;1;3-1"
+_convcomm="Tue Dec 21 14:14:12 1999__N__Status changed to Updated.">
+<pageres>
+<enumerat increm="1" enumid="ctpage">
+<savetext textid="ctpagestr" conrule="ctpage"></pageres>
+<pagespec>
+<topmarg nomdepth="1.5cm">
+<botmarg nomdepth="1.5cm">
+<leftmarg width="1.5cm">
+<rtmarg width="1.5cm">
+<header nomdepth="1.5cm">
+<usetext source="\CONTENU\">
+<subchars>
+<font famname="New Century Schoolbook" size="18pt" weight="sembold">
+<quadding quad="center" lastquad="lcenter">
+<textbrk startln="1" endln="1">
+<boxing toffset="4mm" boffset="4mm" loffset="4mm" roffset="4mm" siderel="text"
+tthick="0.6mm" bthick="0.6mm" lthick="0.6mm" rthick="0.6mm" inclr="iblack"
+inpct="15"></subchars>
+</usetext>
+</header>
+<footer nomdepth="1cm">
+<usetext source="1cm,pubdm,@16cm,\Page \,ctpagestr">
+<subchars>
+<font famname="New Century Schoolbook" weight="bold">
+<textbrk startln="1" endln="1">
+<boxing toffset="0.8mm" boffset="0.8mm" loffset="0.8mm" roffset="0.8mm" siderel="text"
+tthick="0.6mm" bthick="0.6mm" lthick="0.6mm" rthick="0.6mm" inclr="iblack"
+inpct="15"></subchars>
+</usetext>
+</footer>
+<flowtext>
+<column></flowtext>
+</pagespec>
+</rectopg>
+</pageset>
+<pageset id="compotable" orient="landscape"><?Pub Lcl _id="f232">
+<rectopg width="21cm" nomdepth="10.2in"><?Pub Lcl _convmesg1="2;1;45;58;1;3-1"
+_convcomm="Tue Dec 21 14:14:12 1999__N__Status changed to Updated.">
+<pageres>
+<enumerat increm="1" enumid="ctpage">
+<savetext textid="ctpagestr" conrule="ctpage"></pageres>
+<pagespec>
+<topmarg nomdepth="1.5cm">
+<botmarg nomdepth="1.5cm">
+<leftmarg width="1.5cm">
+<rtmarg width="1.5cm">
+<header nomdepth="1.5cm">
+<usetext source="\CONTENU\">
+<subchars>
+<font famname="New Century Schoolbook" size="18pt" weight="sembold">
+<quadding quad="center" lastquad="lcenter">
+<textbrk startln="1" endln="1">
+<boxing toffset="4mm" boffset="4mm" loffset="4mm" roffset="4mm" siderel="text"
+tthick="0.6mm" bthick="0.6mm" lthick="0.6mm" rthick="0.6mm" inclr="iblack"
+inpct="15"></subchars>
+</usetext>
+</header>
+<footer nomdepth="1cm">
+<usetext source="1cm,pubdm,@16cm,\Page \,ctpagestr">
+<subchars>
+<font famname="New Century Schoolbook" weight="bold">
+<textbrk startln="1" endln="1">
+<boxing toffset="0.8mm" boffset="0.8mm" loffset="0.8mm" roffset="0.8mm" siderel="text"
+tthick="0.6mm" bthick="0.6mm" lthick="0.6mm" rthick="0.6mm" inclr="iblack"
+inpct="15"></subchars>
+</usetext>
+</footer>
+<flowtext>
+<column></flowtext>
+</pagespec>
+</rectopg>
+</pageset>
+</pagedesc>
+<!--ENVIRONMENT DESCRIPTIONS-->
+<styldesc>
+<charsubset charsubsetid="paraliste"><?Pub Lcl _id="f455">
+<indent inherit="1" leftind="@+1mm" firstln="*"></charsubset>
+<charsubset charsubsetid="ligne"><?Pub Lcl _id="f456">
+<indent inherit="1">
+<textbrk startln="1"></charsubset>
+<charsubset charsubsetid="paraniv0"><?Pub Lcl _id="f435">
+<indent leftind="+10mm" firstln="*-8mm"></charsubset>
+<charsubset charsubsetid="paraniv1"><?Pub Lcl _id="f437">
+<indent leftind="+18mm" firstln="*-13mm"></charsubset>
+<charsubset charsubsetid="paraniv2"><?Pub Lcl _id="f438">
+<indent leftind="+25mm" firstln="*-16mm"></charsubset>
+<charsubset charsubsetid="paraniv3"><?Pub Lcl _id="f439">
+<indent leftind="+35mm" firstln="*-22mm"></charsubset>
+<charsubset charsubsetid="paraniv4"><?Pub Lcl _id="f440">
+<indent leftind="+42mm" firstln="*-24mm"></charsubset>
+<charsubset charsubsetid="espvtitre"><?Pub Lcl _id="f441">
+<presp minimum="10pt" nominal="11pt" maximum="12pt">
+<textbrk startln="1" endln="1"></charsubset>
+<charsubset charsubsetid="espvpara"><?Pub Lcl _id="f451">
+<presp minimum="6pt" nominal="7pt" maximum="8pt">
+<textbrk startln="1" endln="1"></charsubset>
+<charsubset charsubsetid="espvligne"><?Pub Lcl _id="f452">
+<textbrk startln="1" endln="1"></charsubset>
+<charsubset charsubsetid="itemlist"><?Pub Lcl _id="f442">
+<indent inherit="1" leftind="@" firstln="*-3mm">
+<presp minimum="2pt" nominal="2pt" maximum="2pt">
+<textbrk startln="1" endln="1"></charsubset>
+<charsubset charsubsetid="bloc"><?Pub Lcl _id="f443">
+<indent inherit="1">
+<presp minimum="3pt" nominal="4pt" maximum="5pt">
+<textbrk startln="1"></charsubset>
+<charsubset charsubsetid="delimgg"><?Pub Lcl _id="f444">
+<usetext source="\________________________________________________________________________\"
+placemnt="after">
+<subchars>
+<font famname="New Century Schoolbook" size="12pt" weight="bold">
+<quadding quad="left">
+<highlt fontclr="blue">
+<textbrk startln="1" endln="1"></subchars>
+</usetext>
+</charsubset>
+<charsubset charsubsetid="delimcg"><?Pub Lcl _id="f445">
+<usetext source="\________________________________________________________________________\"
+placemnt="after">
+<subchars>
+<font famname="New Century Schoolbook" size="12pt" weight="bold">
+<quadding quad="center">
+<highlt fontclr="blue">
+<textbrk startln="1" endln="1"></subchars>
+</usetext>
+</charsubset>
+<charsubset charsubsetid="esphori"><?Pub Lcl _id="f459">
+<indent leftind="@+5mm" firstln="*-5mm"></charsubset>
+<charsubset charsubsetid="add"><?Pub Lcl _id="f612">
+<font inherit="1" famname="Courier" posture="upright">
+<highlt inherit="1"></charsubset>
+<charsubset charsubsetid="mod"><?Pub Lcl _id="f613">
+<font inherit="1" famname="Courier" posture="italic">
+<highlt inherit="1"></charsubset>
+<docdesc><?Pub Lcl _id="f153" _convmesg1="3;1;10;33;1;3-1" _convcomm="Tue Dec 21 14:14:12 1999__N__Status changed to Updated.">
+<charlist>
+<font famname="Times" size="12pt">
+<indent firstln="^+0pt">
+<highlt fontclr="black"></charlist>
+</docdesc>
+<envdesc envid="idinfoenv"><?Pub Lcl _id="f154">
+<charlist>
+<font inherit="0" style="sanserif" size="10pt" posture="upright" weight="bold">
+<indent inherit="0" leftind="@0pt" firstln="^0pt"><?Pub Lcl _convmesg1="3;1;11;34;1;3-1"
+_convcomm="Tue Dec 21 14:14:12 1999__N__Status changed to Updated.">
+<quadding inherit="0" quad="center" lastquad="lcenter">
+<textbrk startln="1" endln="0"></charlist>
+</envdesc>
+
+<!-- ******************************************************* -->
+<!-- ***************** Element Information Context ********* -->
+<!-- ******************************************************* -->
+
+<e-i-c gi="dmodule">
+	<charlist charsubsetref="espvtitre">
+		<textbrk startpg="next" pageid="compoidstatus" newpgmdl="global" startln="1">
+		<usetext source="\DTD Rafale CTG 2.2 - IPCC\" placemnt="before">
+			<subchars>
+				<font famname="Times" size="18pt" weight="bold">
+				<quadding quad="center">
+				<highlt fontclr="blue">
+			</subchars>
+		</usetext>
+	</charlist>
+</e-i-c>
+
+
+<!-- ***************** include des FOSIs -->
+&dmodule.fos;
+&idstatus.fos;
+&applic.fos;
+&refs.fos;
+&specpara.fos;
+&p.fos;
+&list.fos;
+&deflist.fos;
+&proclist.fos;
+&figure.fos;
+&table.fos;
+&para0.fos;
+&capgrp.fos;
+
+
+<e-i-c gi="title">
+<charlist></charlist>
+<att>
+<specval attname="change" attloc="title" attval="mod">
+<charsubset charsubsetref="mod"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="title" attval="add">
+<charsubset charsubsetref="add"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="content">
+<charlist>
+<textbrk startpg="off" pageid="compocontent" newpgmdl="global"></charlist>
+</e-i-c>
+<!-- ipc -->
+<e-i-c gi="ipc">
+<charlist>
+<font inherit="1">
+<highlt inherit="1">
+<textbrk startpg="off">
+<usetext source="\ILLUSTRATED PART CATALOG\" placemnt="before">
+<subchars>
+<font inherit="1" size="14pt" weight="bold">
+<quadding inherit="1" quad="center">
+<highlt fontclr="blue">
+<textbrk startln="1" endln="1">
+<ruling thick="1" lentype="rel" rellen="col" placemnt="after">
+<indent leftind="0" firstln="0"><?Pub Lcl _convmesg1="3;1;58;134;1;3-1" _convcomm="Tue Dec 21 14:14:12 1999__N__Status changed to Updated.">
+<textbrk startln="1" endln="1"></ruling>
+</subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="ipp">
+<charlist charsubsetref="espvtitre">
+<font inherit="1">
+<indent inherit="1" leftind="@" firstln="*">
+<highlt inherit="1">
+<textbrk startpg="off" startln="1" endln="1">
+<usetext source="\IPP\" placemnt="before">
+<subchars>
+<font inherit="1" weight="bold">
+<highlt scoring="1" fontclr="blue"></subchars>
+</usetext>
+</charlist>
+<att>
+<fillval attname="ippn" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="string">
+<usetext source="\ippn : \">
+<subchars>
+<font inherit="1" weight="bold">
+<indent inherit="1" leftind="@+5mm" firstln="*">
+<highlt fontclr="blue">
+<textbrk startln="1"></subchars>
+</usetext>
+<usetext source="string">
+<subchars>
+<font inherit="1">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="ips" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="string">
+<usetext source="\ips : \">
+<subchars>
+<font inherit="1" weight="bold">
+<indent inherit="1" leftind="@+5mm" firstln="*">
+<highlt fontclr="blue">
+<textbrk startln="1"></subchars>
+</usetext>
+<usetext source="string">
+<subchars>
+<font inherit="1">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="ipp" attval="add">
+<charsubset charsubsetref="add"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="ipp" attval="mod">
+<charsubset charsubsetref="mod"></charsubset>
+</att>
+</e-i-c>
+<!-- csn -->
+<e-i-c gi="csn"><?Pub Lcl _id="f213">
+<charlist charsubsetref="delimgg esphori">
+<font inherit="1">
+<highlt inherit="1">
+<textbrk startln="1" endln="1">
+<usetext source="\CSN\">
+<subchars charsubsetref="espvtitre">
+<font inherit="1" weight="bold">
+<highlt scoring="1" fontclr="blue"></subchars>
+</usetext>
+</charlist>
+<att>
+<fillval attname="id" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="idstring">
+<usetext source="\id : \">
+<subchars>
+<font inherit="1" weight="bold">
+<indent inherit="1" leftind="@" firstln="*">
+<highlt fontclr="blue">
+<textbrk startln="1"></subchars>
+</usetext>
+<usetext source="idstring">
+<subchars>
+<font inherit="1">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="csn" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="idstring">
+<usetext source="\csn : \">
+<subchars>
+<font inherit="1" weight="bold">
+<indent inherit="1" leftind="@" firstln="*">
+<highlt fontclr="blue">
+<textbrk startln="1"></subchars>
+</usetext>
+<usetext source="idstring">
+<subchars>
+<font inherit="1">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="ind" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="idstr">
+<usetext source="\ind : \">
+<subchars>
+<font inherit="1" weight="bold">
+<indent inherit="1" leftind="@" firstln="*">
+<highlt fontclr="blue">
+<textbrk startln="1"></subchars>
+</usetext>
+<usetext source="idstr">
+<subchars>
+<font inherit="1">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="item" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="idvalue">
+<usetext source="\item : \">
+<subchars>
+<font inherit="1" weight="bold">
+<indent inherit="1" leftind="@" firstln="*">
+<highlt fontclr="blue">
+<textbrk startln="1"></subchars>
+</usetext>
+<usetext source="idvalue">
+<subchars>
+<font inherit="1">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="csn" attval="add">
+<charsubset charsubsetref="add"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="csn" attval="mod">
+<charsubset charsubsetref="mod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="dfl"><?Pub Lcl _id="f460">
+<charlist>
+<font inherit="1">
+<indent inherit="1" leftind="@" firstln="*">
+<highlt inherit="1">
+<textbrk startln="1">
+<usetext source="\DFL :\">
+<subchars>
+<font inherit="1" weight="bold">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charlist>
+<att>
+<specval attname="change" attloc="dfl" attval="add">
+<charsubset charsubsetref="add"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="dfl" attval="mod">
+<charsubset charsubsetref="mod"></charsubset>
+</att>
+</e-i-c>
+<!-- isn -->
+<e-i-c gi="isn"><?Pub Lcl _id="f214">
+<charlist charsubsetref="esphori">
+<font inherit="1">
+<highlt inherit="1">
+<textbrk startln="1"></charlist>
+<att>
+<fillval attname="isn" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="string">
+<usetext source="\ISN : \">
+<subchars>
+<font inherit="1" weight="bold">
+<highlt fontclr="blue"></subchars>
+</usetext>
+<usetext source="string">
+<subchars>
+<font inherit="1">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="isn" attval="add">
+<charsubset charsubsetref="add"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="isn" attval="mod">
+<charsubset charsubsetref="mod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="rfs"><?Pub Lcl _id="f461">
+<charlist>
+<font inherit="1">
+<indent inherit="1">
+<highlt inherit="1">
+<textbrk startln="1">
+<usetext source="\Raison du choix : \">
+<subchars>
+<font inherit="1" weight="bold">
+<indent inherit="1">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charlist>
+<att>
+<fillval attname="value" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="string">
+<usetext source="\(\,string,\)\">
+<subchars>
+<font inherit="1">
+<indent inherit="1">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="rfs" attval="add">
+<charsubset charsubsetref="add"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="rfs" attval="mod">
+<charsubset charsubsetref="mod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="qna"><?Pub Lcl _id="f462">
+<charlist>
+<font inherit="1">
+<indent inherit="1">
+<highlt inherit="1">
+<textbrk startln="1">
+<usetext source="\Quantit&eacute; par ensemble sup&eacute;rieur : \">
+<subchars>
+<font inherit="1" weight="bold">
+<indent inherit="1">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charlist>
+<att>
+<specval attname="change" attloc="qna" attval="add">
+<charsubset charsubsetref="add"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="qna" attval="mod">
+<charsubset charsubsetref="mod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="mfc"><?Pub Lcl _id="f463">
+<charlist>
+<font inherit="1">
+<indent inherit="1">
+<highlt inherit="1">
+<textbrk startln="1">
+<usetext source="\Code OTAN : \">
+<subchars>
+<font inherit="1" weight="bold">
+<indent inherit="1">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charlist>
+<att>
+<specval attname="change" attloc="mfc" attval="add">
+<charsubset charsubsetref="add"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="mfc" attval="mod">
+<charsubset charsubsetref="mod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="pnr"><?Pub Lcl _id="f464">
+<charlist>
+<font inherit="1">
+<indent inherit="1">
+<highlt inherit="1">
+<textbrk startln="1">
+<usetext source="\R&eacute;f&eacute;rence : \">
+<subchars>
+<font inherit="1" weight="bold">
+<indent inherit="1">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charlist>
+<att>
+<specval attname="change" attloc="pnr" attval="add">
+<charsubset charsubsetref="add"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="pnr" attval="mod">
+<charsubset charsubsetref="mod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="pas"><?Pub Lcl _id="f465">
+<charlist>
+<font inherit="1">
+<indent inherit="1">
+<highlt inherit="1">
+<textbrk startln="1"></charlist>
+</e-i-c>
+<e-i-c gi="dfp"><?Pub Lcl _id="f467">
+<charlist>
+<font inherit="1">
+<indent inherit="1">
+<highlt inherit="1">
+<textbrk startln="1">
+<usetext source="\D&eacute;signation : \">
+<subchars>
+<font inherit="1" weight="bold">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charlist>
+<att>
+<specval attname="change" attloc="dfp" attval="add">
+<charsubset charsubsetref="add"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="dfp" attval="mod">
+<charsubset charsubsetref="mod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="uoi"><?Pub Lcl _id="f468">
+<charlist>
+<font inherit="1">
+<indent inherit="1">
+<highlt inherit="1">
+<textbrk startln="1">
+<usetext source="\Unit&eacute; de fourniture : \">
+<subchars>
+<font inherit="1" weight="bold">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charlist>
+<att>
+<specval attname="change" attloc="uoi" attval="add">
+<charsubset charsubsetref="add"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="uoi" attval="mod">
+<charsubset charsubsetref="mod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="pcs"><?Pub Lcl _id="f469">
+<charlist>
+<font inherit="1">
+<indent inherit="1">
+<highlt inherit="1">
+<textbrk startln="1"></charlist>
+<att>
+<specval attname="change" attloc="pcs" attval="add">
+<charsubset charsubsetref="add"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="pcs" attval="mod">
+<charsubset charsubsetref="mod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="qui"><?Pub Lcl _id="f470">
+<charlist>
+<font inherit="1">
+<indent inherit="1">
+<highlt inherit="1">
+<textbrk startln="1">
+<usetext source="\Quantit&eacute; par unit&eacute; de fourniture : \">
+<subchars>
+<font inherit="1" weight="bold">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charlist>
+<att>
+<specval attname="change" attloc="qui" attval="add">
+<charsubset charsubsetref="add"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="qui" attval="mod">
+<charsubset charsubsetref="mod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="uom"><?Pub Lcl _id="f508">
+<charlist>
+<font inherit="1">
+<indent inherit="1">
+<highlt inherit="1">
+<usetext source="2mm">
+<subchars></subchars>
+</usetext>
+</charlist>
+<att>
+<specval attname="change" attloc="uom" attval="add">
+<charsubset charsubsetref="add"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="uom" attval="mod">
+<charsubset charsubsetref="mod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="com"><?Pub Lcl _id="f471">
+<charlist>
+<font inherit="1">
+<indent inherit="1">
+<highlt inherit="1">
+<textbrk startln="1">
+<usetext source="\Code cat&eacute;gorie : \">
+<subchars>
+<font inherit="1" weight="bold">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charlist>
+<att>
+<fillval attname="code" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="string">
+<usetext source="string">
+<subchars>
+<font inherit="1">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="com" attval="add">
+<charsubset charsubsetref="add"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="com" attval="mod">
+<charsubset charsubsetref="mod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="haz"><?Pub Lcl _id="f472">
+<charlist>
+<font inherit="1">
+<indent inherit="1">
+<highlt inherit="1">
+<textbrk startln="1">
+<usetext source="\Code produit dangereux : \">
+<subchars>
+<font inherit="1" weight="bold">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charlist>
+<att>
+<specval attname="change" attloc="haz" attval="add">
+<charsubset charsubsetref="add"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="haz" attval="mod">
+<charsubset charsubsetref="mod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="ftc"><?Pub Lcl _id="f473">
+<charlist>
+<font inherit="1">
+<indent inherit="1">
+<highlt inherit="1">
+<textbrk startln="1">
+<usetext source="\Code de montage : \">
+<subchars>
+<font inherit="1" weight="bold">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charlist>
+<att>
+<fillval attname="value" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="string">
+<usetext source="string">
+<subchars>
+<font inherit="1">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="ftc" attval="add">
+<charsubset charsubsetref="add"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="ftc" attval="mod">
+<charsubset charsubsetref="mod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="psc"><?Pub Lcl _id="f474">
+<charlist>
+<font inherit="1">
+<indent inherit="1">
+<highlt inherit="1">
+<textbrk startln="1">
+<usetext source="\Code s&eacute;curit&eacute; : \">
+<subchars>
+<font inherit="1" weight="bold">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charlist>
+<att>
+<specval attname="change" attloc="psc" attval="add">
+<charsubset charsubsetref="add"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="psc" attval="mod">
+<charsubset charsubsetref="mod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="cmk"><?Pub Lcl _id="f475">
+<charlist>
+<font inherit="1">
+<indent inherit="1">
+<highlt inherit="1">
+<textbrk startln="1">
+<usetext source="\Indicateur d'&eacute;talonnage : \">
+<subchars>
+<font inherit="1" weight="bold">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charlist>
+<att>
+<specval attname="change" attloc="cmk" attval="add">
+<charsubset charsubsetref="add"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="cmk" attval="mod">
+<charsubset charsubsetref="mod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="size"><?Pub Lcl _id="f476">
+<charlist charsubsetref="esphori espvligne">
+<font inherit="1">
+<highlt inherit="1">
+<usetext source="\Dimension article\">
+<subchars>
+<font inherit="1" weight="bold">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charlist>
+<att>
+<specval attname="change" attloc="size" attval="add">
+<charsubset charsubsetref="add"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="size" attval="mod">
+<charsubset charsubsetref="mod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="spu"><?Pub Lcl _id="f477">
+<charlist>
+<font inherit="1">
+<indent inherit="1">
+<highlt inherit="1">
+<textbrk startln="1">
+<usetext source="\Emball&eacute; : \">
+<subchars>
+<font inherit="1" weight="bold">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charlist>
+<att>
+<specval attname="change" attloc="spu" attval="add">
+<charsubset charsubsetref="add"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="spu" attval="mod">
+<charsubset charsubsetref="mod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="suu"><?Pub Lcl _id="f478">
+<charlist>
+<font inherit="1">
+<indent inherit="1">
+<highlt inherit="1">
+<textbrk startln="1">
+<usetext source="\Non emball&eacute; : \">
+<subchars>
+<font inherit="1" weight="bold">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charlist>
+<att>
+<specval attname="change" attloc="suu" attval="add">
+<charsubset charsubsetref="add"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="suu" attval="mod">
+<charsubset charsubsetref="mod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="weight"><?Pub Lcl _id="f479">
+<charlist charsubsetref="esphori">
+<font inherit="1">
+<highlt inherit="1">
+<textbrk startln="1">
+<usetext source="\Poids article\">
+<subchars>
+<font inherit="1" weight="bold">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charlist>
+<att>
+<specval attname="change" attloc="weight" attval="add">
+<charsubset charsubsetref="add"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="weight" attval="mod">
+<charsubset charsubsetref="mod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="wpu"><?Pub Lcl _id="f480">
+<charlist>
+<font inherit="1">
+<indent inherit="1">
+<highlt inherit="1">
+<textbrk startln="1">
+<usetext source="\Emball&eacute; : \">
+<subchars>
+<font inherit="1" weight="bold">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charlist>
+<att>
+<specval attname="change" attloc="wpu" attval="add">
+<charsubset charsubsetref="add"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="wpu" attval="mod">
+<charsubset charsubsetref="mod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="wuu"><?Pub Lcl _id="f481">
+<charlist>
+<font inherit="1">
+<indent inherit="1">
+<highlt inherit="1">
+<textbrk startln="1">
+<usetext source="\Non emball&eacute; : \">
+<subchars>
+<font inherit="1" weight="bold">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charlist>
+<att>
+<specval attname="change" attloc="wuu" attval="add">
+<charsubset charsubsetref="add"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="wuu" attval="mod">
+<charsubset charsubsetref="mod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="nsn"><?Pub Lcl _id="f482">
+<charlist>
+<font inherit="1">
+<indent inherit="1">
+<highlt inherit="1">
+<textbrk startln="1">
+<usetext source="\Num&eacute;ro de nomenclature OTAN\">
+<subchars>
+<font inherit="1" weight="bold">
+<indent inherit="1">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charlist>
+<att>
+<fillval attname="nin" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="idstring">
+<usetext source="0.5cm,\nin : \">
+<subchars>
+<font inherit="1" weight="bold">
+<indent inherit="1">
+<highlt fontclr="blue">
+<textbrk startln="1"></subchars>
+</usetext>
+<usetext source="idstring">
+<subchars>
+<font inherit="1">
+<indent inherit="1">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="nsc" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="idstr">
+<usetext source="0.5cm,\nsc : \">
+<subchars>
+<font inherit="1" weight="bold">
+<indent inherit="1">
+<highlt fontclr="blue">
+<textbrk startln="1"></subchars>
+</usetext>
+<usetext source="idstr">
+<subchars>
+<font inherit="1">
+<indent inherit="1">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="nsn" attval="add">
+<charsubset charsubsetref="add"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="nsn" attval="mod">
+<charsubset charsubsetref="mod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="cbs"><?Pub Lcl _id="f483">
+<charlist>
+<font inherit="1">
+<indent inherit="1">
+<highlt inherit="1">
+<textbrk startln="1" endln="1"></charlist>
+</e-i-c>
+<e-i-c gi="asp"><?Pub Lcl _id="f484">
+<charlist>
+<font inherit="1">
+<indent inherit="1">
+<highlt inherit="1">
+<textbrk startln="1">
+<usetext source="\Pi&egrave;ce de fixation, stockage, transport : \">
+<subchars>
+<font inherit="1" weight="bold">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charlist>
+<att>
+<fillval attname="asp" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="string">
+<usetext source="string">
+<subchars>
+<font inherit="1">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="asp" attval="add">
+<charsubset charsubsetref="add"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="asp" attval="mod">
+<charsubset charsubsetref="mod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="nil"><?Pub Lcl _id="f485">
+<charlist>
+<font inherit="1">
+<indent inherit="1">
+<highlt inherit="1">
+<textbrk startln="1">
+<usetext source="\Article non illustr&eacute; : \">
+<subchars>
+<font inherit="1" weight="bold">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charlist>
+<att>
+<specval attname="change" attloc="nil" attval="add">
+<charsubset charsubsetref="add"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="nil" attval="mod">
+<charsubset charsubsetref="mod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="rtx"><?Pub Lcl _id="f487">
+<charlist charsubsetref="esphori">
+<font inherit="1">
+<highlt inherit="1">
+<textbrk startln="1" endln="1">
+<usetext source="\Se r&eacute;f&eacute;rer &agrave : \">
+<subchars>
+<font inherit="1" weight="bold">
+<indent>
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charlist>
+<att>
+<specval attname="change" attloc="rtx" attval="add">
+<charsubset charsubsetref="add"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="rtx" attval="mod">
+<charsubset charsubsetref="mod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="ippref"><?Pub Lcl _id="f488">
+<charlist>
+<font inherit="1">
+<indent inherit="1">
+<highlt inherit="1">
+<textbrk startln="1"></charlist>
+<att>
+<fillval attname="refipp" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="string">
+<usetext source="\ipp : \">
+<subchars>
+<font inherit="1" weight="bold">
+<indent inherit="1">
+<highlt fontclr="blue">
+<textbrk startln="1"></subchars>
+</usetext>
+<usetext source="string">
+<subchars>
+<font inherit="1">
+<indent inherit="1">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="csnref"><?Pub Lcl _id="f489">
+<charlist>
+<font inherit="1">
+<indent inherit="1">
+<highlt inherit="1">
+<textbrk startln="1"></charlist>
+<att>
+<fillval attname="refcsn" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="idstring">
+<usetext source="\csn : \">
+<subchars>
+<font inherit="1" weight="bold">
+<indent inherit="1">
+<highlt fontclr="blue">
+<textbrk startln="1"></subchars>
+</usetext>
+<usetext source="idstring">
+<subchars>
+<font inherit="1">
+<indent inherit="1">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="refisn" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="idstr">
+<usetext source="\isn : \">
+<subchars>
+<font inherit="1" weight="bold">
+<indent inherit="1">
+<highlt fontclr="blue">
+<textbrk startln="1"></subchars>
+</usetext>
+<usetext source="idstr">
+<subchars>
+<font inherit="1">
+<indent inherit="1">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="smf"><?Pub Lcl _id="f491">
+<charlist charsubsetref="esphori">
+<font inherit="1">
+<highlt inherit="1">
+<textbrk startln="1">
+<usetext source="\Pi&egrave;ce &agrave; s&eacute;lection ou &agrave cote r&eacute;paration : \">
+<subchars>
+<font inherit="1" weight="bold">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charlist>
+<att>
+<fillval attname="value" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="string">
+<usetext source="string">
+<subchars>
+<font inherit="1">
+<indent inherit="1">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="smf" attval="add">
+<charsubset charsubsetref="add"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="smf" attval="mod">
+<charsubset charsubsetref="mod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="mfm"><?Pub Lcl _id="f492">
+<charlist>
+<font inherit="1">
+<indent inherit="1">
+<highlt inherit="1">
+<textbrk startln="1">
+<usetext source="\S&eacute;lectionner ou fabriquer &agrave; partir de : \">
+<subchars>
+<font inherit="1" weight="bold">
+<indent inherit="1">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charlist>
+<att>
+<specval attname="change" attloc="mfm" attval="add">
+<charsubset charsubsetref="add"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="mfm" attval="mod">
+<charsubset charsubsetref="mod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="dfl" context="cbs"><?Pub Lcl _id="f493">
+<charlist>
+<font inherit="1">
+<indent inherit="1">
+<highlt inherit="1">
+<textbrk startln="1">
+<usetext source="\DFL :\">
+<subchars>
+<font inherit="1" weight="bold">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charlist>
+<att>
+<specval attname="change" attloc="dfl" attval="add">
+<charsubset charsubsetref="add"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="dfl" attval="mod">
+<charsubset charsubsetref="mod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="ccs"><?Pub Lcl _id="f494">
+<charlist>
+<font inherit="1">
+<indent inherit="1">
+<highlt inherit="1">
+<textbrk startln="1"></charlist>
+</e-i-c>
+<e-i-c gi="uca">
+<charlist>
+<font inherit="1">
+<indent inherit="1">
+<!-- indent leftind="@" firstln="*" -->
+<highlt inherit="1">
+<textbrk startln="1">
+<usetext source="\Applicabilit&eacute; &agrave; l'ensemble sup&eacute;rieur : \">
+<subchars>
+<font inherit="1" weight="bold">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charlist>
+<att>
+<specval attname="change" attloc="uca" attval="add">
+<charsubset charsubsetref="add"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="uca" attval="mod">
+<charsubset charsubsetref="mod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="uce">
+<charlist>
+<font inherit="1">
+<indent inherit="1">
+<highlt inherit="1">
+<textbrk startln="1">
+<usetext source="\Applicabilit&eacute; &agrave; l'&eacute;quipement : \">
+<subchars>
+<font inherit="1" weight="bold">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charlist>
+<att>
+<specval attname="change" attloc="uce" attval="add">
+<charsubset charsubsetref="add"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="uce" attval="mod">
+<charsubset charsubsetref="mod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="icy">
+<charlist>
+<font inherit="1">
+<indent inherit="1">
+<highlt inherit="1">
+<textbrk startln="1">
+<usetext source="\Code d'interchangeabilit&eacute; : \">
+<subchars>
+<font inherit="1" weight="bold">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charlist>
+<att>
+<specval attname="change" attloc="icy" attval="add">
+<charsubset charsubsetref="add"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="icy" attval="mod">
+<charsubset charsubsetref="mod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="ctl">
+<charlist charsubsetref="esphori">
+<font inherit="1">
+<indent inherit="1">
+<highlt inherit="1">
+<textbrk startln="1">
+<usetext source="\Point d'emploi du conteneur de cat&eacute;gorie 1 : \">
+<subchars>
+<font inherit="1" weight="bold">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charlist>
+<att>
+<fillval attname="csn" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="idstring">
+<usetext source="\csn : \">
+<subchars>
+<font inherit="1" weight="bold">
+<indent inherit="1">
+<highlt fontclr="blue">
+<textbrk startln="1"></subchars>
+</usetext>
+<usetext source="idstring">
+<subchars>
+<font inherit="1">
+<indent inherit="1">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="isn" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="idstr">
+<usetext source="\isn : \">
+<subchars>
+<font inherit="1" weight="bold">
+<indent inherit="1">
+<highlt fontclr="blue">
+<textbrk startln="1"></subchars>
+</usetext>
+<usetext source="idstr">
+<subchars>
+<font inherit="1">
+<indent inherit="1">
+<highlt fontclr="blue">
+<textbrk endln="1"></subchars>
+</usetext>
+<usetext source="\\"></usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="ctl" attval="add">
+<charsubset charsubsetref="add"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="ctl" attval="mod">
+<charsubset charsubsetref="mod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="ces">
+<charlist>
+<font inherit="1">
+<indent inherit="1">
+<highlt inherit="1">
+<textbrk startln="1"></charlist>
+</e-i-c>
+<e-i-c gi="srv">
+<charlist>
+<font inherit="1">
+<indent inherit="1">
+<highlt inherit="1">
+<textbrk startln="1">
+<usetext source="\Code service utilisateur : \">
+<subchars>
+<font inherit="1" weight="bold">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charlist>
+<att>
+<specval attname="change" attloc="srv" attval="add">
+<charsubset charsubsetref="add"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="srv" attval="mod">
+<charsubset charsubsetref="mod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="smr">
+<charlist>
+<font inherit="1">
+<indent inherit="1">
+<highlt inherit="1">
+<textbrk startln="1">
+<usetext source="\Code source maintenance r&eacute;cup&eacute;rabilit&eacute; : \">
+<subchars>
+<font inherit="1" weight="bold">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charlist>
+<att>
+<specval attname="change" attloc="smr" attval="add">
+<charsubset charsubsetref="add"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="smr" attval="mod">
+<charsubset charsubsetref="mod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="mov">
+<charlist>
+<font inherit="1">
+<indent inherit="1">
+<highlt inherit="1">
+<textbrk startln="1" endln="1">
+<usetext source="\Version du mod&egrave;le : \">
+<subchars>
+<font inherit="1" weight="bold">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charlist>
+<att>
+<fillval attname="mov" fillcat="savetext" fillchar="conrule">
+<charsubset>
+<savetext textid="string">
+<usetext source="string">
+<subchars>
+<font inherit="1">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="change" attloc="mov" attval="add">
+<charsubset charsubsetref="add"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="mov" attval="mod">
+<charsubset charsubsetref="mod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="efy">
+<charlist>
+<font inherit="1">
+<indent inherit="1">
+<highlt inherit="1">
+<textbrk>
+<usetext source="\  Validit&eacute; : \">
+<subchars>
+<font inherit="1" weight="bold">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charlist>
+<att>
+<specval attname="change" attloc="efy" attval="add">
+<charsubset charsubsetref="add"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="efy" attval="mod">
+<charsubset charsubsetref="mod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="rfd">
+<charlist>
+<font inherit="1">
+<indent inherit="1">
+<highlt inherit="1">
+<textbrk startln="1">
+<usetext source="\Rep&egrave;re circuit : \">
+<subchars>
+<font inherit="1" weight="bold">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charlist>
+<att>
+<specval attname="change" attloc="rfd" attval="add">
+<charsubset charsubsetref="add"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="rfd" attval="mod">
+<charsubset charsubsetref="mod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="ils">
+<charlist>
+<font inherit="1">
+<indent inherit="1">
+<highlt inherit="1">
+<textbrk startln="1">
+<usetext source="\Num&eacute;ro ILS : \">
+<subchars>
+<font inherit="1" weight="bold">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charlist>
+<att>
+<specval attname="change" attloc="ils" attval="add">
+<charsubset charsubsetref="add"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="ils" attval="mod">
+<charsubset charsubsetref="mod"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="can">
+<charlist>
+<font inherit="1">
+<indent inherit="1">
+<highlt inherit="1">
+<textbrk startln="1">
+<usetext source="\Num&eacute;ro officiel de l'&eacute;volution : \">
+<subchars>
+<font inherit="1" weight="bold">
+<indent inherit="1">
+<highlt fontclr="blue"></subchars>
+</usetext>
+</charlist>
+<att>
+<specval attname="change" attloc="can" attval="add">
+<charsubset charsubsetref="add"></charsubset>
+</att>
+<att>
+<specval attname="change" attloc="can" attval="mod">
+<charsubset charsubsetref="mod"></charsubset>
+</att>
+</e-i-c>
+</styldesc>
+</outspec>
+<?Pub *0000041143 0>

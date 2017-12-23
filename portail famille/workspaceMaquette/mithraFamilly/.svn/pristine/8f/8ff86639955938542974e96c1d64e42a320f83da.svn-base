@@ -1,0 +1,21 @@
+package com.sonovision.openconv.wf.xmodel;
+
+
+public enum ParameterTypes {
+	
+	TXT("text"),
+	FILE("fichier");
+	
+	private String codeLabel = "";
+	
+	ParameterTypes(String codeLabel)
+	{
+		this.codeLabel = codeLabel;
+	}
+	
+	public String toString()
+	{
+		return codeLabel;
+	}
+
+}

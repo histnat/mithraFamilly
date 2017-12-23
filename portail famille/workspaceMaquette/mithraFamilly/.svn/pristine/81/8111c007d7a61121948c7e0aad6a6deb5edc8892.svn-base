@@ -1,0 +1,6 @@
+UtilsService.path_ressource=com/sonovision/openconv/xsl/
+pubhelper-build-version=${project.version}
+pubhelper-build-date=${project.build.date}
+
+workflow_path=workflow/openconv/rafaleWF.xml
+dblogger.logLevelWriter=4

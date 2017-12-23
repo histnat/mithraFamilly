@@ -1,0 +1,41 @@
+package com.sonovision.openconv.db.dao;
+
+import java.io.Serializable;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import com.sonovision.openconv.db.exception.DBNONullException;
+import com.sonovision.openconv.db.exception.DBNOUniqueException;
+import com.sonovision.openconv.db.vo.execution.CoHistoryExe;
+import com.sonovision.openconv.db.vo.execution.CoScenario;
+import com.sonovision.openconv.db.vo.user.OpGroup;
+import com.sonovision.openconv.db.vo.user.OpRole;
+import com.sonovision.openconv.db.vo.user.OpUser;
+
+@Repository
+public interface CoScenarioDao extends CommonDao<CoScenario>, Serializable  {
+
+
+	/**
+	 * find role by is code
+	 * @param code
+	 * @return
+	 */
+	CoScenario findByUser(OpUser opUser);
+	
+
+	void deleteAll();
+
+	CoScenario getOrSave(CoScenario coScenario) throws DBNONullException, DBNOUniqueException;
+
+	CoScenario findByAll(String id, HashMap<String, String> name, String filesName, int nbrStep, Date creationDate,
+			Date modificationDate, byte shared);
+	
+	List<CoScenario> findAllByUser(OpUser opUser);
+	
+	void deleteById(String id);
+	 CoScenario findByUserId(String userId);
+}

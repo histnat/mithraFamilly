@@ -1,0 +1,340 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                            RAFALE                                  *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.2                            *
+    *                   Dated 22th December 1998                         *
+    *                                                                    *
+    *  Amendment   :													 *
+    *   19/05/97   : Change public Identifier							 *
+	*                modified entity %ICN; (used by <icn>)				 *
+    *                added "rpc" in parameter entity % ICN definition.	 *
+	*																	 *
+    *                displaced %ICN; from the AGE and AVEE marked section*
+    *                to the common part of the module.					 *
+	*																	 *
+    *                 modified %ICN to contain <icn-a> or <icn-e>		 *
+    *                 created <icn-a> : ICN for Air vehicle, Engine.	 *
+    *                 created <icn-e> : ICN for Equipment.				 *
+	*																	 *
+    *                 added element <rpc> in content model of parameter	 *
+    *                 entity %ICN , for both AGE and AVEE				 *
+	*																	 *
+    *                 element <icn> : remove attribute "size" 			 *
+    *                 (NUMBER #REQUIRED)* Amendment :-                   *                                    *
+    *   1. Update Public Identifier.                                     *
+    *   2. Removal of %AGE; & %AVEE; marked sections.                    *
+    *   3. Add IPCC and IPCN for chapterized and non chaterized IPC      *
+	*                                                                    *
+    *   15/01/98   : Change public Identifier							 *
+	*                remove inschlv from ICN ICN-C and ICN-N			 *
+	*                change security to secur in icn structure           *
+	*                remove inschlv from hotspot                         *
+	*                                                                    *
+    *   22/12/98   : Change public Identifier							 *
+	*                change comments inside IPCN definition     		 *
+	*                %secur in lowercase within secur tag       		 *
+	*                add subject inside icn-c                   		 *
+	*                                                                    *
+	* Typical invocation :                                               *
+    * <!ENTITY % EXTDMC                                                  *
+    * PUBLIC "-//RAFALE//ELEMENTS Data Module Code Breakdown 981222//EN" >*
+    * %EXTDMC;                                                           *
+    ********************************************************************** -->
+
+
+
+<!--**********************************************************************
+    * Define Element DMC (Data Module Code) containing:-                 *
+    *  Definition stored in entity %DMC;                                 *
+    ********************************************************************** -->
+
+<!ELEMENT dmc - o  (%DMC;) >
+
+
+
+<!--**********************************************************************
+    * Define Entity %ALLDMC; (All Data Module Codes) containing:-        *
+    *--------------------------------------------------------------------*
+    * The entity %ALLDMC; is used to allow REFQM & REFDM to access Data  *
+    * Modules Codes of different types (AGE or AVEE).                    *
+    *--------------------------------------------------------------------*
+    *   AGE      - mandatory single     contains MODELIC, SUPEQVC,       *
+    *                                   ECSCS, EIDC, CIDC,               *
+    *                                   DISCODE , DISCODEV, INCODE,      *
+    *                                   INCODEV, ITEMLOC.                *
+    *  or                                                                *
+    *   AVEE     - mandatory single     contains MODELIC, SDC, CHAPNUM,  *
+    *                                   SECTION, SUBSECT, DISCODE,       *
+    *                                   DISCODEV, INCODE, INCODEV,       *
+    *                                   ITEMLOC.                         *
+    ********************************************************************** -->
+
+<!ENTITY % ALLDMC "(age | avee | ipcc | ipcn)" >
+
+
+
+<!--**********************************************************************
+    * Define Element AGE (Aircraft Ground Equipment) containing:-        *
+    *--------------------------------------------------------------------*
+    * This defines the structure of the data module code for Aircraft    *
+    * Ground Equipment Data Modules.                                     *
+    *--------------------------------------------------------------------*
+    *   MODELIC  - mandatory single     contains Parsed Character Data.  *
+    *   SUPEQVC  - mandatory single     contains Parsed Character Data.  *
+    *   ECSCS    - mandatory single     contains Parsed Character Data.  *
+    *   EIDC     - mandatory single     contains Parsed Character Data.  *
+    *   CIDC     - mandatory single     contains Parsed Character Data.  *
+    *   DISCODE  - mandatory single     contains Parsed Character Data.  *
+    *   DISCODEV - mandatory single     contains Parsed Character Data.  *
+    *   INCODE   - mandatory single     contains Parsed Character Data.  *
+    *   INCODEV  - mandatory single     contains Parsed Character Data.  *
+    *   ITEMLOC  - mandatory single     contains Parsed Character Data.  *
+    ********************************************************************** -->
+
+<!ELEMENT age - o (modelic,supeqvc,ecscc,eidc,cic,discode,
+                  discodev,incode,incodev,itemloc) >
+
+
+
+<!--**********************************************************************
+    * Define Element AVEE (Air Vehicle, Engines, Equipment) containing:- *
+    *--------------------------------------------------------------------*
+    * This defines the structure of the data module code for Air Vehicle,*
+    * Engines, Equipment Data Modules.                                   *
+    *--------------------------------------------------------------------*
+    *   MODELIC  - mandatory single     contains Parsed Character Data.  *
+    *   SDC      - mandatory single     contains Parsed Character Data.  *
+    *   CHAPNUM  - mandatory single     contains Parsed Character Data.  *
+    *   SECTION  - mandatory single     contains Parsed Character Data.  *
+    *   SUBSECT  - mandatory single     contains Parsed Character Data.  *
+    *   SUBJECT  - mandatory single     contains Parsed Character Data.  *
+    *   DISCODE  - mandatory single     contains Parsed Character Data.  *
+    *   DISCODEV - mandatory single     contains Parsed Character Data.  *
+    *   INCODE   - mandatory single     contains Parsed Character Data.  *
+    *   INCODEV  - mandatory single     contains Parsed Character Data.  *
+    *   ITEMLOC  - mandatory single     contains Parsed Character Data.  *
+    ********************************************************************** -->
+
+<!ELEMENT avee - o (modelic,sdc,chapnum,section,subsect,subject,discode,
+                   discodev,incode,incodev,itemloc) >
+
+
+
+<!--**********************************************************************
+    * Define Element IPCC (Chapterized Illustrated parts Catalog) containing:- *
+    *--------------------------------------------------------------------*
+    * This defines the structure of the data module code for             *
+    * Chapterized IPC.                                                   *
+    *--------------------------------------------------------------------*
+    *   MODELIC  - mandatory single     contains Parsed Character Data.  *
+    *   SDC      - mandatory single     contains Parsed Character Data.  *
+    *   CHAPNUM  - mandatory single     contains Parsed Character Data.  *
+    *   SECTION  - mandatory single     contains Parsed Character Data.  *
+    *   SUBSECT  - mandatory single     contains Parsed Character Data.  *
+    *   SUBJECT  - mandatory single     contains Parsed Character Data.  *
+    *   FIG      - mandatory single     contains Parsed Character Data.  *
+    *   FIGV     - mandatory single     contains Parsed Character Data.  *
+    *   INCODE   - mandatory single     contains Parsed Character Data.  *
+    *   INCODEV  - mandatory single     contains Parsed Character Data.  *
+    *   ITEMLOC  - mandatory single     contains Parsed Character Data.  *
+    ********************************************************************** -->
+
+<!ELEMENT ipcc - o (modelic,sdc,chapnum,section,subsect,subject,fig,
+                   figv,incode,incodev,itemloc) >
+
+
+
+<!--**********************************************************************
+    * Define Element IPCN (Non Chapterized Illustrated parts Catalog)    *
+    *--------------------------------------------------------------------*
+    * This defines the structure of the data module code for             *
+    * Non Chapterized IPC.                                               *
+    *--------------------------------------------------------------------*
+    *   MODELIC  - mandatory single     contains Parsed Character Data.  *
+    *   SDC      - mandatory single     contains Parsed Character Data.  *
+    *   FIXZ     - mandatory single     'Z'                              *
+    *   RPC      - mandatory single     Responnsible Partner Company     *
+    *   ENDIPPN  - mandatory single     IPPN last digit                  *
+    *   FIG      - mandatory single     Figure Number                    *
+    *   FIGV     - mandatory single     Figure variant                   *
+    *   INCODEV  - mandatory single     contains Parsed Character Data.  *
+    *   ITEMLOC  - mandatory single     contains Parsed Character Data.  *
+    ********************************************************************** -->
+
+<!ELEMENT ipcn - o (modelic,sdc,fixz,rpc,endippn,fig,
+                   figv,incode,incodev,itemloc) >
+
+<!--**********************************************************************
+    * Define the following elements.                                     *
+    *  MODELIC  - Model Identification Code.                             *
+    *  SUPEQVC  - Suport equipment variant code                          *
+	*  ECSCC    - Equipment category and sub-category code               *
+	*  EIDC     - Equipment identifcation code                           *
+	*  CIC      - Component identification code                          *
+	*  DISCODE  - Dissasembly code                                       *
+	*  DISCODEV - Dissassemly code variant                               *
+	*  INCODE   - Information Code.                                      *
+    *  INCODEV  - Information Code Variant.                              *
+    *  ITEMLOC  - Item Location Code.                                    *
+	*  SUBJECT  - Subject                                                *
+	*  SDC      - System Difference code                                 *
+    *  CHAPNUM  - Chapter number                                         *
+    *  SECTION  - Section number                                         *
+	*  SUBSECT  - Sub-section number                                     *
+	*  ENDIPPN  - Four Last IPPN digits                                  *
+    *  FIG      - FIGURE NUMBER                                          *
+    *  FIGV     - FIGURE VARIANT                                         *
+    ********************************************************************** -->
+
+<!ELEMENT (modelic | supeqvc | ecscc | eidc | cic | discode | discodev |
+          incode | incodev | itemloc | subject | sdc | chapnum | section |
+          subsect| fig | figv | endippn) - o (#PCDATA)>
+
+					 
+<!--**********************************************************************
+    * Define Element FIXZ (FIXE A "Z") containing:-                      *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  fixz    - DECLARED  - Z- Issue Number.                            *
+    ********************************************************************** -->
+
+<!ELEMENT fixz - o  EMPTY >
+<!ATTLIST fixz
+            fixz   (Z)	"Z"   >
+
+
+					 
+<!--**********************************************************************
+    * Define Element FIXZZ (FIXE A "ZZ") containing:-                    *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  fixzz    - DECLARED  - Z- Issue Number.                            *
+    ********************************************************************** -->
+
+<!ELEMENT fixzz - o  EMPTY >
+<!ATTLIST fixzz
+            fixzz   (ZZ)	"ZZ"   >
+
+
+
+
+<!--*****************************************************************************
+    * Define Entity %ICN; (Illustration Code Number).				*
+    **************************************************************************-->
+  <!ENTITY % ICN "icn-c | icn-n"
+		--  Illustration Code Number.-->
+
+
+<!ELEMENT icn - O  ((%ICN;),hotspot*) -- Illustration Code Number.-->
+<!ATTLIST icn
+        id ID #IMPLIED>
+
+
+
+<!--*****************************************************************************
+    * Define Element ICN-C (Illustration Code Number AirVehicle, Engine	        *
+    **************************************************************************-->
+<!ELEMENT icn-c - O  (modelic,sdc,chapnum,section,subsect,subject,
+                      rpc,orig,illnum,illver,illupdat,secur) 
+                     -- Illustration Code Number AirVehicle, Engine -->
+<!ATTLIST icn-c
+        id ID #IMPLIED>
+
+
+<!--**************************************************************************
+    * Define Element ICN-N (Illustration Code Number for non capterized eq)  *
+    **************************************************************************-->
+<!ELEMENT icn-n - O  (modelic,sdc,fixzz,endippn,
+                      rpc,orig,illnum,illver,illupdat,secur) 
+                     -- Illustration Code Number Equipment -->
+<!ATTLIST icn-n
+         id ID #IMPLIED>
+
+
+<!--**********************************************************************
+    * Define Entity %secur; (ICN Security) containing:-                  *
+    *  Attribute Definition List.                                        *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *                                                                    *
+    *  CLASS    - Declared - REQUIRED - Identifies Security Marking.     *
+    ********************************************************************** -->
+
+<!ENTITY % secur " class  (1 | 2 | 3 | 4)  #REQUIRED "  >
+
+
+<!--**********************************************************************
+    * Define Element SECUR (Security Marking) containing:-               *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition List stored in Entity %SECUR;                 *
+    ********************************************************************** -->
+
+<!ELEMENT secur  - o EMPTY >
+<!ATTLIST secur %secur; >
+
+
+
+<!--**************************************************************************
+    * Define Element ILLNUM ( Illustration Order Number.).			         *
+    **************************************************************************-->
+<!ELEMENT illnum 	- O (#PCDATA) -- Illustration Order Number.-->
+
+
+<!--**************************************************************************
+    * Define Element ILLVER ( Illustration Version Number.).			     *
+    **************************************************************************-->
+<!ELEMENT illver 	- O (#PCDATA) -- Illustration Version Number.-->
+
+
+<!--**************************************************************************
+    * Define Element ILLUPDAT ( Illustration Update Number.).			     *
+    **************************************************************************-->
+<!ELEMENT illupdat 	- O (#PCDATA) -- Illustration Update Number.-->
+
+
+
+<!--**************************************************************************
+    * Define Element HOTSPOT (Hotspot zone)                                  *
+     *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                         *
+    *  xtgt    - number - REQUIRED - hotspot zone x axis reference .         *
+	*  ytgt    - number - REQUIRED - hotspot zone y axis reference .         *
+	*  wtgt    - number - REQUIRED - hotspot zone wide size. (X + W < 10.000)*
+	*  htgt    - number - REQUIRED - hotspot zone hight size (Y + H < 10.000)*
+	*  id      - ID     - IMPLIED  - hotspot identification .                *
+	**************************************************************************-->
+<!ELEMENT hotspot - O  (link*) >
+<!ATTLIST hotspot
+         xtgt      NUMBER   #REQUIRED
+         ytgt	   NUMBER  	#REQUIRED
+		 wtgt      NUMBER   #REQUIRED
+         htgt	   NUMBER  	#REQUIRED
+		 id        ID 		#IMPLIED>
+
+
+<!--**************************************************************************
+    * Define Element LINK (hotspot Destination )                             *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                         *
+    *  role    - number - IMPLIED - Link "emphasis".                         *
+	**************************************************************************-->
+<!ELEMENT link - O  (libelle?,cible) >
+<!ATTLIST link
+         role      NUMBER   #IMPLIED>
+
+
+<!--*************************************************************************
+    * Define Element LIBELLE ( HOT SPOT LINK DESCRIPTION).			        *
+    **************************************************************************-->
+<!ELEMENT libelle 	- O (#PCDATA) >
+
+<!--**************************************************************************
+    * Define Element CIBLE ( HOT SPOT TARGET).			                     *
+    **************************************************************************-->
+<!ELEMENT cible 	- O (xref|figref|dmcref) >

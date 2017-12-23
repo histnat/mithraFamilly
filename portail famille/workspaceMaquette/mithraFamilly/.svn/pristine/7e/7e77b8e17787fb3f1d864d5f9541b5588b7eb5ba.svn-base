@@ -1,0 +1,83 @@
+DocTraits
+	Protected: No
+	UnprotectedTags:
+
+TagTypes
+	Divisions: step1 step2 step3 step4 proclist step5 para list deflist
+	DivisionHeads: p title
+	Paragraphs: specpara applic note item title p tptitle standard p specpara applic note para list
+
+GraphicTraits
+	GraphicTag:graphic
+	GraphicEntityAttr:callicn
+  GraphicFileNameAttr:
+  GraphicProcTypeAttr:
+  GraphicMagAttr:
+  GraphicResAttr:
+  GraphicVertAdjAmt:
+  GraphicVertAdjPct:
+  GraphicCropH:
+  GraphicCropW:
+  GraphicCropLLX:
+  GraphicCropLLY:
+  GraphicScalefit:
+  GraphicReprodep:
+  GraphicReprowid:
+	GraphicTag:symbol
+	GraphicEntityAttr:callicn
+  GraphicFileNameAttr:
+  GraphicProcTypeAttr:
+  GraphicMagAttr:hscale
+  GraphicResAttr:
+  GraphicVertAdjAmt:
+  GraphicVertAdjPct:
+  GraphicCropH:
+  GraphicCropW:
+  GraphicCropLLX:
+  GraphicCropLLY:
+  GraphicScalefit:
+  GraphicReprodep:
+  GraphicReprowid:
+
+EqnTableModes
+	EqnMode: None
+	TableMode: CALS
+
+TagTraits
+	NoCharacterSubstitution:
+	NewlineAfterStartTag:idstatus dmaddres status refs rdandrt reftp refdm step1 step2 step3 step4 step5 graphic figure
+	NewlineBeforeEndTag:/idstatus /dmaddres /status /refs /rdandrt /reftp /refdm /step1 /step2 /step3 /step4 /step5 /figure
+	NoTagFullMode:
+	NoTagPartialMode:
+	NoTagNoTagsMode:
+	FullTagPartialMode: miscref reporg unverif quantity nosupply noclose figref nti tabref nosafety
+		 issdate indxflag range norefs perstime customer supscrpt context fixz unitary
+		 jacked noconds safedev fcposn water dmcref single nosupeqs xref refipc
+		 supeqref symbol secur issno nomisc airpwr supplref sheet security persnum
+		 listref elecpwr manufact partno reception fuel subscrpt mod nosupeq rpc
+		 fixzz graphic hydpwr tpubref step1 step2 step3 step4 proclist step5 para list deflist illver title rfu p cic discode illupdat tpbase discodev tpcode
+		 task infoname tptitle ecscc endippn libelle itemloc chapnum eidc techname
+		 illnum uom supeqvc rfa dmsize subject term nomen sdc standard
+		 incodev section perscat remarks swprog modelic dmcopen subsect figv fig
+		 subcat orig incode
+	FullTagNoTagsMode:
+		SmallIconFullMode:
+	SmallIconPartialMode:
+	SmallIconNoTagsMode:
+	IconFullMode:
+	IconPartialMode:
+	IconNoTagsMode:
+
+ContextTransformations
+	InsertAroundToFix: illver title rfu p cic discode illupdat tpbase discodev tpcode
+		 task infoname tptitle ecscc endippn libelle itemloc chapnum eidc techname
+		 illnum emphasis uom supeqvc rfa dmsize subject term nomen sdc
+		 standard incodev section perscat remarks swprog modelic dmcopen subsect figv
+		 fig incode orig subcat
+	Substitutions:
+	InsertAutoNested:
+	InsertAutoHeading:
+
+Options
+	AllowFosiMod: yes
+	AllowTouchup: yes

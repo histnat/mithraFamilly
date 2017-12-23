@@ -1,0 +1,169 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1A722199SF030100036A011 SYSTEM "x-dm://0900f90b8005f10e,MYWORKING" NDATA cgm>
+<!ENTITY A1A722199SF030100035A011 SYSTEM "x-dm://0900f90b8005f10d,MYWORKING" NDATA cgm>
+<!ENTITY A1A722199SF030100034A011 SYSTEM "x-dm://0900f90b8005f10c,MYWORKING" NDATA cgm>
+<!ENTITY A1A722199SF030100033A011 SYSTEM "x-dm://0900f90b8005c18d,MYWORKING" NDATA cgm>
+<!ENTITY A1A722199SF030100032A011 SYSTEM "x-dm://0900f90b80059937,MYWORKING" NDATA jpeg>
+<!ENTITY A1A722199SF030100031A011 SYSTEM "x-dm://0900f90b80059936,MYWORKING" NDATA jpeg>
+<!ENTITY A1A722199SF030100030A011 SYSTEM "x-dm://0900f90b80059935,MYWORKING" NDATA jpeg>
+<!ENTITY A1A722199SF030100029A011 SYSTEM "x-dm://0900f90b80059934,MYWORKING" NDATA jpeg>
+<!ENTITY A1A720000SF030100092A011 SYSTEM "x-dm://0900f90b80003d6f,MYWORKING" NDATA cgm>
+<!ENTITY A1A722199SF030100001A011 SYSTEM "x-dm://0900f90b80003521,MYWORKING" NDATA cgm>
+<!ENTITY A1A722199SF030100002A011 SYSTEM "x-dm://0900f90b80003522,MYWORKING" NDATA cgm>
+<!ENTITY A1A722199SF030100003A011 SYSTEM "x-dm://0900f90b80003523,MYWORKING" NDATA cgm>
+<!ENTITY A1A722199SF030100004A011 SYSTEM "x-dm://0900f90b80003524,MYWORKING" NDATA cgm>
+<!ENTITY A1A722199SF030100005A011 SYSTEM "x-dm://0900f90b80003525,MYWORKING" NDATA cgm>
+<!ENTITY A1A722199SF030100006A011 SYSTEM "x-dm://0900f90b80003526,MYWORKING" NDATA cgm>
+<!ENTITY A1A722199SF030100007A011 SYSTEM "x-dm://0900f90b80003527,MYWORKING" NDATA cgm>
+<!ENTITY A1A722199SF030100008A011 SYSTEM "x-dm://0900f90b80003528,MYWORKING" NDATA cgm>
+<!ENTITY A1A722199SF030100009A011 SYSTEM "x-dm://0900f90b80003529,MYWORKING" NDATA cgm>
+<!ENTITY A1A722199SF030100010A011 SYSTEM "x-dm://0900f90b8000352a,MYWORKING" NDATA cgm>
+<!ENTITY A1A722199SF030100011A011 SYSTEM "x-dm://0900f90b8000352b,MYWORKING" NDATA cgm>
+]>
+<?Pub EntList alpha bull copy rArr sect trade oslash nbsp le gt>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>2</section><subsect>1</subsect><subject>99</subject><discode>09</discode><discodev>A</discodev><incode>930</incode><incodev>C</incodev><itemloc>D</itemloc></avee></dmc>
+<dmtitle><techname>SERVICE BULLETIN BRAS CARTER D'ENTREE</techname><infoname>SERVICE BULLETIN-OPERATIONS ADDITIVES DE CONNAISSANCE-SUIVI EVOLUTION CRIQUES DES BRAS</infoname></dmtitle>
+<issno type="N" issno="1">
+<issdate month="09" year="2010" day="15">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 4"></version>
+<customer aaf="1" anf="1">
+<nti nti1="1" nti2="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Version initiale</rfu>
+<remarks>RAS</remarks>
+<icns><icn id="A1A722199SF030100029A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>2</section><subsect>1</subsect><subject>99</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00029</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A722199SF030100030A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>2</section><subsect>1</subsect><subject>99</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00030</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A722199SF030100034A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>2</section><subsect>1</subsect><subject>99</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00034</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A722199SF030100035A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>2</section><subsect>1</subsect><subject>99</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00035</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A722199SF030100036A011"><?Pub Caret>
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>2</section><subsect>1</subsect><subject>99</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00036</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<refdm>
+<dmcid id="A1A72210000A520BB"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>2</section><subsect>1</subsect><subject>00</subject><discode>00</discode><discodev>A</discodev><incode>520</incode><incodev>B</incodev><itemloc>B</itemloc></avee></dmcid>
+<dmcid id="A1A72210000A720BB"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>2</section><subsect>1</subsect><subject>00</subject><discode>00</discode><discodev>A</discodev><incode>720</incode><incodev>B</incodev><itemloc>B</itemloc></avee></dmcid>
+<dmcid id="A1A72210020A527AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>2</section><subsect>1</subsect><subject>00</subject><discode>20</discode><discodev>A</discodev><incode>527</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A72210020A727AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>2</section><subsect>1</subsect><subject>00</subject><discode>20</discode><discodev>A</discodev><incode>727</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+</refdm>
+</refs><proced><pmd>
+<manhour value="0,1"></manhour>
+<duration value="0,1"></duration>
+</pmd><prelreqs><reqconds><reqcondli><reqcond>
+<cond><para><p>Carter d&eacute;pos&eacute; et d&eacute;sassembl&eacute;.</p>
+</para>
+<para><p>GTR sur chariot.</p>
+</para>
+</cond>
+</reqcond></reqcondli></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="0,1"></reqper>
+</reqpers><supequip><supeqli>
+<supequi id="O2.S0601"><refipc csn="72016001 027 "><nomen>GENERATEUR DE LUMIERE</nomen><quantity>1</quantity></supequi>
+</supeqli><nosupeqs></supequip><supplies><nosupply></supplies><miscs><nomisc></miscs><safety>
+<specpara>
+<caution>
+<p>Signaler tout autre d&eacute;faut non r&eacute;pertori&eacute; dans la proc&eacute;dure &agrave; SNECMA.</p>
+</caution>
+</specpara>
+</safety></prelreqs><mainfunc>
+<step1 control="0" id="P10">
+<title>CONSTAT</title>
+<para><p>Les op&eacute;rations additives de connaissance permettent d'effectuer le contr&ocirc;le, le relev&eacute; et le suivi de l'&eacute;volution des criques en BF des bras entre les trous de d&eacute;givrage.</p>
+</para>
+</step1>
+<step1 control="0" id="P20">
+<title>ANALYSE</title>
+<para><p>Sur un &eacute;chantillonnage de 3 carters d'entr&eacute;e<refipc csn="72210001 097 "> WM001255 (SDZ), WM001250 (SDZ) et WM001195 (LDV) &agrave; contr&ocirc;ler suivant des intervalles de fonctionnement atteignant 50 h.</p>
+</para>
+<para><p>Identifier l'&eacute;volution des criques (longeur de crique) et reporter ces &eacute;tats dans les tableaux des fiches d'op&eacute;ration additive de connaissance.</p>
+</para>
+<note>
+<p>Utiliser un g&eacute;n&eacute;rateur endoscopique en lumi&egrave;re blanche<supeqref refid="O2.S0601"> et un miroir de dentiste.</p>
+</note>
+</step1>
+<step1 control="0" id="P30">
+<title>ACTIONS</title>
+<step2 control="0" id="P30-10">
+<title>CARACTERISATION DES CRIQUES</title>
+<para><p>Sur les 3 carters d'entr&eacute;e s&eacute;lectionn&eacute;s, enregistrer la longueur des criques dans le fichier de suivi sp&eacute;cifique de calcul de surface.</p>
+</para>
+</step2>
+<step2 control="0" id="P30-20">
+<title>REPRISE</title>
+<para><p>Reprendre les trous avec un foret de 1 mm de diam&egrave;tre suivant les indications <figref refid="A722199SF030100034A011"> et cartographier les d&eacute;fauts <figref refid="A722199SF030100035A011"> et <figref refid="A722199SF030100036A011">.</p>
+<note>
+<p>Ne cartographier les d&eacute;fauts que sur le plan horizontal du U.</p>
+</note>
+</para>
+</step2>
+<step2 control="0" id="P30-30">
+<title>REMONTAGE DES MODULES 1</title>
+<para><p>Remonter les volets et le module 1 <dmcref xrefid="A1A72210020A727AC"> et <dmcref xrefid="A1A72210020A727AC">.</p>
+</para>
+</step2>
+<step2 control="0" id="P30-40">
+<title>CONTROLE DES CARTERS TOUTES LES 50&nbsp;H</title>
+<para><p>Contr&ocirc;ler les carters apr&egrave;s 50&nbsp;h de fonctionnement, moteur d&eacute;pos&eacute; sur chariot en utilisant soit un endoscope rigide &oslash;&nbsp;6 &eacute;quip&eacute; d'une vis&eacute;e &agrave; 90&deg;, soit un endoscope semi rigide &oslash;&nbsp;6 b&eacute;quillable &agrave; 90&deg; ou un fibroscope &oslash;&nbsp;6, pour exemple <figref refid="A722199SF030100029A011"> et <figref refid="A722199SF030100030A011">.</p>
+</para>
+<para><p>Si perte de mati&egrave;re, contr&ocirc;ler si possible l'&eacute;tat des cloisons (derri&egrave;re le U). Pour cela d&eacute;poser le module 1 <dmcref xrefid="A1A72210000A520BB"> et des volets RDE <dmcref xrefid="A1A72210020A527AC">. Apr&egrave;s contr&ocirc;le, reposer les volets RDE <dmcref xrefid="A1A72210020A727AC"> puis le module 1 <dmcref xrefid="A1A72210000A720BB"> sur le m&ecirc;me GTR.</p>
+<note>
+<p>Crit&egrave;re de longueur des criques cumul&eacute;e sur 15&nbsp;bras&nbsp;: 215&nbsp;mm.</p>
+</note>
+</para>
+<para><p>Identifier l'&eacute;volution des criques (longueur, forme, position, etc...) des bras des 3 carters et reporter ces &eacute;tats dans les tableaux des fiches d'op&eacute;ration additive de connaissance.</p>
+</para>
+</step2>
+</step1>
+<step1 control="0" id="P40">
+<title>INFORMATIONS COMPLEMENTAIRES</title>
+<para><p>Retourner les fiches d'op&eacute;ration additive de connaissance m&ecirc;me en cas d'absence d'indication constat&eacute;e, compl&eacute;t&eacute;es des photos des d&eacute;fauts &agrave; :</p>
+</para>
+<para><p>SNECMA</p>
+</para>
+<para><p>Plateau soutien M88</p>
+</para>
+<para><p>RN7 - BP81</p>
+</para>
+<para><p>91003 EVRY Cedex</p>
+</para>
+</step1>
+<figure id="A722199SF030100029A011">
+<title>EXEMPLE DE CONTROLE</title>
+<graphic callicn="A1A722199SF030100029A011">
+</figure>
+<figure id="A722199SF030100030A011">
+<title>EXEMPLE DE CRIQUES</title>
+<graphic callicn="A1A722199SF030100030A011">
+</figure>
+<figure id="A722199SF030100034A011">
+<title>REPRISE DES TROUS</title>
+<graphic callicn="A1A722199SF030100034A011">
+</figure>
+<figure id="A722199SF030100035A011">
+<title>PLANCHE DE CARACTERISATION DES DEFAUTS 1/2</title>
+<graphic callicn="A1A722199SF030100035A011">
+</figure>
+<figure id="A722199SF030100036A011">
+<title>PLANCHE DE CARACTERISATION DES DEFAUTS 2/2</title>
+<graphic callicn="A1A722199SF030100036A011">
+</figure>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000010658 0>

@@ -1,0 +1,67 @@
+package com.sonovision.openconv.db.dao.impl;
+
+import java.util.List;
+
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.stereotype.Repository;
+
+import com.sonovision.openconv.db.dao.LogLineDao;
+import com.sonovision.openconv.db.vo.LogLine;
+
+@Repository(value="LogLineDao")
+public class LogLineDaoImpl  extends CommonDaoImpl<LogLine> implements LogLineDao{
+
+	@Override
+	public LogLine findByAll(String logResult, String message, String messageLong) {
+		
+        Query query = new Query();
+        query.addCriteria(
+                new Criteria().andOperator(
+                        Criteria.where("logResult").is(logResult),
+                        Criteria.where("message").is(message),
+                        Criteria.where("messageLong").is(messageLong)
+                )
+        );
+        List<LogLine> lll= mongoTemplate.find(query, LogLine.class);
+
+        if (lll != null && lll.size() > 0) {
+            return lll.get(0);
+        }
+        return null;
+	}
+	
+	@Override
+	public LogLine findOne(String id)
+	{
+		return super.findOne(id, LogLine.class);
+	}
+
+	@Override
+	public void deleteAll()
+	{
+		super.deleteAll(LogLine.class);
+	}
+	
+	@Override
+	public List<LogLine> findAll()
+	{
+		return super.findAll(LogLine.class);
+	}
+
+	@Override
+	public List<LogLine> findByConversionId(String conversionId) {
+        Query query = new Query();
+        query.addCriteria(
+                new Criteria().andOperator(
+                        Criteria.where("conversionId").is(conversionId)
+                )
+        );
+        List<LogLine> lll= mongoTemplate.find(query, LogLine.class);
+
+        if (lll != null && lll.size() > 0) {
+            return lll;
+        }
+        return null;
+	}
+}

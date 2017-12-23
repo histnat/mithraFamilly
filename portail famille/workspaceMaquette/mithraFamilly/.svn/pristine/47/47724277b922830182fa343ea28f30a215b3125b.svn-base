@@ -1,0 +1,10 @@
+#mongo.host=127.0.0.1
+##mongo.host=10.168.10.31
+#mongo.port=27017
+#mongo.dbname=openconv
+
+
+mongo.host=${profils.mongo.host}
+#mongo.host=10.168.10.31
+mongo.port=${profils.mongo.port}
+mongo.dbname=${profils.mongo.dbname}

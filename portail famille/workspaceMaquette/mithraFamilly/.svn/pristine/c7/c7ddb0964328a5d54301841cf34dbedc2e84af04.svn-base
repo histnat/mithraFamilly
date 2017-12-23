@@ -1,0 +1,51 @@
+package com.sonovision.openconv.log.model;
+
+import java.io.Serializable;
+
+import com.sedoc.toolbox.LogMes;
+
+public enum LoggerLevel implements Serializable {
+
+	FATAL(0,LogMes.FATAL),ERROR(1,LogMes.ERROR),WARNING(2,LogMes.ERROR),INFO(3,LogMes.INFO),DEBUG(4,LogMes.DEBUG);
+	
+	private Integer value;
+	
+	private Integer logMesLevel;
+
+	private LoggerLevel(Integer value,Integer logMesLevel){
+		this.value=value;
+		this.logMesLevel=logMesLevel;
+	}
+
+	/**
+	 * @return the value
+	 */
+	public Integer getValue() {
+		return value;
+	}
+
+	/**
+	 * @param value the value to set
+	 */
+	public void setValue(Integer value) {
+		this.value = value;
+	}
+
+	/**
+	 * @return the logMesLevel
+	 */
+	public Integer getLogMesLevel() {
+		return logMesLevel;
+	}
+
+	/**
+	 * @param logMesLevel the logMesLevel to set
+	 */
+	public void setLogMesLevel(Integer logMesLevel) {
+		this.logMesLevel = logMesLevel;
+	};
+	
+	
+	
+	
+}

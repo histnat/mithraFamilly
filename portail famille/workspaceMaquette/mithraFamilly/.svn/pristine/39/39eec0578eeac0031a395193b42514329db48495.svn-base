@@ -1,0 +1,98 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                            RAFALE                                  *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                     Dated 01st October 1997                        *
+    *                                                                    *
+    * Amendment :-                                                       *
+    * 1. Update Public Identifier.                                       *
+    * 2. added attribute %INSDEL; to element <p>.                        *
+    *                                                                    *
+    * Typical invocation :                                               *
+    * <!ENTITY % EXTSPEC  PUBLIC                                         *
+    *   "-//RAFALE//ELEMENTS Special Paragraphs Breakdown 971001//EN" >  *
+    * %EXTSPEC;                                                          *
+    ********************************************************************** -->
+
+
+
+<!--**********************************************************************
+    * Define Element SPECPARA containing:-                               *
+    *   WARNING - optional   repeatable  contains GRAPHIC, PARA,         *
+    *                                    definition stored in entity     *
+    *                                    %list;                          *
+    *   CAUTION - optional   repeatable  contains GRAPHIC, PARA,         *
+    *                                    definition stored in entity     *
+    *                                    %list;                          *
+    *   NOTE    - optional   repeatable  contains GRAPHIC, PARA,         *
+    *                                    definition stored in entity     *
+    *                                    %list;                          *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition List stored in entity %INSDEL;                *
+    ********************************************************************** -->
+
+<!ELEMENT specpara - - ((%applic;)?,warning*,caution*,note*)
+		-- Special Paragrahs.-->
+<!ATTLIST specpara   %INSDEL; >
+
+
+<!--*****************************************************************************
+    * Define Element WARNING (Warning Paragraph).				*
+    **************************************************************************-->
+<!ELEMENT warning - - ((%applic;)?,(p | graphic )+) -- Warning paragraph.-->
+<!ATTLIST warning
+            type        CDATA       #IMPLIED
+			-- Specifies the type of Warning.--
+            id      	ID          #IMPLIED
+			-- Specifies a unique identifier of an element.--
+            vital       %yesorno;   "0"
+			-- Declares if vital warning.--
+            %INSDEL; >
+
+
+<!--*****************************************************************************
+    * Define Element CAUTION (Caution Paragrah).				*
+    **************************************************************************-->
+<!ELEMENT caution - - ((%applic;)?,(p | graphic )+) -- Caution Paragrah.-->
+<!ATTLIST caution
+            type        CDATA       #IMPLIED
+			-- Specifies the type of Caution.--
+            id      	ID          #IMPLIED
+			-- Specifies a unique identifier of an element.--
+            %INSDEL; >
+
+
+<!--*****************************************************************************
+    * Define Element NOTE (Note Paragrah).					*
+    **************************************************************************-->
+<!ELEMENT note - - ((%applic;)?,(p | graphic )+) -- Note Paragrah.-->
+<!ATTLIST note
+            type        CDATA       #IMPLIED
+			-- Specifies the type of Note.--
+            id      	ID          #IMPLIED
+			-- Specifies a unique identifier of an element.--
+            %INSDEL; >
+
+
+<!--*****************************************************************************
+    * Define Element PARA (Paragraph).						*
+    **************************************************************************-->
+<!ELEMENT para - - ((%applic;)?,specpara?,p,note*) -- Paragraph.--
+	-- The P sub-element is intended to avoid RE/RS problem. This may occur
+           because if (%text;)+ is used directly in para model, there is a mixed
+	   content for PARA, and a mixed content in a sequence model must be
+	   avoided. -->
+<!ATTLIST para
+            %bodyatt; >
+
+
+<!--*****************************************************************************
+    * Define Element P (Paragraph Main Content).				*
+    **************************************************************************-->
+<!ELEMENT p - O (%text;)+ -- Paragraph Main Content.-->
+<!ATTLIST p        %INSDEL;>
+
+

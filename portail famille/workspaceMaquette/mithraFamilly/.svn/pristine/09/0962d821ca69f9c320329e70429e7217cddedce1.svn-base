@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet href="cobra1_th_en_new.xsl" type="text/xsl"?><!DOCTYPE TLDOC PUBLIC "-//XCOBRA-IETP // Interactive Technical Logistic Documentation //DE" "./XCobrask/XCobrask.dtd" []>  <!--<!DOCTYPE TLDOC PUBLIC "-//COBRA-IETP //DTD Interactive Technical Logistic Documentation //DE" [ ENTITY amp SDATA "[amp   ]">]-->
+<TLDOC VERSION="COBRA-DTD 1.0.0">
+<DM LANG="EN.GB" SECURITY="2" UDN="COBRAAK000K01000D0000000000042AA">
+<TDDM>
+<HEAD>
+<DES>COBRA Overall System Description</DES>
+<TMN/>
+<VARCODE>Common</VARCODE>
+<ISSDATE YEAR="2015" MONTH="06" DAY="18"/>
+<MANUF>Euro-Art International</MANUF>
+<CHGLIST>
+<CHGREC>
+<CHGNUM>V00-00-00</CHGNUM>
+<CHGREF>COBRAAG000U01000D0000000000042AA_00A</CHGREF>
+<CHGDEF>
+</CHGDEF>
+<CHGDATE YEAR="2015" MONTH="06" DAY="18"/>
+</CHGREC>
+</CHGLIST>
+</HEAD>
+<DESCONT>
+<SECTION1>
+<STITLE>General</STITLE>
+<P ID="I608713">Although the individual tasking of COBRA will vary in accordance with local operational requirements, a typical battlefield day comprises the following elements (see illustration - <A HREFDPL="COBRAAK000K01000D0000000012R04AA.SVG">Typical Battlefield Scenario</A>):</P>
+<UNDLIST>
+<LITEM>COBRA is checked out at an assembly area which may be up to 200 km from the battle area.</LITEM>
+<LITEM>COBRA is moved to the operational area and prepared for use. When it arrives at the mission site it can be ready for operation within 15 minutes at normal operating temperatures and up to 22 minutes at extremely low temperatures inside the Shelter. Preparation includes automatic initialisation and test after the power is switched on. The COBRA system is normally tasked remotely through the Communications, Command and Control (C<SUP>3</SUP>) system but it can be operated under local control from an integral operators control console.</LITEM>
+<LITEM>When ready the COBRA system performs its mission and prepares for a new move or another mission. The system does not require specific siting conditions to eliminate ground clutter, but care must be taken to ensure that there are no large reflecting objects within the immediate area of the surveillance arc. It can operate at full performance when sited on terrain with an inclination up to +125 mils (+7 &amp;deg;) from horizontal.</LITEM>
+</UNDLIST>
+<P>At each of the mission sites, COBRA can undertake a mission or a mission set before proceeding to the next site. A mission set can comprise up to one location mission and one adjustment/registration mission plus passive listening. Missions dedicated to the COBRA system can include:</P>
+<UNDLIST>
+<LITEM>Operating in a passive listening mode for the detection and identification of hostile Electronic Warfare (EW) sources.</LITEM>
+<LITEM>Searching, verifying, tracking and locating the positions of hostile artillery including guns with a calibre of 105 mm and above, rockets and mortars of a calibre 81 mm and above and multiple rocket launchers of a calibre 100 mm and above.</LITEM>
+<LITEM>Registering/adjusting friendly counter-battery fire of guns with a calibre of 105 mm and above.</LITEM>
+</UNDLIST>
+<P>COBRA can detect and classify hostile fire at ranges in excess of 40 km and, by extrapolation using ballistic analysis, locate the origin of the hostile artillery. The equipment calculates the impact point of disperse munitions as though the projectile had not burst.</P>
+<P>COBRA is equipped with extensive signal processing capacity which enables it to extract and analyse target data from radar sensor returns and report this data back to both local and remote control facilities. COBRA can cover an arc of surveillance of up to 1600 mils (90 &amp;deg;) centred on the antenna boresight. Smaller arcs can be placed anywhere within this maximum range. </P>
+<P>COBRA can be ready to move from the mission site within five minutes of ceasing operation.</P>
+</SECTION1>
+</DESCONT>
+</TDDM>
+</DM>
+</TLDOC>

@@ -1,0 +1,28 @@
+package com.sonovision.openconv.dmrl;
+
+import java.io.Serializable;
+
+public interface DMRLService extends Serializable {
+	
+	/**
+	 * set dmrl path
+	 * @param pathDmrl
+	 */
+	void setDmrlPath(String pathDmrl);
+	
+	/**
+	 * set dmrl path and return new FileName for oldFileName
+	 * @param oldFileName
+	 * @param pathDmrl
+	 * @return
+	 */
+	String getNewFileName(String oldFileName,String pathDmrl);
+	
+	/**
+	 * return new FileName for oldFileName
+	 * @param oldFileName
+	 * @return
+	 */
+	String  getNewFileName(String oldFileName);
+
+}

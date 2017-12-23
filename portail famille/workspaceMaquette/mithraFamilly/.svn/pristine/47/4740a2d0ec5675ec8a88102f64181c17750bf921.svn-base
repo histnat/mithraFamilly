@@ -1,0 +1,209 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Description 981222//EN">
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<?Pub EntList alpha bull copy rArr sect trade nbsp>
+<?Pub Inc>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>79</chapnum><section>2</section><subsect>1</subsect><subject>10</subject><discode>00</discode><discodev>A</discodev><incode>040</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmc>
+<dmtitle><techname>GROUPE DE LUBRIFICATION</techname><infoname>DESCRIPTION DE COMPOSITION ET DE FONCTIONNEMENT</infoname></dmtitle>
+<issno type="N" issno="1">
+<issdate month="06" year="2011" day="30">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 4"></version>
+<nti nti3="1"></systemid>
+</applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Version initiale</rfu>
+<remarks>RAS</remarks>
+<icns><icn id="A1A792110SF030100XX1A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>79</chapnum><section>2</section><subsect>1</subsect><subject>10</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00XX1</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A792110SF030100XX2A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>79</chapnum><section>2</section><subsect>1</subsect><subject>10</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00XX2</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A792110SF030100XX3A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>79</chapnum><section>2</section><subsect>1</subsect><subject>10</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00XX3</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<norefs>
+</refs><descript><para0 id="P10">
+<title>COMPOSITION DU GROUPE DE LUBRIFICATION</title>
+<para><p>Le Groupe De Lubrification (GDL) est situ&eacute; sur la face avant du support des &eacute;quipements <figref repnohot="0" refid="A1A792110SF030100XX1A011">. Il a pour fonction  l&rsquo;alimentation, la r&eacute;cup&eacute;ration et le filtrage de l&rsquo;huile de lubrification des enceintes moteur.</p></para>
+<para><p>Le Groupe De Lubrification est compos&eacute; de&nbsp;:</p></para>
+<list type="SIMPLE">
+<item><para><p>6 pompes de type volum&eacute;trique,</p></para>
+</item>
+<item><para><p>6 arbres d'entra&icirc;nement des pompes,</p></para>
+</item>
+<item><para><p>1 r&eacute;ducteur de vitesse,</p></para>
+</item>
+<item><para><p>1 arbre d'entra&icirc;nement principal,</p></para>
+</item>
+<item><para><p>1 clapet de surpression,</p></para>
+</item>
+<item><para><p>1 filtre d'alimentation &eacute;quip&eacute; compos&eacute; de&nbsp;:</p></para>
+<list type="SIMPLE">
+<item><para><p>1 clapet de retenue,</p></para>
+</item>
+<item><para><p>1 d&eacute;tecteur de colmatage huile,</p></para>
+</item>
+<item><para><p>1 clapet de d&eacute;rivation.</p></para>
+</item>
+</list>
+</item>
+<item><para><p>5 ensembles cr&eacute;pines-barreaux magn&eacute;tiques,</p></para>
+</item>
+<item><para><p>1 cr&eacute;pine d'alimentation.</p></para>
+</item>
+</list>
+<subpara1 id="P10-10">
+<title>POMPES DE TYPE VOLUMETRIQUE</title>
+<para><p>Les 6 pompes de type volum&eacute;trique se pr&eacute;sentent ainsi&nbsp;:</p></para>
+<list type="SIMPLE">
+<item><para><p>une pompe de pression qui alimente en huile les diff&eacute;rentes enceintes &agrave; lubrifier,</p></para>
+</item>
+<item><para><p>cinq pompes de r&eacute;cup&eacute;ration du m&eacute;lange air-huile des enceintes suivantes&nbsp;:</p></para>
+<list type="SIMPLE">
+<item><para><p>enceinte avant, palier 1 (A),</p></para>
+</item>
+<item><para><p>enceinte interm&eacute;diaire, paliers 2 et 3 (B),</p></para>
+</item>
+<item><para><p>enceinte arri&egrave;re, paliers 4 et 5 (C),</p></para>
+</item>
+<item><para><p>support des &eacute;quipements, 2 r&eacute;cup&eacute;rations (D1, D2).</p></para>
+</item>
+</list>
+</item>
+</list>
+</subpara1>
+<subpara1 id="P10-20">
+<title>ARBRES D'ENTRAINEMENT DES POMPES</title>
+<para><p>Les arbres d'entra&icirc;nement des pompes assurent la liaison du r&eacute;ducteur de vitesse aux pompes.</p></para>
+</subpara1>
+<subpara1 id="P10-30">
+<title>REDUCTEUR DE VITESSE</title>
+<para><p>Le r&eacute;ducteur de vitesse permet de ramener le r&eacute;gime d'entr&eacute;e groupe de lubrification &agrave; des r&eacute;gimes de rotation pompes acceptables.</p></para>
+</subpara1>
+<subpara1 id="P10-40">
+<title>ARBRE D'ENTRAINEMENT PRINCIPAL</title>
+<para><p>L'arbre d'entra&icirc;nement principal assure la liaison prise de mouvements du support &eacute;quipement au r&eacute;ducteur de vitesse.</p></para>
+</subpara1>
+<subpara1 id="P10-50">
+<title>CLAPET DE SURPRESSION </title>
+<para><p>Le clapet de surpression assure la d&eacute;rivation du d&eacute;bit de la pompe d'alimentation vers l'aspiration de celle-ci.</p></para>
+</subpara1>
+<subpara1 id="P10-60">
+<title>FILTRE D'ALIMENTATION</title>
+<para><p>Le filtre d'alimentation assure la filtration de la totalit&eacute; du d&eacute;bit d'huile, avant l'entr&eacute;e dans le moteur. Ce filtre est situ&eacute; en aval de la pompe d'alimentation, il est &eacute;quip&eacute; des asservissements suivants&nbsp;:</p></para>
+<list type="SIMPLE">
+<item><para><p>un clapet de retenue, situ&eacute; &agrave; l'entr&eacute;e du filtre qui &eacute;vite lors du d&eacute;montage de ce filtre la vidange du circuit d'huile et toute circulation d'huile &agrave; l'arr&ecirc;t moteur,</p></para>
+</item>
+<item><para><p>un d&eacute;tecteur de colmatage qui fait &ldquo;monter un Bit de panne&rdquo; lorsque la pression diff&eacute;rentielle aux bornes du filtre d&eacute;passe un certain seuil,</p></para>
+</item>
+<item><para><p>un clapet de d&eacute;rivation qui assure l'alimentation en huile du moteur en cas de colmatage du filtre.</p></para>
+</item>
+</list>
+</subpara1>
+<subpara1 id="P10-70">
+<title>ENSEMBLES CREPINES-BARREAUX MAGNETIQUES</title>
+<para><p>Les cinq ensembles cr&eacute;pines-barreaux magn&eacute;tiques sont situ&eacute;s en amont de chaque pompe de r&eacute;cup&eacute;ration. Chaque ensemble se compose&nbsp;:</p></para>
+<list type="SIMPLE">
+<item><para><p>d'une cr&eacute;pine qui assure la protection de la pompe de r&eacute;cup&eacute;ration consid&eacute;r&eacute;e,</p></para>
+</item>
+<item><para><p>d'un barreau magn&eacute;tique destin&eacute; &agrave; obtenir un &eacute;chantillonnage suffisant de particules magn&eacute;tiques.</p></para>
+</item>
+</list>
+</subpara1>
+<subpara1 id="P10-80">
+<title>CREPINE D'ALIMENTATION</title>
+<para><p>La cr&eacute;pine d'alimentation assure la protection de la pompe d'alimentation.</p></para>
+</subpara1>
+</para0><para0 id="P20">
+<title>FONCTIONNEMENT DU GROUPE DE LUBRIFICATION<figref refid="A792110SF030100XX2A011"></title>
+<subpara1 id="P20-10">
+<title>CARACTERISTIQUES PRINCIPALES</title>
+<table id="TABLEAU-1" tocentry="1"><tgroup cols="3" align="left" colsep="1" rowsep="1"><colspec colnum="1" colname="col1" colwidth="6.5 cm" align="left" colsep="1" rowsep="1"><colspec colnum="2" colname="col2" colwidth="3.5 cm" align="left" colsep="1" rowsep="1"><colspec colnum="3" colname="col3" colwidth="6.5 cm" align="left" colsep="1" rowsep="1">
+<tbody>
+<row>
+<entry colname="col1"><para><p></p></para>
+</entry>
+<entry colname="col2"><para><p>	performances minimales (Z&nbsp;=&nbsp;0)</p></para>
+</entry>
+<entry colname="col3"><para><p>	performances en altitude (Z&nbsp;=&nbsp;60000 pieds)</p></para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Temp&eacute;rature d'huile</p></para>
+</entry>
+<entry colname="col2"><para><p>130&deg;C</p></para>
+</entry>
+<entry colname="col3"><para><p>130&deg;C			</p></para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Pression de refoulement		</p></para>
+</entry>
+<entry colname="col2"><para><p>7&nbsp;bars	</p></para>
+</entry>
+<entry colname="col3"><para><p>2,5&nbsp;bars</p></para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Vitesse d'entra&icirc;nement</p></para>
+</entry>
+<entry colname="col2"><para><p>5642&nbsp;tr/mn</p></para>
+</entry>
+<entry colname="col3"><para><p>5642&nbsp;tr/mn</p></para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>D&eacute;bit</p></para>
+</entry>
+<entry colname="col2"><para><p>2100&nbsp;l/h</p></para>
+</entry>
+<entry colname="col3"><para><p>1400&nbsp;l/h &agrave; 1750&nbsp;l/h</p></para>
+</entry>
+</row>
+</tbody>
+</tgroup></table>
+</subpara1>
+<subpara1 id="P20-20">
+<title>CIRCUIT D'ALIMENTATION ET DE LUBRIFICATION</title>
+<para><p>L'huile contenue dans le r&eacute;servoir, lui m&ecirc;me int&eacute;gr&eacute; dans le support des &eacute;quipements, est aspir&eacute;e par une pompe de type volum&eacute;trique &agrave; palettes, situ&eacute;e dans le groupe de lubrification. Une tuyauterie relie donc le support des &eacute;quipements au groupe de lubrification situ&eacute; sur la face avant du SE, pour acheminer l'huile.</p></para>
+<para><p>A l'entr&eacute;e du GDL, l'huile traverse une cr&eacute;pine (filtre grosses mailles de 800&nbsp;&micro;m), qui prot&egrave;ge la pompe d'alimentation, avant d'&ecirc;tre aspir&eacute;e par cette derni&egrave;re.</p></para>
+<para><p>Cette pompe refoule l'huile &agrave; une pression de 450&nbsp;kPa (4,5&nbsp;bar) diff&eacute;rentielle au PG.</p></para>
+<para><p>La pression d'alimentation est non r&eacute;gul&eacute;e&nbsp;: la totalit&eacute; du d&eacute;bit pompe est envoy&eacute;e aux enceintes, &agrave; tous r&eacute;gimes, assurant une meilleure adaptation du d&eacute;bit aux enceintes en fonction du r&eacute;gime (d&eacute;bit fonction du r&eacute;gime).</p></para>
+<para><p>Une tuyauterie de d&eacute;rivation, &eacute;quip&eacute;e d'un clapet de surpression relie la partie amont &agrave; la partie aval de la pompe.</p></para>
+<para><p>Ce clapet de surpression limite la pression de refoulement de la pompe d'alimentation &agrave; une pression de 2&nbsp;000&nbsp;kPa (20 bar), lors des d&eacute;marrages extr&ecirc;mes froids notamment.</p></para>
+<para><p>Cette protection consiste &agrave; d&eacute;river une partie du d&eacute;bit de la pompe d'alimentation, vers l'aspiration de celle-ci&nbsp;: en effet, l'huile froide circule moins bien en aval de la pompe, cr&eacute;ant ainsi une augmentation de pression.</p></para>
+<para><p>L'huile issue de la pompe d'alimentation passe au travers du filtre principal, assurant une filtration de 15&nbsp;&micro;m, et permet donc la d&eacute;pollution de l'huile.</p></para>
+<para><p>Ce filtre est &eacute;quip&eacute; d'un clapet de retenue amont et d'un clapet anti-siphonnage situ&eacute; en aval, &agrave; la sortie du filtre.</p></para>
+<para><p>Le clapet de retenue amont assure la protection du personnel, lors du d&eacute;montage du filtre principal, en emp&ecirc;chant l'&eacute;coulement de l'huile provenant du r&eacute;servoir et &eacute;vite donc la vidange de ce dernier.</p></para>
+<para><p>A l'arr&ecirc;t du moteur, le clapet anti-siphonnage emp&ecirc;che le retour de l'huile contenue dans la partie du circuit d'alimentation qui part du clapet jusqu'aux enceintes, vers le r&eacute;servoir.</p></para>
+<para><p>Une tuyauterie de d&eacute;rivation, &eacute;quip&eacute;e d'un d&eacute;tecteur de colmatage &eacute;lectrique, tar&eacute; &agrave; 130-150&nbsp;kPa (1,3-1,5&nbsp;bar) de pression diff&eacute;rentielle, relie la partie amont &agrave; la partie aval du filtre.</p></para>
+<para><p>Ce d&eacute;tecteur de colmatage envoie une information &eacute;lectrique au calculateur qui fait &ldquo;monter un bit de panne&rdquo; lorsque la pression diff&eacute;rentielle aux bornes du filtre atteint 200 kPa (2 bar).</p></para>
+<para><p>Une autre tuyauterie reliant la partie amont &agrave; la partie aval du filtre, &eacute;quip&eacute;e d'un clapet de d&eacute;rivation, "bipasse" l'huile d'alimentation des enceintes en cas de colmatage du filtre principal.</p></para>
+<para><p>Ce clapet de d&eacute;rivation est tar&eacute; &agrave; 230-250&nbsp;kPa (2,3-2,5&nbsp;bar) de pression diff&eacute;rentielle.</p></para>
+</subpara1>
+</para0>
+<figure id="A792110SF030100XX1A011">
+<title>Figure 1 &ndash; LOCALISATION DU GDL SUR MOTEUR</title>
+<graphic callicn="A1A792110SF030100XX1A011">
+</figure>
+<figure id="A792110SF030100XX2A011">
+<title>Figure 2 &ndash; SCHEMA DE FONCTIONNEMENT</title>
+<graphic callicn="A1A792110SF030100XX2A011">
+</figure>
+<figure id="A792110SF030100XX3A011"><?Pub Caret>
+<title>Figure 3 &ndash; REPERAGE DES COMPOSANTS DU GDL</title>
+<graphic callicn="A1A792110SF030100XX3A011">
+</figure>
+</descript></content></dmodule>
+<?Pub *0000012677 0>

@@ -1,0 +1,192 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN">
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<dmodule><?Pub Caret1><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>1</subsect><subject>10</subject><discode>50</discode><discodev>A</discodev><incode>251</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmc>
+<dmtitle><techname>REGULATEUR FCU</techname><infoname>NETTOYAGE AUX AGENTS CHIMIQUES</infoname></dmtitle>
+<issno type="N" issno="1">
+<issdate month="06" year="2002" day="30">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 1"></version>
+<version version="M88-2 ETAPE 4"></version>
+<nti nti1="0" nti2="0" nti3="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Version initiale</rfu>
+<remarks>RAS</remarks>
+</status>
+</idstatus><content><refs>
+<refdm>
+<dmcid id="A1A70210001A251AD"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>2</section><subsect>1</subsect><subject>00</subject><discode>01</discode><discodev>A</discodev><incode>251</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmcid>
+<dmcid id="A1A70210004A253AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>2</section><subsect>1</subsect><subject>00</subject><discode>04</discode><discodev>A</discodev><incode>253</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A70210023A253AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>2</section><subsect>1</subsect><subject>00</subject><discode>23</discode><discodev>A</discodev><incode>253</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A70210024A253AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>2</section><subsect>1</subsect><subject>00</subject><discode>24</discode><discodev>A</discodev><incode>253</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A70370009A369AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>3</section><subsect>7</subsect><subject>00</subject><discode>09</discode><discodev>A</discodev><incode>369</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A73211055A251AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>1</subsect><subject>10</subject><discode>55</discode><discodev>A</discodev><incode>251</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A73211060A251AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>1</subsect><subject>10</subject><discode>60</discode><discodev>A</discodev><incode>251</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A73211070A251AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>1</subsect><subject>10</subject><discode>70</discode><discodev>A</discodev><incode>251</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A73211075A251AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>1</subsect><subject>10</subject><discode>75</discode><discodev>A</discodev><incode>251</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A73211080A251AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>1</subsect><subject>10</subject><discode>80</discode><discodev>A</discodev><incode>251</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+</refdm>
+</refs><proced><pmd>
+<manhour value="8"></manhour>
+<duration value="8"></duration>
+</pmd><prelreqs><reqconds><reqcondli><reqcond>
+<cond><para><p>R&eacute;gulateur FCU d&eacute;sassembl&eacute;.</p>
+</para>
+</cond>
+</reqcond></reqcondli></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="8"></reqper>
+</reqpers><supequip><nosupeq><nosupeqs></supequip><supplies><nosupply></supplies><miscs><miscli>
+<misc id="P0442" matiere="0"><refipc csn="72013002 009 "><nomen>Alcool isopropylique</nomen><quantity>SB</quantity></misc>
+<misc id="PXXX" matiere="0"><ident><manufact>0000</manufact><partno>00000</partno></ident><nomen>K&eacute;ros&egrave;ne huil&eacute; &agrave; 5%</nomen><quantity>SB</quantity></misc>
+</miscli></miscs><safety><nosafety></safety></prelreqs><mainfunc>
+<step1 control="0" id="P10">
+<para><p>Effectuer la proc&eacute;dure suivant le niveau de d&eacute;montage :</p>
+</para>
+<list type="SIMPLE">
+<item><para><p>soit sur l'ensemble complet,</p>
+</para>
+</item>
+<item><para><p>soit sur les composants.</p>
+</para>
+</item>
+</list>
+</step1>
+<step1 control="0" id="P20">
+<title>Nettoyage des composants suivants :</title>
+<list type="SIMPLE">
+<item><para><p>rondelle jonction de tresse <refipc csn="73211002 037 ">,</p>
+</para>
+</item>
+<item><para><p>connecteurs &eacute;lectriques <refipc csn="73211002 006 ">,</p>
+</para>
+</item>
+<item><para><p>sonde de temp&eacute;rature <refipc csn="73211002 016 ">,</p>
+</para>
+</item>
+<item><para><p>&eacute;lectro-robinet <refipc csn="73211002 020 ">,</p>
+</para>
+</item>
+<item><para><p>servo-valve mono &eacute;tage <refipc csn="73211002 024 ">,</p>
+</para>
+</item>
+<item><para><p>corps capteur doseur <refipc csn="73211002 028 ">.</p>
+</para>
+</item>
+</list>
+<para><p>Effectuer un d&eacute;graissage au chiffon non pelucheux imbib&eacute; d'alcool isopropylique <miscref refid="P0442">.</p>
+</para>
+</step1>
+<step1 control="0" id="P30">
+<title>Nettoyage des composants suivants :</title>
+<list type="SIMPLE">
+<item><para><p>bobine <refipc csn="73211002 001 ">,</p>
+</para>
+</item>
+<item><para><p>couvercle <refipc csn="73211002 009 ">,</p>
+</para>
+</item>
+<item><para><p>cache-fils <refipc csn="73211002 010 "> <refipc csn="73211002 013 ">,</p>
+</para>
+</item>
+<item><para><p>cale <refipc csn="73211002 031 ">,</p>
+</para>
+</item>
+<item><para><p>diaphragmes <refipc csn="73211002 071 "> <refipc csn="73211002 078 "> <refipc csn="73211002 085 ">,</p>
+</para>
+</item>
+<item><para><p>bouchons <refipc csn="73211002 066 "> <refipc csn="73211002 068 "> <refipc csn="73211002 073 "> <refipc csn="73211002 075 "> <refipc csn="73211002 080 "> <refipc csn="73211002 082 "> <refipc csn="73211002 087 "> <refipc csn="73211002 091 "> <refipc csn="73211002 093 "> <refipc csn="73211002 095 ">,</p>
+</para>
+</item>
+<item><para><p>vis <refipc csn="73211002 007 "> <refipc csn="73211002 011 "> <refipc csn="73211002 014 "> <refipc csn="73211002 017 "> <refipc csn="73211002 021 "> <refipc csn="73211002 025 "> <refipc csn="73211002 029 "> <refipc csn="73211002 033 "> <refipc csn="73211002 034 "> <refipc csn="73211002 043 "> <refipc csn="73211002 049 "> <refipc csn="73211002 055 "> <refipc csn="73211002 060 ">,</p>
+</para>
+</item>
+<item><para><p>rondelles <refipc csn="73211002 008 "> <refipc csn="73211002 012 "> <refipc csn="73211002 015 "> <refipc csn="73211002 018 "> <refipc csn="73211002 022 "> <refipc csn="73211002 026 "> <refipc csn="73211002 030 "> <refipc csn="73211002 035 "> <refipc csn="73211002 036 "> <refipc csn="73211002 044 "> <refipc csn="73211002 050 "> <refipc csn="73211002 056 "> <refipc csn="73211002 061 ">.</p>
+</para>
+</item>
+</list>
+<step2 control="0" id="P30-10">
+<para><p>Effectuer un d&eacute;graissage aux solvants p&eacute;troliers <dmcref xrefid="A1A70210001A251AD">.</p>
+</para>
+</step2>
+<step2 control="0" id="P30-20">
+<para><p>Prot&eacute;ger les pi&egrave;ces acier contre la corrosion en les trempant dans un bac de K&eacute;ros&egrave;ne huil&eacute; <miscref refid="PXXX">.</p>
+</para>
+</step2>
+</step1>
+<step1 control="0" id="P40">
+<title>Nettoyage des composants suivants :</title>
+<list type="SIMPLE">
+<item><para><p>diaphragme <refipc csn="73211002 089 ">.</p>
+</para>
+</item>
+</list>
+<step2 control="0" id="P40-10">
+<para><p>Suivant l'&eacute;tat de propret&eacute;, effectuer un d&eacute;graissage aux solvants p&eacute;troliers <dmcref xrefid="A1A70210001A251AD">.</p>
+</para>
+</step2>
+<step2 control="0" id="P40-20">
+<para><p>Effectuer un nettoyage par ultrasons au white spirit <dmcref xrefid="A1A70210024A253AC">.</p>
+</para>
+</step2>
+</step1>
+<step1 control="0" id="P50">
+<title>Nettoyage des composants suivants :</title>
+<list type="SIMPLE">
+<item><para><p>carter r&eacute;gulateur &eacute;quip&eacute; <refipc csn="73211002 098 ">.</p>
+</para>
+</item>
+</list>
+<step2 control="0" id="P50-10">
+<para><p>Suivant l'&eacute;tat de propret&eacute;, effectuer un d&eacute;graissage aux solvants p&eacute;troliers <dmcref xrefid="A1A70210001A251AD">.</p>
+</para>
+</step2>
+<step2 control="0" id="P50-20">
+<para><p>Effectuer un nettoyage par ultrasons aux produits alcalins <dmcref xrefid="A1A70210023A253AC">.</p>
+</para>
+</step2>
+<step2 control="0" id="P50-30">
+<para><p>Effectuer un nettoyage par ultrasons aux solvants <dmcref xrefid="A1A70210004A253AC">.</p>
+</para>
+</step2>
+<step2 control="0" id="P50-40">
+<specpara>
+<caution>
+<p>LE NETTOYAGE PAR SERINGAGE MANUEL EST A EFFECTUER UNIQUEMENT EN CAS DE POLLUTION DE L'EQUIPEMENT (UN EVENEMENT TECHNIQUE EN EXPLOITATION, UNE OPERATION D'USINAGE SUR LE CARTER, ETC.)</p>
+</caution>
+</specpara>
+<para><p>Effectuer un nettoyage par seringage manuel et un comptage de particules <dmcref xrefid="A1A70370009A369AC">.</p>
+</para>
+</step2>
+</step1>
+<step1 control="0" id="P60">
+<para><p>Nettoyage du doseur <refipc csn="73211003 000 "> <dmcref xrefid="A1A73211055A251AC">.</p>
+</para>
+</step1>
+<step1 control="0" id="P70">
+<para><p>Nettoyage du d&eacute;tecteur de delta P <refipc csn="73211007 000 "> <dmcref xrefid="A1A73211060A251AC">.</p>
+</para>
+</step1>
+<step1 control="0" id="P80">
+<para><p>Nettoyage du clapet de protection pompe <refipc csn="73211006 000 "> <dmcref xrefid="A1A73211070A251AC">.</p>
+</para>
+</step1>
+<step1 control="0" id="P90">
+<para><p>Nettoyage de la soupape r&eacute;gulatrice <refipc csn="73211004 000 "> <dmcref xrefid="A1A73211075A251AC">.</p>
+</para>
+</step1>
+<step1 control="0" id="P100">
+<para><p>Nettoyage du clapet stop <refipc csn="73211002 048 "> <dmcref xrefid="A1A73211080A251AC">.</p>
+</para>
+</step1>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>

@@ -1,0 +1,1838 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xsl:stylesheet
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:sonovision="com.sonovision.openconv.modules.xslprocess.helper.XSLHelper"
+	exclude-result-prefixes="xsi sonovision"
+	version="2.0">
+
+	<xsl:output method="xml" indent="no"/>
+
+	<xsl:param name="folderIn"/>
+	<xsl:param name="folderOut"/>
+	<xsl:param name="objectid"/><!-- only if from java -->
+	<xsl:param name="fromDOS" select=" 'false' "/><!-- not defined if from java, otherwise (DOS) set to true -->
+	<xsl:param name="forList" select=" 'false' "/>
+
+	<xsl:variable name="prefix">http://www.s1000d.org/S1000D_4-0-1/xml_schema_flat/</xsl:variable>
+
+	<!-- -->
+	<!-- ========== Draft de conversion COBRA => S1000D 4.01 ========== -->
+	<xsl:template match="/">
+		<xsl:choose>
+			<xsl:when test="$fromDOS = 'true' and $forList = 'true' ">
+				<lstFilesInOut>
+					<xsl:apply-templates/>
+				</lstFilesInOut>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:apply-templates/>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+
+	<!-- -->
+	<!-- ========== Regle liste DM (que si depuis batch)  ========== -->
+	<xsl:template match="lstObj">
+		<xsl:apply-templates/>
+	</xsl:template>
+
+	<!-- -->
+	<!-- ========== Regle liste DM / item DM (que si depuis batch) ========== -->
+	<xsl:template match="dm[parent::lstObj]">
+		<xsl:variable name="fnameCobra">
+			<xsl:value-of select="./text()"/>
+		</xsl:variable>
+		<xsl:variable name="URLCobra">
+			<xsl:call-template name="makeURL">
+				<xsl:with-param name="path">
+					<xsl:value-of select="concat($folderIn,'\',$fnameCobra)"/>
+				</xsl:with-param>
+			</xsl:call-template>
+		</xsl:variable>
+		<xsl:for-each select="document($URLCobra)/TLDOC">
+			<xsl:apply-templates select=".">
+				<xsl:with-param name="fnameCobra">
+					<xsl:value-of select="$fnameCobra"/>
+				</xsl:with-param>
+			</xsl:apply-templates>
+		</xsl:for-each>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= regle COBRA - TLDOC ========== -->
+	<xsl:template match="TLDOC">
+		<xsl:param name="fnameCobra"/>
+		<xsl:variable name="UDN">
+			<xsl:value-of select="/TLDOC/DM/@UDN"/>
+		</xsl:variable>
+		<xsl:variable name="issnoVal">
+			<xsl:value-of select="count(//HEAD/CHGLIST/CHGREC) + 1"/>
+		</xsl:variable>
+		<xsl:variable name="issno">
+			<xsl:choose>
+				<xsl:when test="$issnoVal = 0">000</xsl:when>
+				<xsl:when test="$issnoVal &lt; 10">
+					<xsl:value-of select="concat('00',$issnoVal)"/>
+				</xsl:when>
+				<xsl:when test="$issnoVal &lt; 100">
+					<xsl:value-of select="concat('0',$issnoVal)"/>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:value-of select="$issnoVal"/>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:variable>
+		<xsl:variable name="DMC">
+			<xsl:choose>
+				<xsl:when test="string-length($UDN)=32">
+					<xsl:value-of select="concat(
+						'DMC-',
+						substring($UDN,1,10),'-',
+						substring($UDN,11,3),'-',
+						substring($UDN,14,3),'-',
+						substring($UDN,17,2),'-',
+						substring($UDN,19,4),'-',
+						substring($UDN,23,2),
+						substring($UDN,25,3),'-',
+						substring($UDN,28,3),
+						substring($UDN,31,1),'-',
+						substring($UDN,32,1),
+						'_',$issno,'-00'
+					   )"/>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:text>WRONG-LNG</xsl:text>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:variable>
+		<xsl:variable name="DMCfname">
+			<xsl:choose>
+				<xsl:when test="$DMC != 'WRONG-LNG' ">
+					<xsl:call-template name="makeURL">
+						<xsl:with-param name="path">
+							<xsl:value-of select="concat($folderOut,'/',$DMC,'.yml')"/>
+						</xsl:with-param>
+					</xsl:call-template>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:text>WRONG-LNG</xsl:text>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:variable>
+		<xsl:variable name="typeCOBRA">
+			<xsl:choose>
+				<xsl:when test="./DM/OPDM">OPDM</xsl:when>
+				<xsl:when test="./DM/SYDM">SYDM</xsl:when>
+				<xsl:when test="./DM/PREDM">PREDM</xsl:when>
+				<xsl:when test="./DM/CORDM">CORDM</xsl:when>
+				<xsl:when test="./DM/SPDM">SPDM</xsl:when>
+				<xsl:when test="./DM/DIADM">DIADM</xsl:when>
+				<xsl:when test="./DM/TDDM">TDDM</xsl:when>
+				<xsl:when test="./DM/PLDM">PLDM</xsl:when>
+				<xsl:when test="./DM/STODM">STODM</xsl:when>
+				<xsl:when test="./DM/PAKDM">PAKDM</xsl:when>
+				<xsl:when test="./DM/DESDM">DESDM</xsl:when>
+				<xsl:when test="./DM/ETCDM">ETCDM</xsl:when>
+				<xsl:when test="./DM/PLGDM">PLGDM</xsl:when>
+				<xsl:otherwise>UNKNOWN</xsl:otherwise>
+			</xsl:choose>
+		</xsl:variable>
+		<xsl:variable name="ASDschema">
+			<xsl:choose>
+				<xsl:when test="$typeCOBRA='OPDM'">description</xsl:when>
+				<xsl:when test="$typeCOBRA='SYDM'">description</xsl:when>
+				<xsl:when test="$typeCOBRA='PREDM' and ./DM/PREDM/PREPROC">procedure</xsl:when>
+				<xsl:when test="$typeCOBRA='PREDM' and ./DM/PREDM/DESCONT">description</xsl:when>
+				<xsl:when test="$typeCOBRA='CORDM' and ./DM/CORDM/CORPROC">procedure</xsl:when>
+				<xsl:when test="$typeCOBRA='CORDM' and ./DM/CORDM/DESCONT">description</xsl:when>
+				<xsl:when test="$typeCOBRA='SPDM'">description</xsl:when>
+				<xsl:when test="$typeCOBRA='DIADM' and ./DM/DIADM/DESCONT">description</xsl:when>
+				<xsl:when test="$typeCOBRA='DIADM' and ./DM/DIADM/DIAGPROC">procedure</xsl:when>
+				<xsl:when test="$typeCOBRA='TDDM'">description</xsl:when>
+				<xsl:when test="$typeCOBRA='PLDM'">none</xsl:when>
+				<xsl:when test="$typeCOBRA='STODM'">description</xsl:when>
+				<xsl:when test="$typeCOBRA='PAKDM'">description</xsl:when>
+				<xsl:when test="$typeCOBRA='DESDM'">description</xsl:when>
+				<xsl:when test="$typeCOBRA='ETCDM'">none</xsl:when>
+				<xsl:when test="$typeCOBRA='PLGDM'">description</xsl:when>
+				<xsl:otherwise>none</xsl:otherwise>
+			</xsl:choose>
+		</xsl:variable>
+		<xsl:choose>
+			<xsl:when test="$DMCfname='WRONG-LNG'">
+				<xsl:call-template name="printMsg">
+					<xsl:with-param name="type">ERROR</xsl:with-param>
+					<xsl:with-param name="content">
+						<xsl:value-of select=" concat('In file ',ancestor::TLDOC/DM/@UDN,' Bad length found for @UDN [',$UDN,'] . Translation impossible.') "/>
+					</xsl:with-param>
+				</xsl:call-template>
+			</xsl:when>
+			<xsl:when test="$forList='true'">
+				<object in="{$fnameCobra}" out="{concat($DMC,'.xml')}"/>
+			</xsl:when>
+			<xsl:otherwise>
+				<!--xsl:message>
+					<xsl:value-of select="concat('   === TRACE:Translating ',$UDN,' into: ',$DMCfname)"/>
+				</xsl:message-->
+				<xsl:variable name="isStructureOK">
+					<xsl:choose>
+						<xsl:when test="$typeCOBRA='OPDM' and TLDOC/DM/OPDM/OPPROC[preceding-sibling::OPPROC]">KO-OPPROC multiple</xsl:when>
+						<xsl:when test="$typeCOBRA='PREDM' and TLDOC/DM/PREDM/PREPROC[preceding-sibling::PREPROC]">KO-PREPROC multiple</xsl:when>
+						<xsl:when test="$typeCOBRA='CORDM' and TLDOC/DM/CORDM/CORPROC[preceding-sibling::CORPROC]">KO-CORPROC multiple</xsl:when>
+						<xsl:when test="$typeCOBRA='DIADM' and TLDOC/DM/DIADM/DIAGPROC[preceding-sibling::DIAGPROC]">KO-DIAGPROC multiple</xsl:when>
+						<xsl:otherwise>OK</xsl:otherwise>
+					</xsl:choose>
+				</xsl:variable>
+				<xsl:choose>
+					<xsl:when test="$ASDschema='none'">
+						<xsl:call-template name="printMsg">
+							<xsl:with-param name="type">ERROR</xsl:with-param>
+							<xsl:with-param name="content">
+								<xsl:value-of select=" concat('In file ',ancestor::TLDOC/DM/@UDN,' Unable to choose ASD schema for Cobra type: ',
+									$typeCOBRA,' - No translation made.') "/>
+							</xsl:with-param>
+						</xsl:call-template>
+					</xsl:when>
+					<xsl:when test="$isStructureOK != 'OK'">
+						<xsl:call-template name="printMsg">
+							<xsl:with-param name="type">ERROR</xsl:with-param>
+							<xsl:with-param name="content">
+								<xsl:value-of select=" concat('Iin file ',ancestor::TLDOC/DM/@UDN,' Structure not supported for Cobra type: ',
+									$typeCOBRA,' (',$isStructureOK,'). No translation made.') "/>
+							</xsl:with-param>
+						</xsl:call-template>
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:call-template name="printMsg">
+							<xsl:with-param name="type">TRACE</xsl:with-param>
+							<xsl:with-param name="content">
+								<xsl:value-of select=" concat('Translating ',$UDN,' into DMC-',substring-before(substring-after($DMCfname,'DMC-'),'.yml'))"/>
+							</xsl:with-param>
+						</xsl:call-template>
+						<xsl:choose>
+							<xsl:when test="$fromDOS='true' ">
+								<xsl:result-document href="{$DMCfname}">
+									<xsl:call-template name="genDM">
+										<xsl:with-param name="ASDschema">
+											<xsl:value-of select="$ASDschema"/>
+										</xsl:with-param>
+										<xsl:with-param name="typeCOBRA">
+											<xsl:value-of select="$typeCOBRA"/>
+										</xsl:with-param>
+										<xsl:with-param name="UDN">
+											<xsl:value-of select="$UDN"/>
+										</xsl:with-param>
+										<xsl:with-param name="issno">
+											<xsl:value-of select="$issno"/>
+										</xsl:with-param>
+									</xsl:call-template>
+								</xsl:result-document>
+							</xsl:when>
+							<xsl:otherwise>
+								<xsl:call-template name="genDM">
+									<xsl:with-param name="ASDschema">
+										<xsl:value-of select="$ASDschema"/>
+									</xsl:with-param>
+									<xsl:with-param name="typeCOBRA">
+										<xsl:value-of select="$typeCOBRA"/>
+									</xsl:with-param>
+									<xsl:with-param name="UDN">
+										<xsl:value-of select="$UDN"/>
+									</xsl:with-param>
+									<xsl:with-param name="issno">
+										<xsl:value-of select="$issno"/>
+									</xsl:with-param>
+								</xsl:call-template>
+							</xsl:otherwise>
+						</xsl:choose>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+	<!-- -->
+	<!-- =========  template genDM ========== -->
+	<xsl:template name="genDM">
+		<xsl:param name="ASDschema"/>
+		<xsl:param name="typeCOBRA"/>
+		<xsl:param name="UDN"/>
+		<xsl:param name="issno"/>
+		<dmodule>
+			<xsl:attribute name="xsi:noNamespaceSchemaLocation"><xsl:choose><xsl:when test="$ASDschema='description'"><xsl:value-of select="concat($prefix,'descript.xsd')"/></xsl:when><xsl:when test="$ASDschema='procedure'"><xsl:value-of select="concat($prefix,'proced.xsd')"/></xsl:when></xsl:choose></xsl:attribute>
+			<xsl:if test="/TLDOC/DM/@ID">
+				<xsl:attribute name="id"><xsl:value-of select="/TLDOC/DM/@ID"/></xsl:attribute>
+			</xsl:if>
+			<!--
+							   <xsl:attribute name="xmlns:dc">http://www.purl.org/dc/elements/1.1/</xsl:attribute>
+							   <xsl:attribute name="xmlns:rdf">http://www.w3.org/1999/02/22-rdf-syntax-ns#</xsl:attribute>
+							   <xsl:attribute name="xmlns:xlink="http://www.w3.org/1999/xlink</xsl:attribute>
+							   <xsl:attribute name="xmlns:xsi">http://www.w3.org/2001/XMLSchema-instance</xsl:attribute>
+							   -->
+			<identAndStatusSection>
+				<xsl:apply-templates select=".//HEAD">
+					<xsl:with-param name="ASDschema">
+						<xsl:value-of select="$ASDschema"/>
+					</xsl:with-param>
+					<xsl:with-param name="typeCOBRA">
+						<xsl:value-of select="$typeCOBRA"/>
+					</xsl:with-param>
+					<xsl:with-param name="UDN">
+						<xsl:value-of select="$UDN"/>
+					</xsl:with-param>
+					<xsl:with-param name="issno">
+						<xsl:value-of select="$issno"/>
+					</xsl:with-param>
+				</xsl:apply-templates>
+			</identAndStatusSection>
+			<content>
+				<xsl:element name="{$ASDschema}">
+					<xsl:apply-templates select=".//DESCONT | .//OPPROC | .//PREPROC | .//CORPROC | .//DIAGPROC ">
+						<xsl:with-param name="ASDschema">
+							<xsl:value-of select="$ASDschema"/>
+						</xsl:with-param>
+						<xsl:with-param name="typeCOBRA">
+							<xsl:value-of select="$typeCOBRA"/>
+						</xsl:with-param>
+						<xsl:with-param name="UDN">
+							<xsl:value-of select="$UDN"/>
+						</xsl:with-param>
+					</xsl:apply-templates>
+					<xsl:if test="$ASDschema='description'">
+						<xsl:call-template name="genFig"/>
+					</xsl:if>
+				</xsl:element>
+			</content>
+		</dmodule>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= regle COBRA - template genDmCodeFromUDN ========== -->
+	<xsl:template name="genDmCodeFromUDN">
+		<xsl:param name="UDN"/>
+		<dmCode>
+			<xsl:attribute name="modelIdentCode"><xsl:value-of select="substring($UDN,1,10)"/></xsl:attribute>
+			<xsl:attribute name="systemDiffCode"><xsl:value-of select="substring($UDN,11,3)"/></xsl:attribute>
+			<xsl:attribute name="systemCode"><xsl:value-of select="substring($UDN,14,3)"/></xsl:attribute>
+			<xsl:attribute name="subSystemCode"><xsl:value-of select="substring($UDN,17,1)"/></xsl:attribute>
+			<xsl:attribute name="subSubSystemCode"><xsl:value-of select="substring($UDN,18,1)"/></xsl:attribute>
+			<xsl:attribute name="assyCode"><xsl:value-of select="substring($UDN,19,4)"/></xsl:attribute>
+			<xsl:attribute name="disassyCode"><xsl:value-of select="substring($UDN,23,2)"/></xsl:attribute>
+			<xsl:attribute name="disassyCodeVariant"><xsl:value-of select="substring($UDN,25,3)"/></xsl:attribute>
+			<xsl:attribute name="infoCode"><xsl:value-of select="substring($UDN,28,3)"/></xsl:attribute>
+			<xsl:attribute name="infoCodeVariant"><xsl:value-of select="substring($UDN,31,1)"/></xsl:attribute>
+			<xsl:attribute name="itemLocationCode"><xsl:value-of select="substring($UDN,32,1)"/></xsl:attribute>
+		</dmCode>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= regle COBRA - HEAD ========== -->
+	<xsl:template match="HEAD">
+		<xsl:param name="typeCOBRA"/>
+		<xsl:param name="ASDschema"/>
+		<xsl:param name="UDN"/>
+		<xsl:param name="issno"/>
+		<dmAddress>
+			<dmIdent>
+				<xsl:call-template name="genDmCodeFromUDN">
+					<xsl:with-param name="UDN">
+						<xsl:value-of select="$UDN"/>
+					</xsl:with-param>
+				</xsl:call-template>
+				<language>
+					<xsl:attribute name="languageIsoCode"><xsl:value-of select="translate(substring(/TLDOC/DM/@LANG,1,2),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz')"/></xsl:attribute>
+					<!--xsl:attribute name="countryIsoCode"><xsl:value-of select="substring(/TLDOC/DM/@LANG,4,2)"/></xsl:attribute-->
+					<xsl:attribute name="countryIsoCode">US</xsl:attribute>
+					<!-- demande Pierre 4/8 -->
+				</language>
+				<issueInfo inWork="00" issueNumber="{$issno}">
+			   </issueInfo>
+			</dmIdent>
+			<dmAddressItems>
+				<issueDate>
+					<xsl:attribute name="year"><xsl:value-of select="./ISSDATE/@YEAR"/></xsl:attribute>
+					<xsl:attribute name="month"><xsl:value-of select="./ISSDATE/@MONTH"/></xsl:attribute>
+					<xsl:attribute name="day"><xsl:value-of select="./ISSDATE/@DAY"/></xsl:attribute>
+				</issueDate>
+				<dmTitle>
+					<techName>
+						<xsl:value-of select="./DES"/>
+					</techName>
+					<xsl:if test="//PROCDES">
+						<infoName>
+							<xsl:value-of select="//PROCDES"/>
+						</infoName>
+					</xsl:if>
+				</dmTitle>
+			</dmAddressItems>
+		</dmAddress>
+		<dmStatus>
+			<security>
+				<xsl:attribute name="securityClassification"><xsl:value-of select="concat('0',/TLDOC/DM/@SECURITY)"/></xsl:attribute>
+			</security>
+			<responsiblePartnerCompany>
+				<enterpriseName>
+					<xsl:value-of select="MANUF"/>
+				</enterpriseName>
+			</responsiblePartnerCompany>
+			<originator>
+				<enterpriseName>
+					<xsl:value-of select="MANUF"/>
+				</enterpriseName>
+			</originator>
+			<applic>
+				<displayText>
+					<simplePara>
+						<xsl:value-of select="VARCODE"/>
+					</simplePara>
+				</displayText>
+			</applic>
+			<brexDmRef>
+				<dmRef>
+					<dmRefIdent>
+						<dmCode modelIdentCode="COBRAAK000" systemDiffCode="K01" systemCode="000" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="00" infoCode="022" infoCodeVariant="A" itemLocationCode="A"/>
+					</dmRefIdent>
+				</dmRef>
+			</brexDmRef>
+			<qualityAssurance>
+				<unverified/>
+			</qualityAssurance>
+			<xsl:if test="//PROCID">
+				<systemBreakdownCode>
+					<xsl:value-of select="//PROCID"/>
+				</systemBreakdownCode>
+			</xsl:if>
+			<xsl:if test="//MAINTLVL">
+				<skillLevel>
+					<xsl:attribute name="skillLevelCode"><xsl:value-of select="concat('sk5',//MAINTLVL/@ECHELON)"/></xsl:attribute>
+				</skillLevel>
+			</xsl:if>
+			<remarks>
+				<simplePara>
+					<xsl:value-of select="concat('TYPE:',$typeCOBRA)"/>
+				</simplePara>
+				<simplePara>
+					<xsl:value-of select="concat('UDN:',$UDN)"/>
+				</simplePara>
+				<xsl:if test="./TMN">
+					<simplePara>
+						<xsl:value-of select="concat('TMN:',./TMN)"/>
+					</simplePara>
+				</xsl:if>
+				<xsl:if test="./NSN">
+					<simplePara>
+						<xsl:value-of select="concat('NSN:',./NSN)"/>
+					</simplePara>
+				</xsl:if>
+				<xsl:for-each select="./CHGLIST/CHGREC">
+					<simplePara>
+						<xsl:value-of select="concat('CHGREC:',
+						  translate(./CHGNUM,'&#10;',''),'$',
+						  translate(./CHGREF,'&#10;',''),'$',
+						  translate(./CHGDEF,'&#10;',''),'$',
+						  translate(./VAR,'&#10;',''),'$',
+						  ./CHGDATE/@YEAR,'/',./CHGDATE/@MONTH,'/',./CHGDATE/@DAY
+						 )"/>
+					</simplePara>
+				</xsl:for-each>
+			</remarks>
+		</dmStatus>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= regle COBRA - DESCONT ========== -->
+	<xsl:template match="DESCONT">
+		<xsl:param name="ASDschema"/>
+		<xsl:apply-templates>
+			<xsl:with-param name="ASDschema">
+				<xsl:value-of select="$ASDschema"/>
+			</xsl:with-param>
+		</xsl:apply-templates>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= regle COBRA - fausse procedure  OPPROC ========== -->
+	<xsl:template match="OPPROC">
+		<levelledPara authorityName="OPPROC">
+			<xsl:apply-templates/>
+		</levelledPara>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= regle COBRA - OHEAD ========== -->
+	<xsl:template match="OHEAD">
+		<levelledPara authorityName="OHEAD">
+			<xsl:apply-templates/>
+		</levelledPara>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= regle COBRA - MATID ========== -->
+	<xsl:template match="MATID"/>
+	<!-- -->
+	<!-- ========= regle COBRA - PROCID ========== -->
+	<xsl:template match="PROCID">
+		<para authorityName="PROCID">
+			<xsl:apply-templates/>
+		</para>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= regle COBRA - PROCDES ========== -->
+	<xsl:template match="PROCDES">
+		<para authorityName="PROCDES">
+			<xsl:apply-templates/>
+		</para>
+	</xsl:template>
+	<!-- -->
+	
+	<!-- ========= regle COBRA - SAFETY ========== -->
+	<xsl:template match="SAFETY">
+		<levelledPara authorityName="SAFETY">
+			<!--title>SAFECOND</title-->
+			<xsl:apply-templates/>
+		</levelledPara>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= regle COBRA - SAFECOND ========== -->
+	<xsl:template match="SAFECOND">
+		<para authorityName="SAFECOND">
+			<xsl:apply-templates/>
+		</para>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= regle COBRA - NOSAFETY ========== -->
+	<xsl:template match="NOSAFETY">
+		<para authorityName="NOSAFETY"/>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= regle COBRA - OHEAD ========== -->
+	<xsl:template match="OBODY">
+		<levelledPara authorityName="OBODY">
+			<xsl:apply-templates/>
+		</levelledPara>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= regle COBRA - procedure  PREPROC | CORPROC  | DIAGPROC ========== -->
+	<xsl:template match="PREPROC | CORPROC  | DIAGPROC ">
+		<xsl:param name="ASDschema"/>
+		<xsl:apply-templates>
+			<xsl:with-param name="ASDschema">
+				<xsl:value-of select="$ASDschema"/>
+			</xsl:with-param>
+		</xsl:apply-templates>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= regle COBRA - preliminaryRqmts  CGENREQ | PGENREQ | DGENREQ ========== -->
+	<xsl:template match="CGENREQ | PGENREQ | DGENREQ">
+		<preliminaryRqmts>
+			<!-- sauf REQCOND et PRELOP, mis ds mainProcedure -->
+			<xsl:if test="./PROCSUM | ./FREQ | ./REQTIME">
+				<productionMaintData>
+					<xsl:if test="./PROCSUM">
+						<workArea>
+							<xsl:value-of select="./PROCSUM"/>
+						</workArea>
+					</xsl:if>
+					<xsl:if test="./FREQ">
+						<thresholdInterval>
+							<xsl:attribute name="thresholdUnitOfMeasure">th51</xsl:attribute>
+							<!-- pris du guide mais different ds data -->
+							<!--xsl:choose>
+        <xsl:when test="./FREQ/@FCODE='Daily'">th06</xsl:when>
+        <xsl:when test="./FREQ/@FCODE='Weekly'">th04</xsl:when>
+        <xsl:when test="./FREQ/@FCODE='Monthly'">th03</xsl:when>
+        <xsl:when test="./FREQ/@FCODE='Yearly'">th05</xsl:when>
+        <xsl:when test="./FREQ/@FCODE='2 YEARS'">th05</xsl:when>
+        <xsl:when test="./FREQ/@FCODE='5 yearly'">th05</xsl:when>
+       </xsl:choose>
+      </xsl:attribute>
+      <xsl:choose>
+       <xsl:when test="./FREQ/@FCODE='5 yearly'">5</xsl:when>
+       <xsl:otherwise>1</xsl:otherwise>
+      </xsl:choose-->
+							<xsl:value-of select="./FREQ/@FCODE"/>
+						</thresholdInterval>
+					</xsl:if>
+					<xsl:if test="./REQTIME">
+						<xsl:choose>
+							<xsl:when test="./ASREQUIR">
+								<taskDuration unitOfMeasure="asrequir" procedureDuration="/" startupDuration="0" closeupDuration="0"/>
+							</xsl:when>
+							<xsl:otherwise>
+								<taskDuration unitOfMeasure="minutes" startupDuration="0" closeupDuration="0">
+									<xsl:attribute name="procedureDuration"><xsl:choose><xsl:when test="contains(./REQTIME,' min')"><xsl:value-of select="substring-before(./REQTIME,' min')"/></xsl:when><xsl:otherwise><xsl:value-of select="./REQTIME"/></xsl:otherwise></xsl:choose></xsl:attribute>
+								</taskDuration>
+							</xsl:otherwise>
+						</xsl:choose>
+					</xsl:if>
+				</productionMaintData>
+			</xsl:if>
+			<!-- REQCOND: tjs ds mainProcedure -->
+			<reqCondGroup>
+				<noConds/>
+			</reqCondGroup>
+			<!-- REQPERS -->
+			<xsl:if test="./REQPERS">
+				<reqPersons>
+					<xsl:for-each select="./REQPERS/ASREQUIR | ./REQPERS/PERSNUM">
+						<personnel>
+							<xsl:if test="self::PERSNUM">
+								<xsl:attribute name="numRequired"><xsl:value-of select="@NO"/></xsl:attribute>
+							</xsl:if>
+							<!-- cas ASREQUIR pas de @numRequired -->
+							<xsl:for-each select="following-sibling::*[1]">
+								<xsl:if test="self::PERSCAT">
+									<personCategory>
+										<xsl:attribute name="personCategoryCode"><xsl:value-of select="@CATEGOR"/></xsl:attribute>
+									</personCategory>
+									<xsl:for-each select="following-sibling::*[1]">
+										<xsl:if test="self::PERSTIME">
+											<estimatedTime unitOfMeasure="minute">
+												<xsl:choose>
+													<xsl:when test="./ASREQUIR">ASREQUIR</xsl:when>
+													<xsl:otherwise>
+														<xsl:choose>
+															<xsl:when test="contains(./text(),' min')">
+																<xsl:value-of select="substring-before(./text(),' min')"/>
+															</xsl:when>
+															<xsl:otherwise>
+																<xsl:value-of select="./text()"/>
+															</xsl:otherwise>
+														</xsl:choose>
+													</xsl:otherwise>
+												</xsl:choose>
+											</estimatedTime>
+										</xsl:if>
+									</xsl:for-each>
+								</xsl:if>
+							</xsl:for-each>
+						</personnel>
+					</xsl:for-each>
+				</reqPersons>
+			</xsl:if>
+			<!-- ===== Support Equipment -->
+			<reqSupportEquips>
+				<xsl:choose>
+					<xsl:when test="TOOLS/TOOLLIST | SUPEQUIP/SUPEQLI">
+						<supportEquipDescrGroup>
+							<xsl:for-each select="TOOLS/TOOLLIST/DESIGNATION">
+								<supportEquipDescr>
+									<xsl:attribute name="authorityName"><xsl:choose><xsl:when test="./TOOLID/@CAT='STANDARD'">STANDARD</xsl:when><xsl:when test="./TOOLID/@CAT='SPECIAL'">SPECIAL</xsl:when><xsl:otherwise>NOTYPE</xsl:otherwise></xsl:choose></xsl:attribute>
+									<xsl:call-template name="genTool"/>
+								</supportEquipDescr>
+							</xsl:for-each>
+							<xsl:for-each select="SUPEQUIP/SUPEQLI/DESIGNATION">
+								<supportEquipDescr authorityName="SUPEQ">
+									<xsl:call-template name="genTool"/>
+								</supportEquipDescr>
+							</xsl:for-each>
+						</supportEquipDescrGroup>
+					</xsl:when>
+					<xsl:otherwise>
+						<noSupportEquips/>
+					</xsl:otherwise>
+				</xsl:choose>
+			</reqSupportEquips>
+			<!-- ===== supply -->
+			<reqSupplies>
+				<xsl:choose>
+					<xsl:when test="SUPPLIES/SUPPLYLI">
+						<supplyDescrGroup>
+							<xsl:for-each select="SUPPLIES/SUPPLYLI/DESIGNATION">
+								<supplyDescr>
+									<name>
+										<xsl:value-of select="./text()"/>
+									</name>
+									<xsl:if test="not(following-sibling::*[1][self::CONID])">
+										<supplyRqmtRef supplyRqmtNumber="UNKNOWN"/>
+									</xsl:if>
+									<xsl:if test="not(following-sibling::*[1][self::QUANTITY]) and not(following-sibling::*[2][self::QUANTITY])">
+										<reqQuantity/>
+									</xsl:if>
+									<xsl:for-each select="following-sibling::*[1]">
+										<xsl:choose>
+											<xsl:when test="self::CONID">
+												<supplyRqmtRef>
+													<xsl:attribute name="supplyRqmtNumber"><xsl:value-of select="./text()"/></xsl:attribute>
+												</supplyRqmtRef>
+												<xsl:for-each select="following-sibling::*[1]">
+													<xsl:choose>
+														<xsl:when test="self::QUANTITY">
+															<reqQuantity>
+																<xsl:value-of select="./text()"/>
+															</reqQuantity>
+														</xsl:when>
+													</xsl:choose>
+												</xsl:for-each>
+											</xsl:when>
+											<xsl:when test="self::QUANTITY">
+												<reqQuantity>
+													<xsl:value-of select="./text()"/>
+												</reqQuantity>
+											</xsl:when>
+										</xsl:choose>
+									</xsl:for-each>
+								</supplyDescr>
+							</xsl:for-each>
+						</supplyDescrGroup>
+					</xsl:when>
+					<xsl:otherwise>
+						<noSupplies/>
+					</xsl:otherwise>
+				</xsl:choose>
+			</reqSupplies>
+			<!-- ===== Spares : pas de Spare en COBRA ...-->
+			<reqSpares>
+				<noSpares/>
+			</reqSpares>
+			<!-- ===== Safety -->
+			<reqSafety>
+				<xsl:choose>
+					<xsl:when test="SAFETY/SAFECOND">
+						<safetyRqmts>
+							<xsl:for-each select="SAFETY/SAFECOND">
+								<!-- SAFECOND unique et contient juste PCDATA d'apres le guide -->
+								<warning>
+									<warningAndCautionPara>
+										<xsl:apply-templates/>
+									</warningAndCautionPara>
+								</warning>
+							</xsl:for-each>
+						</safetyRqmts>
+					</xsl:when>
+					<xsl:otherwise>
+						<noSafety/>
+					</xsl:otherwise>
+				</xsl:choose>
+			</reqSafety>
+		</preliminaryRqmts>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= regle COBRA - template genTool ========== -->
+	<xsl:template name="genTool">
+		<name>
+			<xsl:value-of select="./text()"/>
+		</name>
+		<xsl:if test="not(following-sibling::*[1][self::TOOLID])">
+			<toolRef toolNumber="UNKNOWN"/>
+		</xsl:if>
+		<xsl:if test="not(following-sibling::*[1][self::QUANTITY]) and not(following-sibling::*[2][self::QUANTITY])">
+			<reqQuantity/>
+		</xsl:if>
+		<xsl:for-each select="following-sibling::*[1]">
+			<xsl:choose>
+				<xsl:when test="self::TOOLID or self::SUPEQID">
+					<toolRef>
+						<xsl:attribute name="toolNumber"><xsl:value-of select="./text()"/></xsl:attribute>
+					</toolRef>
+					<xsl:for-each select="following-sibling::*[1]">
+						<xsl:choose>
+							<xsl:when test="self::QUANTITY">
+								<reqQuantity>
+									<xsl:value-of select="./text()"/>
+								</reqQuantity>
+							</xsl:when>
+							<xsl:when test="self::CALMARK">
+								<remarks>
+									<simplePara authorityName="CALMARK">
+										<xsl:value-of select="./text()"/>
+									</simplePara>
+								</remarks>
+							</xsl:when>
+						</xsl:choose>
+						<xsl:for-each select="following-sibling::*[1]">
+							<xsl:choose>
+								<xsl:when test="self::CALMARK">
+									<remarks>
+										<simplePara authorityName="CALMARK">
+											<xsl:value-of select="./text()"/>
+										</simplePara>
+									</remarks>
+								</xsl:when>
+							</xsl:choose>
+						</xsl:for-each>
+					</xsl:for-each>
+				</xsl:when>
+				<xsl:when test="self::QUANTITY">
+					<reqQuantity>
+						<xsl:value-of select="./text()"/>
+					</reqQuantity>
+					<xsl:for-each select="following-sibling::*[1]">
+						<xsl:choose>
+							<xsl:when test="self::CALMARK">
+								<remarks>
+									<simplePara>
+										<xsl:value-of select="./text()"/>
+									</simplePara>
+								</remarks>
+							</xsl:when>
+						</xsl:choose>
+					</xsl:for-each>
+				</xsl:when>
+				<xsl:when test="self::CALMARK">
+					<remarks>
+						<simplePara authorityName="CALMARK">
+							<xsl:value-of select="./text()"/>
+						</simplePara>
+					</remarks>
+				</xsl:when>
+			</xsl:choose>
+		</xsl:for-each>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= regle COBRA - template genFig ========== -->
+	<xsl:template name="genFig">
+		<xsl:for-each select=".//A[@HREFDPL and (contains(@HREFDPL,'.SVG') or contains(@HREFDPL,'.JPG'))]">
+			<xsl:variable name="illusFname">
+				<xsl:value-of select="@HREFDPL"/>
+			</xsl:variable>
+			<xsl:if test="not(preceding::A[@HREFDPL = $illusFname])">
+				<xsl:choose>
+					<xsl:when test="substring(/TLDOC/DM/@UDN,28,3)='053'">
+						<foldout>
+							<figure id="{@HREFDPL}">
+								<title>
+									<xsl:value-of select="./text()"/>
+								</title>
+								<graphic infoEntityIdent="{translate(@HREFDPL,' ','_')}" authorityName="{@HREFDPL}"/>
+							</figure>
+						</foldout>
+					</xsl:when>
+					<xsl:otherwise>
+						<figure id="{@HREFDPL}">
+							<title>
+								<xsl:value-of select="./text()"/>
+							</title>
+							<graphic infoEntityIdent="{translate(@HREFDPL,' ','_')}" authorityName="{@HREFDPL}"/>
+						</figure>
+					</xsl:otherwise>
+				</xsl:choose>
+				<!-- Note : une seconde pass (convCobra2ASDaddDoctype.xsl) genere ds le header (svg ou jpg): DOCTYPE ENTITY etc. -->
+			</xsl:if>
+		</xsl:for-each>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= regle COBRA mainProcedure PBODY | CBODY | DBODY ========== -->
+	<xsl:template match="PBODY | CBODY | DBODY">
+		<xsl:param name="ASDschema"/>
+		<mainProcedure>
+			<xsl:apply-templates>
+				<xsl:with-param name="ASDschema">
+					<xsl:value-of select="$ASDschema"/>
+				</xsl:with-param>
+			</xsl:apply-templates>
+			<xsl:call-template name="genFig"/>
+		</mainProcedure>
+		<closeRqmts>
+			<!-- traite ds mainProcedure -->
+			<reqCondGroup>
+				<noConds/>
+			</reqCondGroup>
+		</closeRqmts>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= regle COBRA corps Procedure MAINOP ========== -->
+	<xsl:template match="MAINOP">
+		<xsl:param name="ASDschema"/>
+		<proceduralStep authorityName="MAINOP">
+			<title>Maintenance Steps</title>
+			<xsl:if test="./P or ./ATT or ./TABLE or ./DEFLIST or ./UNDLIST or ./ORDLIST or ./IMG">
+				<!-- en direct sous MAINOP -->
+				<xsl:call-template name="genContentBeforeStep">
+					<xsl:with-param name="ASDschema">
+						<xsl:value-of select="$ASDschema"/>
+					</xsl:with-param>
+				</xsl:call-template>
+			</xsl:if>
+			<xsl:for-each select="SECTION1">
+				<xsl:apply-templates select=".">
+					<xsl:with-param name="ASDschema">
+						<xsl:value-of select="$ASDschema"/>
+					</xsl:with-param>
+				</xsl:apply-templates>
+			</xsl:for-each>
+		</proceduralStep>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= regle COBRA template genContentBeforeStep ========== -->
+	<xsl:template name="genContentBeforeStep">
+		<xsl:param name="ASDschema"/>
+		<xsl:variable name="elemName">
+			<xsl:choose>
+				<xsl:when test="$ASDschema='procedure' ">proceduralStep</xsl:when>
+				<xsl:otherwise>levelledPara</xsl:otherwise>
+			</xsl:choose>
+		</xsl:variable>
+		<xsl:element name="{$elemName}">
+			<xsl:attribute name="authorityName">DO-NOT-WRITE-TAG</xsl:attribute>
+			<xsl:call-template name="contStepOrLevelledParaOrDummy">
+				<xsl:with-param name="scope">OnlyLocalElem</xsl:with-param>
+				<xsl:with-param name="ASDschema">
+					<xsl:value-of select="$ASDschema"/>
+				</xsl:with-param>
+			</xsl:call-template>
+		</xsl:element>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= regle COBRA template genStepOrLevelledPara ========== -->
+	<xsl:template name="genStepOrLevelledPara">
+		<xsl:param name="ASDschema"/>
+		<xsl:variable name="elemName">
+			<xsl:choose>
+				<xsl:when test="$ASDschema='procedure' ">proceduralStep</xsl:when>
+				<xsl:otherwise>levelledPara</xsl:otherwise>
+			</xsl:choose>
+		</xsl:variable>
+		<xsl:choose>
+			<xsl:when test="./*">
+				<xsl:element name="{$elemName}">
+					<xsl:if test="@ID">
+						<xsl:attribute name="id"><xsl:value-of select="@ID"/></xsl:attribute>
+					</xsl:if>
+					<xsl:for-each select="STITLE">
+						<xsl:apply-templates select="."/>
+					</xsl:for-each>
+					<xsl:call-template name="contStepOrLevelledParaOrDummy">
+						<xsl:with-param name="ASDschema">
+							<xsl:value-of select="$ASDschema"/>
+						</xsl:with-param>
+					</xsl:call-template>
+				</xsl:element>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:call-template name="printMsg">
+					<xsl:with-param name="type">WARNING</xsl:with-param>
+					<xsl:with-param name="content">
+						<xsl:value-of select=" concat('In UD:',ancestor::TLDOC/DM/@UDN,' element ',name(),' trouvé vide et non traduit en S1000D') "/>
+					</xsl:with-param>
+				</xsl:call-template>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+	<xsl:template name="contStepOrLevelledParaOrDummy">
+		<xsl:param name="scope"/>
+		<xsl:param name="ASDschema"/>
+		<!-- ajouter ici message ds log si besoin reordonner W/C XXXXXXXXXXXXXXXXX -->
+		<xsl:variable name="WCorder">
+			<xsl:choose>
+				<xsl:when test="./ATT[@TYPATT='WARNING' and preceding-sibling::*[not(self::ATT and @TYPATT='WARNING')]]">KO</xsl:when>
+				<xsl:when test="./ATT[@TYPATT='CAUTION' and preceding-sibling::*[not(self::ATT and (@TYPATT='CAUTION' or @TYPATT='WARNING'))]]">KO</xsl:when>
+				<xsl:otherwise>OK</xsl:otherwise>
+			</xsl:choose>
+		</xsl:variable>
+		<xsl:if test="$WCorder = 'KO'">
+			<xsl:call-template name="printMsg">
+				<xsl:with-param name="type">WARNING</xsl:with-param>
+				<xsl:with-param name="content">
+					<xsl:value-of select=" concat('In UD:',ancestor::TLDOC/DM/@UDN,' bad order of Warning/Caution; will be translated as special para') "/>
+				</xsl:with-param>
+			</xsl:call-template>
+		</xsl:if>
+		<xsl:choose>
+			<xsl:when test="$scope = 'OnlyLocalElem' ">
+				<xsl:for-each select="*[not(self::STITLE or self::SECTION1 or self::SECTION2 or self::SECTION3 or self::SECTION4 or self::SECTION5 or self::SECTION6)]">
+					<xsl:apply-templates select=".">
+						<xsl:with-param name="ASDschema">
+							<xsl:value-of select="$ASDschema"/>
+						</xsl:with-param>
+					</xsl:apply-templates>
+				</xsl:for-each>
+				<xsl:if test="*[self::ATT  and (@TYPATT='WARNING' or @TYPATT='CAUTION')] and not(*[self::P or self::TABLE or self::DEFLIST or self::ORDLIST or self::UNDLIST or self::IMG])">
+					<!-- contenu local du step ne peut se limiter a Warning/Caution -->
+					<para authorityName="TO-BE-REMOVED"/>
+				</xsl:if>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:for-each select="*[not(self::STITLE or self::SECTION1 or self::SECTION2 or self::SECTION3 or self::SECTION4 or self::SECTION5 or self::SECTION6)]">
+					<xsl:apply-templates select=".">
+						<xsl:with-param name="ASDschema">
+							<xsl:value-of select="$ASDschema"/>
+						</xsl:with-param>
+					</xsl:apply-templates>
+				</xsl:for-each>
+				<xsl:if test="not(./STITLE or ./P or ./ATT or ./TABLE or ./DEFLIST or ./ORDLIST or ./UNDLIST or ./IMG)">
+					<!-- contenu local du step doit exister -->
+					<para authorityName="TO-BE-REMOVED"/>
+				</xsl:if>
+				<xsl:if test="*[self::ATT  and (@TYPATT='WARNING' or @TYPATT='CAUTION')] and not(*[self::P or self::TABLE or self::DEFLIST or self::ORDLIST or self::UNDLIST or self::IMG])">
+					<!-- contenu local du step ne peut se limiter a Warning/Caution -->
+					<para authorityName="TO-BE-REMOVED"/>
+				</xsl:if>
+				<xsl:for-each select="*[self::SECTION1 or self::SECTION2 or self::SECTION3 or self::SECTION4 or self::SECTION5 or self::SECTION6]">
+					<xsl:apply-templates select=".">
+						<xsl:with-param name="ASDschema">
+							<xsl:value-of select="$ASDschema"/>
+						</xsl:with-param>
+					</xsl:apply-templates>
+				</xsl:for-each>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= regle COBRA template contStep ========== -->
+	<!--xsl:template name="contStep">
+		<xsl:param name="ASDschema"/>
+		<xsl:for-each select="STITLE">
+			<xsl:apply-templates select="."/>
+		</xsl:for-each>
+		<xsl:for-each select="ATT[@TYPATT='WARNING'  ]">
+			<xsl:apply-templates select=".">
+				<xsl:with-param name="ASDschema">
+					<xsl:value-of select="$ASDschema"/>
+				</xsl:with-param>
+			</xsl:apply-templates>
+		</xsl:for-each>
+		<xsl:for-each select="ATT[@TYPATT='CAUTION']">
+			<xsl:apply-templates select=".">
+				<xsl:with-param name="ASDschema">
+					<xsl:value-of select="$ASDschema"/>
+				</xsl:with-param>
+			</xsl:apply-templates>
+		</xsl:for-each>
+		<xsl:if test="*[self::ATT  and @TYPATT='WARNING' or @TYPATT='CAUTION'] and not(*[self::P or self::TABLE or self::DEFLIST or self::ORDLIST or self::UNDLIST or self::IMG])">
+			<para authorityName="TO-BE-REMOVED"/>
+		</xsl:if>
+		<xsl:for-each select="*[not((self::ATT and @TYPATT='WARNING') or (self::ATT and @TYPATT='CAUTION') or (self::STITLE))]">
+			<xsl:apply-templates select=".">
+				<xsl:with-param name="ASDschema">
+					<xsl:value-of select="$ASDschema"/>
+				</xsl:with-param>
+			</xsl:apply-templates>
+		</xsl:for-each>
+	</xsl:template-->
+	<!-- -->
+	<!-- ========= regle COBRA REQCOND ========== -->
+	<!-- xxxxxxxxxxx cd ci-dessous pourquoi seulement ENVCOND et pas DASSCOND et RASSCOND ???? -->
+	<xsl:template match="REQCOND">
+		<proceduralStep authorityName="REQCOND">
+			<title>Required conditions</title>
+			<xsl:if test="./ENVCOND/P or ./ENVCOND/ATT or ./ENVCOND/TABLE or ./ENVCOND/DEFLIST or ./ENVCOND/UNDLIST or ./ENVCOND/ORDLIST or ./ENVCOND/IMG">
+				<!-- en direct  -->
+				<xsl:for-each select="ENVCOND">
+					<!--xsl:call-template name="genContentBeforeStep">
+						<xsl:with-param name="ASDschema">procedure</xsl:with-param>
+					</xsl:call-template-->
+					<xsl:apply-templates/>
+				</xsl:for-each>
+			</xsl:if>
+			<xsl:for-each select="ENVCOND/SECTION1">
+				<!--xsl:call-template name="genStepOrLevelledPara"><xsl:with-param name="ASDschema">procedure</xsl:with-param></xsl:call-template-->
+				<xsl:apply-templates select=".">
+					<xsl:with-param name="ASDschema">procedure</xsl:with-param>
+					<!--xsl:value-of select="$ASDschema"/-->
+				</xsl:apply-templates>
+			</xsl:for-each>
+		</proceduralStep>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= regle COBRA PRELOP ========== -->
+	<xsl:template match="PRELOP">
+		<proceduralStep authorityName="PRELOP">
+			<title>Preliminary Procedures</title>
+			<xsl:if test="./P or ./ATT or ./TABLE or ./DEFLIST or ./UNDLIST or ./ORDLIST or ./IMG">
+				<!-- en direct  -->
+				<xsl:call-template name="genContentBeforeStep">
+					<xsl:with-param name="ASDschema">procedure</xsl:with-param>
+					<!--xsl:value-of select="$ASDschema"/-->
+				</xsl:call-template>
+			</xsl:if>
+			<xsl:for-each select="SECTION1">
+				<xsl:apply-templates select=".">
+					<xsl:with-param name="ASDschema">procedure</xsl:with-param>
+					<!--xsl:value-of select="$ASDschema"/-->
+				</xsl:apply-templates>
+			</xsl:for-each>
+		</proceduralStep>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= regle COBRA COMPLOP ========== -->
+	<xsl:template match="COMPLOP">
+		<proceduralStep authorityName="COMPLOP">
+			<title>Complementary Procedural Steps</title>
+			<xsl:if test="./P or ./ATT or ./TABLE or ./DEFLIST or ./UNDLIST or ./ORDLIST or ./IMG">
+				<!-- en direct  -->
+				<xsl:call-template name="genContentBeforeStep">
+					<xsl:with-param name="ASDschema">procedure</xsl:with-param>
+				</xsl:call-template>
+			</xsl:if>
+			<xsl:for-each select="SECTION1">
+				<xsl:apply-templates select=".">
+					<xsl:with-param name="ASDschema">procedure</xsl:with-param>
+					<!--xsl:value-of select="$ASDschema"/-->
+				</xsl:apply-templates>
+			</xsl:for-each>
+		</proceduralStep>
+	</xsl:template>
+	<!-- ============= common elements ================ -->
+	<!-- -->
+	<!-- -->
+	<!-- ========= regle COBRA SECTIONn ========== -->
+	<xsl:template match="SECTION1 | SECTION2 | SECTION3 | SECTION4 | SECTION5 | SECTION6">
+		<xsl:param name="ASDschema"/>
+		<xsl:call-template name="genStepOrLevelledPara">
+			<xsl:with-param name="ASDschema">
+				<xsl:value-of select="$ASDschema"/>
+			</xsl:with-param>
+		</xsl:call-template>
+	</xsl:template>
+	<!-- ========= regle COBRA TABLE ========== -->
+	<!-- a voir pour gestion rowspan / colspan -->
+	<!-- ===================================================================	-->
+	<xsl:template match="TABLE">
+		<xsl:variable name="wrongColspan">
+			<xsl:for-each select=".//TD | .//TH">
+				<xsl:if test="./@COLSPAN and number(@COLSPAN) &gt; 1">
+					<xsl:variable name="vPos">
+						<xsl:value-of select="count(parent::*/preceding-sibling::*) + 1"/>
+					</xsl:variable>
+					<!-- position of the row -->
+					<xsl:if test="../../*[position() &lt; $vPos and (./TD[./@ROWSPAN] or ./TH[./@ROWSPAN])]">wrong</xsl:if>
+				</xsl:if>
+			</xsl:for-each>
+		</xsl:variable>
+		<xsl:variable name="wrongSpan">
+			<xsl:if test=".//@SPAN">true</xsl:if>
+		</xsl:variable>
+		<xsl:choose>
+			<xsl:when test=" not(contains($wrongColspan,'wrong')) and $wrongSpan != 'true' ">
+				<table>
+					<xsl:if test="@ID">
+						<xsl:attribute name="id"><xsl:value-of select="@ID"/></xsl:attribute>
+					</xsl:if>
+					<xsl:if test="@FRAME='BOX'">
+						<xsl:attribute name="frame">all</xsl:attribute>
+					</xsl:if>
+					<xsl:if test="@FRAME='VOID'">
+						<xsl:attribute name="frame">none</xsl:attribute>
+					</xsl:if>
+					<xsl:if test="@BORDER='0' ">
+						<xsl:attribute name="colsep">0</xsl:attribute>
+						<xsl:attribute name="rowsep">0</xsl:attribute>
+					</xsl:if>
+					<xsl:if test="@BORDER='1' ">
+						<xsl:attribute name="colsep">1</xsl:attribute>
+						<xsl:attribute name="rowsep">1</xsl:attribute>
+					</xsl:if>
+					<xsl:apply-templates select="TTITLE"/>
+					<tgroup>
+						<xsl:variable name="nbCol">
+							<xsl:choose>
+								<xsl:when test="not(.//COLGROUP)">
+									<!-- en fait prendre le max trouve pour tous les TR -->
+									<xsl:for-each select="./TBODY/TR[1]">
+										<xsl:call-template name="findLongestRow">
+											<xsl:with-param name="curMax">0</xsl:with-param>
+										</xsl:call-template>
+									</xsl:for-each>
+								</xsl:when>
+								<xsl:otherwise>
+									<xsl:value-of select="count(./COLGROUP/COL)"/>
+								</xsl:otherwise>
+							</xsl:choose>
+						</xsl:variable>
+						<xsl:attribute name="cols"><xsl:value-of select="$nbCol"/></xsl:attribute>
+						<xsl:for-each select="COLGROUP/COL">
+							<colspec colwidth="{concat(substring-before(@WIDTH,'MM'),' mm')}">
+								<xsl:attribute name="colname"><!-- genere systematiquement au cas ou COLSPAN --><xsl:value-of select="concat('COL',(count(preceding-sibling::COL)) + 1 )"/></xsl:attribute>
+							</colspec>
+						</xsl:for-each>
+						<xsl:if test="not(.//COLGROUP)">
+							<!--xsl:message><xsl:value-of select="concat('Nb cel TR[1]:',count(./TBODY/TR[1]/TD),' nb col:',$nbCol)"/></xsl:message-->
+							<xsl:for-each select="./TBODY/TR[count(TD) = $nbCol][1]">
+								<xsl:for-each select="TD">
+									<colspec colwidth="{ concat( ( 180 div ($nbCol) )  ,' mm') }"/>
+								</xsl:for-each>
+							</xsl:for-each>
+						</xsl:if>
+						<xsl:apply-templates select="THEAD"/>
+						<xsl:apply-templates select="TBODY"/>
+					</tgroup>
+				</table>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:variable name="err">
+					<xsl:choose>
+						<xsl:when test="$wrongSpan = 'true' ">Unexpected attribute SPAN</xsl:when>
+						<xsl:when test="contains($wrongColspan,'wrong') ">COLSPAN and some previous rows with ROWSPAN not supported (table translated as XML comment)</xsl:when>
+					</xsl:choose>
+				</xsl:variable>
+				<xsl:call-template name="printMsg">
+					<xsl:with-param name="type">WARNING</xsl:with-param>
+					<xsl:with-param name="content">
+						<xsl:value-of select=" concat('In UD:',ancestor::TLDOC/DM/@UDN,' ',$err) "/>
+					</xsl:with-param>
+				</xsl:call-template>
+				<table>
+					<xsl:if test="@ID">
+						<xsl:attribute name="id"><xsl:value-of select="@ID"/></xsl:attribute>
+					</xsl:if>
+					<tgroup cols="1">
+						<colspec colwidth="50mm"/>
+						<tbody>
+							<row>
+								<entry>
+									<para>Too much complex table, translation impossible. In case a modification is needed please consider following XML comment (initial table not translated)</para>
+								</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</table>
+				<xsl:comment>
+					<xsl:text>$$COMPLEX-TABLE$$&lt;TABLE </xsl:text>
+					<xsl:for-each select="@*">
+						<xsl:text> </xsl:text>
+						<xsl:value-of select="name()"/>
+						<xsl:text>="</xsl:text>
+						<xsl:value-of select="."/>
+						<xsl:text>"</xsl:text>
+					</xsl:for-each>
+					<xsl:text>&gt;</xsl:text>
+					<xsl:apply-templates select="*" mode="comment"/>
+					<xsl:text>&lt;/TABLE&gt;</xsl:text>
+				</xsl:comment>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= template pour calculer @cols: nb max de col ========== -->
+	<!-- hypothese (logique !): il y a au moins un TR sans COLSPAN ... ce sera lui le max ! -->
+	<xsl:template name="findLongestRow">
+		<xsl:param name="curMax"/>
+		<xsl:variable name="newMax">
+			<xsl:choose>
+				<xsl:when test="count(TD) &gt; $curMax">
+					<xsl:value-of select="count(TD)"/>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:value-of select="$curMax"/>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:variable>
+		<xsl:choose>
+			<xsl:when test="following-sibling::TR">
+				<xsl:for-each select="following-sibling::TR[1]">
+					<xsl:call-template name="findLongestRow">
+						<xsl:with-param name="curMax">
+							<xsl:value-of select="$newMax"/>
+						</xsl:with-param>
+					</xsl:call-template>
+				</xsl:for-each>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="$newMax"/>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= regle COBRA THEAD ========== -->
+	<xsl:template match="THEAD">
+		<xsl:if test=".//TH or .//TD">
+			<!-- pour eviter THEAD vide ... normalement test juste sur TH mais au cas ou !!! -->
+			<thead>
+				<xsl:apply-templates/>
+			</thead>
+		</xsl:if>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= regle COBRA TBODY ========== -->
+	<xsl:template match="TBODY">
+		<tbody>
+			<xsl:apply-templates/>
+		</tbody>
+	</xsl:template>
+	<xsl:template match="TR">
+		<xsl:if test="./TD or ./TH">
+			<!-- pb des morerows qui spannet des rangs .... vides !!! -->
+			<row>
+				<xsl:apply-templates/>
+			</row>
+		</xsl:if>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= regle COBRA TD | TH ========== -->
+	<xsl:template match="TD | TH">
+		<entry>
+			<xsl:if test="@ID">
+				<xsl:attribute name="id"><xsl:value-of select="@ID"/></xsl:attribute>
+			</xsl:if>
+			<xsl:if test="./@ROWSPAN">
+				<xsl:choose>
+					<xsl:when test="not(@ROWSPAN = 2 and ../following-sibling::TR[1][not(./TH or ./TD)])">
+						<!-- pour eviter le cas de morerow sur ... des rangs vides !!! ex: COBRAAK000K01000D1304100212411BF.xml-->
+						<xsl:attribute name="morerows"><xsl:value-of select="number(@ROWSPAN) - 1"/></xsl:attribute>
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:call-template name="printMsg">
+							<xsl:with-param name="type">WARNING</xsl:with-param>
+							<xsl:with-param name="content">
+								<xsl:value-of select=" concat('In UD:',ancestor::TLDOC/DM/@UDN,' ROWSPAN non traduit car pointant sur un rang vide') "/>
+							</xsl:with-param>
+						</xsl:call-template>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:if>
+			<xsl:if test="./@COLSPAN and number(@COLSPAN) &gt; 1">
+				<xsl:variable name="vPos">
+					<xsl:value-of select="count(parent::*/preceding-sibling::*) + 1"/>
+				</xsl:variable>
+				<!-- position of the row -->
+				<xsl:variable name="hPos">
+					<xsl:value-of select="count(preceding-sibling::*) + 1"/>
+				</xsl:variable>
+				<xsl:variable name="posStart">
+					<!-- pb: si les cellules precedentes sont couvertes par un morerow d'une cellule d'1 rang precedent elle ne sont pas physiquement ds le XML .... -->
+					<xsl:choose>
+						<xsl:when test="not(../../*[position() &lt; $vPos and (./TD[./@ROWSPAN] or ./TH[./@ROWSPAN])])">
+							<xsl:value-of select="$hPos"/>
+						</xsl:when>
+						<xsl:otherwise>
+							<xsl:call-template name="printMsg">
+								<xsl:with-param name="type">WARNING</xsl:with-param>
+								<xsl:with-param name="content">
+									<xsl:value-of select=" concat('In UD:',ancestor::TLDOC/DM/@UDN,
+									' COLSPAN and some previous rows with ROWSPAN not supported') "/>
+								</xsl:with-param>
+							</xsl:call-template>
+							<xsl:value-of select="$hPos"/>
+						</xsl:otherwise>
+					</xsl:choose>
+				</xsl:variable>
+				<xsl:variable name="posEnd">
+					<xsl:value-of select="$posStart + number(@COLSPAN) - 1"/>
+				</xsl:variable>
+				<xsl:attribute name="namest"><xsl:value-of select="concat('COL',$posStart)"/></xsl:attribute>
+				<xsl:attribute name="nameend"><xsl:value-of select="concat('COL',$posEnd)"/></xsl:attribute>
+			</xsl:if>
+			<xsl:choose>
+				<xsl:when test="(./P or ./ATT) and not(./*[not(self::P or self::ATT)]) and not(./text()) ">
+					<xsl:for-each select="*">
+						<xsl:apply-templates/>
+					</xsl:for-each>
+				</xsl:when>
+				<xsl:when test="./text() and not(./*)">
+					<xsl:variable name="theText">
+						<xsl:value-of select="./text()"/>
+					</xsl:variable>
+					<xsl:variable name="isCrTab">
+						<xsl:sequence select='sonovision:matches($theText,"^&#10;(&#9;)*$") ' use-when="function-available('sonovision:matches')" />
+						<xsl:sequence select='matches($theText,"^&#10;(&#9;)*$")' use-when="not(function-available('sonovision:matches'))" />
+					</xsl:variable>
+					<xsl:variable name="isMultipleTab">
+						<xsl:sequence select='sonovision:matches($theText,"^(&#9;)+$")' use-when="function-available('sonovision:matches')" />
+						<xsl:sequence select='matches($theText,"^(&#9;)+$")' use-when="not(function-available('sonovision:matches'))" />
+					</xsl:variable>
+					<xsl:choose>
+						<xsl:when test="$isCrTab = 'true' "/>
+						<xsl:when test="$isMultipleTab = 'true' "/>
+						<xsl:otherwise>
+							<para authorityName="DO-NOT-WRITE-TAG">
+								<xsl:value-of select="$theText"/>
+							</para>
+						</xsl:otherwise>
+					</xsl:choose>
+				</xsl:when>
+				<xsl:when test="./text() and ./* and not(./*[self::P or self::ATT])">
+					<para authorityName="DO-NOT-WRITE-TAG">
+						<xsl:apply-templates/>
+					</para>
+				</xsl:when>
+				<xsl:otherwise>
+					<!-- mix of P/ATT and/or text and/or sub-elem like emphasis-->
+					<xsl:for-each select="./text() | *">
+						<xsl:choose>
+							<xsl:when test="self::P or self::ATT">
+								<xsl:apply-templates select="."/>
+							</xsl:when>
+							<xsl:when test="self::text() ">
+								<xsl:variable name="theText">
+									<xsl:value-of select="."/>
+								</xsl:variable>
+								<xsl:variable name="isCrTab">
+									<xsl:sequence select='sonovision:matches($theText,"^&#10;(&#9;)*$") ' use-when="function-available('sonovision:matches')" />
+									<xsl:sequence select='matches($theText,"^&#10;(&#9;)*$")' use-when="not(function-available('sonovision:matches'))" />
+								</xsl:variable>
+								<xsl:variable name="isMultipleTab">
+									<xsl:sequence select='sonovision:matches($theText,"^(&#9;)+$")' use-when="function-available('sonovision:matches')" />
+									<xsl:sequence select='matches($theText,"^(&#9;)+$")' use-when="not(function-available('sonovision:matches'))" />
+								</xsl:variable>
+								<xsl:choose>
+									<xsl:when test="$isCrTab = 'true' "/>
+									<xsl:when test="$isMultipleTab = 'true' "/>
+									<xsl:otherwise>
+										<para authorityName="DO-NOT-WRITE-TAG">
+											<xsl:value-of select="$theText"/>
+										</para>
+									</xsl:otherwise>
+								</xsl:choose>
+							</xsl:when>
+							<xsl:otherwise>
+								<para authorityName="DO-NOT-WRITE-TAG">
+									<xsl:apply-templates select="."/>
+								</para>
+							</xsl:otherwise>
+						</xsl:choose>
+					</xsl:for-each>
+				</xsl:otherwise>
+			</xsl:choose>
+		</entry>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= regle COBRA references A ========== -->
+	<xsl:template match="A">
+		<!--internalRef-->
+		<xsl:choose>
+			<xsl:when test="@HREFDPL and (contains(./@HREFDPL,'.SVG') or contains(./@HREFDPL,'.JPG')) and ./text()">
+				<!-- traduit en xref sur figure -->
+				<internalRef internalRefId="{@HREFDPL}">
+					<xsl:value-of select="./text()"/>
+				</internalRef>
+			</xsl:when>
+			<xsl:when test="@HREFDPL and (contains(./@HREFDPL,'.SVG') or contains(./@HREFDPL,'.JPG')) ">
+				<!-- traduit en symbol -->
+				<symbol infoEntityIdent="{translate(@HREFDPL,' ','_')}" authorityName="{@HREFDPL}">
+					<xsl:if test="@ID">
+						<xsl:attribute name="id"><xsl:value-of select="@ID"/></xsl:attribute>
+					</xsl:if>
+					<xsl:if test="./text()">
+						<xsl:attribute name="authorityDocument"><xsl:value-of select="./text()"/></xsl:attribute>
+					</xsl:if>
+				</symbol>
+			</xsl:when>
+			<xsl:when test="@HREFDPL and contains(./@HREFDPL,'.XML')">
+				<dmRef>
+					<xsl:if test="@HREFID">
+						<xsl:attribute name="referredFragment"><xsl:value-of select="@HREFID"/></xsl:attribute>
+					</xsl:if>
+					<dmRefIdent>
+						<xsl:call-template name="genDmCodeFromUDN">
+							<xsl:with-param name="UDN">
+								<xsl:value-of select="substring-before(./@HREFDPL,'.XML')"/>
+							</xsl:with-param>
+						</xsl:call-template>
+					</dmRefIdent>
+					<xsl:if test="./text()">
+						<dmRefAddressItems>
+							<dmTitle>
+								<techName>
+									<xsl:value-of select="./text()"/>
+								</techName>
+							</dmTitle>
+						</dmRefAddressItems>
+					</xsl:if>
+				</dmRef>
+			</xsl:when>
+			<xsl:when test="@HREF">
+				<internalRef internalRefId="{@HREF}">
+					<xsl:value-of select="./text()"/>
+				</internalRef>
+			</xsl:when>
+			<xsl:when test="@HREFDPL and contains(./@HREFDPL,'.CGM')">
+				<xsl:call-template name="printMsg">
+					<xsl:with-param name="type">ERROR</xsl:with-param>
+					<xsl:with-param name="content">
+						<xsl:value-of select=" concat('In UD:',ancestor::TLDOC/DM/@UDN,' Tag A pointing to CGM not expected') "/>
+					</xsl:with-param>
+				</xsl:call-template>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:call-template name="printMsg">
+					<xsl:with-param name="type">ERROR</xsl:with-param>
+					<xsl:with-param name="content">
+						<xsl:value-of select="concat('In UD:',ancestor::TLDOC/DM/@UDN,' Case for A not supported (', ./text(),')')"/>
+						<xsl:for-each select="@*">
+							<xsl:value-of select="concat(name(),' ',.)"/>
+						</xsl:for-each>
+					</xsl:with-param>
+				</xsl:call-template>
+				<xsl:value-of select="./text()"/>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= regle COBRA UNDLIST | ORDLIST========== -->
+	<xsl:template match="UNDLIST | ORDLIST">
+		<xsl:variable name="elemName">
+			<xsl:choose>
+				<xsl:when test="self::UNDLIST">randomList</xsl:when>
+				<xsl:when test="self::ORDLIST">sequentialList</xsl:when>
+			</xsl:choose>
+		</xsl:variable>
+		<xsl:choose>
+			<xsl:when test="./LITEM[./* or (./text() and ( ./text() != '&#10;'  and ./text() != '&#10;&#9;'  )   )]">
+				<xsl:choose>
+					<xsl:when test="parent::SECTION1 or parent::SECTION2 or parent::SECTION3 or parent::SECTION4 or parent::SECTION5 or parent::SECTION6 or 
+						parent::REQCOND or parent::PRELOP or parent::MAINOP or parent::COMPLOP">
+						<para authorityName="DO-NOT-WRITE-TAG">
+							<xsl:element name="{$elemName}">
+								<xsl:apply-templates/>
+							</xsl:element>
+						</para>
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:element name="{$elemName}">
+							<xsl:apply-templates/>
+						</xsl:element>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:call-template name="printMsg">
+					<xsl:with-param name="type">WARNING</xsl:with-param>
+					<xsl:with-param name="content">
+						<xsl:value-of select=" concat('In UD ',ancestor::TLDOC/DM/@UDN,' empty element ',$elemName,' skipped') "/>
+					</xsl:with-param>
+				</xsl:call-template>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= regle COBRA DEFLIST ========== -->
+	<xsl:template match="DEFLIST">
+		<xsl:choose>
+			<xsl:when test="parent::SECTION1 or parent::SECTION2 or parent::SECTION3 or parent::SECTION4 or parent::SECTION5 or parent::SECTION6 or 
+    parent::REQCOND or parent::PRELOP or parent::MAINOP or parent::COMPLOP">
+				<para authorityName="DO-NOT-WRITE-TAG">
+					<definitionList>
+						<xsl:apply-templates/>
+					</definitionList>
+				</para>
+			</xsl:when>
+			<xsl:otherwise>
+				<definitionList>
+					<xsl:apply-templates/>
+				</definitionList>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+	<!--IMG SRC="COBRAAK000K01000D0000000012R42AA.JPG" CODING="JPEG" HEIGHT="61.70MM" WIDTH="120.93MM" ALIGN="CENTER"-->
+	<!-- -->
+	<!-- ========= regle COBRA IMG ========== -->
+	<xsl:template match="IMG">
+		<figure>
+			<xsl:attribute name="authorityName"><xsl:value-of select="concat('CODING:',@CODING,'$HEIGHT:',@HEIGHT,'$WIDTH:',@WIDTH,'$ALIGN:',@ALIGN)"/></xsl:attribute>
+			<xsl:apply-templates/>
+			<xsl:if test="not(RTITLE)">
+				<title caveat="cv01">DO-NOT-WRITE-TAG</title>
+			</xsl:if>
+			<graphic infoEntityIdent="{translate(@SRC,' ','_')}" authorityName="{@SRC}"/>
+		</figure>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= regle COBRA IMG attributes========== -->
+	<!-- all coded in figure/@authorityName -->
+	<xsl:template match="IMG/@SRC"/>
+	<xsl:template match="IMG/@CODING"/>
+	<xsl:template match="IMG/@HEIGHT"/>
+	<xsl:template match="IMG/@WIDTH"/>
+	<xsl:template match="IMG/@ALIGN"/>
+	<!-- -->
+	<!-- ========= regle COBRA DTERM ========== -->
+	<xsl:template match="DTERM">
+		<definitionListItem>
+			<listItemTerm>
+				<xsl:apply-templates/>
+			</listItemTerm>
+			<listItemDefinition>
+				<para>
+					<xsl:value-of select="following-sibling::DDES[1]"/>
+				</para>
+			</listItemDefinition>
+		</definitionListItem>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= regle COBRA DEFLIST ========== -->
+	<xsl:template match="DDES"/>
+	<!-- -->
+	<!-- ========= regle COBRA LITEM ========== -->
+	<xsl:template match="LITEM">
+		<xsl:choose>
+			<xsl:when test="not(./*) and ./text() and . = '&#10;'"/>
+			<xsl:otherwise>
+				<listItem>
+					<para authorityName="DO-NOT-WRITE-TAG">
+						<xsl:apply-templates/>
+					</para>
+				</listItem>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= regle COBRA P ========== -->
+	<xsl:template match="P">
+		<xsl:choose>
+			<xsl:when test="parent::LITEM">
+				<xsl:if test="@ID">
+					<xsl:call-template name="printMsg">
+						<xsl:with-param name="type">ERROR</xsl:with-param>
+						<xsl:with-param name="content">
+							<xsl:value-of select=" concat('In UD ',ancestor::TLDOC/DM/@UDN,' attribute ID [',@ID,'] lost') "/>
+						</xsl:with-param>
+					</xsl:call-template>
+				</xsl:if>
+				<emphasis emphasisType="em52">
+					<xsl:apply-templates/>
+				</emphasis>
+			</xsl:when>
+			<xsl:otherwise>
+				<para>
+					<xsl:apply-templates/>
+				</para>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= regle COBRA ATT ========== -->
+	<xsl:template match="ATT">
+		<xsl:variable name="targetElem">
+			<xsl:choose>
+				<xsl:when test="@TYPATT='WARNING'">warning</xsl:when>
+				<xsl:when test="@TYPATT='CAUTION'">caution</xsl:when>
+				<xsl:when test="@TYPATT='NOTE'">note</xsl:when>
+				<xsl:otherwise>
+					<xsl:call-template name="printMsg">
+						<xsl:with-param name="type">ERROR</xsl:with-param>
+						<xsl:with-param name="content">
+							<xsl:value-of select=" concat('In UD ',ancestor::TLDOC/DM/@UDN,' attribute TYPATT with unexpected value: ',@TYPATT) "/>
+						</xsl:with-param>
+					</xsl:call-template>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:variable>
+		<xsl:if test="$targetElem = 'warning' or $targetElem = 'caution' ">
+			<xsl:choose>
+				<xsl:when test="
+					(
+					parent::SECTION1 or parent::SECTION2 or parent::SECTION3 or parent::SECTION4 or parent::SECTION5 or parent::SECTION6
+					or parent::PRELOP or parent::COMPLOP or parent::MAINOP
+					)
+					and 
+						(
+						preceding-sibling::*[not(self::STITLE or self::ATT)]
+						or 
+						../ATT[@TYPATT='WARNING' and preceding-sibling::ATT[@TYPATT='CAUTION' or @TYPATT='NOTE'] ] or
+						../ATT[@TYPATT='CAUTION' and preceding-sibling::ATT[@TYPATT='NOTE'] ]
+						) ">
+					<para authorityName="{concat('FORMER-',$targetElem)}">
+						<emphasis emphasisType="em99">
+							<xsl:value-of select="concat('[',$targetElem,']')"/>
+						</emphasis>
+						<xsl:apply-templates select="* | text()"/>
+					</para>
+				</xsl:when>
+				<!-- a voir d'autre cas ou ecrire un warning n'est pas autorise -->
+				<xsl:otherwise>
+					<!-- cas OK -->
+					<xsl:element name="{$targetElem}">
+						<xsl:if test="@ID">
+							<xsl:attribute name="id"><xsl:value-of select="@ID"/></xsl:attribute>
+						</xsl:if>
+						<warningAndCautionPara>
+							<xsl:apply-templates/>
+						</warningAndCautionPara>
+					</xsl:element>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:if>
+		<xsl:if test="$targetElem = 'note'">
+			<xsl:element name="{$targetElem}">
+				<xsl:if test="@ID">
+					<xsl:attribute name="id"><xsl:value-of select="@ID"/></xsl:attribute>
+				</xsl:if>
+				<notePara>
+					<xsl:apply-templates/>
+				</notePara>
+			</xsl:element>
+		</xsl:if>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= regle COBRA FONT ========== -->
+	<xsl:template match="FONT">
+		<emphasis emphasisType="em51">
+			<xsl:apply-templates/>
+		</emphasis>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= regle COBRA B ========== -->
+	<xsl:template match="B">
+		<emphasis emphasisType="em01">
+			<xsl:apply-templates/>
+		</emphasis>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= regle COBRA I ========== -->
+	<xsl:template match="I">
+		<emphasis emphasisType="em02">
+			<xsl:apply-templates/>
+		</emphasis>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= regle COBRA U ========== -->
+	<xsl:template match="U">
+		<emphasis emphasisType="em03">
+			<xsl:apply-templates/>
+		</emphasis>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= regle COBRA SUB ========== -->
+	<xsl:template match="SUB">
+		<subScript>
+			<xsl:apply-templates/>
+		</subScript>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= regle COBRA SUP ========== -->
+	<xsl:template match="SUP">
+		<!-- Pb: on trouve parfois <SUP><SUP>...</SUP></SUP> -->
+		<xsl:choose>
+			<xsl:when test="parent::SUP">
+				<xsl:value-of select="."/>
+			</xsl:when>
+			<xsl:otherwise>
+				<superScript>
+					<xsl:apply-templates/>
+				</superScript>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= regle COBRAXREF ========== -->
+	<xsl:template match="XREF[not(@XREFDPL)]">
+		<internalRef internalRefId="{@XREF}" internalRefTargetType="other">
+			<xsl:if test="@PRETEXT">
+				<xsl:attribute name="authorityName"><xsl:value-of select="@PRETEXT"/></xsl:attribute>
+			</xsl:if>
+			<xsl:if test="@POSTEXT">
+				<xsl:attribute name="authorityDocument"><xsl:value-of select="@POSTEXT"/></xsl:attribute>
+			</xsl:if>
+		</internalRef>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= regle SEC1REF ... SEC6REF ========== -->
+	<xsl:template match="SEC1REF | SEC2REF | SEC3REF | SEC4REF | SEC5REF | SEC6REF">
+		<internalRef authorityName="{name()}" internalRefId="{@REF}"/>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= regle COBRA @LANG ========== -->
+	<xsl:template match="@LANG"/>
+	<!-- -->
+	<!-- ========= regle COBRA @ALIGN (par defaut ds DTD sur TTILE ========== -->
+	<xsl:template match="@ALIGN[parent::TTITLE]"/>
+	<xsl:template match="*" mode="comment">
+		<xsl:text>&lt;</xsl:text>
+		<xsl:value-of select="name()"/>
+		<xsl:for-each select="@*">
+			<xsl:text> </xsl:text>
+			<xsl:value-of select="name()"/>
+			<xsl:text>="</xsl:text>
+			<xsl:value-of select="."/>
+			<xsl:text>"</xsl:text>
+		</xsl:for-each>
+		<xsl:text>&gt;</xsl:text>
+		<xsl:apply-templates mode="comment"/>
+		<xsl:text>&lt;/</xsl:text>
+		<xsl:value-of select="name()"/>
+		<xsl:text>></xsl:text>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= regle COBRA - par defaut (element) mais avec translation de nom si besoin ========== -->
+	<xsl:template match="*" priority="-1">
+		<xsl:variable name="nameSGML">
+			<xsl:value-of select="name()"/>
+		</xsl:variable>
+		<xsl:variable name="nameXML">
+			<xsl:choose>
+				<xsl:when test="$nameSGML = 'STITLE' ">title</xsl:when>
+				<xsl:when test="$nameSGML = 'TTITLE' ">title</xsl:when>
+				<xsl:when test="$nameSGML = 'RTITLE' ">title</xsl:when>
+			</xsl:choose>
+		</xsl:variable>
+		<xsl:choose>
+			<xsl:when test=" $nameXML = '' ">
+				<xsl:call-template name="printMsg">
+					<xsl:with-param name="type">ERROR</xsl:with-param>
+					<xsl:with-param name="content">
+						<xsl:value-of select=" concat('In UD:',ancestor::TLDOC/DM/@UDN,' no rule for elem. ',$nameSGML) "/>
+					</xsl:with-param>
+				</xsl:call-template>
+				<xsl:apply-templates select="* | @* | text()"/>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:element name="{$nameXML}">
+					<xsl:apply-templates select="* | @* | text()"/>
+				</xsl:element>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= regle COBRA - par defaut (attribute) mais avec translation de nom si besoin ========== -->
+	<xsl:template match="@*">
+		<xsl:variable name="nameSGML">
+			<xsl:value-of select="name(.)"/>
+		</xsl:variable>
+		<xsl:variable name="nameXML">
+			<xsl:choose>
+				<xsl:when test="$nameSGML = 'ID' ">id</xsl:when>
+			</xsl:choose>
+		</xsl:variable>
+		<xsl:choose>
+			<xsl:when test=" $nameXML = '' ">
+				<xsl:call-template name="printMsg">
+					<xsl:with-param name="type">ERROR</xsl:with-param>
+					<xsl:with-param name="content">
+						<xsl:value-of select=" concat('In UD:',ancestor::TLDOC/DM/@UDN,' no rule for attribute ',$nameSGML,' in elem ',name(..),' [',.,']') "/>
+					</xsl:with-param>
+				</xsl:call-template>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:attribute name="{$nameXML}"><xsl:value-of select="."/></xsl:attribute>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= regle COBRA - segment Texte ========== -->
+	<xsl:template match="text()">
+		<xsl:value-of select="."/>
+	</xsl:template>
+	<!-- -->
+	<!-- other templates -->
+	<!-- -->
+	<!-- ========= template make URL ========== -->
+	<xsl:template name="makeURL">
+		<xsl:param name="path"/>
+		<xsl:variable name="URLtemp">
+			<xsl:call-template name="changeSpaceInURI">
+				<xsl:with-param name="val">
+					<xsl:value-of select="$path"/>
+				</xsl:with-param>
+			</xsl:call-template>
+		</xsl:variable>
+		<xsl:text>file:///</xsl:text>
+		<xsl:value-of select="translate($URLtemp,'\','/')"/>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= template change Space In URI ========== -->
+	<xsl:template name="changeSpaceInURI">
+		<xsl:param name="val"/>
+		<xsl:choose>
+			<xsl:when test="contains($val,' ')">
+				<xsl:value-of select="substring-before($val,' ')"/>
+				<xsl:text>%20</xsl:text>
+				<xsl:call-template name="changeSpaceInURI">
+					<xsl:with-param name="val">
+						<xsl:value-of select="substring-after($val,' ')"/>
+					</xsl:with-param>
+				</xsl:call-template>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="$val"/>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+	<!-- -->
+	<!-- ========= template print Message ========== -->
+	<xsl:template name="printMsg">
+		<xsl:param name="type"/>
+		<xsl:param name="content"/>
+		<xsl:choose>
+			<xsl:when test="$fromDOS='true'">
+				<xsl:message><xsl:value-of select="concat('  === ',$type,' ',$content)"/></xsl:message>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:sequence select='sonovision:logMessage($objectid,$type,$content)' use-when="function-available('sonovision:logMessage')" />
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+</xsl:stylesheet>

@@ -1,0 +1,220 @@
+package com.sonovision.openconv.modules.xmlprocess;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.DirectoryIteratorException;
+import java.nio.file.DirectoryStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
+
+import com.sedoc.dtdtoolbox.config.DTDConfigManager;
+import com.sedoc.dtdtoolbox.resource.model.Entity;
+import com.sedoc.dtdtoolbox.resource.model.Resource;
+import com.sedoc.dtdtoolbox.resource.service.ResourceService;
+import com.sedoc.dtdtoolbox.utils.DTDParsing;
+import com.sedoc.toolbox.SpringBeanProvider;
+import com.sedoc.toolbox.bean.UtilsService;
+import com.sonovision.openconv.log.model.LoggerLevel;
+import com.sonovision.openconv.mapper.TreatedObjectMapper;
+import com.sonovision.openconv.model.TreatedObject;
+import com.sonovision.openconv.modules.fileaccess.exception.LoadFileException;
+import com.sonovision.openconv.modules.xmlprocess.model.ResourcesModel;
+import com.sonovision.openconv.wf.WFTask;
+import com.sonovision.openconv.wf.WFTaskHelper;
+import com.sonovision.openconv.wf.model.ParameterDetailled;
+import com.sonovision.openconv.wf.model.ParameterTypes;
+
+@Component("TaskXmlResources")
+public class TaskXmlResources extends WFTaskHelper implements WFTask {
+
+	@Autowired
+	UtilsService utilsService;
+	
+    @Autowired
+    private DTDConfigManager dtdConfigManager;
+	
+	static DTDParsing dtdParsing;
+	public final static String PARAMETER_DTD_TYPE = "dtdType";
+	public final static String PARAMETER_LOADFILE_INPUT_FOLDER = "inputFolder";
+	public final static String PARAMETER_LOADFILE_EXTENSION = "extensionFilter";
+	
+	
+	public final static String DEFAULT_EXTENSION_FILTER="*.{xml,XML}";
+	
+	// I must init spring composent, buti have loop on this class. this variable
+	// is for skip loop. I think it will be better if we use @Configure. next
+	// time
+	private static boolean initrun = false;
+	
+	static{
+		dtdParsing = new DTDParsing();
+	}
+	
+	private String extensionFilter;
+	
+
+	public TaskXmlResources() {
+		super();
+//		initClass();
+	}
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7764367737889004545L;
+
+	public String run(HashMap<String, TreatedObject> treatedObjectHash) {
+		dbLogger.logTask("Chargement des fichier xml", LoggerLevel.INFO);
+
+//		if (treatedObjectHash == null) {
+//			treatedObjectHash = new  HashMap<>();
+//		}
+
+		if(ResourcesModel.getResourcesModel() == null){
+			ResourcesModel.setResoucesModel(new  HashMap<>());
+		}
+		
+		String inputFile = dbLogger.getFolderIn();
+				
+				
+		if(inputFile==null || inputFile.isEmpty())
+		{
+			inputFile=(String) parametersRunning.get(PARAMETER_LOADFILE_INPUT_FOLDER);
+		}
+		if(inputFile==null  || inputFile.isEmpty())
+		{
+			dbLogger.logTask("indiquer un répertoire d'entrée", LoggerLevel.FATAL);
+			return LoggerLevel.FATAL.getValue().toString();
+		}
+		File inputFolder = new File(inputFile);
+		if(!inputFolder.exists())
+		{
+			dbLogger.logTask("Le répertoire :"+inputFile+" n'existe pas", LoggerLevel.FATAL);
+			return LoggerLevel.FATAL.getValue().toString();
+		}
+		if(!inputFolder.isDirectory())
+		{
+			dbLogger.logTask(inputFolder.getAbsolutePath()+" doit etre un répertoire", LoggerLevel.FATAL);
+			return LoggerLevel.FATAL.getValue().toString();
+		}
+		
+		extensionFilter = (String) parametersRunning.get(PARAMETER_LOADFILE_EXTENSION);
+		if(extensionFilter==null || extensionFilter.isEmpty())
+		{
+			extensionFilter=DEFAULT_EXTENSION_FILTER;
+		}
+		
+		try {
+			getResourcesList(inputFolder);
+		} catch (LoadFileException e) {
+			dbLogger.logTask(e.getMessage(), LoggerLevel.FATAL);
+			return LoggerLevel.FATAL.getValue().toString();
+		}
+		dbLogger.logTask("resouces chargées, "+ResourcesModel.getResourcesModel().size()+" fichiers trouvé", LoggerLevel.INFO);
+		return dbLogger.getTask().getLogResult();
+
+	}
+	
+	private void getResourcesList(File inputFolder) throws LoadFileException {
+
+		Path folderPath = (inputFolder).toPath();
+
+		try (DirectoryStream<Path> stream = Files.newDirectoryStream(folderPath, extensionFilter)) {
+
+			for (Path entry : stream) {
+				Map<String,Resource<Entity>> listResource = getRessources(entry);
+				ResourcesModel.add(entry.getFileName().toString(), listResource);
+			}
+		} catch (DirectoryIteratorException ex) {
+			throw new LoadFileException("Impossible de charger le dm de fichier d'entrés :" + ex.getMessage(),ex);
+		} catch (IOException e) {
+			throw new LoadFileException("Impossible de charger le dm de fichier d'entrés :" + e.getMessage(),e);
+		}
+	}
+
+	private Map<String,Resource<Entity>> getRessources(Path entry){
+
+		InputStream document = TreatedObjectMapper.getInputStream(entry);
+		Document doc;
+		Map<String,Resource<Entity>> listResource;
+		try {
+			doc = dtdParsing.getParseXML(document);
+			String dtdType=(String) parametersRunning.get(PARAMETER_DTD_TYPE);
+			ResourceService<Resource<Entity>> resourceService = dtdConfigManager.getResourceService(dtdType);
+			listResource=resourceService.getAllResource(doc).stream().collect(Collectors.toMap(Resource::getKey, Function.identity()));
+			//listResource=resourceService.getAllResource(doc);
+
+		} catch (IOException | ParserConfigurationException | SAXException e1) {
+			dbLogger.logObject("Impossible de parser l'object :" + entry.getFileName().toString() + " erreur:" + e1.getMessage(),	LoggerLevel.ERROR, entry.getFileName().toString());
+			return null;
+		
+	} catch (Exception e1) {
+		dbLogger.logObject("Impossible de parser l'object :" + entry.getFileName().toString() + " erreur:" + e1.getMessage(),	LoggerLevel.ERROR, entry.getFileName().toString());
+		return null;
+	}
+		return listResource;
+	}
+	
+
+
+	
+
+	/**
+	 * It can be replaced by @Configuration with aspectj spring but i don't know
+	 * why it doesn't work TODO :make it generic in extends's class
+	 */
+	public void initClass() {
+		if (!initrun) {
+			initrun = true;
+			if (utilsService == null) {
+				utilsService = (UtilsService) SpringBeanProvider.getBean("UtilsService");
+			}
+			if(dtdConfigManager == null){
+				dtdConfigManager = (DTDConfigManager) SpringBeanProvider.getBean("dtdConfigManager");
+			}
+			initrun = false;
+		}
+	}
+
+	/**
+	 * @return the utilsService
+	 */
+	public UtilsService getUtilsService() {
+		return utilsService;
+	}
+
+	/**
+	 * @param utilsService
+	 *            the utilsService to set
+	 */
+	public void setUtilsService(UtilsService utilsService) {
+		this.utilsService = utilsService;
+	}
+
+
+	@Override
+	public List<ParameterDetailled> getParameterList(Locale locale) {		
+		parametersRequired=new HashMap<>();
+		parametersRequired.put(PARAMETER_DTD_TYPE,ParameterTypes.TXT);
+		parametersRequired.put(PARAMETER_LOADFILE_INPUT_FOLDER,ParameterTypes.FILE);
+		parametersRequired.put(PARAMETER_LOADFILE_EXTENSION,ParameterTypes.TXT);
+		
+		return super.procedeParameterList(locale);
+	}
+
+}

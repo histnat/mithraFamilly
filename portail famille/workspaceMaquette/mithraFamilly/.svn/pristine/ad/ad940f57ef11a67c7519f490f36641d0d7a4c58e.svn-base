@@ -1,0 +1,103 @@
+package com.sonovision.openconv.modules.xslprocess.service;
+
+import static org.testng.Assert.assertEquals;
+
+import java.io.File;
+import java.io.IOException;
+import java.net.URISyntaxException;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+
+import com.sedoc.toolbox.SpringBeanProvider;
+import com.sedoc.toolbox.bean.UtilsService;
+import com.sonovision.openconv.db.cir.TotalCirTable;
+import com.sonovision.openconv.modules.xslprocess.model.CirTypeKey;
+import com.sonovision.openconv.utils.TestHelperXslProcess;
+
+public class CirServiceTest extends TestHelperXslProcess {
+
+
+    private Node node1,node2;
+    
+    final private String pathTestFile1="/in/cir/dataXml1.xml";
+    final private String pathTestFile2="/in/cir/dataXml2.xml";
+    final private String pathTestFile3="/in/cir/dataXml3.xml";
+
+    @Autowired
+    private CirService cirService;
+    @Autowired
+    private TotalCirTable totalCirTable;
+    
+	@Autowired
+	UtilsService utilservice;
+    
+	
+    @BeforeClass
+    public void prebuild() throws ParserConfigurationException, IOException, SAXException, URISyntaxException {
+        node1 = loadNode(pathTestFile1);
+        node2 = loadNode(pathTestFile2);
+    }
+	
+//  @Test
+//  public void parse() {
+//	  cirService.push(totalCirTable,node1,null);
+//	  Element el=(Element)node1;
+//	  assertEquals(cirService.getKey1(), "coco1");
+//	  assertEquals(cirService.getKey2(), "coco2");
+//	  assertEquals(cirService.getXml(), el.getElementsByTagName("ITEMXML").item(0).getFirstChild());
+//  }
+
+  @Test
+  public void push() {
+	  String returnkey1=cirService.push(totalCirTable,node1,CirTypeKey.INGREDIENT);
+	  String returnkey2=cirService.push(totalCirTable,node2, CirTypeKey.TOOLS);
+	  
+	  assertEquals(cirService.getSize(totalCirTable,CirTypeKey.INGREDIENT), 1);
+	  assertEquals(cirService.getSize(totalCirTable,CirTypeKey.TOOLS), 1);
+	  assertEquals(cirService.getSize(totalCirTable,CirTypeKey.SPARE), 0);
+	  assertEquals(returnkey1, CirTypeKey.INGREDIENT.getKey("coco1", "coco2"));
+	  assertEquals(returnkey2, CirTypeKey.TOOLS.getKey("coco3", "coco4"));
+	  
+	  cirService.push(totalCirTable,node1,CirTypeKey.INGREDIENT);
+	  assertEquals(cirService.getSize(totalCirTable,CirTypeKey.INGREDIENT), 1);
+	  
+  }
+  
+  @Test
+  public void getXML() throws ParserConfigurationException, URISyntaxException, SAXException, IOException {
+	  String returnkey1=cirService.push(totalCirTable,node1,CirTypeKey.INGREDIENT);
+	  String returnkey2=cirService.push(totalCirTable,node2, CirTypeKey.INGREDIENT);
+	  
+	  assertEquals(cirService.getSize(totalCirTable,CirTypeKey.INGREDIENT), 2);
+	  Node outNode=cirService.getXML(totalCirTable, "INGREDIENT");
+//	  utilservice.afficheXML(outNode.getOwnerDocument());
+//	  utilservice.convertDOMToString(outNode.getOwnerDocument());
+	  System.out.println("coco");
+	  Node node3 = loadNode(pathTestFile3);
+	  assertEquals(utilservice.convertDOMToString(outNode.getOwnerDocument()).replaceAll("\n", "").replaceAll(" ", "").replaceAll("\r", "").replaceAll("\t", ""), 
+			  		utilservice.convertDOMToString(node3.getOwnerDocument()).replaceAll("\n", "").replaceAll(" ", "").replaceAll("\r", "").replaceAll("\t", ""));
+  }
+  
+  private Node loadNode(String filePath) throws URISyntaxException, ParserConfigurationException, SAXException, IOException{
+      File xml = new File(this.getClass().getResource(filePath).toURI());
+
+      DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+      DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+      Document doc = dBuilder.parse(xml);
+
+      doc.getDocumentElement().normalize();
+
+      return doc.getFirstChild();
+  }
+}

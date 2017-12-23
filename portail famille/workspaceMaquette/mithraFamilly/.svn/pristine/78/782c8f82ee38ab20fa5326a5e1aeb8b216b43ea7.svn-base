@@ -1,0 +1,2651 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dml xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-1/xml_schema_flat/dml.xsd">
+	<identAndStatusSection>
+		<dmlAddress>
+			<dmlIdent>
+				<dmlCode dmlType="c" modelIdentCode="Z2" senderIdent="FASL3" seqNumber="11111" yearOfDataIssue="2014"/>
+				<issueInfo inWork="11" issueNumber="111"/>
+			</dmlIdent>
+			<dmlAddressItems>
+				<issueDate day="29" month="11" year="2017"/>
+			</dmlAddressItems>
+		</dmlAddress>
+		<dmlStatus issueType="new">
+			<security securityClassification="01"/>
+			<brexDmRef>
+				<dmRef>
+					<dmRefIdent>
+						<dmCode assyCode="00" disassyCode="00" disassyCodeVariant="A" infoCode="012" infoCodeVariant="A" itemLocationCode="D" modelIdentCode="Z4" subSubSystemCode="0" subSystemCode="0" systemCode="00" systemDiffCode="A"/>
+					</dmRefIdent>
+				</dmRef>
+			</brexDmRef>
+		</dmlStatus>
+	</identAndStatusSection>
+	<dmlContent>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="1" infoCode="A" infoCodeVariant="18" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-49-52-07-01A-018A-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Two and One-Half Inch Diameter Butterfly Shutoff Valve</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4884</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481423625354254</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="18" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-018A-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4885</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm1187390366124103700</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="18" itemLocationCode="B" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-018B-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4886</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481423625354259</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="18" itemLocationCode="C" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-018C-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4887</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481423625354270</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="18" itemLocationCode="D" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-018D-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4888</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm118870110238911631</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="18" itemLocationCode="E" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-018E-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4889</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm118870242439043846</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="18" itemLocationCode="F" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-018F-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4890</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm118870252039053407</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="18" itemLocationCode="G" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-018G-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4891</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481423625354276</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="18" itemLocationCode="H" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-018H-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4892</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm1251835736377492</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="1" infoCode="A" infoCodeVariant="18" itemLocationCode="B" modelIdentCode="DMC-HON99193-EAA-49-52-07-01A-018B-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Two and One-Half Inch Diameter Butterfly Shutoff Valve</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4893</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481423625354301</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="18" itemLocationCode="I" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-018I-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4894</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481423625354307</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="18" itemLocationCode="J" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-018J-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4895</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481423625354315</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="1" infoCode="A" infoCodeVariant="18" itemLocationCode="C" modelIdentCode="DMC-HON99193-EAA-49-52-07-01A-018C-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Two and One-Half Inch Diameter Butterfly Shutoff Valve</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4896</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481423625354289</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="18" itemLocationCode="K" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-018K-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4897</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm118870483039284446</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="18" itemLocationCode="L" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-018L-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4898</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm118870659839461204</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="18" itemLocationCode="M" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-018M-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4899</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm118875342944144354</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="1" infoCode="A" infoCodeVariant="30" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-49-52-07-01A-030A-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Two and One-Half Inch Diameter Butterfly Shutoff Valve</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4900</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481423625354326</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="17" itemLocationCode="M" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-017M-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4901</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481423625354343</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="1" infoCode="A" infoCodeVariant="40" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-49-52-07-01A-040A-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Two and One-Half Inch Diameter Butterfly Shutoff Valve</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4902</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481423625354346</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="1" infoCode="A" infoCodeVariant="42" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-49-52-07-01A-042A-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Two and One-Half Inch Diameter Butterfly Shutoff Valve</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4903</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481423725354362</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="300" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-300A-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4904</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481423725354373</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="300" itemLocationCode="B" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-300B-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4905</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481423725354376</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="300" itemLocationCode="C" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-300C-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4906</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481423725354393</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="1" infoCode="A" infoCodeVariant="366" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-49-52-07-01A-366A-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Two and One-Half Inch Diameter Butterfly Shutoff Valve</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4907</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm1421158532376793</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="1" infoCode="A" infoCodeVariant="330" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-49-52-07-01A-330A-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Two and One-Half Inch Diameter Butterfly Shutoff Valve</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4908</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm1421159433466898</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="1" infoCode="A" infoCodeVariant="340" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-49-52-07-01A-340A-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Two and One-Half Inch Diameter Butterfly Shutoff Valve</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4909</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm1421162653788962</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="300" itemLocationCode="D" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-300D-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4910</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481423725354426</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="500" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-500A-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4911</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481423825354501</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="500" itemLocationCode="B" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-500B-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4912</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm118876132844934282</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="500" itemLocationCode="C" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-500C-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4913</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481423825354521</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="530" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-530A-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4914</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm14211744331966972</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="1" infoCode="A" infoCodeVariant="530" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-49-52-07-01A-530A-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Two and One-Half Inch Diameter Butterfly Shutoff Valve</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4915</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481423825354525</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="2" infoCode="A" infoCodeVariant="530" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-49-52-07-02A-530A-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Valve Plumbing Installation</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4916</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481423825354529</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="3" infoCode="A" infoCodeVariant="530" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-49-52-07-03A-530A-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Cover and Switch Assembly</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4917</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm14211743691960561</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="4" infoCode="A" infoCodeVariant="530" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-49-52-07-04A-530A-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Pneumatic Actuator Assembly</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4918</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm14211743691960562</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="5" infoCode="A" infoCodeVariant="530" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-49-52-07-05A-530A-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Valve Flow Section</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4919</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm14211743691960563</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="6" infoCode="A" infoCodeVariant="530" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-49-52-07-06A-530A-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Actuator Diaphragm Assembly</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4920</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm14212517369697285</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="7" infoCode="A" infoCodeVariant="530" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-49-52-07-07A-530A-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Actuator Linkage Assembly</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4921</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm14212517369697286</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="8" infoCode="A" infoCodeVariant="530" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-49-52-07-08A-530A-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Regulator Diaphragm Assembly</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4922</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm14212517369697287</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="500" itemLocationCode="D" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-500D-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4923</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481423825354532</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="200" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-200A-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4924</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481423825354543</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="200" itemLocationCode="B" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-200B-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4925</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm118876239045040468</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="200" itemLocationCode="C" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-200C-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4926</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481423925354564</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="250" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-250A-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4927</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481423925354568</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="250" itemLocationCode="B" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-250B-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4928</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481423925354573</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="250" itemLocationCode="C" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-250C-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4929</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481423925354576</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="250" itemLocationCode="D" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-250D-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4930</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm1192657979181214632</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="250" itemLocationCode="E" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-250E-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4931</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm142126504811028493</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="1" infoCode="A" infoCodeVariant="250" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-49-52-07-01A-250A-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Two and One-Half Inch Diameter Butterfly Shutoff Valve</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4932</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm142126507511031178</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="200" itemLocationCode="D" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-200D-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4933</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481423925354581</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="300" itemLocationCode="E" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-300E-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4934</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481423925354592</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="300" itemLocationCode="F" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-300F-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4935</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm1192657290181145828</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="300" itemLocationCode="G" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-300G-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4936</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481423925354610</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="310" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-310A-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4937</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm142127074011597688</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="310" itemLocationCode="B" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-310B-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4938</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm142127078111601834</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="1" infoCode="A" infoCodeVariant="310" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-49-52-07-01A-310A-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Two and One-Half Inch Diameter Butterfly Shutoff Valve</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4939</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm1192657894181206207</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="300" itemLocationCode="H" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-300H-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4940</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481423925354618</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="600" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-600A-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4941</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481423925354629</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="600" itemLocationCode="B" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-600B-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4942</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm120759545135777621</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="600" itemLocationCode="C" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-600C-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4943</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481423925354650</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="600" itemLocationCode="D" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-600D-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4944</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm12307502551883639</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="663" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-663A-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4945</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm12307502851886685</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="670" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-670A-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4946</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481424025354659</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="663" itemLocationCode="B" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-663B-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4947</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm1421335089677183</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="1" infoCode="A" infoCodeVariant="663" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-49-52-07-01A-663A-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Two and One-Half Inch Diameter Butterfly Shutoff Valve</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4948</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm1310143783999981</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="600" itemLocationCode="E" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-600E-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4949</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481424025354664</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="600" itemLocationCode="F" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-600F-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4950</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm12307503651894667</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="1" infoCode="A" infoCodeVariant="663" itemLocationCode="C" modelIdentCode="DMC-HON99193-EAA-49-52-07-01A-663C-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Two and One-Half Inch Diameter Butterfly Shutoff Valve</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4951</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm12307503651894670</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="12" infoCode="A" infoCodeVariant="600" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-49-52-07-12A-600A-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Sensitive Switch Assembly</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4952</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm12307504231900448</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="12" infoCode="A" infoCodeVariant="600" itemLocationCode="B" modelIdentCode="DMC-HON99193-EAA-49-52-07-12A-600B-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Sensitive Switch Assembly</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4953</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm12307504231900453</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="12" infoCode="A" infoCodeVariant="600" itemLocationCode="C" modelIdentCode="DMC-HON99193-EAA-49-52-07-12A-600C-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Sensitive Switch Assembly</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4954</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm12307504231900464</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="12" infoCode="A" infoCodeVariant="663" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-49-52-07-12A-663A-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Sensitive Switch Assembly</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4955</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm12307504231900467</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="12" infoCode="A" infoCodeVariant="600" itemLocationCode="D" modelIdentCode="DMC-HON99193-EAA-49-52-07-12A-600D-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Sensitive Switch Assembly</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4956</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm12307504231900470</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="9" infoCode="A" infoCodeVariant="600" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-49-52-07-09A-600A-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Actuator Housing Assembly</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4957</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm1421416067156829</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="9" infoCode="A" infoCodeVariant="600" itemLocationCode="B" modelIdentCode="DMC-HON99193-EAA-49-52-07-09A-600B-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Actuator Housing Assembly</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4958</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm1421416067156828</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="9" infoCode="A" infoCodeVariant="600" itemLocationCode="C" modelIdentCode="DMC-HON99193-EAA-49-52-07-09A-600C-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Actuator Housing Assembly</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4959</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm1421416067156834</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="9" infoCode="A" infoCodeVariant="663" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-49-52-07-09A-663A-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Actuator Housing Assembly</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4960</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm1421416067156835</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="9" infoCode="A" infoCodeVariant="600" itemLocationCode="D" modelIdentCode="DMC-HON99193-EAA-49-52-07-09A-600D-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Actuator Housing Assembly</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4961</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm1421416067156836</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="700" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-700A-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4962</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481424025354675</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="700" itemLocationCode="B" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-700B-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4963</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm120759801136033537</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="700" itemLocationCode="C" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-700C-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4964</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481424025354693</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="700" itemLocationCode="D" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-700D-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4965</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm1421420411591250</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="1" infoCode="A" infoCodeVariant="700" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-49-52-07-01A-700A-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Two and One-Half Inch Diameter Butterfly Shutoff Valve</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4966</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm1421420788628974</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="7" infoCode="A" infoCodeVariant="720" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-49-52-07-07A-720A-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Actuator Linkage Assembly</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4967</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481424025354696</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="6" infoCode="A" infoCodeVariant="720" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-49-52-07-06A-720A-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Actuator Diaphragm Assembly</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4968</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481424025354701</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="1" infoCode="A" infoCodeVariant="720" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-49-52-07-01A-720A-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Two and One-Half Inch Diameter Butterfly Shutoff Valve</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4969</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm1421422847834850</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="5" infoCode="A" infoCodeVariant="720" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-49-52-07-05A-720A-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Valve Flow Section</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4970</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm1421422897839904</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="4" infoCode="A" infoCodeVariant="720" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-49-52-07-04A-720A-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Pneumatic Actuator Assembly</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4971</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm1421422897839905</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="3" infoCode="A" infoCodeVariant="720" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-49-52-07-03A-720A-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Cover and Switch Assembly</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4972</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm1421422897839906</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="2" infoCode="A" infoCodeVariant="720" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-49-52-07-02A-720A-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Valve Plumbing Installation</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4973</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm1421422897839907</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="8" infoCode="A" infoCodeVariant="720" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-49-52-07-08A-720A-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Regulator Diaphragm Assembly</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4974</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm14214260391154090</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="700" itemLocationCode="E" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-700E-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4975</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481424025354704</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="300" itemLocationCode="I" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-300I-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4976</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481424025354715</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="300" itemLocationCode="J" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-300J-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4977</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481424025354718</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="1" infoCode="A" infoCodeVariant="361" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-49-52-07-01A-361A-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Two and One-Half Inch Diameter Butterfly Shutoff Valve</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4978</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481424025354731</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="369" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-369A-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4979</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm120759925236157642</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="1" infoCode="A" infoCodeVariant="369" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-49-52-07-01A-369A-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Two and One-Half Inch Diameter Butterfly Shutoff Valve</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4980</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm121019037152770906</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="900" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-900A-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4981</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481424125354756</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="900" itemLocationCode="B" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-900B-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4982</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481424125354760</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="800" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-800A-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4983</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481424125354793</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="800" itemLocationCode="B" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-800B-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4984</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm120760140936373356</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="800" itemLocationCode="C" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-800C-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4985</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481424125354814</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="810" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-810A-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4986</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481424125354818</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="830" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-830A-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4987</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481424125354821</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="812" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-812A-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4988</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481424125354825</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="860" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-860A-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4989</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481424125354829</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="800" itemLocationCode="D" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-800D-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4990</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481424125354832</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="18" itemLocationCode="N" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-018N-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4991</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481424125354846</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="18" itemLocationCode="O" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-018O-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4992</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481424125354851</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="18" itemLocationCode="P" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-018P-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4993</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481424225354862</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="18" itemLocationCode="Q" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-018Q-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4994</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm12307504781905910</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="18" itemLocationCode="R" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-018R-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4995</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481424225354870</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="0" disassyCode="0" disassyCodeVariant="0" infoCode="A" infoCodeVariant="18" itemLocationCode="S" modelIdentCode="DMC-HON99193-EAA-00-00-00-00A-018S-D" subSubSystemCode="0" subSystemCode="0" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>General</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4996</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>cmm112481424225354875</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="1" infoCode="A" infoCodeVariant="941" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-49-52-07-01A-941A-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Two and One-Half Inch Diameter Butterfly Shutoff Valve</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4997</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>F1</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="2" infoCode="A" infoCodeVariant="941" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-49-52-07-02A-941A-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Valve Plumbing Installation</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4998</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>F2</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="3" infoCode="A" infoCodeVariant="941" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-49-52-07-03A-941A-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Cover and Switch Assembly</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F4999</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>F3</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="4" infoCode="A" infoCodeVariant="941" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-49-52-07-04A-941A-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Pneumatic Actuator Assembly</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F5000</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>F4</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="5" infoCode="A" infoCodeVariant="941" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-49-52-07-05A-941A-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Valve Flow Section</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F5001</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>F5</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="6" infoCode="A" infoCodeVariant="941" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-49-52-07-06A-941A-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Actuator Diaphragm Assembly</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F5002</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>F6</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="7" infoCode="A" infoCodeVariant="941" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-49-52-07-07A-941A-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Actuator Linkage Assembly</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F5003</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>F7</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="8" infoCode="A" infoCodeVariant="941" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-49-52-07-08A-941A-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Regulator Diaphragm Assembly</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F5004</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>F8</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="9" infoCode="A" infoCodeVariant="941" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-49-52-07-09A-941A-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Actuator Housing Assembly</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F5005</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>F9</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="10" infoCode="A" infoCodeVariant="941" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-49-52-07-10A-941A-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Valve Body Assembly</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F5006</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>F10</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="11" infoCode="A" infoCodeVariant="941" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-49-52-07-11A-941A-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Connecting Link Assembly</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F5007</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>F11</simplePara>
+			</remarks>
+		</dmlEntry>
+		<dmlEntry>
+			<dmRef>
+				<dmRefIdent>
+					<dmCode assyCode="2" disassyCode="7" disassyCodeVariant="12" infoCode="A" infoCodeVariant="941" itemLocationCode="A" modelIdentCode="DMC-HON99193-EAA-49-52-07-12A-941A-D" subSubSystemCode="5" subSystemCode="49" systemCode="EAA" systemDiffCode="HON99193"/>
+					<language countryIsoCode="en" languageIsoCode="D"/>
+				</dmRefIdent>
+				<dmRefAddressItems>
+					<dmTitle>
+						<techName>Sensitive Switch Assembly</techName>
+						<infoName/>
+					</dmTitle>
+				</dmRefAddressItems>
+			</dmRef>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="US">
+				<enterpriseName>F5008</enterpriseName>
+			</responsiblePartnerCompany>
+			<remarks>
+				<simplePara>F12</simplePara>
+			</remarks>
+		</dmlEntry>
+	</dmlContent>
+</dml>

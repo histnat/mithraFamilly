@@ -1,0 +1,78 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1A720000SF030190029A011 SYSTEM "x-dm://0900f90b8000275f,MYWORKING" NDATA tiff>
+<!ENTITY A1A720000SF030190030A011 SYSTEM "x-dm://0900f90b80002760,MYWORKING" NDATA tiff>
+]>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>0</section><subsect>0</subsect><subject>00</subject><discode>00</discode><discodev>A</discodev><incode>100</incode><incodev>F</incodev><itemloc>A</itemloc></avee></dmc>
+<dmtitle><techname>MOTEUR ASSEMBLE</techname><infoname>MISE EN OEUVRE ET UTILISATION - SORTIE DE LA MCS</infoname></dmtitle>
+<issno type="n" issno="1">
+<issdate month="03" year="2006" day="22">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 1"></version>
+<version version="M88-2 ETAPE 4"></version>
+<customer aaf="1" anf="1">
+<nti nti1="1" nti2="0" nti3="0"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Version initiale</rfu>
+<remarks>RAS</remarks>
+</status>
+</idstatus><content><refs>
+<refdm>
+<dmcid id="DM1"><dmcopen dmco="A1A00055200A100AA">MISE SOUS ET HORS TENSION SUR GENERATION ELECTRIQUE SOL - PROCEDURE</dmcopen></dmcid>
+<dmcid id="DM3"><dmcopen dmco="A1A45450000A130AA">MODE MAINTENANCE - SELECTION/DESELECTION</dmcopen></dmcid>
+<dmcid id="DM5"><dmcopen dmco="A1A45452100A130AA">PASSAGE EN MCS - PROCEDURE GENERALE</dmcopen></dmcid>
+<dmcid id="DM7"><dmcopen dmco="A1A45713100A320AA">MOTEURS - TESTS DECLENCHES</dmcopen></dmcid>
+<dmcid id="DM4"><dmcopen dmco="A1A49200000A130AA">TGA - DEMARRAGE</dmcopen></dmcid>
+</refdm>
+</refs><proced><pmd>
+<manhour value="0,1"></manhour>
+<duration value="0,1"></duration>
+</pmd><prelreqs><reqconds>
+<noconds></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="0,1"></reqper>
+</reqpers><supequip><nosupeq><nosupeqs></supequip><supplies><nosupply></supplies><miscs><nomisc></miscs><safety><nosafety></safety></prelreqs><mainfunc>
+<step1 control="0" id="P10">
+<title>Tests d&eacute;clench&eacute;s avec s&eacute;quence en ventilation</title>
+<para><p>Arr&ecirc;ter le gavage moteur<dmcref xrefid="DM7">.</p>
+</para>
+</step1>
+<step1 control="0" id="P20">
+<para><p>Quitter la MCS<dmcref xrefid="DM5">.</p>
+</para>
+</step1>
+<step1 control="0" id="P30">
+<title>Tests d&eacute;clench&eacute;s avec s&eacute;quence en ventilation</title>
+<para><p>Arr&ecirc;ter le TGA<dmcref xrefid="DM4">.</p>
+</para>
+</step1>
+<step1 control="0" id="P40">
+<para><p>Sortir du mode maintenance<dmcref xrefid="DM3">.</p>
+</para>
+</step1>
+<step1 control="0" id="P50">
+<para><p>Couper l'alimentation 28&nbsp;V du moteur assembl&eacute;<dmcref xrefid="DM1">. </p>
+</para>
+</step1>
+<step1 control="0" id="P60">
+<specpara>
+<caution>
+<p>R&eacute;initialiser l'avion en sortie de MCS pour visualiser les changements d'&eacute;tat en CRI.</p>
+</caution>
+</specpara>
+<para><p>R&eacute;initialiser l'avion.</p>
+</para>
+</step1>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule><?Pub Caret>
+<?Pub *0000003204 0>

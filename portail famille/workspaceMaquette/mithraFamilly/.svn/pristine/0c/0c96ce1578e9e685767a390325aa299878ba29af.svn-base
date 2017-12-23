@@ -1,0 +1,319 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1A732110SF030100199A011 SYSTEM "x-dm://0900f90b8003298b,MYWORKING" NDATA cgm>
+<!ENTITY A1A732110SF030100198A011 SYSTEM "x-dm://0900f90b8003298a,MYWORKING" NDATA cgm>
+<!ENTITY A1A732110SF030100197A011 SYSTEM "x-dm://0900f90b80032989,MYWORKING" NDATA cgm>
+<!ENTITY A1A732110SF030100196A011 SYSTEM "x-dm://0900f90b80032988,MYWORKING" NDATA cgm>
+<!ENTITY A1A732110SF030100195A011 SYSTEM "x-dm://0900f90b80032987,MYWORKING" NDATA cgm>
+<!ENTITY A1A732110SF030100191A011 SYSTEM "x-dm://0900f90b8000406e,MYWORKING" NDATA cgm>
+<!ENTITY A1A732210SF030100108A011 SYSTEM "x-dm://0900f90b80003ab3,MYWORKING" NDATA cgm>
+<!ENTITY A1A732110SF030100193A011 SYSTEM "x-dm://0900f90b80004071,MYWORKING" NDATA cgm>
+]>
+<?Pub Inc>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>1</subsect><subject>10</subject><discode>92</discode><discodev>A</discodev><incode>717</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmc>
+<dmtitle><techname>FAISCEAU ELECTRIQUE BLOC HYDROMECANIQUE PRINCIPAL</techname><infoname>PROCEDURES D'ASSEMBLAGE PROPREMENT DITE</infoname></dmtitle>
+<issno type="c" issno="3">
+<issdate month="04" year="2010" day="30">
+</dmaddres><status>
+<security class="np">
+<rpc rpcname="s">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 4"></version>
+<nti nti3="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Prise en compte de la FRD N&deg; 0970.</rfu>
+<remarks>RAS</remarks>
+<icns><icn id="a1a732110sf030100199a011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>1</subsect><subject>10</subject><rpc rpcname="s"><orig>F0301</orig><illnum>00199</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="a1a732110sf030100198a011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>1</subsect><subject>10</subject><rpc rpcname="s"><orig>F0301</orig><illnum>00198</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="a1a732110sf030100197a011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>1</subsect><subject>10</subject><rpc rpcname="s"><orig>F0301</orig><illnum>00197</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="a1a732110sf030100196a011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>1</subsect><subject>10</subject><rpc rpcname="s"><orig>F0301</orig><illnum>00196</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="a1a732110sf030100195a011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>1</subsect><subject>10</subject><rpc rpcname="s"><orig>F0301</orig><illnum>00195</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<norefs>
+</refs><proced><pmd>
+<manhour value="1,00"></manhour>
+<duration value="1,00"></duration>
+</pmd><prelreqs change="add"><reqconds><reqcondli><reqcond>
+<cond><para><p>Les composants &eacute;lectriques sont pos&eacute;s sur l'&eacute;tabli.</p>
+</para>
+</cond>
+</reqcond></reqcondli></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="1,00"></reqper>
+</reqpers><supequip><nosupeq><supeqlis>
+<supequis id="O2.S0013"><refipc csn="72016001 002 "><nomen>GENERATEUR D'AIR CHAUD</nomen><quantity>1</quantity></supequis>
+</supeqlis></supequip><supplies><supplyli>
+<supply id="R01" mand="1"><refipc csn="72013002 030 "><nomen>GAINE THERMORETRACTABLE</nomen><quantity>SB</quantity></supply>
+<supply id="R02" mand="1"><refipc csn="72013002 029 "><nomen>GAINE THERMORETRACTABLE</nomen><quantity>SB</quantity></supply>
+</supplyli></supplies><miscs><nomisc></miscs><safety><nosafety></safety></prelreqs><mainfunc>
+<step1 control="0" id="p10">
+<title>Mise &agrave; longueur des fils des composants</title>
+<specpara>
+<note>
+<p>Les longueurs mentionn&eacute;es ci-dessous sont strictement indicatives, les fils &eacute;tant recoup&eacute;s lors du sertissage des broches.</p>
+</note>
+</specpara>
+<table tocentry="1">
+<tgroup cols="4" align="left"><colspec colname="col1" colwidth="6.00cm"><colspec colname="col2" colwidth="3.00cm"><colspec colname="col3" colwidth="3.00cm"><colspec colname="col4" colwidth="3.00cm">
+<tbody valign="top">
+<row>
+<entry colname="col1"><para><p>DESIGNATION</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>REPERE</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>LONGUEUR</p>
+</para>
+</entry>
+<entry colname="col4" valign="middle" align="center"><para><p>TOLERANCE</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1" valign="top" morerows="0"><para><p>CORPS DE CAPTEUR GAUCHE<figref repnohot="DA135" refid="a732110sf030100199a011"></p>
+</para>
+</entry>
+<entry colname="col2" valign="top" morerows="0"><para><p><refipc csn="73211002 028 "></p>
+</para>
+</entry>
+<entry colname="col3" valign="top" morerows="0"><para><p>420&nbsp;mm</p>
+</para>
+</entry>
+<entry colname="col4" valign="middle" align="center" morerows="4"><para><p>+&nbsp;0&nbsp;mm</p>
+</para>
+<para><p>-&nbsp;20&nbsp;mm</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1" valign="top" morerows="0"><para><p>CORPS DE CAPTEUR DROIT<figref repnohot="DA135" refid="a732110sf030100199a011"></p>
+</para>
+</entry>
+<entry colname="col2" valign="top" morerows="0"><para><p><refipc csn="73211002 028 "></p>
+</para>
+</entry>
+<entry colname="col3" valign="top" morerows="0"><para><p>410&nbsp;mm</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1" valign="top" morerows="0"><para><p>SONDE DE TEMPERATURE <figref repnohot="HP000" refid="a732110sf030100199a011"></p>
+</para>
+</entry>
+<entry colname="col2" valign="top" morerows="0"><para><p><refipc csn="73211002 016 "></p>
+</para>
+</entry>
+<entry colname="col3" valign="top" morerows="0"><para><p>350&nbsp;mm</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1" valign="top" morerows="0"><para><p>ELECTRO-ROBINET <figref repnohot="HTA00" refid="a732110sf030100199a011"></p>
+</para>
+</entry>
+<entry colname="col2" valign="top" morerows="0"><para><p><refipc csn="73211002 020 "></p>
+</para>
+</entry>
+<entry colname="col3" valign="top" morerows="0"><para><p>350&nbsp;mm</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1" valign="top" morerows="0"><para><p>SERVO-VALVE<figref repnohot="HNA00" refid="a732110sf030100199a011"></p>
+</para>
+</entry>
+<entry colname="col2" valign="top" morerows="0"><para><p><refipc csn="73211002 024 "></p>
+</para>
+</entry>
+<entry colname="col3" valign="top" morerows="0"><para><p change="mod">270&nbsp;mm</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step1>
+<step1 control="0" id="p20">
+<title>Mise en place des gaines sur les capteurs (DA135)</title>
+<specpara>
+<note>
+<p>Le d&eacute;roul&eacute; op&eacute;ratoire de montage des gaines est identique pour les 2 capteurs hormis le pr&eacute;formage des fils.</p>
+</note>
+</specpara>
+<step2 control="0" id="p20-10">
+<title>Sortie 2 fils</title>
+<step3>
+<para><p>Introduire les 2 fils dans un morceau de gaine 5/64 <supplref refid="R02"> (&oslash;. 2 mm) d'environ 40 mm de longueur <figref repnohot="DA139" refid="a732110sf030100198a011">.</p>
+</para>
+</step3>
+<step3>
+<para><p>Faire p&eacute;n&eacute;trer cette gaine &agrave; fond &agrave; l'int&eacute;rieur de la gaine caoutchouc du capteur <figref repnohot="DA135" refid="a732110sf030100198a011">.</p>
+</para>
+</step3>
+<step3>
+<para><p>R&eacute;treindre la gaine 5/64 &agrave; l'aide du g&eacute;n&eacute;rateur d'air chaud<supeqref refid="O2.S0013"> (327&deg;C &gt; T&deg; &gt; 400&deg;C) <figref repnohot="DA139" refid="a732110sf030100198a011">.</p>
+</para>
+</step3>
+</step2>
+<step2 control="0" id="p20-20">
+<title>Sortie 4 fils</title>
+<step3>
+<para><p>Introduire les 4 fils dans un morceau de gaine 1/8 <supplref refid="R01"> (&oslash;. 3,2mm) d'environ 40 mm de longueur <figref repnohot="DA138" refid="a732110sf030100198a011">.</p>
+</para>
+</step3>
+<step3>
+<para><p>Recouvrir la gaine caoutchouc du capteur jusqu'&agrave; environ 2 mm de la face du capteur<figref repnohot="DA135" refid="a732110sf030100198a011">.</p>
+</para>
+</step3>
+<step3>
+<para><p>R&eacute;treindre la gaine 1/8 &agrave; l'aide du g&eacute;n&eacute;rateur d'air chaud<supeqref refid="O2.S0013"> (327&deg;C &gt; T&deg; &gt; 400&deg;C)<figref repnohot="DA138" refid="a732110sf030100198a011">.</p>
+</para>
+</step3>
+</step2>
+<step2 control="0" id="p20-30">
+<title>Gainage des 6 fils</title>
+<step3>
+<para><p>Introduire les 6 fils du capteur dans une gaine 1/8 <supplref refid="R01"> plus courte de 30 mm que la longueur des fils<figref repnohot="DA135, DA138" refid="a732110sf030100198a011"> .</p>
+</para>
+</step3>
+<step3>
+<para><p>Pr&eacute;former les fils <figref repnohot="VUE B" refid="a732110sf030100198a011">.</p>
+</para>
+</step3>
+<step3>
+<para><p change="add">Recouvrir les 2 gaines d&eacute;j&agrave; en place sur 10 mm minimum.</p>
+</para>
+</step3>
+<step3>
+<para><p change="add">R&eacute;treindre la gaine 1/8 &agrave; l'aide du g&eacute;n&eacute;rateur d'air chaud <supeqref refid="O2.S0013"> (327&deg;C &gt; T&deg; &gt; 400&deg;C) <figref repnohot="DA138" refid="a732110sf030100198a011">.</p>
+</para>
+</step3>
+</step2>
+</step1>
+<step1 id="p30">
+<title>Mise en place des gaines sur la sonde de temp&eacute;rature (HP000)</title>
+<step2 id="p30-10">
+<para><p>Couper 2 morceaux de gaine 5/64 <supplref refid="R02"> (&oslash; 2 mm) d'environ 320 mm de longueur <figref refid="a732110sf030100197a011">.</p>
+</para>
+</step2>
+<step2 id="p30-20">
+<para><p>Introduire les fils rouge et bleu dans un morceau de gaine.</p>
+</para>
+</step2>
+<step2 id="p30-30">
+<para><p>Introduire les fils noir et blanc dans l'autre morceau de gaine.</p>
+</para>
+</step2>
+<step2 id="p30-40">
+<para><p>Pousser les gaines sans d&eacute;passer la pointe de la sonde.</p>
+</para>
+</step2>
+<step2 id="p30-70">
+<para><p>R&eacute;treindre les gaines 5/64 &agrave; l'aide du g&eacute;n&eacute;rateur d'air chaud<supeqref refid="O2.S0013">.</p>
+</para>
+</step2>
+<step2 id="p30-75">
+<para><p>Pousser manuellement les gaines 5/64<supplref refid="R02">(&oslash;&nbsp;2&nbsp;mm) en but&eacute;e sur la sonde.</p>
+</para>
+</step2>
+<step2 id="p30-80">
+<para><p>Couper un morceau de gaine 1/8 <supplref refid="R01"> (&oslash; 3,2 mm) de 100 mm de longueur<figref refid="a732110sf030100197a011">.</p>
+</para>
+</step2>
+<step2 id="p30-90">
+<para><p>Introduire les 2 gaines 5/64 <supplref refid="R02">dans le morceau de gaine 1/8.</p>
+</para>
+</step2>
+<step2 id="p30-100">
+<para><p>Pousser la gaine 1/8 en but&eacute;e sur la sonde.</p>
+</para>
+</step2>
+<step2 id="p30-110">
+<para><p>R&eacute;treindre la gaine 1/8 &agrave; l'aide du g&eacute;n&eacute;rateur d'air chaud<supeqref refid="O2.S0013"> (327&deg;C &gt; T &deg; &gt; 400&deg;C).</p>
+</para>
+</step2>
+</step1>
+<step1 id="p40">
+<title>Mise en place des gaines sur l'&eacute;lectro-robinet (HTA00)</title>
+<step2 id="p40-10">
+<para><p>Couper 2 morceaux de gaine 1/8 <supplref refid="R01"> (&oslash; 3,2 mm) d'environ 320 mm de longueur <figref refid="a732110sf030100196a011">.</p>
+</para>
+</step2>
+<step2 id="p40-20">
+<para><p>Introduire les fils rouge, bleu et blanc dans un morceau de gaine.</p>
+</para>
+</step2>
+<step2 id="p40-30">
+<para><p>Introduire les fils jaune, noir et vert dans l'autre morceau de gaine.</p>
+</para>
+</step2>
+<step2 id="p40-40">
+<para><p>Pousser les gaines en but&eacute;e sur l'&eacute;lectro-robinet <figref repnohot="HTA000" refid="a732110sf030100196a011">.</p>
+</para>
+</step2>
+<step2 id="p40-50">
+<para><p>R&eacute;teindre les 2 gaines 1/8 &agrave; l'aide du g&eacute;n&eacute;rateur d'air chaud<supeqref refid="O2.S0013"> (327&deg;C &gt; T&deg; &gt; 400&deg;C).</p>
+</para>
+</step2>
+</step1>
+<step1 id="p50">
+<title>Mise en place des gaines sur la servo-valve (HNA00)</title>
+<step2 id="p50-10">
+<para><p>Couper 2 morceaux de gaine 5/64<supplref refid="R02"> (&oslash;&nbsp;2&nbsp;mm) d'environ 240 mm de longueur <figref refid="a732110sf030100195a011">.</p>
+</para>
+</step2>
+<step2 id="p50-20">
+<para><p>Introduire les fils rouge et bleu dans un morceau de gaine.</p>
+</para>
+</step2>
+<step2 id="p50-30">
+<para><p>Introduire les fils noir et blanc dans l'autre morceau de gaine.</p>
+</para>
+</step2>
+<step2 id="p50-40">
+<para><p>Pousser les gaines en but&eacute;e sur la servo-valve <figref repnohot="HNA00" refid="a732110sf030100195a011">.</p>
+</para>
+</step2>
+<step2 id="p50-60">
+<para><p>R&eacute;treindre les 2 gaines 5/64<supplref refid="R02"> &agrave; l'aide du g&eacute;n&eacute;rateur d'air chaud <supeqref refid="O2.S0013">(327&deg;C &gt; T&deg; &gt; 400&deg;C).</p>
+</para>
+</step2>
+</step1>
+<figure id="a732110sf030100199a011">
+<title>FIGURE 1</title>
+<graphic callicn="A1A732110SF030100199A011">
+</figure>
+<figure id="a732110sf030100198a011">
+<title>FIGURE 2</title>
+<graphic callicn="A1A732110SF030100198A011">
+</figure>
+<figure id="a732110sf030100197a011">
+<title>FIGURE 3</title>
+<graphic callicn="A1A732110SF030100197A011">
+</figure>
+<figure id="a732110sf030100196a011">
+<title>FIGURE 4</title>
+<graphic callicn="A1A732110SF030100196A011">
+</figure>
+<figure id="a732110sf030100195a011">
+<title>FIGURE 5</title>
+<graphic callicn="A1A732110SF030100195A011">
+</figure>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000013584 0>

@@ -1,0 +1,209 @@
+package com.sonovision.openconv.modules.xslprocess.helper;
+
+import java.io.StringReader;
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.Map;
+import java.util.ServiceLoader;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.InputSource;
+
+import com.sedoc.dtdtoolbox.resource.model.Entity;
+import com.sedoc.dtdtoolbox.resource.model.Resource;
+import com.sedoc.toolbox.LogMes;
+import com.sedoc.toolbox.SpringBeanProvider;
+import com.sedoc.toolbox.bean.XMLFactoryService;
+import com.sonovision.openconv.codification.Codification;
+import com.sonovision.openconv.codification.exception.CodificationException;
+import com.sonovision.openconv.log.model.DBLogger;
+import com.sonovision.openconv.modules.xmlprocess.model.ResourcesModel;
+import com.sonovision.openconv.modules.xslprocess.helper.table.impl.GetTableCals;
+import com.sonovision.openconv.modules.xslprocess.helper.table.impl.LoadHtmlTable;
+import com.sonovision.openconv.service.impl.OpenConvServiceImpl;
+
+public abstract class XSLHelperMain {
+
+	static 	DBLogger dbLogger;
+	static XMLFactoryService xmlf;
+	
+	static{
+		dbLogger= new DBLogger();
+	}
+	
+	/**
+	 * it's just for test connection with this class from xsl
+	 */
+	public static void test()
+	{
+		System.out.println("test");
+	}
+	
+	/**
+	 * log Message in database
+	 * @param objectId  -  id of object on log is appliced
+	 * @param level - level of message "INFO","WARN","ERROR", "FATAL", "DEBUG"
+	 * @param message   -   message logged
+	 */
+	public static void logMessage(String objectId,String level,String message)
+	{
+		dbLogger.logObject(objectId, level,message);
+	}
+	
+	public boolean matches(String text, String regex)
+	{
+		Pattern p = Pattern.compile(regex);
+		Matcher m = p.matcher(text);
+		return m.matches();
+	}
+
+	/**
+	 * 
+	 * @param htmlTab
+	 * @return
+	 */
+	public static Node getCalsTabFromHtml(Node htmlTab){
+
+		LoadHtmlTable lht=new LoadHtmlTable(htmlTab);
+		GetTableCals gtc=null;
+		try{
+			lht.initTable();
+			lht.load();
+			gtc=new GetTableCals(lht.getLoadedTable());
+			gtc.initDocument();
+			gtc.generate();
+//			gtc.display();
+		}catch(Exception e){
+			LogMes.log(OpenConvServiceImpl.class, LogMes.FATAL, "problem for create the logging context"+e.getMessage());
+		}
+		return gtc.geteTable();
+	}
+
+
+	/**
+	 * return quantity of resource found in original file
+	 * @param xmlDmFilename
+	 * @param codeFab
+	 * @param refFab
+	 * @return
+	 */
+	public static String getResourceCount(String xmlDmFilename, String codeFab, String refFab){
+		Resource<Entity> resource = ResourcesModel.get(xmlDmFilename, codeFab, refFab);
+		if(resource!=null)
+			return String.valueOf(resource.getQte());
+		else
+			return null;
+	}
+
+
+	public static NodeList getPerson(String xmlDmFilename){
+
+		Map<String, Resource<Entity>> mapResource = ResourcesModel.get(xmlDmFilename);
+		List<Resource<Entity>> personnList = mapResource.values().stream().filter(x->x.getType()==x.getTypeOperateur()).collect(Collectors.toList());
+		StringBuffer personXML = new StringBuffer();
+		init();
+		personXML.append("<personList>");
+		for(Resource<Entity> person:personnList)
+		{
+			personXML.append(person.getXML());
+		}
+		personXML.append("</personList>");
+		try {
+			// System.out.println(sXML);
+			return xmlf.parseXmlDoc(new InputSource(new StringReader(personXML.toString()))).getChildNodes();
+		} catch (Exception ex) {
+			LogMes.log(OpenConvServiceImpl.class, LogMes.FATAL, "problem for create the logging context"+ex.getMessage());
+			return null;
+		}
+
+	}
+
+	public static String getRessourceId(String xmlDmFilename, String id)
+	{
+		Map<String, Resource<Entity>> mapResource = ResourcesModel.get(xmlDmFilename);
+		Resource<Entity> r = mapResource.values().stream().filter(x->x.getIds().get(id)!=null).findFirst().get();
+		List<Resource<Entity>> resourList= mapResource.values().stream().filter(x->x.getType()==r.getType()).collect(Collectors.toList());
+		int i=0;
+		while(resourList!=null && i<resourList.size() && !resourList.get(i).equals(r))
+		{
+			i++;
+		}
+		return (i+1)+"";
+	}
+
+	/**
+	 *
+	 * @param xmlDmFilename
+	 * @return
+	 */
+	public static String getTime(String xmlDmFilename){
+
+		Map<String, Resource<Entity>> mapResource = ResourcesModel.get(xmlDmFilename);
+		BigDecimal sum ;
+		 sum = mapResource
+				.values()
+				.stream()
+				.filter(x -> x.getType()==x.getTypeDuree())
+				.map(Resource::getTmi)
+				.reduce(BigDecimal.ZERO,BigDecimal::add);
+
+
+		return sum.toString();
+	}
+
+	private static void init()
+	{
+		if(xmlf==null)
+		{
+			xmlf=(XMLFactoryService)SpringBeanProvider.getBean("XMLFactoryService");
+		}
+	}
+	
+	
+	public static <T> T loadService(Class<T> api) {
+		 
+        T result = null;
+ 
+        ServiceLoader<T> impl = ServiceLoader.load(api);
+ 
+        for (T loadedImpl : impl) {
+            result = loadedImpl;
+            if ( result != null ) break;
+        }
+ 
+//        if ( result == null ) throw new RuntimeException(
+//            "Cannot find implementation for: " + api);
+ 
+        return result;
+ 
+    }
+	
+	public static Codification codification = loadService(Codification.class);
+	
+	public static String getNewFileNameCodification(String oldName,String codificationFilePath){
+		
+		String newName;
+		try {
+		    //codification.setCodificationParameter(codificationFilePath);
+		    
+			newName = codification.getNewFileName(oldName);
+		} catch (CodificationException e) {
+			LogMes.log(OpenConvServiceImpl.class, LogMes.FATAL, "problem codification "+oldName+" : "+e.getMessage());
+			return null;
+		}
+		catch (Exception e) {
+			LogMes.log(OpenConvServiceImpl.class, LogMes.FATAL, "problem codification "+oldName+" : "+e.getMessage());
+			return null;
+		}
+		//pb : il y a des dmref sufixés pas PAR3, etc...
+		if(newName!=null)
+			return newName.replaceAll("(?i).xml", "");
+		return null;
+	}
+	
+	
+}

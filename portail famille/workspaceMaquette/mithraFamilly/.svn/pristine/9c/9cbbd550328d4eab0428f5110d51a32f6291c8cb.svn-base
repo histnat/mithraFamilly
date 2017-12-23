@@ -1,0 +1,20 @@
+package com.sonovision.openconv.log;
+
+import com.sonovision.openconv.log.exception.LoggerException;
+import com.sonovision.openconv.log.model.DBLogger;
+
+public interface TaskLoggerService {
+	
+
+	/**
+	 * return DBLogger 
+	 * @param folderIn
+	 * @param folderOut
+	 * @param workFlowName
+	 * @param workFlowSequence
+	 * @return
+	 * @throws LoggerException 
+	 */
+	DBLogger getLogger(String folderIn, String folderOut, String workFlowName, String workFlowSequence) throws LoggerException;
+
+}

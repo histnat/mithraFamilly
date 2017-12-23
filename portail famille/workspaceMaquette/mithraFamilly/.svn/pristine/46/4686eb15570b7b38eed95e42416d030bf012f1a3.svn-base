@@ -1,0 +1,513 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1A732099SF030150330A011 SYSTEM "x-dm://0900f90b80075355,MYWORKING" NDATA jpeg>
+<!ENTITY A1A732099SF030150329A011 SYSTEM "x-dm://0900f90b80075354,MYWORKING" NDATA jpeg>
+<!ENTITY A1A732099SF030150328A011 SYSTEM "x-dm://0900f90b80075353,MYWORKING" NDATA jpeg>
+<!ENTITY A1A732099SF030150327A011 SYSTEM "x-dm://0900f90b80075352,MYWORKING" NDATA jpeg>
+<!ENTITY A1A732099SF030150326A011 SYSTEM "x-dm://0900f90b80075351,MYWORKING" NDATA jpeg>
+<!ENTITY A1A732099SF030150325A011 SYSTEM "x-dm://0900f90b80075350,MYWORKING" NDATA jpeg>
+<!ENTITY A1A732099SF030150324A011 SYSTEM "x-dm://0900f90b8007534f,MYWORKING" NDATA jpeg>
+<!ENTITY A1A732099SF030150323A011 SYSTEM "x-dm://0900f90b8007534e,MYWORKING" NDATA jpeg>
+<!ENTITY A1A732099SF030150322A011 SYSTEM "x-dm://0900f90b8007534d,MYWORKING" NDATA jpeg>
+<!ENTITY A1A732099SF030150321A011 SYSTEM "x-dm://0900f90b8007534c,MYWORKING" NDATA jpeg>
+<!ENTITY A1A732099SF030150320A011 SYSTEM "x-dm://0900f90b8007534b,MYWORKING" NDATA jpeg>
+<!ENTITY A1A732099SF030100019A011 SYSTEM "x-dm://0900f90b800546c5,MYWORKING" NDATA jpeg>
+]>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>0</subsect><subject>99</subject><discode>32</discode><discodev>A</discodev><incode>930</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmc>
+<dmtitle><techname>SERVICE BULLETIN CALCULATEUR PROGRAMME T3V2 COMPLET VISSE</techname><infoname>SERVICE BULLETIN - OPERATIONS EXCEPTIONNELLES DE MAINTENANCE - ECRITURE REFMAT EN MEMOIRE</infoname></dmtitle>
+<issno type="N" issno="1">
+<issdate month="03" year="2012" day="15">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 4"></version>
+<customer aaf="1" anf="1">
+<nti nti2="1" nti3="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Version initiale</rfu>
+<remarks>RAS</remarks>
+<icns><icn id="A1A732099SF030150320A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>0</subsect><subject>99</subject><rpc rpcname="S"><orig>F0301</orig><illnum>50320</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A732099SF030150321A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>0</subsect><subject>99</subject><rpc rpcname="S"><orig>F0301</orig><illnum>50321</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A732099SF030150322A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>0</subsect><subject>99</subject><rpc rpcname="S"><orig>F0301</orig><illnum>50322</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A732099SF030150323A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>0</subsect><subject>99</subject><rpc rpcname="S"><orig>F0301</orig><illnum>50323</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A732099SF030150324A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>0</subsect><subject>99</subject><rpc rpcname="S"><orig>F0301</orig><illnum>50324</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A732099SF030150325A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>0</subsect><subject>99</subject><rpc rpcname="S"><orig>F0301</orig><illnum>50325</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A732099SF030150326A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>0</subsect><subject>99</subject><rpc rpcname="S"><orig>F0301</orig><illnum>50326</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A732099SF030150327A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>0</subsect><subject>99</subject><rpc rpcname="S"><orig>F0301</orig><illnum>50327</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A732099SF030150328A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>0</subsect><subject>99</subject><rpc rpcname="S"><orig>F0301</orig><illnum>50328</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A732099SF030150329A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>0</subsect><subject>99</subject><rpc rpcname="S"><orig>F0301</orig><illnum>50329</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A732099SF030150330A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>0</subsect><subject>99</subject><rpc rpcname="S"><orig>F0301</orig><illnum>50330</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<refdm>
+<dmcid id="A1ARF720500A100FC"><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>RF</ecscc><eidc>72</eidc><cic>05</cic><discode>00</discode><discodev>A</discodev><incode>100</incode><incodev>F</incodev><itemloc>C</itemloc></age></dmcid>
+</refdm>
+</refs><proced><pmd>
+<manhour value="1,0"></manhour>
+<duration value="1,0"></duration>
+</pmd><prelreqs><reqconds><reqcondli><reqcond>
+<cond><para><p>Calculateur connect&eacute; &agrave; l'EPCM88</p>
+</para>
+</cond>
+</reqcond></reqcondli></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><subcat>Sp&eacute;cialiste</subcat><persnum no="1"><perstime value="1,0"></reqper>
+</reqpers><supequip><nosupeq><nosupeqs></supequip><supplies><nosupply></supplies><miscs><nomisc></miscs><safety>
+<specpara>
+<caution>
+<p>Effectuer les manipulations sur un poste prot&eacute;g&eacute;, avec port d'un bracelet antistatique&nbsp;: ce mat&eacute;riel est sensible &agrave; l'&eacute;lectricit&eacute; statique.</p>
+</caution>
+</specpara>
+</safety></prelreqs><mainfunc>
+<step1 control="0" id="P10">
+<title>CONSTAT</title>
+<list>
+<item><para><p>Les utilisateurs ont fait part de l'affichage d'une r&eacute;f&eacute;rence inconnue lors du branchement des calculateurs YJ025602, YJ025603, YJ025605 et YJ025606 au MDD.</p>
+</para>
+</item>
+<item><para><p>La r&eacute;f&eacute;rence 326-908-188-0 appara&icirc;t en lieu et place de la r&eacute;f&eacute;rence 326-908-182-0 pour des calculateurs t&eacute;l&eacute;charg&eacute;s en version logicielle VL08E.</p>
+</para>
+</item>
+</list>
+</step1>
+<step1 control="0" id="P20">
+<title>ANALYSE</title>
+<list>
+<item><para><p>Appliquer ce SB au premier retour NTI2 ou NTI3.</p>
+</para>
+</item>
+<item><para><p>Une enqu&ecirc;te qualit&eacute; a permis de d&eacute;terminer l'erreur &agrave; l'origine de cet &eacute;cart.</p>
+</para>
+</item>
+<item><para><p>La r&eacute;f&eacute;rence mat&eacute;rielle inscrite en m&eacute;moire EEPROM dans ces calculateurs lors des phases de production est 69082080 (pour 326-908-208-0) au lieu de 69082020 (pour 326-908-202-0).</p>
+</para>
+</item>
+<item><para><p>La r&eacute;f&eacute;rence mat&eacute;rielle 326-908-208-0 faisait partie de r&eacute;f&eacute;rences r&eacute;serves et appartient par cons&eacute;quent &agrave; la liste des r&eacute;f&eacute;rences possibles reconnues et accept&eacute;es par le logiciel de test Mermoz pour un calculateur en version mat&eacute;rielle Type 3 V2 complet viss&eacute;.</p>
+</para>
+</item>
+<item><para><p>Associ&eacute; &agrave; la version logicielle VL08E, la r&eacute;f&eacute;rence mat&eacute;rielle 326-908-208-0 donne la version calculateur 326-908-188-0.</p>
+</para>
+</item>
+<item><para><p>Les calculateurs list&eacute;s dans le tableau suivant pr&eacute;sentent une r&eacute;f&eacute;rence mat&eacute;rielle (REFMAT) erron&eacute;e qui doit &ecirc;tre corrig&eacute;e &agrave; l'occasion d'un passage &agrave; l'ATE Mermoz.</p>
+</para>
+</item>
+</list>
+<table>
+<tgroup cols="6"><colspec colnum="1" colname="col1" colwidth="28 mm" align="center"><colspec colnum="2" colname="col2" colwidth="28 mm" align="center"><colspec colnum="3" colname="col3" colwidth="28 mm" align="center"><colspec colnum="4" colname="col4" colwidth="28 mm" align="center"><colspec colnum="5" colname="col5" colwidth="28 mm" align="center"><colspec colnum="6" colname="col6" colwidth="28 mm" align="center">
+<tbody>
+<row>
+<entry colname="col1"><para><p>YJ025559</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>YJ025568</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>YJ025571</p>
+</para>
+</entry>
+<entry colname="col4"><para><p>YJ025572</p>
+</para>
+</entry>
+<entry colname="col5"><para><p>YJ025573</p>
+</para>
+</entry>
+<entry colname="col6"><para><p>YJ025574</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>YJ025575</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>YJ025576</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>YJ025577</p>
+</para>
+</entry>
+<entry colname="col4"><para><p>YJ025578</p>
+</para>
+</entry>
+<entry colname="col5"><para><p>YJ025579</p>
+</para>
+</entry>
+<entry colname="col6"><para><p>YJ025580</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>YJ025581</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>YJ025582</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>YJ025583</p>
+</para>
+</entry>
+<entry colname="col4"><para><p>YJ025584</p>
+</para>
+</entry>
+<entry colname="col5"><para><p>YJ025585</p>
+</para>
+</entry>
+<entry colname="col6"><para><p>YJ025586</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>YJ025587</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>YJ025588</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>YJ025589</p>
+</para>
+</entry>
+<entry colname="col4"><para><p>YJ025590</p>
+</para>
+</entry>
+<entry colname="col5"><para><p>YJ025591</p>
+</para>
+</entry>
+<entry colname="col6"><para><p>YJ025592</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>YJ025594</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>YJ025595</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>YJ025596</p>
+</para>
+</entry>
+<entry colname="col4"><para><p>YJ025597</p>
+</para>
+</entry>
+<entry colname="col5"><para><p>YJ025598</p>
+</para>
+</entry>
+<entry colname="col6"><para><p>YJ025599</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>YJ025600</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>YJ025601</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>YJ025602</p>
+</para>
+</entry>
+<entry colname="col4"><para><p>YJ025603</p>
+</para>
+</entry>
+<entry colname="col5"><para><p>YJ025604</p>
+</para>
+</entry>
+<entry colname="col6"><para><p>YJ025605</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>YJ025606</p>
+</para>
+</entry>
+<entry colname="col2"><para><p></p>
+</para>
+</entry>
+<entry colname="col3"><para><p></p>
+</para>
+</entry>
+<entry colname="col4"><para><p></p>
+</para>
+</entry>
+<entry colname="col5"><para><p></p>
+</para>
+</entry>
+<entry colname="col6"><para><p></p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<note>
+<p>Cet &eacute;cart n'a aucun impact fonctionnel sur les calculateurs concern&eacute;s.</p>
+</note>
+</step1>
+<step1 control="0" id="P30">
+<title>ACTIONS</title>
+<para><p>Le changement de REFMAT est possible &agrave; l&rsquo;ATE Mermoz, il consiste &agrave; aller changer cette r&eacute;f&eacute;rence en E2PROM carte selon la proc&eacute;dure suivante :</p>
+</para>
+<step2 control="0" id="P30-10">
+<para><p>Choisir &ldquo;EXPLOITATION ATE&rdquo; dans l&rsquo;onglet &ldquo;EXPLOITATION&rdquo; <figref refid="A732099SF030150320A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P30-20">
+<para><p>S&eacute;lectionner la version UST <figref refid="A732099SF030150321A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P30-30">
+<para><p>S&eacute;lectionner la version EP <figref refid="A732099SF030150321A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P30-40">
+<para><p>S&eacute;lectionner le type &eacute;tat <figref refid="A732099SF030150321A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P30-50">
+<para><p>Renseigner le num&eacute;ro de s&eacute;rie calculateur <figref refid="A732099SF030150321A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P30-60">
+<para><p>Cliquer sur le bouton &ldquo;Exploiter&rdquo; <figref refid="A732099SF030150321A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P30-70">
+<para><p>S&eacute;lectionnez dans la liste &ldquo;TELECHARGEMENT&rdquo; puis cliquer sur le bouton &ldquo;Ex&eacute;cuter&rdquo; <figref refid="A732099SF030150321A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P30-80">
+<para><p>Apr&egrave;s l&rsquo;affichage de la fen&ecirc;tre &ldquo;Adaptateur&rdquo;, cliquer sur le bouton &ldquo;OK&rdquo; pour lancer l&rsquo;ex&eacute;cution <figref refid="A732099SF030150322A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P30-90">
+<para><p>Apr&egrave;s 1mn, dans la nouvelle fen&ecirc;tre, cliquer sur le bouton &ldquo;Ex&eacute;cuter&rdquo; <figref refid="A732099SF030150323A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P30-100">
+<para><p>Saisir dans le champ saisie &ldquo;initialisation du cartouche&rdquo; puis cliquer sur le bouton &ldquo;OK&rdquo; <figref refid="A732099SF030150324A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P30-110">
+<para><p>La fen&ecirc;tre &ldquo;RENSEIGNEMENT OPERATEUR&rdquo; s&rsquo;ouvre <figref refid="A732099SF030150325A011">, cliquer sur le bouton &ldquo;Editer&rdquo; pour remplir les champs suivants comme indiqu&eacute; :</p>
+</para>
+<step3>
+<para><p>NOM OPERATEUR : admate<figref refid="A732099SF030150326A011"></p>
+</para>
+</step3>
+<step3>
+<para><p>NUMERO FIT : E2PROM (ou e2prom) <figref refid="A732099SF030150327A011"></p>
+</para>
+</step3>
+<step3>
+<para><p>RAISON DU TEST : RECETTE <figref refid="A732099SF030150328A011"></p>
+</para>
+</step3>
+</step2>
+<step2 control="0" id="P30-120">
+<para><p>R&eacute;pondre aux questions :</p>
+</para>
+<step3>
+<para><p>Cliquer sur le bouton&nbsp;&ldquo;Oui&rdquo; &agrave; la question : VOULEZ VOUS ECRIRE DANS LES E2PROMS&nbsp;?</p>
+</para>
+</step3>
+<step3>
+<para><p>Cliquer sur le bouton&nbsp;&ldquo;Non&rdquo; &agrave; la question&nbsp;: VOULEZ VOUS INITIALISER LES E2PROMS&nbsp;?</p>
+</para>
+</step3>
+</step2>
+<step2 control="0" id="P30-130">
+<para><p>Choisir TBF complet <figref refid="A732099SF030150329A011"><figref refid="A732099SF030150330A011"> :</p>
+</para>
+<step3>
+<para><p>Cliquer sur le bouton&nbsp;&ldquo;Oui&rdquo; &agrave; la question&nbsp;: ETES VOUS SUR DE VOULOIR CONTINUER&nbsp;?</p>
+</para>
+</step3>
+<step3>
+<para><p>Cliquer sur le bouton&nbsp;&ldquo;Non&rdquo; &agrave; la question&nbsp;: VOULEZ-VOUS ARRETER SUR PANNE&nbsp;?</p>
+</para>
+</step3>
+</step2>
+<step2 control="0" id="P30-140">
+<para><p>Renseigner les champs suivants dans le tableau ci-dessous d&rsquo;apr&egrave;s les informations contenues dans le LIM.</p>
+</para>
+<table tocentry="1">
+<tgroup cols="2"><colspec colnum="1" colname="col1" colwidth="9cm"><colspec colnum="2" colname="col2" colwidth="7cm" align="left">
+<tbody>
+<row>
+<entry colname="col1" align="center"><para><p>R&eacute;f&eacute;rence Mat&eacute;riel Calculateur</p>
+</para>
+</entry>
+<entry colname="col2" align="center"><para><p>69082020</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Num&eacute;ro de s&eacute;rie calculateur</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>025xxx</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Type de Carte SM</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>02 ou 03</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Type de Carte ES</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>02 ou 03</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>N&deg; de S&eacute;rie Carte Num&eacute;rique</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>008-Fxxx ou 008-xxxx</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>N&deg; de S&eacute;rie Carte Communication</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>009-Fxxx ou 009-xxxx</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>N&deg; de S&eacute;rie Carte Entr&eacute;es-Sorties</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>007-Fxxx ou 007-xxxx</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>N&deg; de S&eacute;rie Surveillance Moteur</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>006-Fxxx ou 006-xxxx</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>N&deg; de S&eacute;rie Bloc Pression</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>011-Fxxx ou EMxxxxxx</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Initialisation Cartouche (Ann&eacute;e/Semaine)</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>XXYY</p><?Pub Caret1>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Date de Fabrication (Ann&eacute;e/Semaine = date d'application du SB)</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>XXYY</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Date de recette (Ann&eacute;e/Semaine = date d'application du SB)</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>XXYY</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step2>
+<step2 control="0" id="P30-150">
+<para><p>Apr&egrave;s &eacute;criture dans les E2PROMs (environ 10 min), s&eacute;lectionner &ldquo;FIN DE TEST" puis cliquer sur le bouton &ldquo;OK&rdquo;.</p>
+</para>
+<para><p>Le contenu de l&rsquo;E2PROM peut &ecirc;tre ensuite visualis&eacute; pour v&eacute;rification.</p>
+</para>
+</step2>
+</step1>
+<step1 control="0" id="P40">
+<title>INFORMATIONS COMPLEMENTAIRES</title>
+<para><p>Renseigner le livret informatis&eacute; Moteur du calculateur <dmcref xrefid="A1ARF720500A100FC"> apr&egrave;s application du pr&eacute;sent service bulletin.</p>
+</para>
+</step1>
+<figure id="A732099SF030150320A011">
+<title>Onglet Exploitation</title>
+<graphic callicn="A1A732099SF030150320A011">
+</figure>
+<figure id="A732099SF030150321A011">
+<title>Onglet Capsule d'exploitation de l'ATE</title>
+<graphic callicn="A1A732099SF030150321A011">
+</figure>
+<figure id="A732099SF030150322A011">
+<title>Fen&ecirc;tre ADAPTATEUR</title>
+<graphic callicn="A1A732099SF030150322A011">
+</figure>
+<figure id="A732099SF030150323A011">
+<title>Fen&ecirc;tre Exec v21.0</title>
+<graphic callicn="A1A732099SF030150323A011">
+</figure>
+<figure id="A732099SF030150324A011">
+<title>Fen&ecirc;tre Saisie d'une chaine de caract&egrave;res</title>
+<graphic callicn="A1A732099SF030150324A011">
+</figure>
+<figure id="A732099SF030150325A011">
+<title>Fen&ecirc;tre RENSEIGNEMENTS OPERATEUR</title>
+<graphic callicn="A1A732099SF030150325A011">
+</figure>
+<figure id="A732099SF030150326A011">
+<title>Fen&ecirc;tre Saisie NOM OPERATEUR</title>
+<graphic callicn="A1A732099SF030150326A011">
+</figure>
+<figure id="A732099SF030150327A011">
+<title>Fen&ecirc;tre Saisie NUMERO DE FIT</title>
+<graphic callicn="A1A732099SF030150327A011">
+</figure>
+<figure id="A732099SF030150328A011">
+<title>Fen&ecirc;tre S&eacute;lection RAISON DU TEST</title>
+<graphic callicn="A1A732099SF030150328A011">
+</figure>
+<figure id="A732099SF030150329A011">
+<title>Fen&ecirc;tre S&eacute;lection d'une chaine de caract&egrave;res</title>
+<graphic callicn="A1A732099SF030150329A011">
+</figure>
+<figure id="A732099SF030150330A011">
+<title>Fen&ecirc;tre Question</title>
+<graphic callicn="A1A732099SF030150330A011">
+</figure>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000019730 0>

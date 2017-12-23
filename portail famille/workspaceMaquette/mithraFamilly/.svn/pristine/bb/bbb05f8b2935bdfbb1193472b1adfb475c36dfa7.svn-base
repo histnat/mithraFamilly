@@ -1,0 +1,141 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                            RAFALE                                  *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.1                            *
+    *                   Dated 15th January 1998                          *
+    *                                                                    *
+    * Amendment :-                                                       *
+    * 1. Update Public Identifier.                                       *
+    * 2. Removal of Marked Sections.                                     *
+    * 3. add dmtitle optionnal to dmcidref                               *
+    * 4. Add ALLDMC instead of (age|avee) for dmcidref                   *
+	*                                                                    *
+	*  15/01/98   : Replace dmcidref by dmcid (with same sructure)   	 *
+	*               delete csn and isn tag definition                    *
+	*               add tpcode and tptitle after techpub                 *
+	*               add dmco attribute to dmcopen                        *
+	*                                                                    *
+	* Typical invocation :                                               *
+    * <!ENTITY % EXTCONT                                                 *
+    *   PUBLIC "-//RAFALE//ELEMENTS Content Breakdown 980115//EN" >      *
+    * %EXTCONT;                                                          *
+    ********************************************************************** -->
+
+
+
+<!--**********************************************************************
+    * Define Element CONTENT (Content Structure) containing:-            *
+    *  REFS     - mandatory  single      contains NOREFS, RDANDRT, REFDM,*
+    *                                    REFTP.                          *
+    *  Definition stored in entity %CONTENT;                             *
+    ********************************************************************** -->
+
+<!ELEMENT content - o (refs,%CONTENT;) >
+
+
+
+<!--**********************************************************************
+    * Define Element REFS (References) containing:-                      *
+    *  NOREFS   - mandatory  single      contains No Other Tags.         *
+    * or                                                                 *
+    *  RDANDRT  - mandatory  single      contains REFDM, REFTP.          *
+    * or                                                                 *
+    *  REFDM    - mandatory  single      contains definition stored in   *
+    *                                     entity %ALLDMC;                *
+    * or                                                                 *
+    *  REFTP    - mandatory  single      contains TECHPUB.               *
+    ********************************************************************** -->
+
+<!ELEMENT refs - o (norefs | rdandrt | refdm | reftp) >
+<!ATTLIST refs   %INSDEL;>
+
+
+<!--**********************************************************************
+    * Define Element NOREFS (No References) containing:-                 *
+    *  No Other Tags.                                                    *
+    ********************************************************************** -->
+
+<!ELEMENT norefs - o EMPTY >
+<!ATTLIST norefs   %INSDEL;>
+
+
+<!--**********************************************************************
+    * Define Element RDANDRT (Reference Data Modules And Technical       *
+    * Publications) containing:-                                         *
+    *  REFDM    - mandatory  single      contains definition stored in   *
+    *                                     entity %ALLDMC;                *
+    *  REFTP    - mandatory  single      contains TECHPUB                *
+    ********************************************************************** -->
+
+<!ELEMENT rdandrt - o (refdm,reftp) >
+<!ATTLIST rdandrt   %INSDEL;>
+
+
+
+<!--*********************************************************************
+    * Define Element REFDM (Reference To Data Modules)                  *
+    *********************************************************************-->
+
+<!ELEMENT refdm - - (dmcid+) > 
+<!ATTLIST refdm     %INSDEL;>
+
+<!--*********************************************************************
+    * Define Element DMCID (Reference Data Modules ID).				    *
+     *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %bodyatt;               *
+	*********************************************************************-->
+<!ELEMENT dmcid - - ((%ALLDMC;,issno?,dmtitle?)|dmcopen)>
+<!ATTLIST dmcid %bodyatt; >
+
+
+<!--*********************************************************************
+    * Define Element DMCOPEN (OPEN REFERENCE).					        *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  dmco  - CDATA - IMPLIED - Data module open code                   *
+    * Attribute Definition list stored in entity %INSDEL;                *
+	*********************************************************************-->
+<!ELEMENT dmcopen - - (#PCDATA)>
+<!ATTLIST dmcopen     
+			dmco CDATA #IMPLIED 
+			%INSDEL;>
+
+
+<!--**********************************************************************
+    * Define Element REFTP (Reference Technical Publication) containing:-*
+    *  TECHPUB  - mandatory  repeatable  contains TPCODE and TPTITLE     *
+    ********************************************************************** -->
+
+<!ELEMENT reftp - - (techpub+) >
+<!ATTLIST reftp     %INSDEL;>
+
+
+<!--**********************************************************************
+    * Define Element TECHPUB (TECHNICAL PUBLICATION).	                 *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+	* Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %bodyatt;               *
+	**********************************************************************-->
+<!ELEMENT techpub - - (tpcode,tptitle) >
+<!ATTLIST techpub
+	  %bodyatt; >
+
+
+<!--**********************************************************************
+    * Define Element TPCODE (TECHNICAL PUBLICATION REFERENCE).           *
+    **********************************************************************-->
+<!ELEMENT tpcode - - (#PCDATA)>
+<!ATTLIST tpcode     %INSDEL;>
+
+
+<!--**********************************************************************
+    * Define Element TPTITLE (TECHNICAL PUBLICATION TITLE).	             *
+    **********************************************************************-->
+<!ELEMENT tptitle - - (#PCDATA)>
+<!ATTLIST tptitle     %INSDEL;>
+
+
+

@@ -1,0 +1,181 @@
+<!--*************************************************************************
+    *									       	                            *
+    *				      RAFALE                      				       	*
+    *									       	                            *
+    *				Release Version 2.1		                    	       	*
+    *				Dated 15 January 1998                  			       	*
+    *									       	                            *
+    *				                            					       	*
+    *	Company in charge of :					                	       	*
+    *								                            	       	*
+    *	Module Object : Numbered Paragraphs Breakdown.			        	*
+    *									                                 	*
+    *  Amendment     :														*
+    *   19/05/97      : Changed Public Identifier							*
+	*				   rajout de &ACPAR dans NARCON pour particulariser		*
+	*				   l'appel de caption group								*
+	*																		*
+	*   15/01/98      : Changed Public Identifier							*
+	*				   add Yellow and magenta to color attributes of caption*
+	*				                            							*
+	*																		*
+    *  Typical invocation :													*
+    *   <!ENTITY % EXTPARA													*
+    *   PUBLIC																*
+    *   "-//RAFALE//ELEMENTS Numbered Paragraphs Breakdown 980115//EN" >	*
+    *   %EXTPARA;															*
+    *************************************************************************-->
+
+
+<!--*************************************************************************
+    * Define Entity %nparcon (Numbered/Titled Paragraphs).			        *
+    *************************************************************************-->
+<!ENTITY % nparcon 
+	"(%applic)?,title?,specpara?,(para|%list; |capgrp |figure|table)*" >
+
+
+
+<!--*************************************************************************
+    * Define Element PARA0 (Primary Paragraph).				             	*
+    *************************************************************************-->
+<!ELEMENT para0    - - ((%nparcon;),(subpara1,subpara1+,note*)?)
+		-- Primary Paragraph.-->
+<!ATTLIST para0
+              %bodyatt; 
+              >
+
+
+<!--************************************************************************
+    * Define Element SUBPARA1 (Sub Paragraph Level 1).				       *
+    ************************************************************************-->
+<!ELEMENT subpara1 - - ((%nparcon;),(subpara2,subpara2+,note*)?)
+		-- Sub Paragraph Level 1.-->
+<!ATTLIST subpara1
+              %bodyatt; 
+              >
+
+
+<!--************************************************************************
+    * Define Element SUBPARA2 (Sub Paragraph Level 2).				       *
+    ************************************************************************-->
+<!ELEMENT subpara2 - - ((%nparcon;),(subpara3,subpara3+,note*)?)
+		-- Sub Paragraph Level 2.-->
+<!ATTLIST subpara2
+              %bodyatt; 
+              >
+
+
+<!--*****************************************************************************
+    * Define Element SUBPARA3 (Sub Paragraph Level 3).				*
+    **************************************************************************-->
+<!ELEMENT subpara3 - - ((%nparcon;),(subpara4,subpara4+,note*)?)
+		-- Sub Paragraph Level 3.-->
+<!ATTLIST subpara3
+              %bodyatt; 
+              >
+
+
+<!--*****************************************************************************
+    * Define Element SUBPARA4 (Sub Paragraph Level 4).				*
+    **************************************************************************-->
+<!ELEMENT subpara4 - - (%nparcon;) -- Sub Paragraph Level 4.-->
+<!ATTLIST subpara4
+              %bodyatt; 
+              >
+
+<!--**********************************************************************
+    * Define Element CAPGRP (Caption Group) containing:-                 *
+    *  CAPROW   - mandatory repeatable contains CAPTION.                 *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):                                                      *
+    *  ALIGN    - Declared - "LEFT"   - Align Caption Group              *
+    *           - "LEFT"   - Quad (flush) left.                          *
+    *           - "CENTER" - Centered.                                   *
+    *           - "RIGHT"  - Quad (flush) right.                         *
+    *  TOCTYPE  - Declared - "NONE"   - Identifies the appropriate Table *
+    *                                   of Contents                      *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    *  COLSEP   - NUMBER   - IMPLIED  - Internal Column rulings.         *
+    *           - "0"      - Do Not display internal column rulings.     *
+    *           - "1"      - Display internal column rulings.            *
+    *  ROWSEP   - NUMBER   - IMPLIED  - Internal Row rulings.            *
+    *           - "0"      - Do Not display internal row rulings.        *
+    *           - "1"      - Display internal row rulings.               *
+    ********************************************************************** -->
+
+<!ELEMENT capgrp - - (caprow+) >
+<!ATTLIST capgrp
+             align (left | right | centre) "left"
+             toctype (none | redtoc | comdtoc | ambertoc | greentoc) "none"
+             %INSDEL;
+             colsep NUMBER #IMPLIED
+             rowsep NUMBER #IMPLIED >
+
+
+
+<!--**********************************************************************
+    * Define Element CAPROW (Row of Captions) containing:-               *
+    *  CAPTION  - mandatory repeatable contains Parsed Character Data.   *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):                                                      *
+    *  ALIGN    - Declared - REQUIRED - Align Caption Row.               *
+    *           - "LEFT"   - Quad (flush) left.                          *
+    *  TOCTYPE  - Declared - "NONE"   - Identifies the appropriate Table *
+    *                                   of Contents                      *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    *  ROWSEP   - NUMBER   - IMPLIED  - Internal Row rulings.            *
+    *           - "0"      - Do Not display internal row rulings.        *
+    *           - "1"      - Display internal row rulings.               *
+    ********************************************************************** -->
+
+<!ELEMENT caprow - - (caption+) >
+<!ATTLIST caprow
+             align (left) #REQUIRED
+             toctype (none | redtoc | comdtoc | ambertoc | greentoc) "none"
+             %INSDEL;
+             rowsep NUMBER #IMPLIED >
+
+
+
+<!--**********************************************************************
+    * Define Element CAPTION (Caption) containing:-                      *
+    *  Parsed Character Data.                                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):                                                      *
+    *  COLOUR   - Declared - "CLEAR"  - Colour of Caption.               *
+    *           - "RED"    - Red Caption                                 *
+    *           - "AMBER"  - Amber Caption                               *
+    *           - "GREEN"  - Green Caption.                              *
+    *           - "CLEAR"  - Clear Caption.                              *
+    *           - "WHITE"  - White Caption.                              *
+    *           - "GREY"   - Grey Caption.                               *
+    *           - "YELLOW" - Yellow Caption.                             *
+	*           - "MAGENTA"- Magenta Caption.                            *
+	*  ALIGN    - DECLARED - "CENTRE" - Alingment of Caption in row.     *
+    *           - "LEFT"   - Quad (flush) left.                          *
+    *           - "CENTRE" - Centered.                                   *
+    *           - "RIGHT"  - Quad (flush) right.                         *
+    *           - "JUSTIFY"- Both quad left and quad right.              *
+    *           - "CHAR"   - Align on leftmost of char, position be      *
+    *                      - charoff.                                    *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    *  COLSEP   - NUMBER   - IMPLIED  - Internal Column rulings.         *
+    *           - "0"      - Do Not display internal column rulings.     *
+    *           - "1"      - Display internal column rulings.            *
+    *  ROWSEP   - NUMBER   - IMPLIED  - Internal Row rulings.            *
+    *           - "0"      - Do Not display internal row rulings.        *
+    *           - "1"      - Display internal row rulings.               *
+    *  WIDTH    - CDATA    - Width of caption.                           *
+    *  TOCTYPE  - Declared - "NONE"   - Identifies the appropriate Table *
+    *                                   of Contents                      *
+    ********************************************************************** -->
+
+<!ELEMENT caption - - (#PCDATA) >
+<!ATTLIST caption
+             colour (red | amber | green | clear | white | grey | yellow | magenta) "clear"
+             align (left | right | justify | char | centre) "centre"
+             %INSDEL;
+             colsep NUMBER #IMPLIED
+             rowsep NUMBER #IMPLIED
+             width  CDATA  #IMPLIED
+             toctype (none | redtoc | combtoc | ambertoc | greentoc) "none" >

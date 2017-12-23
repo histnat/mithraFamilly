@@ -1,0 +1,170 @@
+package com.sonovision.openconv.db.vo.execution;
+
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.sonovision.openconv.db.vo.common.Common;
+import com.sonovision.openconv.db.vo.user.OpUser;
+
+
+@Document(collection = "CoHistoryExe")
+public class CoHistoryExe extends Common {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private int nbrFiles;
+	private int nbrOK;
+	private int nbrNOK;
+	private int nbrNBloquant;
+		
+	private Date startTime;
+	private Date endTime;
+	
+//	@JsonIgnore
+//    @DBRef(lazy=true)
+//    private OpUser opUser;
+    private String userId;
+    
+//    @JsonIgnore
+//    @DBRef(lazy=false)
+//    private CoScenario coScenario;
+    private String scenarioId;
+    
+//    private String executionId;
+    
+    /**
+     *parameterList
+     */
+    @DBRef(lazy = false)
+    private List<CoParameterExe> parameterList;
+
+
+	public int getNbrFiles() {
+		return nbrFiles;
+	}
+
+
+	public void setNbrFiles(int nbrFiles) {
+		this.nbrFiles = nbrFiles;
+	}
+
+
+	public int getNbrOK() {
+		return nbrOK;
+	}
+
+
+	public void setNbrOK(int nbrOK) {
+		this.nbrOK = nbrOK;
+	}
+
+
+	public int getNbrNOK() {
+		return nbrNOK;
+	}
+
+
+	public void setNbrNOK(int nbrNOK) {
+		this.nbrNOK = nbrNOK;
+	}
+
+
+	public int getNbrNBloquant() {
+		return nbrNBloquant;
+	}
+
+
+	public void setNbrNBloquant(int nbrNBloquant) {
+		this.nbrNBloquant = nbrNBloquant;
+	}
+
+
+	public Date getStartTime() {
+		return startTime;
+	}
+
+
+	public void setStartTime(Date startTime) {
+		this.startTime = startTime;
+	}
+
+
+	public Date getEndTime() {
+		return endTime;
+	}
+
+
+	public void setEndTime(Date endTime) {
+		this.endTime = endTime;
+	}
+
+
+//	public OpUser getOpUser() {
+//		return opUser;
+//	}
+//
+//
+//	public void setOpUser(OpUser opUser) {
+//		this.opUser = opUser;
+//	}
+
+
+
+
+	public String getUserId() {
+		return userId;
+	}
+
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
+//	public CoScenario getCoScenario() {
+//		return coScenario;
+//	}
+//	public void setCoScenario(CoScenario coScenario) {
+//		this.coScenario = coScenario;
+//	}
+
+
+
+	public List<CoParameterExe> getParameterList() {
+		return parameterList;
+	}
+
+
+	public String getScenarioId() {
+		return scenarioId;
+	}
+
+
+	public void setScenarioId(String scenarioId) {
+		this.scenarioId = scenarioId;
+	}
+
+
+	public void setParameterList(List<CoParameterExe> parameterList) {
+		this.parameterList = parameterList;
+	}
+
+
+//	public String getExecutionId() {
+//		return executionId;
+//	}
+
+
+//	public void setExecutionId(String executionId) {
+//		this.executionId = executionId;
+//	}
+//    
+	
+    
+	
+}

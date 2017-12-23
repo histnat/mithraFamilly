@@ -1,0 +1,220 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1A725300SF030100116A021 SYSTEM "x-dm://0900f90b80057d5f,MYWORKING" NDATA cgm>
+<!ENTITY A1A725300SF030100116A011 SYSTEM "x-dm://0900f90b80003dc1,MYWORKING" NDATA cgm>
+<!ENTITY A1B725300SF030100116A011 SYSTEM "x-dm://0900f90b80026dc4,MYWORKING" NDATA cgm>
+]>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>3</subsect><subject>00</subject><discode>06</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmc>
+<dmtitle><techname>SECTEUR ANNEAU TURBINE HP</techname><infoname>CONTROLE VISUEL SANS MOYEN SPECIAL</infoname></dmtitle>
+<issno type="n" issno="1">
+<issdate month="10" year="2011" day="15">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 4"></version>
+<customer aaf="1" anf="1">
+<nti nti1="1" nti2="1" nti3="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd><?Pub Caret>
+<qa><context></qa>
+<rfu>Version initiale</rfu>
+<remarks>Cr&eacute;ation suite suppression du A1A72530006A311AC mal codifi&eacute; (AC = NTI3).</remarks>
+<icns><icn id="A1A725300SF030100116A021">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>3</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00116</illnum><illver>A</illver><illupdat>02</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<refdm>
+<dmcid id="A1A72530006A600AD"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>3</subsect><subject>00</subject><discode>06</discode><discodev>A</discodev><incode>600</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmcid>
+<dmcid id="A1A72530006A600BC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>3</subsect><subject>00</subject><discode>06</discode><discodev>A</discodev><incode>600</incode><incodev>B</incodev><itemloc>C</itemloc></avee></dmcid>
+</refdm>
+</refs><proced><pmd>
+<manhour value="0,1"></manhour>
+<duration value="0,1"></duration>
+</pmd><prelreqs><reqconds>
+<noconds></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="0,1"></reqper>
+</reqpers><supequip><nosupeq><nosupeqs></supequip><supplies><supplyli exhaust="0">
+<supply id="R28001" mand="0"><refipc csn="72530002 003 "><nomen>SECTEUR ANNEAU TURBINE&nbsp;HP</nomen><quantity>SB</quantity></supply>
+<supply id="R1" mand="0"><applic><config><mod modnb="68C1-2" modcond="POST"></config></applic>
+<refipc csn="72530001 049 "><nomen>SECTEUR ANNEAU TURBINE&nbsp;HP</nomen><quantity>SB</quantity></supply>
+<supply id="R2" mand="0"><applic><config><mod modnb="105C1-1" modcond="POST"></config></applic>
+<refipc csn="72530005 003 " isn="00A"><nomen>SECTEUR ANNEAU TURBINE&nbsp;HP</nomen><quantity>SB</quantity></supply>
+</supplyli></supplies><miscs><nomisc></miscs><safety>
+<specpara>
+<caution>
+<p>Signaler tout autre d&eacute;faut non r&eacute;pertori&eacute; dans la proc&eacute;dure &agrave; Snecma.</p>
+</caution>
+</specpara>
+</safety></prelreqs><mainfunc>
+<step1 control="0" id="P10">
+<para><p>Approvisionner en cas de remplacement le ou les rechanges <supplref refid="R28001">.</p>
+</para>
+<para><applic><config><mod modnb="68C1-2" modcond="POST"></config></applic>
+<p>Approvisionner en cas de remplacement le ou les rechanges <supplref refid="R1">.</p>
+</para>
+<para><applic><config><mod modnb="105C1-1" modcond="POST"></config></applic>
+<p>Approvisionner en cas de remplacement le ou les rechanges <supplref refid="R2">.</p>
+</para>
+</step1>
+<step1 control="0" id="P20">
+<applic><systemid><nti nti2="1" nti3="1"></systemid></applic>
+<para><p>Contr&ocirc;ler visuellement la pi&egrave;ce selon les informations du tableau ci-dessous <figref refid="A725300SF030100116A021">&nbsp;:</p>
+</para>
+<table tocentry="1">
+<tgroup cols="3" align="LEFT"><colspec colnum="1" colname="SQCOLUMN1" colwidth="5cm" align="CENTER" colsep="1" rowsep="1"><colspec colnum="2" colname="SQCOLUMN2" colwidth="7cm" align="LEFT" colsep="1" rowsep="1"><colspec colnum="3" colname="SQCOLUMN3" colwidth="5cm" align="LEFT" colsep="1" rowsep="1">
+<tbody valign="TOP">
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>DEFAUTS</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>CRITERES D'ADMISSIBILITE </p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>SANCTION</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Red&eacute;position type A</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><applic><systemid><nti nti1="1" nti2="1"></systemid></applic>
+<p>Admissible si pas d'obturation type B1</p>
+</para>
+<para><applic><systemid><nti nti3="1"></systemid></applic>
+<p>Admissible si red&eacute;position en "creux", profondeur maxi 0,2).</p>
+<note>
+<p>C&ocirc;te du d&eacute;p&ocirc;t du au frottement des aubes par rapport au profil th&eacute;orique du secteur concern&eacute; (prendre les surfaces hors d&eacute;p&ocirc;t comme r&eacute;f&eacute;rence).</p>
+</note>
+</para>
+<para><applic><systemid><nti nti3="1"></systemid></applic>
+<p>Inadmissible si red&eacute;position en relief.</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Remise en &eacute;tat de la pi&egrave;ce <dmcref xrefid="A1A72530006A600AD"></p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Crique type G</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><applic><systemid><nti nti2="1"></systemid></applic>
+<p>Admissible si longueur sur la face cot&eacute; veine&nbsp;&le;&nbsp;4&nbsp;mm</p>
+</para>
+<para><applic><systemid><nti nti3="1"></systemid></applic>
+<p>Admissible si longueur sur la face cot&eacute; veine&nbsp;&le;&nbsp;3&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="SQCOLUMN1" valign="TOP" align="LEFT" morerows="0"><para><p>Ecaillage type F (bord de fuite)</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN2" valign="TOP" morerows="0"><para><p>Admissible si largeur d'&eacute;caillage&nbsp;&le;&nbsp;4&nbsp;mm.</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN3" valign="TOP" morerows="0"><para><applic><systemid><nti nti1="1" nti2="1"></systemid></applic>
+<p>Au-del&agrave; remplacement de la pi&egrave;ce </p>
+</para>
+<para><applic><systemid><nti nti3="1"></systemid></applic>
+<p>Au-del&agrave; remise en &eacute;tat de la pi&egrave;ce <dmcref xrefid="A1A72530006A600BC"></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="SQCOLUMN1" valign="TOP" align="LEFT" morerows="0"><para><p>Ecaillage type D</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN2" valign="TOP" morerows="0"><para change="ADD"><applic><systemid><nti nti2="1"></systemid></applic>
+<p>Admissible si sur la couronne, la somme des &eacute;caillages type&nbsp;D&nbsp;+&nbsp;la somme des &eacute;caillages type&nbsp;C&nbsp;&le;&nbsp;7700&nbsp;mm<supscrpt>2</supscrpt> avec&nbsp;: somme des &eacute;caillages type&nbsp;D&nbsp;= ((somme des longueurs&nbsp;b en&nbsp;millim&egrave;tre x&nbsp;25)/2).</p>
+</para>
+<para><applic><systemid><nti nti3="1"></systemid></applic>
+<p>Admissible si largeur d'&eacute;caillage b&nbsp;&le;&nbsp;5&nbsp;mm.</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN3" valign="TOP" morerows="0"><para><applic><systemid><nti nti2="1"></systemid></applic>
+<p>Au-del&agrave; remplacement de la pi&egrave;ce </p>
+</para>
+<para><applic><systemid><nti nti3="1"></systemid></applic>
+<p>Au-del&agrave; remise en &eacute;tat de la pi&egrave;ce <dmcref xrefid="A1A72530006A600BC"></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="SQCOLUMN1" valign="TOP" align="LEFT" morerows="0"><para><p>Ecaillage type C des autres zones pleine peau</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN2" valign="TOP" morerows="0"><para><applic><systemid><nti nti2="1"></systemid></applic>
+<p>Admissible si sur la couronne, la somme des &eacute;caillages type&nbsp;D&nbsp;+&nbsp; la somme des &eacute;caillages type&nbsp;C &le;&nbsp;7700&nbsp;mm<supscrpt>2 </supscrpt>avec&nbsp;: somme des &eacute;caillages type&nbsp;D&nbsp;=&nbsp;((somme des longueurs b en millim&egrave;tre x&nbsp;25)/2).</p>
+</para>
+<para><applic><systemid><nti nti3="1"></systemid></applic>
+<p>Admissible si la surface &eacute;caill&eacute;e&nbsp;&le;&nbsp;6&nbsp;mm&nbsp;x&nbsp;6&nbsp;mm</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN3" valign="TOP" morerows="0"><para><applic><systemid><nti nti2="1"></systemid></applic>
+<p>Au-del&agrave; remplacement de la pi&egrave;ce </p>
+</para>
+<para><applic><systemid><nti nti3="1"></systemid></applic>
+<p>Au-del&agrave; remise en &eacute;tat de la pi&egrave;ce <dmcref xrefid="A1A72530006A600BC"></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="SQCOLUMN1" valign="TOP" align="LEFT" morerows="0"><para><p>Crique axiale type H</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN2" valign="TOP" morerows="0"><para><applic><systemid><nti nti2="1" nti3="1"></systemid></applic>
+<p>Inadmissible</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN3" valign="TOP" morerows="0"><para><p>Remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="SQCOLUMN1" valign="TOP" align="LEFT" morerows="0"><para><p>Br&ucirc;lure type J</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN2" valign="TOP" morerows="0"><para><applic><systemid><nti nti2="1" nti3="1"></systemid></applic>
+<p>Inadmissible</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN3" valign="TOP" morerows="0"><para><p>Remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="SQCOLUMN1" valign="TOP" align="LEFT" morerows="0"><para><p>Obturation des trous faces amont et aval</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN2" valign="TOP" morerows="0"><para><applic><systemid><nti nti2="1" nti3="1"></systemid></applic>
+<p>Inadmissible</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN3" valign="TOP" morerows="0"><para><p>Remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step1>
+<figure id="A725300SF030100116A021">
+<title>IDENTIFICATION DES DEFAUTS </title>
+<graphic callicn="A1A725300SF030100116A021">
+</figure>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000010751 0>

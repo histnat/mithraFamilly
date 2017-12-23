@@ -1,0 +1,368 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1A725200SF030100335A011 SYSTEM "x-dm://0900f90b8004a2a1,MYWORKING" NDATA jpeg>
+<!ENTITY A1A725200SF030100334A011 SYSTEM "x-dm://0900f90b8004a2a0,MYWORKING" NDATA jpeg>
+<!ENTITY A1A725200SF030100333A011 SYSTEM "x-dm://0900f90b8004a29f,MYWORKING" NDATA jpeg>
+<!ENTITY A1A725200SF030100332A011 SYSTEM "x-dm://0900f90b8004a29e,MYWORKING" NDATA jpeg>
+<!ENTITY A1B725200SF030100296A011 SYSTEM "x-dm://0900f90b8000dac1,MYWORKING" NDATA jpeg>
+<!ENTITY A1B725200SF030100295A011 SYSTEM "x-dm://0900f90b8000dac0,MYWORKING" NDATA jpeg>
+<!ENTITY A1B725200SF030199003A011 SYSTEM "x-dm://0900f90b8000c9d3,MYWORKING" NDATA jpeg>
+<!ENTITY A1B725200SF030199002A011 SYSTEM "x-dm://0900f90b8000c2bc,MYWORKING" NDATA jpeg>
+<!ENTITY A1A725200SF030100067A011 SYSTEM "x-dm://0900f90b800041e7,MYWORKING" NDATA jpeg>
+<!ENTITY A1A725200SF030190112A011 SYSTEM "x-dm://0900f90b80002467,MYWORKING" NDATA tiff>
+]>
+<?Pub EntList alpha bull copy rArr sect trade nbsp>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>21</discode><discodev>A</discodev><incode>312</incode><incodev>B</incodev><itemloc>D</itemloc></avee></dmc>
+<dmtitle><techname>AUBE MOBILE, TURBINE HP</techname><infoname>ENDOSCOPIE-BORD DE FUITE</infoname></dmtitle>
+<issno type="c" issno="3">
+<issdate month="03" year="2011" day="11">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic change="MOD">
+<systemid>
+<version version="M88-2 ETAPE 4"></version>
+<nti nti1="1" nti2="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Prise en compte du fax CSCM88DMM/036/11, MAJ Nota relatif au niveau de formation du personnel effectuant le contr&ocirc;le endoscopique.</rfu>
+<remarks>RAS</remarks>
+<icns><icn id="A1B725200SF030100295A011">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00295</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1B725200SF030100296A011">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00296</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A725200SF030100332A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00332</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A725200SF030100333A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00333</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A725200SF030100334A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00334</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A725200SF030100335A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00335</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<refdm>
+<dmcid id="A1B72520021A311AD"><avee><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>21</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmcid>
+</refdm>
+</refs><proced><pmd>
+<manhour value="2,0"></manhour>
+<duration value="2,0"></duration>
+</pmd><prelreqs><reqconds><reqcondli><reqcond>
+<cond><para><p>Le moteur assembl&eacute; doit &ecirc;tre avionn&eacute; et les portes avion doivent &ecirc;tre d&eacute;pos&eacute;es.</p>
+</para>
+</cond>
+</reqcond><reqcond>
+<cond><para><p>Le moteur assembl&eacute; doit &ecirc;tre d&eacute;pos&eacute; sur un chariot de transport et d'avionnage.</p>
+</para>
+</cond>
+</reqcond><reqcond>
+<cond><para><p>Le Kit "TURNING TOOL" <supeqref refid="O2.S0711"> doit &ecirc;tre install&eacute;.</p>
+</para>
+</cond>
+</reqcond><reqcond>
+<cond><para><p>Le Kit "TURNING TOOL" <supeqref refid="O2.S0711"> doit &ecirc;tre programm&eacute; por l'endoscopie de la turbine HP.</p>
+</para>
+</cond>
+</reqcond></reqcondli></reqconds><reqpers>
+<reqper>
+<perscat>M</perscat><persnum no="1"><perstime value="3,0"></reqper>
+</reqpers><supequip><nosupeq><supeqlis>
+<supequis id="O2.S0711"><refipc csn="72016001 043 "><nomen>KIT "TURNING TOOL"</nomen><quantity>1</quantity></supequis>
+</supeqlis></supequip><supplies><nosupply></supplies><miscs><nomisc></miscs><safety>
+<specpara>
+<caution>
+<p>Au premier d&eacute;faut inadmissible ou en cas de doute, stopper l'endoscopie, d&eacute;poser le module 8 pour r&eacute;aliser un contr&ocirc;le binoculaire complet de l'aubage.</p>
+<p>Signaler tout autre d&eacute;faut non r&eacute;pertori&eacute; dans la proc&eacute;dure &agrave; SNECMA.</p>
+</caution>
+<note>
+<p change="mod">Cette proc&eacute;dure concerne uniquement les aubes -121 et -125, elle doit &ecirc;tre r&eacute;alis&eacute;e par un endoscopeur &ldquo;r&eacute;f&eacute;rent&rdquo;.</p>
+<p change="mod">Ce personnel doit acqu&eacute;rir la comp&eacute;tence dans le domaine de l'endoscopie en suivant une formation interne avec un minimum de 10 contr&ocirc;les endoscopiques &agrave; r&eacute;aliser en double avec un &ldquo;r&eacute;f&eacute;rent&rdquo;. Un endoscopeur &ldquo;r&eacute;f&eacute;rent&rdquo; doit avoir effectu&eacute; au minimum un contr&ocirc;le endoscopique par semestre pour ne pas perdre sa qualification. Ce personnel doit &ecirc;tre form&eacute; et habilit&eacute; au contr&ocirc;le endoscopique des aubes de turbine HP M88. Ce personnel doit &ecirc;tre form&eacute; pour l'utilisation de la vid&eacute;oscopie.</p><?Pub Caret>
+</note>
+</specpara>
+</safety></prelreqs><mainfunc>
+<step1 id="P05">
+<title>Descriptif du vid&eacute;oscope</title>
+<table tocentry="1">
+<tgroup cols="2"><colspec colname="col1" colwidth="60.00mm"><colspec colname="col2" colwidth="60.00mm">
+<tbody>
+<row>
+<entry colname="col1" colsep="0"><para><p>DESCRIPTION</p>
+</para>
+</entry>
+<entry colname="col2" colsep="0"><para><p></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Marque</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>EVEREST</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Type</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>XL PRO PLUS S&eacute;rie</p>
+</para>
+<para><p>XL PRO PLS500D</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Dia. de la gaine</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>6,1</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Long. de la gaine</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>3 m</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Rayon de courbure</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>55</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Capacit&eacute; de b&eacute;quillage</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>140&deg; minimum</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Dia. cam&eacute;ra</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>6,1</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Type d'image</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>CCD 1/6, couleur, Super HAD</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Champ de l'optique</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>80&deg;</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Profondeur de champ</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>3 &agrave; 20&nbsp;mm</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step1>
+<step1 control="0" id="P10">
+<title>Mise en place du vid&eacute;oscope</title>
+<para><p>Engager la gaine du vid&eacute;oscope entre les aubes du secteur distributeur endoscopique &agrave; l&apos;aide du guide.</p>
+</para>
+</step1>
+<step1 id="P20">
+<para><p>Etablir la cartographie des d&eacute;fauts.</p>
+</para>
+</step1>
+<step1 control="0" id="P30">
+<title>Contr&ocirc;le de la partie inf&eacute;rieure des aubes mobiles TU HP<figref refid="B725200SF030100296A011"></title>
+<specpara>
+<caution>
+<p>S'assurer que l'extr&eacute;mit&eacute; du vid&eacute;oscope ne touche pas le mobile TU HP.</p>
+</caution>
+</specpara>
+<step2 id="P30-10">
+<para><p>R&eacute;gler la nettet&eacute; du vid&eacute;oscope de fa&ccedil;on &agrave; avoir une parfaite vision de la demie partie inf&eacute;rieure du bord de fuite de l&apos;aube mobile TU HP (pied, bord de fuite, etc)<refipc csn="72520001A025 "> <figref refid="A725200SF030100334A011"> et <figref refid="A725200SF030100335A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P30-20">
+<para><p>Mettre en rotation pas &agrave; pas les aubes mobiles TU HP<refipc csn="72520001A025 "> &agrave; l'aide du kit "TURNING TOOL" <supeqref refid="O2.S0711">.</p>
+</para>
+</step2>
+<step2 control="0" id="P30-30">
+<specpara>
+<note>
+<p>L&apos;&eacute;tage TU HP comporte 60 aubes mobiles TU HP<refipc csn="72520001A025 ">.</p>
+</note>
+</specpara>
+<para><p>Inspecter la demie partie inf&eacute;rieure du bord de fuite des 60&nbsp;aubes mobiles TU HP<refipc csn="72520001A025 ">.</p>
+</para>
+</step2>
+</step1>
+<step1 control="0" id="P40">
+<title>Contr&ocirc;le de l&rsquo;intrados des aubes mobiles TU HP<figref refid="B725200SF030100295A011"> et <figref refid="A725200SF030100333A011"></title>
+<specpara>
+<caution>
+<p>S'assurer que l'extr&eacute;mit&eacute; du vid&eacute;oscope ne touche pas le mobile TU HP.</p>
+</caution>
+</specpara>
+<step2 id="P40-10">
+<title>Proc&eacute;dure de contr&ocirc;le</title>
+<step3 id="P40-10-10">
+<specpara>
+<caution>
+<p>Ne pas mettre en rotation le  kit "TURNING TOOL" <supeqref refid="O2.S0711">.</p>
+</caution>
+</specpara>
+<para><p>Engager le vid&eacute;oscope entre 2&nbsp;aubes mobiles turbine HP.</p>
+</para>
+</step3>
+<step3 id="P40-10-20">
+<para><p>R&eacute;gler la nettet&eacute; du vid&eacute;oscope de fa&ccedil;on &agrave; avoir une parfaite vision de l&rsquo;intrados de l'aube mobile TU HP.</p>
+</para>
+</step3>
+<step3 id="P40-10-30">
+<para><p>Inspecter l&rsquo;intrados en balayant enti&egrave;rement la hauteur de chaque aube  mobile TU HP.</p>
+</para>
+</step3>
+<step3 id="P40-10-40">
+<specpara>
+<caution>
+<p>D&eacute;gager le vid&eacute;oscope des aubes du rotor de turbine HP.</p>
+</caution>
+</specpara>
+<para><p>Mettre en rotation lente le kit "TURNING TOOL" <supeqref refid="O2.S0711"> afin de s&eacute;lectionner l&rsquo;aube suivante.</p>
+</para>
+</step3>
+</step2>
+<step2 id="P40-20">
+</step2>
+<step2>
+<para><p>Inspecter les 60 aubes mobiles TU HP <refipc csn="72520001A025 "> de l'&eacute;tage TU HP.<xref xrefid="P40-10"></p>
+</para>
+</step2>
+</step1>
+<step1 control="0" id="P50">
+<title>Contr&ocirc;le de l&rsquo;extrados des aubes mobiles TU HP <figref refid="B725200SF030100295A011"> et <figref refid="A725200SF030100332A011"></title>
+<specpara>
+<caution>
+<p>S'assurer que l'extr&eacute;mit&eacute; du vid&eacute;oscope ne touche pas le mobile TU HP.</p>
+</caution>
+</specpara>
+<step2 id="P50-10">
+<title>Proc&eacute;dure de contr&ocirc;le</title>
+<step3 id="P50-10-10">
+<specpara>
+<caution>
+<p>Ne pas mettre en rotation le  kit "TURNING TOOL" <supeqref refid="O2.S0711">.</p>
+</caution>
+</specpara>
+<para><p>Engager la gaine du vid&eacute;oscope entre 2&nbsp;aubes mobiles turbine HP.</p>
+</para>
+</step3>
+<step3 id="P50-10-20">
+<para><p>R&eacute;gler la nettet&eacute; du vid&eacute;oscope de fa&ccedil;on &agrave; avoir une parfaite vision de l&rsquo;extrados de l'aube mobile TU HP.</p>
+</para>
+</step3>
+<step3 id="P50-10-30">
+<para><p>Inspecter l&rsquo;extrados en balayant enti&egrave;rement la hauteur de chaque aube  mobile TU HP.</p>
+</para>
+</step3>
+<step3 id="P50-10-40">
+<specpara>
+<caution>
+<p>D&eacute;gager le vid&eacute;oscope des aubes du rotor de turbine HP.</p>
+</caution>
+</specpara>
+<para><p>Mettre en rotation lente le kit "TURNING TOOL" <supeqref refid="O2.S0711"> afin de s&eacute;lectionner l&rsquo;aube suivante.</p>
+</para>
+</step3>
+</step2>
+<step2 id="P50-20">
+</step2>
+<step2>
+<para><p>Inspecter les 60 aubes mobiles TU HP<refipc csn="72520001A025 "> de l'&eacute;tage TU HP.<xref xrefid="P50-10"></p>
+</para>
+</step2>
+</step1>
+<step1 id="P60">
+<title>Contr&ocirc;le de la partie sup&eacute;rieure des aubes mobiles TU HP<figref refid="B725200SF030100296A011"></title>
+<specpara>
+<caution>
+<p>S'assurer que l'extr&eacute;mit&eacute; du vid&eacute;oscope ne touche pas le mobile TU HP.</p>
+</caution>
+</specpara>
+<step2 id="P60-10">
+<para><p>R&eacute;gler la nettet&eacute; du vid&eacute;oscope de fa&ccedil;on &agrave; avoir une parfaite vision de la demie partie sup&eacute;rieure du bord de fuite de l'aube mobile TU HP ( bord de fuite, baignoire etc)<refipc csn="72520001A025 ">.</p>
+</para>
+</step2>
+<step2 id="P60-20">
+<para><p>Mettre en rotation pas &agrave; pas les aubes mobiles TU HP <refipc csn="72520001A025 "> &agrave; l&rsquo;aide du kit "TURNING TOOL"<supeqref refid="O2.S0711">.</p>
+</para>
+</step2>
+<step2 id="P60-30">
+<specpara>
+<note>
+<p>L&apos;&eacute;tage TU HP comporte 60 aubes mobiles TU HP <refipc csn="72520001A025 ">.</p>
+</note>
+</specpara>
+<para><p>Inspecter la partie sup&eacute;rieure du bord de fuite des 60 aubes mobiles TU HP <refipc csn="72520001A025 ">.</p>
+</para>
+</step2>
+</step1>
+<step1 control="0" id="P70">
+<para><p>D&eacute;gager le vid&eacute;oscope des aubes du secteur distributeur endoscopique <refipc csn="72530001 039 "> &agrave; l&apos;aide du guide.</p>
+</para>
+</step1>
+<step1 control="0" id="P80">
+<title>Crit&egrave;res d'acceptation des aubes mobiles HP</title>
+<para><p>Contr&ocirc;ler les d&eacute;fauts <dmcref xrefid="A1B72520021A311AD">.</p>
+</para>
+</step1>
+<figure id="B725200SF030100295A011">
+<title>Intrados et extrados</title>
+<graphic callicn="A1B725200SF030100295A011">
+</figure>
+<figure id="B725200SF030100296A011">
+<title>Bord de fuite</title>
+<graphic callicn="A1B725200SF030100296A011">
+</figure>
+<figure id="A725200SF030100332A011">
+<title>EXTRADOS &ndash; RECHERCHE CRIQUE TYPE C</title>
+<graphic callicn="A1A725200SF030100332A011">
+</figure>
+<figure id="A725200SF030100333A011">
+<title>INTRADOS &ndash; RECHERCHE ECAILLAGE, PERTE DE COIN, BRULURES, OXYDATION, CRIQUE TYPE S</title>
+<graphic callicn="A1A725200SF030100333A011">
+</figure>
+<figure id="A725200SF030100334A011">
+<title>EXTRADOS &ndash; RECHERCHE CRIQUE TYPE De</title>
+<graphic callicn="A1A725200SF030100334A011">
+</figure>
+<figure id="A725200SF030100335A011">
+<title>EXTRADOS &ndash; RECHERCHE CRIQUE TYPE De</title>
+<graphic callicn="A1A725200SF030100335A011">
+</figure>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000015317 0>

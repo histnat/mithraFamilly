@@ -1,0 +1,136 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1A725200SF030190028A011 SYSTEM "x-dm://0900f90b8000253e,MYWORKING" NDATA tiff>
+<!ENTITY A1A725200SF030190129A021 SYSTEM "x-dm://0900f90b80002478,MYWORKING" NDATA tiff>
+]>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>00</discode><discodev>A</discodev><incode>527</incode><incodev>D</incodev><itemloc>C</itemloc></avee></dmc>
+<dmtitle><techname>ROTOR DE TURBINE HP</techname><infoname>PROCEDURES DE DEPOSE PROPREMENT DITE- DU BATI D'ASSEMBLAGE TOURNANT</infoname></dmtitle>
+<issno type="r" issno="4">
+<issdate month="10" year="2011" day="15">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 4"></version>
+<customer aaf="1" anf="1">
+<nti nti1="0" nti2="1" nti3="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Prise en compte de modification 250-78R1</rfu>
+<remarks>RAS</remarks>
+<icns><icn id="A1A725200SF030190028A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>90028</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A725200SF030190129A021">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>90129</illnum><illver>A</illver><illupdat>02</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<norefs>
+</refs><proced><pmd>
+<manhour value="0,50"></manhour>
+<duration value="0,50"></duration>
+</pmd><prelreqs><reqconds><reqcondli><reqcond>
+<cond><para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>Rotor de Turbine&nbsp;HP <refipc csn="72520001A000 " isn="00A"> en place sur b&acirc;ti d'assemblage tournant <refipc csn="72016701 185 "> &eacute;quip&eacute; de l'adaptation&nbsp;AV disque module&nbsp;08 <supeqref refid="O2.00091"> et de l'adaptation turbine&nbsp;HP sur b&acirc;ti d'assemblage tournant <refipc csn="72016701 195 "> .</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>Rotor de Turbine&nbsp;HP <refipc csn="72520001A000 " isn="00C"><?Pub Caret> en place sur b&acirc;ti d'assemblage tournant <refipc csn="72016701 185 "> &eacute;quip&eacute; de l'adaptation&nbsp;AV disque module&nbsp;08 <supeqref refid="O2.00091"> et de l'adaptation turbine&nbsp;HP sur b&acirc;ti d'assemblage tournant <refipc csn="72016701 195 "> .</p>
+</para>
+</cond>
+</reqcond><reqcond>
+<cond><para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>Rotor de Turbine&nbsp;HP <refipc csn="72520001A000 " isn="00A"> en place sur b&acirc;ti montage polyvalent &eacute;quip&eacute; de l'adaptation <refipc csn="72016701 272 ">.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>Rotor de Turbine&nbsp;HP <refipc csn="72520001A000 " isn="00C"> en place sur b&acirc;ti montage polyvalent &eacute;quip&eacute; de l'adaptation <refipc csn="72016701 272 ">.</p>
+</para>
+</cond>
+</reqcond><reqcond>
+<cond><para><p>Le chapeau de protection palier&nbsp;4 <supeqref refid="O2.00230"> est en place sur le tourillon.</p>
+</para>
+</cond>
+</reqcond><reqcond>
+<cond><para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>Le protecteur turbine&nbsp;HP <refipc csn="72016601 008 "> en place.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>Le protecteur disque tourillon turbine&nbsp;HP <supeqref refid="O2.00640"> et le protecteur aubes de turbine HP<supeqref refid="O2.00645"> sont en place.</p>
+</para>
+</cond>
+</reqcond></reqcondli></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="0,50"></reqper>
+</reqpers><supequip><supeqli change="MOD">
+<supequi id="O2.00316"><refipc csn="72016601 003 "><nomen>Protecteur disque module&nbsp;08</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.00524"><refipc csn="72016701 096 "><nomen>Cl&eacute; fourreau extracteur module&nbsp;08</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.00093"><refipc csn="72016701 062 "><nomen>Outillage manutention module&nbsp;8</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.00352"><refipc csn="72016701 081 "><nomen>Cl&eacute; outillage manutention module&nbsp;8</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.00321"><applic><config><mod modnb="219" modcond="post"></config></applic>
+<refipc csn="72016701A028 "><nomen>Ecrou de maintien laby module 8</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.00091"><applic><config><mod modnb="219" modcond="post"></config></applic>
+<refipc csn="72016701 197 " isn="00C"><nomen>Adaptation avant disque module&nbsp;8</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.00230"><refipc csn="72016601 002 " isn="00F"><nomen>Chapeau de protection palier&nbsp;4</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.00640"><refipc csn="72016601 008S"><nomen>Protecteur aubes turbine HP</nomen><quantity></quantity></supequi>
+<supequi id="O2.00645"><refipc csn="72016601 008J"><nomen>Protecteur turbine HP</nomen><quantity></quantity></supequi>
+</supeqli><nosupeqs></supequip><supplies><nosupply></supplies><miscs><nomisc></miscs><safety><nosafety></safety></prelreqs><mainfunc>
+<step1 control="0" id="P10">
+<para><p>D&eacute;poser le chapeau de protection palier&nbsp;4 <supeqref refid="O2.00230"> du tourillon de turbine&nbsp;HP <figref refid="A725200SF030190028A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P20">
+<para><p>Installer le protecteur disque module&nbsp;08 <supeqref refid="O2.00316"> en tournant sens "ANTI-HORAIRE" &agrave; l'aide de cl&eacute; fourreau extracteur module&nbsp;08 <supeqref refid="O2.00524"> <figref refid="A725200SF030190129A021">.</p>
+</para>
+</step1>
+<step1 control="0" id="P30">
+<para><p>Installer dans le tourillon de turbine&nbsp;HP, &agrave; l'aide du palan, l'outillage manutention module&nbsp;8 <supeqref refid="O2.00093"> apr&egrave;s avoir orient&eacute; les goupilles vers l'int&eacute;rieur et serrer les 3&nbsp;&eacute;crous, afin de maintenir les 3&nbsp;axes de maintien <figref repnohot="2.00093REP09, 2.00093REP03, 2.00093REP02" refid="A725200SF030190129A021">.</p>
+</para>
+</step1>
+<step1 control="0" id="P40">
+<para><p>Installer la cl&eacute; outillage manutention module&nbsp;8 <supeqref refid="O2.00352"> &agrave; l'aide de la cl&eacute; fourreau extracteur module&nbsp;08 <supeqref refid="O2.00524"> <figref refid="A725200SF030190129A021">.</p>
+</para>
+</step1>
+<step1 control="0" id="P50">
+<para><p>Desserrer les 3&nbsp;&eacute;crous <supeqref refid="O2.00093"> <figref repnohot="2.00093REP03" refid="A725200SF030190129A021">.</p>
+</para>
+</step1>
+<step1 control="0" id="P60">
+<para><p>Tourner les 3&nbsp;axes de maintien <supeqref refid="O2.00093"> sens "HORAIRE" en but&eacute;e <figref repnohot="2.00093REP02" refid="A725200SF030190129A021">.</p>
+</para>
+</step1>
+<step1 control="0" id="P70">
+<para><p>Serrer les 3&nbsp;&eacute;crous, afin de maintenir les 3&nbsp;axes de maintien, goupilles orient&eacute;es vers l'ext&eacute;rieur <supeqref refid="O2.00093"> <figref repnohot="2.00093REP03, 2.00093REP02, 2.00093REP09" refid="A725200SF030190129A021">.</p>
+</para>
+</step1>
+<step1 control="0" id="P80">
+<para><p>D&eacute;visser les 6&nbsp;&eacute;crous molet&eacute;s <supeqref refid="O2.00091">des tirants de la turbine&nbsp;HP <figref repnohot="2.00091REP04" refid="A725200SF030190129A021">.</p>
+</para>
+</step1>
+<step1 control="0" id="P90">
+<para><p>Installer ces 6&nbsp;&eacute;crous molet&eacute;s sur leurs positions de stockage <supeqref refid="O2.00091"> <figref repnohot="2.00091REP04" refid="A725200SF030190129A021">.</p>
+</para>
+</step1>
+<step1 control="0" id="P100">
+<para><p>Lever, &agrave; l'aide du palan, l'ensemble module&nbsp;08 outillages, &agrave; partir de l'anneau de levage <supeqref refid="O2.00093"> <figref repnohot="2.00093REP06" refid="A725200SF030190129A021">.</p>
+</para>
+</step1>
+<step1 control="0" id="P110">
+<para><p>Visser manuellement les 2&nbsp;&eacute;crous de maintien <supeqref refid="O2.00321"> sur 2&nbsp;goujons diam&eacute;tralement oppos&eacute;s <figref refid="A725200SF030190129A021">.</p>
+</para>
+</step1>
+<figure id="A725200SF030190028A011">
+<title>CHAPEAU DE PROTECTION</title>
+<graphic callicn="A1A725200SF030190028A011">
+</figure>
+<figure id="A725200SF030190129A021">
+<title>ROTOR DE TURBINE HP</title>
+<graphic callicn="A1A725200SF030190129A021">
+</figure>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000008941 0>

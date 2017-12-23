@@ -1,0 +1,120 @@
+package com.sonovision.openconv.wf.thread;
+
+import java.util.HashMap;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
+import com.sedoc.toolbox.SpringBeanProvider;
+import com.sonovision.openconv.log.model.DBLogger;
+import com.sonovision.openconv.wf.dao.WorkFlowDao;
+import com.sonovision.openconv.wf.service.WorkFlowBo;
+
+public abstract class WFThread extends Thread {
+
+	DBLogger dbLogger;
+
+	HashMap<String, Object> parameter;
+
+	// I must init spring composent, buti have loop on this class. this variable
+	// is for skip loop. I think it will be better if we use @Configure. next
+	// time
+	private static boolean initrun = false;
+
+	static protected WorkFlowBo workFlowBo;
+
+	@Autowired
+	@Qualifier("WorkFlowDaoXML")
+	static protected WorkFlowDao wfd;
+
+	private WFThread() {
+		initClass();
+	};
+
+	public WFThread(DBLogger dbLogger) {
+		initClass();
+		this.dbLogger = dbLogger;
+	}
+
+	public WFThread(DBLogger dbLogger, HashMap<String, Object> parameter) {
+		initClass();
+		this.dbLogger = dbLogger;
+		this.parameter = parameter;
+	}
+
+	/**
+	 * @return the dbLogger
+	 */
+	public DBLogger getDbLogger() {
+		return dbLogger;
+	}
+
+	/**
+	 * @param dbLogger
+	 *            the dbLogger to set
+	 */
+	public void setDbLogger(DBLogger dbLogger) {
+		this.dbLogger = dbLogger;
+	}
+
+	/**
+	 * @return the parameter
+	 */
+	public HashMap<String, Object> getParameter() {
+		return parameter;
+	}
+
+	/**
+	 * @param parameter
+	 *            the parameter to set
+	 */
+	public void setParameter(HashMap<String, Object> parameter) {
+		this.parameter = parameter;
+	}
+
+	/**
+	 * @return the workFlowBo
+	 */
+	public WorkFlowBo getWorkFlowBo() {
+		return workFlowBo;
+	}
+
+	/**
+	 * @param workFlowBo
+	 *            the workFlowBo to set
+	 */
+	public void setWorkFlowBo(WorkFlowBo workFlowBo) {
+		this.workFlowBo = workFlowBo;
+	}
+
+	public void initClass() {
+		if (!initrun) {
+			initrun = true;
+			if (wfd == null) {
+				wfd = (WorkFlowDao) SpringBeanProvider.getBean("WorkFlowDaoXML");
+			}
+			if (workFlowBo == null) {
+				workFlowBo = (WorkFlowBo) SpringBeanProvider.getBean("WorkFlowBo");
+			}
+			initrun = false;
+		}
+	}
+
+	public static boolean isInitrun() {
+		return initrun;
+	}
+
+	public static void setInitrun(boolean initrun) {
+		WFThread.initrun = initrun;
+	}
+
+	public static WorkFlowDao getWfd() {
+		return wfd;
+	}
+
+	public static void setWfd(WorkFlowDao wfd) {
+		WFThread.wfd = wfd;
+	}
+
+	
+}

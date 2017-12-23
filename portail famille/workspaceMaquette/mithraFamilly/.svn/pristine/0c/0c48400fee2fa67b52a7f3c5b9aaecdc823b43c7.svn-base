@@ -1,0 +1,101 @@
+package com.sonovision.openconv.wf;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+
+import javax.swing.Spring;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
+import org.springframework.stereotype.Component;
+
+import com.sedoc.toolbox.SpringBeanProvider;
+import com.sonovision.openconv.log.model.DBLogger;
+import com.sonovision.openconv.log.model.LoggerLevel;
+import com.sonovision.openconv.model.TreatedObject;
+import com.sonovision.openconv.wf.xmodel.ParameterDetailled;
+import com.sonovision.openconv.wf.xmodel.ParameterTypes;
+
+
+public abstract class WFTaskHelper {
+
+	protected DBLogger dbLogger;
+	
+	@Autowired
+    protected MessageSource messageSource;
+
+	protected HashMap<String,Object>   parameter  =  new HashMap<>();
+	
+	protected final Locale DEFAULT_LOCAL=new Locale("fr");
+	
+	protected final static String PARAM_PREFFIX="param.";
+	protected final static String LABEL_SUFFIX=".label";
+	protected final static String DESCR_SUFFIX=".descr";
+	protected HashMap<String, ParameterTypes> parametersList=new HashMap<>();
+	
+
+	public MessageSource getMessageSource() {
+		return messageSource;
+	}
+	
+  
+	public void setMessageSource(MessageSource messageSource) {
+		this.messageSource = messageSource;
+	}
+	
+	public void setDBLogger(DBLogger dbLogger) {
+		this.dbLogger=dbLogger;
+
+	}
+	
+
+	public DBLogger getDbLogger() {
+		return dbLogger;
+	}
+
+
+	public void setParameter(HashMap<String, Object> parameter) {
+		this.parameter= parameter;
+
+	}
+
+	public void addParameter(String key, Object value) {
+		if(parameter==null)
+		{
+			parameter = new HashMap<>();
+		}
+		parameter.put(key, value);
+
+	}
+	
+	protected void closeObject(LoggerLevel level, TreatedObject to)
+	{
+		dbLogger.logObject("fin conversion :"+to.getIdObject(),level,to.getIdObject());
+		dbLogger.logObject(level,to.getIdObject());
+		to.setLastResultAction(level.getValue().toString());
+	}
+
+	
+	public List<ParameterDetailled> procedeParameterList(Locale locale) {
+		Locale currLocale=(locale!=null)?locale:DEFAULT_LOCAL;
+		List<ParameterDetailled> listParameters=new ArrayList<>();
+		ParameterDetailled parameterDetailled;
+		for (Map.Entry<String, ParameterTypes> entry : parametersList.entrySet()) {
+	    	parameterDetailled=new ParameterDetailled();
+	    	parameterDetailled.setCode(entry.getKey());
+//	    	messageSource à null car WFTask a été créé par une clazz.newInstance() et non par bean Spring.class Spring ne sait fonctionner que dans son context chargé, en en faisant un newInstance, on est pas dans le context Spring...
+	    	parameterDetailled.setLabel(messageSource.getMessage(PARAM_PREFFIX+entry.getKey()+LABEL_SUFFIX, null, currLocale));
+	    	parameterDetailled.setDescr(messageSource.getMessage(PARAM_PREFFIX+entry.getKey()+DESCR_SUFFIX, null, currLocale));
+	    	parameterDetailled.setType(entry.getValue());
+	    	parameterDetailled.setValue((String)parameter.get(entry.getKey()));
+	    	listParameters.add(parameterDetailled);
+		}
+		return listParameters;
+	}
+
+	
+	
+}

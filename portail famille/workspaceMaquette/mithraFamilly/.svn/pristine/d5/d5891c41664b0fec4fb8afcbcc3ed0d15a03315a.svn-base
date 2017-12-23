@@ -1,0 +1,44 @@
+package com.sonovision.openconv.mapper;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.nio.file.Path;
+
+import com.sedoc.toolbox.LogMes;
+
+public class TreatedObjectMapper {
+
+	public static InputStream getInputStream(Object objectConvert) {
+		if(objectConvert instanceof InputStream)
+		{
+			return (InputStream)objectConvert;
+		}
+		if(objectConvert instanceof String)
+		{
+			return getInputStream((String) objectConvert);
+		}
+		if(objectConvert instanceof Path)
+		{
+			return getInputStream(((Path) objectConvert).toString());
+		}
+		LogMes.log(TreatedObjectMapper.class, LogMes.ERROR, "don't find what is type of  :"+objectConvert);
+		return null;
+	}
+	
+	public static InputStream getInputStream(String filePath)
+	{
+		File f  = new File(filePath);
+		if(f.exists())
+		{
+			try {
+				return new FileInputStream(f);
+			} catch (FileNotFoundException e) {
+				LogMes.logError(TreatedObjectMapper.class, "Probleme during conversion of"+filePath, e);
+			}
+		}
+		return null;
+	}
+
+}

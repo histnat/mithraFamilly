@@ -1,0 +1,42 @@
+package com.sonovision.openconv.log.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.sonovision.openconv.db.dao.ConversionDao;
+import com.sonovision.openconv.log.TaskLoggerService;
+import com.sonovision.openconv.log.exception.LoggerException;
+import com.sonovision.openconv.log.model.DBLogger;
+
+
+@Service("TaskLoggerService")
+public class TaskLoggerServiceImpl implements TaskLoggerService {
+	
+	@Autowired
+	ConversionDao conversionDao;
+	
+	@Override
+	public DBLogger getLogger(String folderIn, String folderOut, String workFlowName, String workFlowSequence) throws LoggerException
+	{
+		DBLogger dbLogger = new DBLogger(folderIn,folderOut,workFlowName,workFlowSequence);
+		return dbLogger;
+	}
+
+	/**
+	 * @return the conversionDao
+	 */
+	public ConversionDao getConversionDao() {
+		return conversionDao;
+	}
+
+	/**
+	 * @param conversionDao the conversionDao to set
+	 */
+	public void setConversionDao(ConversionDao conversionDao) {
+		this.conversionDao = conversionDao;
+	}
+	
+	
+	
+	
+}

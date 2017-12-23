@@ -1,0 +1,86 @@
+package com.sonovision.openconv.ws.manager;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Service;
+import org.springframework.web.context.WebApplicationContext;
+
+import com.sonovision.openconv.wf.model.ParameterId;
+import com.sonovision.openconv.ws.controller.model.TaskParameterModel;
+
+@Service("AskParametersManager")
+@Scope(value = WebApplicationContext.SCOPE_SESSION)
+public class AskParametersManager{
+
+	private boolean waitingForAskParameters;
+	
+	private HashMap<String, TaskParameterModel> parametersHashMap;
+	
+	public AskParametersManager() {
+		super();
+		parametersHashMap= new HashMap<>();
+		waitingForAskParameters=false;
+	}
+	
+	public AskParametersManager(List<TaskParameterModel> listParams) {
+		super();
+		parametersHashMap= new HashMap<>();
+		for(TaskParameterModel taskParam:listParams){
+			parametersHashMap.put(taskParam.getId().toString(), taskParam);
+		}
+		waitingForAskParameters=false;
+	}
+	
+	public void clean(){
+		parametersHashMap= new HashMap<>();
+		waitingForAskParameters=false;
+	}
+	
+
+	public boolean isWaitingForAskParameters() {
+		return waitingForAskParameters;
+	}
+
+	public void setWaitingForAskParameters(boolean waitingForAskParameters) {
+		this.waitingForAskParameters = waitingForAskParameters;
+	}
+
+
+	public boolean hasAskParameters(/*String taskId*/){
+//		Collection<TaskParameterModel> listTaskParameterModels=parametersHashMap.values();
+//	for(TaskParameterModel tpm:listTaskParameterModels){
+//		if(tpm.getId().getTaskId().equals(taskId))
+//			return true;
+//	}
+//	return false;
+		return parametersHashMap.size()>0;
+	}
+	
+	public void update(List<TaskParameterModel> listParams) {
+		if(parametersHashMap==null)
+			parametersHashMap= new HashMap<>();
+		for(TaskParameterModel taskParam:listParams){
+			parametersHashMap.put(taskParam.getId().toString(), taskParam);
+		}
+	}
+	
+	public void addOrUpdate(TaskParameterModel param){
+		if(parametersHashMap==null)
+			parametersHashMap= new HashMap<>();
+		parametersHashMap.put(param.getId().toString(), param);
+	}
+	
+	
+	public TaskParameterModel getParam(ParameterId id){
+		return parametersHashMap.get(id.toString());
+	}
+	
+	public List<TaskParameterModel> getAllParams(){
+		return new ArrayList<>(parametersHashMap.values());
+	}
+}

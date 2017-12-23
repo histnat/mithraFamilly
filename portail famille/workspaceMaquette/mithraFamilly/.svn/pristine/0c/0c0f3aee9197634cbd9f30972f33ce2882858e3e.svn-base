@@ -1,0 +1,276 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                           RAFALE                                   *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.2                            *
+    *                    Dated 22th December 1998                        *
+    *                                                                    *
+    * Amendment :-                                                       *
+    *                                                                    *
+	*  15/01/98   : Change attribute rate to mand (%yesorno) for supply  *
+	*			    Wrong comments corrected                             *
+	*			    update public identifier                             *
+	*               Reqpers mandatory instead of optional                *
+	*               change (csn,isn?) by refipc                          *
+	*                                                                    *
+    *  15/01/98   : Define uom as pcdata                                 *
+	*                                                                    *
+	* Typical invocation :                                               *
+    * <!ENTITY % PRELREQS                                                *
+    *  PUBLIC "-//RAFALE//ELEMENTS Preliminary Requirements 981222//EN" >*
+    * %PRELREQS;                                                         *
+    ********************************************************************** -->
+
+
+
+<!--**********************************************************************
+    * Define Element PRELREQS (Preliminary Requirements) containing:-    *
+    *  REQCONDS - mandatory  single      contains NOCONDS, DMANDTP,      *
+    *                                    REQCONDM, REQCONTP.             *
+    *  REQPERS  - mandatory   single     contains PERSCAT,SUBCAT ,PERSNUM*
+    *                                     , PERSTIME.                    *
+    *  SUPEQUIP - mandatory  single      contains NOSUPEQ, SUPEQLI.      *
+    *  SUPPLIES - mandatory  single      contains NOSUPPLY, SUPPLY.      *
+    *  MISCS    - mandatory  single      contains NOMISC, MISCLI.        *
+    *  SAFETY   - mandatory  single      contains NOSAFETY, SAFECOND.    *
+    ********************************************************************** -->
+
+<!ELEMENT prelreqs - o (reqconds,reqpers,supequip,supplies,miscs,safety) >
+<!ATTLIST prelreqs   %INSDEL;>
+
+
+<!--**********************************************************************
+    * Define Element REQCONDS (Required Conditions) containing:-         *
+    *  NOCONDS  - mandatory  single      contains No Other Tags.         *
+    * or                                                                 *
+    *  REQCONDLI - mandatory  single      contains REQCOND, REQDM.       *
+    ********************************************************************** -->
+
+<!ELEMENT reqconds - o (noconds | reqcondli) >
+<!ATTLIST reqconds   %INSDEL;>
+
+
+<!--**********************************************************************
+    * Define Element REQCONDLI (Required Conditions List) containing:-   *
+    *  REQCONDM - mandatory  single      contains REQCOND, REQDM.        *
+    ********************************************************************** -->
+
+<!ELEMENT reqcondli - o (reqcond)+ >
+<!ATTLIST reqcondli   %INSDEL;>
+
+
+<!--**********************************************************************
+    * Define Element NOCONDS (No Required Conditions) containing:-       *
+    *   No Other Tags.                                                   *
+    ********************************************************************** -->
+
+<!ELEMENT noconds - o EMPTY >
+<!ATTLIST noconds   %INSDEL;>
+
+
+
+<!--*****************************************************************************
+    * Define Element REQCONDM (Required Condition Data Modules).		*
+    **************************************************************************-->
+
+<!ELEMENT reqcond - O ((%applic;)?,cond,dmcref?) >
+<!ATTLIST reqcond   %INSDEL;>
+
+
+
+<!--*****************************************************************************
+    * Define Element REQCOND (Required Condition).				*
+    **************************************************************************-->
+<!ELEMENT cond - O (para)+  -(dmcref|specpara|note)>
+<!ATTLIST cond   %INSDEL;>
+
+
+
+<!--*****************************************************************************
+    * Define Element REQPERS (Required Persons).				*
+    **************************************************************************-->
+<!ELEMENT reqpers - O  (reqper)+ >
+<!ATTLIST reqpers   %INSDEL;>
+
+
+<!--*****************************************************************************
+    * Define Element REQPER (Required Persons item).				*
+    **************************************************************************-->
+<!ELEMENT reqper - O  ((%applic;)?,perscat, subcat?, persnum, perstime?)>
+<!ATTLIST reqper   %INSDEL;>
+
+
+
+<!--*****************************************************************************
+    * Define Element PERSCAT  (Personel Category).				*
+    **************************************************************************-->
+<!ELEMENT perscat - O (#PCDATA) >
+<!ATTLIST perscat      
+      %INSDEL;>
+
+
+<!--*****************************************************************************
+    * Define Element SUBCAT  (Personel SubCategory).				*
+    **************************************************************************-->
+<!ELEMENT subcat - O (#PCDATA) >
+<!ATTLIST subcat      %INSDEL;>
+
+
+
+<!--*****************************************************************************
+    *  Define Element PERSNUM  (Number of persons required to complete task).	*
+    **************************************************************************-->
+<!ELEMENT persnum - O EMPTY >
+<!ATTLIST persnum     %INSDEL;
+              no   NUMBER    #REQUIRED >
+
+
+<!--*****************************************************************************
+    *  Define Element PERSTIME  (Task Duration in hour and 1/10 h for person(s))*
+    **************************************************************************-->
+<!ELEMENT perstime - O EMPTY >
+<!ATTLIST perstime     %INSDEL;
+              value   CDATA    #REQUIRED >
+
+
+<!--*****************************************************************************
+    * Define Element MISCS (Miscellaneous).					*
+    **************************************************************************-->
+<!ELEMENT miscs - O (nomisc|miscli) >
+<!ATTLIST miscs     
+	%INSDEL;>
+
+
+<!--*****************************************************************************
+    * Define Element NOMISC (No Miscellaneous).					*
+    **************************************************************************-->
+<!ELEMENT nomisc - O EMPTY >
+<!ATTLIST nomisc    %INSDEL;>
+
+
+<!--*****************************************************************************
+    * Define Element MISCLI (Miscellaneous Products List).				*
+    **************************************************************************-->
+<!ELEMENT miscli - O (misc+) >
+<!ATTLIST miscli    %INSDEL;>
+
+
+<!--*****************************************************************************
+    * Define Element MISC (Miscellaneous).					*
+    **************************************************************************-->
+<!ELEMENT misc - O ((%applic;)?,%ident;,nomen?,quantity,uom?) >
+<!ATTLIST misc
+		matiere		%yesorno	"0"    --matiere ou ingredient --
+		%bodyatt;>
+	
+<!--*****************************************************************************
+    * Define Element SUPEQUIP (Support Equipment).				*
+    **************************************************************************-->
+<!ELEMENT supequip - O ((nosupeq | supeqli) , (nosupeqs | supeqlis)) 
+                             -- Support Equipment.-->
+<!ATTLIST supequip     %INSDEL;>
+
+<!--*****************************************************************************
+    * Define Element NOSUPEQ (No Support Equipment).				*
+    **************************************************************************-->
+<!ELEMENT nosupeq - O EMPTY >
+<!ATTLIST nosupeq     %INSDEL;>
+
+<!--*****************************************************************************
+    * Define Element NOSUPEQS (No Standard  Support Equipment).			*
+    **************************************************************************-->
+<!ELEMENT nosupeqs - O EMPTY >
+<!ATTLIST nosupeqs     %INSDEL;>
+
+<!--*****************************************************************************
+    * Define Element SUPEQLI (Support Equipment List).				*
+    **************************************************************************-->
+<!ELEMENT supeqli - O (supequi+) >
+<!ATTLIST supeqli   %INSDEL;>
+
+
+<!--*****************************************************************************
+    * Define Element SUPEQUI (Support Equipment).				*
+    **************************************************************************-->
+<!ELEMENT supequi - O ((%applic;)?,%ident;,nomen?,quantity) >
+<!ATTLIST supequi
+		%bodyatt;>	
+
+<!--*****************************************************************************
+    * Define Element SUPEQLIS (Standard Support Equipment List).		*
+    **************************************************************************-->
+<!ELEMENT supeqlis - O (supequis+) >
+<!ATTLIST supeqlis  %INSDEL;>
+
+
+<!--*****************************************************************************
+    * Define Element SUPEQUIS (Standard Support Equipment).			*
+    **************************************************************************-->
+<!ELEMENT supequis - O ((%applic;)?,(%ident;)?,nomen,quantity) >
+<!ATTLIST supequis
+		%bodyatt;>
+
+
+<!--*****************************************************************************
+    * Define Element QUANTITY (Quantity Of an Item).				*
+    **************************************************************************-->
+<!ELEMENT quantity  - - CDATA >
+<!ATTLIST quantity  %INSDEL;>
+
+
+<!--*****************************************************************************
+    * Define Element UOM (unit of measure).		                      		*
+    **************************************************************************-->
+<!ELEMENT uom  - - (#PCDATA)>
+<!ATTLIST uom  %INSDEL;>
+
+
+
+<!--*****************************************************************************
+    * Define Element SUPPLIES (Supplies).					*
+    **************************************************************************-->
+<!ELEMENT supplies - O (nosupply | supplyli) >
+<!ATTLIST supplies  %INSDEL;>
+
+
+<!--*****************************************************************************
+    * Define Element NOSUPPLY (No Supplies).					*
+    **************************************************************************-->
+<!ELEMENT nosupply - O EMPTY >
+<!ATTLIST nosupply  %INSDEL;>
+
+
+<!--*****************************************************************************
+    * Define Element SUPPLYLI (Supply List).					*
+    **************************************************************************-->
+<!ELEMENT supplyli - O (supply+)>
+<!ATTLIST supplyli     %INSDEL;
+	exhaust		%yesorno	"0" --exhaustive / no exhaustive list -->
+
+
+<!--*****************************************************************************
+    * Define Element SUPPLY (Supply).						*
+    **************************************************************************-->
+<!ELEMENT supply - O ((%applic;)?,%ident;,nomen?,quantity) >
+<!ATTLIST supply 
+		%bodyatt;
+		mand	%yesorno	"1" --mandatory or not -->	
+
+
+<!--*****************************************************************************
+    * Define Element SAFETY (Safety Conditions).				*
+    **************************************************************************-->
+<!ELEMENT safety - O (nosafety | specpara) >
+<!ATTLIST safety     %INSDEL;>
+
+<!--*****************************************************************************
+    * Define Element NOSAFETY (No Safety Conditions).				*
+    **************************************************************************-->
+<!ELEMENT nosafety - O EMPTY >
+<!ATTLIST nosafety     %INSDEL;>
+
+
+
+
+

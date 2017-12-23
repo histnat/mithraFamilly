@@ -1,0 +1,252 @@
+package com.sonovision.openconv.modules.xslprocess;
+
+import java.io.BufferedInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.URIResolver;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
+
+import com.sedoc.dtdtoolbox.utils.DTDParsing;
+import com.sedoc.toolbox.SpringBeanProvider;
+import com.sedoc.toolbox.bean.UtilsService;
+import com.sedoc.toolbox.bean.XSLTransformService;
+import com.sonovision.openconv.db.vo.ConversionObject;
+import com.sonovision.openconv.log.model.LoggerLevel;
+import com.sonovision.openconv.mapper.TreatedObjectMapper;
+import com.sonovision.openconv.model.TreatedObject;
+import com.sonovision.openconv.modules.xslprocess.exception.XSLProcessException;
+import com.sonovision.openconv.modules.xslprocess.resolver.XSLURIResolver;
+import com.sonovision.openconv.utils.FileAccess;
+import com.sonovision.openconv.wf.WFTask;
+import com.sonovision.openconv.wf.WFTaskHelper;
+import com.sonovision.openconv.wf.xmodel.ParameterDetailled;
+import com.sonovision.openconv.wf.xmodel.ParameterTypes;
+
+@Component("TaskXSLProcess")
+public class TaskXSLProcess extends WFTaskHelper implements WFTask {
+
+	@Autowired
+	XSLTransformService xslTransformerService;
+
+	@Autowired
+	UtilsService utilsService;
+	
+	static DTDParsing dtdParsing;
+
+	private URIResolver uriResolver;
+
+	//I must init spring composent, buti have loop on this class. this variable is for skip loop. I think it will be better if we use @Configure. next time
+	private static boolean initrun = false;
+	
+	static{
+		dtdParsing = new DTDParsing();
+	}
+
+	public TaskXSLProcess() {
+
+		super();
+	}
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7764367737889004545L;
+
+	public final static String PARAMETER_XSL_FILE_NAME="xslFileName";
+	private final static String PARAMETER_XSL_TRANSFORMER_ENGINE="xsltransformerEngine";
+	private final static String PARAMETER_XSL_URIRESOLVER_CLASS="uriresolver";
+	public final static String PARAMETER_LOADFILE_CODIFICATION_FILE="codificationFile";
+
+
+	
+	public final static String XSL_ENGINE_SAXON = "saxon";
+
+	private String xslFileName;
+
+	public String run(HashMap<String, TreatedObject> treatedObjectHash) {
+		initClass();
+		dbLogger.logTask("Debut de la transformation xsl", LoggerLevel.INFO);
+		if (treatedObjectHash == null || treatedObjectHash.isEmpty()) {
+			dbLogger.logTask("Aucun xml a traiter", LoggerLevel.FATAL);
+			return LoggerLevel.FATAL.getValue().toString();
+		}
+
+		// get parameter xsl file name
+		xslFileName = (String) parameter.get(PARAMETER_XSL_FILE_NAME);
+		if (xslFileName == null) {
+			dbLogger.logTask("Le paramètre  " + PARAMETER_XSL_FILE_NAME + " est obligatoire", LoggerLevel.FATAL);
+			return LoggerLevel.FATAL.getValue().toString();
+		}
+
+		// get parameter xsl tranformer engine for change engine
+		String xslEngine = (String) parameter.get(PARAMETER_XSL_TRANSFORMER_ENGINE);
+		if (xslEngine != null && !xslEngine.isEmpty()) {
+			switch (xslEngine) {
+			case XSL_ENGINE_SAXON:
+				System.setProperty("javax.xml.transform.TransformerFactory", "net.sf.saxon.TransformerFactoryImpl");
+			}
+		}
+
+		// get parameter uriresolver, it must be class name
+		String uriResolverParam = (String) parameter.get(PARAMETER_XSL_URIRESOLVER_CLASS);
+		if (uriResolverParam != null && !uriResolverParam.isEmpty()) {
+			try {
+				uriResolver = getURIResolver(uriResolverParam);
+			} catch (XSLProcessException e) {
+				dbLogger.logTask(e.getMessage(), LoggerLevel.FATAL);
+				return LoggerLevel.FATAL.getValue().toString();
+			}
+		} else {
+			uriResolver = new XSLURIResolver();
+		}
+
+		treatedObjectHash.values().stream().parallel().forEach((to) -> doTransformation(to));
+		return dbLogger.getTask().getLogResult();
+
+	}
+
+	private URIResolver getURIResolver(String classNameUriResolver) throws XSLProcessException {
+		Class clazz;
+		URIResolver uriResolver = null;
+		try {
+			clazz = ClassLoader.getSystemClassLoader().loadClass(classNameUriResolver);
+		} catch (ClassNotFoundException e1) {
+			dbLogger.logTask("Impossible de charger le resolver :" + classNameUriResolver, LoggerLevel.FATAL);
+			throw new XSLProcessException("Impossible de charger le resolver :" + classNameUriResolver);
+		}
+		if (clazz == null) {
+			throw new XSLProcessException("Impossible de charger le resolver :" + classNameUriResolver);
+		}
+		try {
+			uriResolver = (URIResolver) clazz.newInstance();
+		} catch (InstantiationException e) {
+			throw new XSLProcessException("Impossible de charger le resolver :" + classNameUriResolver);
+		} catch (IllegalAccessException e) {
+			throw new XSLProcessException("Impossible de charger le resolver :" + classNameUriResolver);
+		}
+
+		return uriResolver;
+
+	}
+
+	private TreatedObject doTransformation(TreatedObject to) {
+		if(to.getLastResultAction()!=null && (to.getLastResultAction().equals(LoggerLevel.FATAL.toString())  || to.getLastResultAction().equals(LoggerLevel.ERROR.toString())))
+		{
+			dbLogger.logObject("l'objet :" + to.getIdObject() +" n'est pas traité car il est en level : "+to.getLastResultAction(), LoggerLevel.INFO, to.getIdObject());
+			closeObject(dbLogger.getLoggerLevel(to.getLastResultAction()), to);
+			return to;
+		}
+		dbLogger.logObject("Debut conversion :" + to.getIdObject(), LoggerLevel.INFO, to.getIdObject());
+		ConversionObject co = dbLogger.getConversionObject(to.getIdObject());
+
+		InputStream xslInputSource = FileAccess.getResourceFileStream(xslFileName);
+		BufferedInputStream bin = new BufferedInputStream(xslInputSource);
+
+		InputStream document = TreatedObjectMapper.getInputStream(to.getObjectConvert());
+		Document doc = null;
+		try {
+			doc = dtdParsing.getParseXML(document);
+		} catch (IOException | ParserConfigurationException | SAXException e1) {
+			to.setLastResultAction(LoggerLevel.ERROR.toString());
+			dbLogger.logObject("Impossible de parser l'object :" + to.getIdObject() + " erreur:" + e1.getMessage(),	LoggerLevel.ERROR, to.getIdObject());
+			closeObject(LoggerLevel.ERROR, to);
+			return to;
+		}
+		ByteArrayOutputStream out = new ByteArrayOutputStream();
+		xslTransformerService.addTransformerParameter("objectid", co.getId());
+		xslTransformerService.addTransformerParameter("xmlDmFilename2", co.getIdentification());
+		xslTransformerService.addTransformerParameter("codificationFilePath", (String) parameter.get(PARAMETER_LOADFILE_CODIFICATION_FILE));
+		try {
+			xslTransformerService.transformWithEx(doc, xslInputSource, out, uriResolver);
+		} catch (TransformerException e) {
+			to.setLastResultAction(LoggerLevel.ERROR.toString());
+			dbLogger.logObject("Erreur durant la transformation xsl :" + to.getIdObject() + " erreur:" + e.getMessage(),
+					LoggerLevel.ERROR, to.getIdObject());
+			closeObject(LoggerLevel.ERROR, to);
+			return to;
+		}
+		InputStream ips = utilsService.outputStreamToInputStream(out);
+		//utilsService.ecritFile(ips, "d:\\test.xml");
+		to.setObjectConvert(ips);
+		to.setLastResultAction(LoggerLevel.INFO.toString());
+		closeObject(LoggerLevel.INFO, to);
+		
+		
+		return to;
+	}
+
+	/**
+	 * It can be replaced by @Configuration with aspectj spring but i don't know
+	 * why it doesn't work TODO :make it generic in extends's class
+	 */
+	public void initClass() {
+		if (!initrun) {
+			initrun = true;
+			if (xslTransformerService == null) {
+				xslTransformerService = (XSLTransformService) SpringBeanProvider.getBean("XSLTransformService");
+			}
+			if (utilsService == null) {
+				utilsService = (UtilsService) SpringBeanProvider.getBean("UtilsService");
+			}
+			initrun = false;
+		}
+	}
+
+	/**
+	 * @return the xslTransformerService
+	 */
+	public XSLTransformService getXslTransformerService() {
+		return xslTransformerService;
+	}
+
+	/**
+	 * @param xslTransformerService
+	 *            the xslTransformerService to set
+	 */
+	public void setXslTransformerService(XSLTransformService xslTransformerService) {
+		this.xslTransformerService = xslTransformerService;
+	}
+
+	/**
+	 * @return the utilsService
+	 */
+	public UtilsService getUtilsService() {
+		return utilsService;
+	}
+
+	/**
+	 * @param utilsService
+	 *            the utilsService to set
+	 */
+	public void setUtilsService(UtilsService utilsService) {
+		this.utilsService = utilsService;
+	}
+
+	@Override
+	public List<ParameterDetailled> getParameterList(Locale locale) {
+
+		parametersList=new HashMap<>();
+		parametersList.put(PARAMETER_XSL_FILE_NAME,ParameterTypes.FILE);
+		parametersList.put(PARAMETER_XSL_TRANSFORMER_ENGINE,ParameterTypes.TXT);
+		parametersList.put(PARAMETER_XSL_URIRESOLVER_CLASS,ParameterTypes.TXT);
+		parametersList.put(PARAMETER_LOADFILE_CODIFICATION_FILE,ParameterTypes.FILE);
+
+		return super.procedeParameterList(locale);
+	}
+
+
+}

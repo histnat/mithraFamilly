@@ -1,0 +1,72 @@
+package com.sonovision.openconv.modules.dtdvalidator;
+
+import static org.testng.AssertJUnit.assertEquals;
+import static org.testng.AssertJUnit.assertNotNull;
+
+import java.io.IOException;
+import java.util.HashMap;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.web.WebAppConfiguration;
+import org.testng.annotations.Test;
+
+import com.sedoc.toolbox.bean.UtilsService;
+import com.sonovision.openconv.log.model.LoggerLevel;
+import com.sonovision.openconv.model.TreatedObject;
+import com.sonovision.openconv.utils.ResourceTestPath;
+import com.sonovision.openconv.utils.TestHelperXslProcess;
+
+
+public class TaskDTDValidatorTest extends TestHelperXslProcess {
+	@Autowired
+	UtilsService utilservice;
+
+	//TODO:vadidation on cobra doesn't work
+	@Test(enabled=false)
+	public void runTest() throws IOException {
+		System.out.println("Test run Min");
+		TaskDTDValidator txp = new TaskDTDValidator();
+		HashMap<String, TreatedObject> toList = getTreatedObjectList(ResourceTestPath.COBRA);
+
+		txp.setDBLogger(getDBLogger(ResourceTestPath.COBRA));
+		String result = txp.run(toList);
+		assertEquals(result, LoggerLevel.INFO.getValue().toString());
+		assertEquals(toList.size(), 3);
+
+		// test on bad cobra
+		//bad struct
+		toList = getTreatedObjectList(ResourceTestPath.BADUD);
+		txp.setDBLogger(getDBLogger(ResourceTestPath.BADUD));
+		result = txp.run(toList);
+		assertEquals(result, LoggerLevel.ERROR.getValue().toString());
+		TreatedObject to = toList.get("BADCOBRA-structure.xml");
+		assertNotNull(to);
+		assertEquals(to.getLastResultAction(), LoggerLevel.ERROR.getValue().toString());
+		
+		to = toList.get("BADCOBRA.xml");
+		assertNotNull(to);
+		//TODO:vadidation on cobra doesn't work
+		//assertEquals(to.getLastResultAction(), LoggerLevel.ERROR.getValue().toString());
+
+	}
+
+	/**
+	 * @return the utilservice
+	 */
+	public UtilsService getUtilservice() {
+		return utilservice;
+	}
+
+	/**
+	 * @param utilservice
+	 *            the utilservice to set
+	 */
+	public void setUtilservice(UtilsService utilservice) {
+		this.utilservice = utilservice;
+	}
+
+	private void assertTrue(boolean b) {
+		// TODO Auto-generated method stub
+
+	}
+}

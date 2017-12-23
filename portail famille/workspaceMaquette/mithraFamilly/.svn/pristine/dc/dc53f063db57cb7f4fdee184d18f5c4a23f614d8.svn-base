@@ -1,0 +1,150 @@
+package com.sonovision.openconv.db.bo;
+
+import java.io.File;
+import java.io.Serializable;
+import java.util.List;
+
+import com.sonovision.openconv.db.exception.DBNONullException;
+import com.sonovision.openconv.db.exception.DBNOUniqueException;
+import com.sonovision.openconv.db.vo.execution.CoHistoryExe;
+import com.sonovision.openconv.db.vo.execution.CoParameterExe;
+import com.sonovision.openconv.db.vo.execution.CoScenario;
+import com.sonovision.openconv.db.vo.user.OpGroup;
+import com.sonovision.openconv.db.vo.user.OpRole;
+import com.sonovision.openconv.db.vo.user.OpUser;
+import com.sonovision.openconv.wf.exception.WorkflowException;
+import com.sonovision.openconv.wf.xmodel.Workflow;
+
+public interface DBExecutionService extends Serializable {
+
+	/**
+	 * 
+	 * @param coHistoryExe
+	 * @return
+	 * @throws DBNOUniqueException 
+	 * @throws DBNONullException 
+	 */
+	CoHistoryExe save(CoHistoryExe coHistoryExe) throws DBNONullException, DBNOUniqueException;
+
+	/**
+	 * 
+	 * @param coHistoryExe
+	 * @return
+	 * @throws DBNOUniqueException 
+	 * @throws DBNONullException 
+	 */
+	CoHistoryExe getOrSave(CoHistoryExe coHistoryExe) throws DBNONullException, DBNOUniqueException;
+
+	/**
+	 * 
+	 * @param coHistoryExe
+	 * @return
+	 */
+	CoHistoryExe findByAll(CoHistoryExe coHistoryExe);
+	
+    /**
+     * get history by mongo Id
+     *
+     * @param id
+     * @return
+     */
+    CoHistoryExe findUserByIdHist(String id);
+
+    /**
+     * get history by mongo Id
+     *
+     * @param id
+     * @return
+     */
+    CoHistoryExe findByIdExe(String id);
+    
+    List<CoHistoryExe> listHistory();
+
+	CoHistoryExe create(String scenarioId, String userId) throws DBNONullException, DBNOUniqueException;
+	CoHistoryExe stop(CoHistoryExe coHistoryExe, int nbrOK, int nbrNOK, int nbrBloquant) throws DBNONullException, DBNOUniqueException;
+	/**
+	 * 
+	 * @param CoParameterExe
+	 * @return
+	 */
+	CoParameterExe save(CoParameterExe coParameterExe) throws DBNONullException, DBNOUniqueException;
+	
+	
+	/**
+	 * 
+	 * @param CoParameterExe
+	 * @return
+	 */
+	List<CoParameterExe> save(List<CoParameterExe> coParameterExeList) throws DBNONullException, DBNOUniqueException;
+	/**
+	 * 
+	 * @param coParameterExe
+	 * @return
+	 * @throws DBNONullException
+	 * @throws DBNOUniqueException
+	 */
+	CoParameterExe getOrSave(CoParameterExe coParameterExe) throws DBNONullException, DBNOUniqueException;
+
+	/**
+	 * 
+	 * @param coParameterExe
+	 * @return
+	 */
+	CoParameterExe findByAll(CoParameterExe coParameterExe);
+	
+	/**
+	 * 
+	 * @param coScenario
+	 * @return
+	 */
+	CoScenario save(CoScenario coScenario) throws DBNONullException, DBNOUniqueException;
+	
+	/**
+	 * 
+	 * @param coScenario
+	 * @return
+	 * @throws DBNONullException
+	 * @throws DBNOUniqueException
+	 */
+	CoScenario getOrSave(CoScenario coScenario) throws DBNONullException, DBNOUniqueException;
+
+	/**
+	 * 
+	 * @param opGroup
+	 * @return
+	 */
+	CoScenario findByAll(CoScenario coScenario);
+	
+    /**
+     * Return a scenario list
+     *
+     * @return the scenario list
+     */
+    List<CoScenario> listScenario();
+
+
+    /**
+     * Return a scenario list
+     *
+     * @return the scenario list
+     */
+    List<CoScenario> list(OpUser user);
+
+    
+
+    /**
+     * get scenario by mongo Id
+     *
+     * @param id
+     * @return
+     */
+    CoScenario findById(String id);
+    
+    void deleteScenario(String idScenario);
+
+    CoScenario findUserByIdScen(String id);
+    
+    Workflow loadWorkflow(File workflowFile) throws WorkflowException;
+    
+    CoHistoryExe get(String scenarioId, String executionid);
+}

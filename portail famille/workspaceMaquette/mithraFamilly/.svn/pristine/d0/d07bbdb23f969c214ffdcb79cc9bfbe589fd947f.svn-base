@@ -1,0 +1,54 @@
+package com.sonovision.openconv.modules.sgmlprocess.model;
+
+import java.util.Hashtable;
+
+import com.sonovision.openconv.modules.sgmlprocess.reader.SGMLStream;
+
+public class SGMLDoctype {
+    Hashtable specs = new Hashtable();
+
+    public SGMLElementSpec add(SGMLElementSpec spec)
+    {
+	specs.put(spec.name, spec);
+	return spec;
+    }
+
+    public SGMLElementSpec addEmpty(String name)
+    {
+	return new SGMLElementSpec(this, name, SGMLStream.empty, false, false);
+    }
+
+    public SGMLElementSpec addCData(String name, boolean endOptional)
+    {
+	return new SGMLElementSpec(this, name, SGMLStream.cdata,
+				   false, endOptional);
+    }
+
+    public SGMLElementSpec addMixed(String name, 
+			     boolean startOptional, boolean endOptional)
+    {
+	return new SGMLElementSpec(this, name, SGMLStream.mixed,
+				   startOptional, endOptional);
+    }
+
+    public SGMLElementSpec addElement(String name, 
+			       boolean startOptional, boolean endOptional)
+    {
+	return new SGMLElementSpec(this, name, SGMLStream.element,
+				   startOptional, endOptional);
+    }
+
+    public SGMLElementSpec addAny(String name, 
+			   boolean startOptional, boolean endOptional)
+    {
+	return new SGMLElementSpec(this, name, SGMLStream.any,
+				   startOptional, endOptional);
+    }
+
+    // Find the spec for an element by name
+
+    public  SGMLElementSpec findSpec(String name)
+    {
+	return (SGMLElementSpec)specs.get(name);
+    }
+}

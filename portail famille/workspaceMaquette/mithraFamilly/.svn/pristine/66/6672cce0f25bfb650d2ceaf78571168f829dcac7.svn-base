@@ -1,0 +1,397 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1A726100SF030100183A011 SYSTEM "x-dm://0900f90b80003457,MYWORKING" NDATA cgm>
+<!ENTITY A1A726100SF030100239A011 SYSTEM "x-dm://0900f90b80003168,MYWORKING" NDATA cgm>
+<!ENTITY A1A726100SF030100240A011 SYSTEM "x-dm://0900f90b80003169,MYWORKING" NDATA cgm>
+<!ENTITY A1A726100SF030100241A011 SYSTEM "x-dm://0900f90b8000316b,MYWORKING" NDATA cgm>
+<!ENTITY A1A726100SF030100242A011 SYSTEM "x-dm://0900f90b8000316a,MYWORKING" NDATA cgm>
+<!ENTITY A1A726100SF030100243A011 SYSTEM "x-dm://0900f90b8000316c,MYWORKING" NDATA cgm>
+<!ENTITY A1A726100SF030100244A011 SYSTEM "x-dm://0900f90b8000316d,MYWORKING" NDATA cgm>
+<!ENTITY A1A726100SF030100556A011 SYSTEM "x-dm://0900f90b800035c4,MYWORKING" NDATA cgm>
+]>
+<?Pub EntList bull copy rArr sect trade deg>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>6</section><subsect>1</subsect><subject>00</subject><discode>10</discode><discodev>A</discodev><incode>717</incode><incodev>B</incodev><itemloc>D</itemloc></avee></dmc>
+<dmtitle><techname>SOUS ENSEMBLE ARBRE A PLATEAU PMA</techname><infoname>PROCEDURES D'ASSEMBLAGE PROPREMENT DITE</infoname></dmtitle>
+<issno type="R" issno="2">
+<issdate month="12" year="2008" day="31">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 1"></version>
+<version version="M88-2 ETAPE 4"></version>
+<nti nti2="1" nti3="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Prise en compte de la FRD 501 du 25/06/03</rfu>
+<remarks>RAS</remarks>
+<icns><icn id="A1A726100SF030100183A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>6</section><subsect>1</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00183</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A726100SF030100240A011"><?Pub Caret1>
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>6</section><subsect>1</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00240</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A726100SF030100241A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>6</section><subsect>1</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00241</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A726100SF030100242A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>6</section><subsect>1</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00242</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A726100SF030100243A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>6</section><subsect>1</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00243</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A726100SF030100244A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>6</section><subsect>1</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00244</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A726100SF030100556A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>6</section><subsect>1</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00556</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<refdm>
+<dmcid id="A1A72610001A030AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>6</section><subsect>1</subsect><subject>00</subject><discode>01</discode><discodev>A</discodev><incode>030</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1AJA720800A120AC"><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>JA</ecscc><eidc>72</eidc><cic>08</cic><discode>00</discode><discodev>A</discodev><incode>120</incode><incodev>A</incodev><itemloc>C</itemloc></age></dmcid>
+</refdm>
+</refs><proced><pmd>
+<manhour value="1,0"></manhour>
+<duration value="1,0"></duration>
+</pmd><prelreqs><reqconds>
+<noconds></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="1,0"></reqper>
+</reqpers><supequip><supeqli>
+<supequi id="O2.30401"><refipc csn="72016701 694 "><nomen>MALLETTE GUIDE DE MONTAGE</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.30421"><refipc csn="72016701 745 "><nomen>MALLETTE GUIDE DE MONTAGE</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.30437"><refipc csn="72016701 725 "><nomen>ADAPTATEUR</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.30456"><refipc csn="72016701 728 "><nomen>SUPPORT</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.30468"><refipc csn="72016701 739 "><nomen>JET DE MONTAGE</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.30473"><refipc csn="72016701 750 "><nomen>CLE DE SERRAGE</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.30474"><refipc csn="72016701 744 "><nomen>SUPPORT ARRET EN ROTATION</nomen><quantity>1</quantity></supequi>
+</supeqli><supeqlis>
+<supequis id="O2.C0178"><refipc csn="72016002 035 "><nomen>DOUILLE 12 PANS CARRE 1/4 DE 8</nomen><quantity>1</quantity></supequis>
+<supequis id="O2.C0200"><refipc csn="72016002 185 "><nomen>GANT ANTI-CHALEUR</nomen><quantity>1</quantity></supequis>
+<supequis id="O2.C0215"><refipc csn="72016002 215 "><nomen>CLIQUET COMPACT 9/12 CARRE 1/4</nomen><quantity>1</quantity></supequis>
+<supequis id="O2.C0171"><refipc csn="72016002 093 "><nomen>DOUILLE TOURNEVIS TORX CARRE 1/4 DE 3,84</nomen><quantity>1</quantity></supequis>
+<supequis id="O2.S0065"><refipc csn="72016001 007 "><nomen>CLE DYNAMO AV CLIQUET R302A</nomen><quantity>1</quantity></supequis>
+<supequis id="O2.S0680"><refipc csn="72016001 029 "><nomen>CLE DYNAMOMETRIQUE R.304DA 1-5N.m</nomen><quantity>1</quantity></supequis>
+</supeqlis></supequip><supplies><supplyli exhaust="0">
+<supply id="R11161" mand="0"><refipc csn="72610003 015 "><nomen>GARNITURE D'ETANCHEITE</nomen><quantity>1</quantity></supply>
+<supply id="R11162" mand="0"><refipc csn="72610003 017 "><nomen>JOINT TORIQUE</nomen><quantity>1</quantity></supply>
+<supply id="R11259" mand="0"><refipc csn="72610003 014 "><nomen>JOINT TORIQUE</nomen><quantity>2</quantity></supply>
+</supplyli></supplies><miscs><miscli>
+<misc id="P0129" matiere="0"><refipc csn="72013002 001 "><nomen>SOLVANT DE NETTOYAGE</nomen><quantity>SB</quantity></misc>
+<misc id="P0300" matiere="0"><refipc csn="72013001 011 "><nomen>HUILE SYNTHETIQUE TYPE 5MM2/S</nomen><quantity>SB</quantity></misc>
+<misc id="P0189" matiere="0"><refipc csn="72013002 004 "><nomen>VASELINE MINERALE GRAPHITEE</nomen><quantity>SB</quantity></misc>
+</miscli></miscs><safety><nosafety></safety></prelreqs><mainfunc>
+<step1 control="0" id="P10">
+<title>NETTOYAGE</title>
+<specpara>
+<caution>
+<p>Ne pas employer de produits chlor&eacute;s&nbsp;: pr&eacute;sence de pi&egrave;ces et d'inserts en TITANE.</p>
+</caution>
+</specpara>
+<para><p>Nettoyer les pi&egrave;ces<miscref refid="P0129"> sauf :</p>
+</para>
+<list type="SIMPLE">
+<item><para><p>carter, couvercle,</p>
+</para>
+</item>
+<item><para><p>joints toriques,</p>
+</para>
+</item>
+<item><para><p>petite visserie.</p>
+</para>
+</item>
+</list>
+</step1>
+<step1 control="0" id="P20">
+<title>DESTOCKAGE DU ROULEMENT</title>
+<para><p>Destocker le roulement au maximum 24 heures avant le montage.</p>
+</para>
+</step1>
+<step1 control="0" id="P30">
+<title>DEMAGNETISATION</title>
+<para><p>D&eacute;magn&eacute;tiser le pignon, le roulement, le distributeur, l'&eacute;crous &agrave; cr&eacute;neaux et les &eacute;crous autofrein&eacute;s<dmcref xrefid="A1AJA720800A120AC">.</p>
+</para>
+</step1>
+<step1 control="0" id="P40">
+<title>INSTALLATION DU JOINT D'ETANCHEITE RADIAL DANS LE BOITIER DE ROULEMENT</title>
+<step2 control="0" id="P40-10">
+<para><p>Installer un joint<supplref refid="R11162"> dans la gorge ext&eacute;rieure du joint<supplref refid="R11161"><figref refid="A726100SF030100240A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P40-20">
+<para><p>Installer le joint<supplref refid="R11161"> dans le bo&icirc;tier de roulement<refipc csn="72610003 001 "><figref repnohot="11156" refid="A726100SF030100240A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P40-30">
+<para><p>Enduire de graisse graphit&eacute;e<miscref refid="P0189"> et installer les vis<refipc csn="72610003 016 "><figref repnohot="11163" refid="A726100SF030100240A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P40-40">
+<para><p>Serrer les vis <refipc csn="72610003 016 "> au couple de 4,5&nbsp;N.m<supeqref refid="O2.S0680"><supeqref refid="O2.C0171"><figref repnohot="11163" refid="A726100SF030100240A011">.</p>
+</para>
+</step2>
+</step1>
+<step1 control="0" id="P50">
+<title>MONTAGE DU BOITIER DE ROULEMENT ET DU ROULEMENT SUR L'ARBRE A PLATEAU</title>
+<step2 control="0" id="P50-10">
+<para><p>Etuver &agrave; 145&nbsp;(+&nbsp;10&nbsp;;&nbsp;-&nbsp;10)&nbsp;&deg;C pendant 5 minutes le bo&icirc;tier de roulement &eacute;quip&eacute;<refipc csn="72610003 001 "><figref repnohot="11156" refid="A726100SF030100240A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P50-20">
+<para><p>Placer l'arbre<refipc csn="72610003 010 "> sur le support<supeqref refid="O2.30456"><figref repnohot="11168" refid="A726100SF030100241A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P50-30">
+<para><p>Prendre la mallette<supeqref refid="O2.30401"><figref refid="A726100SF030100183A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P50-40">
+<para><p>Installer le monte joint radial sur l'arbre<refipc csn="72610003 010 "><figref repnohot="2.30401REP21, 11168" refid="A726100SF030100241A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P50-50">
+<specpara>
+<warning vital="0">
+<p>Porter des gants anti-chaleur<supeqref refid="O2.C0200"> pour manipuler des pi&egrave;ces chauff&eacute;es.</p>
+</warning>
+</specpara>
+<para><p>Sortir le bo&icirc;tier de roulement &eacute;quip&eacute;<refipc csn="72610003 001 "> de l'&eacute;tuve<figref repnohot="11156" refid="A726100SF030100240A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P50-60">
+<specpara>
+<caution>
+<p>Ne pas rayer la garniture d'&eacute;tanch&eacute;it&eacute; pendant le montage du bo&icirc;tier de roulement sur l'arbre &agrave; plateau.</p>
+</caution>
+</specpara>
+<para><p>Installer le bo&icirc;tier de roulement<refipc csn="72610003 001 "> sur l'arbre<refipc csn="72610003 010 "><figref repnohot="11156, 11168" refid="A726100SF030100241A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P50-70">
+<para><p>Enlever le monte joint radial de l'arbre &agrave; plateau<refipc csn="72610003 010 "><figref repnohot="2.30401REP21, 11168" refid="A726100SF030100241A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P50-80">
+<para><p>Installer le jet<supeqref refid="O2.30468"> sur le nez de la presse.</p>
+</para>
+</step2>
+<step2 control="0" id="P50-90">
+<para><p>Placer l'ensemble arbre<refipc csn="72610003 010 "> et le support<supeqref refid="O2.30456"> sur la table de la presse<figref repnohot="11168" refid="A726100SF030100242A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P50-100">
+<para><p>Installer le roulement<refipc csn="72610003 019 "> sur l'arbre<refipc csn="72610003 010 "><figref repnohot="11158, 11168" refid="A726100SF030100242A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P50-110">
+<para><p>Emmancher le roulement<refipc csn="72610003 019 "> jusqu'&agrave; amener en contact la bague int&eacute;rieure du roulement avec l'&eacute;paulement de l'arbre<refipc csn="72610003 010 "><supeqref refid="O2.30468"><figref repnohot="11158, 11168" refid="A726100SF030100242A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P50-120">
+<para><p>Constater un jeu entre la collerette du roulement &agrave; billes<refipc csn="72610003 019 "> et le bo&icirc;tier de roulement<refipc csn="72610003 001 ">.</p>
+<note>
+<p>Jeu normal &agrave; cette phase de montage.</p>
+</note>
+</para>
+</step2>
+<step2 control="0" id="P50-130">
+<para><p>Garder l'ensemble sous pression pendant 10 secondes. </p>
+</para>
+</step2>
+<step2 control="0" id="P50-140">
+<para><p>V&eacute;rifier la libre rotation du roulement.</p>
+</para>
+</step2>
+<step2 control="0" id="P50-150">
+<para><p>D&eacute;poser le jet<supeqref refid="O2.30468">.</p>
+</para>
+</step2>
+<step2 control="0" id="P50-160">
+<para><p>Installer le d&eacute;flecteur <refipc csn="72610003 008 "><figref repnohot="11159" refid="A726100SF030100243A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P50-170">
+<para><p>Lubrifier le filetage des goujons du bo&icirc;tier de roulement<refipc csn="72610003 001 "><miscref refid="P0300">.</p>
+</para>
+</step2>
+<step2 control="0" id="P50-180">
+<para><p>Installer les 2 &eacute;crous<refipc csn="72610003 009 "><figref repnohot="11160" refid="A726100SF030100243A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P50-190">
+<para><p>Laisser l'ensemble revenir &agrave; temp&eacute;rature ambiante.</p>
+</para>
+</step2>
+<step2 control="0" id="P50-200">
+<para><p>Serrer les 2 &eacute;crous<refipc csn="72610003 009 "> au couple de 6&nbsp;N.m<supeqref refid="O2.S0065"><supeqref refid="O2.C0178"><figref repnohot="11160" refid="A726100SF030100243A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P50-210">
+<para><p>V&eacute;rifier l'absence de jeu entre la collerette du roulement<refipc csn="72610003 019 "> et le bo&icirc;tier de roulement<refipc csn="72610003 001 "><figref repnohot="11158, 11156" refid="A726100SF030100243A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P50-220">
+<para><p>Enlever l'ensemble du support<supeqref refid="O2.30456"><figref refid="A726100SF030100242A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P50-230">
+<para><p>D&eacute;poser le support<supeqref refid="O2.30456">.</p>
+</para>
+</step2>
+</step1>
+<step1 control="0" id="P60">
+<title>MONTAGE DE L'ECROU AUTOFREINE</title>
+<step2 control="0" id="P60-10">
+<para><p>Installer le support<supeqref refid="O2.30474"> sur la plaque de serrage <figref repnohot="2.30437REP04" refid="A726100SF030100243A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P60-20">
+<para><p>Installer l'arbre<refipc csn="72610003 010 "> &eacute;quip&eacute; du bo&icirc;tier de roulement<refipc csn="72610003 001 "> et du roulement<refipc csn="72610003 019 "> sur le support<supeqref refid="O2.30474"><figref repnohot="11168, 11156, 11158" refid="A726100SF030100243A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P60-30">
+<para><p>Installer l'entretoise<refipc csn="72610003 018 "><figref repnohot="11284" refid="A726100SF030100243A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P60-40">
+<para><p>Lubrifier le filetage et la surface d'appui de l'&eacute;crou<refipc csn="72610003 007 "> ainsi que le filetage de l'arbre<refipc csn="72610003 010 "><miscref refid="P0300"><figref repnohot="11261, 11168" refid="A726100SF030100243A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P60-50">
+<specpara>
+<note>
+<p>L'&eacute;crou<refipc csn="72610003 007 "> a un pas &agrave; gauche.</p>
+</note>
+</specpara>
+<para><p>Placer manuellement l'&eacute;crou<refipc csn="72610003 007 "> chanfrein vers le haut sur le filetage de l'arbre<refipc csn="72610003 010 "><figref repnohot="11261, 11168" refid="A726100SF030100243A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P60-60">
+<para><p>Positionner les ergots de la cl&eacute;<supeqref refid="O2.30473"> dans les encoches de l'&eacute;crou<refipc csn="72610003 007 "><figref repnohot="11261" refid="A726100SF030100243A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P60-70">
+<para><p>Installer la plaque d'adaptation &eacute;quip&eacute;e du multiplicateur de couple<figref repnohot="2.30437REP08" refid="A726100SF030100243A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P60-80">
+<para><p>Visser lentement l'&eacute;crou<refipc csn="72610003 007 "> jusqu'au contact sur l'entretoise<refipc csn="72610003 018 "> sans le bloquer<figref repnohot="11261, 11284" refid="A726100SF030100243A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P60-100">
+<para><p>D&eacute;visser l'&eacute;crou<refipc csn="72610003 007 "> de 4 tours pour un &eacute;crou neuf et d'un demi-tour pour un &eacute;crou d&eacute;j&agrave; mont&eacute; (1 tour d'&eacute;crou correspond &agrave; environ 4 tours de multiplicateur de couple) <figref repnohot="11261" refid="A726100SF030100243A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P60-110">
+<para><p>Visser &agrave; nouveau et relever le couple d'auto-freinage de l'&eacute;crou<refipc csn="72610003 007 "> en tenant compte du rapport du multiplicateur de couple utilis&eacute;, &eacute;tabli lors de l'&eacute;talonnage p&eacute;riodique. Ce couple doit &ecirc;tre compris entre 2,25&nbsp;mdaN et 5,0&nbsp;mdaN<figref repnohot="11261" refid="A726100SF030100243A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P60-120">
+<applic><systemid><nti nti3="1"></systemid></applic>
+<para><p>Renseigner le point 30 de la Fiche Suiveuse de Relev&eacute; de Contr&ocirc;le<dmcref xrefid="A1A72610001A030AC">.</p>
+</para>
+</step2>
+<step2 control="0" id="P60-130">
+<para><p>En d&eacute;terminer ainsi le couple de serrage final, &eacute;gal au couple freinage augment&eacute; du couple de serrage de l'&eacute;crou autofrein&eacute;. En d&eacute;duire le couple &agrave; appliquer en tenant compte du rapport multiplicateur.</p>
+</para>
+<note>
+<p>Serrer les pi&egrave;ces &agrave; temp&eacute;rature ambiante.</p>
+</note>
+</step2>
+<step2 control="0" id="P60-140">
+<para><p>Serrer l'&eacute;crou<refipc csn="72610003 007 "> au couple de serrage final<figref repnohot="11261" refid="A726100SF030100243A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P60-150">
+<para><p>Enlever la plaque d'adaptation du support<figref repnohot="2.30437REP08" refid="A726100SF030100243A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P60-160">
+<para><p>D&eacute;poser la cl&eacute;<supeqref refid="O2.30473">.</p>
+</para>
+</step2>
+<step2 control="0" id="P60-170">
+<para><p>V&eacute;rifier visuellement l'absence de contact entre le d&eacute;flecteur<refipc csn="72610003 008 "> et l'&eacute;crou autofrein&eacute;<refipc csn="72610003 007 "><figref repnohot="11159, 11261" refid="A726100SF030100243A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P60-180">
+<para><p>V&eacute;rifier la libre rotation du roulement<refipc csn="72610003 019 "><figref repnohot="11158" refid="A726100SF030100243A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P60-190">
+<para><p>D&eacute;poser le support <supeqref refid="O2.30474">.</p>
+</para>
+</step2>
+</step1>
+<step1 control="0" id="P70">
+<title>MONTAGE DU BOUCHON DE PROTECTION ET DE L'ANNEAU D'ARRET</title>
+<step2 control="0" id="P70-10">
+<para><p>Installer 2 joints<supplref refid="R11259"> sur le bouchon<refipc csn="72610003 013 "><figref repnohot="11258" refid="A726100SF030100244A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P70-20">
+<para><p>Ins&eacute;rer le bouchon<refipc csn="72610003 013 "> dans l'arbre<refipc csn="72610003 010 "><figref repnohot="11258, 11168" refid="A726100SF030100244A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P70-30">
+<para><p>V&eacute;rifier visuellement que le bouchon<refipc csn="72610003 013 "> est &agrave; sa place en s'assurant que la gorge de l'anneau<refipc csn="72610003 012 "> soit apparente<figref repnohot="11258, 11260" refid="A726100SF030100244A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P70-40">
+<para><p>Prendre la mallette<supeqref refid="O2.30421"><figref refid="A726100SF030100556A011">. </p>
+</para>
+</step2>
+<step2 control="0" id="P70-50">
+<para><p>Installer le guide dans l'al&eacute;sage de l'arbre<refipc csn="72610003 010 "><figref repnohot="2.30421REP01, 11168" refid="A726100SF030100244A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P70-60">
+<para><p>Lubrifier l'anneau<refipc csn="72610003 012 "><miscref refid="P0300"><figref repnohot="11260" refid="A726100SF030100244A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P70-70">
+<para><p>Ins&eacute;rer l'anneau<refipc csn="72610003 012 "> dans le guide<figref repnohot="2.30421REP01, 11260" refid="A726100SF030100244A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P70-80">
+<para><p>Passer l'anneau<refipc csn="72610003 012 "> &agrave; l'int&eacute;rieur du guide, puis &agrave; l'int&eacute;rieur de l'arbre<refipc csn="72610003 010 "> jusqu'&agrave; encliquetage dans la gorge<figref repnohot="11168, 11260, 2.30421REP01, 2.30421REP02" refid="A726100SF030100244A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P70-90">
+<para><p>V&eacute;rifier que l'anneau<refipc csn="72610003 012 "> se trouve bien dans la gorge.</p>
+</para>
+</step2>
+</step1>
+<figure id="A726100SF030100183A011">
+<title>FIGURE 1</title>
+<graphic callicn="A1A726100SF030100183A011">
+</figure>
+<figure id="A726100SF030100240A011">
+<title>FIGURE 2</title>
+<graphic callicn="A1A726100SF030100240A011">
+</figure>
+<figure id="A726100SF030100241A011">
+<title>FIGURE 3</title>
+<graphic callicn="A1A726100SF030100241A011">
+</figure>
+<figure id="A726100SF030100242A011">
+<title>FIGURE 4</title>
+<graphic callicn="A1A726100SF030100242A011">
+</figure>
+<figure id="A726100SF030100243A011">
+<title>FIGURE 5</title>
+<graphic callicn="A1A726100SF030100243A011">
+</figure>
+<figure id="A726100SF030100244A011">
+<title>FIGURE 6</title>
+<graphic callicn="A1A726100SF030100244A011">
+</figure>
+<figure id="A726100SF030100556A011">
+<title>FIGURE 7</title>
+<graphic callicn="A1A726100SF030100556A011">
+</figure>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000021844 0>

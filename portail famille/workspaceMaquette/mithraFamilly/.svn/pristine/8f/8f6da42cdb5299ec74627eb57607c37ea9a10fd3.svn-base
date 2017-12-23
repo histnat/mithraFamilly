@@ -1,0 +1,32 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:sec="http://www.springframework.org/schema/security"
+        xmlns:p="http://www.springframework.org/schema/p"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:util="http://www.springframework.org/schema/util"  
+        xmlns:context="http://www.springframework.org/schema/context"
+        xsi:schemaLocation="
+            http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+            http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.2.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+            http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.2.xsd" 
+       default-autowire="byName">
+          
+     <context:component-scan base-package="com.sedoc" /> 
+     <context:component-scan base-package="com.sonovision" />
+     <context:component-scan base-package="com.sedoc.toolbox.*"/>      
+     <context:component-scan base-package="com.sedoc.dtdtoolbox"/>
+     
+    <context:annotation-config/>
+   
+    
+     <util:properties id="propertiesFile" location="classpath:openconv.properties"/>
+     <context:property-placeholder location="classpath:openconv.properties" ignore-resource-not-found="true"/>
+     <context:property-placeholder location="file:///${user.dir}/openconv.properties" ignore-resource-not-found="true"/>
+
+    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basename" value="classpath:message"/>
+        <property name="defaultEncoding" value="UTF-8"/>
+    </bean>
+
+
+</beans>

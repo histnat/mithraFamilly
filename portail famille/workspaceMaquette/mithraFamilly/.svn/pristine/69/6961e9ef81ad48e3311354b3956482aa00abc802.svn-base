@@ -1,0 +1,18 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                          RAFALE                                    *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.2d                           *
+    *                   Dated 12th January 2014                          *
+    *                  M.DOMEON - Dassault-Aviation                      *
+    *                                                                    *
+    * Amendment :-                                                       *
+    * 1. New Wiring  Public Identifier                                   *
+    *                                                                    *
+    ********************************************************************** -->
+
+<!DOCTYPE dmodule PUBLIC
+ "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment WIRING 140112//EN"
+ [
+ ]>

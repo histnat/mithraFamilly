@@ -1,0 +1,62 @@
+package com.sonovision.openconv.modules.xslprocess.helper.table.model;
+
+public class TableModel {
+
+	private int width=0;	
+	private int height=0;
+	private Object matrice[][];
+
+	
+	public TableModel(int height, int width){
+		this.width=width;
+		this.height=height;
+		matrice=new Object[height][width];
+	}
+	
+	public TableModel(int width, int height, Object matrice[][]){
+		this.width=width;
+		this.height=height;
+		this.matrice=matrice;
+	}
+	
+	public int getWidth() {
+		return width;
+	}
+
+	public void setWidth(int width) {
+		this.width = width;
+	}
+
+	public int getHeight() {
+		return height;
+	}
+
+	public void setHeight(int height) {
+		this.height = height;
+	}
+	
+	public boolean isEmpty(int x,int y){
+		return(matrice[x][y]==null);
+	}
+
+
+	public void insertObject(Object o, int x, int y){
+		matrice[x][y]=o;
+	}
+	
+	public Object getObject(int x, int y){
+		return matrice[x][y];
+	}
+	
+	public void printMatrice(){
+		String toDisplay=new String("");
+		for(int i=0;i<height;i++){
+			for(int j=0;j<width;j++){
+				toDisplay+=matrice[i][j].toString()+"|\t";
+			}
+			System.out.println(toDisplay+"\n");
+			toDisplay=new String();
+		}
+	}
+	
+}

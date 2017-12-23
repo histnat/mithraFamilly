@@ -1,0 +1,301 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Description 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1A720000SF030100098A011 SYSTEM "x-dm://0900f90b80003c62,MYWORKING" NDATA cgm>
+<!ENTITY A1A720000SF030190133A011 SYSTEM "x-dm://0900f90b80002155,MYWORKING" NDATA tiff>
+<!ENTITY A1A720000SF030100134A011 SYSTEM "x-dm://0900f90b800027ed,MYWORKING" NDATA cgm>
+]>
+<dmodule><?Pub Caret1><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>0</section><subsect>0</subsect><subject>00</subject><discode>00</discode><discodev>A</discodev><incode>018</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmc>
+<dmtitle><techname>MOTEUR ASSEMBLE</techname><infoname>INTRODUCTION, AVANT PROPOS - RECHERCHE DE PANNE</infoname></dmtitle>
+<issno type="R" issno="3">
+<issdate month="06" year="2005" day="01">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 1"></version>
+<version version="M88-2 ETAPE 4"></version>
+<customer aaf="1" anf="1">
+<nti nti1="1" nti2="1" nti3="0"></systemid>
+</applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Changement de format ICN en TIFF</rfu>
+<remarks>RAS</remarks>
+<icns><icn id="A1A720000SF030190133A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>0</section><subsect>0</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>90133</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A720000SF030100098A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>0</section><subsect>0</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00098</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A720000SF030100134A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>0</section><subsect>0</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00134</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<refdm>
+<dmcid id="A1A72000000A018BD"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>0</section><subsect>0</subsect><subject>00</subject><discode>00</discode><discodev>A</discodev><incode>018</incode><incodev>B</incodev><itemloc>D</itemloc></avee></dmcid>
+</refdm>
+</refs><descript><para><p>AVANT PROPOS MAINTENANCE&nbsp;M88-2</p></para>
+<para0 id="P10">
+<title>PRINCIPE DE LA MAINTENANCE INTEGREE SUR MOTEUR</title>
+<para><p>La maintenance int&eacute;gr&eacute;e permet de concilier la recherche d'un co&ucirc;t global de possession le plus faible possible, et l'optimisation de l'aptitude op&eacute;rationnelle dans les domaines suivants&nbsp;:</p></para>
+<list type="SIMPLE">
+<item><para><p>performances,</p></para>
+</item>
+<item><para><p>fiabilit&eacute; (s&eacute;curit&eacute;, r&eacute;ussite de la mission, disponibilit&eacute;),</p></para>
+</item>
+<item><para><p>aptitude du moteur &agrave; la mise en oeuvre et &agrave; la maintenance.</p></para>
+</item>
+</list>
+<subpara1 id="P10-10">
+<title>Avantages de la maintenance int&eacute;gr&eacute;e</title>
+<subpara2>
+<title>Suppression des bancs d'essais r&eacute;acteur</title>
+<para><p>Plusieurs facteurs ont conduit &agrave; l'abandon des Bancs d'Essais R&eacute;acteur (BER), li&eacute;s directement &agrave; l'utilisation du banc lui m&ecirc;me, mais aussi aux nouvelles conceptions de maintenance du moteur&nbsp;:</p></para>
+<list type="SIMPLE">
+<item><para><p>Logistique&nbsp;: un BER ne peut pas suivre un escadron lors d'un d&eacute;tachement ponctuel sur une base ext&eacute;rieure. Il est donc impossible d'effectuer certaines op&eacute;rations de maintenance hors base. Par ailleurs, l'infrastructure imposante devient vuln&eacute;rable en temps de guerre.</p></para>
+</item>
+<item><para><p>Co&ucirc;t du moyen d'essai&nbsp;: les nuisances d'un banc r&eacute;acteur, notamment le bruit, imposent des infrastructures (insonorisation) tr&egrave;s lourdes. De plus, le BER est le point de passage oblig&eacute; pour tout moteur ayant subi des interventions de maintenance. Cet imp&eacute;ratif influe sur la disponibilit&eacute; des moteurs et impose donc un volant de moteurs sup&eacute;rieur aux besoins d'une unit&eacute;.</p></para>
+</item>
+</list>
+<para><p>Ces constats se sont traduits pour l'Arm&eacute;e de l'Air Fran&ccedil;aise (AAF) par l'objectif de ne pas avoir recours au BER, ceci gr&acirc;ce &agrave; la Maintenance Int&eacute;gr&eacute;e (MI). Pour l'A&eacute;ro Navale Fran&ccedil;aise (ANF), les contraintes du porte-avions (zone critique du pont d'envol) n'ont pas permis de s'affranchir d'un BER, qui est commun &agrave; plusieurs turbomachines.</p></para>
+<para><p>Pour le M88-2, ce BER sera utilis&eacute; pour les tests d'&eacute;tanch&eacute;it&eacute; et pour r&eacute;aliser les op&eacute;rations en Maintenance Compl&eacute;mentaire au Sol (MCS) (recherche d'avaries, ventilations) en statique ou en ventilation.</p>
+<note>
+<p>Dans le cas de l'AAF, il sera possible de faire tourner les moteurs avionn&eacute;s &agrave; des r&eacute;gimes partiels, pour des dur&eacute;es de l'ordre de 3&nbsp;minutes (il ne sera donc pas n&eacute;cessaire de disposer d'aires de point fixe).</p>
+</note>
+</para>
+</subpara2>
+<subpara2>
+<title>Maintenance facilit&eacute;e du moteur</title>
+<para><p>Pour obtenir une disponibilit&eacute; op&eacute;rationnelle maximale avec un volant de rechange r&eacute;duit, il est n&eacute;cessaire d'am&eacute;liorer la maintenabilit&eacute; des &eacute;quipements et les syst&egrave;mes de maintenance. D'une part en am&eacute;liorant la d&eacute;tection et la localisation de pannes, mais aussi la validation des r&eacute;parations. Le fait de pouvoir effectuer ces op&eacute;rations directement en ligne permet d'&eacute;viter la d&eacute;pose du moteur incrimin&eacute; afin de l'envoyer au banc d'essais pour obtenir le diagnostic.</p></para>
+<para><p>Pour optimiser la maintenance du M88-2, les moyens de tests int&eacute;gr&eacute;s au moteur se substituent au banc d'essais et seront con&ccedil;us pour indiquer au m&eacute;canicien&nbsp;:</p></para>
+<list type="SIMPLE">
+<item><para><p>l'&eacute;tat global de la machine&nbsp;; &agrave; savoir s'il est n&eacute;cessaire d'envisager la d&eacute;pose du moteur pour intervention en atelier, l'extraction de donn&eacute;es pour un diagnostic sur moyen sol, ou le remplacement d'une Unit&eacute; Rempla&ccedil;able en Ligne (URL),</p></para>
+</item>
+<item><para><p>l'URL consid&eacute;r&eacute;e comme d&eacute;faillante, ou la cha&icirc;ne fonctionnelle compos&eacute;e de plusieurs modules,</p></para>
+</item>
+<item><para><p>le sous ensemble d&eacute;faillant, ou le test &eacute;l&eacute;mentaire ayant d&eacute;clench&eacute; l'information de panne. Ces informations sont utiles soit pour aider au diagnostic en ligne, soit pour permettre l'&eacute;change de l'Unit&eacute; Rempla&ccedil;able en Atelier (URA) d&egrave;s l'arriv&eacute;e en atelier sans test de bon fonctionnement, en partant du principe que ces tests ont d&eacute;j&agrave; &eacute;t&eacute; r&eacute;alis&eacute;s en temps r&eacute;el et qu'il suffit de les m&eacute;moriser. Ce sera le cas du calculateur.</p></para>
+<note>
+<p>La conception modulaire du M88 repose sur un d&eacute;coupage en 21&nbsp;modules interchangeables. Le remplacement d'un module est r&eacute;alis&eacute; sans r&eacute;glage d'adaptation.</p>
+</note>
+</item>
+</list>
+<para><p>Pour gagner en temps de maintenance, la notion de surveillance selon &eacute;tat, possible par le biais de la MI, permet de s'affranchir des temps d&eacute;pens&eacute;s avant pour les caract&eacute;risations p&eacute;riodiques (VP, VI, ...). Toutefois, la d&eacute;pose du moteur et sa mise au banc d'&eacute;tanch&eacute;it&eacute; demeurent des op&eacute;rations longues. Il en est de m&ecirc;me pour les op&eacute;rations de recherche de pannes, surtout lorsque l'on cherche &agrave; reproduire un &eacute;v&eacute;nement sans que les conditions initiales ne soient r&eacute;unies.</p></para>
+<para><p>La MI propose un Compte Rendu de Maintenance (CRM) qui indique l'historique des pannes en vol associ&eacute;es &agrave; leur contexte. Dans ce cas, le m&eacute;canicien peut intervenir directement sur les &eacute;l&eacute;ments incrimin&eacute;s.</p></para>
+<para><p>Dans le cas o&ugrave; la localisation pr&eacute;cise n'a pas abouti en temps r&eacute;el (95&nbsp;% des cas), le m&eacute;canicien peut proc&eacute;der &agrave; d'autres tests sans avoir &agrave; d&eacute;poser le moteur de l'avion, et sans avoir recours &agrave; d'autres moyens ext&eacute;rieurs. Il pourra utiliser un mode identique au mode op&eacute;rationnel &ldquo;CRM temps r&eacute;el&rdquo;, appel&eacute; Compte Rendu Instantan&eacute; (CRI). Ce mode &eacute;labore les m&ecirc;mes informations que pour le CRM, mais cette fois elles ne sont pas m&eacute;moris&eacute;es. Elles sont repr&eacute;sent&eacute;es directement sur la visualisation avion&nbsp;; le m&eacute;canicien voit alors vivre les informations de pannes.</p></para>
+<para><p>De plus, lorsque l'&eacute;l&eacute;ment d&eacute;faillant est identifi&eacute; de mani&egrave;re s&ucirc;re, le remplacement de ce dernier par un bon &eacute;l&eacute;ment n&eacute;cessitera une validation du d&eacute;pannage.</p></para>
+</subpara2>
+</subpara1>
+<subpara1 id="P10-20">
+<title>Informations fournies par la maintenance int&eacute;gr&eacute;e <figref refid="A720000SF030190133A011"></title>
+<para><p>Ces informations sont destin&eacute;es &agrave; tous les Niveaux Techniques d'Interventions (NTI). Certaines d'entre elles sont exploitables au premier niveau (NTI1) en cabine, mais aussi en d&eacute;port&eacute; sur le moyen informatique sol&nbsp;: Harpagon.</p>
+<note>
+<p>Les moyens de soutien utilis&eacute;s hors ligne (NTI2) sont l'Equipement d'Acquisition et de Traitement Informatique (EATI) au BER, ou le Moyen de Dialogue (MdD).</p>
+</note>
+</para>
+<para><p>Seuls les traitements pr&eacute;liminaires visant &agrave; limiter le volume de donn&eacute;es &agrave;stocker sont r&eacute;alis&eacute;s en temps r&eacute;el. L'exploitation et la visualisation des ces donn&eacute;es sont effectu&eacute;es par Harpagon. Un syst&egrave;me sp&eacute;cifique au moteur est int&eacute;gr&eacute; &agrave; Harpagon&nbsp;: le Syst&egrave;me Informatique d'Aide au Diagnostic (SIAD). Le traitement des donn&eacute;es moteur est effectu&eacute; par le module pilote du SIAD.</p></para>
+<subpara2>
+<title>Informations de pannes</title>
+<para><p>Les informations de pannes m&eacute;moris&eacute;es en temps r&eacute;el seront transmises au m&eacute;canicien par un CRM que l'on peut afficher sur les &eacute;crans avion (ou moyen de soutien) pour exploitation directe. Ce CRM peut aussi &ecirc;tre exploit&eacute; sur le moyen sol Harpagon&nbsp;/&nbsp;SIAD, qui compile les historiques de pannes. Le module &ldquo;Historique de Pannes&rdquo; de SIAD permet la visualisation des CRM envoy&eacute;s par chaque calculateur moteur, dans l'ordre chronologique.</p></para>
+<para><p>Le CRM est compos&eacute; de Mots de Pannes (MP), de Mots d'Etat Internes (MEI) repr&eacute;sentant les cha&icirc;nes fonctionnelles en panne du moteur, et de donn&eacute;es de contexte avion et moteur.</p>
+<note>
+<p>Les num&eacute;ros de MEI et de bits, renseign&eacute;s dans le module &ldquo;Historique de Pannes&rdquo; du SIAD correspondent au standard NTI2. N&eacute;anmoins, la colonne &ldquo;Code&rdquo; reprend le MEI visualisable sur avion.</p>
+</note>
+</para>
+<para><p>Au NTI1, ce sont les calculateurs de mission qui permettront le stockage des informations pour leur restitution soit sur la Visualisation T&ecirc;te Lat&eacute;rale (VTL) en cabine, soit au sol par la cassette du Bo&icirc;tier de Stockage de Donn&eacute;es (BSD).</p>
+<note>
+<p>Au NTI2, ces informations sont d&eacute;charg&eacute;es sur disquette, via le moyen de soutien.</p>
+</note>
+</para>
+<para><p>D'autres informations seront enregistr&eacute;es dans l'Enregistreur de Secours de PARam&egrave;tres (ESPAR). Elles ne seront toutefois pas destin&eacute;es &agrave; la maintenance (sauf situation exceptionnelle).</p></para>
+</subpara2>
+<subpara2>
+<title>Reproductibilit&eacute; des pannes</title>
+<para><p>Une panne fugitive, ou encore le passage d'un &eacute;tat de panne &agrave; un &eacute;tat de bon fonctionnement, n'est pas d&eacute;celable ais&eacute;ment avec les moyens classiques&nbsp;; &agrave; moins d'effectuer des enregistrements continus de tous les param&egrave;tres. Il est d'ailleurs fr&eacute;quent que des pannes ou des dysfonctionnements rencontr&eacute;s en vol ne soient pas reproductibles au sol, les conditions n'&eacute;tant plus les m&ecirc;mes.</p></para>
+<para><p>L'avantage premier de la MI r&eacute;side dans sa facult&eacute; d'analyser les comportements des cha&icirc;nes fonctionnelles en temps r&eacute;el et de les m&eacute;moriser uniquement en cas de changement d'&eacute;tat. Il n'est alors pas n&eacute;cessaire de chercher &agrave; reproduire une panne au retour de vol.</p></para>
+<para><p>Pour exploiter cette m&eacute;morisation de changement d'&eacute;tat, il sera n&eacute;cessaire dans certains cas d'analyser les conditions d'environnement appel&eacute;es &ldquo;donn&eacute;es de contexte&rdquo; qui permettent d'identifier la configuration moteur et avion, et de comprendre la panne.</p>
+<note>
+<p>Les donn&eacute;es de contexte peuvent suivre l'&eacute;l&eacute;ment remplac&eacute;, pour aider &agrave; la remise en &eacute;tat.</p>
+</note>
+</para>
+</subpara2>
+<subpara2>
+<title>Autres indications donn&eacute;es par le CRM</title>
+<para><p>Le CRM donne &eacute;galement des informations de dysfonctionnements et de signatures vibratoires m&eacute;moris&eacute;es en temps r&eacute;el. Pour d&eacute;panner avec le maximum d'informations (conditions de vol, param&egrave;tres repr&eacute;sentatifs), des fichiers sont m&eacute;moris&eacute;s en annexe dans les calculateurs moteur et transmis au SIAD via le BSD en MCS. Leur exploitation et donc le d&eacute;pannage est effectu&eacute; avec le SIAD (par les modules &ldquo;Etude des dysfonctionnements&rdquo; et &ldquo;Analyse des intensit&eacute;s vibratoires&rdquo;) et en MCS.</p></para>
+</subpara2>
+<subpara2>
+<title>Autres informations concernant le suivi du moteur</title>
+<para><p>Afin d'assurer la gestion du moteur, les informations de potentiel sont &eacute;galement disponibles. Ces informations seront utilis&eacute;es en ligne ou hors ligne aux NTI2 et NTI3, en atelier comme en Biblioth&egrave;que Technique ou Bureau d'Organisation du Travail.</p></para>
+<para><p>Hors ligne aux NTI2 et NTI3, le SIAD a d'autres fonctions qui aident &agrave; la maintenance du moteur&nbsp;:</p></para>
+<list type="SIMPLE">
+<item><para><p>le contr&ocirc;le de l'accostage,</p></para>
+</item>
+<item><para><p>le remplacement et la r&eacute;partition des aubes,</p></para>
+</item>
+<item><para><p>la gestion modulaire du moteur.</p></para>
+</item>
+</list>
+<para><p>La MCS propose une panoplie d'outils et de tests d&eacute;clench&eacute;s pour affiner les diagnostics, ou valider des op&eacute;rations de d&eacute;pannage. Selon le cas, la documentation technique de maintenance indique s'il est n&eacute;cessaire d'avoir recours &agrave; la MCS.</p></para>
+<para><p>La MCS permet de d&eacute;clencher des tests perturbant pour le fonctionnement normal de la machine, afin de localiser l'&eacute;l&eacute;ment en panne et/ou valider le d&eacute;pannage, par des Codes de Donn&eacute;es de Maintenance D&eacute;clench&eacute;s (CDMD). Elle permet &eacute;galement de lire des acquisitions par des Codes de Donn&eacute;es de Maintenance Lecture (CDML) et de positionner les actionneurs par des Codes de Donn&eacute;es de Maintenance Positionnement (CDMP).</p></para>
+</subpara2>
+</subpara1>
+</para0><para0 id="P20">
+<title>DOCUMENTATION TECHNIQUE DE MAINTENANCE M88-2</title>
+<subpara1 id="P20-10">
+<title>Introduction</title>
+<para><p>Cette documentation &eacute;lectronique constitue le fonds documentaire technique de maintenance du moteur&nbsp;M88-2. Elle traite de la m&eacute;thodologie de recherche de panne dans le cadre des activit&eacute;s de localisation d'avaries pouvant affecter les constituants du moteur&nbsp;M88-2 aux Niveaux Techniques d'Intervention NTI1 et NTI2.</p></para>
+<para><p>Cette documentation &eacute;lectronique d&eacute;veloppe la d&eacute;marche logique de recherche d'avaries &agrave; partir des messages d&eacute;livr&eacute;s par le syst&egrave;me de Maintenance Int&eacute;gr&eacute;e&nbsp;/&nbsp;Maintenance Compl&eacute;mentaire au Sol&nbsp;(MI/MCS).</p></para>
+</subpara1>
+<subpara1 id="P20-20">
+<title>AVERTISSEMENT</title>
+<para><p>Cette documentation &eacute;lectronique constitue un recueil de proc&eacute;dures permettant de localiser l'&eacute;quipement &agrave; l'origine de la panne, d'effectuer la remise en &eacute;tat et d'assurer le bon fonctionnement.</p></para>
+<para><p>Cette d&eacute;marche de localisation d'avaries s'appuie principalement sur des logigrammes permettant d'appliquer et de suivre une logique de d&eacute;pannage.</p></para>
+<para><p>Ces logigrammes sont constitu&eacute;s de diff&eacute;rentes proc&eacute;dures, sous forme de Data Modules (DM)&nbsp;:</p></para>
+<list type="SIMPLE">
+<item><para><p>proc&eacute;dures de d&eacute;pose&nbsp;/&nbsp;installation,</p></para>
+</item>
+<item><para><p>proc&eacute;dures de remplacement, pour lesquelles on se r&eacute;f&egrave;re parfois aux arborescences documentaires <dmcref xrefid="A1A72000000A018BD">,</p></para>
+</item>
+<item><para><p>data modules &ldquo;outils&rdquo; permettant d'utiliser les moyens d'aide aux diagnostics existants&nbsp;: Moyen de Dialogue&nbsp;(MdD), bretelles de raccordement, etc&nbsp;...,</p></para>
+</item>
+<item><para><p>proc&eacute;dures permettant de s'assurer de la r&eacute;solution de la panne apr&egrave;s l'application compl&egrave;te de la proc&eacute;dure.</p></para>
+</item>
+</list>
+<para><p>Seules les pannes simples sont trait&eacute;es. C'est-&agrave;-dire que les m&eacute;thodes de d&eacute;pannage d&eacute;crites ne couvrent pas le cas de pannes multiples, y compris dans le cas d'un encha&icirc;nement de pannes ayant une cause unique. N&eacute;anmoins, une logique de traitement des pannes multiples a &eacute;t&eacute; r&eacute;alis&eacute;e.</p>
+<note>
+<p>Dans tous les cas, il faut traiter les pannes internes au calculateur en priorit&eacute; car elles sont susceptibles d'induire d'autres pannes.</p>
+</note>
+</para>
+<para><p>Les pannes dites exotiques ne sont pas trait&eacute;es. Ce sont les pannes qui ne sont pas r&eacute;pertori&eacute;es &agrave; ce jour. Elles peuvent &ecirc;tre induites par des interactions de modes de fonctionnement ou des configurations de pilotage particuli&egrave;res. Leur traitement doit faire appel &agrave; la documentation descriptive, et notamment aux cha&icirc;nes fonctionnelles.</p></para>
+<para><p>Les dysfonctionnements sont trait&eacute;s en prenant en compte l'ensemble des causes susceptibles de les provoquer.</p></para>
+</subpara1>
+<subpara1 id="P20-30">
+<title>PRINCIPE DE PRESENTATION</title>
+<para><p>La d&eacute;marche de localisation d'avaries commence par le relev&eacute; du num&eacute;ro du bit de panne associ&eacute; au MEI. 3&nbsp;Data Modules &ldquo;dictionnaire de donn&eacute;es techniques&rdquo; permettent de trouver la correspondance entre le num&eacute;ro du bit, le libell&eacute; de la panne et le Data Module de localisation d'avaries correspondant &agrave; cette panne.</p></para>
+<para><p>Afin de pouvoir identifier clairement les libell&eacute;s de panne selon la configuration moteur, 1&nbsp;Data Module &ldquo;dictionnaire principal&rdquo; renvoie &agrave; 2&nbsp;Data Modules &ldquo;dictionnaire&rdquo; traitant respectivement la configuration moteur avionn&eacute; et moteur d&eacute;pos&eacute;. Ces 2&nbsp;DM &ldquo;dictionnaire&rdquo; se pr&eacute;sentent sous forme de tableaux. L'utilisateur s&eacute;lectionne le&nbsp;DM Tableau correspondant &agrave; la configuration de localisation d'avaries&nbsp;:</p></para>
+<list type="SIMPLE">
+<item><para><p>DM Tableau 1&nbsp;-&nbsp;NTI1 (moteur avionn&eacute;)&nbsp;: les informations affich&eacute;es sur l'&eacute;cran de la VTL, ou sur la fen&ecirc;tre du module &ldquo;Historique de Pannes&rdquo; du SIAD, constituent les donn&eacute;es d'entr&eacute;e de la panne avec en regard le DM de localisation d'avaries rappel&eacute;,</p></para>
+</item>
+<item><para><p>DM Tableau 2&nbsp;-&nbsp;NTI2 (moteur d&eacute;pos&eacute;)&nbsp;: les informations affich&eacute;es sur les &eacute;crans du MdD ou de l'EATI (banc d'essai&nbsp;ANF), ou sur la fen&ecirc;tre du module &ldquo;Historique de Pannes&rdquo; du SIAD, constituent les donn&eacute;es d'entr&eacute;e de la panne avec en regard le&nbsp;DM de localisation d'avaries rappel&eacute;.</p></para>
+</item>
+</list>
+<para><p>Les DM rappel&eacute;s dans le dictionnaire comportent g&eacute;n&eacute;ralement 3&nbsp;logigrammes de d&eacute;pannage pr&eacute;sent&eacute;s sous forme de figures. L'utilisateur s&eacute;lectionne la figure correspondant &agrave; l'environnement dans lequel s'effectue la localisation d'avaries&nbsp;:</p></para>
+<list type="SIMPLE">
+<item><para><p>Figure&nbsp;1&nbsp;-&nbsp;NTI1&nbsp;: Les op&eacute;rations de d&eacute;pannage sont effectu&eacute;es sur le moteur avionn&eacute;. Dans cette configuration, la mise en oeuvre des moyens et les op&eacute;rations sur les &eacute;quipements plac&eacute;s sous la responsabilit&eacute; de Dassault&nbsp;Aviation font r&eacute;f&eacute;rence &agrave; des DM de Dassault&nbsp;Aviation&nbsp;(RPC&nbsp;D),</p></para>
+</item>
+<item><para><p>Figure&nbsp;2&nbsp;-&nbsp;NTI2&nbsp;-&nbsp;Client&nbsp;ANF&nbsp;: Dans ce cas, les op&eacute;rations de d&eacute;pannage sur les &eacute;quipements sont effectu&eacute;es sur le moteur install&eacute; sur le Banc d'Etanch&eacute;it&eacute; R&eacute;acteur&nbsp;(BER). La mise en oeuvre du BER fait appel &agrave; une publication ext&eacute;rieure constitu&eacute;e par une collection de classeurs livr&eacute;e au titre du banc&nbsp;d'&eacute;tanch&eacute;it&eacute;,</p></para>
+</item>
+<item><para><p>Figure&nbsp;3&nbsp;-&nbsp;NTI2&nbsp;-&nbsp;Client&nbsp;AAF&nbsp;: Dans ce cas, les op&eacute;rations de d&eacute;pannage sur les &eacute;quipements sont effectu&eacute;es sur le moteur install&eacute; sur le Banc de Mise en Rotation&nbsp;(BMR). La mise en oeuvre des diff&eacute;rents Moyens de Soutien&nbsp;(MS) du BMR fait appel &agrave; des DM inclus dans la publication DALA.</p></para>
+</item>
+</list>
+<para><p>La logique de recherche d'avaries ne prend en compte que les cas de pannes simples. Aussi, dans la symbologie des logigrammes, il est convenu que la voie&nbsp;X repr&eacute;sente la voie en panne (voie droite ou gauche). La voie&nbsp;Y repr&eacute;sente la voie valide.</p></para>
+</subpara1>
+<subpara1 id="P20-40">
+<title>SYMBOLOGIE</title>
+<para><p><figref refid="A720000SF030100098A011">.</p></para>
+</subpara1>
+<subpara1 id="P20-50">
+<title>METHODE DE NAVIGATION <figref refid="A720000SF030100134A011"></title>
+<para><p>Pour appliquer la m&eacute;thode, le point d'entr&eacute;e Utilisateur est le Data&nbsp;Module &ldquo;dictionnaire de donn&eacute;es techniques&rdquo; principal.</p></para>
+<para><p>Lorsqu'une indication de panne est signal&eacute;e (apparition d'un bit de panne, d'un mot MEI, MEP, MP,&nbsp;...), la d&eacute;marche &agrave; appliquer est la suivante&nbsp;:</p></para>
+<list type="SIMPLE">
+<item><para><p>ouvrir le Data Module &ldquo;dictionnaire de donn&eacute;es techniques&rdquo; principal,</p></para>
+</item>
+<item><para><p>&eacute;ventuellement, traiter le paragraphe des pannes multiples li&eacute;es ou celui des doubles pannes d'asservissement,</p></para>
+</item>
+<item><para><p>s&eacute;lectionner le DM &ldquo;dictionnaire&rdquo; correspondant &agrave; la configuration du d&eacute;pannage (Tableau&nbsp;1&nbsp;-&nbsp;NTI1 ou Tableau&nbsp;2&nbsp;-&nbsp;NTI2),</p></para>
+</item>
+<item><para><p>dans le DM &ldquo;dictionnaire&rdquo;&nbsp;Tableau&nbsp;1, s&eacute;lectionner le tableau correspondant au MEI (ou au &ldquo;Code&rdquo;, par le module &ldquo;Historique de Pannes&rdquo; du SIAD), puis s&eacute;lectionner dans ce tableau le DM rappel&eacute; correspondant au libell&eacute; associ&eacute; au MEI et au bit apparu,</p></para>
+</item>
+<item><para><p>dans le DM &ldquo;dictionnaire&rdquo;&nbsp;Tableau&nbsp;2, s&eacute;lectionner le DM rappel&eacute; correspondant au libell&eacute; &ldquo;Cha&icirc;ne d'acquisition&rdquo; associ&eacute; au MEI et au bit apparu,</p></para>
+</item>
+<item><para><p>dans le DM rappel&eacute;, s&eacute;lectionner la figure qui correspond &agrave; la configuration de d&eacute;pannage (en g&eacute;n&eacute;ral, Figure&nbsp;1, 2 ou 3),</p></para>
+</item>
+<item><para><p>suivre m&eacute;thodiquement l'arborescence et les indications du logigramme. La s&eacute;lection d'un DM &eacute;l&eacute;mentaire renvoie au Data Module complet pour l'ex&eacute;cution de cette t&acirc;che,</p></para>
+</item>
+<item><para><p>dans le cas o&ugrave; la panne n'est pas r&eacute;solue, retourner dans le DM &ldquo;dictionnaire des donn&eacute;es techniques&rdquo; principal pour traiter le paragraphe &ldquo;Cas exotiques&rdquo;.</p></para>
+</item>
+</list>
+<para><p>Suite &agrave; toute op&eacute;ration de maintenance (d&eacute;pose&nbsp;/&nbsp;pose), il faut renseigner la table intervention du LIM du moteur assembl&eacute; et/ou de l'&eacute;quipement.</p>
+<note>
+<p>Lors du renseignement du LIM, fournir le maximum d'informations &agrave; l'&eacute;quipementier sur les raisons de la d&eacute;pose (type de panne, investigations faites lors de la localisation, anomalie constat&eacute;e sur l'&eacute;quipement, ...).</p>
+</note>
+</para>
+</subpara1>
+<subpara1 id="P20-60">
+<title>PRESENTATION DE LA DOCUMENTATION ELECTRONIQUE <figref refid="A720000SF030100134A011"></title>
+<para><p>La documentation de localisation d'avaries est constitu&eacute;e d'une collection de Data Modules permettant de traiter les cas de pannes simples, et d'orienter l'op&eacute;rateur en cas de panne multiple ou en cas de panne exotique.</p>
+<note>
+<p>Cette documentation ne contient pas les proc&eacute;dures de mise en oeuvre des syst&egrave;mes avion qui sont de responsabilit&eacute; Dassault&nbsp;Aviation, ni les proc&eacute;dures de mise en oeuvre du Banc d'Etanch&eacute;it&eacute; R&eacute;acteur&nbsp;(BER) qui font l'objet de publications sp&eacute;cifiques.</p>
+</note>
+</para>
+<para><p>La documentation &eacute;lectronique est construite en trois grands chapitres&nbsp;:</p></para>
+<list type="SIMPLE">
+<item><para><p>les g&eacute;n&eacute;ralit&eacute;s sur la maintenance,</p></para>
+</item>
+<item><para><p>les descriptifs de fonctionnement,</p></para>
+</item>
+<item><para><p>les maintenances particuli&egrave;res,</p></para>
+</item>
+</list>
+<subpara2>
+<title>G&eacute;n&eacute;ralit&eacute;s sur la maintenance</title>
+<para><p>Ce chapitre permet de traiter la localisation d'avaries suite &agrave; un enregistrement de MSCRM. Il est constitu&eacute;&nbsp;:</p></para>
+<list type="SIMPLE">
+<item><para><p>d'un avant propos sur les g&eacute;n&eacute;ralit&eacute;s et les principes de recherche de pannes,</p></para>
+</item>
+<item><para><p>du dictionnaire principal, qui centralise le traitement des pannes simples, des pannes multiples et des cas exotiques,</p></para>
+</item>
+<item><para><p>des dictionnaires des RTD, des CDML et des CDMP,</p></para>
+</item>
+<item><para><p>des outils d'aide &agrave; la localisation d'avaries (MdD, SIAD, LIM et logiciels de programmation des calculateurs),</p></para>
+</item>
+<item><para><p>des tests d&eacute;clench&eacute;s et des consignes de conduite du moteur au banc.</p></para>
+</item>
+</list>
+</subpara2>
+<subpara2>
+<title>Description fonctionnement</title>
+<para><p>Ce chapitre est constitu&eacute; de data modules descriptifs qui permettent d'&eacute;tudier les syst&egrave;mes suite &agrave; une panne exotique (non reproductible au sol) qui n'est pas prise en compte dans le chapitre pr&eacute;c&eacute;dent&nbsp;:</p></para>
+<list type="SIMPLE">
+<item><para><p>fonctionnement g&eacute;n&eacute;ral du moteur, ainsi que ses modes d&eacute;grad&eacute;s et ses limitations,</p></para>
+</item>
+<item><para><p>tests de surveillance des syst&egrave;mes de r&eacute;gulation, qui permettent l'enregistrement des MSCRM,</p></para>
+</item>
+<item><para><p>composition des diff&eacute;rents syst&egrave;mes,</p></para>
+</item>
+<item><para><p>fonctionnement des diff&eacute;rentes boucles de r&eacute;gulation du moteur.</p></para>
+</item>
+</list>
+</subpara2>
+<subpara2>
+<title>Maintenances particuli&egrave;res</title>
+<para><p>Ce chapitre permet le traitement de situations particuli&egrave;res qui peuvent &ecirc;tre &agrave; l'origine des pannes enregistr&eacute;es au cours de la mission, telles que&nbsp;:</p></para>
+<list type="SIMPLE">
+<item><para><p>la biocontamination du circuit carburant,</p></para>
+</item>
+<item><para><p>la pollution du circuit carburant,</p></para>
+</item>
+<item><para><p>le foudroiement.</p></para>
+</item>
+</list>
+</subpara2>
+</subpara1>
+</para0>
+<figure id="A720000SF030190133A011">
+<title>INFORMATIONS FOURNIES PAR LA MAINTENANCE INTEGREE</title>
+<graphic callicn="A1A720000SF030190133A011" change="MOD">
+</figure>
+<figure id="A720000SF030100098A011">
+<title change="MOD">SYMBOLOGIE UTILISEE POUR LES ARBORESCENCES DE LOCALISATION D'AVARIES</title>
+<graphic callicn="A1A720000SF030100098A011">
+</figure>
+<figure id="A720000SF030100134A011">
+<title>ORGANISATION DE LA DOCUMENTATION</title>
+<graphic callicn="A1A720000SF030100134A011">
+</figure>
+</descript></content></dmodule>

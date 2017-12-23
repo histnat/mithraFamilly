@@ -1,0 +1,45 @@
+package com.sonovision.openconv.dmrl.impl;
+
+import org.apache.poi.ss.formula.eval.NotImplementedException;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Service;
+
+import com.sonovision.openconv.dmrl.DMRLService;
+
+@Service("DMRLService")
+@Scope(value="request")
+public class DMRLServiceImpl implements DMRLService {
+
+	String dmrlPath;
+	
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7003557938919009301L;
+
+	@Override
+	public void setDmrlPath(String dmrlPath) {
+		this.dmrlPath=dmrlPath;
+	}
+
+	@Override
+	public String getNewFileName(String oldFileName, String pathDmrl) {
+		setDmrlPath(pathDmrl);
+		return getNewFileName(oldFileName);
+	}
+
+	@Override
+	public String getNewFileName(String oldFileName) {
+		throw new NotImplementedException("fonction non implemented");
+	}
+
+	/**
+	 * @return the dmrlPath
+	 */
+	public String getDmrlPath() {
+		return dmrlPath;
+	}
+
+	
+}

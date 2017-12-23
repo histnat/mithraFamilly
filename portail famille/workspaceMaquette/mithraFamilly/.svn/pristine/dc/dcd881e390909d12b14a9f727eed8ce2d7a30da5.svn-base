@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	version="2.0">
+	<xsl:output method="text" indent="no"/>
+	<xsl:param name="folder"/>
+	<xsl:param name="debugVisu"/>
+	<xsl:param name="fromDOS" select=" 'false' "/><!-- not defined if from java, otherwise (DOS) set to true -->
+
+
+	<!-- Ajout DOCTYPE avec Entite (pour DM) ================== -->
+
+	<xsl:template match="/">
+		<xsl:choose>
+			<xsl:when test="$fromDOS='true'">
+				<!-- depuis DOS root=lstObj (fonctionne avec result-document) -->
+				<xsl:apply-templates/>
+			</xsl:when>
+			<xsl:otherwise>
+				<!-- depuis java root=dmodule (fonctionne en sortie sur stdOutput) -->
+				<xsl:call-template name="outputResult"/>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+
+	<xsl:template match="comment()">
+		<xsl:text>&lt;!--</xsl:text>
+		<xsl:value-of select="."/>
+		<xsl:text>--&gt;</xsl:text>
+	</xsl:template>
+
+	<xsl:template match="lstObj">
+		<xsl:apply-templates/>
+	</xsl:template>
+
+	<xsl:template match="dm[parent::lstObj]">
+		<xsl:variable name="dmFname">
+			<xsl:value-of select="./text()"/>
+		</xsl:variable>
+		<!--xsl:message><xsl:value-of select="concat('Writing version with DOCTYPE for ',$dmFname)"/></xsl:message-->
+		<xsl:variable name="URLdm">
+			<xsl:call-template name="makeURL">
+				<xsl:with-param name="path">
+					<xsl:value-of select="concat($folder,'\',$dmFname)"/>
+				</xsl:with-param>
+			</xsl:call-template>
+		</xsl:variable>
+		<xsl:variable name="URLdmc">
+			<xsl:call-template name="makeURL">
+				<xsl:with-param name="path">
+					<xsl:value-of select="concat($folder,'/',substring-before($dmFname,'.yml'),'.xml')"/>
+				</xsl:with-param>
+			</xsl:call-template>
+		</xsl:variable>
+		<xsl:for-each select="document($URLdm)">
+			<xsl:result-document href="{$URLdmc}">
+				<xsl:call-template name="outputResult"/>
+			</xsl:result-document>
+		</xsl:for-each>
+	</xsl:template>
+
+	<xsl:template name="outputResult">
+		<xsl:text>&lt;?xml version="1.0" encoding="UTF-8"?></xsl:text>
+		<xsl:if test="$debugVisu = 'true' ">
+			<xsl:text>&lt;?xml-stylesheet type="text/xsl" href="visuDM.xsl"?></xsl:text>
+		</xsl:if>
+		<xsl:text>&#10;&lt;!DOCTYPE dmodule&#10;[&#10;</xsl:text>
+		<xsl:text>&lt;!ENTITY % ISOEntities PUBLIC "ISO 8879-1986//ENTITIES ISO Character Entities 20030531//EN//XML" "http://www.s1000d.org/S1000D_4-0-1/ent/ISOEntities">&#10;</xsl:text>
+		<xsl:text>%ISOEntities;&#10;</xsl:text>
+		<xsl:for-each select="//graphic | //symbol">
+			<xsl:variable name="nameIllus">
+				<xsl:value-of select="@infoEntityIdent"/>
+			</xsl:variable>
+			<xsl:if test="not(preceding::graphic[@infoEntityIdent=$nameIllus] or preceding::symbol[@infoEntityIdent=$nameIllus])">
+				<xsl:text>&lt;!ENTITY </xsl:text>
+				<xsl:value-of select="@infoEntityIdent"/>
+				<xsl:text> SYSTEM "</xsl:text>
+				<xsl:value-of select="@authorityName"/>
+				<xsl:choose>
+					<xsl:when test="contains(@infoEntityIdent,'.SVG')">
+						<xsl:text>" NDATA svg>&#10;</xsl:text>
+					</xsl:when>
+					<xsl:when test="contains(@infoEntityIdent,'.JPG')">
+						<xsl:text>" NDATA jpg>&#10;</xsl:text>
+					</xsl:when>
+					<xsl:when test="contains(@infoEntityIdent,'.GIF')">
+						<xsl:text>" NDATA gif>&#10;</xsl:text>
+					</xsl:when>
+				</xsl:choose>
+			</xsl:if>
+		</xsl:for-each>
+		<xsl:text>&lt;!NOTATION svg SYSTEM "svg">&#10;</xsl:text>
+		<xsl:text>&lt;!NOTATION jpg SYSTEM "jpg">&#10;</xsl:text>
+		<xsl:text>&lt;!NOTATION gif SYSTEM "jpg">&#10;</xsl:text>
+		<xsl:text>]>&#10;</xsl:text>
+		<xsl:apply-templates/>
+	</xsl:template>
+
+	<xsl:template match="*">
+		<xsl:text>&lt;</xsl:text>
+		<xsl:value-of select="name()"/>
+		<xsl:if test="self::dmodule">
+			<xsl:text> xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"</xsl:text>
+		</xsl:if>
+		<xsl:for-each select="@*">
+			<xsl:text> </xsl:text>
+			<xsl:value-of select="name()"/>
+			<xsl:text>="</xsl:text>
+			<xsl:value-of select="."/>
+			<xsl:text>"</xsl:text>
+		</xsl:for-each>
+		<xsl:text>&gt;</xsl:text>
+		<xsl:apply-templates/>
+		<xsl:text>&lt;/</xsl:text>
+		<xsl:value-of select="name()"/>
+		<xsl:text>></xsl:text>
+	</xsl:template>
+
+	<xsl:template match="text()">
+		<xsl:choose>
+			<xsl:when test="not(contains(.,'&lt;') or contains(.,'&amp;'))"><xsl:value-of select="."/></xsl:when>
+			<xsl:otherwise>
+				<xsl:call-template name="cleanText"><xsl:with-param name="val"><xsl:value-of select="."/></xsl:with-param></xsl:call-template>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+	
+	<xsl:template name="cleanText">
+		<xsl:param name="val"/>
+		<xsl:choose>
+			<xsl:when test="contains($val,'&lt;')">
+				<xsl:call-template name="cleanText2"><xsl:with-param name="val"><xsl:value-of select="substring-before($val,'&lt;')"/></xsl:with-param></xsl:call-template>
+				<xsl:text>&#38;lt;</xsl:text>
+				<xsl:call-template name="cleanText"><xsl:with-param name="val"><xsl:value-of select="substring-after($val,'&lt;')"/></xsl:with-param></xsl:call-template>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:call-template name="cleanText2"><xsl:with-param name="val"><xsl:value-of select="$val"/></xsl:with-param></xsl:call-template>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+	
+	<xsl:template name="cleanText2">
+		<xsl:param name="val"/>
+		<xsl:choose>
+			<xsl:when test="contains($val,'&amp;')">
+				<xsl:value-of select="substring-before($val,'&amp;')"/>
+				<xsl:text>&#38;amp;</xsl:text>
+				<xsl:call-template name="cleanText2"><xsl:with-param name="val"><xsl:value-of select="substring-after($val,'&amp;')"/></xsl:with-param></xsl:call-template>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="$val"/>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+
+	<!-- other template -->
+	<xsl:template name="makeURL">
+		<xsl:param name="path"/>
+		<xsl:variable name="URLtemp">
+			<xsl:call-template name="changeSpaceInURI">
+				<xsl:with-param name="val">
+					<xsl:value-of select="$path"/>
+				</xsl:with-param>
+			</xsl:call-template>
+		</xsl:variable>
+		<xsl:text>file:///</xsl:text>
+		<xsl:value-of select="translate($URLtemp,'\','/')"/>
+	</xsl:template>
+
+	<xsl:template name="changeSpaceInURI">
+		<xsl:param name="val"/>
+		<xsl:choose>
+			<xsl:when test="contains($val,' ')">
+				<xsl:value-of select="substring-before($val,' ')"/>
+				<xsl:text>%20</xsl:text>
+				<xsl:call-template name="changeSpaceInURI">
+					<xsl:with-param name="val">
+						<xsl:value-of select="substring-after($val,' ')"/>
+					</xsl:with-param>
+				</xsl:call-template>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="$val"/>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+</xsl:stylesheet>

@@ -1,0 +1,3570 @@
+<!--**********************************************************************
+* *
+* RAFALE *
+* Document Type Definition *
+* *
+* Release Version 2.2d *
+* Dated 12th January 2014 *
+* M.DOMEON - Dassault-Aviation *
+* *
+* Amendment :- *
+* 1. New Wiring Public Identifier *
+* *
+**********************************************************************-->
+<!--**********************************************************************
+* Define Entity %ALLDMC; (All Data Module Codes) containing:- *
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*
+* The entity %ALLDMC; is used to allow REFQM & REFDM to access Data *
+* Modules Codes of different types (AGE or AVEE). *
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*
+* AGE - mandatory single contains MODELIC, SUPEQVC, *
+* ECSCS, EIDC, CIDC, *
+* DISCODE , DISCODEV, INCODE, *
+* INCODEV, ITEMLOC. *
+* or *
+* AVEE - mandatory single contains MODELIC, SDC, CHAPNUM, *
+* SECTION, SUBSECT, DISCODE, *
+* DISCODEV, INCODE, INCODEV, *
+* ITEMLOC. *
+**********************************************************************-->
+<!ENTITY % ALLDMC  "(age | avee | ipcc | ipcn)" >
+
+<!--**********************************************************************
+* Define Entity %applic; Applicability for content *
+**********************************************************************-->
+<!ENTITY % APPLIC  "(applic)" >
+
+<!--**********************************************************************
+* Define Entity %bodyatt; (Body Attributes) containing:- *
+* Attribute Definition List. *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* Name - Type - Default - Description. *
+* *
+* ID - ID - Implied - An identifier of the element *
+* which is assigned at origination and which *
+* remains unchanged as the document is revised *
+* or updated even though the automatically *
+* assigned enumeration "labels" change. The *
+* value of "id" is used when making references *
+* to the element from other portions of the *
+* document. *
+* Attribute Definition List stored in entity %INSDEL; *
+**********************************************************************-->
+<!ENTITY % BODYATT  "id ID #IMPLIED
+   change (add | mod) #IMPLIED" >
+
+<!--**********************************************************************
+* Call the wiring Content Public Text. *
+* The formal public identifier is stored in the entity %WIRING; *
+**********************************************************************
+**********************************************************************
+* *
+* RAFALE *
+* Document Type Definition *
+* *
+* Release Version 2.2 *
+* Dated 22th December 1998 *
+* *
+* Amendment : *
+* 19/05/97 : Change Public Identifier *
+* added attribute id (type ID) for <techpub> *
+* 1. New Public Identifier to support removal of marked sections. *
+* 2. change from to wirefrom and to to wireto *
+* 3. applic optional behind actwire and nactwire *
+* 4. add applic behind sparepin *
+* 5. EITC become EG *
+* 6. cableshem repeatable behind wire *
+* *
+* 15/01/98 : Update Public Identifier *
+* %applic optional in conitem and harness *
+* delete mfrcode and termpnr elements *
+* change reg by reporg *
+* change csn,isn by refipc *
+* replace zone by localiz *
+* harnessid repeatable instead of single *
+* add conrows, cableschs and extrows *
+* use %ident; entity to define equipment *
+* *
+* 12/12/98 : Update Public Identifier *
+* call %bodyatt in lowercase *
+* *
+* 29/09/04 : Update Public Identifier *
+* change wirefrom/wireto/wire to wirefrom/wire/wireto *
+* dmcref optional under cablesch *
+* link element added for wirefrom wireto and wire *
+* elemref element added for conitem wirefrom wireto wire*
+* = %ident and dmcref for link to wire data *
+* wirecode added (gather code and link to schema) *
+* wireborne added (gather borne and link to schema) *
+* *
+* Typical invocation : *
+* <!ENTITY % WIRING *
+* PUBLIC "-//RAFALE//ELEMENTS WIRING Data 040929//EN" > *
+* %WIRING; *
+**********************************************************************
+**********************************************************************
+* Define Entity %CONTENT (Content Breakdown) containing :- WIRING *
+**********************************************************************-->
+<!ENTITY % CONTENT  "wiring" >
+
+<!--**********************************************************************
+* Call the Air Vehicle,Engines,Equipment Specific Public Text. *
+* The formal public identifier is stored in the entity %AVEE; *
+**********************************************************************
+**********************************************************************
+* *
+* RAFALE *
+* Document Type Definition *
+* *
+* Release Version 2.0 *
+* Dated 01st October 1997 *
+* *
+* Amendment :- *
+* 1. New Public Identifier to support removal of marked sections. *
+* *
+* Typical invocation : *
+* <!ENTITY % AVEE PUBLIC *
+* "-//RAFALE//ENTITIES Air Vehicle Engines Equipment 971001//EN" > *
+* %AVEE; *
+**********************************************************************
+**********************************************************************
+* Define Entity %DMC; (Data Module Code) containing:- AVEE. *
+**********************************************************************-->
+<!ENTITY % DMC  "avee" >
+
+<!--*****************************************************************************
+* Define Entity %ICN; (Illustration Code Number). *
+**************************************************************************
+Illustration Code Number.-->
+<!ENTITY % ICN  "icn-c | icn-n" >
+
+<!--**********************************************************************
+* Call the Ident DTD Public Text. The formal public identifier *
+* is stored in the entity %IDENT; *
+**********************************************************************
+**********************************************************************
+* *
+* RAFALE *
+* Document Type Definition *
+* *
+* Release Version 2.1 *
+* Dated 15th January 1998 *
+* *
+* Amendment :- *
+* *
+* 15/01/98 : new public identifier *
+* *
+* *
+* Typical invocation : *
+* <!ENTITY % IDENT *
+* PUBLIC "-//RAFALE//ELEMENTS Equipment identification 980115//EN" >*
+* %IDENT; *
+*********************************************************************
+**********************************************************************
+* Define Entity %ident; Equipment identification containing:- *
+* REFIPC - mandatory single IPC reference (ippn,csn,isn). *
+* (define in common.ent *
+* or *
+* IDENT - mandatory single contains partnumber and manufac*
+* *
+* NOMEN - optional single equipment designation *
+* (define in common.ent *
+**********************************************************************-->
+<!ENTITY % IDENT  "(refipc|ident)" >
+
+<!--**********************************************************************
+* Call the AECMA 1000D Configuration Public Text. *
+* The formal public identifier is stored in the entity %AECMA; *
+**********************************************************************
+**********************************************************************
+* *
+* RAFALE *
+* Document Type Definition *
+* *
+* Release Version 2.0 *
+* Dated 23rd June 1997 *
+* *
+* Amendment : *
+* 31/08/95 : change security value to 1/2/3/4 instead of *
+* NP/DR/CD *
+* 19/05/97 : Changed Public Identifier *
+* *
+* Modified %INSDEL entity (Used in attribute *
+* lists of elements for version control): *
+* deleted "inschlvl" and "delchlvl" *
+* added "change" which takes values "add" or "mod". *
+* Added Definition of %IPC entity *
+* (used in marked sections) *
+* for Illustrated Parts Catalog Data modules. *
+* *
+* 1. Update Public Identifier. *
+* 2. Removal of Marked Section. *
+* 3. Move entities %HEADING; to Numbered Paragraphs entity *
+* 4. change values of securit np/dr/cd instead of 1/2/3 *
+* 5. add caption to acparc entity (descript same as aircrew) *
+* *
+* Typical invocation : *
+* <!ENTITY % AECMA *
+* PUBLIC "-//RAFALE//ENTITIES AECMA Configuration 971001//EN" > *
+* %AECMA *
+**********************************************************************
+**********************************************************************
+* Define Entity %INSDEL; (Insert/Delete Change Level Attributes) *
+* containing:- *
+* Attribute Definition List. *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* Name - Type - Default - Description. *
+* *
+* change - value - Implied - Controls whether the inserted *
+* information is added or modified *
+**********************************************************************-->
+<!ENTITY % INSDEL  "change (add | mod) #IMPLIED" >
+
+<!--**********************************************************************
+* Define Entity %list; (Types Of Lists) containing:- *
+* LIST - mandatory single contains TITLE, ITEM. *
+* or *
+* PROCLIST - mandatory single contains TITLE, ITEM. *
+* or *
+* DEFLIST - mandatory single contains TITLE, TERM, DEF. *
+**********************************************************************
+Types Of Lists.-->
+<!ENTITY % LIST  "(list | deflist | proclist)" >
+
+<!--*****************************************************************************
+* Define Entity %ref (References). *
+**************************************************************************-->
+<!ENTITY % REF  
+               "dmcref | figref  | tabref | supplref | supeqref | miscref | 
+    	  	refipc | reporg | xref | listref | tpubref " >
+
+<!--*****************************************************************************
+* Define Entity %RPCNAME (Responsible Partner Company Names). *
+* Responsible Partner Company Names. *
+* See "CTG annexe 2" for details about the above letters. *
+**************************************************************************-->
+<!ENTITY % RPCNAME  
+               "(A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z|0|1|2|3|4|5|6|7|8|9)" >
+
+<!--**********************************************************************
+* Define Entity %secur; (ICN Security) containing:- *
+* Attribute Definition List. *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* *
+* CLASS - Declared - REQUIRED - Identifies Security Marking. *
+**********************************************************************-->
+<!ENTITY % SECUR  " class  (1 | 2 | 3 | 4)  #REQUIRED " >
+
+<!--**********************************************************************
+* Define Entity %SECURIT; (Status Security) containing:- *
+* Attribute Definition List. *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* *
+* CLASS - Declared - Required - Identifies Security Marking. *
+* NP = Non protege. *
+* DR = Diffusion Restreinte. *
+* CD = Confidentiel Defense. *
+**********************************************************************-->
+<!ENTITY % SECURIT  " class  (NP | DR | CD )  #REQUIRED " >
+
+<!--**********************************************************************
+* Call the Status Breakdown Public Text. The formal public identifier*
+* is stored in the entity %EXTSTAT; *
+**********************************************************************
+**********************************************************************
+* *
+* RAFALE *
+* Document Type Definition *
+* *
+* Release Version 2.1 *
+* Dated 15st January 1998 *
+* *
+* Amendment : *
+* 31/08/95 delivery date "delidate" added as new attribute *
+* of <delivery>. *
+* multiples elements <zone> and <accpnl> allowed *
+* 19/05/97 : Changed Public Identifier *
+* attribute "zoneid" of <zone> changed from *
+* type NAMES to NUTOKENS *
+* <delivery> changed into <reception>, and names of *
+* attributes changed to reflect a reception rather *
+* than a delivery. *
+* added attributes "approvdate" and "authoapprov" to *
+* <reception>, for approval information data. *
+* changed <dmsize> content model to #PCDATA (Aecma) *
+* added <icns> (containing <icn>(s) for the DM) *
+* <icns> is placed in the content model of the <status>*
+* *
+* Remove pmdata to procedural content *
+* Change QA structure (unverif or (unitary/context) *
+* Reception optionnal *
+* 15/01/98 Remove attribute origname from <orig> *
+* delete attributes from unitary and context *
+* Attribute receptdate become implied for <reception>*
+* *
+* *
+* 1. Update Public Identifier. *
+* *
+* Typical invocation : *
+* <!ENTITY % EXTSTAT *
+* PUBLIC "-//RAFALE//ELEMENTS Status Breakdown 980115//EN" > *
+* %EXTSTAT; *
+**********************************************************************
+**********************************************************************
+* Define Entity %STATUS (Status) containing:- *
+* SECURITY - mandatory single contains No Other Tags. *
+* DMSIZE - optional single contains Parsed Character Data. *
+* RPC - mandatory single contains Parsed Character Data. *
+* ORIG - mandatory single contains Parsed Character Data. *
+* APPLIC - mandatory single contains TYPE, MODEL. *
+* TECHSTD - optional single contains AUTANDTP, AUTHBLK, TPBASE*
+* AUTHEX, NOTES. *
+* QA - mandatory single contains UNVERIF, FIRSTVER, SECVER*
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*
+* RFU - optional single contains Parsed Character Data. *
+* REMARKS - optional single contains Parsed Character Data. *
+* PMD - optional single contains THI, ZONE, ACCPNL, *
+* AVEHCFG, OPNDURN. *
+**********************************************************************-->
+<!ENTITY % STATUS  
+               "security,dmsize?,rpc,orig,(applic),techstd,qa,rfu,remarks,icns?" >
+
+<!--**********************************************************************
+* Define Entity %text (Running Text) containing:- *
+* Parsed Character Data. *
+* or *
+* XREF - mandatory single contains No Other Tags. *
+* or *
+* INDXFLAG - mandatory single contains No Other Tags. *
+* or *
+* EMPHASIS - mandatory single contains definition stored in *
+* entity %text; *
+* or *
+* SYMBOL - mandatory single contains No Other Tags. *
+* or *
+* SUBSCRPT - mandatory single contains Replaceable Character *
+* Data. *
+* or *
+* SUPSCRPT - mandatory single contains Replaceable Character *
+* Data. *
+* or *
+* APPLICT - mandatory single Text running applicability *
+* *
+**********************************************************************-->
+<!ENTITY % TEXT  
+               "(#PCDATA | dmcref | figref  | tabref | supplref | supeqref | miscref | 
+    	  	refipc | reporg | xref | listref | tpubref   | indxflag | emphasis  
+                          | symbol | subscrpt | supscrpt | applict )" >
+
+<!--**********************************************************************
+* Define Entity %yesorno (Yes or No Attribute Answer) containing:- *
+* NUMBER *
+**********************************************************************-->
+<!ENTITY % YESORNO  "NUMBER" >
+
+<!--**********************************************************************
+* Call the Common Entities Public Text. The formal public identifier *
+* is stored in the entity %COMMON; *
+**********************************************************************
+**********************************************************************
+* *
+* RAFALE *
+* Document Type Definition *
+* *
+* Release Version 2.2a *
+* Dated 12th January 2003 *
+* *
+* Amendment : *
+* 19/05/97 : Changed public Identifier *
+* *
+* modified element <emphasis>: *
+* added attribute "case" to <emphasis>, to reflect *
+* the case of the emphazised text, with possible *
+* values UPPER,LOWER or SAME (default value= SAMER). *
+* added attributes "bold" , *
+* "italic" , *
+* "underscr" (values %yesorno;) *
+* deleted attribute "emph" (obsolete after above adds)*
+* added attribute "color" with predefined values, *
+* to reflect the rendition of the text. *
+* *
+* added element <listref> , with attribute "refid" *
+* (Reference to a list) *
+* *
+* added attribute "target" to <figref>. *
+* *
+* modified %ref; (References to elements) *
+* added "tpubref" (Reference to a techpub). *
+* added "listref" (Reference to a list). *
+* *
+* *
+* modified %stepcon; (Step content) *
+* added "title?" before "specpara". *
+* deleted <math> from content model. *
+* *
+* modified %nparcon; *
+* (Numbered/Titled paragraph content) *
+* (Used in <para0> and all <subpara_i>) *
+* "title" is now before "specpara" in the content model*
+* of the paragraphs. *
+* deleted <math> from the parameter entity definition*
+* *
+* modified %text; content model (Running text) *
+* deleted "brk" *
+* deleted "eqtxt" *
+* added "reporg" : repere organe *
+* added "refipc" : Reference a CSN/ISN *
+* *
+* *
+* added <refipc> : reference a CSN/ISN thru attribute*
+* CSN CDATA #REQUIRED *
+* ISN CDATA #IMPLIED *
+* *
+* added <reporg> : repere organe containing (nomen,reg)*
+* added <reg> : code organe. *
+* *
+* modified attribute change of <change> to(ADD or MOD*
+* *
+* added attribute %INSDEL; to elements *
+* reporg,reg,refipc,xref,dmcref,tpubref,figref, *
+* tabref,supplref,supeqref,miscref,listref,indxflag *
+* emphasis,symbol,graphic,subscrpt,supscrpt,title. *
+* *
+* Amendment *
+* 1. Update Public Identifier. *
+* 2. Delete entity %HEADING; *
+* 3. Moved entity %nparacon; to Numbered Para's entity. *
+* 4. Moved entity %stepcon; to Steps entity. *
+* 5. Add U,W to rpcname values *
+* 6. Add attribute sheetno to figref *
+* *
+* 15/01/98 : Detete <change> from %text *
+* Add JPEG notation. *
+* Add value "P" to RPCNAME attribute list *
+* yellow and magenta added to "color" values (emphasis)*
+* add ippn as optional attribute of refipc *
+* change reporg structure *
+* (delete reg as element add reg & rpcname attributes)*
+* move reporg and refipc to ref entity *
+* delete nomen from reporg *
+* move nomen definition to %extident *
+* add rpcname attribute to refipc *
+* figref hotspot target become idref instead of cdata *
+* *
+* 22/12/98 : reporg endtag optional *
+* add repnohot attribute for figref *
+* *
+* *
+* 12/01/03 Changed public Identifier *
+* extend rpcname attribute values *
+* add target and target type attribute to dmcref (FCR 3588)*
+* add <applict> to %text (FCR 3585) *
+* add Tiff notation (FCR 3589) *
+* *
+* *
+* 12/01/14 Changed public Identifier *
+* add Pdf notation (FCR 4479) *
+* *
+* Typical invocation : *
+* <!ENTITY % COMMON *
+* PUBLIC "-//RAFALE//ENTITIES Common Entities 140112//EN" > *
+* %COMMON; *
+*********************************************************************
+**********************************************************************
+* Define the cgm Notation, to the Public Identifier for CGM *
+* graphics. *
+**********************************************************************-->
+<!NOTATION CGM PUBLIC "-//USA-DOD//NOTATION Computer Graphics Metafile//EN" >
+
+<!--**********************************************************************
+* Define the fax Notation, to the Public Identifier for CCITT Group 4*
+* images. *
+**********************************************************************-->
+<!NOTATION FAX PUBLIC "-//USA-DOD//NOTATION CCITT Group 4 Facsimile//EN" >
+
+<!--**********************************************************************
+* Define the JPEG Notation, to the Public Identifier for JPEG *
+* images. *
+**********************************************************************-->
+<!NOTATION JPEG PUBLIC "+//ISBN 0-7923-9432-1::Graphic Notation//NOTATION Joint Photographic Experts Group Raster//EN" >
+
+<!--**********************************************************************
+* Define the pdf Notation, to the Public Identifier for PDF files *
+* *
+**********************************************************************-->
+<!NOTATION PDF PUBLIC "+// Adobe Inc.//NOTATION Portable Document Format//EN" >
+
+<!--**********************************************************************
+* Define the tiff Notation, to the Public Identifier for TIFF *
+* images. *
+**********************************************************************-->
+<!NOTATION TIFF PUBLIC "-//Aldus/Microsoft Tagged Interchange File Format//NOTATION CCITT Group 4 Facsimile//EN" >
+
+<!--**********************************************************************
+* Call the Components Definition Public Text. The formal public *
+* identifier is stored in the entity %COMPS; *
+**********************************************************************
+**********************************************************************
+* *
+* RAFALE *
+* Document Type Definition *
+* *
+* Release Version 2.2d *
+* Dated 12th January 2014 *
+* *
+* Amendment :- *
+* 1. Addition of Aircrew Public Identifier. *
+* 2. Reference new public identifier dates. *
+* 3. Addition of Aircraft Fault Reporting Public Identifier. *
+* 4. Addition of prelreqs Public Identifier. *
+* 5. Addition of Schedule Public Identifier. *
+* 6. Delete entity aircrew.cfg *
+* 7. Update public identifiers *
+* 15/01/98 *
+* 8. Addition of ident Public Identifier. *
+* 9. Reference new public identifier dates. *
+* 12/01/03 *
+* 10.Reference new public identifier for Extfig/IPC dates 12/01/04. *
+* 11.Reference new public identifier for wiring dates 29/09/04. *
+* *
+* Amendment : 12/01/14- *
+* Reference new public identifier for %COMMON dates 12/01/14. *
+* Reference new public identifier for %EXTAPPL; dates 12/01/14. *
+* *
+* Typical invocation : *
+* <!ENTITY % COMPS *
+* PUBLIC "-//RAFALE//ENTITIES Component Definitions 140112//EN" > *
+* %COMPS; *
+**********************************************************************
+**********************************************************************
+* Define Entity %AECMA; (AECMA Configuration) containing:- the *
+* formal public identifier for the AECMA Configuration public text. *
+**********************************************************************-->
+<!ENTITY % AECMA   PUBLIC "-//RAFALE//ENTITIES AECMA Configuration 971001//EN"    >
+
+<!--**********************************************************************
+* Define Entity %AFR; (Aircraft Fault Reporting) containing:- *
+* the formal public identifier for the AFR Content public text *
+**********************************************************************-->
+<!ENTITY % AFR   PUBLIC "-//RAFALE//ELEMENTS Aircraft Fault Reporting 981222//EN"    >
+
+<!--**********************************************************************
+* Define Entity %AGE; (Aircraft Ground Equipment) containing:- *
+* the formal public identifier for the Aircraft Ground Equipment *
+* public text. *
+**********************************************************************-->
+<!ENTITY % AGE   PUBLIC "-//RAFALE//ENTITIES Aircraft Ground Equipment 971001//EN"    >
+
+<!--**********************************************************************
+* Define Entity %AIRCREW; (AirCrew Information Breakdown) containing:*
+* the formal public identifier for the AirCrew Information Breakdown *
+* public text. *
+**********************************************************************-->
+<!ENTITY % AIRCREW   PUBLIC "-//RAFALE//ELEMENTS AirCrew Breakdown 980115//EN"    >
+
+<!--**********************************************************************
+* Define Entity %AVEE; (Air Vehicle Engines Equipment) containing:- *
+* the formal public identifier for the Air Vehicle Engines Equipment *
+* public text. *
+**********************************************************************-->
+<!ENTITY % AVEE   PUBLIC 
+               "-//RAFALE//ENTITIES Air Vehicle Engines Equipment 971001//EN"    >
+
+<!--**********************************************************************
+* Define Entity %BASE; (AECMA Base DTD structure) containing:- *
+* the formal public identifier for the AECMA Base DTD public text. *
+**********************************************************************-->
+<!ENTITY % BASE   PUBLIC "-//RAFALE//ELEMENTS AECMA Base DTD 971001//EN"    >
+
+<!--**********************************************************************
+* Define Entity %COMMON; (Common Entities) containing:- the formal *
+* public identifier for the Common Entities public text. *
+**********************************************************************-->
+<!ENTITY % COMMON   PUBLIC "-//RAFALE//ENTITIES Common Entities 140112//EN"    >
+
+<!--**********************************************************************
+* *
+* RAFALE *
+* Document Type Definition *
+* *
+* Release Version 2.2d *
+* Dated 12th January 2014 *
+* M.DOMEON - Dassault-Aviation *
+* *
+* Amendment :- *
+* 1. Update Public Identifier *
+* 2. add extident entity call *
+* *
+* 98/12/22 update comps public identifier *
+* 03/01/12 update comps public identifier *
+* 04/01/12 update comps public identifier *
+* 04/09/29 update comps public identifier *
+* 14/01/12 update comps public identifier *
+* *
+* The following DOCTYPE statement may be used to call this set of *
+* declarations:- *
+* *
+* <!DOCTYPE dmodule PUBLIC *
+* "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment WIRING 140112//EN" []> *
+**********************************************************************
+**********************************************************************
+* Define Entity %COMPS; (Components) containing:- the formal public *
+* identifier for the component definitions. *
+**********************************************************************-->
+<!ENTITY % COMPS   PUBLIC "-//RAFALE//ENTITIES Component Definitions 140112//EN"    >
+
+<!--**********************************************************************
+* Define Entity %DESCRPT; (Description) containing:- *
+* the formal public identifier for the Description Content public *
+* text. *
+**********************************************************************-->
+<!ENTITY % DESCRPT   PUBLIC "-//RAFALE//ELEMENTS Description Breakdown 980115//EN"    >
+
+<!--**********************************************************************
+* Define Entity %EXTAPPL; (Applicability Breakdown) containing:- the *
+* formal public identifier for the Applicability Breakdown public *
+* text. *
+**********************************************************************-->
+<!ENTITY % EXTAPPL   PUBLIC 
+               "-//RAFALE//ELEMENTS Applicability Breakdown 140112//EN"    >
+
+<!--**********************************************************************
+* Define Entity %EXTCONT; (Content Breakdown) containing:- the *
+* formal public identifier for the Content Breakdown public text. *
+**********************************************************************-->
+<!ENTITY % EXTCONT   PUBLIC "-//RAFALE//ELEMENTS Content Breakdown 980115//EN"    >
+
+<!--**********************************************************************
+* Define Entity %EXTDMC; (Data Module Code Breakdown) containing:- *
+* the formal public identifier for the Data Module Code Breakdown *
+* public text. *
+**********************************************************************-->
+<!ENTITY % EXTDMC   PUBLIC 
+               "-//RAFALE//ELEMENTS Data Module Code Breakdown 981222//EN"    >
+
+<!--**********************************************************************
+* Define Entity %EXTFIG; (Figure) containing:- *
+* the formal public identifier for the Figure breakdown public text. *
+**********************************************************************-->
+<!ENTITY % EXTFIG   PUBLIC "-//RAFALE//ELEMENTS Figure Breakdown 040112//EN"    >
+
+<!--**********************************************************************
+* Define Entity %EXTIDENT; (Equipment identification) containing:- *
+* the formal public identifier for the Equipment identification *
+* public text. *
+**********************************************************************-->
+<!ENTITY % EXTIDENT   PUBLIC 
+               "-//RAFALE//ELEMENTS Equipment identification 980115//EN"    >
+
+<!--**********************************************************************
+* Define Entity %EXTLIST; (Lists Breakdown) containing:- the formal *
+* public identifier for the Lists Breakdown public text. *
+**********************************************************************-->
+<!ENTITY % EXTLIST   PUBLIC "-//RAFALE//ELEMENTS Lists Breakdown 971001//EN"    >
+
+<!--**********************************************************************
+* Define Entity %EXTPARA; (Numbered Paragraphs) containing:- the *
+* formal public identifier for the Numbered Paragraphs Breakdown *
+* public text. *
+**********************************************************************-->
+<!ENTITY % EXTPARA   PUBLIC 
+               "-//RAFALE//ELEMENTS Numbered Paragraphs Breakdown 980115//EN"    >
+
+<!--**********************************************************************
+* Define Entity %EXTSPEC; (Special Paragraphs Breakdown) containing:-*
+* the formal public identifier for the Special Paragraphs Breakdown *
+* public text. *
+**********************************************************************-->
+<!ENTITY % EXTSPEC   PUBLIC 
+               "-//RAFALE//ELEMENTS Special Paragraphs Breakdown 971001//EN"    >
+
+<!--**********************************************************************
+* Define Entity %EXTSTAT; (Status Breakdown) containing:- the formal *
+* public identifier for the Status Breakdown public text. *
+**********************************************************************-->
+<!ENTITY % EXTSTAT   PUBLIC "-//RAFALE//ELEMENTS Status Breakdown 980115//EN"    >
+
+<!--**********************************************************************
+* Define Entity %EXTSTEP; (Step Breakdown) containing:- the formal *
+* public identifier for the Step Breakdown public text. *
+**********************************************************************-->
+<!ENTITY % EXTSTEP   PUBLIC "-//RAFALE//ELEMENTS Steps Breakdown 971001//EN"    >
+
+<!--**********************************************************************
+* Define Entity %EXTTAB; (Table) containing:- *
+* the formal public identifier for the Table breakdown public text. *
+**********************************************************************-->
+<!ENTITY % EXTTAB   PUBLIC "-//RAFALE//ELEMENTS Table Breakdown 980115//EN"    >
+
+<!--**********************************************************************
+* Define Entity %IPC; (Illustrated Parts Catalog) containing:- *
+* the formal public identifier for the IPC Content public text *
+**********************************************************************-->
+<!ENTITY % IPC   PUBLIC "-//RAFALE//ELEMENTS Illustrated Parts Catalog 040112//EN"    >
+
+<!--**********************************************************************
+* Define Entity %IPCC; (Chapterized IPC) containing:- *
+* the formal public identifier for the Chapterized IPC public text. *
+**********************************************************************-->
+<!ENTITY % IPCC   PUBLIC "-//RAFALE//ENTITIES Chapterized IPC 971001//EN"    >
+
+<!--**********************************************************************
+* Define Entity %IPCN; (Non chapterized IPC) containing:- *
+* the formal public identifier for the Non chapterized IPC public text.*
+**********************************************************************-->
+<!ENTITY % IPCN   PUBLIC "-//RAFALE//ENTITIES Non chapterized IPC 971001//EN"    >
+
+<!--**********************************************************************
+* Define Entity %ISOgrk3; (ISO Greek Symbols) containing:- the *
+* formal public identifier for the ISO Greek Symbols public text. *
+**********************************************************************-->
+<!ENTITY % ISOGRK3   PUBLIC "ISO 8879-1986//ENTITIES Greek Symbols//EN"    >
+
+<!--**********************************************************************
+* Define Entity %ISOlat1; (ISO Added Latin 1) containing:- the *
+* formal public identifier for the ISO Added Latin 1 public text. *
+* "c:\wspm\iso\iso$lat1.ent" *
+**********************************************************************-->
+<!ENTITY % ISOLAT1   PUBLIC "ISO 8879-1986//ENTITIES Added Latin 1//EN"    >
+
+<!--**********************************************************************
+* Define Entity %ISOnum; (ISO Numeric and Special Symbols) *
+* containing:- the formal public identifier for the ISO Numeric and *
+* Special Symbols public text. *
+**********************************************************************-->
+<!ENTITY % ISONUM   PUBLIC 
+               "ISO 8879-1986//ENTITIES Numeric and Special Graphic//EN"    >
+
+<!--**********************************************************************
+* Define Entity %ISOpub; (ISO Publishing) containing:- the formal *
+* public identifier for the ISO Publishing public text. *
+**********************************************************************-->
+<!ENTITY % ISOPUB   PUBLIC "ISO 8879-1986//ENTITIES Publishing//EN"    >
+
+<!--**********************************************************************
+* Define Entity %ISOtech; (ISO General Technical) containing:- the *
+* formal public identifier for the ISO General Technical public text.*
+**********************************************************************-->
+<!ENTITY % ISOTECH   PUBLIC "ISO 8879-1986//ENTITIES General Technical//EN"    >
+
+<!--**********************************************************************
+* Define Entity %PRELREQS; (Preliminary requirements) containing:- *
+* the formal public identifier for the Preliminary requirements *
+* public text. *
+**********************************************************************-->
+<!ENTITY % PRELREQS   PUBLIC 
+               "-//RAFALE//ELEMENTS Preliminary requirements 981222//EN"    >
+
+<!--**********************************************************************
+* Define Entity %PROCED; (Procedural) containing:- *
+* the formal public identifier for the Procedural Content public *
+* text. *
+**********************************************************************-->
+<!ENTITY % PROCED   PUBLIC "-//RAFALE//ELEMENTS Procedural Breakdown 980115//EN"    >
+
+<!--**********************************************************************
+* Define Entity %SCHED; (Schedule) containing:- *
+* the formal public identifier for the AFR Content public text *
+**********************************************************************-->
+<!ENTITY % SCHED   PUBLIC "-//RAFALE//ELEMENTS Schedule information 981222//EN"    >
+
+<!--**********************************************************************
+* Define Entity %TO; (tableaux organes) containing:- *
+* the formal public identifier for the TO Content public text *
+**********************************************************************-->
+<!ENTITY % TO   PUBLIC "-//RAFALE//ELEMENTS Tableau organes 981222//EN"    >
+
+<!--**********************************************************************
+* Define Entity %TO; (tableaux organes) containing:- *
+* the formal public identifier for the TO Content public text *
+**********************************************************************-->
+<!ENTITY % WIRING   PUBLIC "-//RAFALE//ELEMENTS Wiring 040929//EN"    >
+
+<!--**********************************************************************
+* Call the ISO Added Latin 1 Public Text. The formal public *
+* identifier is stored in the entity %ISOlat1; *
+**********************************************************************
+(C) International Organization for Standardization 1986
+Permission to copy in any form is granted for use with
+conforming SGML systems and applications as defined in
+ISO 8879, provided this notice is included in all copies.
+
+Character entity set. Typical invocation:
+<!ENTITY % ISOlat1 PUBLIC
+"ISO 8879-1986//ENTITIES Added Latin 1//EN">
+%ISOlat1;
+
+=small a, acute accent-->
+<!ENTITY AACUTE   SDATA "[aacute]" >
+
+<!--=small a, circumflex accent-->
+<!ENTITY ACIRC   SDATA "[acirc ]" >
+
+<!--=small ae diphthong (ligature)-->
+<!ENTITY AELIG   SDATA "[aelig ]" >
+
+<!--=small a, grave accent-->
+<!ENTITY AGRAVE   SDATA "[agrave]" >
+
+<!--**********************************************************************
+* Call the ISO General Technical Public Text. The formal public *
+* identifier is stored in the entity %ISOtech; *
+**********************************************************************
+(C) International Organization for Standardization 1986
+Permission to copy in any form is granted for use with
+conforming SGML systems and applications as defined in
+ISO 8879, provided this notice is included in all copies.
+
+Character entity set. Typical invocation:
+<!ENTITY % ISOtech PUBLIC
+"ISO 8879-1986//ENTITIES General Technical//EN">
+%ISOtech;
+
+/aleph =aleph, Hebrew-->
+<!ENTITY ALEPH   SDATA "[aleph ]" >
+
+<!--**********************************************************************
+* Call the ISO Greek Symbols Public Text. The formal public *
+* identifier is stored in the entity %ISOgrk3; *
+**********************************************************************
+(C) International Organization for Standardization 1986
+Permission to copy in any form is granted for use with
+conforming SGML systems and applications as defined in
+ISO 8879, provided this notice is included in all copies.
+
+Character entity set. Typical invocation:
+<!ENTITY % ISOgrk3 PUBLIC
+"ISO 8879-1986//ENTITIES Greek Symbols//EN">
+%ISOgrk3;
+
+=small alpha, Greek-->
+<!ENTITY ALPHA   SDATA "[alpha ]" >
+
+<!--=ampersand-->
+<!ENTITY AMP   SDATA "[amp   ]" >
+
+<!--/wedge /land B: =logical and-->
+<!ENTITY AND   SDATA "[and   ]" >
+
+<!--=right (90 degree) angle-->
+<!ENTITY ANG90   SDATA "[ang90 ]" >
+
+<!--/sphericalangle =angle-spherical-->
+<!ENTITY ANGSPH   SDATA "[angsph]" >
+
+<!--Angstrom =capital A, ring-->
+<!ENTITY ANGST   SDATA "[angst ]" >
+
+<!--/approx R: =approximate-->
+<!ENTITY AP   SDATA "[ap    ]" >
+
+<!--=apostrophe-->
+<!ENTITY APOS   SDATA "[apos  ]" >
+
+<!--=small a, ring-->
+<!ENTITY ARING   SDATA "[aring ]" >
+
+<!--/ast B: =asterisk-->
+<!ENTITY AST   SDATA "[ast   ]" >
+
+<!--=small a, tilde-->
+<!ENTITY ATILDE   SDATA "[atilde]" >
+
+<!--=small a, dieresis or umlaut mark-->
+<!ENTITY AUML   SDATA "[auml  ]" >
+
+<!--/because R: =because-->
+<!ENTITY BECAUS   SDATA "[becaus]" >
+
+<!--Bernoulli function (script capital B)-->
+<!ENTITY BERNOU   SDATA "[bernou]" >
+
+<!--=small beta, Greek-->
+<!ENTITY BETA   SDATA "[beta  ]" >
+
+<!--=significant blank symbol-->
+<!ENTITY BLANK   SDATA "[blank ]" >
+
+<!--=50% shaded block-->
+<!ENTITY BLK12   SDATA "[blk12 ]" >
+
+<!--=25% shaded block-->
+<!ENTITY BLK14   SDATA "[blk14 ]" >
+
+<!--=75% shaded block-->
+<!ENTITY BLK34   SDATA "[blk34 ]" >
+
+<!--=full block-->
+<!ENTITY BLOCK   SDATA "[block ]" >
+
+<!--/bot B: =perpendicular-->
+<!ENTITY BOTTOM   SDATA "[bottom]" >
+
+<!--=broken (vertical) bar-->
+<!ENTITY BRVBAR   SDATA "[brvbar]" >
+
+<!--/backslash =reverse solidus-->
+<!ENTITY BSOL   SDATA "[bsol  ]" >
+
+<!--/bullet B: =round bullet, filled-->
+<!ENTITY BULL   SDATA "[bull  ]" >
+
+<!--/cap B: =intersection-->
+<!ENTITY CAP   SDATA "[cap   ]" >
+
+<!--=caret (insertion mark)-->
+<!ENTITY CARET   SDATA "[caret ]" >
+
+<!--=small c, cedilla-->
+<!ENTITY CCEDIL   SDATA "[ccedil]" >
+
+<!--=cent sign-->
+<!ENTITY CENT   SDATA "[cent  ]" >
+
+<!--/checkmark =tick, check mark-->
+<!ENTITY CHECK   SDATA "[check ]" >
+
+<!--=small chi, Greek-->
+<!ENTITY CHI   SDATA "[chi   ]" >
+
+<!--/circ B: =circle, open-->
+<!ENTITY CIR   SDATA "[cir   ]" >
+
+<!--/clubsuit =club suit symbol-->
+<!ENTITY CLUBS   SDATA "[clubs ]" >
+
+<!--/colon P:-->
+<!ENTITY COLON   SDATA "[colon ]" >
+
+<!--P: =comma-->
+<!ENTITY COMMA   SDATA "[comma ]" >
+
+<!--=commercial at-->
+<!ENTITY COMMAT   SDATA "[commat]" >
+
+<!--B: composite function (small circle)-->
+<!ENTITY COMPFN   SDATA "[compfn]" >
+
+<!--/cong R: =congruent with-->
+<!ENTITY CONG   SDATA "[cong  ]" >
+
+<!--/oint L: =contour integral operator-->
+<!ENTITY CONINT   SDATA "[conint]" >
+
+<!--=copyright sign-->
+<!ENTITY COPY   SDATA "[copy  ]" >
+
+<!--=sound recording copyright sign-->
+<!ENTITY COPYSR   SDATA "[copysr]" >
+
+<!--=ballot cross-->
+<!ENTITY CROSS   SDATA "[ballot]" >
+
+<!--/cup B: =union or logical sum-->
+<!ENTITY CUP   SDATA "[cup   ]" >
+
+<!--=general currency sign-->
+<!ENTITY CURREN   SDATA "[curren]" >
+
+<!--/dagger B: =dagger-->
+<!ENTITY DAGGER   SDATA "[dagger]" >
+
+<!--/downarrow A: =downward arrow-->
+<!ENTITY DARR   SDATA "[darr  ]" >
+
+<!--=hyphen (true graphic)-->
+<!ENTITY DASH   SDATA "[dash  ]" >
+
+<!--=degree sign-->
+<!ENTITY DEG   SDATA "[deg   ]" >
+
+<!--=small delta, Greek-->
+<!ENTITY DELTA   SDATA "[delta ]" >
+
+<!--/diamondsuit =diamond suit symbol-->
+<!ENTITY DIAMS   SDATA "[diams ]" >
+
+<!--/div B: =divide sign-->
+<!ENTITY DIVIDE   SDATA "[divide]" >
+
+<!--downward left crop mark-->
+<!ENTITY DLCROP   SDATA "[dlcrop]" >
+
+<!--=dollar sign-->
+<!ENTITY DOLLAR   SDATA "[dollar]" >
+
+<!--=dieresis or umlaut mark-->
+<!ENTITY DOT   SDATA "[Dot   ]" >
+
+<!--four dots above-->
+<!ENTITY DOTDOT   SDATA "[DotDot]" >
+
+<!--downward right crop mark-->
+<!ENTITY DRCROP   SDATA "[drcrop]" >
+
+<!--/triangledown =down triangle, open-->
+<!ENTITY DTRI   SDATA "[dtri  ]" >
+
+<!--/blacktriangledown =dn tri, filled-->
+<!ENTITY DTRIF   SDATA "[dtrif ]" >
+
+<!--=small e, acute accent-->
+<!ENTITY EACUTE   SDATA "[eacute]" >
+
+<!--=small e, circumflex accent-->
+<!ENTITY ECIRC   SDATA "[ecirc ]" >
+
+<!--=small e, grave accent-->
+<!ENTITY EGRAVE   SDATA "[egrave]" >
+
+<!--**********************************************************************
+* Call the ISO Publishing Public Text. The formal public identifier *
+* is stored in the entity %ISOpub; *
+**********************************************************************
+(C) International Organization for Standardization 1986
+Permission to copy in any form is granted for use with
+conforming SGML systems and applications as defined in
+ISO 8879, provided this notice is included in all copies.
+
+Character entity set. Typical invocation:
+<!ENTITY % ISOpub PUBLIC
+"ISO 8879-1986//ENTITIES Publishing//EN">
+%ISOpub;
+
+=em space-->
+<!ENTITY EMSP   SDATA "[emsp  ]" >
+
+<!--=1/3-em space-->
+<!ENTITY EMSP13   SDATA "[emsp3 ]" >
+
+<!--=1/4-em space-->
+<!ENTITY EMSP14   SDATA "[emsp4 ]" >
+
+<!--=en space (1/2-em)-->
+<!ENTITY ENSP   SDATA "[ensp  ]" >
+
+<!--=small epsilon, Greek-->
+<!ENTITY EPSI   SDATA "[epsi  ]" >
+
+<!--/straightepsilon-->
+<!ENTITY EPSIS   SDATA "[epsis ]" >
+
+<!--/varepsilon-->
+<!ENTITY EPSIV   SDATA "[epsiv ]" >
+
+<!--=equals sign R:-->
+<!ENTITY EQUALS   SDATA "[equals]" >
+
+<!--/equiv R: =identical with-->
+<!ENTITY EQUIV   SDATA "[equiv ]" >
+
+<!--=small eta, Greek-->
+<!ENTITY ETA   SDATA "[eta   ]" >
+
+<!--=small eth, Icelandic-->
+<!ENTITY ETH   SDATA "[eth   ]" >
+
+<!--=small e, dieresis or umlaut mark-->
+<!ENTITY EUML   SDATA "[euml  ]" >
+
+<!--=exclamation mark-->
+<!ENTITY EXCL   SDATA "[excl  ]" >
+
+<!--/exists =at least one exists-->
+<!ENTITY EXIST   SDATA "[exist ]" >
+
+<!--=female symbol-->
+<!ENTITY FEMALE   SDATA "[female]" >
+
+<!--small ffi ligature-->
+<!ENTITY FFILIG   SDATA "[ffilig]" >
+
+<!--small ff ligature-->
+<!ENTITY FFLIG   SDATA "[fflig ]" >
+
+<!--small ffl ligature-->
+<!ENTITY FFLLIG   SDATA "[ffllig]" >
+
+<!--small fi ligature-->
+<!ENTITY FILIG   SDATA "[filig ]" >
+
+<!--small fj ligature-->
+<!ENTITY FJLIG   SDATA "[fjlig ]" >
+
+<!--/flat =musical flat-->
+<!ENTITY FLAT   SDATA "[flat  ]" >
+
+<!--small fl ligature-->
+<!ENTITY FLLIG   SDATA "[fllig ]" >
+
+<!--=function of (italic small f)-->
+<!ENTITY FNOF   SDATA "[fnof  ]" >
+
+<!--/forall =for all-->
+<!ENTITY FORALL   SDATA "[forall]" >
+
+<!--=fraction one-half-->
+<!ENTITY FRAC12   SDATA "[frac12]" >
+
+<!--=fraction one-third-->
+<!ENTITY FRAC13   SDATA "[frac13]" >
+
+<!--=fraction one-quarter-->
+<!ENTITY FRAC14   SDATA "[frac14]" >
+
+<!--=fraction one-fifth-->
+<!ENTITY FRAC15   SDATA "[frac15]" >
+
+<!--=fraction one-sixth-->
+<!ENTITY FRAC16   SDATA "[frac16]" >
+
+<!--=fraction one-eighth-->
+<!ENTITY FRAC18   SDATA "[frac18]" >
+
+<!--=fraction two-thirds-->
+<!ENTITY FRAC23   SDATA "[frac23]" >
+
+<!--=fraction two-fifths-->
+<!ENTITY FRAC25   SDATA "[frac25]" >
+
+<!--=fraction three-quarters-->
+<!ENTITY FRAC34   SDATA "[frac34]" >
+
+<!--=fraction three-fifths-->
+<!ENTITY FRAC35   SDATA "[frac35]" >
+
+<!--=fraction three-eighths-->
+<!ENTITY FRAC38   SDATA "[frac38]" >
+
+<!--=fraction four-fifths-->
+<!ENTITY FRAC45   SDATA "[frac45]" >
+
+<!--=fraction five-sixths-->
+<!ENTITY FRAC56   SDATA "[frac56]" >
+
+<!--=fraction five-eighths-->
+<!ENTITY FRAC58   SDATA "[frac58]" >
+
+<!--=fraction seven-eighths-->
+<!ENTITY FRAC78   SDATA "[frac78]" >
+
+<!--=small gamma, Greek-->
+<!ENTITY GAMMA   SDATA "[gamma ]" >
+
+<!--/digamma-->
+<!ENTITY GAMMAD   SDATA "[gammad]" >
+
+<!--/geq /ge R: =greater-than-or-equal-->
+<!ENTITY GE   SDATA "[ge    ]" >
+
+<!--=greater-than sign R:-->
+<!ENTITY GT   SDATA "[gt    ]" >
+
+<!--=hair space-->
+<!ENTITY HAIRSP   SDATA "[hairsp]" >
+
+<!--**********************************************************************
+* Call the ISO Numeric and Special Symbols Public Text. The formal *
+* public identifier is stored in the entity %ISOnum; *
+**********************************************************************
+(C) International Organization for Standardization 1986
+Permission to copy in any form is granted for use with
+conforming SGML systems and applications as defined in
+ISO 8879, provided this notice is included in all copies.
+
+Character entity set. Typical invocation:
+<!ENTITY % ISOnum PUBLIC
+"ISO 8879-1986//ENTITIES Numeric and Special Graphic//EN">
+%ISOnum;
+
+=fraction one-half-->
+<!ENTITY HALF   SDATA "[half  ]" >
+
+<!--Hamiltonian (script capital H)-->
+<!ENTITY HAMILT   SDATA "[hamilt]" >
+
+<!--/heartsuit =heart suit symbol-->
+<!ENTITY HEARTS   SDATA "[hearts]" >
+
+<!--=ellipsis (horizontal)-->
+<!ENTITY HELLIP   SDATA "[hellip]" >
+
+<!--=horizontal bar-->
+<!ENTITY HORBAR   SDATA "[horbar]" >
+
+<!--rectangle, filled (hyphen bullet)-->
+<!ENTITY HYBULL   SDATA "[hybull]" >
+
+<!--=hyphen-->
+<!ENTITY HYPHEN   SDATA "[hyphen]" >
+
+<!--=small i, acute accent-->
+<!ENTITY IACUTE   SDATA "[iacute]" >
+
+<!--=small i, circumflex accent-->
+<!ENTITY ICIRC   SDATA "[icirc ]" >
+
+<!--=inverted exclamation mark-->
+<!ENTITY IEXCL   SDATA "[iexcl ]" >
+
+<!--/iff =if and only if-->
+<!ENTITY IFF   SDATA "[iff   ]" >
+
+<!--=small i, grave accent-->
+<!ENTITY IGRAVE   SDATA "[igrave]" >
+
+<!--=in-care-of symbol-->
+<!ENTITY INCARE   SDATA "[incare]" >
+
+<!--/infty =infinity-->
+<!ENTITY INFIN   SDATA "[infin ]" >
+
+<!--/int L: =integral operator-->
+<!ENTITY INT   SDATA "[int   ]" >
+
+<!--=small iota, Greek-->
+<!ENTITY IOTA   SDATA "[iota  ]" >
+
+<!--=inverted question mark-->
+<!ENTITY IQUEST   SDATA "[iquest]" >
+
+<!--/in R: =set membership-->
+<!ENTITY ISIN   SDATA "[isin  ]" >
+
+<!--=small i, dieresis or umlaut mark-->
+<!ENTITY IUML   SDATA "[iuml  ]" >
+
+<!--=small kappa, Greek-->
+<!ENTITY KAPPA   SDATA "[kappa ]" >
+
+<!--/varkappa-->
+<!ENTITY KAPPAV   SDATA "[kappav]" >
+
+<!--Lagrangian (script capital L)-->
+<!ENTITY LAGRAN   SDATA "[lagran]" >
+
+<!--=small lambda, Greek-->
+<!ENTITY LAMBDA   SDATA "[lambda]" >
+
+<!--/langle O: =left angle bracket-->
+<!ENTITY LANG   SDATA "[lang  ]" >
+
+<!--=angle quotation mark, left-->
+<!ENTITY LAQUO   SDATA "[laquo ]" >
+
+<!--/leftarrow /gets A: =leftward arrow-->
+<!ENTITY LARR   SDATA "[larr  ]" >
+
+<!--/lbrace O: =left curly bracket-->
+<!ENTITY LCUB   SDATA "[lcub  ]" >
+
+<!--=double quotation mark, left-->
+<!ENTITY LDQUO   SDATA "[ldquo ]" >
+
+<!--=rising dbl quote, left (low)-->
+<!ENTITY LDQUOR   SDATA "[ldquor]" >
+
+<!--/leq /le R: =less-than-or-equal-->
+<!ENTITY LE   SDATA "[le    ]" >
+
+<!--=lower half block-->
+<!ENTITY LHBLK   SDATA "[lhblk ]" >
+
+<!--low asterisk-->
+<!ENTITY LOWAST   SDATA "[lowast]" >
+
+<!--=low line-->
+<!ENTITY LOWBAR   SDATA "[lowbar]" >
+
+<!--/lozenge - lozenge or total mark-->
+<!ENTITY LOZ   SDATA "[loz   ]" >
+
+<!--/blacklozenge - lozenge, filled-->
+<!ENTITY LOZF   SDATA "[lozf  ]" >
+
+<!--O: =left parenthesis-->
+<!ENTITY LPAR   SDATA "[lpar  ]" >
+
+<!--/lbrack O: =left square bracket-->
+<!ENTITY LSQB   SDATA "[lsqb  ]" >
+
+<!--=single quotation mark, left-->
+<!ENTITY LSQUO   SDATA "[lsquo ]" >
+
+<!--=rising single quote, left (low)-->
+<!ENTITY LSQUOR   SDATA "[lsquor]" >
+
+<!--=less-than sign R:-->
+<!ENTITY LT   SDATA "[lt    ]" >
+
+<!--/triangleleft B: l triangle, open-->
+<!ENTITY LTRI   SDATA "[ltri  ]" >
+
+<!--/blacktriangleleft R: =l tri, filled-->
+<!ENTITY LTRIF   SDATA "[ltrif ]" >
+
+<!--=male symbol-->
+<!ENTITY MALE   SDATA "[male  ]" >
+
+<!--/maltese =maltese cross-->
+<!ENTITY MALT   SDATA "[malt  ]" >
+
+<!--=histogram marker-->
+<!ENTITY MARKER   SDATA "[marker]" >
+
+<!--=em dash-->
+<!ENTITY MDASH   SDATA "[mdash ]" >
+
+<!--=micro sign-->
+<!ENTITY MICRO   SDATA "[micro ]" >
+
+<!--/centerdot B: =middle dot-->
+<!ENTITY MIDDOT   SDATA "[middot]" >
+
+<!--B: =minus sign-->
+<!ENTITY MINUS   SDATA "[minus ]" >
+
+<!--em leader-->
+<!ENTITY MLDR   SDATA "[mldr  ]" >
+
+<!--/mp B: =minus-or-plus sign-->
+<!ENTITY MNPLUS   SDATA "[mnplus]" >
+
+<!--=small mu, Greek-->
+<!ENTITY MU   SDATA "[mu    ]" >
+
+<!--/nabla =del, Hamilton operator-->
+<!ENTITY NABLA   SDATA "[nabla ]" >
+
+<!--/natural - music natural-->
+<!ENTITY NATUR   SDATA "[natur ]" >
+
+<!--=no break (required) space-->
+<!ENTITY NBSP   SDATA "[nbsp  ]" >
+
+<!--=en dash-->
+<!ENTITY NDASH   SDATA "[ndash ]" >
+
+<!--/ne /neq R: =not equal-->
+<!ENTITY NE   SDATA "[ne    ]" >
+
+<!--/ni /owns R: =contains-->
+<!ENTITY NI   SDATA "[ni    ]" >
+
+<!--=double baseline dot (en leader)-->
+<!ENTITY NLDR   SDATA "[nldr  ]" >
+
+<!--/neg /lnot =not sign-->
+<!ENTITY NOT   SDATA "[not   ]" >
+
+<!--N: negated set membership-->
+<!ENTITY NOTIN   SDATA "[notin ]" >
+
+<!--=small n, tilde-->
+<!ENTITY NTILDE   SDATA "[ntilde]" >
+
+<!--=small nu, Greek-->
+<!ENTITY NU   SDATA "[nu    ]" >
+
+<!--=number sign-->
+<!ENTITY NUM   SDATA "[num   ]" >
+
+<!--=digit space (width of a number)-->
+<!ENTITY NUMSP   SDATA "[numsp ]" >
+
+<!--=small o, acute accent-->
+<!ENTITY OACUTE   SDATA "[oacute]" >
+
+<!--=small o, circumflex accent-->
+<!ENTITY OCIRC   SDATA "[ocirc ]" >
+
+<!--=small o, grave accent-->
+<!ENTITY OGRAVE   SDATA "[ograve]" >
+
+<!--=ohm sign-->
+<!ENTITY OHM   SDATA "[ohm   ]" >
+
+<!--=small omega, Greek-->
+<!ENTITY OMEGA   SDATA "[omega ]" >
+
+<!--/vee /lor B: =logical or-->
+<!ENTITY OR   SDATA "[or    ]" >
+
+<!--order of (script small o)-->
+<!ENTITY ORDER   SDATA "[order ]" >
+
+<!--=ordinal indicator, feminine-->
+<!ENTITY ORDF   SDATA "[ordf  ]" >
+
+<!--=ordinal indicator, masculine-->
+<!ENTITY ORDM   SDATA "[ordm  ]" >
+
+<!--=small o, slash-->
+<!ENTITY OSLASH   SDATA "[oslash]" >
+
+<!--=small o, tilde-->
+<!ENTITY OTILDE   SDATA "[otilde]" >
+
+<!--=small o, dieresis or umlaut mark-->
+<!ENTITY OUML   SDATA "[ouml  ]" >
+
+<!--/parallel R: =parallel-->
+<!ENTITY PAR   SDATA "[par   ]" >
+
+<!--=pilcrow (paragraph sign)-->
+<!ENTITY PARA   SDATA "[para  ]" >
+
+<!--/partial =partial differential-->
+<!ENTITY PART   SDATA "[part  ]" >
+
+<!--=percent sign-->
+<!ENTITY PERCNT   SDATA "[percnt]" >
+
+<!--=full stop, period-->
+<!ENTITY PERIOD   SDATA "[period]" >
+
+<!--=per thousand-->
+<!ENTITY PERMIL   SDATA "[permil]" >
+
+<!--/perp R: =perpendicular-->
+<!ENTITY PERP   SDATA "[perp  ]" >
+
+<!--=capital Phi, Greek-->
+<!ENTITY PHI   SDATA "[Phi   ]" >
+
+<!--/straightphi - straight phi-->
+<!ENTITY PHIS   SDATA "[phis  ]" >
+
+<!--/varphi - curly or open phi-->
+<!ENTITY PHIV   SDATA "[phiv  ]" >
+
+<!--physics M-matrix (script capital M)-->
+<!ENTITY PHMMAT   SDATA "[phmmat]" >
+
+<!--=telephone symbol-->
+<!ENTITY PHONE   SDATA "[phone ]" >
+
+<!--=small pi, Greek-->
+<!ENTITY PI   SDATA "[pi    ]" >
+
+<!--/varpi-->
+<!ENTITY PIV   SDATA "[piv   ]" >
+
+<!--=plus sign B:-->
+<!ENTITY PLUS   SDATA "[plus  ]" >
+
+<!--/pm B: =plus-or-minus sign-->
+<!ENTITY PLUSMN   SDATA "[plusmn]" >
+
+<!--=pound sign-->
+<!ENTITY POUND   SDATA "[pound ]" >
+
+<!--/prime =prime or minute-->
+<!ENTITY PRIME   SDATA "[prime ]" >
+
+<!--/propto R: =is proportional to-->
+<!ENTITY PROP   SDATA "[prop  ]" >
+
+<!--=small psi, Greek-->
+<!ENTITY PSI   SDATA "[psi   ]" >
+
+<!--=punctuation space (width of comma)-->
+<!ENTITY PUNCSP   SDATA "[puncsp]" >
+
+<!--=question mark-->
+<!ENTITY QUEST   SDATA "[quest ]" >
+
+<!--=quotation mark-->
+<!ENTITY QUOT   SDATA "[quot  ]" >
+
+<!--/surd =radical-->
+<!ENTITY RADIC   SDATA "[radic ]" >
+
+<!--/rangle C: =right angle bracket-->
+<!ENTITY RANG   SDATA "[rang  ]" >
+
+<!--=angle quotation mark, right-->
+<!ENTITY RAQUO   SDATA "[raquo ]" >
+
+<!--/rightarrow /to A: =rightward arrow-->
+<!ENTITY RARR   SDATA "[rarr  ]" >
+
+<!--/rbrace C: =right curly bracket-->
+<!ENTITY RCUB   SDATA "[rcub  ]" >
+
+<!--=double quotation mark, right-->
+<!ENTITY RDQUO   SDATA "[rdquo ]" >
+
+<!--rising dbl quote, right (high)-->
+<!ENTITY RDQUOR   SDATA "[rdquor]" >
+
+<!--=rectangle, open-->
+<!ENTITY RECT   SDATA "[rect  ]" >
+
+<!--/circledR =registered sign-->
+<!ENTITY REG   SDATA "[reg   ]" >
+
+<!--=small rho, Greek-->
+<!ENTITY RHO   SDATA "[rho   ]" >
+
+<!--/varrho-->
+<!ENTITY RHOV   SDATA "[rhov  ]" >
+
+<!--C: =right parenthesis-->
+<!ENTITY RPAR   SDATA "[rpar  ]" >
+
+<!--/rbrack C: =right square bracket-->
+<!ENTITY RSQB   SDATA "[rsqb  ]" >
+
+<!--=single quotation mark, right-->
+<!ENTITY RSQUO   SDATA "[rsquo ]" >
+
+<!--rising single quote, right (high)-->
+<!ENTITY RSQUOR   SDATA "[rsquor]" >
+
+<!--/triangleright B: r triangle, open-->
+<!ENTITY RTRI   SDATA "[rtri  ]" >
+
+<!--/blacktriangleright R: =r tri, filled-->
+<!ENTITY RTRIF   SDATA "[rtrif ]" >
+
+<!--pharmaceutical prescription (Rx)-->
+<!ENTITY RX   SDATA "[rx    ]" >
+
+<!--=section sign-->
+<!ENTITY SECT   SDATA "[sect  ]" >
+
+<!--=semicolon P:-->
+<!ENTITY SEMI   SDATA "[semi  ]" >
+
+<!--sextile (6-pointed star)-->
+<!ENTITY SEXT   SDATA "[sext  ]" >
+
+<!--/sharp =musical sharp-->
+<!ENTITY SHARP   SDATA "[sharp ]" >
+
+<!--=soft hyphen-->
+<!ENTITY SHY   SDATA "[shy   ]" >
+
+<!--=small sigma, Greek-->
+<!ENTITY SIGMA   SDATA "[sigma ]" >
+
+<!--/varsigma-->
+<!ENTITY SIGMAV   SDATA "[sigmav]" >
+
+<!--/sim R: =similar-->
+<!ENTITY SIM   SDATA "[sim   ]" >
+
+<!--/simeq R: =similar, equals-->
+<!ENTITY SIME   SDATA "[sime  ]" >
+
+<!--=solidus-->
+<!ENTITY SOL   SDATA "[sol   ]" >
+
+<!--/spadesuit =spades suit symbol-->
+<!ENTITY SPADES   SDATA "[spades]" >
+
+<!--=square, open-->
+<!ENTITY SQU   SDATA "[squ   ]" >
+
+<!--/square B: =square-->
+<!ENTITY SQUARE   SDATA "[square]" >
+
+<!--/blacksquare =sq bullet, filled-->
+<!ENTITY SQUF   SDATA "[squf  ]" >
+
+<!--=star, open-->
+<!ENTITY STAR   SDATA "[star  ]" >
+
+<!--/bigstar - star, filled-->
+<!ENTITY STARF   SDATA "[starf ]" >
+
+<!--/subset R: =subset or is implied by-->
+<!ENTITY SUB   SDATA "[sub   ]" >
+
+<!--/subseteq R: =subset, equals-->
+<!ENTITY SUBE   SDATA "[sube  ]" >
+
+<!--=music note (sung text sign)-->
+<!ENTITY SUNG   SDATA "[sung  ]" >
+
+<!--/supset R: =superset or implies-->
+<!ENTITY SUP   SDATA "[sup   ]" >
+
+<!--=superscript one-->
+<!ENTITY SUP1   SDATA "[sup1  ]" >
+
+<!--=superscript two-->
+<!ENTITY SUP2   SDATA "[sup2  ]" >
+
+<!--=superscript three-->
+<!ENTITY SUP3   SDATA "[sup3  ]" >
+
+<!--/supseteq R: =superset, equals-->
+<!ENTITY SUPE   SDATA "[supe  ]" >
+
+<!--=small sharp s, German (sz ligature)-->
+<!ENTITY SZLIG   SDATA "[szlig ]" >
+
+<!--register mark or target-->
+<!ENTITY TARGET   SDATA "[target]" >
+
+<!--=small tau, Greek-->
+<!ENTITY TAU   SDATA "[tau   ]" >
+
+<!--three dots above-->
+<!ENTITY TDOT   SDATA "[tdot  ]" >
+
+<!--=telephone recorder symbol-->
+<!ENTITY TELREC   SDATA "[telrec]" >
+
+<!--/therefore R: =therefore-->
+<!ENTITY THERE4   SDATA "[there4]" >
+
+<!--=capital Theta, Greek-->
+<!ENTITY THETA   SDATA "[Theta ]" >
+
+<!--straight theta-->
+<!ENTITY THETAS   SDATA "[thetas]" >
+
+<!--/vartheta - curly or open theta-->
+<!ENTITY THETAV   SDATA "[thetav]" >
+
+<!--=thin space (1/6-em)-->
+<!ENTITY THINSP   SDATA "[thinsp]" >
+
+<!--=small thorn, Icelandic-->
+<!ENTITY THORN   SDATA "[thorn ]" >
+
+<!--/times B: =multiply sign-->
+<!ENTITY TIMES   SDATA "[times ]" >
+
+<!--triple prime-->
+<!ENTITY TPRIME   SDATA "[tprime]" >
+
+<!--=trade mark sign-->
+<!ENTITY TRADE   SDATA "[trade ]" >
+
+<!--=small u, acute accent-->
+<!ENTITY UACUTE   SDATA "[uacute]" >
+
+<!--/uparrow A: =upward arrow-->
+<!ENTITY UARR   SDATA "[uarr  ]" >
+
+<!--=small u, circumflex accent-->
+<!ENTITY UCIRC   SDATA "[ucirc ]" >
+
+<!--=small u, grave accent-->
+<!ENTITY UGRAVE   SDATA "[ugrave]" >
+
+<!--=upper half block-->
+<!ENTITY UHBLK   SDATA "[uhblk ]" >
+
+<!--upward left crop mark-->
+<!ENTITY ULCROP   SDATA "[ulcrop]" >
+
+<!--=small upsilon, Greek-->
+<!ENTITY UPSI   SDATA "[upsi  ]" >
+
+<!--upward right crop mark-->
+<!ENTITY URCROP   SDATA "[urcrop]" >
+
+<!--/triangle =up triangle, open-->
+<!ENTITY UTRI   SDATA "[utri  ]" >
+
+<!--/blacktriangle =up tri, filled-->
+<!ENTITY UTRIF   SDATA "[utrif ]" >
+
+<!--=small u, dieresis or umlaut mark-->
+<!ENTITY UUML   SDATA "[uuml  ]" >
+
+<!--vertical ellipsis-->
+<!ENTITY VELLIP   SDATA "[vellip]" >
+
+<!--/vert =vertical bar-->
+<!ENTITY VERBAR   SDATA "[verbar]" >
+
+<!--R: corresponds to (wedge, equals)-->
+<!ENTITY WEDGEQ   SDATA "[wedgeq]" >
+
+<!--=small xi, Greek-->
+<!ENTITY XI   SDATA "[xi    ]" >
+
+<!--=small y, acute accent-->
+<!ENTITY YACUTE   SDATA "[yacute]" >
+
+<!--/yen =yen sign-->
+<!ENTITY YEN   SDATA "[yen   ]" >
+
+<!--=small y, dieresis or umlaut mark-->
+<!ENTITY YUML   SDATA "[yuml  ]" >
+
+<!--=small zeta, Greek-->
+<!ENTITY ZETA   SDATA "[zeta  ]" >
+
+<!--**********************************************************************
+* Call the AECMA Base DTD Public Text. The formal public identifier *
+* is stored in the entity %BASE; *
+**********************************************************************
+**********************************************************************
+* *
+* RAFALE *
+* Document Type Definition *
+* *
+* Release Version 2.0 *
+* Dated 01st October 1997 *
+* *
+* Amendment :- *
+* 1. Update Public Identifier. *
+* 2. Moved entity reference %EXTCONT; *
+* 3. Add attribute id for dmodule * *
+* 4. Don't take aecma language tag into account in dmadress *
+* *
+* Typical invocation : *
+* <!ENTITY % BASE *
+* PUBLIC "-//RAFALE//ELEMENTS AECMA Base DTD 971001//EN" > *
+* %BASE; *
+**********************************************************************
+**********************************************************************
+* Define Element DMODULE (Data Module) containing:- *
+* IDSTATUS - mandatory single contains DMADDRES, STATUS. *
+* CONTENT - mandatory single contains REFS, and definition *
+* stored in entity %CONTENT; *
+**********************************************************************-->
+<!ELEMENT DMODULE  - - (IDSTATUS,CONTENT) >
+
+<!--**********************************************************************
+* Define Element IDSTATUS (Identification and Status Information) *
+* containing:- *
+* DMADDRES - mandatory single contains DMC, DMTITLE, ISSNO, *
+* ISSDATE, LANGUAGE. *
+* STATUS - mandatory single contains definition stored in *
+* entity %EXTSTAT; *
+**********************************************************************-->
+<!ELEMENT IDSTATUS  - O (DMADDRES,STATUS) >
+
+<!--**********************************************************************
+* Define Element DMADDRES (Data Module Address) containing:- *
+* DMC - mandatory single contains definition stored in *
+* entity %DMC; *
+* DMTITLE - mandatory single contains TECHNAME, INFONAME. *
+* ISSNO - mandatory single contains No Other Tags. *
+* ISSDATE - mandatory single contains No Other Tags. *
+**********************************************************************-->
+<!ELEMENT DMADDRES  - O (DMC,DMTITLE,ISSNO,ISSDATE) >
+
+<!--**********************************************************************
+* Call the Data Module Code Breakdown Public Text. The formal public *
+* identifier is stored in the entity %EXTDMC; *
+**********************************************************************
+**********************************************************************
+* *
+* RAFALE *
+* Document Type Definition *
+* *
+* Release Version 2.2 *
+* Dated 22th December 1998 *
+* *
+* Amendment : *
+* 19/05/97 : Change public Identifier *
+* modified entity %ICN; (used by <icn>) *
+* added "rpc" in parameter entity % ICN definition. *
+* *
+* displaced %ICN; from the AGE and AVEE marked section*
+* to the common part of the module. *
+* *
+* modified %ICN to contain <icn-a> or <icn-e> *
+* created <icn-a> : ICN for Air vehicle, Engine. *
+* created <icn-e> : ICN for Equipment. *
+* *
+* added element <rpc> in content model of parameter *
+* entity %ICN , for both AGE and AVEE *
+* *
+* element <icn> : remove attribute "size" *
+* (NUMBER #REQUIRED)* Amendment :- * *
+* 1. Update Public Identifier. *
+* 2. Removal of %AGE; & %AVEE; marked sections. *
+* 3. Add IPCC and IPCN for chapterized and non chaterized IPC *
+* *
+* 15/01/98 : Change public Identifier *
+* remove inschlv from ICN ICN-C and ICN-N *
+* change security to secur in icn structure *
+* remove inschlv from hotspot *
+* *
+* 22/12/98 : Change public Identifier *
+* change comments inside IPCN definition *
+* %secur in lowercase within secur tag *
+* add subject inside icn-c *
+* *
+* Typical invocation : *
+* <!ENTITY % EXTDMC *
+* PUBLIC "-//RAFALE//ELEMENTS Data Module Code Breakdown 981222//EN" >*
+* %EXTDMC; *
+**********************************************************************
+**********************************************************************
+* Define Element DMC (Data Module Code) containing:- *
+* Definition stored in entity %DMC; *
+**********************************************************************-->
+<!ELEMENT DMC  - O (AVEE) >
+
+<!--**********************************************************************
+* Define Element AVEE (Air Vehicle, Engines, Equipment) containing:- *
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*
+* This defines the structure of the data module code for Air Vehicle,*
+* Engines, Equipment Data Modules. *
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*
+* MODELIC - mandatory single contains Parsed Character Data. *
+* SDC - mandatory single contains Parsed Character Data. *
+* CHAPNUM - mandatory single contains Parsed Character Data. *
+* SECTION - mandatory single contains Parsed Character Data. *
+* SUBSECT - mandatory single contains Parsed Character Data. *
+* SUBJECT - mandatory single contains Parsed Character Data. *
+* DISCODE - mandatory single contains Parsed Character Data. *
+* DISCODEV - mandatory single contains Parsed Character Data. *
+* INCODE - mandatory single contains Parsed Character Data. *
+* INCODEV - mandatory single contains Parsed Character Data. *
+* ITEMLOC - mandatory single contains Parsed Character Data. *
+**********************************************************************-->
+<!ELEMENT AVEE  - O (MODELIC,SDC,CHAPNUM,SECTION,SUBSECT,SUBJECT,DISCODE,DISCODEV,
+               INCODE,INCODEV,ITEMLOC) >
+
+<!--**********************************************************************
+* Define the following elements. *
+* MODELIC - Model Identification Code. *
+* SUPEQVC - Suport equipment variant code *
+* ECSCC - Equipment category and sub-category code *
+* EIDC - Equipment identifcation code *
+* CIC - Component identification code *
+* DISCODE - Dissasembly code *
+* DISCODEV - Dissassemly code variant *
+* INCODE - Information Code. *
+* INCODEV - Information Code Variant. *
+* ITEMLOC - Item Location Code. *
+* SUBJECT - Subject *
+* SDC - System Difference code *
+* CHAPNUM - Chapter number *
+* SECTION - Section number *
+* SUBSECT - Sub-section number *
+* ENDIPPN - Four Last IPPN digits *
+* FIG - FIGURE NUMBER *
+* FIGV - FIGURE VARIANT *
+**********************************************************************-->
+<!ELEMENT MODELIC  - O (#PCDATA) >
+
+<!ELEMENT SDC  - O (#PCDATA) >
+
+<!ELEMENT CHAPNUM  - O (#PCDATA) >
+
+<!ELEMENT SECTION  - O (#PCDATA) >
+
+<!ELEMENT SUBSECT  - O (#PCDATA) >
+
+<!ELEMENT SUBJECT  - O (#PCDATA) >
+
+<!ELEMENT DISCODE  - O (#PCDATA) >
+
+<!ELEMENT DISCODEV  - O (#PCDATA) >
+
+<!ELEMENT INCODE  - O (#PCDATA) >
+
+<!ELEMENT INCODEV  - O (#PCDATA) >
+
+<!ELEMENT ITEMLOC  - O (#PCDATA) >
+
+<!--**********************************************************************
+* Define Element DMTITLE (Data Module Title) containing:- *
+* TECHNAME - mandatory single contains Parsed Character Data. *
+* INFONAME - optional single contains Parsed Character Data. *
+**********************************************************************-->
+<!ELEMENT DMTITLE  - O (TECHNAME,INFONAME) >
+
+<!--**********************************************************************
+* Define the following Elements:- *
+* TECHNAME - Technical Name. *
+* INFONAME - Information Name. *
+* Containing Parsed Character Data. *
+**********************************************************************-->
+<!ELEMENT TECHNAME  - O (#PCDATA) >
+
+<!ELEMENT INFONAME  - O (#PCDATA) >
+
+<!--**********************************************************************
+* Define Element ISSNO (Issue Number) containing:- *
+* No Other Tags. *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* ISSNO - NUMBER - Required - Issue Number. *
+* TYPE - DECLARED - NEW - Status of this issue of the *
+* data module. *
+* - "N" - New Data Module. *
+* - "C" - Changed. Changes marked by change markers. *
+* - "D" - Deleted. *
+* - "R" - Completely Revised. Changes not marked by *
+* change markers. *
+* - "S" - Only Status information changed. *
+* - "T" - Reinstated. *
+**********************************************************************-->
+<!ELEMENT ISSNO  - O  EMPTY  >
+
+<!ATTLIST ISSNO
+               ISSNO  NUMBER    #REQUIRED 
+               TYPE (N | C | D | R | S | T)  "N" >
+
+<!--**********************************************************************
+* Define Element ISSDATE (Issue Date) containing:- *
+* No Other Tags. *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* YEAR - NUMBER - REQUIRED - The year. (YYYY) *
+* MONTH - NUMBER - REQUIRED - The month of the year. (MM) *
+* DAY - NUMBER - REQUIRED - The day of the month. (DD) *
+**********************************************************************-->
+<!ELEMENT ISSDATE  - O  EMPTY  >
+
+<!ATTLIST ISSDATE
+               YEAR  NUMBER    #REQUIRED 
+               MONTH  NUMBER    #REQUIRED 
+               DAY  NUMBER    #REQUIRED  >
+
+<!--**********************************************************************
+* Define Element STATUS (Status) containing:- *
+* Definition stored in entity %STATUS. *
+**********************************************************************-->
+<!ELEMENT STATUS  - O (SECURITY,DMSIZE?,RPC,ORIG,APPLIC,TECHSTD,QA,RFU,REMARKS,ICNS?) >
+
+<!--**********************************************************************
+* Define Element SECURITY (Security Marking) containing:- *
+* No Other Tags. *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* Attribute Definition List stored in Entity %SECURIT; *
+**********************************************************************-->
+<!ELEMENT SECURITY  - O  EMPTY  >
+
+<!ATTLIST SECURITY
+               CLASS (NP | DR | CD)   #REQUIRED  >
+
+<!--**********************************************************************
+* Define Element DMSIZE (Data Module Size) containing:- *
+* Parsed Character Data. *
+**********************************************************************-->
+<!ELEMENT DMSIZE  - O (#PCDATA) >
+
+<!--**********************************************************************
+* Define Element RPC (Responsible Partner Company) containing:- *
+* Parsed Character Data. *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* RPCNAME - %RPCNAME - The name or CAGE code of the responsible *
+* partner company. *
+**********************************************************************
+Responsible Partner Company.-->
+<!ELEMENT RPC  - O  EMPTY  >
+
+<!--The name of the Responsible
+Partner Company.-->
+<!ATTLIST RPC
+               RPCNAME (A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | 
+               P | Q | R | S | T | U | V | W | X | Y | Z | 0 | 1 | 2 | 3 | 4 | 5 | 
+               6 | 7 | 8 | 9)   #REQUIRED  >
+
+<!--**********************************************************************
+* Define Element ORIG (Originator) containing Parsed Character Data. *
+* The name or CAGE code of the originator *
+**********************************************************************
+Originator.-->
+<!ELEMENT ORIG  - O (#PCDATA) >
+
+<!--**********************************************************************
+* Call the Applicability Breakdown public text. The formal public *
+* identifier is stored in entity %EXTAPPL; *
+**********************************************************************
+**********************************************************************
+* *
+* RAFALE *
+* Document Type Definition *
+* *
+* Release Version 2.2d *
+* Dated 12th January 2014 *
+* *
+* Amendment : *
+* 31/08/95 : modified attributes "from" and "to" of <version> *
+* element *
+* optional attribute "modtyp" deleted from <mod> *
+* value prandpo deleted from attribute "modcond" *
+* *
+* 19/05/97 : Changed Public Identifier *
+* added attribute %INSDEL to elements *
+* <applic-a>,<systemid>,<version>,<serialnb>, *
+* <customer>,<config>,<mod>,<swprog>,<applic-e>, *
+* <equipid>,<manufact>,<mpn> *
+* *
+* 1. Update Public Identifier *
+* 2. Removal of AGE & AVEE marked sections. *
+* 3. Group applic-a and applic -e *
+* 4. Add Versrank behind version, *
+* change attr version from versid to version *
+* delete nsn attribute of MPN *
+* add from/to behind serialnb *
+* add std decomposition (standard) *
+* customer optionnal single *
+* sb structure with reference to dmc *
+* *
+* 15/01/98 : Update Public Identifier *
+* Systemid and version become optionnal elements *
+* change mpn by partno *
+* *
+* 12/01/03 : Update Public Identifier *
+* add applict and t definition for running text *
+* applicability (FCR 3585) *
+* value prandpo reinstate to attribute "modcond" *
+* *
+* 12/01/14 : Update Public Identifier *
+* addition of 'Special France' SF element *
+* *
+* Typical invocation : *
+* <!ENTITY % EXTAPPL *
+* PUBLIC "-//RAFALE//ELEMENTS Applicability Breakdown 140112//EN" >*
+* %EXTAPPL; *
+**********************************************************************
+*****************************************************************************
+* Define Element APPLIC (Data Module Applicability for Air Vehicle and AGE) *
+**************************************************************************
+Data Module Applicability for Air Vehicle.-->
+<!ELEMENT APPLIC  - O (SF?,SYSTEMID?,CONFIG?,SWPROG?) >
+
+<!ATTLIST APPLIC
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**************************************************************************
+* Define Element SF (Special France) *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* type - DECLARED - IMPLIED - type of SF content *
+* - "total" - full SF DM content (used at status level) *
+* - "POST" - partial SF DM content (used at status level) *
+* content - DECLARED - default value - sf or alternative non-sf content*
+* - "sf" - the applicable text is relying to SF data *
+* - "alt-sf" - the applicable text is relying to an alternative*
+* to the corresponding sf data *
+**************************************************************************-->
+<!ELEMENT SF  - O  EMPTY  >
+
+<!ATTLIST SF
+               TYPE (TOTAL | PARTIEL)   #IMPLIED 
+               CONTENT (SF | ALT-SF)  "SF" >
+
+<!--*****************************************************************************
+* Define Element SYSTEMID (System Identification). *
+**************************************************************************
+Air Vehicle System Identification.-->
+<!ELEMENT SYSTEMID  - O (VERSION*,(MANUFACT,(PARTNO,SERIALNB*)*)*,STD?,CUSTOMER?,
+               NTI?) >
+
+<!ATTLIST SYSTEMID
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**********************************************************************
+* Define Element VERSION (Version for System or Equipment)containing:*
+* VERSRANK - optional repeatable contains SINGLE, RANGE *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* VERSION - CDATA - REQUIRED - Version.id *
+**********************************************************************-->
+<!ELEMENT VERSION  - O (VERSRANK*) >
+
+<!ATTLIST VERSION
+               VERSION  CDATA    #REQUIRED 
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**********************************************************************
+* Define Element VERSRANK (Version Rank) containing:- *
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*
+* Mandatory Repeatable Group *
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*
+* SINGLE - optional single contains Parsed Character Data *
+* or *
+* RANGE optional single contains No Other Tags *
+**********************************************************************-->
+<!ELEMENT VERSRANK  - O (SINGLE | RANGE)+ >
+
+<!--**********************************************************************
+* Define Element SINGLE (Single Number) containing:- *
+* No other tags. *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* Rank - CDATA - REQUIRED - Rank number *
+**********************************************************************-->
+<!ELEMENT SINGLE  - O  EMPTY  >
+
+<!ATTLIST SINGLE
+               RANK  CDATA    #REQUIRED  >
+
+<!--**********************************************************************
+* Define Element RANGE (Range of Numbers) containing:- *
+* No other tags. *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* FROM - CDATA - REQUIRED - Start of Range. *
+* TO - CDATA - REQUIRED - End of Range. *
+**********************************************************************-->
+<!ELEMENT RANGE  - O  EMPTY  >
+
+<!ATTLIST RANGE
+               FROM  CDATA    #REQUIRED 
+               TO  CDATA    #REQUIRED  >
+
+<!--**************************************************************************
+* Define Element MANUFACT (Manufacturer Code). *
+**************************************************************************-->
+<!ELEMENT MANUFACT  - -  CDATA  >
+
+<!ATTLIST MANUFACT
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**************************************************************************
+* Define Element PARTNO (Manufacturer PartNumber). *
+**************************************************************************-->
+<!ELEMENT PARTNO  - -  CDATA  >
+
+<!ATTLIST PARTNO
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**********************************************************************
+* Define Element SERIALNB (Serial Number) containing:- *
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*
+* Mandatory Repeatable Group *
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*
+* SINGLE - optional single contains Parsed Character Data *
+* or *
+* RANGE optional single contains No Other Tags *
+**********************************************************************-->
+<!ELEMENT SERIALNB  - O (SINGLE | RANGE)+ >
+
+<!--**********************************************************************
+* Define Element STD (standard) containing:- *
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*
+* Mandatory Repeatable Group *
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*
+* STANDARD - optional single contains Parsed Character Data *
+**********************************************************************-->
+<!ELEMENT STD  - O (STANDARD+) >
+
+<!--**************************************************************************
+* Define Element STANDARD (aircraft standard). *
+**************************************************************************
+standard Name.-->
+<!ELEMENT STANDARD  - O (#PCDATA) >
+
+<!ATTLIST STANDARD
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**************************************************************************
+* Define Element CUSTOMER (Customer Name). *
+**************************************************************************
+Customer Name.-->
+<!ELEMENT CUSTOMER  - O  EMPTY  >
+
+<!ATTLIST CUSTOMER
+               AAF  NUMBER    #IMPLIED 
+               ANF  NUMBER    #IMPLIED 
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**********************************************************************
+* Define Element NTI (Niveau technique d intervention) *
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* NTI1 - yesorno - Implied - NTI1 *
+* NTI2 - yesorno - Implied - NTI1 *
+* NTI3 - yesorno - Implied - NTI1 *
+**********************************************************************-->
+<!ELEMENT NTI  - O  EMPTY  >
+
+<!ATTLIST NTI
+               NTI1  NUMBER    #IMPLIED 
+               NTI2  NUMBER    #IMPLIED 
+               NTI3  NUMBER    #IMPLIED 
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**************************************************************************
+* Define Element CONFIG (Configuration). *
+**************************************************************************
+Configuration.-->
+<!ELEMENT CONFIG  - O (MOD*,SB*) >
+
+<!ATTLIST CONFIG
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**************************************************************************
+* Define Element MOD (Modification Description). *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* modnb - NMTOKEN - REQUIRED - modification number. *
+* modcond - DECLARED - REQUIRED - modification condition. *
+* - "PRE" - Pre-modification. *
+* - "POST" - Post modification. *
+* - "PRANDPO" - Both Pre & Post modifications. *
+**************************************************************************
+Modification Description.-->
+<!ELEMENT MOD  - O  EMPTY  >
+
+<!--Modification Number.
+Condition Modification.-->
+<!ATTLIST MOD
+               CHANGE (ADD | MOD)   #IMPLIED 
+               MODNB  NMTOKEN    #REQUIRED 
+               MODCOND (PRE | POST | PRANDPO)   #REQUIRED  >
+
+<!--**************************************************************************
+* Define Element SB (Bulletin service). *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* sbcond - DECLARED - REQUIRED - service bulletin condition. *
+* - "PRE" - Pre-SB. *
+* - "POST" - Post SB. *
+* - "PRANDPO" - Both Pre & Post SB. *
+**************************************************************************
+service bulletin Description.-->
+<!ELEMENT SB  - O ((AGE | AVEE | IPCC | IPCN),ISSNO?,DMTITLE?) >
+
+<!--Condition sb.-->
+<!ATTLIST SB
+               CHANGE (ADD | MOD)   #IMPLIED 
+               SBCOND (PRE | POST | PRANDPO)   #REQUIRED  >
+
+<!--**********************************************************************
+* Define Element AGE (Aircraft Ground Equipment) containing:- *
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*
+* This defines the structure of the data module code for Aircraft *
+* Ground Equipment Data Modules. *
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*
+* MODELIC - mandatory single contains Parsed Character Data. *
+* SUPEQVC - mandatory single contains Parsed Character Data. *
+* ECSCS - mandatory single contains Parsed Character Data. *
+* EIDC - mandatory single contains Parsed Character Data. *
+* CIDC - mandatory single contains Parsed Character Data. *
+* DISCODE - mandatory single contains Parsed Character Data. *
+* DISCODEV - mandatory single contains Parsed Character Data. *
+* INCODE - mandatory single contains Parsed Character Data. *
+* INCODEV - mandatory single contains Parsed Character Data. *
+* ITEMLOC - mandatory single contains Parsed Character Data. *
+**********************************************************************-->
+<!ELEMENT AGE  - O (MODELIC,SUPEQVC,ECSCC,EIDC,CIC,DISCODE,DISCODEV,INCODE,INCODEV,
+               ITEMLOC) >
+
+<!ELEMENT SUPEQVC  - O (#PCDATA) >
+
+<!ELEMENT ECSCC  - O (#PCDATA) >
+
+<!ELEMENT EIDC  - O (#PCDATA) >
+
+<!ELEMENT CIC  - O (#PCDATA) >
+
+<!--**********************************************************************
+* Define Element IPCC (Chapterized Illustrated parts Catalog) containing:- *
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*
+* This defines the structure of the data module code for *
+* Chapterized IPC. *
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*
+* MODELIC - mandatory single contains Parsed Character Data. *
+* SDC - mandatory single contains Parsed Character Data. *
+* CHAPNUM - mandatory single contains Parsed Character Data. *
+* SECTION - mandatory single contains Parsed Character Data. *
+* SUBSECT - mandatory single contains Parsed Character Data. *
+* SUBJECT - mandatory single contains Parsed Character Data. *
+* FIG - mandatory single contains Parsed Character Data. *
+* FIGV - mandatory single contains Parsed Character Data. *
+* INCODE - mandatory single contains Parsed Character Data. *
+* INCODEV - mandatory single contains Parsed Character Data. *
+* ITEMLOC - mandatory single contains Parsed Character Data. *
+**********************************************************************-->
+<!ELEMENT IPCC  - O (MODELIC,SDC,CHAPNUM,SECTION,SUBSECT,SUBJECT,FIG,FIGV,INCODE,
+               INCODEV,ITEMLOC) >
+
+<!ELEMENT FIG  - O (#PCDATA) >
+
+<!ELEMENT FIGV  - O (#PCDATA) >
+
+<!--**********************************************************************
+* Define Element IPCN (Non Chapterized Illustrated parts Catalog) *
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*
+* This defines the structure of the data module code for *
+* Non Chapterized IPC. *
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*
+* MODELIC - mandatory single contains Parsed Character Data. *
+* SDC - mandatory single contains Parsed Character Data. *
+* FIXZ - mandatory single 'Z' *
+* RPC - mandatory single Responnsible Partner Company *
+* ENDIPPN - mandatory single IPPN last digit *
+* FIG - mandatory single Figure Number *
+* FIGV - mandatory single Figure variant *
+* INCODEV - mandatory single contains Parsed Character Data. *
+* ITEMLOC - mandatory single contains Parsed Character Data. *
+**********************************************************************-->
+<!ELEMENT IPCN  - O (MODELIC,SDC,FIXZ,RPC,ENDIPPN,FIG,FIGV,INCODE,INCODEV,ITEMLOC) >
+
+<!--**********************************************************************
+* Define Element FIXZ (FIXE A "Z") containing:- *
+* No Other Tags. *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* fixz - DECLARED - Z- Issue Number. *
+**********************************************************************-->
+<!ELEMENT FIXZ  - O  EMPTY  >
+
+<!ATTLIST FIXZ
+               FIXZ (Z)  "Z" >
+
+<!ELEMENT ENDIPPN  - O (#PCDATA) >
+
+<!--**************************************************************************
+* Define Element SWPROG (Software Program). *
+**************************************************************************
+Software Program.-->
+<!ELEMENT SWPROG  - O (#PCDATA) >
+
+<!ATTLIST SWPROG
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--*****************************************************************************
+* Define Element TECHSTD (Technical Standard : version clause technique). *
+**************************************************************************
+Technical Standard.-->
+<!ELEMENT TECHSTD  - O (TPBASE) >
+
+<!--*****************************************************************************
+* Define Element TPBASE (Technical Publication Baseline). *
+**************************************************************************
+Technical Publication Baseline.
+Version of the "Clauses Techniques Generiques"
+document.-->
+<!ELEMENT TPBASE  - O (#PCDATA) >
+
+<!--*****************************************************************************
+* Define Element QA (Quality Assurance Status). *
+**************************************************************************-->
+<!ELEMENT QA  - O ((UNVERIF | (UNITARY?,CONTEXT?)),RECEPTION?) >
+
+<!--**********************************************************************
+* Define Element UNVERIF (Unverified) containing:- *
+* No other tags. *
+**********************************************************************-->
+<!ELEMENT UNVERIF  - O  EMPTY  >
+
+<!--**********************************************************************
+* Define Element UNITARY (Unitary verification).containing:- *
+* No other tags. *
+**********************************************************************
+Unitary verification.-->
+<!ELEMENT UNITARY  - O  EMPTY  >
+
+<!--**********************************************************************
+* Define Element CONTEXT ( In context verification. ). containing:- *
+* No other tags. *
+**********************************************************************
+In context verification.-->
+<!ELEMENT CONTEXT  - O  EMPTY  >
+
+<!--**********************************************************************
+* Define Element RECEPTION ( Data Module Reception.). containing:- *
+**********************************************************************-->
+<!ELEMENT RECEPTION  - O  EMPTY  >
+
+<!--Approved Data Module.
+date of approval yymmdd
+authority for approval-->
+<!ATTLIST RECEPTION
+               RECEPT  NUMBER   "0"
+               RECEPTDATE  NUMBER    #IMPLIED 
+               APPROV  NUMBER   "0"
+               APPROVDATE  NUMBER    #IMPLIED 
+               AUTHOAPPROV  CDATA    #IMPLIED  >
+
+<!--*****************************************************************************
+* Define Element RFU ( Reasons for Updating.). *
+**************************************************************************
+Reasons for Updating.-->
+<!ELEMENT RFU  - O (#PCDATA) >
+
+<!--*****************************************************************************
+* Define Element REMARKS (Remarks). *
+**************************************************************************
+Remarks.-->
+<!ELEMENT REMARKS  - O (#PCDATA) >
+
+<!--*****************************************************************************
+* Define Element ICNS (List of ICN referenced). *
+**************************************************************************
+List of ICN referenced-->
+<!ELEMENT ICNS  - O (ICN+) >
+
+<!--Illustration Code Number.-->
+<!ELEMENT ICN  - O ((ICN-C | ICN-N),HOTSPOT*) >
+
+<!ATTLIST ICN
+               ID  ID    #IMPLIED  >
+
+<!--*****************************************************************************
+* Define Element ICN-C (Illustration Code Number AirVehicle, Engine *
+**************************************************************************
+Illustration Code Number AirVehicle, Engine-->
+<!ELEMENT ICN-C  - O (MODELIC,SDC,CHAPNUM,SECTION,SUBSECT,SUBJECT,RPC,ORIG,ILLNUM,
+               ILLVER,ILLUPDAT,SECUR) >
+
+<!ATTLIST ICN-C
+               ID  ID    #IMPLIED  >
+
+<!--**************************************************************************
+* Define Element ILLNUM ( Illustration Order Number.). *
+**************************************************************************
+Illustration Order Number.-->
+<!ELEMENT ILLNUM  - O (#PCDATA) >
+
+<!--**************************************************************************
+* Define Element ILLVER ( Illustration Version Number.). *
+**************************************************************************
+Illustration Version Number.-->
+<!ELEMENT ILLVER  - O (#PCDATA) >
+
+<!--**************************************************************************
+* Define Element ILLUPDAT ( Illustration Update Number.). *
+**************************************************************************
+Illustration Update Number.-->
+<!ELEMENT ILLUPDAT  - O (#PCDATA) >
+
+<!--**********************************************************************
+* Define Element SECUR (Security Marking) containing:- *
+* No Other Tags. *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* Attribute Definition List stored in Entity %SECUR; *
+**********************************************************************-->
+<!ELEMENT SECUR  - O  EMPTY  >
+
+<!ATTLIST SECUR
+               CLASS (1 | 2 | 3 | 4)   #REQUIRED  >
+
+<!--**************************************************************************
+* Define Element ICN-N (Illustration Code Number for non capterized eq) *
+**************************************************************************
+Illustration Code Number Equipment-->
+<!ELEMENT ICN-N  - O (MODELIC,SDC,FIXZZ,ENDIPPN,RPC,ORIG,ILLNUM,ILLVER,ILLUPDAT,
+               SECUR) >
+
+<!ATTLIST ICN-N
+               ID  ID    #IMPLIED  >
+
+<!--**********************************************************************
+* Define Element FIXZZ (FIXE A "ZZ") containing:- *
+* No Other Tags. *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* fixzz - DECLARED - Z- Issue Number. *
+**********************************************************************-->
+<!ELEMENT FIXZZ  - O  EMPTY  >
+
+<!ATTLIST FIXZZ
+               FIXZZ (ZZ)  "ZZ" >
+
+<!--**************************************************************************
+* Define Element HOTSPOT (Hotspot zone) *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* xtgt - number - REQUIRED - hotspot zone x axis reference . *
+* ytgt - number - REQUIRED - hotspot zone y axis reference . *
+* wtgt - number - REQUIRED - hotspot zone wide size. (X + W < 10.000)*
+* htgt - number - REQUIRED - hotspot zone hight size (Y + H < 10.000)*
+* id - ID - IMPLIED - hotspot identification . *
+**************************************************************************-->
+<!ELEMENT HOTSPOT  - O (LINK*) >
+
+<!ATTLIST HOTSPOT
+               XTGT  NUMBER    #REQUIRED 
+               YTGT  NUMBER    #REQUIRED 
+               WTGT  NUMBER    #REQUIRED 
+               HTGT  NUMBER    #REQUIRED 
+               ID  ID    #IMPLIED  >
+
+<!--**************************************************************************
+* Define Element LINK (hotspot Destination ) *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* role - number - IMPLIED - Link "emphasis". *
+**************************************************************************-->
+<!ELEMENT LINK  - O (LIBELLE?,CIBLE) >
+
+<!ATTLIST LINK
+               ROLE  NUMBER    #IMPLIED  >
+
+<!--*************************************************************************
+* Define Element LIBELLE ( HOT SPOT LINK DESCRIPTION). *
+**************************************************************************-->
+<!ELEMENT LIBELLE  - O (#PCDATA) >
+
+<!--**************************************************************************
+* Define Element CIBLE ( HOT SPOT TARGET). *
+**************************************************************************-->
+<!ELEMENT CIBLE  - O (XREF | FIGREF | DMCREF) >
+
+<!--**********************************************************************
+* Define Element XREF (No typed Cross Reference) containing:- *
+* No Other Tags. *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* XREFID - IDREF - REQUIRED - Cross reference ID. *
+* PRETEXT - CDATA - IMPLIED - Text that will precede the cross *
+* reference. *
+* POSTTEXT - CDATA - IMPLIED - Text that will follow the cross *
+* reference. *
+**********************************************************************-->
+<!ELEMENT XREF  - O  EMPTY  >
+
+<!ATTLIST XREF
+               XREFID  IDREF    #REQUIRED 
+               PRETEXT  CDATA    #IMPLIED 
+               POSTTEXT  CDATA    #IMPLIED  >
+
+<!--*****************************************************************************
+* Define Element FIGREF (Reference to a Figure). *
+**************************************************************************
+Reference to a Figure.-->
+<!ELEMENT FIGREF  - O  EMPTY  >
+
+<!--Cross reference ID.
+Sheet number .
+Target (Hotspot).
+Target (no Hotspot).-->
+<!ATTLIST FIGREF
+               CHANGE (ADD | MOD)   #IMPLIED 
+               REFID  IDREF    #REQUIRED 
+               SHEETNO  NUMBER    #IMPLIED 
+               TARGET  IDREF    #IMPLIED 
+               REPNOHOT  CDATA    #IMPLIED  >
+
+<!--***************************************************************************
+* Define Element DMCREF (Data Module Reference). *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* xrefid - IDREF - REQUIRED - dmc Cross reference ID. *
+* target - CDATA - IMPLIED - Cross reference target (name) *
+* targettype - DECLARED - IMPLIED - Type of ID. *
+* - "icn" - Cross reference to illustration. *
+* - "hs" - Cross reference to a graphical hotspot. *
+* - "txt" - Cross reference to text *
+***************************************************************************-->
+<!ELEMENT DMCREF  - O  EMPTY  >
+
+<!ATTLIST DMCREF
+               CHANGE (ADD | MOD)   #IMPLIED 
+               XREFID  IDREF    #REQUIRED 
+               TARGET  CDATA    #IMPLIED 
+               TARGETTYPE (TXT | ICN | HS)   #IMPLIED  >
+
+<!--**********************************************************************
+* Call the Content Breakdown Public Text. The formal public *
+* identifier is stored in the entity %EXTCONT; *
+**********************************************************************
+**********************************************************************
+* *
+* RAFALE *
+* Document Type Definition *
+* *
+* Release Version 2.1 *
+* Dated 15th January 1998 *
+* *
+* Amendment :- *
+* 1. Update Public Identifier. *
+* 2. Removal of Marked Sections. *
+* 3. add dmtitle optionnal to dmcidref *
+* 4. Add ALLDMC instead of (age|avee) for dmcidref *
+* *
+* 15/01/98 : Replace dmcidref by dmcid (with same sructure) *
+* delete csn and isn tag definition *
+* add tpcode and tptitle after techpub *
+* add dmco attribute to dmcopen *
+* *
+* Typical invocation : *
+* <!ENTITY % EXTCONT *
+* PUBLIC "-//RAFALE//ELEMENTS Content Breakdown 980115//EN" > *
+* %EXTCONT; *
+**********************************************************************
+**********************************************************************
+* Define Element CONTENT (Content Structure) containing:- *
+* REFS - mandatory single contains NOREFS, RDANDRT, REFDM,*
+* REFTP. *
+* Definition stored in entity %CONTENT; *
+**********************************************************************-->
+<!ELEMENT CONTENT  - O (REFS,WIRING) >
+
+<!--**********************************************************************
+* Define Element REFS (References) containing:- *
+* NOREFS - mandatory single contains No Other Tags. *
+* or *
+* RDANDRT - mandatory single contains REFDM, REFTP. *
+* or *
+* REFDM - mandatory single contains definition stored in *
+* entity %ALLDMC; *
+* or *
+* REFTP - mandatory single contains TECHPUB. *
+**********************************************************************-->
+<!ELEMENT REFS  - O (NOREFS | RDANDRT | REFDM | REFTP) >
+
+<!ATTLIST REFS
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**********************************************************************
+* Define Element NOREFS (No References) containing:- *
+* No Other Tags. *
+**********************************************************************-->
+<!ELEMENT NOREFS  - O  EMPTY  >
+
+<!ATTLIST NOREFS
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**********************************************************************
+* Define Element RDANDRT (Reference Data Modules And Technical *
+* Publications) containing:- *
+* REFDM - mandatory single contains definition stored in *
+* entity %ALLDMC; *
+* REFTP - mandatory single contains TECHPUB *
+**********************************************************************-->
+<!ELEMENT RDANDRT  - O (REFDM,REFTP) >
+
+<!ATTLIST RDANDRT
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--*********************************************************************
+* Define Element REFDM (Reference To Data Modules) *
+*********************************************************************-->
+<!ELEMENT REFDM  - - (DMCID+) >
+
+<!ATTLIST REFDM
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--*********************************************************************
+* Define Element DMCID (Reference Data Modules ID). *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* Attribute Definition list stored in entity %bodyatt; *
+*********************************************************************-->
+<!ELEMENT DMCID  - - (((AGE | AVEE | IPCC | IPCN),ISSNO?,DMTITLE?) | DMCOPEN) >
+
+<!ATTLIST DMCID
+               ID  ID    #IMPLIED 
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--*********************************************************************
+* Define Element DMCOPEN (OPEN REFERENCE). *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* dmco - CDATA - IMPLIED - Data module open code *
+* Attribute Definition list stored in entity %INSDEL; *
+*********************************************************************-->
+<!ELEMENT DMCOPEN  - - (#PCDATA) >
+
+<!ATTLIST DMCOPEN
+               DMCO  CDATA    #IMPLIED 
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**********************************************************************
+* Define Element REFTP (Reference Technical Publication) containing:-*
+* TECHPUB - mandatory repeatable contains TPCODE and TPTITLE *
+**********************************************************************-->
+<!ELEMENT REFTP  - - (TECHPUB+) >
+
+<!ATTLIST REFTP
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**********************************************************************
+* Define Element TECHPUB (TECHNICAL PUBLICATION). *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* Attribute Definition list stored in entity %bodyatt; *
+**********************************************************************-->
+<!ELEMENT TECHPUB  - - (TPCODE,TPTITLE) >
+
+<!ATTLIST TECHPUB
+               ID  ID    #IMPLIED 
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**********************************************************************
+* Define Element TPCODE (TECHNICAL PUBLICATION REFERENCE). *
+**********************************************************************-->
+<!ELEMENT TPCODE  - - (#PCDATA) >
+
+<!ATTLIST TPCODE
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**********************************************************************
+* Define Element TPTITLE (TECHNICAL PUBLICATION TITLE). *
+**********************************************************************-->
+<!ELEMENT TPTITLE  - - (#PCDATA) >
+
+<!ATTLIST TPTITLE
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**********************************************************************
+* Define Element WIRING (Wiring Content) containing:- *
+* eqrow - mandatory repeatable equipment row *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* Attribute Definition list stored in entity %INSDEL; *
+**********************************************************************-->
+<!ELEMENT WIRING  - - (EQROW+) >
+
+<!ATTLIST WIRING
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**********************************************************************
+* Define Element EQROW (Equipment Row) containing:- *
+* %applic; - optional single effectivity *
+* eqitem - mandatory single equipment item *
+* conrows - mandatory single connector table *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* Attribute Definition list stored in entity %BODYATT; *
+**********************************************************************-->
+<!ELEMENT EQROW  - - (APPLIC?,EQITEM,CONROWS) >
+
+<!ATTLIST EQROW
+               ID  ID    #IMPLIED 
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**********************************************************************
+* Define Element EQITEM (Equipment) containing:- *
+* %applic; - mandatory single effectivity *
+* reporg - mandatory single end item termination code*
+* nomen - mandatory single nomenclature *
+* csn - mandatory single catalog sequence number *
+* isn - optional single item sequence number *
+* ident - mandatory single identifier *
+* localiz - optional repeatable air vehicle localization *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* Attribute Definition list stored in entity %INSDEL; *
+**********************************************************************
+Equipment Item
+Identifies a set of elements which together define all aspects of an equipment item.-->
+<!ELEMENT EQITEM  - - (APPLIC?,REPORG,NOMEN,(REFIPC | IDENT)?,LOCALIZ*) >
+
+<!ATTLIST EQITEM
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--***************************************************************************
+* Define Element REPORG (Repere Organe) *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* rpcname - DECLARED - IMPLIED - responsible partner company *
+* reg - DECLARED - IMPLIED - Code du repere electrique generalise. *
+* CHANGE - DECLARED - IMPLIED - Type of change. *
+* - "ADD" - Identifies the change as an addition. *
+* - "MOD" - Identifies the change as an update. *
+***************************************************************************-->
+<!ELEMENT REPORG  - O  EMPTY  >
+
+<!ATTLIST REPORG
+               RPCNAME (A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | 
+               P | Q | R | S | T | U | V | W | X | Y | Z | 0 | 1 | 2 | 3 | 4 | 5 | 
+               6 | 7 | 8 | 9)   #IMPLIED 
+               REG  CDATA    #REQUIRED 
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--*********************************************************************
+* Define Element nomen (denomination). *
+*********************************************************************-->
+<!ELEMENT NOMEN  - - (#PCDATA) >
+
+<!ATTLIST NOMEN
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--***********************************************************************
+* Define Element REFIPC (reference an IPPN- CSN-ISN in the IPC) *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* rpcname - DECLARED - IMPLIED - responsible partner company *
+* ippn - CDATA - IMPLIED - reference to an IPPN *
+* csn - CDATA - IMPLIED - reference to a CSN *
+* isn - CDATA - IMPLIED - reference to an ISN *
+***********************************************************************-->
+<!ELEMENT REFIPC  - O  EMPTY  >
+
+<!ATTLIST REFIPC
+               CHANGE (ADD | MOD)   #IMPLIED 
+               RPCNAME (A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | 
+               P | Q | R | S | T | U | V | W | X | Y | Z | 0 | 1 | 2 | 3 | 4 | 5 | 
+               6 | 7 | 8 | 9)   #IMPLIED 
+               IPPN  CDATA    #IMPLIED 
+               CSN  CDATA    #REQUIRED 
+               ISN  CDATA    #IMPLIED  >
+
+<!--**********************************************************************
+* Define Element ident (equipment identification ). *
+**********************************************************************-->
+<!ELEMENT IDENT  - - (MANUFACT,PARTNO) >
+
+<!ATTLIST IDENT
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**********************************************************************
+* Define Element LOCALIZ (Air Vehicle localization). *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* Attribute Definition list stored in entity %INSDEL; *
+**************************************************************************-->
+<!ELEMENT LOCALIZ  - O (#PCDATA) >
+
+<!ATTLIST LOCALIZ
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**********************************************************************
+* Define Element CONROWS (Connector table) containing:- *
+* conrow - mandatory repeatable Connector Row *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* Attribute Definition list stored in entity %INSDEL; *
+**********************************************************************-->
+<!ELEMENT CONROWS  - - (CONROW+) >
+
+<!ATTLIST CONROWS
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**********************************************************************
+* Define Element CONROW (Connector Row) containing:- *
+* %applic; - optional single effectivity *
+* conitem - mandatory single connector item *
+* harness - mandatory single harness *
+* cableschs - mandatory single harness schema *
+* extwrows - mandatory single extremity wire rows *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* Attribute Definition list stored in entity %INSDEL; *
+**********************************************************************-->
+<!ELEMENT CONROW  - - (APPLIC?,CONITEM,HARNESS,CABLESCHS?,EXTWROWS) >
+
+<!ATTLIST CONROW
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**********************************************************************
+* Define Element CONITEM (Connector Item) containing:- *
+* %applic; - mandatory single effectivity *
+* conid - optional single connector Id *
+* dmcref - optional single text dmc/target reference *
+* nomen - optional single nomenclature *
+* csn - mandatory single catalog sequence number *
+* isn - optional single item sequence number *
+* ident - mandatory single identifier *
+* nomen - optional single nomenclature *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* Attribute Definition list stored in entity %INSDEL; *
+**********************************************************************-->
+<!ELEMENT CONITEM  - - (APPLIC?,CONID?,ELEMREF?,NOMEN?) >
+
+<!ATTLIST CONITEM
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**********************************************************************
+* Define Element CONID (Connector ID/Equipment/Wire/Designator) *
+* containing:- No Other Tags. *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* Attribute Definition list stored in entity %bodyatt; *
+**********************************************************************-->
+<!ELEMENT CONID  - O (#PCDATA) >
+
+<!ATTLIST CONID
+               ID  ID    #IMPLIED 
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**********************************************************************
+* Define Element ELEMREF (Element reference) *
+* containing:- No Other Tags. *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* Attribute Definition list stored in entity %bodyatt; *
+**********************************************************************-->
+<!ELEMENT ELEMREF  - - ((REFIPC | IDENT),DMCREF?) >
+
+<!ATTLIST ELEMREF
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**********************************************************************
+* Define Element HARNESS (Harnais) containing:- *
+* %applic; - mandatory single effectivity *
+* harnessid - mandatory repeatable harness id *
+* refipc - mandatory single ref to ippn, csn,isn *
+* ident - mandatory single identifier *
+* nomen - optional single nomenclature *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* Attribute Definition list stored in entity %INSDEL; *
+**********************************************************************-->
+<!ELEMENT HARNESS  - - (APPLIC?,(HARNESSID,(REFIPC | IDENT)?,NOMEN?)+) >
+
+<!ATTLIST HARNESS
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**********************************************************************
+* Define Element HARNESSID (HARNESS IDentifier) containing:- *
+* No Other Tags. *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* Attribute Definition list stored in entity %INSDEL; *
+**********************************************************************-->
+<!ELEMENT HARNESSID  - - (#PCDATA) >
+
+<!ATTLIST HARNESSID
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**********************************************************************
+* Define Element cableschs (drawing/diagrams Table) containing:- *
+* cablesch - mandatory repeatable drawing/diagram *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* Attribute Definition list stored in entity %INSDEL; *
+**********************************************************************-->
+<!ELEMENT CABLESCHS  - - (CABLESCH+) >
+
+<!ATTLIST CABLESCHS
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**********************************************************************
+* Define Element cablesch (Production drawing/diagram number) containing:-*
+* dmcref - optional single data module reference *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* cabschid cable diagram identifier *
+* Attribute Definition list stored in entity %INSDEL; *
+**********************************************************************-->
+<!ELEMENT CABLESCH  - - (DMCREF?) >
+
+<!ATTLIST CABLESCH
+               CABSCHID  CDATA    #IMPLIED 
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**********************************************************************
+* Define Element EXTWROWS (Extremity Wire Table) containing:- *
+* extwrow - mandatory repeatable Extremity Wire Row *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* Attribute Definition list stored in entity %INSDEL; *
+**********************************************************************-->
+<!ELEMENT EXTWROWS  - - (EXTWROW+) >
+
+<!ATTLIST EXTWROWS
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**********************************************************************
+* Define Element EXTWROW (Extremity Wire Row) containing:- *
+* actwire - mandatory single active wire *
+* nactwire - mandatory single non active wire *
+* sparepin - mandatory single spare pin *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* Attribute Definition list stored in entity %INSDEL; *
+**********************************************************************-->
+<!ELEMENT EXTWROW  - - (ACTWIRE | NACTWIRE | SPAREPIN) >
+
+<!ATTLIST EXTWROW
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**********************************************************************
+* Define Element ACTWIRE (Active Wire) containing:- *
+* %applic; - mandatory single effectivity *
+* from - mandatory single define all aspects of a termination *
+* wire - optional single define all aspects of a wire *
+* to - optional single define all aspects of a termination *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* Attribute Definition list stored in entity %INSDEL; *
+**********************************************************************
+A Wire that is terminated at both ends and is used in a circuit.-->
+<!ELEMENT ACTWIRE  - - (APPLIC?,WIREFROM,WIRE?,WIRETO?) >
+
+<!ATTLIST ACTWIRE
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**********************************************************************
+* Define Element FROM (From termination) containing:- *
+* borne - optional single borne *
+* link - optional single link to schemas *
+* dmcref - optional single link to wiring data (text) *
+* ident - optional single termination identifier (csn/isn or ident, nomen*
+* nomen - optional single nomenclature *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* Attribute Definition list stored in entity %INSDEL; *
+**********************************************************************
+Identifies a set of elements which together define all aspects of a termination.
+NOTE : the FROM and TO elements are identical structures that identify the terminated
+ends of a wire. They are defined with different names for convenience and clarity.-->
+<!ELEMENT WIREFROM  - - (WIREBORNE?,ELEMREF?,NOMEN?) >
+
+<!ATTLIST WIREFROM
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**********************************************************************
+* Define Element WIREBORNE (Wire Borne) containing:- *
+* No Other Tags. *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* Attribute Definition list stored in entity %bodyatt; *
+**********************************************************************-->
+<!ELEMENT WIREBORNE  - - (BORNE,LINK*) >
+
+<!ATTLIST WIREBORNE
+               ID  ID    #IMPLIED 
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**********************************************************************
+* Define Element BORNE (Borne) containing:- *
+* No Other Tags. *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* Attribute Definition list stored in entity %INSDEL; *
+**********************************************************************-->
+<!ELEMENT BORNE  - - (#PCDATA) >
+
+<!ATTLIST BORNE
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**********************************************************************
+* Define Element WIRE (Wire Content) containing:- *
+* wirecode - mandatory single wire code *
+* dmcref - optional single link to wiring data (text) *
+* csn - mandatory single catalog sequence number *
+* isn - optional single item sequence number *
+* ident - mandatory single identifier *
+* nomen - optional single nomenclature *
+* wireclr - optional single wire color *
+* length - optional single wire length *
+* wirerp - optional single reprise code *
+* cableschs - optional single drawing (diagram) table *
+* feedthru - optional repeatable feed through (id of an equipment *
+* through which a wire passes (not used currently) *
+* sensep - optional single required sensitivity/separation *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* wiretype - LIST - IMPLIED - wire type *
+* wirecode - CDATA - REQUIRED - wire code *
+* Attribute Definition list stored in entity %INSDEL; *
+**********************************************************************
+Identifies a set of elements which define all aspects of wire.-->
+<!ELEMENT WIRE  - - (WIRECODE,ELEMREF?,NOMEN?,WIRECLR?,LENGTH?,WIRERP?,CABLESCHS?,
+               FEEDTHRU*,SENSEP?) >
+
+<!ATTLIST WIRE
+               WIRETYPE (C | B)   #IMPLIED 
+               WIRECODE  CDATA    #REQUIRED 
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**********************************************************************
+* Define Element WIRECODE (Wire Code) containing:- *
+* code - mandatory single wire code *
+* link - optional repeatable link to schema *
+* No Other Tags. *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* Attribute Definition list stored in entity %bodyatt; *
+**********************************************************************
+The set of elements required to identify a unique wire.-->
+<!ELEMENT WIRECODE  - - (CODE,LINK*) >
+
+<!ATTLIST WIRECODE
+               ID  ID    #IMPLIED 
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**********************************************************************
+* Define Element CODE (Wire Code) containing:- *
+* No Other Tags. *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* Attribute Definition list stored in entity %INSDEL; *
+**********************************************************************
+The set of elements required to identify a unique wire.-->
+<!ELEMENT CODE  - - (#PCDATA) >
+
+<!ATTLIST CODE
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**********************************************************************
+* Define Element WIRECLR (Wire Color) containing:- *
+* No Other Tags. *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* Attribute Definition list stored in entity %INSDEL; *
+**********************************************************************
+The color of the wire when necessary to uniquely identify a wire.-->
+<!ELEMENT WIRECLR  - - (#PCDATA) >
+
+<!ATTLIST WIRECLR
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**********************************************************************
+* Define Element LENGTH (Wire Length) containing:- *
+* No Other Tags. *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* unit - LIST - REQUIRED - unit *
+* Attribute Definition list stored in entity %INSDEL; *
+**********************************************************************
+The numerical value of the length of a wire.
+Note : The Units of measure are given in the associated attribute UNIT.-->
+<!ELEMENT LENGTH  - - (#PCDATA) >
+
+<!ATTLIST LENGTH
+               UNIT (FT | IN | MN | CM | M)   #REQUIRED 
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**********************************************************************
+* Define Element WIRERP (Wire reprise) containing:- *
+* No Other Tags. *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* codrep - NUMBER - REQUIRED - reprise code *
+* Attribute Definition list stored in entity %INSDEL; *
+**********************************************************************
+Reprise code for a wire.-->
+<!ELEMENT WIRERP  - O  EMPTY  >
+
+<!ATTLIST WIRERP
+               CODREP  NUMBER    #REQUIRED 
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**********************************************************************
+* Define Element FEEDTHRU (Feed Through) containing:- *
+* ein - mandatory single end item number *
+* termnbr - mandatory single termination number *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* Attribute Definition list stored in entity %INSDEL; *
+**********************************************************************
+The set of elements which identifies an equipment item through which a wire passes.-->
+<!ELEMENT FEEDTHRU  - - (EIN,TERMNBR)? >
+
+<!ATTLIST FEEDTHRU
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**********************************************************************
+* Define Element EIN (Equipment Identification Number) containing:- *
+* No Other Tags. *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* Attribute Definition list stored in entity %INSDEL; *
+**********************************************************************
+Equipment Identification Number-->
+<!ELEMENT EIN  - O (#PCDATA) >
+
+<!ATTLIST EIN
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**********************************************************************
+* Define Element TERMNBR (Termination Number) containing:- *
+* No Other Tags. *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* Attribute Definition list stored in entity %INSDEL; *
+**********************************************************************
+The identification of the termination within a parent equipment item (EIN) such as a Plug
+Terminal Block, etc.-->
+<!ELEMENT TERMNBR  - O (#PCDATA) >
+
+<!ATTLIST TERMNBR
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**********************************************************************
+* Define Element SENSEP (Sensitivity/Separation) containing:- *
+* No Other Tags. *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* Attribute Definition list stored in entity %INSDEL; *
+**********************************************************************
+The code that is used to identify the separation or sensitivity requirements of a wire.-->
+<!ELEMENT SENSEP  - - (#PCDATA) >
+
+<!ATTLIST SENSEP
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**********************************************************************
+* Define Element WIRETO (to termination) containing:- *
+* reporg - mandatory single end item termination code *
+* conid - optional single connector Id *
+* borne - optional single borne *
+* link - optional single link to schemas *
+* dmcref - optional single link to wiring data (text) *
+* ident - optional single termination identifier (csn/isn or ident, nomen*
+* nomen - optional single nomenclature *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* Attribute Definition list stored in entity %INSDEL; *
+**********************************************************************
+Identifies a set of elements which together define all aspects of a termination.
+NOTE : the FROM and TO elements are identical structures that identify the terminated
+ends of a wire.
+They are defined with different names for convienience and clarity.-->
+<!ELEMENT WIRETO  - - (REPORG,CONID?,WIREBORNE?,ELEMREF?,NOMEN?) >
+
+<!ATTLIST WIRETO
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**********************************************************************
+* Define Element NACTWIRE (Non Active Wire) containing:- *
+* %applic; - mandatory single effectivity *
+* from - optional single termination from *
+* wire - mandatory single wire *
+* to - optional single termination to *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* Attribute Definition list stored in entity %INSDEL; *
+**********************************************************************
+<Title>Non-Active Wire
+A wire that is terminated at neither, one, or both ends and is not utilized in a circuit.-->
+<!ELEMENT NACTWIRE  - - (APPLIC?,WIREFROM?,WIRE,WIRETO?) >
+
+<!ATTLIST NACTWIRE
+               CHANGE (ADD | MOD)   #IMPLIED  >
+
+<!--**********************************************************************
+* Define Element SPAREPIN (Spare Pin) containing:- *
+* from - mandatory single termination from *
+* wirecode - mandatory single termination to *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* Attribute Definition list stored in entity %INSDEL; *
+**********************************************************************
+<Title>Spare Pin
+A termination that is not connected to any wire and therefore has no destination "TO".-->
+<!ELEMENT SPAREPIN  - - (APPLIC?,(WIREFROM | WIRECODE)) >
+
+<!ATTLIST SPAREPIN
+               CHANGE (ADD | MOD)   #IMPLIED  >
+

@@ -1,0 +1,186 @@
+package com.sonovision.openconv.db.vo;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import com.sonovision.openconv.db.vo.common.Common;
+
+
+@Document(collection="conversion_object")
+public class ConversionObject extends Common {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5197353059364009411L;
+	
+	
+	private String logResult;
+	
+	private String identification;
+	
+
+	
+	private String conversionId;
+	
+
+	private Task task;
+	
+	private List<LogLine> logLineList=new ArrayList<LogLine>();
+	
+	public ConversionObject() {}
+
+	public ConversionObject( String logResult, String identification, String conversionId,
+			Task task, List<LogLine> logLineList) {
+		super();
+		this.logResult = logResult;
+		this.identification = identification;
+		this.conversionId = conversionId;
+		this.task = task;
+		this.logLineList = logLineList;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + ((conversionId == null) ? 0 : conversionId.hashCode());
+		result = prime * result + ((identification == null) ? 0 : identification.hashCode());
+		result = prime * result + ((logLineList == null) ? 0 : logLineList.hashCode());
+		result = prime * result + ((logResult == null) ? 0 : logResult.hashCode());
+		result = prime * result + ((task == null) ? 0 : task.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		ConversionObject other = (ConversionObject) obj;
+		if (conversionId == null) {
+			if (other.conversionId != null)
+				return false;
+		} else if (!conversionId.equals(other.conversionId))
+			return false;
+		if (identification == null) {
+			if (other.identification != null)
+				return false;
+		} else if (!identification.equals(other.identification))
+			return false;
+		if (logLineList == null) {
+			if (other.logLineList != null)
+				return false;
+		} else if (!logLineList.equals(other.logLineList))
+			return false;
+		if (logResult == null) {
+			if (other.logResult != null)
+				return false;
+		} else if (!logResult.equals(other.logResult))
+			return false;
+		if (task == null) {
+			if (other.task != null)
+				return false;
+		} else if (!task.equals(other.task))
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "ConversionObject [logResult=" + logResult + ", identification=" + identification + ", conversion=" + conversionId + ", task=" + task + ", logLineList=" + logLineList + "]";
+	}
+
+	
+
+	/**
+	 * @return the logResult
+	 */
+	public String getLogResult() {
+		return logResult;
+	}
+
+	/**
+	 * @param logResult the logResult to set
+	 */
+	public void setLogResult(String logResult) {
+		this.logResult = logResult;
+	}
+
+	/**
+	 * @return the identification
+	 */
+	public String getIdentification() {
+		return identification;
+	}
+
+	/**
+	 * @param identification the identification to set
+	 */
+	public void setIdentification(String identification) {
+		this.identification = identification;
+	}
+
+	/**
+	 * @return the conversion
+	 */
+	public String getConversionId() {
+		return conversionId;
+	}
+
+	/**
+	 * @param conversion the conversion to set
+	 */
+	public void setConversionId(String conversionId) {
+		this.conversionId = conversionId;
+	}
+	
+	/**
+	 * @param conversion the conversion to set
+	 */
+	public void setConversion(Conversion conversion) {
+		if(conversion!=null)
+		this.conversionId = conversion.getId();
+	}
+
+	/**
+	 * @return the task
+	 */
+	public Task getTask() {
+		return task;
+	}
+
+	/**
+	 * @param task the task to set
+	 */
+	public void setTask(Task task) {
+		this.task = task;
+	}
+
+	/**
+	 * @return the logLineList
+	 */
+	public List<LogLine> getLogLineList() {
+		return logLineList;
+	}
+
+	/**
+	 * @param logLineList the logLineList to set
+	 */
+	public void setLogLineList(List<LogLine> logLineList) {
+		this.logLineList = logLineList;
+	}
+	
+	
+	public void addLogLine(LogLine logLine){
+		this.logLineList.add(logLine);
+	}
+	
+
+}

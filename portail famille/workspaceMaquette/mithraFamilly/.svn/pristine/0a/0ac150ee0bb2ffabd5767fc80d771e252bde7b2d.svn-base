@@ -1,0 +1,28 @@
+package com.sonovision.openconv.service.impl;
+
+import java.io.File;
+
+import org.springframework.stereotype.Service;
+
+import com.sonovision.openconv.service.FileService;
+
+
+@Service("FileService")
+public class FileServiceImpl implements FileService{
+//
+//	@Override
+//	public void cleanDirectory(File dir) {
+//		if(dir!=null && dir.exists()){
+//			for(File file:dir.listFiles()){
+//				if(file.isDirectory()){
+//					cleanDirectory(file);
+//					file.delete();
+//				}
+//				else
+//					file.delete();
+//			}
+//		}
+//		
+//	}
+
+}

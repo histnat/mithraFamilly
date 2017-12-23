@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<ITEM>
+		<ITEMKEY1>coco1</ITEMKEY1>
+		<ITEMKEY2>coco2</ITEMKEY2>
+		<ITEMXML><data>
+					<subData>
+						cocoData12
+					</subData>
+				</data>
+		</ITEMXML>
+	</ITEM>

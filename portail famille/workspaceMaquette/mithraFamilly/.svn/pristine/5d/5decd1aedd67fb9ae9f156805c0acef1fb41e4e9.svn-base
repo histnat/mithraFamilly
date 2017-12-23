@@ -1,0 +1,261 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1B725200SF030100245A011 SYSTEM "x-dm://0900f90b80072efc,MYWORKING" NDATA cgm>
+<!ENTITY A1B725200SF030100190A011 SYSTEM "x-dm://0900f90b8006f148,MYWORKING" NDATA cgm>
+<!ENTITY A1A725200SF030100409A011 SYSTEM "x-dm://0900f90b8006113f,MYWORKING" NDATA cgm>
+<!ENTITY A1A725200SF030100239A011 SYSTEM "x-dm://0900f90b8000312b,MYWORKING" NDATA cgm>
+<!ENTITY A1A725200SF030100245A011 SYSTEM "x-dm://0900f90b8000344d,MYWORKING" NDATA cgm>
+]>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>03</discode><discodev>A</discodev><incode>527</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmc>
+<dmtitle><techname>DISQUE LABYRINTHE TURBINE HP</techname><infoname>PROCEDURES DE DEPOSE PROPREMENT DITE</infoname></dmtitle>
+<issno type="r" issno="7">
+<issdate month="10" year="2011" day="15">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 4"></version>
+<customer aaf="1" anf="1">
+<nti nti3="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Prise en compte de la modification 250-78R1</rfu>
+<remarks>RAS</remarks>
+<icns><icn id="A1A725200SF030100239A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00239</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A725200SF030100245A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00245</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1B725200SF030100245A011">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00245</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1B725200SF030100190A011">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00190</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A725200SF030100409A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00409</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<refdm>
+<dmcid id="A1A72520003A311AD"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>03</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmcid>
+<dmcid id="A1A72520000A250AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>00</discode><discodev>A</discodev><incode>250</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A72520000A350AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>00</discode><discodev>A</discodev><incode>350</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A72520003A361AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>03</discode><discodev>A</discodev><incode>361</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1B72520006A527AC"><avee><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>06</discode><discodev>A</discodev><incode>527</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A70820000A800AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>8</section><subsect>2</subsect><subject>00</subject><discode>00</discode><discodev>A</discodev><incode>800</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+</refdm>
+</refs><proced><pmd>
+<manhour value="0,5"></manhour>
+<duration value="0,5"></duration>
+</pmd><prelreqs><reqconds><reqcondli><reqcond><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<cond><para><p>Disque turbine en appui arri&egrave;re sur b&acirc;ti <supeqref refid="O2.30395">&eacute;quip&eacute; de l'adaptation <refipc csn="72016701 272 ">de l' outillage <refipc csn="72016801 057 ">et du protecteur<supeqref refid="O2.00675">.</p>
+</para>
+</cond>
+</reqcond><reqcond>
+<cond><para><p>Disque turbine&nbsp;HP est en appui arri&egrave;re sur b&acirc;ti <refipc csn="72016701 185 "> &eacute;quip&eacute; de l'adaptation turbine <refipc csn="72016701 195 "> et de l'adaptation avant <refipc csn="72016701 197 ">.</p>
+</para>
+</cond>
+</reqcond><reqcond>
+<cond><para><p>Le disque turbine&nbsp;HP est &eacute;quip&eacute; du protecteur <refipc csn="72016601 003 ">, de l'adaptation arri&egrave;re <refipc csn="72016801 028 "> et du protecteur retournement <refipc csn="72016601 058 ">.</p>
+</para>
+</cond>
+</reqcond><reqcond>
+<cond><para><p>Le Flasque amont doit &ecirc;tre d&eacute;pos&eacute;.</p>
+</para>
+</cond>
+</reqcond></reqcondli></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="0,5"></reqper>
+</reqpers><supequip><supeqli change="MOD">
+<supequi id="O2.30214"><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<refipc csn="72016801 057 "><nomen>Outillage de levage AR</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.30214M"><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<refipc csn="72016801 057M"><nomen>Outillage de levage AR</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.30395"><refipc csn="72016701 269 "><nomen>B&acirc;ti de montage polyvalent M8</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.30211"><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<refipc csn="72016701 866A"><nomen>Extracteur disque laby/couvercle M08</nomen><quantity>8</quantity></supequi>
+<supequi id="O2.30211N"><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<refipc csn="72016701 866N"><nomen>Extracteur disque laby/couvercle M08</nomen><quantity>8</quantity></supequi>
+<supequi id="O2.30195"><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<refipc csn="72016701A049 "><nomen>Protecteur disque laby nu</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.00675"><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<refipc csn="72016701A048 "><nomen>Protecteur disque laby</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.00091"><applic><config><mod modnb="219" modcond="post"></config></applic>
+<refipc csn="72016701 197 " isn="00C"><nomen>Adaptation avant disque module&nbsp;8</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.30851"><refipc csn="72016701 578 "><nomen>Extracteur &agrave; inertie</nomen><quantity>1</quantity></supequi>
+</supeqli><supeqlis>
+<supequis id="O2.C0103"><refipc csn="72016002 119 "><nomen>Cl&eacute; &agrave; fourche</nomen><quantity>1</quantity></supequis>
+</supeqlis></supequip><supplies><supplyli exhaust="0">
+<supply id="R1" mand="0"><applic><config><mod modnb="160.8" modcond="PRE"></config></applic>
+<refipc csn="72520001A019 " isn="00A"><nomen>Disque labyrinthe, turbine&nbsp;HP</nomen><quantity>SB</quantity></supply>
+<supply id="R3" mand="0"><applic><config><mod modnb="160.8" modcond="POST"></config></applic>
+<refipc csn="72520001A019 " isn="00C"><nomen>Disque labyrinthe, turbine&nbsp;HP</nomen><quantity>SB</quantity></supply>
+<supply id="R25011" mand="0"><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<refipc csn="72520001A019 " isn="00E"><nomen>Disque labyrinthe, turbine&nbsp;HP</nomen><quantity>SB</quantity></supply>
+</supplyli></supplies><miscs><nomisc></miscs><safety><nosafety></safety></prelreqs><mainfunc>
+<step1 control="0" id="P10">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>D&eacute;poser les 6&nbsp;&eacute;crous molet&eacute;s et l'adaptation <supeqref refid="O2.00091"> <figref repnohot="2.00091REP04" refid="A725200SF030100245A011"></p>
+</para>
+</step1>
+<step1 control="0" id="P20">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>Positionner le plateau de l'extracteur(&eacute;quip&eacute; des goujons REP07) <supeqref refid="O2.30211"> sur la turbine &agrave; l'aide des goujons <refipc csn="72520001A022 " isn="00A"> <figref repnohot="2.30211REP08, 2.30211REP07, 25020" refid="A725200SF030100239A011">.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>Positionner le support secteur(&eacute;quip&eacute; des goujons REP31) <supeqref refid="O2.30211N"> sur la turbine &agrave; l'aide des goujons <refipc csn="72520001A022 " isn="00C"> <figref repnohot="2.30212REP06,  25020" refid="B725200SF030100190A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P30">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>Installer les 3&nbsp;secteurs de l'extracteur <supeqref refid="O2.30211"> <figref repnohot="2.30211REP09" refid="A725200SF030100239A011">.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>Positionner les 6&nbsp;secteurs REP36 de l'extracteur <supeqref refid="O2.30211N">&agrave; l'aide de la vis molet&eacute;e REP08<figref repnohot="2.30212REP36, 2.30212REP08" refid="B725200SF030100190A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P40">
+<para><applic><config><mod modnb="160.8" modcond="PRE"></config></applic>
+<p>V&eacute;rifier le bon positionnement des 3&nbsp;secteurs sur le disque laby <supplref refid="R1">.</p>
+</para>
+<para><applic><config><mod modnb="160.8" modcond="POST"></config></applic>
+<p>V&eacute;rifier le bon positionnement des 3&nbsp;secteurs sur le disque laby <supplref refid="R3">.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>V&eacute;rifier le bon positionnement des 6&nbsp;secteurs REP36 sur le disque laby <supplref refid="R25011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P50">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>Serrer les secteurs de l'extracteur <supeqref refid="O2.30211"> <figref repnohot="2.30211REP09" refid="A725200SF030100239A011">.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>Serrer les 6 secteurs de l'extracteur <supeqref refid="O2.30211N">&agrave; l'aide des &eacute;crous stri&eacute;s<figref repnohot="2.30212REP07, 2.30212REP25" refid="B725200SF030100190A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P60">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>Installer la cloche sur la turbine en la positionnant &agrave; l'aide des goujons de l'extracteur <supeqref refid="O2.30211"> <figref repnohot="2.30211REP05, 2.30211REP07" refid="A725200SF030100239A011">.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>Installer le plateau sup&eacute;rieur REP04 en la positionnant &agrave; l'aide des goujons REP31 de l'extracteur <supeqref refid="O2.30211N"> <figref repnohot="2.30212REP04, 2.30212REP31, 2.30212REP22" refid="B725200SF030100190A011">.</p>
+</para>
+</step1>
+<step1 id="P70">
+<para><p>Installer et serrer la vis centrale REP22<figref repnohot="2.30212REP22" refid="B725200SF030100190A011"> </p>
+</para>
+</step1>
+<step1 control="0" id="P80">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>Visser &agrave; la main les &eacute;crous avec les rondelles de l'extracteur <supeqref refid="O2.30211"> <figref repnohot="2.30211REP26, 2.30211REP25" refid="A725200SF030100239A011">.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>Visser &agrave; la main les &eacute;crous avec les rondelles de l'extracteur <supeqref refid="O2.30211N"> <figref repnohot="2.30212REP23, 2.30212REP24" refid="B725200SF030100190A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P90">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>Serrer les 3&nbsp;&eacute;crous de l'extracteur <supeqref refid="O2.30211"> par quart de tour jusqu'au d&eacute;collement du disque labyrinthe, &agrave; l'aide de la cl&eacute; <supeqref refid="O2.C0103"> <figref repnohot="2.30211REP26" refid="A725200SF030100239A011">.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>Serrer les 6&nbsp;&eacute;crous de l'extracteur <supeqref refid="O2.30211N"> par quart de tour jusqu'au d&eacute;collement du disque labyrinthe, &agrave; l'aide de la cl&eacute; <supeqref refid="O2.C0103"> <figref repnohot="2.30212REP23" refid="B725200SF030100190A011">.</p>
+<note>
+<p>En cas de difficult&eacute;, utiliser l'extracteur <supeqref refid="O2.30851">.</p>
+</note>
+</para>
+</step1>
+<step1 control="0" id="P100">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>D&eacute;poser l'ensemble disque-labyrinthe /plateau sur une table d'atelier <supeqref refid="O2.30211"> <figref repnohot="2.30211REP08" refid="A725200SF030100239A011">.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>D&eacute;poser l'ensemble disque-labyrinthe /plateau sur une table d'atelier <supeqref refid="O2.30211N"> <figref repnohot="2.30212REP06" refid="B725200SF030100190A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P110">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>D&eacute;poser les 3&nbsp;&eacute;crous <supeqref refid="O2.30211"> <figref repnohot="2.30211REP26" refid="A725200SF030100239A011">.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>D&eacute;poser les 6&nbsp;&eacute;crous et rondelles<supeqref refid="O2.30211N"> <figref repnohot="2.30212REP23, 2.30212REP24" refid="B725200SF030100190A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P120">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>D&eacute;poser la cloche de l'extracteur <supeqref refid="O2.30211"> <figref repnohot="2.30211REP05" refid="A725200SF030100239A011">.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>D&eacute;visser la vis centrale REP22, et d&eacute;poser le plateau sup&eacute;rieur REP04 <supeqref refid="O2.30211N"> <figref repnohot="2.30212REP04, 2.30212REP22" refid="B725200SF030100190A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P130">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>Serrer les secteurs de l'extracteur <supeqref refid="O2.30211"> <figref repnohot="2.30211REP09" refid="A725200SF030100239A011">.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>desserrer les &eacute;crous stri&eacute;s REP25 et les vis molet&eacute;e REP08, et reculer les 6 secteurs de l'extracteur <supeqref refid="O2.30211N"><figref repnohot="2.30212REP07, 2.30212REP25" refid="B725200SF030100190A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P140">
+<para><p>D&eacute;poser le support secteur REP06.</p>
+</para>
+</step1>
+<step1 control="0" id="P150">
+<para><specpara>
+<note>
+<p>Ne pas d&eacute;poser l'outillage d'extraction si le couvercle est li&eacute; au disque-labyrinthe.</p>
+</note>
+</specpara><p>D&eacute;poser le couvercle du disque-labyrinthe <dmcref xrefid="A1B72520006A527AC">.</p>
+</para>
+</step1>
+<step1 control="0" id="P160">
+<para><p>Contr&ocirc;ler le disque-laby <dmcref xrefid="A1A72520003A311AD">.</p>
+</para>
+</step1>
+<step1 control="0" id="P170">
+<para><p>Nettoyer le disque-laby <dmcref xrefid="A1A72520000A250AC">.</p>
+</para>
+</step1>
+<step1 control="0" id="P180">
+<para><p>Effectuer les essais structuraux du disque-laby <dmcref xrefid="A1A72520000A350AC">.</p>
+</para>
+</step1>
+<step1 control="0" id="P190">
+<para><p>Effectuer le contr&ocirc;le dimensionnel du disque-laby <dmcref xrefid="A1A72520003A361AC">.</p>
+</para>
+</step1>
+<step1 control="0" id="P200">
+<para><p>Installer le protecteur <supeqref refid="O2.30195"> sur le disqu-laby<figref refid="A725200SF030100409A011"></p>
+</para>
+</step1>
+<step1 control="0" id="P210">
+<para><p>Proc&eacute;der au stockage du disque-laby <dmcref xrefid="A1A70820000A800AC">.</p>
+</para>
+</step1>
+<figure id="A725200SF030100239A011">
+<title>EXTRACTEUR DISQUE LABY</title>
+<graphic callicn="A1A725200SF030100239A011">
+</figure>
+<figure id="A725200SF030100245A011">
+<title>ADAPTATION AV</title>
+<graphic callicn="A1A725200SF030100245A011"><?Pub Caret>
+</figure>
+<figure id="B725200SF030100245A011">
+<title>ADAPTATION AV</title>
+<graphic callicn="A1B725200SF030100245A011">
+</figure>
+<figure id="B725200SF030100190A011">
+<title>EXTRACTEUR DISQUE LABY</title>
+<graphic callicn="A1B725200SF030100190A011">
+</figure>
+<figure id="A725200SF030100409A011">
+<title>PROTECTEUR</title>
+<graphic callicn="A1A725200SF030100409A011">
+</figure>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000017690 0>

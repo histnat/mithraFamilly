@@ -1,0 +1,75 @@
+package com.sonovision.openconv.db.dao.execution.impl;
+
+import java.io.Serializable;
+import java.util.List;
+
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.stereotype.Repository;
+
+import com.sedoc.toolbox.LogMes;
+import com.sonovision.openconv.db.dao.CoHistoryExeDao;
+import com.sonovision.openconv.db.dao.CoParameterExeDao;
+import com.sonovision.openconv.db.dao.impl.CommonDaoImpl;
+import com.sonovision.openconv.db.exception.DBNONullException;
+import com.sonovision.openconv.db.exception.DBNOUniqueException;
+import com.sonovision.openconv.db.vo.execution.CoHistoryExe;
+import com.sonovision.openconv.db.vo.execution.CoParameterExe;
+import com.sonovision.openconv.db.vo.execution.CoScenario;
+import com.sonovision.openconv.db.vo.user.OpGroup;
+import com.sonovision.openconv.db.vo.user.OpRole;
+import com.sonovision.openconv.db.vo.user.OpUser;
+
+@Repository(value="CoParameterExeDao")
+public class CoParameterExeDaoImpl extends CommonDaoImpl<CoParameterExe> implements CoParameterExeDao{
+
+	@Override
+	public CoParameterExe findByTaskId(String taskId) {
+
+        if (taskId == null) {
+        	LogMes.log(CoHistoryExeDaoImpl.class, LogMes.ERROR, "findByTaskId : taskId can't be null");
+            return null;
+        }
+        Query query = new Query();
+        query.addCriteria(
+                new Criteria().andOperator(
+                        Criteria.where("taskId").is(taskId)
+                )
+        );
+        return mongoTemplate.findOne(query, CoParameterExe.class);
+	}
+
+	@Override
+	public CoParameterExe findByAll(String id,String paramName, String paramValue, String taskId) {
+	    Query query = new Query();
+	    query.addCriteria(
+	            new Criteria().andOperator(
+	            		 Criteria.where("id").in(id),
+	                    Criteria.where("paramName").in(paramName),
+	                    Criteria.where("paramValue").is(paramValue),
+	                    Criteria.where("taskId").is(taskId)
+	            )
+	    );
+	    return mongoTemplate.findOne(query, CoParameterExe.class);
+	}
+
+	@Override
+	public void deleteAll()
+	{
+		super.deleteAll(CoParameterExe.class);
+	}
+
+	
+	@Override
+	public CoParameterExe getOrSave(CoParameterExe coParameterExe) throws DBNONullException, DBNOUniqueException {
+		CoParameterExe ou = findByAll(coParameterExe.getId(),coParameterExe.getParamName(),coParameterExe.getParamValue(),coParameterExe.getTaskId());
+		if (ou == null) {
+			save(coParameterExe);
+		} else {
+			coParameterExe = ou;
+		}
+
+		return coParameterExe;
+	}
+	
+}

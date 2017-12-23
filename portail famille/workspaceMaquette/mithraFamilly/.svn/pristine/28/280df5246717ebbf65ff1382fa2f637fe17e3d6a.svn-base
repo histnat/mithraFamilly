@@ -1,0 +1,85 @@
+package com.sonovision.openconv.utils;
+
+import static org.testng.Assert.fail;
+import static org.testng.AssertJUnit.assertNotNull;
+
+import java.io.File;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.sonovision.openconv.db.exception.DBNONullException;
+import com.sonovision.openconv.db.exception.DBNOUniqueException;
+import com.sonovision.openconv.db.vo.Conversion;
+import com.sonovision.openconv.log.model.DBLogger;
+import com.sonovision.openconv.wf.dao.WorkFlowDao;
+import com.sonovision.openconv.wf.exception.WorkflowException;
+import com.sonovision.openconv.wf.xmodel.Sequence;
+import com.sonovision.openconv.wf.xmodel.Workflow;
+
+public class TestHelperWF extends TestHelper {
+
+	@Autowired
+	WorkFlowDao workFlowDao;
+
+	protected DBLogger getDBLogger(ResourceTestPath rtp, String idSequence) {
+		Workflow wf=null;
+		try {
+			wf = workFlowDao.loadWorkflow(rtp.getWf());
+		} catch (WorkflowException e) {
+			fail(e.getMessage());
+			return null;
+		}
+		Sequence s = getSequence(rtp,idSequence, wf);
+		Conversion c = getConversion(rtp,s);
+		DBLogger dbl=super.getDBLogger(c);
+		dbl.setWorkflow(wf);
+		return dbl;
+	}
+
+	private Conversion getConversion(ResourceTestPath rtp, Sequence sequence) {
+		String folderin = getFilePath(rtp.getXml());
+		Conversion conversion = new Conversion();
+		conversion.setFolderIn(folderin);
+		conversion.setFolderOut(System.getProperty("user.dir") + File.separator + rtp.toString());
+		conversion.setStartTime(1443351300000L);
+		conversion.setWorkFlowName("Workflow de test ");
+		conversion.setWorkFlowSequence(sequence.getId().toString());
+			try {
+				conversion = dbConversionService.getOrSave(conversion);
+			} catch (DBNONullException | DBNOUniqueException e) {
+				fail(e.getMessage());
+			}
+		
+
+		return conversion;
+	}
+
+	protected Sequence getSequence(ResourceTestPath rtp, String idSequence, Workflow wf) {
+		String workFlowName = rtp.getWf();
+		if (wf == null) {
+			try {
+				wf = workFlowDao.loadWorkflow(workFlowName);
+			} catch (WorkflowException e) {
+				fail(e.getMessage());
+				return null;
+			}
+		}
+		Sequence s = null;
+		try {
+			s = workFlowDao.getSequence(wf, idSequence);
+		} catch (WorkflowException e) {
+			fail(e.getMessage());
+		}
+		assertNotNull(s);
+		return s;
+	}
+
+	public WorkFlowDao getWorkFlowDao() {
+		return workFlowDao;
+	}
+
+	public void setWorkFlowDao(WorkFlowDao workFlowDao) {
+		this.workFlowDao = workFlowDao;
+	}
+
+}

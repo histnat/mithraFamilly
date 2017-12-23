@@ -1,0 +1,229 @@
+/**
+ * 
+ */
+package com.sonovision.openconv.db.bo.impl;
+
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.stereotype.Service;
+
+import com.sonovision.openconv.db.bo.DBUserService;
+import com.sonovision.openconv.db.dao.OpGroupDao;
+import com.sonovision.openconv.db.dao.OpRoleDao;
+import com.sonovision.openconv.db.dao.OpUserDao;
+import com.sonovision.openconv.db.exception.DBNONullException;
+import com.sonovision.openconv.db.exception.DBNOUniqueException;
+import com.sonovision.openconv.db.vo.user.OpGroup;
+import com.sonovision.openconv.db.vo.user.OpRole;
+import com.sonovision.openconv.db.vo.user.OpUser;
+import com.sonovision.openconv.security.model.UserOpen;
+
+/**
+ * @author Frebeche
+ *
+ */
+@Service("DBUserService")
+@PropertySource(value = "classpath:openconv.properties")
+public class DBUserServiceImpl implements DBUserService {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -698253837007835546L;
+
+	@Autowired
+	private OpUserDao opUserDao;
+	
+	@Autowired
+	private OpGroupDao opGroupDao;
+	
+	@Autowired
+	private OpRoleDao opRoleDao;
+
+//	
+////	OpUser
+//	
+//	
+	@Override
+	public OpUser getOrSave(OpUser opUser) throws DBNONullException, DBNOUniqueException{ 
+		OpUser ou = findByAll(opUser);
+		if (ou == null) {
+			opUserDao.save(opUser);
+		} else {
+			opUser = ou;
+		}
+
+		return opUser;
+	}
+
+	@Override
+	public OpUser findByAll(OpUser opUser) {
+		return opUserDao.findByAll(opUser.getName(), opUser.getLogin());
+	}
+
+	@Override
+	public OpUser save(OpUser opUser) throws DBNONullException, DBNOUniqueException {
+		opUserDao.save(opUser);
+		return opUser;
+	}
+	
+    @Override
+    public OpUser findUserByLogin(String login) {
+        return opUserDao.findByLogin(login);
+    }
+    
+
+    @Override
+    public OpUser findUserById(String id) {
+        return opUserDao.findById(id, OpUser.class);
+    }
+    
+    @Override
+    public List<OpUser> listUser() {
+        return opUserDao.findAll(OpUser.class);
+    }
+	
+    
+    @Override
+    public UserOpen getUserOpenByLogin(String uid) {
+    	UserOpen newUser = null;
+    	OpUser user = opUserDao.findByLogin(uid);
+        if (null != user) {
+            newUser = new UserOpen();
+            newUser.setUid(user.getLogin());
+            newUser.setBlocked(!user.isBlocked());
+            newUser.setNom(user.getName());
+            newUser.setPrenom(user.getName());
+            newUser.setPassword(user.getPassword());
+            newUser.setMail(user.getEmail());
+        }
+
+        // chargement des roles
+        if (null != user) {
+//            LogMes.log(DBUserServiceImpl.class, LogMes.DEBUG, "user=" + user);
+            newUser.setAuthorities(getGrantedAuthorities(user));
+//            LogMes.log(UserServiceImpl.class, LogMes.DEBUG, "authorities=" + newUser.getAuthorities());
+        }
+        return newUser;
+
+    }
+    
+    
+    @Override
+    public Collection<? extends GrantedAuthority> getGrantedAuthorities(OpUser user) {
+        List<OpGroup> groups = user.getGroupList();
+
+        Collection<SimpleGrantedAuthority> col = new HashSet<>();
+        if (groups != null) {
+            for (OpGroup group : groups) {
+                List<OpRole> roles = group.getRoleList();
+
+                if (roles != null) {
+                    for (OpRole r : roles) {
+                        col.add(new SimpleGrantedAuthority(r.getCode()));
+                    }
+                }
+            }
+        }
+        return col;
+    }
+	
+//	
+////OpGroup
+//
+//
+	
+	@Override
+	public OpGroup getOrSave(OpGroup opGroup) throws DBNONullException, DBNOUniqueException{ 
+		OpGroup ou = findByAll(opGroup);
+		if (ou == null) {
+			opGroupDao.save(opGroup);
+		} else {
+			opGroup = ou;
+		}
+
+		return opGroup;
+	}
+
+
+	@Override
+	public OpGroup findByAll(OpGroup opGroup) {
+		return opGroupDao.findByCode(opGroup.getCode());
+	}
+
+	@Override
+	public OpGroup save(OpGroup opGroup) throws DBNONullException, DBNOUniqueException {
+		opGroupDao.save(opGroup);
+		return opGroup;
+	}	
+	
+    @Override
+    public List<OpGroup> listGroup() {
+        return opGroupDao.findAll(OpGroup.class);
+    }
+	
+//	
+////OpRole
+//
+//
+	
+	@Override
+	public OpRole save(OpRole opRole) throws DBNONullException, DBNOUniqueException {
+		opRoleDao.save(opRole);
+		return opRole;
+	}
+
+	@Override
+	public OpRole getOrSave(OpRole opRole) throws DBNONullException, DBNOUniqueException {
+		OpRole ou = findByAll(opRole);
+		if (ou == null) {
+			opRoleDao.save(opRole);
+		} else {
+			opRole = ou;
+		}
+
+		return opRole;
+	}
+
+	@Override
+	public OpRole findByAll(OpRole opRole) {
+		return opRoleDao.findByCode(opRole.getCode());
+	}
+
+
+	
+
+	
+	public OpUserDao getOpUserDao() {
+		return opUserDao;
+	}
+
+	public void setOpUserDao(OpUserDao opUserDao) {
+		this.opUserDao = opUserDao;
+	}
+
+	public OpGroupDao getOpGroupDao() {
+		return opGroupDao;
+	}
+
+	public void setOpGroupDao(OpGroupDao opGroupDao) {
+		this.opGroupDao = opGroupDao;
+	}
+
+	public OpRoleDao getOpRoleDao() {
+		return opRoleDao;
+	}
+
+	public void setOpRoleDao(OpRoleDao opRoleDao) {
+		this.opRoleDao = opRoleDao;
+	}
+
+
+
+}

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scworkflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/developpement/workspaceSysconv/document/wf.xsd">
+	<name>titus</name>
+	<description>workflow pour la convertion titus</description>
+	<wf>
+		<sequences>
+			<sequence>
+				<id>1</id>
+				<name>conversion xsl</name>
+				<description>conversion d'un fichier xsl</description>
+				<codification>com.sonovision.openconv.codification.impl.ListFileInOut</codification>
+					<cycle>
+					<cycleid>Cycle1</cycleid>
+					<ord>1</ord>
+				<action>
+					<actionid>1</actionid>
+					<ord>1</ord>
+					<taskid>1</taskid>
+					<condition>
+						<outputValue>0</outputValue>
+						<actionid>2</actionid>
+					</condition>
+					<condition>
+						<outputValue>1</outputValue>
+						<actionid>2</actionid>
+					</condition>
+					<condition>
+						<outputValue/>
+						<actionid>END</actionid>
+					</condition>
+				</action>
+				<action>
+					<actionid>2</actionid>
+					<ord>2</ord>
+					<taskid>2</taskid>
+					<condition>
+						<outputValue/>
+						<actionid>END</actionid>
+					</condition>
+				</action>
+				</cycle>
+			</sequence>
+		</sequences>
+		<tasks>
+			<task>
+				<id>1</id>
+				<name>conversion xsl</name>
+				<description>conversion d'un fichier xsl</description>
+				<className>com.sonovision.openconv.task.XSLTransformationModule</className>
+				<parameters>
+					<parameter>
+						<key>xslFileName</key>
+						<value>com/sonovision/openconv/nexter/titus.xsl</value>
+					</parameter>
+				</parameters>
+			</task>
+			<task>
+				<id>2</id>
+				<name>extract log</name>
+				<description>extraction des log vers un fichier pdf</description>
+				<className>com.sonovision.openconv.task.ExctractionPDFModule</className>
+				<parameters>
+					<parameter>
+						<key>xslFoName</key>
+						<value>com/sonovision/openconv/nexter/titus.xsl</value>
+					</parameter>
+				</parameters>
+			</task>
+		</tasks>
+	</wf>
+</scworkflow>

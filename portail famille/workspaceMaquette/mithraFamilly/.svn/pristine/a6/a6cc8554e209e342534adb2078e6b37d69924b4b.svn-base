@@ -1,0 +1,45 @@
+package com.sonovision.openconv.service.impl;
+
+import java.io.File;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.stereotype.Service;
+
+import com.sonovision.openconv.service.FileService;
+
+@PropertySource("classpath:openconv.properties")
+@Service("FileService")
+public class FileServiceImpl implements FileService{
+
+	@Value("#{propertiesFile['folder.temp']}")
+	protected String folderOut;
+	
+	private final static String DEFAULT_FILENAME = "outputPDF.pdf";
+	private final static String FOLDER_LOG = "log";
+	private final static String FOLDER_RESULT = "result";
+	
+	
+	@Override
+	public String getLogDirPath(String baseDirPath) {
+		return baseDirPath+File.separator+FOLDER_LOG;
+	}
+	@Override
+	public String getResultDirPath(String baseDirPath) {
+		return baseDirPath+File.separator+FOLDER_RESULT;
+	}
+	@Override
+	public String getLogPdfFilePath(String baseDirPath) {
+		return baseDirPath+File.separator+FOLDER_LOG+File.separator+DEFAULT_FILENAME;
+	}
+	@Override
+	public String getTempDirPath() {
+		return folderOut;
+	}
+	@Override
+	public String getTempZipFilePath(String name) {
+		return folderOut+File.separator+name+".zip";
+	}
+
+
+}

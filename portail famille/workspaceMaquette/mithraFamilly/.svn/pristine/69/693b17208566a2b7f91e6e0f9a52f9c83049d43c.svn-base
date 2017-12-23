@@ -1,0 +1,81 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                           RAFALE                                   *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.1                            *
+    *                   Dated 15th January 1998                          *
+    *                                                                    *
+    *  Amendment        :						                         *
+    *    19/05/97       : Change Public Identifier 			             *
+    *                        added attribute id (type ID) for <techpub>	 *
+    * 1. New Public Identifier to support removal of marked sections.    *
+    *                                                                    *
+    *    15/01/98       : Change Public Identifier 			             *
+    *                     replace extftab by extfig and exttab      	 *
+    *                     add capgrp directly under descript element     *
+    *                                                                    *
+    * Typical invocation :                                               *
+    * <!ENTITY % DESCRPT                                                 *
+    *   PUBLIC "-//RAFALE//ELEMENTS Description Breakdown 980115//EN" >  *
+    * %DESCRPT;                                                          *
+    ********************************************************************** -->
+
+
+
+<!--**********************************************************************
+    * Define Entity %CONTENT (Content Breakdown) containing :- DESCRIP   *
+    ********************************************************************** -->
+
+<!ENTITY % CONTENT "descript" >
+
+
+<!--********************************************************************** 
+    * Define Element DESCRIP (Descriptive Content).			 *
+    **********************************************************************-->
+<!ELEMENT descript - O (specpara?,(para|%list;|capgrp|table|figure)*,para0+,
+			 (figure|table)*)>
+<!ATTLIST descript   %INSDEL;>
+
+
+
+<!--**********************************************************************
+    * Call the Numbered Paragraphs Public Text.                          *
+    * The formal public identifier is stored in the entity %EXTPARA;     *
+    ********************************************************************** -->
+
+%EXTPARA;
+
+
+
+<!--**********************************************************************
+    * Call the Lists Public Text.                                        *
+    * The formal public identifier is stored in the entity %EXTLIST;     *
+    ********************************************************************** -->
+
+%EXTLIST;
+
+
+
+<!--**********************************************************************
+    * Call the Figure Public Text.                                       *
+    * The formal public identifier is stored in the entity %EXTFIG;      *
+    ********************************************************************** -->
+
+%EXTFIG;
+
+
+<!--**********************************************************************
+    * Call the Table Public Text.                                        *
+    * The formal public identifier is stored in the entity %EXTTAB;      *
+    ********************************************************************** -->
+
+%EXTTAB;
+
+
+<!--**********************************************************************
+    * Call the Special Paragraphs Public Text.                           *
+    * The formal public identifier is stored in the entity %EXTSPEC;     *
+    ********************************************************************** -->
+
+%EXTSPEC;

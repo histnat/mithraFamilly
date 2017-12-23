@@ -1,0 +1,1315 @@
+<!-- ==============================================================            -->
+<!--                      DTD header                                           -->
+<!-- ==============================================================            -->
+<!-- This DTD is for an Engine Illustrated Parts Catalog                       -->
+<!--                                                                           -->
+
+<!-- Hon DTD reference: "-//ATA-HONEYWELL-TEXT//DTD EIPC-VER7-REV02-LEVEL2//EN -->
+<!-- Version      : 0.2                                                        -->
+<!-- DTD Level    : 2                                                          -->
+<!-- Rev Date     : 3rd Nov 2008                                               -->
+<!-- Parsed Date  : 3rd Nov 2008                                               -->
+<!-- Highlights   :                                                            -->
+<!-- 1) Added entity "text-no-list1" for textual entities in list items.       -->
+<!-- 2) Replaced entity "text" with "text-no-note" in places where the         -->
+<!--    parent element does not contain a warning or caution.                  -->
+<!--    This was done to attain congruence with the ATA ispec 2200 EIPC DTD    -->
+<!-- 3) Replaced "text" entity in elements l1item (to) l7item with             -->
+<!--    "text-no-list1" entity for XML and will be converted to para's for     -->
+<!--    the SGML.                                                              -->
+<!-- 4) Removed redundant entity "text-no-table"                               -->
+<!--                                                                           -->
+
+<!-- Hon DTD reference: "-//ATA-HONEYWELL-TEXT//DTD EIPC-VER7-REV01-LEVEL2//EN -->
+<!-- Version      : 0.1                                                        -->
+<!-- DTD Level    : 2                                                          -->
+<!-- Rev Date     : 28th Aug 2008                                               -->
+<!-- Parsed Date  : 28th Aug 2008                                               -->
+<!-- Highlights   :                                                            -->
+<!-- 1) Added partinfo to root element "eipc"                                  -->
+<!-- 2) Added warnings & cautions to element "fullstmt". They will only be     -->
+<!--    for XML and will be converted to para's for the SGML                   -->
+<!-- 3) Added warnings & cautions to element "partstmt". They will only be     -->
+<!--    for XML and will be converted to para's for the SGML                   -->
+<!-- 4) Added element "list1" to entities "text", "text-no-table" and          -->
+<!--    "text-no-note" to ensure that nested numbered lists are possible       -->
+<!-- 5) Added element "transltr" and "trlist" to element "mfmatr"              -->
+<!--                                                                           -->
+
+<!-- DTD reference: "-//ATA-TEXT//DTD EIPC-VER7-REV01-LEVEL2//EN"   -->
+<!-- Level        : 2                                               -->
+<!-- Rev Date     : 5 Jan 2006                                      -->
+<!-- Parsed Date  : 5 Jan 2006                                      -->
+<!--                                                                -->
+<!-- Highlights    :                                                -->
+<!-- 1) Editorial improvements of notations for readability.        -->
+<!-- 2) Increased the version number to 7.1                         -->
+<!--                                                                -->
+<!-- DTD REVISION HISTORY:                                          -->
+<!-- Rev Date     : 4 Jan 2006                                      -->
+<!--  1) Added new SPL and OSC elements to PART.                    -->
+<!--     (CR AIB.IPC.001.2005)                                      -->
+<!--  2) Added new MDTY element  to ITEMSPEC.                       -->
+<!--     (CR AIB.IPC.002.2005)                                      -->
+<!--  3) Increased the version number to 7.0                        -->
+<!--                                                                -->
+<!-- DTD REVISION HISTORY:                                          -->
+<!-- Rev Date     : 7 Dec 2004                                      -->
+<!-- 1) Editorial improvements of notations for readability.        -->
+<!-- 2) Increased the version number to 6.1                         -->
+<!--                                                                -->
+<!-- DTD REVISION HISTORY:                                          -->
+<!-- Rev Date     : 17 Nov 2004                                     -->
+<!-- 1) Added attribute CFNBR to SHEET for companion file           -->
+<!--    referencing. Added gcf notation definition.                 -->
+<!--    (CR AIB.GRAPHIC.001.2004)                                   -->
+<!-- 2) Added new REFMEDIA element to reference a media file.       -->
+<!--    Added PDF, PNG, JPEG, VRML, MPEG and MP3 notations.         -->
+<!--    (CR 2004-Media-001).                                        -->
+<!-- 3) Added EFFLEN and EFFTYPE attribute to root element.         --> 
+<!--    (CR AIB.TRAN.003.2004)                                      -->
+<!-- 4) Added GRSYMBOL element to PARA content to reference inline  -->
+<!--    graphics (CR inline graphics).                              -->
+<!-- 5) Increased the "VER-REV" number to 6.0.                      -->
+<!--                                                                -->
+<!-- DTD REVISION HISTORY:                                          -->
+<!-- Rev Date     : 23 Jan 2004                                     -->
+<!--  1) Added attributes COCCOND and COCREV to element COCEFF.     -->
+<!--     Aligns the COCEFF with the SBEFF attribute structure       -->
+<!--     and provides a means for reporting COCEFF status. To       -->
+<!--     keep the DTD backwards compatible the attribute is         -->
+<!--     IMPLIED. Added to all ATA DTDs with COCEFF.                -->
+<!--     Change per ATA approved CR BOE.WM.002.2003.                -->
+<!--  2) Added attribute SBCOND to element SBEFF for alignment      -->
+<!--     with other ATA DTD SBEFF structures. The attribute SBCOND  -->
+<!--     is IMPLIED for backwards compatibility.                    -->
+<!--     Change per ATA approved CR BOE.WM.002.2003.                -->
+<!--  3) Increased the "VER-REV" number to 5.2 (ei020502.dtd).      -->
+<!--  4) Made editorial improvements for readability.               -->
+<!--                                                                -->
+<!-- DTD REVISION HISTORY:                                          -->
+<!-- Rev Date     : 20 Jan 2004                                     -->
+<!--  1) Added attribute TYPE to EIN element (CR 2002-WM-002)       -->
+<!--  2) Added attribute SYM to FIGURE (CR AIB.IPC.006.2003)        -->
+<!--  3) Added optianal element SYM to ITEMSPEC content             -->
+<!--     (CR AIB.IPC.006.2003)                                      -->
+<!--  4) Increased the "VER-REV" number to 5.1 (ei020501.dtd).      -->
+<!--  5) Made editorial improvements for readability.               -->
+<!--                                                                -->
+<!-- DTD REVISION HISTORY:                                          -->
+<!--  Rev Date     : 04 Dec 2003                                    -->
+<!--  1) Added TR (Temporary Revision) element structure to the     -->
+<!--     DTD. This would allow the data producer to provide SGML    -->
+<!--     TRs separate of the regular scheduled revision cycle.      -->
+<!--     And it would align the EIPC DTD with the AIPC DTD and      -->
+<!--     other ATA DTDs. (Boeing CR 2003-AIPC-003).                 -->
+<!--  2) Added INTRO and other Front Matter structures to TR        -->
+<!--     choices per CR BOE-Tran-001-2003.                          -->
+<!--  3) Incorporated ISObox, ISOamso & ISOamsc per ATA approved    -->
+<!--     DTD CR 2003-All-001.                                       -->
+<!--  4) Increased the "VER" number to 5 (ei020500.dtd).            -->
+<!--  5) Made some editorial improvements for readability.          -->
+<!--                                                                -->
+<!-- Highlights   :                                                 -->
+<!-- Rev Date     : 04 Dec 2001                                     -->
+<!--  1) Changed TABLE ENTRY to "*" optional repeating to avoid     -->
+<!--     empty tags <para> </para> for blank table cell entries.    -->
+<!--  2) Added HZMTLST as choice to INCREV and TR.                  -->
+<!--  3) Increased the "VER-REV" number to 4.1 (ei020401.dtd).      -->
+<!--  4) Made some editorial improvements for readability.          -->
+<!--                                                                -->
+<!-- Highlights   :                                                 -->
+<!-- Rev Date     : 20 Jun 2001                                     -->
+<!--  1) Added new elements SUB & SUPER to PARA and TITLE with      -->
+<!--     a content of #PCDATA.                                      -->
+<!--  2) Increased the "VER" number to 4  (ei020400.dtd).           -->
+<!--  4) Made some editorial improvements for readability.          -->
+<!--  NOTE: All other approved ATA CRs were not added because       -->
+<!--  of the DTD itended purpose and functionality.                 -->
+<!--                                                                -->
+<!-- Highlights   :                                                 -->
+<!--   1) Added entities ISOgrk2,3,4 and ISOlat1.                   -->
+<!--   2) Added optional LEGALNTC (Legal Notice) element to top     -->
+<!--      element structure.                                        -->
+<!--   3) Added implied attribute IMGAREA to SHEET.                 -->
+<!--   4) Increased version to 3.0                                  -->
+<!--                                                                -->
+<!-- Version      : Version 2.0                                     -->
+<!-- Rev date     : Feb 13, 1998   9:15 AM                          -->
+<!-- Highlights   : Many changes made to reflect engine             -->
+<!--                 manufacturer data requirements and to use      -->
+<!--                 the same structures as the engine manual       -->
+<!--                 DTD where possible..                           -->
+<!--                                                                -->
+<!-- ============================================================== -->
+
+<!-- DOCTYPE eipc   [   -->
+<!-- The following set of declarations may be referred to 
+    using the public entity as follows:
+<!DOCTYPE eipc PUBLIC
+    "-//ATA-TEXT//DTD EIPC-VER7-LEVEL2//EN" [ ]>                    -->
+<!--                                                                -->
+<!-- ============================================================== -->
+<!--                           NOTATIONS                            -->
+<!-- ============================================================== -->
+<!--                                                                -->
+<!NOTATION cgm       PUBLIC 
+    "-//USA-DOD//NOTATION Computer Graphics Metafile//EN"             >
+
+<!NOTATION ccitt4 PUBLIC
+    "-//USA-DOD//NOTATION CCITT Group 4 Facsimile//EN"                >
+
+<!NOTATION gcf PUBLIC
+ "-//ATA-TEXT//NOTATION Graphic Companion File//EN"                   >
+
+<!NOTATION pdf PUBLIC
+ "-//Adobe Inc.//NOTATION Portable Document Format//EN"               >
+
+<!NOTATION png PUBLIC
+ "-//W3C//NOTATION Portable Network Graphics//EN"                     >
+
+<!NOTATION jpeg PUBLIC
+ "+//ISBN 0-7923-9432-1::Graphic Notation//NOTATION Joint
+  Photographic Experts Group Raster//EN"                              >
+
+<!NOTATION vrml PUBLIC 
+ "-//ATA-TEXT//NOTATION Virtual Reality Modeling Language//EN"        >
+
+<!NOTATION mpeg PUBLIC
+ "-//ATA-TEXT//NOTATION Motion Pictures Expert Group//EN"             >
+
+<!NOTATION mp3 PUBLIC
+ "-//ATA-TEXT//NOTATION Motion Pictures Expert Group, Audio
+  Layer 3//EN"                                                        >
+<!--                                                                -->
+<!-- ============================================================== -->
+<!--                           ENTITIES                             -->
+<!-- ============================================================== -->
+<!ENTITY % number  'CDATA'                                            >
+<!ENTITY % nutoken 'CDATA'                                            >
+<!ENTITY % name    'CDATA'                                            >
+<!ENTITY  % text     "para | table | unlist | numlist | note | list1"             >
+<!ENTITY  % text-no-note  "para | unlist | numlist | table | list1"    >
+<!ENTITY  % text-no-list1 "para | unlist | numlist | table" >
+<!ENTITY  % w.c      "(warning*, caution*)"                           >
+<!ENTITY  % yesorno  "%number;"                                         >
+<!ENTITY  % revatt                                         
+           "chg       (N | D | R | I | U)             #REQUIRED
+            revdate   %number;                        #REQUIRED
+            key       ID                              #REQUIRED"      >
+     
+
+<!-- ******************************************************** -->
+<!-- 
+    Title : iso-tech.ent
+ 
+    Desc. : ENTITIES General Technical
+          
+    $Id: iso-tech.ent,v 1.1 2004/03/02 11:50:38 bultelle Exp $
+ -->
+<!-- ******************************************************** -->
+
+<!--  iso-tech.ent produced by Norman Walsh for the XML version of DocBook  -->
+
+<!--  Derived from the corresponding ISO 8879 standard entity set
+     and the Unicode character mappings provided by Sebastian Rahtz  -->
+
+<!ENTITY aleph	"&#38;#x2135;"> <!--  ALEF SYMBOL  -->
+<!ENTITY and	"&#38;#x2227;"> <!--    -->
+<!ENTITY ang90	"&#38;#x221F;"> <!--  RIGHT ANGLE  -->
+<!ENTITY angsph	"&#38;#x2222;"> <!--    -->
+<!ENTITY ap	"&#38;#x2248;"> <!--    -->
+<!ENTITY becaus	"&#38;#x2235;"> <!--  BECAUSE  -->
+<!ENTITY bottom	"&#38;#xE363;"> <!--    -->
+<!ENTITY cap	"&#38;#x2229;"> <!--    -->
+<!ENTITY cong	"&#38;#x2245;"> <!--    -->
+<!ENTITY conint	"&#38;#x222E;"> <!--    -->
+<!ENTITY cup	"&#38;#x222A;"> <!--    -->
+<!ENTITY equiv	"&#38;#x2261;"> <!--    -->
+<!ENTITY exist	"&#38;#x2203;"> <!--    -->
+<!ENTITY forall	"&#38;#x2200;"> <!--    -->
+<!ENTITY fnof	"&#38;#x0192;"> <!--  LATIN SMALL LETTER F WITH HOOK  -->
+<!ENTITY ge	"&#38;#x2265;"> <!--  GREATER-THAN OR EQUAL TO  -->
+<!ENTITY iff	"&#38;#xE365;"> <!--    -->
+<!ENTITY infin	"&#38;#x221E;"> <!--    -->
+<!ENTITY int	"&#38;#x222B;"> <!--    -->
+<!ENTITY isin	"&#38;#x220A;"> <!--    -->
+<!ENTITY lang	"&#38;#x3008;"> <!--    -->
+<!ENTITY lArr	"&#38;#x21D0;"> <!--  LEFTWARDS ARROW  -->
+<!ENTITY le	"&#38;#x2264;"> <!--    -->
+<!ENTITY minus	"&#38;#x2212;"> <!--  MINUS SIGN  -->
+<!ENTITY mnplus	"&#38;#x2213;"> <!--    -->
+<!ENTITY nabla	"&#38;#x2207;"> <!--  NABLA  -->
+<!ENTITY ne	"&#38;#x2260;"> <!--    -->
+<!ENTITY ni	"&#38;#x220D;"> <!--    -->
+<!ENTITY or	"&#38;#x2228;"> <!--    -->
+<!ENTITY par	"&#38;#x2225;"> <!--  PARALLEL TO  -->
+<!ENTITY part	"&#38;#x2202;"> <!--    -->
+<!ENTITY permil	"&#38;#x2030;"> <!--  PER MILLE SIGN  -->
+<!ENTITY perp	"&#38;#x22A5;"> <!--    -->
+<!ENTITY prime	"&#38;#x2032;"> <!--  PRIME  -->
+<!ENTITY Prime	"&#38;#x2033;"> <!--  DOUBLE PRIME  -->
+<!ENTITY prop	"&#38;#x221D;"> <!--    -->
+<!ENTITY radic	"&#38;#x221A;"> <!--    -->
+<!ENTITY rang	"&#38;#x3009;"> <!--    -->
+<!ENTITY rArr	"&#38;#x21D2;"> <!--  RIGHTWARDS ARROW  -->
+<!ENTITY sim	"&#38;#x223C;"> <!--    -->
+<!ENTITY sime	"&#38;#x2243;"> <!--    -->
+<!ENTITY square	"&#38;#x25A1;"> <!--  WHITE SQUARE  -->
+<!ENTITY sub	"&#38;#x2282;"> <!--    -->
+<!ENTITY sube	"&#38;#x2286;"> <!--    -->
+<!ENTITY sup	"&#38;#x2283;"> <!--    -->
+<!ENTITY supe	"&#38;#x2287;"> <!--    -->
+<!ENTITY there4	"&#38;#x2234;"> <!--    -->
+<!ENTITY Verbar	"&#38;#x2016;"> <!--  DOUBLE VERTICAL LINE  -->
+<!ENTITY angst	"&#38;#x212B;"> <!--  ANGSTROM SIGN  -->
+<!ENTITY bernou	"&#38;#x212C;"> <!--  SCRIPT CAPITAL B  -->
+<!ENTITY compfn	"&#38;#x2218;"> <!--  RING OPERATOR  -->
+<!ENTITY Dot	"&#38;#x0308;"> <!--    -->
+<!ENTITY DotDot	"&#38;#x20DC;"> <!--  COMBINING FOUR DOTS ABOVE  -->
+<!ENTITY hamilt	"&#38;#x210B;"> <!--  SCRIPT CAPITAL H  -->
+<!ENTITY lagran	"&#38;#x2112;"> <!--  SCRIPT CAPITAL L  -->
+<!ENTITY lowast	"&#38;#x2217;"> <!--  ASTERISK OPERATOR  -->
+<!ENTITY notin	"&#38;#x2209;"> <!--    -->
+<!ENTITY order	"&#38;#x2134;"> <!--  SCRIPT SMALL O  -->
+<!ENTITY phmmat	"&#38;#x2133;"> <!--  SCRIPT CAPITAL M  -->
+<!ENTITY tdot	"&#38;#x20DB;"> <!--  COMBINING THREE DOTS ABOVE  -->
+<!ENTITY tprime	"&#38;#x2034;"> <!--  TRIPLE PRIME  -->
+<!ENTITY wedgeq	"&#38;#x2259;"> <!--  ESTIMATES  -->
+ <!-- ******************************************************** -->
+<!-- 
+    Title : iso-pub.ent
+ 
+    Desc. : ENTITIES Publishing
+    
+    $Id: iso-pub.ent,v 1.1 2004/03/02 11:50:37 bultelle Exp $
+ -->
+<!-- ******************************************************** -->
+
+<!--  iso-pub.ent produced by Norman Walsh for the XML version of DocBook  -->
+
+<!--  Derived from the corresponding ISO 8879 standard entity set
+     and the Unicode character mappings provided by Sebastian Rahtz  -->
+
+<!ENTITY emsp	"&#38;#x2003;"> <!--  EM SPACE  -->
+<!ENTITY ensp	"&#38;#x2002;"> <!--  EN SPACE  -->
+<!ENTITY emsp13	"&#38;#x2004;"> <!--  THREE-PER-EM SPACE  -->
+<!ENTITY emsp14	"&#38;#x2005;"> <!--  FOUR-PER-EM SPACE  -->
+<!ENTITY numsp	"&#38;#x2007;"> <!--  FIGURE SPACE  -->
+<!ENTITY puncsp	"&#38;#x2008;"> <!--  PUNCTUATION SPACE  -->
+<!ENTITY thinsp	"&#38;#x2009;"> <!--  THIN SPACE  -->
+<!ENTITY hairsp	"&#38;#x200A;"> <!--  HAIR SPACE  -->
+<!ENTITY mdash	"&#38;#x2014;"> <!--  EM DASH  -->
+<!ENTITY ndash	"&#38;#x2013;"> <!--  EN DASH  -->
+<!ENTITY dash	"&#38;#x2010;"> <!--  HYPHEN  -->
+<!ENTITY blank	"&#38;#x2423;"> <!--  OPEN BOX  -->
+<!ENTITY hellip	"&#38;#x2026;"> <!--  HORIZONTAL ELLIPSIS  -->
+<!ENTITY nldr	"&#38;#x2025;"> <!--  TWO DOT LEADER  -->
+<!ENTITY frac13	"&#38;#x2153;"> <!--  VULGAR FRACTION ONE THIRD  -->
+<!ENTITY frac23	"&#38;#x2154;"> <!--  VULGAR FRACTION TWO THIRDS  -->
+<!ENTITY frac15	"&#38;#x2155;"> <!--  VULGAR FRACTION ONE FIFTH  -->
+<!ENTITY frac25	"&#38;#x2156;"> <!--  VULGAR FRACTION TWO FIFTHS  -->
+<!ENTITY frac35	"&#38;#x2157;"> <!--  VULGAR FRACTION THREE FIFTHS  -->
+<!ENTITY frac45	"&#38;#x2158;"> <!--  VULGAR FRACTION FOUR FIFTHS  -->
+<!ENTITY frac16	"&#38;#x2159;"> <!--  VULGAR FRACTION ONE SIXTH  -->
+<!ENTITY frac56	"&#38;#x215A;"> <!--  VULGAR FRACTION FIVE SIXTHS  -->
+<!ENTITY incare	"&#38;#x2105;"> <!--  CARE OF  -->
+<!ENTITY block	"&#38;#x2588;"> <!--  FULL BLOCK  -->
+<!ENTITY uhblk	"&#38;#x2580;"> <!--  UPPER HALF BLOCK  -->
+<!ENTITY lhblk	"&#38;#x2584;"> <!--  LOWER HALF BLOCK  -->
+<!ENTITY blk14	"&#38;#x2591;"> <!--  LIGHT SHADE  -->
+<!ENTITY blk12	"&#38;#x2592;"> <!--  MEDIUM SHADE  -->
+<!ENTITY blk34	"&#38;#x2593;"> <!--  DARK SHADE  -->
+<!ENTITY marker	"&#38;#x25AE;"> <!--  BLACK VERTICAL RECTANGLE  -->
+<!ENTITY cir	"&#38;#x25CB;"> <!--  WHITE CIRCLE  -->
+<!ENTITY squ	"&#38;#x25A1;"> <!--  WHITE SQUARE  -->
+<!ENTITY rect	"&#38;#x25AD;"> <!--  WHITE RECTANGLE  -->
+<!ENTITY utri	"&#38;#x25B5;"> <!--  WHITE UP-POINTING TRIANGLE  -->
+<!ENTITY dtri	"&#38;#x25BF;"> <!--  WHITE DOWN-POINTING TRIANGLE  -->
+<!ENTITY star	"&#38;#x22C6;"> <!--  STAR OPERATOR  -->
+<!ENTITY bull	"&#38;#x2022;"> <!--  BULLET  -->
+<!ENTITY squf	"&#38;#x25AA;"> <!--    -->
+<!ENTITY utrif	"&#38;#x25B4;"> <!--  BLACK UP-POINTING TRIANGLE  -->
+<!ENTITY dtrif	"&#38;#x25BE;"> <!--  BLACK DOWN-POINTING TRIANGLE  -->
+<!ENTITY ltrif	"&#38;#x25C2;"> <!--  BLACK LEFT-POINTING TRIANGLE  -->
+<!ENTITY rtrif	"&#38;#x25B8;"> <!--  BLACK RIGHT-POINTING TRIANGLE  -->
+<!ENTITY clubs	"&#38;#x2663;"> <!--  BLACK CLUB SUIT  -->
+<!ENTITY diams	"&#38;#x2662;"> <!--  BLACK DIAMOND SUIT  -->
+<!ENTITY hearts	"&#38;#x2661;"> <!--  BLACK HEART SUIT  -->
+<!ENTITY spades	"&#38;#x2660;"> <!--  BLACK SPADE SUIT  -->
+<!ENTITY malt	"&#38;#x2720;"> <!--  MALTESE CROSS  -->
+<!ENTITY dagger	"&#38;#x2020;"> <!--  DAGGER  -->
+<!ENTITY Dagger	"&#38;#x2021;"> <!--  DOUBLE DAGGER  -->
+<!ENTITY check	"&#38;#x2713;"> <!--  CHECK MARK  -->
+<!ENTITY cross	"&#38;#x2717;"> <!--  BALLOT X  -->
+<!ENTITY sharp	"&#38;#x266F;"> <!--  MUSIC SHARP SIGN  -->
+<!ENTITY flat	"&#38;#x266D;"> <!--  MUSIC FLAT SIGN  -->
+<!ENTITY male	"&#38;#x2642;"> <!--  MALE SIGN  -->
+<!ENTITY female	"&#38;#x2640;"> <!--    -->
+<!ENTITY phone	"&#38;#x260E;"> <!--  TELEPHONE SIGN  -->
+<!ENTITY telrec	"&#38;#x2315;"> <!--  TELEPHONE RECORDER  -->
+<!ENTITY copysr	"&#38;#x2117;"> <!--  SOUND RECORDING COPYRIGHT  -->
+<!ENTITY caret	"&#38;#x2041;"> <!--  CARET  -->
+<!ENTITY lsquor	"&#38;#x201A;"> <!--  SINGLE LOW-9 QUOTATION MARK  -->
+<!ENTITY ldquor	"&#38;#x201E;"> <!--  DOUBLE LOW-9 QUOTATION MARK  -->
+<!ENTITY fflig	"&#38;#xFB00;"> <!--    -->
+<!ENTITY filig	"&#38;#xFB01;"> <!--    -->
+<!--      fjlig	Unknown unicode character  -->
+<!ENTITY ffilig	"&#38;#xFB03;"> <!--    -->
+<!ENTITY ffllig	"&#38;#xFB04;"> <!--    -->
+<!ENTITY fllig	"&#38;#xFB02;"> <!--    -->
+<!ENTITY mldr	"&#38;#x2026;"> <!--  HORIZONTAL ELLIPSIS  -->
+<!ENTITY rdquor	"&#38;#x201C;"> <!--    -->
+<!ENTITY rsquor	"&#38;#x2018;"> <!--    -->
+<!ENTITY vellip	"&#38;#x22EE;"> <!--    -->
+<!ENTITY hybull	"&#38;#x2043;"> <!--  HYPHEN BULLET  -->
+<!ENTITY loz	"&#38;#x25CA;"> <!--  LOZENGE  -->
+<!ENTITY lozf	"&#38;#x29EB;"> <!--    -->
+<!ENTITY ltri	"&#38;#x25C3;"> <!--  WHITE LEFT-POINTING TRIANGLE  -->
+<!ENTITY rtri	"&#38;#x25B9;"> <!--  WHITE RIGHT-POINTING TRIANGLE  -->
+<!ENTITY starf	"&#38;#x2605;"> <!--  BLACK STAR  -->
+<!ENTITY natur	"&#38;#x266E;"> <!--  MUSIC NATURAL SIGN  -->
+<!ENTITY rx	"&#38;#x211E;"> <!--  PRESCRIPTION TAKE  -->
+<!ENTITY sext	"&#38;#x2736;"> <!--  SIX POINTED BLACK STAR  -->
+<!ENTITY target	"&#38;#x2316;"> <!--  POSITION INDICATOR  -->
+<!ENTITY dlcrop	"&#38;#x230D;"> <!--  BOTTOM LEFT CROP  -->
+<!ENTITY drcrop	"&#38;#x230C;"> <!--  BOTTOM RIGHT CROP  -->
+<!ENTITY ulcrop	"&#38;#x230F;"> <!--  TOP LEFT CROP  -->
+<!ENTITY urcrop	"&#38;#x230E;"> <!--  TOP RIGHT CROP  -->
+ <!-- ******************************************************** -->
+<!-- 
+    Title : iso-num.ent
+ 
+    Desc. : ENTITIES Added Latin 1 
+          
+    $Id: iso-num.ent,v 1.1 2004/03/02 11:50:36 bultelle Exp $
+ -->
+<!-- ******************************************************** -->
+
+<!--  iso-num.ent produced by Norman Walsh for the XML version of DocBook  -->
+
+<!--  Derived from the corresponding ISO 8879 standard entity set
+     and the Unicode character mappings provided by Sebastian Rahtz  -->
+
+<!ENTITY half	"&#38;#x00BD;"> <!--  VULGAR FRACTION ONE HALF  -->
+<!ENTITY frac12	"&#38;#x00BD;"> <!--  VULGAR FRACTION ONE HALF  -->
+<!ENTITY frac14	"&#38;#x00BC;"> <!--  VULGAR FRACTION ONE QUARTER  -->
+<!ENTITY frac34	"&#38;#x00BE;"> <!--  VULGAR FRACTION THREE QUARTERS  -->
+<!ENTITY frac18	"&#38;#x215B;"> <!--    -->
+<!ENTITY frac38	"&#38;#x215C;"> <!--    -->
+<!ENTITY frac58	"&#38;#x215D;"> <!--    -->
+<!ENTITY frac78	"&#38;#x215E;"> <!--    -->
+<!ENTITY sup1	"&#38;#x00B9;"> <!--  SUPERSCRIPT ONE  -->
+<!ENTITY sup2	"&#38;#x00B2;"> <!--  SUPERSCRIPT TWO  -->
+<!ENTITY sup3	"&#38;#x00B3;"> <!--  SUPERSCRIPT THREE  -->
+<!ENTITY plus	"&#38;#x002B;"> <!--  PLUS SIGN  -->
+<!ENTITY plusmn	"&#38;#x00B1;"> <!--  PLUS-MINUS SIGN  -->
+<!-- ENTITY lt	"&#38;#x003C;" --> <!--  LESS-THAN SIGN  -->
+<!ENTITY equals	"&#38;#x003D;"> <!--  EQUALS SIGN  -->
+<!ENTITY gt	"&#38;#x003E;"> <!--  GREATER-THAN SIGN  -->
+<!ENTITY divide	"&#38;#x00F7;"> <!--  DIVISION SIGN  -->
+<!ENTITY times	"&#38;#x00D7;"> <!--  MULTIPLICATION SIGN  -->
+<!ENTITY curren	"&#38;#x00A4;"> <!--  CURRENCY SIGN  -->
+<!ENTITY pound	"&#38;#x00A3;"> <!--  POUND SIGN  -->
+<!ENTITY dollar	"&#38;#x0024;"> <!--  DOLLAR SIGN  -->
+<!ENTITY cent	"&#38;#x00A2;"> <!--  CENT SIGN  -->
+<!ENTITY yen	"&#38;#x00A5;"> <!--  YEN SIGN  -->
+<!ENTITY num	"&#38;#x0023;"> <!--  NUMBER SIGN  -->
+<!ENTITY percnt	"&#38;#x0025;"> <!--  PERCENT SIGN  -->
+<!-- ENTITY amp	"&#38;#x0026;" --> <!--  AMPERSAND  -->
+<!ENTITY ast	"&#38;#x2217;"> <!--  ASTERISK OPERATOR  -->
+<!ENTITY commat	"&#38;#x0040;"> <!--  COMMERCIAL AT  -->
+<!ENTITY lsqb	"&#38;#x005B;"> <!--  LEFT SQUARE BRACKET  -->
+<!ENTITY bsol	"&#38;#x005C;"> <!--  REVERSE SOLIDUS  -->
+<!ENTITY rsqb	"&#38;#x005D;"> <!--  RIGHT SQUARE BRACKET  -->
+<!ENTITY lcub	"&#38;#x007B;"> <!--  LEFT CURLY BRACKET  -->
+<!ENTITY horbar	"&#38;#x2015;"> <!--  HORIZONTAL BAR  -->
+<!ENTITY verbar	"&#38;#x007C;"> <!--  VERTICAL LINE  -->
+<!ENTITY rcub	"&#38;#x007D;"> <!--  RIGHT CURLY BRACKET  -->
+<!ENTITY micro	"&#38;#x00B5;"> <!--  MICRO SIGN  -->
+<!ENTITY ohm	"&#38;#x2126;"> <!--  OHM SIGN  -->
+<!ENTITY deg	"&#38;#x00B0;"> <!--  DEGREE SIGN  -->
+<!ENTITY ordm	"&#38;#x00BA;"> <!--  MASCULINE ORDINAL INDICATOR  -->
+<!ENTITY ordf	"&#38;#x00AA;"> <!--  FEMININE ORDINAL INDICATOR  -->
+<!ENTITY sect	"&#38;#x00A7;"> <!--  SECTION SIGN  -->
+<!ENTITY para	"&#38;#x00B6;"> <!--  PILCROW SIGN  -->
+<!ENTITY middot	"&#38;#x00B7;"> <!--  MIDDLE DOT  -->
+<!ENTITY larr	"&#38;#x2190;"> <!--  LEFTWARDS DOUBLE ARROW  -->
+<!ENTITY rarr	"&#38;#x2192;"> <!--  RIGHTWARDS DOUBLE ARROW  -->
+<!ENTITY uarr	"&#38;#x2191;"> <!--  UPWARDS ARROW  -->
+<!ENTITY darr	"&#38;#x2193;"> <!--  DOWNWARDS ARROW  -->
+<!ENTITY copy	"&#38;#x00A9;"> <!--  COPYRIGHT SIGN  -->
+<!ENTITY reg	"&#38;#x00AE;"> <!--  REGISTERED TRADE MARK SIGN  -->
+<!ENTITY trade	"&#38;#x2122;"> <!--  TRADE MARK SIGN  -->
+<!ENTITY brvbar	"&#38;#x00A6;"> <!--  BROKEN BAR  -->
+<!ENTITY not	"&#38;#x00AC;"> <!--  NOT SIGN  -->
+<!ENTITY sung	"&#38;#x2669;"> <!--    -->
+<!ENTITY excl	"&#38;#x0021;"> <!--  EXCLAMATION MARK  -->
+<!ENTITY iexcl	"&#38;#x00A1;"> <!--  INVERTED EXCLAMATION MARK  -->
+<!ENTITY quot	"&#38;#x0022;"> <!--  QUOTATION MARK  -->
+<!ENTITY apos	"&#38;#x0027;"> <!--  APOSTROPHE  -->
+<!ENTITY lpar	"&#38;#x0028;"> <!--  LEFT PARENTHESIS  -->
+<!ENTITY rpar	"&#38;#x0029;"> <!--  RIGHT PARENTHESIS  -->
+<!ENTITY comma	"&#38;#x002C;"> <!--  COMMA  -->
+<!ENTITY lowbar	"&#38;#x005F;"> <!--  LOW LINE  -->
+<!ENTITY hyphen	"&#38;#xE4F8;"> <!--    -->
+<!ENTITY period	"&#38;#x002E;"> <!--  FULL STOP  -->
+<!ENTITY sol	"&#38;#x002F;"> <!--  SOLIDUS  -->
+<!ENTITY colon	"&#38;#x003A;"> <!--  COLON  -->
+<!ENTITY semi	"&#38;#x003B;"> <!--  SEMICOLON  -->
+<!ENTITY quest	"&#38;#x003F;"> <!--  QUESTION MARK  -->
+<!ENTITY iquest	"&#38;#x00BF;"> <!--  INVERTED QUESTION MARK  -->
+<!ENTITY laquo	"&#38;#x00AB;"> <!--  LEFT-POINTING DOUBLE ANGLE QUOTATION MARK  -->
+<!ENTITY raquo	"&#38;#x00BB;"> <!--  RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK  -->
+<!ENTITY lsquo	"&#38;#x2018;"> <!--    -->
+<!ENTITY rsquo	"&#38;#x2019;"> <!--  RIGHT SINGLE QUOTATION MARK  -->
+<!ENTITY ldquo	"&#38;#x201C;"> <!--    -->
+<!ENTITY rdquo	"&#38;#x201D;"> <!--  RIGHT DOUBLE QUOTATION MARK  -->
+<!ENTITY nbsp	"&#38;#x00A0;"> <!--  NO-BREAK SPACE  -->
+<!ENTITY shy	"&#38;#x00AD;"> <!--  SOFT HYPHEN  -->
+ <!-- ******************************************************** -->
+<!-- 
+    Title : iso-grk1.ent
+ 
+    Desc. : ENTITIES  Greek Letters
+          
+    $Id: iso-grk1.ent,v 1.1 2004/03/02 11:50:30 bultelle Exp $
+ -->
+<!-- ******************************************************** -->
+
+<!--  iso-grk1.ent produced by Norman Walsh for the XML version of DocBook  -->
+
+<!--  Derived from the corresponding ISO 8879 standard entity set
+     and the Unicode character mappings provided by Sebastian Rahtz  -->
+
+<!ENTITY agr	"&#38;#x03B1;"> <!--    -->
+<!ENTITY Agr	"&#38;#x0391;"> <!--  GREEK CAPITAL LETTER ALPHA  -->
+<!ENTITY bgr	"&#38;#x03B2;"> <!--  GREEK SMALL LETTER BETA  -->
+<!ENTITY Bgr	"&#38;#x0392;"> <!--  GREEK CAPITAL LETTER BETA  -->
+<!ENTITY ggr	"&#38;#x03B3;"> <!--  GREEK SMALL LETTER GAMMA  -->
+<!ENTITY Ggr	"&#38;#x0393;"> <!--  GREEK CAPITAL LETTER GAMMA  -->
+<!ENTITY dgr	"&#38;#x03B4;"> <!--  GREEK SMALL LETTER DELTA  -->
+<!ENTITY Dgr	"&#38;#x0394;"> <!--  GREEK CAPITAL LETTER DELTA  -->
+<!ENTITY egr	"&#38;#x03B5;"> <!--    -->
+<!ENTITY Egr	"&#38;#x0395;"> <!--  GREEK CAPITAL LETTER EPSILON  -->
+<!ENTITY zgr	"&#38;#x03B6;"> <!--  GREEK SMALL LETTER ZETA  -->
+<!ENTITY Zgr	"&#38;#x0396;"> <!--  GREEK CAPITAL LETTER ZETA  -->
+<!ENTITY eegr	"&#38;#x03B7;"> <!--  GREEK SMALL LETTER ETA  -->
+<!ENTITY EEgr	"&#38;#x0397;"> <!--  GREEK CAPITAL LETTER ETA  -->
+<!ENTITY thgr	"&#38;#x03B8;"> <!--    -->
+<!ENTITY THgr	"&#38;#x0398;"> <!--  GREEK CAPITAL LETTER THETA  -->
+<!ENTITY igr	"&#38;#x03B9;"> <!--  GREEK SMALL LETTER IOTA  -->
+<!ENTITY Igr	"&#38;#x0399;"> <!--  GREEK CAPITAL LETTER IOTA  -->
+<!ENTITY kgr	"&#38;#x03BA;"> <!--  GREEK SMALL LETTER KAPPA  -->
+<!ENTITY Kgr	"&#38;#x039A;"> <!--  GREEK CAPITAL LETTER KAPPA  -->
+<!ENTITY lgr	"&#38;#x03BB;"> <!--  GREEK SMALL LETTER LAMDA  -->
+<!ENTITY Lgr	"&#38;#x039B;"> <!--  GREEK CAPITAL LETTER LAMDA  -->
+<!ENTITY mgr	"&#38;#x03BC;"> <!--  GREEK SMALL LETTER MU  -->
+<!ENTITY Mgr	"&#38;#x039C;"> <!--  GREEK CAPITAL LETTER MU  -->
+<!ENTITY ngr	"&#38;#x03BD;"> <!--  GREEK SMALL LETTER NU  -->
+<!ENTITY Ngr	"&#38;#x039D;"> <!--  GREEK CAPITAL LETTER NU  -->
+<!ENTITY xgr	"&#38;#x03BE;"> <!--  GREEK SMALL LETTER XI  -->
+<!ENTITY Xgr	"&#38;#x039E;"> <!--  GREEK CAPITAL LETTER XI  -->
+<!ENTITY ogr	"&#38;#x03BF;"> <!--  GREEK SMALL LETTER OMICRON  -->
+<!ENTITY Ogr	"&#38;#x039F;"> <!--  GREEK CAPITAL LETTER OMICRON  -->
+<!ENTITY pgr	"&#38;#x03C0;"> <!--  GREEK SMALL LETTER PI  -->
+<!ENTITY Pgr	"&#38;#x03A0;"> <!--  GREEK CAPITAL LETTER PI  -->
+<!ENTITY rgr	"&#38;#x03C1;"> <!--  GREEK SMALL LETTER RHO  -->
+<!ENTITY Rgr	"&#38;#x03A1;"> <!--  GREEK CAPITAL LETTER RHO  -->
+<!ENTITY sgr	"&#38;#x03C3;"> <!--  GREEK SMALL LETTER SIGMA  -->
+<!ENTITY Sgr	"&#38;#x03A3;"> <!--  GREEK CAPITAL LETTER SIGMA  -->
+<!ENTITY sfgr	"&#38;#x03C2;"> <!--    -->
+<!ENTITY tgr	"&#38;#x03C4;"> <!--  GREEK SMALL LETTER TAU  -->
+<!ENTITY Tgr	"&#38;#x03A4;"> <!--  GREEK CAPITAL LETTER TAU  -->
+<!ENTITY ugr	"&#38;#x03C5;"> <!--  GREEK SMALL LETTER UPSILON  -->
+<!ENTITY Ugr	"&#38;#x03A5;"> <!--    -->
+<!ENTITY phgr	"&#38;#x03C6;"> <!--  GREEK SMALL LETTER PHI  -->
+<!ENTITY PHgr	"&#38;#x03A6;"> <!--  GREEK CAPITAL LETTER PHI  -->
+<!ENTITY khgr	"&#38;#x03C7;"> <!--  GREEK SMALL LETTER CHI  -->
+<!ENTITY KHgr	"&#38;#x03A7;"> <!--  GREEK CAPITAL LETTER CHI  -->
+<!ENTITY psgr	"&#38;#x03C8;"> <!--  GREEK SMALL LETTER PSI  -->
+<!ENTITY PSgr	"&#38;#x03A8;"> <!--  GREEK CAPITAL LETTER PSI  -->
+<!ENTITY ohgr	"&#38;#x03C9;"> <!--  GREEK SMALL LETTER OMEGA  -->
+<!ENTITY OHgr	"&#38;#x03A9;"> <!--  GREEK CAPITAL LETTER OMEGA  -->
+ <!-- ******************************************************** -->
+<!-- 
+    Title : iso-grk2.ent
+ 
+    Desc. : ENTITIES Monotoniko Greek
+          
+    $Id: iso-grk2.ent,v 1.1 2004/03/02 11:50:31 bultelle Exp $
+ -->
+<!-- ******************************************************** -->
+
+<!--  iso-grk2.ent produced by Norman Walsh for the XML version of DocBook  -->
+
+<!--  Derived from the corresponding ISO 8879 standard entity set
+     and the Unicode character mappings provided by Sebastian Rahtz  -->
+
+<!ENTITY aacgr	"&#38;#x03AC;"> <!--  GREEK SMALL LETTER ALPHA WITH TONOS  -->
+<!ENTITY Aacgr	"&#38;#x0386;"> <!--  GREEK CAPITAL LETTER ALPHA WITH TONOS  -->
+<!ENTITY eacgr	"&#38;#x03AD;"> <!--  GREEK SMALL LETTER EPSILON WITH TONOS  -->
+<!ENTITY Eacgr	"&#38;#x0388;"> <!--  GREEK CAPITAL LETTER EPSILON WITH TONOS  -->
+<!ENTITY eeacgr	"&#38;#x03AE;"> <!--  GREEK SMALL LETTER ETA WITH TONOS  -->
+<!ENTITY EEacgr	"&#38;#x0389;"> <!--  GREEK CAPITAL LETTER ETA WITH TONOS  -->
+<!ENTITY idigr	"&#38;#x03CA;"> <!--  GREEK SMALL LETTER IOTA WITH DIALYTIKA  -->
+<!ENTITY Idigr	"&#38;#x03AA;"> <!--  GREEK CAPITAL LETTER IOTA WITH DIALYTIKA  -->
+<!ENTITY iacgr	"&#38;#x03AF;"> <!--  GREEK SMALL LETTER IOTA WITH TONOS  -->
+<!ENTITY Iacgr	"&#38;#x038A;"> <!--  GREEK CAPITAL LETTER IOTA WITH TONOS  -->
+<!ENTITY idiagr	"&#38;#x0390;"> <!--  GREEK SMALL LETTER IOTA WITH DIALYTIKA AND TONOS  -->
+<!ENTITY oacgr	"&#38;#x03CC;"> <!--  GREEK SMALL LETTER OMICRON WITH TONOS  -->
+<!ENTITY Oacgr	"&#38;#x038C;"> <!--  GREEK CAPITAL LETTER OMICRON WITH TONOS  -->
+<!ENTITY udigr	"&#38;#x03CB;"> <!--  GREEK SMALL LETTER UPSILON WITH DIALYTIKA  -->
+<!ENTITY Udigr	"&#38;#x03AB;"> <!--  GREEK CAPITAL LETTER UPSILON WITH DIALYTIKA  -->
+<!ENTITY uacgr	"&#38;#x03CD;"> <!--  GREEK SMALL LETTER UPSILON WITH TONOS  -->
+<!ENTITY Uacgr	"&#38;#x038E;"> <!--  GREEK CAPITAL LETTER UPSILON WITH TONOS  -->
+<!ENTITY udiagr	"&#38;#x03B0;"> <!--  GREEK SMALL LETTER UPSILON WITH DIALYTIKA AND TONOS  -->
+<!ENTITY ohacgr	"&#38;#x03CE;"> <!--  GREEK SMALL LETTER OMEGA WITH TONOS  -->
+<!ENTITY OHacgr	"&#38;#x038F;"> <!--  GREEK CAPITAL LETTER OMEGA WITH TONOS  -->
+ <!-- ******************************************************** -->
+<!-- 
+    Title : iso-grk3.ent
+ 
+    Desc. : ENTITIES Greek Letters
+          
+    $Id: iso-grk3.ent,v 1.1 2004/03/02 11:50:32 bultelle Exp $
+ -->
+<!-- ******************************************************** -->
+
+<!--  iso-grk3.ent produced by Norman Walsh for the XML version of DocBook  -->
+
+<!--  Derived from the corresponding ISO 8879 standard entity set
+     and the Unicode character mappings provided by Sebastian Rahtz  -->
+
+<!ENTITY alpha	"&#38;#x03B1;"> <!--    -->
+<!ENTITY beta	"&#38;#x03B2;"> <!--  GREEK SMALL LETTER BETA  -->
+<!ENTITY gamma	"&#38;#x03B3;"> <!--  GREEK SMALL LETTER GAMMA  -->
+<!ENTITY Gamma	"&#38;#x0393;"> <!--  GREEK CAPITAL LETTER GAMMA  -->
+<!ENTITY gammad	"&#38;#x03DC;"> <!--  GREEK LETTER DIGAMMA  -->
+<!ENTITY delta	"&#38;#x03B4;"> <!--  GREEK SMALL LETTER DELTA  -->
+<!ENTITY Delta	"&#38;#x0394;"> <!--  GREEK CAPITAL LETTER DELTA  -->
+<!ENTITY epsi	"&#38;#x03B5;"> <!--    -->
+<!ENTITY epsiv	"&#38;#x025B;"> <!--    -->
+<!ENTITY epsis	"&#38;#x220A;"> <!--    -->
+<!ENTITY zeta	"&#38;#x03B6;"> <!--  GREEK SMALL LETTER ZETA  -->
+<!ENTITY eta	"&#38;#x03B7;"> <!--  GREEK SMALL LETTER ETA  -->
+<!ENTITY thetas	"&#38;#x03B8;"> <!--    -->
+<!ENTITY Theta	"&#38;#x0398;"> <!--  GREEK CAPITAL LETTER THETA  -->
+<!ENTITY thetav	"&#38;#x03D1;"> <!--    -->
+<!ENTITY iota	"&#38;#x03B9;"> <!--  GREEK SMALL LETTER IOTA  -->
+<!ENTITY kappa	"&#38;#x03BA;"> <!--  GREEK SMALL LETTER KAPPA  -->
+<!ENTITY kappav	"&#38;#x03F0;"> <!--  GREEK KAPPA SYMBOL  -->
+<!ENTITY lambda	"&#38;#x03BB;"> <!--  GREEK SMALL LETTER LAMDA  -->
+<!ENTITY Lambda	"&#38;#x039B;"> <!--  GREEK CAPITAL LETTER LAMDA  -->
+<!ENTITY mu	"&#38;#x03BC;"> <!--  GREEK SMALL LETTER MU  -->
+<!ENTITY nu	"&#38;#x03BD;"> <!--  GREEK SMALL LETTER NU  -->
+<!ENTITY xi	"&#38;#x03BE;"> <!--  GREEK SMALL LETTER XI  -->
+<!ENTITY Xi	"&#38;#x039E;"> <!--  GREEK CAPITAL LETTER XI  -->
+<!ENTITY pi	"&#38;#x03C0;"> <!--  GREEK SMALL LETTER PI  -->
+<!ENTITY piv	"&#38;#x03D6;"> <!--  GREEK PI SYMBOL  -->
+<!ENTITY Pi	"&#38;#x03A0;"> <!--  GREEK CAPITAL LETTER PI  -->
+<!ENTITY rho	"&#38;#x03C1;"> <!--  GREEK SMALL LETTER RHO  -->
+<!ENTITY rhov	"&#38;#x03F1;"> <!--  GREEK RHO SYMBOL  -->
+<!ENTITY sigma	"&#38;#x03C3;"> <!--  GREEK SMALL LETTER SIGMA  -->
+<!ENTITY Sigma	"&#38;#x03A3;"> <!--  GREEK CAPITAL LETTER SIGMA  -->
+<!ENTITY sigmav	"&#38;#x03C2;"> <!--    -->
+<!ENTITY tau	"&#38;#x03C4;"> <!--  GREEK SMALL LETTER TAU  -->
+<!ENTITY upsi	"&#38;#x03C5;"> <!--  GREEK SMALL LETTER UPSILON  -->
+<!ENTITY Upsi	"&#38;#x03D2;"> <!--    -->
+<!ENTITY phis	"&#38;#x03C6;"> <!--  GREEK SMALL LETTER PHI  -->
+<!ENTITY Phi	"&#38;#x03A6;"> <!--  GREEK CAPITAL LETTER PHI  -->
+<!ENTITY phiv	"&#38;#x03D5;"> <!--  GREEK PHI SYMBOL  -->
+<!ENTITY chi	"&#38;#x03C7;"> <!--  GREEK SMALL LETTER CHI  -->
+<!ENTITY psi	"&#38;#x03C8;"> <!--  GREEK SMALL LETTER PSI  -->
+<!ENTITY Psi	"&#38;#x03A8;"> <!--  GREEK CAPITAL LETTER PSI  -->
+<!ENTITY omega	"&#38;#x03C9;"> <!--  GREEK SMALL LETTER OMEGA  -->
+<!ENTITY Omega	"&#38;#x03A9;"> <!--  GREEK CAPITAL LETTER OMEGA  -->
+
+<!-- ******************************************************** -->
+<!-- 
+    Title : iso-grk4.ent
+ 
+    Desc. : ENTITIES Alternative Greek Symbols
+          
+    $Id: iso-grk4.ent,v 1.1 2004/03/02 11:50:33 bultelle Exp $
+ -->
+<!-- ******************************************************** -->
+
+<!--  iso-grk4.ent produced by Norman Walsh for the XML version of DocBook  -->
+
+<!--  Derived from the corresponding ISO 8879 standard entity set
+     and the Unicode character mappings provided by Sebastian Rahtz  -->
+
+<!ENTITY b.alpha	"&#38;#x03B1;"> <!--    -->
+<!ENTITY b.beta	"&#38;#x03B2;"> <!--  GREEK SMALL LETTER BETA  -->
+<!ENTITY b.gamma	"&#38;#x03B3;"> <!--  GREEK SMALL LETTER GAMMA  -->
+<!ENTITY b.Gamma	"&#38;#x0393;"> <!--  GREEK CAPITAL LETTER GAMMA  -->
+<!ENTITY b.gammad	"&#38;#x03DC;"> <!--  GREEK LETTER DIGAMMA  -->
+<!ENTITY b.delta	"&#38;#x03B4;"> <!--  GREEK SMALL LETTER DELTA  -->
+<!ENTITY b.Delta	"&#38;#x0394;"> <!--  GREEK CAPITAL LETTER DELTA  -->
+<!ENTITY b.epsi	"&#38;#x03B5;"> <!--    -->
+<!ENTITY b.epsiv	"&#38;#x03B5;"> <!--    -->
+<!ENTITY b.epsis	"&#38;#x03B5;"> <!--    -->
+<!ENTITY b.zeta	"&#38;#x03B6;"> <!--  GREEK SMALL LETTER ZETA  -->
+<!ENTITY b.eta	"&#38;#x03B7;"> <!--  GREEK SMALL LETTER ETA  -->
+<!ENTITY b.thetas	"&#38;#x03B8;"> <!--    -->
+<!ENTITY b.Theta	"&#38;#x0398;"> <!--  GREEK CAPITAL LETTER THETA  -->
+<!ENTITY b.thetav	"&#38;#x03D1;"> <!--    -->
+<!ENTITY b.iota	"&#38;#x03B9;"> <!--  GREEK SMALL LETTER IOTA  -->
+<!ENTITY b.kappa	"&#38;#x03BA;"> <!--  GREEK SMALL LETTER KAPPA  -->
+<!ENTITY b.kappav	"&#38;#x03F0;"> <!--  GREEK KAPPA SYMBOL  -->
+<!ENTITY b.lambda	"&#38;#x03BB;"> <!--  GREEK SMALL LETTER LAMDA  -->
+<!ENTITY b.Lambda	"&#38;#x039B;"> <!--  GREEK CAPITAL LETTER LAMDA  -->
+<!ENTITY b.mu	"&#38;#x03BC;"> <!--  GREEK SMALL LETTER MU  -->
+<!ENTITY b.nu	"&#38;#x03BD;"> <!--  GREEK SMALL LETTER NU  -->
+<!ENTITY b.xi	"&#38;#x03BE;"> <!--  GREEK SMALL LETTER XI  -->
+<!ENTITY b.Xi	"&#38;#x039E;"> <!--  GREEK CAPITAL LETTER XI  -->
+<!ENTITY b.pi	"&#38;#x03C0;"> <!--  GREEK SMALL LETTER PI  -->
+<!ENTITY b.Pi	"&#38;#x03A0;"> <!--  GREEK CAPITAL LETTER PI  -->
+<!ENTITY b.piv	"&#38;#x03D6;"> <!--  GREEK PI SYMBOL  -->
+<!ENTITY b.rho	"&#38;#x03C1;"> <!--  GREEK SMALL LETTER RHO  -->
+<!ENTITY b.rhov	"&#38;#x03F1;"> <!--  GREEK RHO SYMBOL  -->
+<!ENTITY b.sigma	"&#38;#x03C3;"> <!--  GREEK SMALL LETTER SIGMA  -->
+<!ENTITY b.Sigma	"&#38;#x03A3;"> <!--  GREEK CAPITAL LETTER SIGMA  -->
+<!ENTITY b.sigmav	"&#38;#x03C2;"> <!--    -->
+<!ENTITY b.tau	"&#38;#x03C4;"> <!--  GREEK SMALL LETTER TAU  -->
+<!ENTITY b.upsi	"&#38;#x03C5;"> <!--  GREEK SMALL LETTER UPSILON  -->
+<!ENTITY b.Upsi	"&#38;#x03D2;"> <!--    -->
+<!ENTITY b.phis	"&#38;#x03C6;"> <!--  GREEK SMALL LETTER PHI  -->
+<!ENTITY b.Phi	"&#38;#x03A6;"> <!--  GREEK CAPITAL LETTER PHI  -->
+<!ENTITY b.phiv	"&#38;#x03D5;"> <!--  GREEK PHI SYMBOL  -->
+<!ENTITY b.chi	"&#38;#x03C7;"> <!--  GREEK SMALL LETTER CHI  -->
+<!ENTITY b.psi	"&#38;#x03C8;"> <!--  GREEK SMALL LETTER PSI  -->
+<!ENTITY b.Psi	"&#38;#x03A8;"> <!--  GREEK CAPITAL LETTER PSI  -->
+<!ENTITY b.omega	"&#38;#x03C9;"> <!--  GREEK SMALL LETTER OMEGA  -->
+<!ENTITY b.Omega	"&#38;#x03A9;"> <!--  GREEK CAPITAL LETTER OMEGA  -->
+ <!-- ******************************************************** -->
+<!-- 
+    Title : iso-lat1.ent
+ 
+    Desc. : ENTITIES Numeric and Special Graphic
+          
+    $Id: iso-lat1.ent,v 1.1 2004/03/02 11:50:34 bultelle Exp $
+ -->
+<!-- ******************************************************** -->
+
+<!--  iso-lat1.ent produced by Norman Walsh for the XML version of DocBook  -->
+
+<!--  Derived from the corresponding ISO 8879 standard entity set
+     and the Unicode character mappings provided by Sebastian Rahtz  -->
+
+<!ENTITY aacute	"&#38;#x00E1;"> <!--  LATIN SMALL LETTER A WITH ACUTE  -->
+<!ENTITY Aacute	"&#38;#x00C1;"> <!--  LATIN CAPITAL LETTER A WITH ACUTE  -->
+<!ENTITY acirc	"&#38;#x00E2;"> <!--  LATIN SMALL LETTER A WITH CIRCUMFLEX  -->
+<!ENTITY Acirc	"&#38;#x00C2;"> <!--  LATIN CAPITAL LETTER A WITH CIRCUMFLEX  -->
+<!ENTITY agrave	"&#38;#x00E0;"> <!--  LATIN SMALL LETTER A WITH GRAVE  -->
+<!ENTITY Agrave	"&#38;#x00C0;"> <!--  LATIN CAPITAL LETTER A WITH GRAVE  -->
+<!ENTITY aring	"&#38;#x00E5;"> <!--  LATIN SMALL LETTER A WITH RING ABOVE  -->
+<!ENTITY Aring	"&#38;#x00C5;"> <!--  LATIN CAPITAL LETTER A WITH RING ABOVE  -->
+<!ENTITY atilde	"&#38;#x00E3;"> <!--  LATIN SMALL LETTER A WITH TILDE  -->
+<!ENTITY Atilde	"&#38;#x00C3;"> <!--  LATIN CAPITAL LETTER A WITH TILDE  -->
+<!ENTITY auml	"&#38;#x00E4;"> <!--  LATIN SMALL LETTER A WITH DIAERESIS  -->
+<!ENTITY Auml	"&#38;#x00C4;"> <!--  LATIN CAPITAL LETTER A WITH DIAERESIS  -->
+<!ENTITY aelig	"&#38;#x00E6;"> <!--  LATIN SMALL LETTER AE  -->
+<!ENTITY AElig	"&#38;#x00C6;"> <!--  LATIN CAPITAL LETTER AE  -->
+<!ENTITY ccedil	"&#38;#x00E7;"> <!--  LATIN SMALL LETTER C WITH CEDILLA  -->
+<!ENTITY Ccedil	"&#38;#x00C7;"> <!--  LATIN CAPITAL LETTER C WITH CEDILLA  -->
+<!ENTITY eth	"&#38;#x00D0;"> <!--  LATIN SMALL LETTER ETH  -->
+<!ENTITY ETH	"&#38;#x00F0;"> <!--  LATIN CAPITAL LETTER ETH  -->
+<!ENTITY eacute	"&#38;#x00E9;"> <!--  LATIN SMALL LETTER E WITH ACUTE  -->
+<!ENTITY Eacute	"&#38;#x00C9;"> <!--  LATIN CAPITAL LETTER E WITH ACUTE  -->
+<!ENTITY ecirc	"&#38;#x00EA;"> <!--  LATIN SMALL LETTER E WITH CIRCUMFLEX  -->
+<!ENTITY Ecirc	"&#38;#x00CA;"> <!--  LATIN CAPITAL LETTER E WITH CIRCUMFLEX  -->
+<!ENTITY egrave	"&#38;#x00E8;"> <!--  LATIN SMALL LETTER E WITH GRAVE  -->
+<!ENTITY Egrave	"&#38;#x00C8;"> <!--  LATIN CAPITAL LETTER E WITH GRAVE  -->
+<!ENTITY euml	"&#38;#x00EB;"> <!--  LATIN SMALL LETTER E WITH DIAERESIS  -->
+<!ENTITY Euml	"&#38;#x00CB;"> <!--  LATIN CAPITAL LETTER E WITH DIAERESIS  -->
+<!ENTITY iacute	"&#38;#x00ED;"> <!--  LATIN SMALL LETTER I WITH ACUTE  -->
+<!ENTITY Iacute	"&#38;#x00CD;"> <!--  LATIN CAPITAL LETTER I WITH ACUTE  -->
+<!ENTITY icirc	"&#38;#x00EE;"> <!--  LATIN SMALL LETTER I WITH CIRCUMFLEX  -->
+<!ENTITY Icirc	"&#38;#x00CE;"> <!--  LATIN CAPITAL LETTER I WITH CIRCUMFLEX  -->
+<!ENTITY igrave	"&#38;#x00EC;"> <!--  LATIN SMALL LETTER I WITH GRAVE  -->
+<!ENTITY Igrave	"&#38;#x00CC;"> <!--  LATIN CAPITAL LETTER I WITH GRAVE  -->
+<!ENTITY iuml	"&#38;#x00EF;"> <!--  LATIN SMALL LETTER I WITH DIAERESIS  -->
+<!ENTITY Iuml	"&#38;#x00CF;"> <!--  LATIN CAPITAL LETTER I WITH DIAERESIS  -->
+<!ENTITY ntilde	"&#38;#x00F1;"> <!--  LATIN SMALL LETTER N WITH TILDE  -->
+<!ENTITY Ntilde	"&#38;#x00D1;"> <!--  LATIN CAPITAL LETTER N WITH TILDE  -->
+<!ENTITY oacute	"&#38;#x00F3;"> <!--  LATIN SMALL LETTER O WITH ACUTE  -->
+<!ENTITY Oacute	"&#38;#x00D3;"> <!--  LATIN CAPITAL LETTER O WITH ACUTE  -->
+<!ENTITY ocirc	"&#38;#x00F4;"> <!--  LATIN SMALL LETTER O WITH CIRCUMFLEX  -->
+<!ENTITY Ocirc	"&#38;#x00D4;"> <!--  LATIN CAPITAL LETTER O WITH CIRCUMFLEX  -->
+<!ENTITY ograve	"&#38;#x00F2;"> <!--  LATIN SMALL LETTER O WITH GRAVE  -->
+<!ENTITY Ograve	"&#38;#x00D2;"> <!--  LATIN CAPITAL LETTER O WITH GRAVE  -->
+<!ENTITY oslash	"&#38;#x00F8;"> <!--  LATIN SMALL LETTER O WITH STROKE  -->
+<!ENTITY Oslash	"&#38;#x00D8;"> <!--  LATIN CAPITAL LETTER O WITH STROKE  -->
+<!ENTITY otilde	"&#38;#x00F5;"> <!--  LATIN SMALL LETTER O WITH TILDE  -->
+<!ENTITY Otilde	"&#38;#x00D5;"> <!--  LATIN CAPITAL LETTER O WITH TILDE  -->
+<!ENTITY ouml	"&#38;#x00F6;"> <!--  LATIN SMALL LETTER O WITH DIAERESIS  -->
+<!ENTITY Ouml	"&#38;#x00D6;"> <!--  LATIN CAPITAL LETTER O WITH DIAERESIS  -->
+<!ENTITY szlig	"&#38;#x00DF;"> <!--  LATIN SMALL LETTER SHARP S  -->
+<!ENTITY thorn	"&#38;#x00FE;"> <!--  LATIN SMALL LETTER THORN  -->
+<!ENTITY THORN	"&#38;#x00DE;"> <!--  LATIN CAPITAL LETTER THORN  -->
+<!ENTITY uacute	"&#38;#x00FA;"> <!--  LATIN SMALL LETTER U WITH ACUTE  -->
+<!ENTITY Uacute	"&#38;#x00DA;"> <!--  LATIN CAPITAL LETTER U WITH ACUTE  -->
+<!ENTITY ucirc	"&#38;#x00FB;"> <!--  LATIN SMALL LETTER U WITH CIRCUMFLEX  -->
+<!ENTITY Ucirc	"&#38;#x00DB;"> <!--  LATIN CAPITAL LETTER U WITH CIRCUMFLEX  -->
+<!ENTITY ugrave	"&#38;#x00F9;"> <!--  LATIN SMALL LETTER U WITH GRAVE  -->
+<!ENTITY Ugrave	"&#38;#x00D9;"> <!--  LATIN CAPITAL LETTER U WITH GRAVE  -->
+<!ENTITY uuml	"&#38;#x00FC;"> <!--  LATIN SMALL LETTER U WITH DIAERESIS  -->
+<!ENTITY Uuml	"&#38;#x00DC;"> <!--  LATIN CAPITAL LETTER U WITH DIAERESIS  -->
+<!ENTITY yacute	"&#38;#x00FD;"> <!--  LATIN SMALL LETTER Y WITH ACUTE  -->
+<!ENTITY Yacute	"&#38;#x00DD;"> <!--  LATIN CAPITAL LETTER Y WITH ACUTE  -->
+<!ENTITY yuml	"&#38;#x00FF;"> <!--  LATIN SMALL LETTER Y WITH DIAERESIS  -->
+ 
+<!-- * -->
+
+
+
+
+<!-- ============================================================== -->
+<!--              EIPC  TOP LEVEL STRUCTURE                         -->
+<!-- ============================================================== -->
+
+<!ELEMENT eipc   ((title, partinfo+, legalntc?, mfmatr, dplist) | increv | tr+)>
+<!ATTLIST eipc   
+          model       CDATA                             #REQUIRED
+          oidate       %number;                            #REQUIRED
+          docnbr      CDATA                             #IMPLIED
+          cus           CDATA                             #IMPLIED
+          cusname   CDATA                             #IMPLIED
+          tsn            CDATA                             #REQUIRED
+          lang           CDATA                             #REQUIRED
+          revdate      %number;                            #REQUIRED
+          spl            CDATA                             #REQUIRED
+          prtnrspl      CDATA                             #IMPLIED
+          chg           (N|R|U)                           #REQUIRED
+          efflen         %number;                             #IMPLIED
+          efftype       CDATA                              #IMPLIED        
+          OverlayFormatStyle (draft | final | preliminary | validation) "final" 
+          edit      (xml | sgml)                  "sgml"              >
+
+<!-- ============================================================== -->
+<!--              INCREMENTAL REVISION                              -->
+<!-- ============================================================== -->
+
+<!ELEMENT increv   (transltr?, legalntc?, (intro | appendix | optlist | nutopt | matlist | vendlist 
+                        | sblist | clmpopt | glossary | effclist | chapter | section | unit | figure | sheet 
+                        | graphic)+)                                  >
+
+<!ELEMENT tr       (trfmatr, (chapter | section+ | unit+ | figure+ | legalntc | intro | vendlist 
+                        | glossary | optlist | sblist | effclist | nutopt | clmpopt | matlist | appendix
+                        | sheet+ | graphic))                          >
+
+<!ELEMENT trfmatr   (title, trreason?, ((%text-no-note;)*)?)                >
+<!ATTLIST trfmatr 
+          trnbr     CDATA                             #REQUIRED 
+          trdel     CDATA                             #IMPLIED
+          trrepl    CDATA                             #IMPLIED
+          issdate   CDATA                             #IMPLIED        >
+
+<!ELEMENT trreason  (#PCDATA)                                    >
+
+<!--  =========================================================  -->
+<!--  Part information  -->
+<!--  =========================================================  -->
+
+<!ELEMENT partinfo  (title?, (cmpnom?, mfrpnr)+)                 >
+<!ATTLIST partinfo
+          model     CDATA                            #IMPLIED    >
+
+<!ELEMENT cmpnom    (#PCDATA)                                    >
+<!ELEMENT mfrpnr    (pnr, mfr, altpnr*)                          >
+<!ELEMENT altpnr    (pnr, mfr)                                   >
+<!-- * -->
+<!-- ============================================================== -->
+<!--       Legal Notice Information                                 -->
+<!-- ============================================================== -->
+
+<!ELEMENT legalntc  (exprtcl | cpyrght | proptary | geninfo)+     >
+<!ATTLIST legalntc
+          %revatt;                                                    >
+
+<!ELEMENT proptary (fullstmt, partstmt?)                         >
+<!ELEMENT fullstmt  (title?, cpyrght?, (para)+)           >
+<!ELEMENT partstmt  (title?, (para)+)                     >
+<!ELEMENT exprtcl  (para | unlist | numlist | note)+             >
+<!ELEMENT cpyrght   (year*, holder*, geninfo)                     >
+<!ELEMENT year      (#PCDATA)                                     >
+<!ELEMENT holder   (#PCDATA)                                     >
+<!ELEMENT geninfo    (para | unlist | numlist | note)+             >
+
+<!-- ============================================================== -->
+<!--                    FRONT MATTER                                -->
+<!-- ============================================================== -->
+<!--                                                                -->
+<!ELEMENT mfmatr    (transltr?, trlist?, intro, (vendlist | glossary | optlist | sblist | effclist | nutopt | clmpopt
+                         | matlist | appendix)+)                      >
+
+<!ELEMENT intro     (title, (%text-no-note;)+, graphic*)                                   >
+<!ATTLIST intro
+          %revatt;                                                    >
+ 
+<!ELEMENT transltr  (chgdesc*, title, %w.c;, (%text;)+)                 >
+<!ATTLIST transltr
+          oldkey    %name;                              #IMPLIED
+          %revatt;                                                    >
+<!ELEMENT chgdesc   (#PCDATA)                                    >
+
+<!ELEMENT trlist    (title, (%text-no-note;)*, (trdata+ | isempty))         >
+<!ATTLIST trlist
+          %revatt;                                               >
+
+<!ELEMENT trdata    (trnbr, trstatus, trloc+)                    >
+<!ELEMENT trnbr     (#PCDATA)                                    >
+<!ELEMENT trstatus  (#PCDATA)                                    >
+<!ELEMENT trloc     (#PCDATA)                                    >
+
+<!--                                                                -->
+<!ELEMENT vendlist  (title, (%text-no-note;)*, vendata+)                    >
+<!ATTLIST vendlist
+          %revatt;                                                    >
+<!ELEMENT vendata   (mfr, mad+)                                  >
+<!ELEMENT mfr       (#PCDATA)                                    >
+<!ELEMENT mad       (madline | phone | fax | url | email
+                         | mfrcont)+                                  >
+<!ATTLIST mad     
+          mfropt    CDATA                             #IMPLIED        >
+<!ELEMENT madline   (#PCDATA)                                    >
+<!ELEMENT phone     (#PCDATA)                                    >
+<!ELEMENT fax       (#PCDATA)                                    >
+<!ELEMENT url       (#PCDATA)                                    >
+<!ELEMENT email     (#PCDATA)                                    >
+<!ELEMENT mfrcont   (#PCDATA)                                    >
+<!--                                                                -->
+<!ELEMENT glossary  (title, (%text-no-note;)*, glosdata+)                   >
+<!ATTLIST glossary
+          %revatt;                                                    >
+<!ELEMENT glosdata  (term, def)                                  >
+<!ELEMENT term      (#PCDATA)                                    >
+<!ELEMENT def       (#PCDATA)                                    >
+<!--                                                                -->
+<!ELEMENT optlist   (title?, (%text-no-note;)*, optdata+)                   >
+<!ATTLIST optlist 
+          %revatt;                                                    >
+<!ELEMENT optdata   (pnr, kwd, (lookdif?, pnr)+)                 >
+<!ELEMENT lookdif   (#PCDATA)                                    >
+<!--                                                                -->
+<!ELEMENT sblist    (title, (%text-no-list1;)*, sbdata*)                     >
+<!ATTLIST sblist  
+          %revatt;                                                    >
+<!ELEMENT sbdata    (sbnbr, sbtitle?, issdate?, ics?)                      >
+<!ELEMENT sbnbr     (#PCDATA)                                    >
+<!ATTLIST sbnbr  
+          sbtype    (PRE|POST)                        #IMPLIED
+          sbcat     %yesorno;                         "0"
+          sbpart    CDATA                             #IMPLIED        >
+<!--                                                                -->
+<!ELEMENT sbtitle   (#PCDATA)                                    >
+<!ELEMENT issdate   (#PCDATA)                                    >
+<!ELEMENT ics       (#PCDATA)                                    >
+<!ELEMENT nutopt    (title?, (%text-no-note;)*, option+)                    >
+<!ATTLIST nutopt  
+          %revatt;                                                    >
+<!ELEMENT option    (pnr, detail+)                               >
+<!ELEMENT detail    (pnr, nom, mfr?, csd?)                       >
+<!--                                                                -->
+<!ELEMENT effclist  (title, effcdata+)                           >
+<!ATTLIST effclist 
+          %revatt;                                                    >
+<!ELEMENT effcdata  (effcode, effect, effcdesc, effcloc*)        >
+<!ELEMENT effcloc      EMPTY                                       >
+<!ATTLIST effcloc  
+          chapnbr   %number;                            #IMPLIED
+          sectnbr   %number;                            #IMPLIED
+          unitnbr   %number;                            #IMPLIED
+          fignbr    %nutoken;                           #IMPLIED
+          itemnbr   %nutoken;                           #IMPLIED        >
+<!ELEMENT effcode   (#PCDATA)                                    >
+<!ELEMENT effcdesc  (#PCDATA)                                    >
+<!--                                                                -->
+<!ELEMENT clmpopt   (title, (%text-no-note;)*)                              >
+<!ATTLIST clmpopt 
+          %revatt;                                                    >
+<!--                                                                -->
+<!ELEMENT matlist   (title, (%text-no-note;)*)                              >
+<!ATTLIST matlist 
+          %revatt;                                                    >
+
+<!ELEMENT appendix  (title, (%text-no-note;)+, graphic*)   >
+<!ATTLIST appendix 
+          appnbr    CDATA                             #REQUIRED
+          %revatt;                                                    >
+<!--                                                                -->
+<!-- ============================================================== -->
+<!--                        DETAIL PARTS LIST                       -->
+<!--  Contains all the information associated with an item in       -->
+<!--  the Detailed Parts List.                                      -->
+<!-- ============================================================== -->
+<!--                                                                -->
+<!ELEMENT dplist    (chapter+)                                   >
+
+<!ELEMENT chapter   ((effect?, title, section+) | deleted)       >
+<!ATTLIST chapter
+          chapnbr   %number;                            #REQUIRED
+          %revatt;                                                    >
+<!--                                                                -->
+<!ELEMENT section   ((effect?, title?, unit+) | deleted)        >
+<!ATTLIST section      
+          chapnbr   %number;                            #REQUIRED
+          sectnbr   %number;                            #REQUIRED
+          %revatt;                                                    >
+<!--                                                                -->
+<!ELEMENT unit      ((effect?, title?, figure+) | deleted)      >
+<!ATTLIST unit         
+          chapnbr   %number;                            #REQUIRED
+          sectnbr   %number;                            #REQUIRED
+          unitnbr   %number;                            #REQUIRED
+          %revatt;                                                    >
+<!--                                                                -->
+<!ELEMENT figure    ((effect?, title, graphic, (prtlist | (%text-no-note;)*)+) | deleted)                       >
+<!ATTLIST figure
+          sym       %yesorno;                         #IMPLIED
+          chapnbr   %number;                            #REQUIRED
+          sectnbr   %number;                            #REQUIRED
+          unitnbr   %number;                            #REQUIRED
+          fignbr    %nutoken;                           #REQUIRED
+          %revatt;                                                    >
+<!--                                                                -->
+<!ELEMENT prtlist    (((effect?, (%text-no-note;)*) | item)+)                 >
+<!--                                                                -->
+<!ELEMENT item       ((effect?, part, itemspec)+ | deleted)        >
+<!ATTLIST item   
+          chapnbr   %number;                            #REQUIRED
+          sectnbr   %number;                            #REQUIRED
+          unitnbr   %number;                            #REQUIRED
+          fignbr    %nutoken;                           #REQUIRED
+          itemnbr   %nutoken;                           #REQUIRED
+          attach    %yesorno;                         "0"
+          illusind  %yesorno;                         "1"
+          indent    %number;                            #IMPLIED
+          transport %yesorno;                         "0"
+          %revatt;                                                    >
+
+<!-- ============================================================== -->
+<!--                       PART                                     -->
+<!-- ============================================================== -->
+<!ELEMENT part      (pnr, nom, (np | matl | refint | refext | csd | afp | opn | ee | sp | alprtnbr | mfr 
+                         | dd | cusnom | venptnbr | osc | spl)*)      >
+<!ATTLIST part   
+          mp        CDATA                             #IMPLIED
+          leadtime  CDATA                             #IMPLIED
+          propart   CDATA                             #IMPLIED        >
+<!--                                                                -->
+<!ELEMENT pnr       (#PCDATA)                                    >
+<!ELEMENT np        (#PCDATA)                                    >
+<!ELEMENT matl      (#PCDATA)                                    >
+<!ELEMENT csd       (#PCDATA)                                    >
+<!ELEMENT afp       (#PCDATA)                                    >
+<!ELEMENT opn       (#PCDATA)                                    >
+<!ELEMENT ee        (#PCDATA)                                    >
+<!ELEMENT sp        (#PCDATA)                                    >
+<!ELEMENT alprtnbr  (#PCDATA)                                    >
+<!ELEMENT dd        (#PCDATA)                                    >
+<!ELEMENT kwd       (#PCDATA)                                    >
+<!ELEMENT adt       (#PCDATA)                                    >
+<!ELEMENT cusnom    (#PCDATA)                                    >
+<!ELEMENT venptnbr  (#PCDATA)                                    >
+<!ELEMENT osc       (#PCDATA)                                    >
+<!ELEMENT spl       (#PCDATA)                                    >
+
+<!ELEMENT nom       (kwd, adt?)                                  >
+<!ATTLIST nom                                                  
+          toc       %yesorno;                         "0"             >
+<!--                                                                -->
+<!-- ============================================================== -->
+<!--                       ITEMSPEC                                 -->
+<!-- ============================================================== -->
+<!ELEMENT itemspec  (effect?, upa, sym?, (symbol | tqe | sftq | sfn | msc | effcode | os 
+                                   | us| uoa | refint | refext | uwp | apn | rp | sd | rwk | sbnbr | ron | ein 
+                                   | or | repnbrs | mdty)*)>
+<!--                                                                -->
+<!ELEMENT sym         EMPTY                                        >
+<!ATTLIST sym
+          side      (LH|RH|LO|RO|LR)                  #IMPLIED        >
+
+<!ELEMENT symbol    (#PCDATA)                                    >
+<!ELEMENT sftq      (#PCDATA)                                    >
+<!ELEMENT sfn       (#PCDATA)                                    >
+<!ELEMENT uoa       (#PCDATA)                                    >
+<!ELEMENT upa       (#PCDATA)                                    >
+<!ELEMENT tqe       (#PCDATA)                                    >
+<!ELEMENT uwp       (#PCDATA)                                    >
+<!ELEMENT apn       (#PCDATA)                                    >
+<!ELEMENT rwk       (#PCDATA)                                    >
+<!ELEMENT ein       (#PCDATA)                                    >
+<!ATTLIST ein
+          type      CDATA                             #IMPLIED        >
+<!ELEMENT rp        (#PCDATA)                                    >
+<!ELEMENT sd        (#PCDATA)                                    >
+<!ELEMENT repnbrs   (#PCDATA)                                    >
+<!--                                                                -->
+<!ELEMENT os           EMPTY                                       >
+<!ELEMENT us           EMPTY                                       >
+<!ELEMENT ron          EMPTY                                       >
+<!ELEMENT msc       (para)                                       >
+<!ELEMENT or           EMPTY                                       >
+<!ATTLIST or
+          interchg  %yesorno;                         "0"             >
+
+<!ELEMENT mdty         EMPTY                                       >
+<!ATTLIST mdty
+          mdtytype   CDATA                            #IMPLIED        >
+
+<!--                                                                -->
+<!-- ============================================================== -->
+<!--         INTERNAL & EXTERNAL CROSS REFERENCE                    -->
+<!-- ============================================================== -->
+<!--                                                                -->
+<!ELEMENT refext    (#PCDATA)                                    >
+<!ATTLIST refext
+          refloc    CDATA                             #IMPLIED
+          refmodel  CDATA                             #IMPLIED
+          refspl    CDATA                             #IMPLIED
+          refman    CDATA                             #IMPLIED
+          docnbr    CDATA                             #IMPLIED        >
+<!--                                                                -->
+<!ELEMENT refint    (#PCDATA)                                    >
+<!ATTLIST refint
+          refid     IDREF                             #REQUIRED
+          reftype   CDATA                             #IMPLIED        >
+
+<!ELEMENT refmedia  (#PCDATA)                                      >
+<!ATTLIST refmedia
+          mednbr    CDATA                            #REQUIRED       >
+
+
+<!-- ============================================================== -->
+<!--                         GRAPHIC                                -->
+<!-- ============================================================== -->
+<!--                                                                -->
+<!ELEMENT graphic    ((effect?, title?, sheet+) | deleted)       >
+<!ATTLIST graphic
+          chapnbr   %number;                            #IMPLIED
+          sectnbr   %number;                            #IMPLIED
+          unitnbr   %number;                            #IMPLIED
+          fignbr    %nutoken;                           #IMPLIED
+          %revatt;                                                    >
+<!--                                                                -->
+<!ELEMENT sheet     (effect?, ((title?, gdesc?) | deleted))      >
+<!ATTLIST sheet
+          gnbr      ENTITY                            #REQUIRED
+          cfnbr     CDATA                             #IMPLIED
+          sheetnbr  CDATA                             #REQUIRED
+          imgarea   (AP|BP|CP|DL|EL|FP|GP|HL|IL)      #IMPLIED
+          %revatt;                                                    >
+<!--                                                                -->
+<!ELEMENT gdesc     (effect?, (%text-no-note;)*)                            >
+<!--                                                                -->
+<!ELEMENT grsymbol     EMPTY                                       >
+<!ATTLIST grsymbol
+          gnbr          CDATA                        #REQUIRED 
+          reprowid      CDATA                         #IMPLIED 
+          reprohgt      CDATA                         #IMPLIED 
+          reproscl      CDATA                         #IMPLIED        >
+<!-- ============================================================== -->
+<!--                     GRPHCREF                                   -->
+<!-- ============================================================== -->
+<!ELEMENT gxrefeff    (effect, grphcref)                    >
+<!ELEMENT grphcref  (#PCDATA)                           >
+<!ATTLIST grphcref
+          refid     IDREF                             #REQUIRED
+          sheetnbr  CDATA                             #IMPLIED
+          structid  CDATA                             #IMPLIED
+          shownow   %yesorno;                         "0"             >
+<!--                                                                -->
+<!-- ============================================================== -->
+<!--               NUMBERED AND UN-NUMBERED LISTS                   -->
+<!-- ============================================================== -->
+<!--                                                                -->
+<!ELEMENT unlist    (unlitem+)                                   >
+<!ATTLIST unlist
+          bulltype  (NONE | BULLET | NDASH | MDASH 
+                     | DIAMOND | ASTERISK| DELTA 
+                     | SQUARE | SYSTEM)               "SYSTEM"        >
+<!--                                                                -->
+<!ELEMENT unlitem   (para+)                                      >
+<!--                                                                -->
+<!ELEMENT numlist   (numlitem+)                                  >
+<!ATTLIST numlist
+          numtype   (NNP | AUP | NNB | ALB | NNS | ALS 
+                    | DBR | RUP | RLP | RUR | RLR | NNR  
+                    | AUR | ALR)                      "NNP"           >
+<!--                                                                -->
+<!ELEMENT numlitem  (para+)                                      >
+<!ATTLIST numlitem 
+          label     CDATA                             #IMPLIED        >
+<!--                                                                -->
+<!-- ============================================================== -->
+<!--                        PARAGRAPH                               -->
+<!-- ============================================================== -->
+<!ELEMENT para      (#PCDATA  | txtgrphc | grphcref | refint
+                         | refext | pnr | sub | super | refmedia
+                         | grsymbol)*                                 >
+<!--                                                                -->
+<!ELEMENT txtgrphc  (txtline+)                                   >
+<!ELEMENT txtline   (#PCDATA)                                    >
+<!ELEMENT sub       (#PCDATA)                                    >
+<!ELEMENT super     (#PCDATA)                                    >
+<!--                                                                -->
+<!-- ============================================================== -->
+<!--                  STANDARD LISTS                                -->
+<!-- ============================================================== -->
+<!--                                                                -->
+<!ELEMENT list1      (l1item+)                                     >
+<!ELEMENT list2      (l2item+)                                     >
+<!ELEMENT list3      (l3item+)                                     >
+<!ELEMENT list4      (l4item+)                                     >
+<!ELEMENT list5      (l5item+)                                     >
+<!ELEMENT list6      (l6item+)                                     >
+<!ELEMENT list7      (l7item+)                                     >
+<!--                                                                -->
+
+<!ELEMENT l1item        ((%w.c;), (%text-no-list1;), note*, (list2, note*)?)  >
+<!ELEMENT l2item        ((%w.c;), (%text-no-list1;), note*, (list3, note*)?)  >
+<!ELEMENT l3item        ((%w.c;), (%text-no-list1;), note*, (list4, note*)?)  >
+<!ELEMENT l4item        ((%w.c;), (%text-no-list1;), note*, (list5, note*)?)  >
+<!ELEMENT l5item        ((%w.c;), (%text-no-list1;), note*, (list6, note*)?)  >
+<!ELEMENT l6item        ((%w.c;), (%text-no-list1;), note*, (list7, note*)?)  >
+<!ELEMENT l7item        ((%w.c;), (%text-no-list1;), note*)  >
+
+<!-- ============================================================== -->
+<!--                     TITLE                                      -->
+<!-- ============================================================== -->
+<!--                                                                -->
+<!ELEMENT title     (#PCDATA | sub | super)*                     >
+<!--                                                                -->
+
+<!-- ============================================================== -->
+<!--                   MARK DELETED ELEMENTS                        -->
+<!--  Element for marking a deleted anchor                          -->
+<!--  Element for showing an empty element                          -->
+<!-- ============================================================== -->
+<!--                                                                -->
+<!ELEMENT deleted      EMPTY                                       >
+<!ELEMENT isempty      EMPTY                                       >
+<!--                                                                -->
+<!-- ============================================================== -->
+<!--                     EFFECTIVITY                                -->
+<!-- ============================================================== -->
+<!--                                                                -->
+<!ELEMENT effect    ((sbeff | coceff)*)                          >
+<!ATTLIST effect
+          effrg     CDATA                             #IMPLIED
+          efftext   CDATA                             #IMPLIED        >
+<!--                                                                -->
+<!ELEMENT sbeff        EMPTY                                       >
+<!ATTLIST sbeff
+          effrg     CDATA                             #IMPLIED
+          efftext   CDATA                             #IMPLIED
+          sbnbr     CDATA                             #REQUIRED
+          sbtype    CDATA                             #REQUIRED
+          sbcond    CDATA                             #IMPLIED
+          sbrev     CDATA                             #IMPLIED        >
+<!--                                                                -->
+<!ELEMENT coceff       EMPTY                                       >
+<!ATTLIST coceff
+          effrg     CDATA                             #IMPLIED
+          efftext   CDATA                             #IMPLIED
+          cocnbr    CDATA                             #REQUIRED
+          coccond   CDATA                             #IMPLIED
+          cocrev    CDATA                             #IMPLIED        >
+
+<!-- ============================================================== -->
+<!--                 TABLE (CELLULAR, CALS BASED)                   -->
+<!-- ============================================================== -->
+<!--                                                                -->
+<!ELEMENT table      ((title?, tgroup, ftnote*) | graphic+)     >
+<!ATTLIST table
+          tabstyle  NMTOKEN                           #IMPLIED
+          frame     (top | bottom | topbot 
+                    | all | sides | none)             #IMPLIED
+          colsep    %yesorno;                         #IMPLIED
+          rowsep    %yesorno;                         #IMPLIED
+          orient    (port | land)                     #IMPLIED
+          pgwide    %yesorno;                         #IMPLIED
+          id        ID                                #IMPLIED        >
+
+<!ELEMENT tgroup      (colspec*, spanspec*, thead?, tfoot?, tbody) >
+<!ATTLIST tgroup
+          cols      %number;                            #REQUIRED
+          colsep    %yesorno;                         #IMPLIED
+          rowsep    %yesorno;                         #IMPLIED
+          align     (left | right | center 
+                    | justify | char)                 "left"   
+          charoff   %nutoken;                           "50"
+          char      CDATA                             ""              >
+
+<!ELEMENT colspec      EMPTY                                       >
+<!ATTLIST colspec 
+          colnum    %number;                            #IMPLIED
+          colname   NMTOKEN                           #IMPLIED
+          align     (left | right | center 
+                    | justify | char)                 #IMPLIED
+          charoff   %nutoken;                           #IMPLIED
+          char      CDATA                             #IMPLIED
+          colwidth  CDATA                             #IMPLIED
+          colsep    %yesorno;                         #IMPLIED
+          rowsep    %yesorno;                         #IMPLIED        >
+
+<!ELEMENT spanspec     EMPTY                                       >
+<!ATTLIST spanspec
+          namest    NMTOKEN                           #REQUIRED
+          nameend   NMTOKEN                           #REQUIRED
+          spanname  NMTOKEN                           #IMPLIED 
+          align     (left | right | center 
+                    | justify | char)                 "center"
+          charoff   %nutoken;                           #IMPLIED
+          char      CDATA                             #IMPLIED
+          rowsep    %yesorno;                         #IMPLIED
+          colsep    %yesorno;                         #IMPLIED        >
+
+<!ELEMENT thead       (colspec*, row+)                             >
+<!ATTLIST thead
+          valign    (top | middle | bottom)           "bottom"        >
+
+<!ELEMENT tfoot       (colspec*, row+)                             >
+<!ATTLIST tfoot
+          valign    (top | middle | bottom)           "top"           >
+
+<!ELEMENT tbody       (row+)                                       >
+<!ATTLIST tbody
+          valign    (top | middle | bottom)           "top"           >
+
+<!ELEMENT row         (entry+)                                     >
+<!ATTLIST row
+          rowsep    %yesorno;                         #IMPLIED        >
+
+<!ELEMENT entry       (%text; | %w.c;)*                            >
+<!ATTLIST entry
+          colname   NMTOKEN                           #IMPLIED
+          namest    NMTOKEN                           #IMPLIED
+          nameend   NMTOKEN                           #IMPLIED
+          spanname  NMTOKEN                           #IMPLIED
+          morerows  %number;                            "0"
+          colsep    %yesorno;                         #IMPLIED
+          rowsep    %yesorno;                         #IMPLIED
+          rotate    %yesorno;                         "0"
+          valign    (top | bottom | middle)           "top"
+          align     (left | right | center 
+                     | justify | char)                #IMPLIED
+          charoff   %nutoken;                           #IMPLIED
+          char      CDATA                             #IMPLIED        >
+<!--                                                                -->
+<!ELEMENT ftnote     ((%text-no-note;)*)                                      >
+<!ATTLIST ftnote  
+          ftnoteid  ID                                #REQUIRED       >
+<!--                                                                -->
+<!-- ============================================================== -->
+<!--                    WARNING, CAUTION, NOTE                      -->
+<!-- ============================================================== -->
+<!--                                                                -->
+<!ELEMENT warning       (effect?, (%text-no-note;)+)           >
+<!ELEMENT caution       (effect?, (%text-no-note;)+)           >
+<!ELEMENT note          (effect?, (%text-no-note;)+)           >
+<!--                                                                -->
+<!--   ]>   -->

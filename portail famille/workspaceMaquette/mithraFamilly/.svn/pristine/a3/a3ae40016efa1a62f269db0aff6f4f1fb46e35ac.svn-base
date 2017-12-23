@@ -1,0 +1,262 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1B725200SF030100204A011 SYSTEM "x-dm://0900f90b8007275e,MYWORKING" NDATA cgm>
+<!ENTITY A1B725200SF030100203A011 SYSTEM "x-dm://0900f90b8007275d,MYWORKING" NDATA cgm>
+<!ENTITY A1B725200SF030100202A011 SYSTEM "x-dm://0900f90b8007275c,MYWORKING" NDATA cgm>
+<!ENTITY A1B725200SF030100201A011 SYSTEM "x-dm://0900f90b8007275b,MYWORKING" NDATA cgm>
+<!ENTITY A1A725200SF030100199A011 SYSTEM "x-dm://0900f90b800085b4,MYWORKING" NDATA cgm>
+<!ENTITY A1A725200SF030100201A011 SYSTEM "x-dm://0900f90b80003c9a,MYWORKING" NDATA cgm>
+<!ENTITY A1A725200SF030100202A011 SYSTEM "x-dm://0900f90b8000311d,MYWORKING" NDATA cgm>
+<!ENTITY A1A725200SF030100203A011 SYSTEM "x-dm://0900f90b8000311f,MYWORKING" NDATA cgm>
+<!ENTITY A1A725200SF030100204A011 SYSTEM "x-dm://0900f90b80003120,MYWORKING" NDATA cgm>
+]>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>02</discode><discodev>A</discodev><incode>727</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmc>
+<dmtitle><techname>DISQUE TOURILLON TURBINE HP</techname><infoname>PROCEDURES D'INSTALLATION PROPREMENT DITE - SUR BATI POLYVALENT</infoname></dmtitle>
+<issno type="r" issno="6">
+<issdate month="10" year="2011" day="15">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 4"></version>
+<customer aaf="1" anf="1">
+<nti nti3="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Prise en compte de modification 250-78R1</rfu>
+<remarks>RAS</remarks>
+<icns><icn id="A1A725200SF030100199A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00199</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A725200SF030100201A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00201</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A725200SF030100202A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00202</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A725200SF030100203A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00203</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A725200SF030100204A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00204</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1B725200SF030100201A011">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00201</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1B725200SF030100202A011">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00202</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1B725200SF030100203A011">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00203</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1B725200SF030100204A011">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00204</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<refdm>
+<dmcid id="A1A72520000A030AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>00</discode><discodev>A</discodev><incode>030</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A72520002A691AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>02</discode><discodev>A</discodev><incode>691</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+</refdm>
+</refs><proced><pmd>
+<manhour value="0,5"></manhour>
+<duration value="0,5"></duration>
+</pmd><prelreqs><reqconds><reqcondli><reqcond>
+<cond><para><p>Le disque tourillon turbine HP est stock&eacute; face avant sur le support de stockage et &eacute;quip&eacute; du protecteur disque turbine HP<supeqref refid="O2.30392">.</p>
+</para>
+</cond>
+</reqcond><reqcond>
+<cond><para><p>Le b&acirc;ti de montage polyvalant<supeqref refid="O2.30395"> &eacute;quip&eacute; de l'adaptation disque module 8<supeqref refid="O2.30278"> et de l'outillage de levage avant<supeqref refid="O2.30215">.</p>
+</para>
+</cond>
+</reqcond></reqcondli></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="0,5"></reqper>
+</reqpers><supequip><supeqli>
+<supequi id="O2.30214"><applic><config><mod modnb="250-78" modcond="pre"></config></applic>
+<refipc csn="72016801 057 "><nomen>Outillage de levage&nbsp;AR</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.30214M"><applic><config><mod modnb="250-78" modcond="post"></config></applic>
+<refipc csn="72016801 057M"><nomen>Outillage de levage&nbsp;AR</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.30215"><applic><config><mod modnb="250-78" modcond="pre"></config></applic>
+<refipc csn="72016801 056 "><nomen>Outillage de levage&nbsp;AV</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.30215M"><applic><config><mod modnb="250-78" modcond="post"></config></applic>
+<refipc csn="72016801 056M"><nomen>Outillage de levage&nbsp;AV</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.30278"><refipc csn="72016701 272 "><nomen>ADAPTATION DISQUE&nbsp;M8</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.30392"><refipc csn="72016601 104 "><nomen>PROTECTEUR DISQUE&nbsp;TU&nbsp;HP&nbsp;M8</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.30395"><refipc csn="72016701 269 "><nomen>BATI DE MONTAGE POLYVALENT M8</nomen><quantity>1</quantity></supequi>
+</supeqli><supeqlis>
+<supequis id="O2.S0030"><refipc csn="72016001 053 "><nomen>JAUGE DE PROFONDEUR</nomen><quantity>1</quantity></supequis>
+</supeqlis></supequip><supplies><nosupply></supplies><miscs><nomisc></miscs><safety>
+<specpara>
+<caution>
+<p>Manipuler le disque tourillon&nbsp;turbine&nbsp;HP avec pr&eacute;caution. Pi&egrave;ce en m&eacute;tallurgie des poudres.</p>
+</caution>
+</specpara>
+</safety></prelreqs><mainfunc>
+<step1 control="0" id="P10">
+<para><p>D&eacute;poser le protecteur <supeqref refid="O2.30392"> <figref refid="A725200SF030100199A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P20">
+<para><p>Positionner l'outillage <supeqref refid="O2.30214"> <figref refid="A725200SF030100201A011">.</p>
+<note><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>S&rsquo;assurer que les 3 taquets sont sortis avant de visser l&rsquo;outillage dans la TuHP.</p>
+<p>Visser l&rsquo;outillage dans la TuHP.</p>
+<p>Positionner les taquets en face des cr&eacute;naux de la TuHP.</p>
+<p>Rentrer les 3 taquets et les serrer les vis de maintien.</p>
+</note>
+</para>
+<para><p>Positionner l'outillage <supeqref refid="O2.30214M"> <figref refid="B725200SF030100201A011">.</p>
+<note><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>S&rsquo;assurer que les 3 taquets sont sortis avant de visser l&rsquo;outillage dans la TuHP.</p>
+<p>Visser l&rsquo;outillage dans la TuHP.</p>
+<p>Positionner les taquets en face des cr&eacute;naux de la TuHP.</p>
+<p>Rentrer les 3 taquets et les serrer les vis de maintien.</p>
+</note>
+</para>
+</step1>
+<step1 control="0" id="P30">
+<para><p>Hisser l'ensemble disque turbine&nbsp;HP/outillage de levage turbine&nbsp;HP &agrave; l'aide d'un palan.</p>
+</para>
+</step1>
+<step1 control="0" id="P40">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>D&eacute;poser l'ensemble disque turbine&nbsp;HP<refipc csn="72520001A028 " isn="00C">/outillage de levage turbine&nbsp;HP sur un marbre.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>D&eacute;poser l'ensemble disque turbine&nbsp;HP<refipc csn="72520001A028 " isn="00E">/outillage de levage turbine&nbsp;HP sur un marbre.</p>
+</para>
+</step1>
+<step1 control="2" id="P50">
+<para><p>Contr&ocirc;ler la cote&nbsp;NJD3 &agrave; l'aide d'une jauge de profondeur 0-400&nbsp;mm.</p>
+</para>
+</step1>
+<step1 control="0" id="P60">
+<para><p>Relever et enregistrer la cote&nbsp;NJD3 sur la&nbsp;&ldquo;FSRC&rdquo; au point n&deg; 01 <dmcref xrefid="A1A72520000A030AC">.</p>
+</para>
+</step1>
+<step1 control="0" id="P70">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>A l'aide du palan hisser l'ensemble disque turbine&nbsp;HP/outillage et venir positionner l'ensemble au-dessus du b&acirc;ti <supeqref refid="O2.30395"> &eacute;quip&eacute; de l'adaptation <supeqref refid="O2.30278"> et de outillage de levage <supeqref refid="O2.30215">.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>A l'aide du palan hisser l'ensemble disque turbine&nbsp;HP/outillage et venir positionner l'ensemble au-dessus du b&acirc;ti <supeqref refid="O2.30395"> &eacute;quip&eacute; de l'adaptation <supeqref refid="O2.30278"> et de outillage de levage <supeqref refid="O2.30215M">.</p>
+</para>
+</step1>
+<step1 control="0" id="P80">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>Descendre l'ensemble doucement sur l'outillage <supeqref refid="O2.30215"> <figref refid="A725200SF030100202A011">.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>Descendre l'ensemble doucement sur l'outillage <supeqref refid="O2.30215M"> <figref refid="B725200SF030100202A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P90">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>Verrouiller l'outillage de levage <supeqref refid="O2.30215"> par les 3&nbsp;&eacute;crous croisillon <figref repnohot="2.30215REP11" refid="A725200SF030100202A011">.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>Verrouiller l'outillage de levage <supeqref refid="O2.30215M"> par les 3&nbsp;&eacute;crous croisillon <figref repnohot="2.30215REP11" refid="B725200SF030100202A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P100">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>Pivoter les brides maintenant l'outillage <supeqref refid="O2.30215"> <figref repnohot="2.30215REP04" refid="A725200SF030100202A011">.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>Pivoter les brides maintenant l'outillage <supeqref refid="O2.30215M"> <figref repnohot="2.30215REP04" refid="B725200SF030100202A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P110">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>Retourner l'ensemble au palan de mani&egrave;re &agrave; pr&eacute;senter la partie&nbsp;AR vers le bas <supeqref refid="O2.30214"> <supeqref refid="O2.30215">.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>Retourner l'ensemble au palan de mani&egrave;re &agrave; pr&eacute;senter la partie&nbsp;AR vers le bas <supeqref refid="O2.30214M"> <supeqref refid="O2.30215M">.</p>
+</para>
+</step1>
+<step1 control="0" id="P120">
+<para><p>Descendre l'ensemble doucement sur le b&acirc;ti <supeqref refid="O2.30395">.</p>
+</para>
+</step1>
+<step1 control="0" id="P130">
+<para><p>Verrouiller les brides sur l'ensemble <supeqref refid="O2.30278"> <figref repnohot="2.30278REP05" refid="A725200SF030100203A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P140">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>D&eacute;verrouiller les brides de l'ensemble <supeqref refid="O2.30215"> <figref repnohot="2.30215REP04" refid="A725200SF030100203A011">.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>D&eacute;verrouiller les brides de l'ensemble <supeqref refid="O2.30215M"> <figref repnohot="2.30215REP04" refid="B725200SF030100203A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P150">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>D&eacute;poser l'outillage de levage <supeqref refid="O2.30215">.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>D&eacute;poser l'outillage de levage <supeqref refid="O2.30215M">.</p>
+</para>
+</step1>
+<step1 control="0" id="P160">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>Relever en 4&nbsp;points la valeur de la cote&nbsp;&ldquo;B&rdquo; &agrave; l'aide d'une r&egrave;gle plate Lg&nbsp;1000&nbsp;mm, cales Johnson et d'une jauge <supeqref refid="O2.S0030"> <figref refid="A725200SF030100203A011"> <figref refid="A725200SF030100204A011">.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>Relever en 4&nbsp;points la valeur de la cote&nbsp;&ldquo;B&rdquo; &agrave; l'aide d'une r&egrave;gle plate Lg&nbsp;1000&nbsp;mm, cales Johnson et d'une jauge <supeqref refid="O2.S0030"> <figref refid="B725200SF030100203A011"> <figref refid="B725200SF030100204A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P170">
+<para><p>Relever ces 4&nbsp;points au niveau de l'axe des goujons.</p>
+</para>
+</step1>
+<step1 control="0" id="P180">
+<para><p>Calculer la moyenne.</p>
+</para>
+</step1>
+<step1 control="0" id="P190">
+<para><p>Enregistrer la valeur moyenne&nbsp;&ldquo;B&rdquo; sur la&nbsp;&ldquo;FSRC au point&nbsp;n&deg;02&rdquo; <dmcref xrefid="A1A72520000A030AC">.</p>
+</para>
+</step1>
+<step1 control="0" id="P200">
+<para><p>Proc&eacute;der au marquage  <dmcref xrefid="A1A72520002A691AC"> dans le cadre d&apos;un remplacement en neuf du disque de turbine HP.</p>
+</para>
+</step1>
+<figure id="A725200SF030100199A011"><?Pub Caret>
+<title>DEPOSE PROTECTEUR</title>
+<graphic callicn="A1A725200SF030100199A011">
+</figure>
+<figure id="A725200SF030100201A011">
+<title>INSTALLATION DE L'OUTIL DE LEVAGE AR</title>
+<graphic callicn="A1A725200SF030100201A011">
+</figure>
+<figure id="A725200SF030100202A011">
+<title>INSTALLATION SUR L'OUTIL DE LEVAGE AV</title>
+<graphic callicn="A1A725200SF030100202A011">
+</figure>
+<figure id="A725200SF030100203A011">
+<title>INSTALLATION SUR L'ADAPTATION DISQUE M8</title>
+<graphic callicn="A1A725200SF030100203A011">
+</figure>
+<figure id="A725200SF030100204A011">
+<title>RELEVER DE LA COTE B</title>
+<graphic callicn="A1A725200SF030100204A011">
+</figure>
+<figure id="B725200SF030100201A011">
+<title>INSTALLATION DE L'OUTIL DE LEVAGE AR</title>
+<graphic callicn="A1B725200SF030100201A011">
+</figure>
+<figure id="B725200SF030100202A011">
+<title>INSTALLATION SUR L'OUTIL DE LEVAGE AV</title>
+<graphic callicn="A1B725200SF030100202A011">
+</figure>
+<figure id="B725200SF030100203A011">
+<title>INSTALLATION SUR L'ADAPTATION DISQUE M8</title>
+<graphic callicn="A1B725200SF030100203A011">
+</figure>
+<figure id="B725200SF030100204A011">
+<title>RELEVER DE LA COTE B</title>
+<graphic callicn="A1B725200SF030100204A011">
+</figure>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000016228 0>

@@ -1,0 +1,24 @@
+Log filename: "C:\epicuser\age_p\age_p.dtlog"
+Document type compile date: Tue Aug 02 16:27:22 2005
+Dtgen
+Platform: Windows NT 4.0
+
+Host: svst5457   Login: e077254
+
+Catalog path: "C:\epicuser;C:\Program Files\Epic\doctypes;C:\Program Files\Epic\doctypes;"
+
+
+Update (.ptd file written) or Validate (.ptd file not written): Update
+XML or SGML Application: SGML
+Force Compile: Yes
+Top level element: dmodule
+Public ID: -//RAFALE CSDB//DTD Aircraft Ground Equipment Procedural 981222//EN
+DTD Path: "C:\epicuser\age_p\age_p.dtd"
+ATD Path: "C:\epicuser\age_p\age_p.atd"
+PTD Path: "C:\epicuser\age_p\age_p.ptd"
+ATI Tag Path: "C:\Program Files\Epic\lib\dtgen\atitag.cf"
+Message File Path: (not specified)
+SGML Declaration Path: not specified - using "C:\Program Files\Epic\entities\ati-unc.dcl"
+
+DTD table model: CALS
+

@@ -1,0 +1,154 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Aircraft Ground Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1ARF7201SF030100196A011 SYSTEM "x-dm://0900f90b80003d12,MYWORKING" NDATA cgm>
+<!ENTITY A1ARF7206SF030100005A011 SYSTEM "x-dm://0900f90b8005edd9,MYWORKING" NDATA jpeg>
+<!ENTITY A1ARF7206SF030100004A011 SYSTEM "x-dm://0900f90b8005edd8,MYWORKING" NDATA jpeg>
+<!ENTITY A1ARF7206SF030100003A011 SYSTEM "x-dm://0900f90b8005edd7,MYWORKING" NDATA jpeg>
+<!ENTITY A1ARF7206SF030100002A011 SYSTEM "x-dm://0900f90b8005edd6,MYWORKING" NDATA jpeg>
+<!ENTITY A1ARF7206SF030100001A011 SYSTEM "x-dm://0900f90b8005edd5,MYWORKING" NDATA jpeg>
+<!ENTITY A1ARF7201SF030100031A021 SYSTEM "x-dm://0900f90b8005edd2,MYWORKING" NDATA jpeg>
+<!ENTITY A1ARF7201SF030100149A021 SYSTEM "x-dm://0900f90b8005edd4,MYWORKING" NDATA jpeg>
+<!ENTITY A1ARF7201SF030100185A011 SYSTEM "x-dm://0900f90b800042ad,MYWORKING" NDATA jpeg>
+<!ENTITY A1ARF7201SF030100186A011 SYSTEM "x-dm://0900f90b800042ae,MYWORKING" NDATA jpeg>
+<!ENTITY A1ARF7201SF030100187A011 SYSTEM "x-dm://0900f90b800042af,MYWORKING" NDATA jpeg>
+<!ENTITY A1ARF7201SF030100188A011 SYSTEM "x-dm://0900f90b800042b0,MYWORKING" NDATA jpeg>
+<!ENTITY A1ARF7201SF030100189A011 SYSTEM "x-dm://0900f90b800042b1,MYWORKING" NDATA jpeg>
+<!ENTITY A1ARF7201SF030100190A011 SYSTEM "x-dm://0900f90b800042b2,MYWORKING" NDATA jpeg>
+<!ENTITY A1ARF7201SF030100191A011 SYSTEM "x-dm://0900f90b800042b3,MYWORKING" NDATA jpeg>
+<!ENTITY A1ARF7201SF030100192A011 SYSTEM "x-dm://0900f90b800042b4,MYWORKING" NDATA jpeg>
+]>
+<?Pub EntList alpha bull copy rArr sect trade laquo raquo Prime rdquor quot>
+<?Pub Inc>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>RF</ecscc><eidc>72</eidc><cic>06</cic><discode>11</discode><discodev>A</discodev><incode>750</incode><incodev>A</incodev><itemloc>A</itemloc></age></dmc>
+<dmtitle><techname>MOYEN DE DIALOGUE M88 V10, LOGICIEL DE PROGRAMMATION</techname><infoname>PROCEDURES DE CHARGEMENT DE LOGICIELS</infoname></dmtitle>
+<issno issno="1" type="N">
+<issdate year="2010" month="09" day="03">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88 ETAPE 4"></version>
+<customer aaf="1" anf="1">
+<nti nti1="0" nti2="1" nti3="0"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Version initiale</rfu><?Pub Caret>
+<remarks>RAS</remarks>
+<icns><icn id="A1ARF7201SF030100031A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>RF</chapnum><section>7</section><subsect>2</subsect><subject>01</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00031</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1ARF7201SF030100149A021">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>RF</chapnum><section>7</section><subsect>2</subsect><subject>02</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00149</illnum><illver>A</illver><illupdat>02</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1ARF7206SF030100001A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>RF</chapnum><section>7</section><subsect>2</subsect><subject>06</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00001</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1ARF7206SF030100002A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>RF</chapnum><section>7</section><subsect>2</subsect><subject>06</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00002</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1ARF7206SF030100003A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>RF</chapnum><section>7</section><subsect>2</subsect><subject>06</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00003</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1ARF7206SF030100004A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>RF</chapnum><section>7</section><subsect>2</subsect><subject>06</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00004</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1ARF7206SF030100005A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>RF</chapnum><section>7</section><subsect>2</subsect><subject>06</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00005</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<norefs>
+</refs><proced><pmd>
+<manhour value="0,2"></manhour>
+<duration value="0,2"></duration>
+</pmd><prelreqs><reqconds><reqcondli><reqcond>
+<cond><para><p>Moyen de Dialogue (MDD)<refipc csn="72017702 000 "> mis en marche.</p>
+</para>
+</cond>
+</reqcond></reqcondli></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="0,2"></reqper>
+</reqpers><supequip><nosupeq><nosupeqs></supequip><supplies><nosupply></supplies><miscs><nomisc></miscs><safety><nosafety></safety></prelreqs><mainfunc>
+<step1 id="P10" control="0">
+<title>Suppression de l'ancienne version du logiciel.</title>
+<step2 id="P10-10">
+<para><p>Le MDD supporte plusieurs versions de logiciels calculateur.</p>
+</para>
+<para><p>Le logiciel n'est pas d&eacute;sinstall&eacute; lors d'une modification, seul son param&eacute;trage &eacute;volue.</p>
+</para>
+</step2>
+<step2 id="P10-20">
+<para><p>Aller directement au paragraphe &ldquo;Installation de la nouvelle version du logiciel&rdquo;.</p>
+</para>
+</step2>
+</step1>
+<step1 id="P20">
+<title>Installation de la nouvelle version du logiciel.</title>
+<step2 id="P20-10">
+<para><p>Mettre le PC sous tension.</p>
+</para>
+</step2>
+<step2 id="P20-20">
+<para><p>Mettre le CD dans le lecteur et ouvrir une session administrateur<figref refid="ARF7206SF030100001A011">.</p>
+</para>
+</step2>
+<step2 id="P20-30">
+<para><p>Lancer l'explorateur de Windows.</p>
+</para>
+</step2>
+<step2 id="P20-40">
+<para><p>Se placer sur lecteur DVD (lettre E).</p>
+</para>
+</step2>
+<step2 id="P20-50">
+<para><p>Double-cliquer sur l'ic&ocirc;ne de l'application de mise &agrave; jour: <emphasis bold="1">Septup MDD 10.0.2.0</emphasis><figref refid="ARF7206SF030100002A011"><figref refid="ARF7206SF030100003A011"><figref refid="ARF7206SF030100004A011"><figref refid="ARF7206SF030100005A011">.</p>
+</para>
+</step2>
+<step2 id="P20-60">
+<para><p>Fermer la session administrateur.</p>
+</para>
+</step2>
+<step2 id="P20-70">
+<para><p>Ouvrir une session utilisateur en cliquant sur l'ic&ocirc;ne &laquo;MDD-M88&raquo;<figref refid="ARF7206SF030100001A011">.</p>
+</para>
+</step2>
+<step2 id="P20-80">
+<para><p>Contr&ocirc;ler la r&eacute;f&eacute;rence de la nouvelle version dans l'onglet &laquo;A propos&raquo;<figref refid="ARF7201SF030100149A021">.</p>
+</para>
+</step2>
+<step2 id="P20-90">
+<para><p>Sortir de l'application et mettre le MDD hors tension.</p>
+</para>
+</step2>
+</step1>
+<figure id="ARF7201SF030100031A021">
+<title>Mise sous tension du MDD</title>
+<graphic callicn="A1ARF7201SF030100031A021">
+</figure>
+<figure id="ARF7201SF030100149A021">
+<title>V&eacute;rification des donn&eacute;es &eacute;cran</title>
+<graphic callicn="A1ARF7201SF030100149A021">
+</figure>
+<figure id="ARF7206SF030100001A011">
+<title>SESSION ADMINISTRATEUR</title>
+<graphic callicn="A1ARF7206SF030100001A011">
+</figure>
+<figure id="ARF7206SF030100002A011">
+<title>INSTALLATION PAR PARAMETRAGE</title>
+<graphic callicn="A1ARF7206SF030100002A011">
+</figure>
+<figure id="ARF7206SF030100003A011">
+<title>INSTALLATION PAR PARAMETRAGE</title>
+<graphic callicn="A1ARF7206SF030100003A011">
+</figure>
+<figure id="ARF7206SF030100004A011">
+<title>INSTALLATION PAR PARAMETRAGE</title>
+<graphic callicn="A1ARF7206SF030100004A011">
+</figure>
+<figure id="ARF7206SF030100005A011">
+<title>INSTALLATION PAR PARAMETRAGE</title>
+<graphic callicn="A1ARF7206SF030100005A011">
+</figure>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000007986 0>

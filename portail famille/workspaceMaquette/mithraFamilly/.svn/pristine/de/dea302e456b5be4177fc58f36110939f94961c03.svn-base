@@ -1,0 +1,28 @@
+package com.sonovision.openconv.db.dao;
+
+import java.io.Serializable;
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import com.sonovision.openconv.db.vo.Conversion;
+
+@Repository
+public interface ConversionDao extends CommonDao<Conversion>, Serializable  {
+
+
+	Conversion findOne(String id);
+
+	void deleteAll();
+
+	List<Conversion> findAll();
+
+	Conversion findByAll(String folderIn, String folderOut, String workFlowName, String workFlowSequence, Long startTime);
+
+	Conversion findByAllWithLastTime(Conversion conversion);
+
+	Conversion findByAllWithLastTime(String folderIn, String folderOut, String workFlowName, String workFlowSequence);
+
+
+	
+}

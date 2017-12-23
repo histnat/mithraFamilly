@@ -1,0 +1,375 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                          RAFALE                                    *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.2                            *
+    *                   Dated 22th December 1998                         *
+    *                                                                    *
+    * Amendment :-                                                       *
+    * 1. Addition of Aircrew Public Identifier.                          *
+    * 2. Reference new public identifier dates.                          *
+    * 3. Addition of Aircraft Fault Reporting Public Identifier.         *
+    * 4. Addition of prelreqs Public Identifier.                         *
+    * 5. Addition of Schedule Public Identifier.                         *
+    * 6. Delete entity aircrew.cfg                                       *
+    * 7. Update public identifiers                                       *
+	*    15/01/98                                                        *
+	* 8. Addition of ident Public Identifier.                            *
+	* 9. Reference new public identifier dates.                          *
+	*                                                                    *
+	* Typical invocation :                                               *
+    * <!ENTITY % COMPS                                                   *
+    *   PUBLIC "-//RAFALE//ENTITIES Component Definitions 981222//EN" >  *
+    * %COMPS;                                                            *
+    ********************************************************************** -->
+
+
+
+<!--**********************************************************************
+    * Define Entity %AECMA; (AECMA Configuration) containing:- the       *
+    * formal public identifier for the AECMA Configuration public text.  *
+    ********************************************************************** -->
+
+<!ENTITY % AECMA
+  PUBLIC "-//RAFALE//ENTITIES AECMA Configuration 971001//EN" 
+>
+
+
+
+<!--**********************************************************************
+    * Define Entity %COMMON; (Common Entities) containing:- the formal   *
+    * public identifier for the Common Entities public text.             *
+    ********************************************************************** -->
+
+<!ENTITY % COMMON
+  PUBLIC "-//RAFALE//ENTITIES Common Entities 981222//EN" 
+>
+
+
+
+<!--**********************************************************************
+    * Define Entity %ISOlat1; (ISO Added Latin 1) containing:-  the      *
+    * formal public identifier for the ISO Added Latin 1 public text.    *
+	*    "c:\wspm\iso\iso$lat1.ent"                                      *
+    ********************************************************************** -->
+
+<!ENTITY % ISOlat1
+  PUBLIC "ISO 8879-1986//ENTITIES Added Latin 1//EN" >
+
+
+
+<!--**********************************************************************
+    * Define Entity %ISOpub; (ISO Publishing) containing:- the formal    *
+    * public identifier for the ISO Publishing public text.              *
+    ********************************************************************** -->
+
+<!ENTITY % ISOpub
+  PUBLIC "ISO 8879-1986//ENTITIES Publishing//EN" > 
+
+
+
+
+<!--**********************************************************************
+    * Define Entity %ISOgrk3; (ISO Greek Symbols) containing:- the       *
+    * formal public identifier for the ISO Greek Symbols public text.    *
+    ********************************************************************** -->
+
+<!ENTITY % ISOgrk3
+  PUBLIC "ISO 8879-1986//ENTITIES Greek Symbols//EN" >
+
+
+
+
+<!--**********************************************************************
+    * Define Entity %ISOnum; (ISO Numeric and Special Symbols)           *
+    * containing:- the formal public identifier for the ISO Numeric and  *
+    * Special Symbols public text.                                       *
+    ********************************************************************** -->
+
+<!ENTITY % ISOnum
+  PUBLIC "ISO 8879-1986//ENTITIES Numeric and Special Graphic//EN" >
+
+<!--**********************************************************************
+    * Define Entity %ISOtech; (ISO General Technical) containing:- the   *
+    * formal public identifier for the ISO General Technical public text.*
+    ********************************************************************** -->
+
+<!ENTITY % ISOtech
+  PUBLIC "ISO 8879-1986//ENTITIES General Technical//EN" >
+
+
+
+<!--**********************************************************************
+    * Define Entity %BASE; (AECMA Base DTD structure) containing:-       *
+    * the formal public identifier for the AECMA Base DTD public text.   *
+    ********************************************************************** -->
+
+<!ENTITY % BASE
+  PUBLIC "-//RAFALE//ELEMENTS AECMA Base DTD 971001//EN" 
+ >
+
+
+
+<!--**********************************************************************
+    * Define Entity %EXTDMC; (Data Module Code Breakdown) containing:-   *
+    * the formal public identifier for the Data Module Code Breakdown    *
+    * public text.                                                       *
+    ********************************************************************** -->
+
+<!ENTITY % EXTDMC
+  PUBLIC "-//RAFALE//ELEMENTS Data Module Code Breakdown 981222//EN" 
+ >
+
+
+
+<!--**********************************************************************
+    * Define Entity %EXTSTAT; (Status Breakdown) containing:- the formal *
+    * public identifier for the Status Breakdown public text.            *
+    ********************************************************************** -->
+
+<!ENTITY % EXTSTAT
+  PUBLIC "-//RAFALE//ELEMENTS Status Breakdown 980115//EN" 
+ >
+
+
+
+<!--**********************************************************************
+    * Define Entity %EXTAPPL; (Applicability Breakdown) containing:- the *
+    * formal public identifier for the Applicability Breakdown public    *
+    * text.                                                              *
+    ********************************************************************** -->
+
+<!ENTITY % EXTAPPL
+  PUBLIC "-//RAFALE//ELEMENTS Applicability Breakdown 980115//EN"
+  >
+
+
+
+<!--**********************************************************************
+    * Define Entity %EXTCONT; (Content Breakdown) containing:-  the      *
+    * formal public identifier for the Content Breakdown public text.    *
+    ********************************************************************** -->
+
+<!ENTITY % EXTCONT
+  PUBLIC "-//RAFALE//ELEMENTS Content Breakdown 980115//EN" 
+ >
+
+
+
+<!--**********************************************************************
+    * Define Entity %EXTPARA; (Numbered Paragraphs) containing:-  the    *
+    * formal public identifier for the Numbered Paragraphs Breakdown     *
+    * public text.                                                       *
+    ********************************************************************** -->
+
+<!ENTITY % EXTPARA
+  PUBLIC "-//RAFALE//ELEMENTS Numbered Paragraphs Breakdown 980115//EN"
+  >
+
+
+
+<!--**********************************************************************
+    * Define Entity %EXTFIG; (Figure) containing:-                       *
+    * the formal public identifier for the Figure breakdown public text. *
+    ********************************************************************** -->
+
+<!ENTITY % EXTFIG
+  PUBLIC "-//RAFALE//ELEMENTS Figure Breakdown 980115//EN" 
+ >
+
+
+<!--**********************************************************************
+    * Define Entity %EXTTAB; (Table) containing:-                       *
+    * the formal public identifier for the Table breakdown public text. *
+    ********************************************************************** -->
+
+<!ENTITY % EXTTAB
+  PUBLIC "-//RAFALE//ELEMENTS Table Breakdown 980115//EN" 
+ >
+
+
+
+<!--**********************************************************************
+    * Define Entity %EXTSTEP; (Step Breakdown) containing:-  the formal  *
+    * public identifier for the Step Breakdown public text.              *
+    ********************************************************************** -->
+
+<!ENTITY % EXTSTEP
+  PUBLIC "-//RAFALE//ELEMENTS Steps Breakdown 971001//EN"
+  >
+
+
+
+<!--**********************************************************************
+    * Define Entity %EXTLIST; (Lists Breakdown) containing:-  the formal *
+    * public identifier for the Lists Breakdown public text.             *
+    ********************************************************************** -->
+
+<!ENTITY % EXTLIST
+  PUBLIC "-//RAFALE//ELEMENTS Lists Breakdown 971001//EN" 
+ >
+
+
+
+<!--**********************************************************************
+    * Define Entity %EXTSPEC; (Special Paragraphs Breakdown) containing:-*
+    * the formal public identifier for the Special Paragraphs Breakdown  *
+    * public text.                                                       *
+    ********************************************************************** -->
+
+<!ENTITY % EXTSPEC
+  PUBLIC "-//RAFALE//ELEMENTS Special Paragraphs Breakdown 971001//EN" 
+ >
+
+
+
+
+<!--**********************************************************************
+    * Define Entity %AIRCREW; (AirCrew Information Breakdown) containing:*
+    * the formal public identifier for the AirCrew Information Breakdown *
+    * public text.                                                       *
+    ********************************************************************** -->
+
+<!ENTITY % AIRCREW
+  PUBLIC "-//RAFALE//ELEMENTS AirCrew Breakdown 980115//EN" 
+ >
+
+
+
+<!--**********************************************************************
+    * Define Entity %AGE; (Aircraft Ground Equipment) containing:-       *
+    * the formal public identifier for the Aircraft Ground Equipment     *
+    * public text.                                                       *
+    ********************************************************************** -->
+
+<!ENTITY % AGE
+  PUBLIC "-//RAFALE//ENTITIES Aircraft Ground Equipment 971001//EN" 
+ >
+
+
+
+<!--**********************************************************************
+    * Define Entity %AVEE; (Air Vehicle Engines Equipment) containing:-  *
+    * the formal public identifier for the Air Vehicle Engines Equipment *
+    * public text.                                                       *
+    ********************************************************************** -->
+
+<!ENTITY % AVEE
+  PUBLIC "-//RAFALE//ENTITIES Air Vehicle Engines Equipment 971001//EN" 
+>
+
+
+ <!--**********************************************************************
+    * Define Entity %IPCC; (Chapterized IPC) containing:-                *
+    * the formal public identifier for the Chapterized IPC public text.  *
+    ********************************************************************** -->
+
+<!ENTITY % IPCC
+  PUBLIC "-//RAFALE//ENTITIES Chapterized IPC 971001//EN" 
+ >
+
+
+<!--**********************************************************************
+    * Define Entity %IPCN; (Non chapterized IPC) containing:-            *
+    * the formal public identifier for the Non chapterized IPC public text.*
+    ********************************************************************** -->
+
+<!ENTITY % IPCN
+  PUBLIC "-//RAFALE//ENTITIES Non chapterized IPC 971001//EN" 
+ >
+
+
+<!--**********************************************************************
+    * Define Entity %DESCRPT; (Description) containing:-                 *
+    * the formal public identifier for the Description Content public    *
+    * text.                                                              *
+    ********************************************************************** -->
+
+<!ENTITY % DESCRPT
+  PUBLIC "-//RAFALE//ELEMENTS Description Breakdown 980115//EN"
+  >
+
+
+
+<!--**********************************************************************
+    * Define Entity %PROCED; (Procedural) containing:-                   *
+    * the formal public identifier for the Procedural Content public     *
+    * text.                                                              *
+    ********************************************************************** -->
+
+<!ENTITY % PROCED
+  PUBLIC "-//RAFALE//ELEMENTS Procedural Breakdown 980115//EN"
+ >
+
+
+<!--**********************************************************************
+    * Define Entity %EXTIDENT; (Equipment identification) containing:-   *
+    * the formal public identifier for the Equipment identification      *
+    * public text.                                                       *
+    ********************************************************************** -->
+<!ENTITY % EXTIDENT
+  PUBLIC "-//RAFALE//ELEMENTS Equipment identification 980115//EN"
+ >
+
+
+
+<!--**********************************************************************
+    * Define Entity %PRELREQS; (Preliminary requirements) containing:-   *
+    * the formal public identifier for the Preliminary requirements      *
+    * public text.                                                       *
+    ********************************************************************** -->
+
+<!ENTITY % PRELREQS
+  PUBLIC "-//RAFALE//ELEMENTS Preliminary requirements 981222//EN"
+ >
+
+
+<!--**********************************************************************
+    * Define Entity %IPC; (Illustrated Parts Catalog) containing:-       *
+    * the formal public identifier for the IPC Content public text       *
+    ********************************************************************** -->
+
+<!ENTITY % IPC
+  PUBLIC "-//RAFALE//ELEMENTS Illustrated Parts Catalog 981222//EN"
+  >
+
+<!--**********************************************************************
+    * Define Entity %AFR; (Aircraft Fault Reporting) containing:-       *
+    * the formal public identifier for the AFR Content public text       *
+    ********************************************************************** -->
+
+<!ENTITY % AFR
+  PUBLIC "-//RAFALE//ELEMENTS Aircraft Fault Reporting 981222//EN"
+  >
+
+<!--**********************************************************************
+    * Define Entity %SCHED; (Schedule) containing:-                      *
+    * the formal public identifier for the AFR Content public text       *
+    ********************************************************************** -->
+
+<!ENTITY % SCHED
+  PUBLIC "-//RAFALE//ELEMENTS Schedule information 981222//EN"
+  >
+
+
+ <!--**********************************************************************
+    * Define Entity %TO; (tableaux organes) containing:-                 *
+    * the formal public identifier for the TO Content public text        *
+    ********************************************************************** -->
+
+<!ENTITY % TO
+  PUBLIC "-//RAFALE//ELEMENTS Tableau organes 981222//EN"
+  >
+
+
+ <!--**********************************************************************
+    * Define Entity %TO; (tableaux organes) containing:-                 *
+    * the formal public identifier for the TO Content public text        *
+    ********************************************************************** -->
+
+<!ENTITY % WIRING
+  PUBLIC "-//RAFALE//ELEMENTS Wiring 981222//EN"
+  >
+
+

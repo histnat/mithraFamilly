@@ -1,0 +1,62 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN">
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<?Pub EntList alpha bull copy rArr sect trade percnt nbsp>
+<?Pub Inc>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><discode>09</discode><discodev>A</discodev><incode>362</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmc>
+<dmtitle><techname>VERIFICATION ETANCHEITE TUYAUTERIE </techname><infoname>CONTROLE DE PRESSION</infoname></dmtitle>
+<issno type="N" issno="1">
+<issdate month="02" year="2010" day="15">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 4"></version>
+<customer aaf="1" anf="1">
+<nti nti3="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Version initiale</rfu>
+<remarks>RAS</remarks>
+</status>
+</idstatus><content><refs>
+<norefs>
+</refs><proced><pmd>
+<manhour value="0,1"></manhour>
+<duration value="0,1"></duration>
+</pmd><prelreqs><reqconds>
+<noconds></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="0,1"></reqper>
+</reqpers><supequip><nosupeq><nosupeqs></supequip><supplies><nosupply></supplies><miscs><miscli>
+<misc id="P0290" matiere="0"><ident><manufact>XXXXX</manufact><partno>XXXXXXXX</partno></ident><nomen>Eau + Ardrox 41 &agrave; 0,5&percnt;</nomen><quantity>SB</quantity></misc>
+<misc id="P0182" matiere="0"><?Pub Caret1><refipc csn="72013002 034 "><nomen>Silicate naturel de magn&eacute;sium </nomen><quantity>SB</quantity></misc>
+</miscli></miscs><safety><nosafety></safety></prelreqs><mainfunc>
+<step1 control="0" id="P10">
+<para><p>Monter la tuyauterie sur le banc d'essai &agrave; l'aide de l'adaptateur identifii&eacute; dans le Data module op&eacute;ratoire.</p>
+</para>
+</step1>
+<step1 control="0" id="P20">
+<para><p>V&eacute;rifier la non obstruction de la tuyauterie par un essai de libre circulation du fluide <miscref refid="P0290"> &agrave; faible pression (pression d'essai&nbsp;: &plusmn;&nbsp;10&nbsp;&percnt; suivant d&eacute;finition).</p>
+</para>
+</step1>
+<step1 control="0" id="P30">
+<para><p>Obturer la tuyauterie identifii&eacute;e dans le Data module op&eacute;ratoire.</p>
+</para>
+</step1>
+<step1 control="0" id="P40">
+<para><p>V&eacute;rifier pendant la dur&eacute;e de l'essai , l'absence de fuite ou suintement et le maintien de la pression.</p>
+</para>
+</step1>
+<step1 control="0" id="P50">
+<para><p>Effectuer un talcage <miscref refid="P0182"> des pi&egrave;ces, afin de faciliter la d&eacute;tection des d&eacute;fauts.</p>
+</para>
+</step1>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000002825 0>

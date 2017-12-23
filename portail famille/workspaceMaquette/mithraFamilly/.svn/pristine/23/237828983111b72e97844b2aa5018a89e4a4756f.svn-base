@@ -1,0 +1,17 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                           RAFALE                                   *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.2                            *
+    *                   Dated 22th December 1998                         *
+    *                                                                    *
+    * Amendment :-                                                       *
+    * 1. Update Public Identifier                                        *
+    *                                                                    *
+    ********************************************************************** -->
+
+<!DOCTYPE dmodule PUBLIC
+ "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Schedule information 981222//EN"
+ [
+ ]>

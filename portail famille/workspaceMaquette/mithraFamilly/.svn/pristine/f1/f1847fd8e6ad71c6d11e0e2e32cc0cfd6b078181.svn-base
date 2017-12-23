@@ -1,0 +1,275 @@
+<!DOCTYPE GIDGROUPS PUBLIC "-//ArborText//DTD GIDGROUPS 5.0//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY lt SDATA "[lt    ]">
+<!ENTITY amp SDATA "[amp   ]">
+]>
+<gidgroups><allgroups></allgroups><sysgroups><group gid="system" label="FOSI Components"
+type="S"><gref label="" ent="" gidref="stringdecl" goid="(17,1,76)"><gref
+label="" ent="" gidref="charfill" goid="(19,1,76)"><gref label="" ent="" gidref="counter"
+goid="(21,1,76)"><gref label="" ent="" gidref="floatloc" goid="(23,1,76)">
+<gref label="" ent="" gidref="hyphrule" goid="(25,1,76)"><gref label="" ent=""
+gidref="sectoken" goid="(27,1,76)"><gref label="" ent="" gidref="pageset"
+goid="(29,1,76)"><gref label="" ent="" gidref="envdesc" goid="(31,1,76)">
+<gref label="" ent="" gidref="charsubset" goid="(33,1,76)"><gref label=""
+ent="" gidref="eic" goid="(35,1,76)"><gref label="" ent="" gidref="ftneic"
+goid="(37,1,76)"><gref label="" ent="" gidref="rsrcdesc" goid="(39,1,76)">
+<gref label="" ent="" gidref="secdesc" goid="(41,1,76)"><fref label="" ent=""
+fidref="f93" foid="(2318,1,68)"></group><group gid="stringdecl" label="Text Variables"
+type="S"><fref label="" ent="" fidref="f6" foid="(45,1,68)"><fref label=""
+ent="" fidref="f7" foid="(46,1,68)"><fref label="" ent="" fidref="f8" foid="(47,1,68)">
+<fref label="" ent="" fidref="f9" foid="(48,1,68)"><fref label="" ent="" fidref="f10"
+foid="(49,1,68)"><fref label="" ent="" fidref="f11" foid="(256,1,68)"><fref
+label="" ent="" fidref="f12" foid="(257,1,68)"><fref label="" ent="" fidref="f13"
+foid="(261,1,68)"><fref label="" ent="" fidref="f14" foid="(262,1,68)"><fref
+label="" ent="" fidref="f15" foid="(263,1,68)"><fref label="" ent="" fidref="f16"
+foid="(264,1,68)"><fref label="" ent="" fidref="f17" foid="(265,1,68)"><fref
+label="" ent="" fidref="f18" foid="(266,1,68)"><fref label="" ent="" fidref="f19"
+foid="(267,1,68)"><fref label="" ent="" fidref="f20" foid="(268,1,68)"><fref
+label="" ent="" fidref="f21" foid="(269,1,68)"><fref label="" ent="" fidref="f22"
+foid="(270,1,68)"><fref label="" ent="" fidref="f23" foid="(271,1,68)"><fref
+label="" ent="" fidref="f24" foid="(272,1,68)"><fref label="" ent="" fidref="f25"
+foid="(273,1,68)"><fref label="" ent="" fidref="f26" foid="(274,1,68)"><fref
+label="" ent="" fidref="f27" foid="(275,1,68)"><fref label="" ent="" fidref="f28"
+foid="(276,1,68)"><fref label="" ent="" fidref="f29" foid="(277,1,68)"><fref
+label="" ent="" fidref="f30" foid="(278,1,68)"><fref label="" ent="" fidref="f31"
+foid="(279,1,68)"><fref label="" ent="" fidref="f32" foid="(280,1,68)"><fref
+label="" ent="" fidref="f33" foid="(281,1,68)"><fref label="" ent="" fidref="f34"
+foid="(285,1,68)"><fref label="" ent="" fidref="f35" foid="(286,1,68)"><fref
+label="" ent="" fidref="f36" foid="(287,1,68)"><fref label="" ent="" fidref="f37"
+foid="(288,1,68)"><fref label="" ent="" fidref="f38" foid="(289,1,68)"><fref
+label="" ent="" fidref="f39" foid="(290,1,68)"><fref label="" ent="" fidref="f40"
+foid="(291,1,68)"><fref label="" ent="" fidref="f41" foid="(292,1,68)"><fref
+label="" ent="" fidref="f42" foid="(293,1,68)"><fref label="" ent="" fidref="f43"
+foid="(294,1,68)"><fref label="" ent="" fidref="f44" foid="(295,1,68)"><fref
+label="" ent="" fidref="f45" foid="(296,1,68)"><fref label="" ent="" fidref="f46"
+foid="(297,1,68)"><fref label="" ent="" fidref="f47" foid="(298,1,68)"><fref
+label="" ent="" fidref="f48" foid="(299,1,68)"><fref label="" ent="" fidref="f49"
+foid="(300,1,68)"><fref label="" ent="" fidref="f50" foid="(301,1,68)"><fref
+label="" ent="" fidref="f51" foid="(302,1,68)"><fref label="" ent="" fidref="f52"
+foid="(303,1,68)"><fref label="" ent="" fidref="f53" foid="(304,1,68)"><fref
+label="" ent="" fidref="f54" foid="(305,1,68)"><fref label="" ent="" fidref="f55"
+foid="(515,1,68)"><fref label="" ent="" fidref="f56" foid="(516,1,68)"><fref
+label="" ent="" fidref="f57" foid="(517,1,68)"><fref label="" ent="" fidref="f58"
+foid="(521,1,68)"><fref label="" ent="" fidref="f59" foid="(522,1,68)"><fref
+label="" ent="" fidref="f60" foid="(526,1,68)"><fref label="" ent="" fidref="f61"
+foid="(527,1,68)"><fref label="" ent="" fidref="f62" foid="(528,1,68)"><fref
+label="" ent="" fidref="f63" foid="(529,1,68)"><fref label="" ent="" fidref="f64"
+foid="(530,1,68)"><fref label="" ent="" fidref="f65" foid="(534,1,68)"><fref
+label="" ent="" fidref="f66" foid="(535,1,68)"><fref label="" ent="" fidref="f67"
+foid="(536,1,68)"><fref label="" ent="" fidref="f68" foid="(537,1,68)"><fref
+label="" ent="" fidref="f69" foid="(538,1,68)"><fref label="" ent="" fidref="f70"
+foid="(539,1,68)"><fref label="" ent="" fidref="f71" foid="(543,1,68)"><fref
+label="" ent="" fidref="f72" foid="(547,1,68)"><fref label="" ent="" fidref="f73"
+foid="(551,1,68)"><fref label="" ent="" fidref="f74" foid="(555,1,68)"><fref
+label="" ent="" fidref="f75" foid="(556,1,68)"><fref label="" ent="" fidref="f76"
+foid="(557,1,68)"><fref label="" ent="" fidref="f77" foid="(558,1,68)"><fref
+label="" ent="" fidref="f78" foid="(768,1,68)"><fref label="" ent="" fidref="f79"
+foid="(772,1,68)"><fref label="" ent="" fidref="f80" foid="(773,1,68)"><fref
+label="" ent="" fidref="f81" foid="(774,1,68)"><fref label="" ent="" fidref="f82"
+foid="(775,1,68)"><fref label="" ent="" fidref="f83" foid="(779,1,68)"><fref
+label="" ent="" fidref="f84" foid="(780,1,68)"><fref label="" ent="" fidref="f85"
+foid="(784,1,68)"><fref label="" ent="" fidref="f86" foid="(785,1,68)"><fref
+label="" ent="" fidref="f87" foid="(786,1,68)"></group><group gid="charfill"
+label="Character Fills" type="S"></group><group gid="counter" label="Counters"
+type="S"><fref label="" ent="" fidref="f2" foid="(29,1,68)"><fref label=""
+ent="" fidref="f3" foid="(33,1,68)"><fref label="" ent="" fidref="f4" foid="(34,1,68)">
+<fref label="" ent="" fidref="f5" foid="(35,1,68)"></group><group gid="floatloc"
+label="Float Locations" type="S"></group><group gid="hyphrule" label="Hyphenation Rules"
+type="S"></group><group gid="sectoken" label="Security Classes" type="S">
+</group><group gid="pageset" label="Page Layout Sets" type="S"><fref label=""
+ent="" fidref="f88" foid="(816,1,68)"></group><group gid="envdesc" label="Environments"
+type="S"></group><group gid="charsubset" label="Style Sets" type="S"><fref
+label="" ent="" fidref="f89" foid="(2094,1,68)"><fref label="" ent="" fidref="f90"
+foid="(2097,1,68)"><fref label="" ent="" fidref="f91" foid="(2306,1,68)">
+<fref label="" ent="" fidref="f92" foid="(2312,1,68)"></group><group gid="eic"
+label="Elements-in-Context" type="S"><fref label="" ent="" fidref="f94" foid="(2350,1,68)">
+<fref label="" ent="" fidref="f95" foid="(2572,1,68)"><fref label="" ent=""
+fidref="f96" foid="(2582,1,68)"><fref label="" ent="" fidref="f97" foid="(2825,1,68)">
+<fref label="" ent="" fidref="f98" foid="(2835,1,68)"><fref label="" ent=""
+fidref="f99" foid="(2845,1,68)"><fref label="" ent="" fidref="f100" foid="(2855,1,68)">
+<fref label="" ent="" fidref="f101" foid="(2865,1,68)"><fref label="" ent=""
+fidref="f102" foid="(3081,1,68)"><fref label="" ent="" fidref="f103" foid="(3092,1,68)">
+<fref label="" ent="" fidref="f104" foid="(3102,1,68)"><fref label="" ent=""
+fidref="f105" foid="(3112,1,68)"><fref label="" ent="" fidref="f106" foid="(3328,1,68)">
+<fref label="" ent="" fidref="f107" foid="(3338,1,68)"><fref label="" ent=""
+fidref="f108" foid="(3348,1,68)"><fref label="" ent="" fidref="f109" foid="(3358,1,68)">
+<fref label="" ent="" fidref="f110" foid="(3368,1,68)"><fref label="" ent=""
+fidref="f111" foid="(3585,1,68)"><fref label="" ent="" fidref="f112" foid="(3595,1,68)">
+<fref label="" ent="" fidref="f113" foid="(3609,1,68)"><fref label="" ent=""
+fidref="f114" foid="(3619,1,68)"><fref label="" ent="" fidref="f115" foid="(3629,1,68)">
+<fref label="" ent="" fidref="f116" foid="(3846,1,68)"><fref label="" ent=""
+fidref="f117" foid="(3860,1,68)"><fref label="" ent="" fidref="f118" foid="(3869,1,68)">
+<fref label="" ent="" fidref="f119" foid="(3878,1,68)"><fref label="" ent=""
+fidref="f120" foid="(4104,1,68)"><fref label="" ent="" fidref="f121" foid="(4123,1,68)">
+<fref label="" ent="" fidref="f122" foid="(4133,1,68)"><fref label="" ent=""
+fidref="f123" foid="(4355,1,68)"><fref label="" ent="" fidref="f124" foid="(4375,1,68)">
+<fref label="" ent="" fidref="f125" foid="(4612,1,68)"><fref label="" ent=""
+fidref="f126" foid="(4620,1,68)"><fref label="" ent="" fidref="f127" foid="(4877,1,68)">
+<fref label="" ent="" fidref="f128" foid="(4907,1,68)"><fref label="" ent=""
+fidref="f129" foid="(5130,1,68)"><fref label="" ent="" fidref="f130" foid="(5145,1,68)">
+<fref label="" ent="" fidref="f131" foid="(5160,1,68)"><fref label="" ent=""
+fidref="f132" foid="(5397,1,68)"><fref label="" ent="" fidref="f133" foid="(5637,1,68)">
+<fref label="" ent="" fidref="f134" foid="(5655,1,68)"><fref label="" ent=""
+fidref="f135" foid="(5676,1,68)"><fref label="" ent="" fidref="f136" foid="(5905,1,68)">
+<fref label="" ent="" fidref="f137" foid="(5920,1,68)"><fref label="" ent=""
+fidref="f138" foid="(5935,1,68)"><fref label="" ent="" fidref="f139" foid="(6176,1,68)">
+<fref label="" ent="" fidref="f140" foid="(6406,1,68)"><fref label="" ent=""
+fidref="f141" foid="(6431,1,68)"><fref label="" ent="" fidref="f142" foid="(6447,1,68)">
+<fref label="" ent="" fidref="f143" foid="(6675,1,68)"><fref label="" ent=""
+fidref="f144" foid="(6701,1,68)"><fref label="" ent="" fidref="f145" foid="(6925,1,68)">
+<fref label="" ent="" fidref="f146" foid="(6944,1,68)"><fref label="" ent=""
+fidref="f147" foid="(7211,1,68)"><fref label="" ent="" fidref="f148" foid="(7695,1,68)">
+<fref label="" ent="" fidref="f149" foid="(7722,1,68)"><fref label="" ent=""
+fidref="f150" foid="(7960,1,68)"><fref label="" ent="" fidref="f151" foid="(8214,1,68)">
+<fref label="" ent="" fidref="f152" foid="(8223,1,68)"><fref label="" ent=""
+fidref="f153" foid="(8232,1,68)"><fref label="" ent="" fidref="f154" foid="(8241,1,68)">
+<fref label="" ent="" fidref="f155" foid="(8456,1,68)"><fref label="" ent=""
+fidref="f156" foid="(8483,1,68)"><fref label="" ent="" fidref="f157" foid="(8705,1,68)">
+<fref label="" ent="" fidref="f158" foid="(8724,1,68)"><fref label="" ent=""
+fidref="f159" foid="(8748,1,68)"><fref label="" ent="" fidref="f160" foid="(8963,1,68)">
+<fref label="" ent="" fidref="f161" foid="(8972,1,68)"><fref label="" ent=""
+fidref="f162" foid="(8981,1,68)"><fref label="" ent="" fidref="f163" foid="(9246,1,68)">
+<fref label="" ent="" fidref="f164" foid="(9259,1,68)"><fref label="" ent=""
+fidref="f165" foid="(9490,1,68)"><fref label="" ent="" fidref="f166" foid="(9505,1,68)">
+<fref label="" ent="" fidref="f167" foid="(9515,1,68)"><fref label="" ent=""
+fidref="f168" foid="(9730,1,68)"><fref label="" ent="" fidref="f169" foid="(9739,1,68)">
+<fref label="" ent="" fidref="f170" foid="(9747,1,68)"><fref label="" ent=""
+fidref="f171" foid="(9757,1,68)"><fref label="" ent="" fidref="f172" foid="(9767,1,68)">
+<fref label="" ent="" fidref="f173" foid="(9777,1,68)"><fref label="" ent=""
+fidref="f174" foid="(9993,1,68)"><fref label="" ent="" fidref="f175" foid="(10003,1,68)">
+<fref label="" ent="" fidref="f176" foid="(10013,1,68)"><fref label="" ent=""
+fidref="f177" foid="(10023,1,68)"><fref label="" ent="" fidref="f178" foid="(10033,1,68)">
+<fref label="" ent="" fidref="f179" foid="(10257,1,68)"><fref label="" ent=""
+fidref="f180" foid="(10275,1,68)"><fref label="" ent="" fidref="f181" foid="(10500,1,68)">
+<fref label="" ent="" fidref="f182" foid="(10510,1,68)"><fref label="" ent=""
+fidref="f183" foid="(10520,1,68)"><fref label="" ent="" fidref="f184" foid="(10530,1,68)">
+<fref label="" ent="" fidref="f185" foid="(10538,1,68)"><fref label="" ent=""
+fidref="f186" foid="(10754,1,68)"><fref label="" ent="" fidref="f187" foid="(10772,1,68)">
+<fref label="" ent="" fidref="f188" foid="(10782,1,68)"><fref label="" ent=""
+fidref="f189" foid="(10792,1,68)"><fref label="" ent="" fidref="f190" foid="(11008,1,68)">
+<fref label="" ent="" fidref="f191" foid="(11018,1,68)"><fref label="" ent=""
+fidref="f192" foid="(11042,1,68)"><fref label="" ent="" fidref="f193" foid="(11057,1,68)">
+<fref label="" ent="" fidref="f194" foid="(11279,1,68)"><fref label="" ent=""
+fidref="f195" foid="(11528,1,68)"><fref label="" ent="" fidref="f196" foid="(11538,1,68)">
+<fref label="" ent="" fidref="f197" foid="(11548,1,68)"><fref label="" ent=""
+fidref="f198" foid="(11558,1,68)"><fref label="" ent="" fidref="f199" foid="(11568,1,68)">
+<fref label="" ent="" fidref="f200" foid="(11796,1,68)"><fref label="" ent=""
+fidref="f201" foid="(11805,1,68)"><fref label="" ent="" fidref="f202" foid="(12042,1,68)">
+<fref label="" ent="" fidref="f203" foid="(12053,1,68)"><fref label="" ent=""
+fidref="f204" foid="(12063,1,68)"><fref label="" ent="" fidref="f205" foid="(12080,1,68)">
+<fref label="" ent="" fidref="f206" foid="(12316,1,68)"><fref label="" ent=""
+fidref="f207" foid="(12559,1,68)"><fref label="" ent="" fidref="f208" foid="(12801,1,68)">
+<fref label="" ent="" fidref="f209" foid="(12810,1,68)"><fref label="" ent=""
+fidref="f210" foid="(12828,1,68)"><fref label="" ent="" fidref="f211" foid="(13056,1,68)">
+<fref label="" ent="" fidref="f212" foid="(13076,1,68)"><fref label="" ent=""
+fidref="f213" foid="(13082,1,68)"><fref label="" ent="" fidref="f214" foid="(13091,1,68)">
+<fref label="" ent="" fidref="f215" foid="(13312,1,68)"><fref label="" ent=""
+fidref="f216" foid="(13333,1,68)"><fref label="" ent="" fidref="f217" foid="(13570,1,68)">
+<fref label="" ent="" fidref="f218" foid="(13599,1,68)"><fref label="" ent=""
+fidref="f219" foid="(13845,1,68)"><fref label="" ent="" fidref="f220" foid="(13871,1,68)">
+<fref label="" ent="" fidref="f221" foid="(14105,1,68)"><fref label="" ent=""
+fidref="f222" foid="(14346,1,68)"><fref label="" ent="" fidref="f223" foid="(14377,1,68)">
+<fref label="" ent="" fidref="f224" foid="(14635,1,68)"><fref label="" ent=""
+fidref="f225" foid="(14885,1,68)"><fref label="" ent="" fidref="f226" foid="(14896,1,68)">
+<fref label="" ent="" fidref="f227" foid="(15124,1,68)"><fref label="" ent=""
+fidref="f228" foid="(15133,1,68)"><fref label="" ent="" fidref="f229" foid="(15360,1,68)">
+<fref label="" ent="" fidref="f230" foid="(15369,1,68)"><fref label="" ent=""
+fidref="f231" foid="(15386,1,68)"><fref label="" ent="" fidref="f232" foid="(15618,1,68)">
+<fref label="" ent="" fidref="f233" foid="(15644,1,68)"><fref label="" ent=""
+fidref="f234" foid="(15876,1,68)"><fref label="" ent="" fidref="f235" foid="(15910,1,68)">
+<fref label="" ent="" fidref="f236" foid="(16142,1,68)"><fref label="" ent=""
+fidref="f237" foid="(16157,1,68)"><fref label="" ent="" fidref="f238" foid="(16395,1,68)">
+<fref label="" ent="" fidref="f239" foid="(16423,1,68)"><fref label="" ent=""
+fidref="f240" foid="(16654,1,68)"><fref label="" ent="" fidref="f241" foid="(16681,1,68)">
+<fref label="" ent="" fidref="f242" foid="(16900,1,68)"><fref label="" ent=""
+fidref="f243" foid="(16920,1,68)"><fref label="" ent="" fidref="f244" foid="(16940,1,68)">
+<fref label="" ent="" fidref="f245" foid="(17160,1,68)"><fref label="" ent=""
+fidref="f246" foid="(17178,1,68)"><fref label="" ent="" fidref="f247" foid="(17410,1,68)">
+<fref label="" ent="" fidref="f248" foid="(17422,1,68)"><fref label="" ent=""
+fidref="f249" foid="(17435,1,68)"><fref label="" ent="" fidref="f250" foid="(17453,1,68)">
+<fref label="" ent="" fidref="f251" foid="(17922,1,68)"><fref label="" ent=""
+fidref="f252" foid="(17962,1,68)"><fref label="" ent="" fidref="f253" foid="(18209,1,68)">
+<fref label="" ent="" fidref="f254" foid="(18448,1,68)"><fref label="" ent=""
+fidref="f255" foid="(18456,1,68)"><fref label="" ent="" fidref="f256" foid="(18466,1,68)">
+<fref label="" ent="" fidref="f257" foid="(18476,1,68)"><fref label="" ent=""
+fidref="f258" foid="(18692,1,68)"><fref label="" ent="" fidref="f259" foid="(18702,1,68)">
+<fref label="" ent="" fidref="f260" foid="(18712,1,68)"><fref label="" ent=""
+fidref="f261" foid="(18720,1,68)"><fref label="" ent="" fidref="f262" foid="(18730,1,68)">
+<fref label="" ent="" fidref="f263" foid="(18944,1,68)"><fref label="" ent=""
+fidref="f264" foid="(18954,1,68)"><fref label="" ent="" fidref="f265" foid="(18964,1,68)">
+<fref label="" ent="" fidref="f266" foid="(18974,1,68)"><fref label="" ent=""
+fidref="f267" foid="(18984,1,68)"><fref label="" ent="" fidref="f268" foid="(18992,1,68)">
+<fref label="" ent="" fidref="f269" foid="(19208,1,68)"><fref label="" ent=""
+fidref="f270" foid="(19218,1,68)"><fref label="" ent="" fidref="f271" foid="(19226,1,68)">
+<fref label="" ent="" fidref="f272" foid="(19244,1,68)"><fref label="" ent=""
+fidref="f273" foid="(19467,1,68)"><fref label="" ent="" fidref="f274" foid="(19483,1,68)">
+<fref label="" ent="" fidref="f275" foid="(19505,1,68)"><fref label="" ent=""
+fidref="f276" foid="(19721,1,68)"><fref label="" ent="" fidref="f277" foid="(19731,1,68)">
+<fref label="" ent="" fidref="f278" foid="(19755,1,68)"><fref label="" ent=""
+fidref="f279" foid="(19972,1,68)"><fref label="" ent="" fidref="f280" foid="(20003,1,68)">
+<fref label="" ent="" fidref="f281" foid="(20240,1,68)"><fref label="" ent=""
+fidref="f282" foid="(20501,1,68)"><fref label="" ent="" fidref="f283" foid="(20749,1,68)">
+<fref label="" ent="" fidref="f284" foid="(20766,1,68)"><fref label="" ent=""
+fidref="f285" foid="(20995,1,68)"><fref label="" ent="" fidref="f286" foid="(21005,1,68)">
+<fref label="" ent="" fidref="f287" foid="(21015,1,68)"><fref label="" ent=""
+fidref="f288" foid="(21551,1,68)"><fref label="" ent="" fidref="f289" foid="(21769,1,68)">
+<fref label="" ent="" fidref="f290" foid="(21788,1,68)"><fref label="" ent=""
+fidref="f291" foid="(21803,1,68)"><fref label="" ent="" fidref="f292" foid="(22026,1,68)">
+<fref label="" ent="" fidref="f293" foid="(22037,1,68)"><fref label="" ent=""
+fidref="f294" foid="(22053,1,68)"><fref label="" ent="" fidref="f295" foid="(22282,1,68)">
+<fref label="" ent="" fidref="f296" foid="(22295,1,68)"><fref label="" ent=""
+fidref="f297" foid="(22308,1,68)"><fref label="" ent="" fidref="f298" foid="(22320,1,68)">
+<fref label="" ent="" fidref="f299" foid="(22536,1,68)"><fref label="" ent=""
+fidref="f300" foid="(22550,1,68)"><fref label="" ent="" fidref="f301" foid="(22567,1,68)">
+<fref label="" ent="" fidref="f302" foid="(22817,1,68)"><fref label="" ent=""
+fidref="f303" foid="(23052,1,68)"><fref label="" ent="" fidref="f304" foid="(23082,1,68)">
+<fref label="" ent="" fidref="f305" foid="(23318,1,68)"><fref label="" ent=""
+fidref="f306" foid="(23328,1,68)"><fref label="" ent="" fidref="f307" foid="(23338,1,68)">
+<fref label="" ent="" fidref="f308" foid="(23554,1,68)"><fref label="" ent=""
+fidref="f309" foid="(23564,1,68)"><fref label="" ent="" fidref="f310" foid="(23574,1,68)">
+<fref label="" ent="" fidref="f311" foid="(23584,1,68)"><fref label="" ent=""
+fidref="f312" foid="(23594,1,68)"><fref label="" ent="" fidref="f313" foid="(23810,1,68)">
+<fref label="" ent="" fidref="f314" foid="(23820,1,68)"><fref label="" ent=""
+fidref="f315" foid="(23830,1,68)"><fref label="" ent="" fidref="f316" foid="(23840,1,68)">
+<fref label="" ent="" fidref="f317" foid="(23850,1,68)"><fref label="" ent=""
+fidref="f318" foid="(24066,1,68)"><fref label="" ent="" fidref="f319" foid="(24076,1,68)">
+<fref label="" ent="" fidref="f320" foid="(24086,1,68)"><fref label="" ent=""
+fidref="f321" foid="(24096,1,68)"><fref label="" ent="" fidref="f322" foid="(24106,1,68)">
+<fref label="" ent="" fidref="f323" foid="(24329,1,68)"><fref label="" ent=""
+fidref="f324" foid="(24341,1,68)"><fref label="" ent="" fidref="f325" foid="(24357,1,68)">
+<fref label="" ent="" fidref="f326" foid="(24584,1,68)"><fref label="" ent=""
+fidref="f327" foid="(24594,1,68)"><fref label="" ent="" fidref="f328" foid="(24604,1,68)">
+<fref label="" ent="" fidref="f329" foid="(24620,1,68)"><fref label="" ent=""
+fidref="f330" foid="(24832,1,68)"><fref label="" ent="" fidref="f331" foid="(24838,1,68)">
+<fref label="" ent="" fidref="f332" foid="(24847,1,68)"><fref label="" ent=""
+fidref="f333" foid="(24860,1,68)"><fref label="" ent="" fidref="f334" foid="(25090,1,68)">
+<fref label="" ent="" fidref="f335" foid="(25109,1,68)"><fref label="" ent=""
+fidref="f336" foid="(25351,1,68)"><fref label="" ent="" fidref="f337" foid="(25370,1,68)">
+<fref label="" ent="" fidref="f338" foid="(25611,1,68)"><fref label="" ent=""
+fidref="f339" foid="(25629,1,68)"><fref label="" ent="" fidref="f340" foid="(25870,1,68)">
+<fref label="" ent="" fidref="f341" foid="(25888,1,68)"><fref label="" ent=""
+fidref="f342" foid="(26126,1,68)"><fref label="" ent="" fidref="f343" foid="(26136,1,68)">
+<fref label="" ent="" fidref="f344" foid="(26378,1,68)"><fref label="" ent=""
+fidref="f345" foid="(26403,1,68)"><fref label="" ent="" fidref="f346" foid="(26408,1,68)">
+<fref label="" ent="" fidref="f347" foid="(26414,1,68)"><fref label="" ent=""
+fidref="f348" foid="(26625,1,68)"><fref label="" ent="" fidref="f349" foid="(26630,1,68)">
+<fref label="" ent="" fidref="f350" foid="(26636,1,68)"><fref label="" ent=""
+fidref="f351" foid="(26642,1,68)"><fref label="" ent="" fidref="f352" foid="(26647,1,68)">
+<fref label="" ent="" fidref="f353" foid="(26653,1,68)"><fref label="" ent=""
+fidref="f354" foid="(26659,1,68)"><fref label="" ent="" fidref="f355" foid="(26665,1,68)">
+<fref label="" ent="" fidref="f356" foid="(26670,1,68)"><fref label="" ent=""
+fidref="f357" foid="(26893,1,68)"><fref label="" ent="" fidref="f358" foid="(26911,1,68)">
+<fref label="" ent="" fidref="f359" foid="(27159,1,68)"><fref label="" ent=""
+fidref="f360" foid="(27392,1,68)"><fref label="" ent="" fidref="f361" foid="(27414,1,68)">
+<fref label="" ent="" fidref="f362" foid="(27430,1,68)"><fref label="" ent=""
+fidref="f363" foid="(27652,1,68)"><fref label="" ent="" fidref="f364" foid="(27669,1,68)">
+<fref label="" ent="" fidref="f365" foid="(27686,1,68)"><fref label="" ent=""
+fidref="f366" foid="(27909,1,68)"><fref label="" ent="" fidref="f367" foid="(27937,1,68)">
+</group><?Pub Caret1><group gid="ftneic" label="Footnote Elements-in-Context"
+type="S"></group><group gid="rsrcdesc" label="Resource Defaults" type="S">
+<fref label="" ent="" fidref="f1" foid="(10,1,68)"></group><group gid="secdesc"
+label="Security Defaults" type="S"></group></sysgroups><usergroups><group
+gid="default" label="User Default" type="U"></group></usergroups><entgroups>
+<group gid="find" label="User Query Results" type="U"></group></entgroups>
+</gidgroups>
+<?Pub *0000022336 0>

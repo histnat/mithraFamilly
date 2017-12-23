@@ -1,0 +1,23 @@
+package com.sonovision.openconv.db.dao;
+
+import java.io.Serializable;
+import java.util.List;
+
+import com.sonovision.openconv.db.vo.ConversionObject;
+import com.sonovision.openconv.db.vo.Task;
+
+public interface ConversionObjectDao extends CommonDao<ConversionObject>, Serializable {
+
+	long countByTask(Task t);
+
+	void deleteAll();
+
+	List<ConversionObject> findAll();
+
+	ConversionObject findByAll(String conversionId, String identification, Task task);
+
+	ConversionObject findOne(String id);
+
+	long countByTaskLogResult(Task t, String logResult);
+
+}

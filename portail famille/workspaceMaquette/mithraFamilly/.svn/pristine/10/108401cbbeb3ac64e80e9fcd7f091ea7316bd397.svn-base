@@ -1,0 +1,15 @@
+package com.sonovision.openconv.service;
+
+import java.io.File;
+
+public interface FileService {
+
+	
+	String getLogDirPath(String baseDirPath);
+	String getResultDirPath(String baseDirPath);
+	String getLogPdfFilePath(String baseDirPath);
+	String getTempDirPath();
+	String getTempZipFilePath(String name);
+
+	
+}

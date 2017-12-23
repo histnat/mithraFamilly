@@ -1,0 +1,572 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                           RAFALE                                   *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.2a                           *
+    *                   Dated 12th January 2003                          *
+    *                                                                    *			
+    *  Amendment  :							 *
+    *  19/05/97   : Changed public Identifier		  	         *
+    *									 *
+    *                modified element <emphasis>:			 *
+    *                added attribute "case" to <emphasis>, to reflect    *
+    *                the case of the emphazised text, with possible	 *
+    *                values UPPER,LOWER or SAME (default value= SAMER).	 *
+    *                added attributes  "bold" , 			 *
+    *                                  "italic" , 			 *
+    *                                  "underscr" (values %yesorno;)	 *
+    *                deleted attribute "emph" (obsolete after above adds)*
+    *                added attribute "color" with predefined values, 	 *
+    *                to reflect the rendition of the text.		 *
+    *									 *
+    *                added element <listref> , with attribute "refid"	 *
+    *                               (Reference to a list)		 *
+    *									 *
+    *                 added attribute "target" to <figref>.		 *
+    *									 *
+    *                 modified %ref;  (References to elements)		 *
+    *                 added "tpubref" (Reference  to a techpub).	 *
+    *                 added "listref" (Reference  to a list).		 *
+    *									 *
+    *									 *
+    *                 modified %stepcon; (Step content)			 *
+    *                 added "title?" before "specpara".			 *
+    *                 deleted <math> from content model.		 *
+    *									 *
+    *                 modified %nparcon;				 *
+    *                 (Numbered/Titled paragraph content)		 *
+    *                 (Used in <para0> and all <subpara_i>)          	 *
+    *               "title" is now before "specpara" in the content model*
+    *                 of the paragraphs.				 *
+    *                 deleted <math> from the parameter entity definition*
+    *									 *
+    *                 modified %text; content model (Running text)	 *
+    *                 deleted "brk"					 *
+    *                 deleted "eqtxt"					 *
+    *                 added   "reporg" : repere organe			 *
+    *                 added   "refipc" : Reference a CSN/ISN 		 *
+    *									 *
+    *									 *
+    *                 added <refipc> : reference a CSN/ISN thru attribute*
+    *                                  CSN CDATA #REQUIRED		 *
+    *                                  ISN CDATA #IMPLIED		 *
+    *									 *
+    *               added <reporg> : repere organe containing (nomen,reg)*
+    *                 added <reg>    : code organe. 			 *
+    *									 *
+    *                 modified attribute change of <change> to(ADD or MOD*
+    *									 *
+    *                 added attribute %INSDEL; to elements		 *
+    *                 reporg,reg,refipc,xref,dmcref,tpubref,figref,	 *
+    *                 tabref,supplref,supeqref,miscref,listref,indxflag	 *
+    *                 emphasis,symbol,graphic,subscrpt,supscrpt,title.	 *
+    *                                                                    *
+    * Amendment                                                          *
+    * 1. Update Public Identifier.                                       *
+    * 2. Delete entity %HEADING;                                         *
+    * 3. Moved entity %nparacon; to Numbered Para's entity.              *
+    * 4. Moved entity %stepcon; to Steps entity.                         *
+    * 5. Add U,W to rpcname values                                       *
+    * 6. Add attribute sheetno to figref                                 *
+    *                                                                    *
+    *  15/01/98   : Detete <change> from %text				 *
+    *			    Add JPEG notation.                           *
+    *			    Add value "P" to RPCNAME attribute list      *
+    *               yellow and magenta added to "color" values (emphasis)*
+    *               add ippn as optional attribute of refipc             *
+    *               change reporg structure                              *
+    *                (delete reg as element add reg & rpcname attributes)*
+    *               move reporg and refipc to ref entity                 *
+    *               delete nomen from reporg                             *
+    *               move nomen definition to %extident                   *
+    *               add rpcname attribute to refipc                      *
+    *               figref hotspot target  become idref instead of cdata *
+    *                                                                    *
+    *  22/12/98   : reporg endtag optional      			 *
+    *			    add repnohot attribute for figref            *
+    *                                                                    *
+    *                                                                    *
+    *  12/01/03 Changed public Identifier		  	         *
+    *           extend rpcname attribute values                          *
+    *           add target and target type attribute to dmcref (FCR 3588)*
+    *           add <applict> to %text (FCR 3585)                        *
+    *           add Tiff notation (FCR 3589)                             *
+    *                                                                    *
+    *                                                                    *
+    *  12/01/14 Changed public Identifier		  	         *
+    *           add Pdf notation (FCR 4479)                              *
+    *                                                                    *
+    * Typical invocation :                                               *
+    * <!ENTITY % COMMON                                                  *
+    *   PUBLIC "-//RAFALE//ENTITIES Common Entities 140112//EN" >        *
+    * %COMMON;                                                           *
+    ********************************************************************* -->
+
+
+<!--**********************************************************************
+    * Define the cgm Notation, to the Public Identifier for CGM          *
+    * graphics.                                                          *
+    ********************************************************************** -->
+
+<!NOTATION cgm PUBLIC
+"-//USA-DOD//NOTATION Computer Graphics Metafile//EN" >
+
+
+
+<!--**********************************************************************
+    * Define the fax Notation, to the Public Identifier for CCITT Group 4*
+    * images.                                                            *
+    ********************************************************************** -->
+
+<!NOTATION fax PUBLIC
+"-//USA-DOD//NOTATION CCITT Group 4 Facsimile//EN" >
+
+
+<!--**********************************************************************
+    * Define the tiff Notation, to the Public Identifier for TIFF        *
+    * images.                                                            *
+    ********************************************************************** -->
+
+<!NOTATION tiff PUBLIC
+ "-//Aldus/Microsoft Tagged Interchange File Format//NOTATION CCITT Group 4 Facsimile//EN" >
+
+
+<!--**********************************************************************
+    * Define the JPEG Notation, to the Public Identifier for JPEG        *
+    * images.                                                            *
+    ********************************************************************** -->
+
+<!NOTATION JPEG PUBLIC
+"+//ISBN 0-7923-9432-1::Graphic Notation//NOTATION Joint Photographic Experts Group Raster//EN" >
+
+
+<!--**********************************************************************
+    * Define the pdf Notation, to the Public Identifier for PDF files    *
+    *                                                                    *
+    ********************************************************************** -->
+
+<!NOTATION pdf PUBLIC
+"+// Adobe Inc.//NOTATION Portable Document Format//EN ">
+
+
+<!--**********************************************************************
+    * Call the ISO Added Latin 1 Public Text. The formal public          *
+    * identifier is stored in the entity %ISOlat1;                       *
+    ********************************************************************** -->
+
+%ISOlat1;
+
+
+
+<!--**********************************************************************
+    * Call the ISO Publishing Public Text. The formal public identifier  *
+    * is stored in the entity %ISOpub;                                   *
+    ********************************************************************** -->
+
+%ISOpub;
+
+
+
+<!--**********************************************************************
+    * Call the ISO Greek Symbols Public Text. The formal public          *
+    * identifier is stored in the entity %ISOgrk3;                       *
+    ********************************************************************** -->
+
+%ISOgrk3;
+
+
+
+<!--**********************************************************************
+    * Call the ISO Numeric and Special Symbols Public Text. The formal   *
+    * public identifier is stored in the entity %ISOnum;                 *
+    ********************************************************************** -->
+
+%ISOnum;
+
+
+
+<!--**********************************************************************
+    * Call the ISO General Technical Public Text. The formal public      *
+    * identifier is stored in the entity %ISOtech;                       *
+    ********************************************************************** -->
+
+%ISOtech;
+
+<!--**********************************************************************
+    * Define Entity %applic;	Applicability for content                *
+    ********************************************************************** -->
+  
+ <!ENTITY % applic "(applic)" >
+
+
+<!--**********************************************************************
+    * Define Entity %yesorno (Yes or No Attribute Answer) containing:-   *
+    * NUMBER                                                             *
+    ********************************************************************** -->
+
+<!ENTITY % yesorno  "NUMBER" >
+
+
+<!--*****************************************************************************
+    * Define Entity %RPCNAME (Responsible Partner Company Names).              	*
+    *   Responsible Partner Company Names.                                      *
+    *   See "CTG annexe 2" for details about the above letters.                 *
+    **************************************************************************-->
+<!ENTITY % RPCNAME "(A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z|0|1|2|3|4|5|6|7|8|9)"  >
+
+
+<!--*****************************************************************************
+    * Define Entity %ref (References).						*
+    **************************************************************************-->
+<!ENTITY % ref "dmcref | figref  | tabref | supplref | supeqref | miscref | 
+    	  	refipc | reporg | xref | listref | tpubref " >
+
+
+<!--**********************************************************************
+    * Define Entity %text (Running Text) containing:-                    *
+    *   Parsed Character Data.                                           *
+    *  or                                                                *
+    *   XREF     - mandatory single     contains No Other Tags.          *
+    *  or                                                                *
+    *   INDXFLAG - mandatory single     contains No Other Tags.          *
+    *  or                                                                *
+    *   EMPHASIS - mandatory single     contains definition stored in    *
+    *                                   entity %text;                    *
+    *  or                                                                *
+    *   SYMBOL   - mandatory single     contains No Other Tags.          *
+    *  or                                                                *
+    *   SUBSCRPT - mandatory single     contains Replaceable Character   *
+    *                                   Data.                            *
+    *  or                                                                *
+    *   SUPSCRPT - mandatory single     contains Replaceable Character   *
+    *                                   Data.                            *
+    *  or                                                                *
+    *   APPLICT - mandatory single      Text running applicability       *
+    *                                                                    *
+    ********************************************************************** -->
+
+<!ENTITY % text "(#PCDATA | %ref;  | indxflag | emphasis  
+                          | symbol | subscrpt | supscrpt | applict )" >
+
+
+<!--***************************************************************************
+    * Define Element REPORG (Repere Organe)				      *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                          *
+    *  rpcname  - DECLARED - IMPLIED  - responsible partner company           *
+    *  reg      - DECLARED - IMPLIED  - Code du repere electrique generalise. *
+    *  CHANGE   - DECLARED - IMPLIED  - Type of change.                       *
+    *           - "ADD"    - Identifies the change as an addition.            *
+    *           - "MOD"    - Identifies the change as an update.              *
+    ***************************************************************************-->
+<!ELEMENT reporg  - o EMPTY>
+<!ATTLIST reporg     
+        rpcname	%RPCNAME;	#IMPLIED 
+	reg	CDATA 		#REQUIRED
+	%INSDEL; >
+
+
+<!--***********************************************************************
+    * Define Element REFIPC (reference an IPPN- CSN-ISN in the IPC)       *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                      *
+    *  rpcname  - DECLARED - IMPLIED  - responsible partner company       *
+    *  ippn     - CDATA    - IMPLIED  - reference to an IPPN              *
+    *  csn      - CDATA    - IMPLIED  - reference to a CSN                *
+    *  isn      - CDATA    - IMPLIED  - reference to an ISN               *
+    ***********************************************************************-->
+
+<!ELEMENT refipc - o EMPTY>
+<!ATTLIST refipc     %INSDEL;
+          rpcname    %RPCNAME;	#IMPLIED 
+          ippn       CDATA 	#IMPLIED  
+          csn        CDATA  	#REQUIRED  
+          isn        CDATA  	#IMPLIED   >
+
+
+<!--**********************************************************************
+    * Define Element XREF (No typed Cross Reference) containing:-        *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  XREFID   - IDREF    - REQUIRED - Cross reference ID.              *
+    *  PRETEXT  - CDATA    - IMPLIED  - Text that will precede the cross *
+    *                                   reference.                       *
+    *  POSTTEXT - CDATA    - IMPLIED  - Text that will follow the cross  *
+    *                                   reference.                       *
+    ********************************************************************** -->
+
+<!ELEMENT xref - o EMPTY >
+<!ATTLIST xref
+             xrefid   IDREF  	#REQUIRED
+             pretext  CDATA 	#IMPLIED
+             posttext CDATA 	#IMPLIED >
+
+
+<!--***************************************************************************
+    * Define Element DMCREF (Data Module Reference).			      *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                          *
+    *  xrefid     - IDREF    - REQUIRED - dmc Cross reference ID.             *
+    *  target     - CDATA    - IMPLIED  - Cross reference target (name)       *
+    *  targettype - DECLARED - IMPLIED  - Type of ID.                         *
+    *           - "icn"      - Cross reference to illustration.               *
+    *           - "hs"       - Cross reference to a graphical hotspot.        *
+    *           - "txt"      - Cross reference to text                        *
+    *************************************************************************** -->
+<!ELEMENT dmcref - o EMPTY >
+<!ATTLIST dmcref     %INSDEL;
+          xrefid 	IDREF 		#REQUIRED   
+          target 	CDATA 		#IMPLIED    
+          targettype   (txt | icn | hs)  #IMPLIED >
+             
+
+<!--*****************************************************************************
+    * Define Element TPUBREF (Technical Publication Reference).			*
+    ***************************************************************************-->
+<!ELEMENT tpubref - o EMPTY -- Technical Publication Reference.-->
+<!ATTLIST tpubref     %INSDEL;
+             xrefid 	IDREF 		#REQUIRED -- Cross reference ID.-->
+
+
+<!--*****************************************************************************
+    * Define Element FIGREF (Reference to a Figure).				*
+    **************************************************************************-->
+<!ELEMENT figref 	- o EMPTY -- Reference to a Figure.-->
+<!ATTLIST figref        %INSDEL
+          refid 	IDREF 		#REQUIRED -- Cross reference ID.--
+	  sheetno 	NUMBER		#IMPLIED  -- Sheet number      .--
+          target	IDREF		#IMPLIED  -- Target (Hotspot).  --
+	  repnohot 	CDATA		#IMPLIED  -- Target (no Hotspot).  -->
+
+<!--*****************************************************************************
+    * Define Element TABREF (Reference to a Table).				*
+    **************************************************************************-->
+<!ELEMENT tabref - o EMPTY -- Reference to a Table.-->
+<!ATTLIST tabref     %INSDEL
+             refid 	IDREF 		#REQUIRED -- Cross reference ID.-->
+
+
+<!--*****************************************************************************
+    * Define Element SUPPLREF (Reference to a Supply).				*
+    **************************************************************************-->
+<!ELEMENT supplref - o EMPTY -- Reference to a Supply.-->
+<!ATTLIST supplref     %INSDEL;
+             refid 	IDREF 		#REQUIRED -- Cross reference ID.-->
+
+
+<!--*****************************************************************************
+    * Define Element SUPEQREF (Reference to a Support Equipment).		*
+    **************************************************************************-->
+<!ELEMENT supeqref - o EMPTY -- Reference to a Support Equipment.-->
+<!ATTLIST supeqref     %INSDEL;
+             refid 	IDREF 		#REQUIRED -- Cross reference ID.-->
+
+<!--*****************************************************************************
+    * Define Element MISCREF (Reference to a Miscellaneous).			*
+    **************************************************************************-->
+<!ELEMENT miscref - o EMPTY -- Reference to a Miscellaneous.-->
+<!ATTLIST miscref     %INSDEL
+             refid 	IDREF 		#REQUIRED -- Cross reference ID.-->
+
+<!--*****************************************************************************
+    * Define Element LISTREF (Reference to a List ).        			*
+    **************************************************************************-->
+<!ELEMENT listref - o EMPTY -- Reference to a List.        .-->
+<!ATTLIST listref     %INSDEL
+             refid 	IDREF 		#REQUIRED -- Cross reference ID.--	>
+
+
+<!--**********************************************************************
+    * Define Element INDXFLAG (Index Flag) containing:-                  *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  REF1     - CDATA    - IMPLIED  - First level reference.           *
+    *  REF2     - CDATA    - IMPLIED  - Second level reference.          *
+    *  REF3     - CDATA    - IMPLIED  - Third level reference.           *
+    *  REF4     - CDATA    - IMPLIED  - Fourth level reference.          *
+    ********************************************************************** -->
+
+<!ELEMENT indxflag - o EMPTY -- Index Flag.-->
+<!ATTLIST indxflag     %INSDEL;
+            ref1 	CDATA 		#IMPLIED -- First level reference.  --
+            ref2 	CDATA 		#IMPLIED -- Second level reference. --
+            ref3 	CDATA 		#IMPLIED -- Third level reference.  --
+            ref4 	CDATA 		#IMPLIED -- Fourth level reference. -->
+
+
+<!--**********************************************************************
+    * Define Element EMPHASIS (Phrase Emphasis) containing:-             *
+    *--------------------------------------------------------------------*
+    * Mandatory Repeatable Group.                                        *
+    *--------------------------------------------------------------------*
+    *  Definition stored in entity %text;                                *
+    *--------------------------------------------------------------------*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  EMPH     - DECLARED - "BOLD"   - Names identifying the type of    *
+    *                                   emphasis.                        *
+    *           - BOLD     - Bold typeface.                              *
+    *           - ITALIC   - Italic typeface.                            *
+    *           - UNDERSCR - Under line the text.                        *
+    *           - CASE	   - case definition.                            *
+    *           - Color	   - Color definition.                           *
+    ********************************************************************** -->
+
+<!ELEMENT emphasis - - ((%text;)+) -- Phrase Emphasis.  -->
+<!ATTLIST emphasis     %INSDEL;
+            -- the model below enables combinations (mixture) of renditions. --
+	  bold       %yesorno; #IMPLIED
+	  italic     %yesorno; #IMPLIED
+	  underscr   %yesorno; #IMPLIED 
+          case       (UPPER | LOWER | SAME) "SAME" 
+                       -- SAME  for keeping the case of the text as it is--
+                       -- LOWER for lower case --
+                       -- UPPER for upper case --
+
+          color      (NONE  | AMBER | BLUE | GREEN | RED | YELLOW | MAGENTA) "NONE"  >
+
+
+
+<!--**********************************************************************
+    * Define Element SYMBOL (Symbol) containing:-                        *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  CALICN  - IDREF   - REQUIRED - Unique graphic identifier.         *
+    *      The ID of the corresponding ICN in the status section         *
+    *    	(replace bordno entity call)                             *
+    * Note.                                                              *
+    *  The following attributes are included for compatibility with      *
+    *  MIL-M-28001A. They are not currently applicable to AECMA Data     *
+    *  Module use.                                                       *
+    *                                                                    *
+    *  REPROWID - NUTOKEN  - IMPLIED  - Reproduction area width.         *
+    *  REPRODEP - NUTOKEN  - IMPLIED  - Reproduction area depth.         *
+    *  HSCALE   - NUTOKEN  - IMPLIED  - Horizontal scaling.              *
+    *  VSCALE   - NUTOKEN  - IMPLIED  - Vertical scaling.                *
+    *  SCALEFIT - NUMBER   - IMPLIED  - Characteristic allows the graphic*
+    *                      to be scaled as needed to fit the size of the *
+    *                      reproduction area.                            *
+    *  OFFSET   - NMTOKEN  - IMPLIED  - Vertical relationship to type    *
+    *                      baseline of text. A positive value will move  *
+    *                      the symbol below the baseline and a negative  *
+    *                      value will place the symbol above the baseline*
+    *                      Units of measure are in points.               *
+    *  ROTATION - NUMBER   - IMPLIED  - Degree of rotation of the graphic*
+    ********************************************************************** -->
+
+<!ELEMENT symbol - o EMPTY >
+<!ATTLIST symbol     %INSDEL;
+	      callicn	  IDREF	       #REQUIRED -- The ID of the corresponding
+						    ICN in the status section.--
+              reprowid	NUTOKEN  	#IMPLIED -- Reproduction area width (mm)--
+              reprodep 	NUTOKEN      	#IMPLIED -- Reproduction area depth (mm)--
+              hscale  	NUTOKEN      	#IMPLIED -- Horizontal scaling.--
+              vscale  	NUTOKEN      	#IMPLIED -- Vertical scaling.--
+              scalefit	%yesorno;    	#IMPLIED
+			-- Allows graphic to be scaled as needed to fit the size
+			   of the area.--
+              offset  	NMTOKEN      	#IMPLIED
+			-- Vertical relationship to type baseline of text. A
+			   positive value will move the symbol below the baseline
+			   and a negative value will place the symbol above.--
+              rotation	NUMBER       	#IMPLIED
+			-- Degree of rotation of the graphic.-->
+
+
+<!--**********************************************************************
+    * Define Element GRAPHIC (Graphic / Image) containing:-              *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  CALICN  - IDREF   - REQUIRED - Unique graphic identifier.         *
+    *      The ID of the corresponding ICN in the status section         *
+    *    	(replace bordno entity call)                             *
+    *                                                                    *
+    * Note.                                                              *
+    *  The following attributes are included for compatibility with      *
+    *  MIL-M-28001A. They are not currently applicable to AECMA Data     *
+    *  Module use.                                                       *
+    *                                                                    *
+    *  GRAPHSTY - NUTOKEN  - IMPLIED  - Graphic Styles.                  *
+    *  LLCORDRA - NUTOKEN  - IMPLIED  - Left lower coordinate pair of    *
+    *                      the portion of the graphic to be placed in the*
+    *                      portion of the repro area, separated by comma.*
+    *  RUCORDRA - NUTOKEN  - IMPLIED  - Right upper coordinate pair of   *
+    *                      the portion of the graphic to be placed in the*
+    *                      portion of the repro area, separated by comma.*
+    *  REPROWID - NUTOKEN  - IMPLIED  - Reproduction area width.         *
+    *  REPRODEP - NUTOKEN  - IMPLIED  - Reproduction area depth.         *
+    *  HSCALE   - NUTOKEN  - IMPLIED  - Horizontal scaling.              *
+    *  VSCALE   - NUTOKEN  - IMPLIED  - Vertical scaling.                *
+    *  SCALEFIT - NUMBER   - IMPLIED  - Characteristic allows the graphic*
+    *                      to be scaled as needed to fit the size of the *
+    *                      reproduction area.                            *
+    *  HPLACE   - DECLARED - IMPLIED  - Horizontal placement in available*
+    *                      reproduction area.                            *
+    *  VPLACE   - DECLARED - IMPLIED  - Vertical placement in available  *
+    *                      reproduction area.                            *
+    *  COORDST  - NUTOKEN  - IMPLIED  - Left lower coordinate pair,      *
+    *                      separated by comma. Start position in repro   *
+    *                      area for placement of the portion of the      *
+    *                      graphic specified by llcordra and rucordra.   *
+    *  COORDEND - NUTOKEN  - IMPLIED  - Right upper coordinate pair'     *
+    *                      separated by comma. End position in repro     *
+    *                      area for placement of the portion of the      *
+    *                      graphic.                                      *
+    *  ROTATION - NUMBER   - IMPLIED  - Degree of rotation of the graphic*
+    ********************************************************************** -->
+
+<!ELEMENT graphic - o EMPTY >
+<!ATTLIST graphic     %INSDEL;
+	      callicn	  IDREF	       #REQUIRED -- The ID of the corresponding
+						    ICN in the status section.--
+              reprowid    NUTOKEN      #IMPLIED -- Reproduction area width (mm)--
+              reprodep    NUTOKEN      #IMPLIED -- Reproduction area depth (mm)--
+              hscale      NUTOKEN      #IMPLIED -- Horizontal scaling. --
+              vscale      NUTOKEN      #IMPLIED -- Vertical scaling.--
+              scalefit    %yesorno;    #IMPLIED
+			-- Allows graphic to be scaled as needed to fit the size
+			   of the area.--
+              rotation    NUMBER       #IMPLIED  -- Degree of rotation of the
+						    graphic-->
+
+
+<!--*****************************************************************************
+    * Define Element SUBSCRPT ( Sub Script Text.).				*
+    **************************************************************************-->
+<!ELEMENT subscrpt - - RCDATA -- Sub Script Text.-->
+<!ATTLIST subscrpt    %INSDEL;>
+
+
+<!--*****************************************************************************
+    * Define Element SUPSCRPT ( Sup Script Text.).				*
+    **************************************************************************-->
+<!ELEMENT supscrpt - - RCDATA -- Sup Script Text.-->
+<!ATTLIST supscrpt    %INSDEL;>
+
+
+<!--*****************************************************************************
+    * Define Element Title (Title).						*
+    **************************************************************************-->
+<!ELEMENT title - - ((%text;)+) -- Title.-->
+<!ATTLIST title       %INSDEL;>
+
+
+
+<!--**********************************************************************
+    * Define Entity %list; (Types Of Lists) containing:-                 *
+    *  LIST  - mandatory  single      contains TITLE, ITEM.              *
+    * or                                                                 *
+    *  PROCLIST - mandatory  single      contains TITLE, ITEM.           *
+    * or                                                                 *
+    *  DEFLIST  - mandatory  single      contains TITLE, TERM, DEF.      *
+    ********************************************************************** -->
+
+<!ENTITY % list "(list | deflist | proclist)" -- Types Of Lists.-->
+
+
+

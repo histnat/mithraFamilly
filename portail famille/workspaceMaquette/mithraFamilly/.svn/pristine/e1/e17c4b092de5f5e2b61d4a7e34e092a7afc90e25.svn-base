@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:exsl="http://exslt.org/common" xmlns:sonovision="com.sonovision.openconv.modules.xslprocess.helper.XSLHelper" exclude-result-prefixes="xsi sonovision" version="1.0">
+	<xsl:output method="xml" indent="no"/>
+
+	<!-- compute out in file list -->
+
+
+	<xsl:template match="/">
+		<xsl:apply-templates/>
+	</xsl:template>
+	
+	<xsl:template match="lstFilesInOut">
+		<xsl:copy>
+			<xsl:apply-templates/>
+		</xsl:copy>
+	</xsl:template>
+
+	<xsl:template match="object">
+		<xsl:if test="contains(@in,'.')">
+			<xsl:copy>
+				<xsl:variable name="in" select="@in"/>
+				<xsl:attribute name="in"><xsl:value-of select="substring-before($in,'.')"/></xsl:attribute>
+				<xsl:variable name="ext"><xsl:value-of select="translate(substring-after(@in,'.'),'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/></xsl:variable>
+				<xsl:attribute name="ext"><xsl:value-of select="$ext"/></xsl:attribute>
+				<xsl:attribute name="out">
+					<xsl:choose>
+						<xsl:when test="$ext='SGM' and string-length($in)=29 and substring($in,1,4)='DMC-'"><!-- DMC-A1A73211004A311AD_001.SGM -->
+							<xsl:value-of select="concat('DMC-',substring($in,5,2),'-', substring($in,7,1),'-', substring($in,8,2),'-', substring($in,10,2),'-',
+								substring($in,12,2),'-', substring($in,14,3),'-', substring($in,17,4),'-', substring($in,21,1),'_',substring($in,23,3) )"/>
+						</xsl:when>
+						<xsl:when test="($ext='CGM' or $ext='JPG' or $ext='TIF') and string-length($in)=28 and substring($in,1,4)='ICN-' "><!-- ICN-A1A732110SF030100325A011.JPG -->
+							<xsl:value-of select="$in"/>
+						</xsl:when>
+					</xsl:choose>
+				</xsl:attribute>
+			</xsl:copy>
+		</xsl:if>
+	</xsl:template>
+	
+	
+	<!-- ========= template print Message ========== -->
+	<xsl:template name="printMsg">
+		<xsl:param name="type"/>
+		<xsl:param name="content"/>
+		<!--xsl:sequence select='sonovision:logMessage($objectid,$type,$content)' use-when="function-available('sonovision:logMessage')" /-->
+	</xsl:template>
+	<xsl:template name="getFname">
+		<xsl:param name="string"/>
+		<xsl:choose>
+			<xsl:when test="contains($string,'/')">
+				<xsl:call-template name="getFname">
+					<xsl:with-param name="string">
+						<xsl:value-of select="substring-after($string,'/')"/>
+					</xsl:with-param>
+				</xsl:call-template>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="$string"/>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+</xsl:stylesheet>

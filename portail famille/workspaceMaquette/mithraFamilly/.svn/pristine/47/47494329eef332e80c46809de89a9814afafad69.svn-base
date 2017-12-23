@@ -1,0 +1,32 @@
+package com.sonovision.openconv.ws.controller.model;
+
+import java.util.Date;
+
+import com.sonovision.openconv.wf.model.RunningStatus;
+
+public class HistoryProgressDetailedModel extends HistoryDetailedModel{
+
+	private RunningStatus status;
+	
+	
+	public HistoryProgressDetailedModel() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public HistoryProgressDetailedModel(int nbrFiles, int nbrOK, int nbrNOK, int nbrNBloquant, Date startTime,
+			Date endTime, String userId,String idExe) {
+		super(nbrFiles, nbrOK, nbrNOK, nbrNBloquant, startTime, endTime, userId,idExe);
+		// TODO Auto-generated constructor stub
+	}
+
+	public RunningStatus getStatus() {
+		return status;
+	}
+
+	public void setStatus(RunningStatus status) {
+		this.status = status;
+	}
+
+	
+}

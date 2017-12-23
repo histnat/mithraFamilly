@@ -1,0 +1,305 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1A725200SF030100303A011 SYSTEM "x-dm://0900f90b800129a1,MYWORKING" NDATA jpeg>
+<!ENTITY A1A703600SF030100003A011 SYSTEM "x-dm://0900f90b80003c59,MYWORKING" NDATA cgm>
+<!ENTITY A1A723300SF030100422A011 SYSTEM "x-dm://0900f90b800042d4,MYWORKING" NDATA jpeg>
+<!ENTITY A1A725200SF030100253A021 SYSTEM "x-dm://0900f90b80004020,MYWORKING" NDATA cgm>
+<!ENTITY A1A725200SF030100254A011 SYSTEM "x-dm://0900f90b800039a4,MYWORKING" NDATA cgm>
+<!ENTITY A1A725200SF030100272A011 SYSTEM "x-dm://0900f90b80003da9,MYWORKING" NDATA cgm>
+<!ENTITY A1A725200SF030100273A011 SYSTEM "x-dm://0900f90b800042d7,MYWORKING" NDATA jpeg>
+]>
+<?Pub EntList bull copy rArr sect trade nbsp>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>02</discode><discodev>A</discodev><incode>353</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmc>
+<dmtitle><techname>DISQUE TOURILLON TURBINE HP</techname><infoname>CONTROLE AUX COURANTS DE FOUCAULT</infoname></dmtitle>
+<issno type="c" issno="4">
+<issdate month="05" year="2009" day="31">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 1"></version>
+<version version="M88-2 ETAPE 4"></version>
+<customer aaf="1" anf="1">
+<nti nti1="0" nti2="0" nti3="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>R&eacute;f&eacute;rence outillage actualis&eacute;e</rfu>
+<remarks>RAS</remarks>
+<icns><icn id="A1A725200SF030100253A021">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00253</illnum><illver>A</illver><illupdat>02</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A725200SF030100272A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00272</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A725200SF030100254A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00254</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A725200SF030100273A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00273</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A725200SF030100303A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00303</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<refdm>
+<dmcid id="A1A70360002A353AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>3</section><subsect>6</subsect><subject>00</subject><discode>02</discode><discodev>A</discodev><incode>353</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+</refdm>
+</refs><proced><pmd>
+<manhour value="2"></manhour>
+<duration value="2"></duration>
+</pmd><prelreqs><reqconds>
+<noconds></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><subcat>Contr&ocirc;leur CDF</subcat><persnum no="1"><perstime value="0,1"></reqper>
+</reqpers><supequip><supeqli>
+<supequi id="O2.31029"><refipc change="mod" csn="72016801 097 "><nomen>OUTILLAGE DE RETOURNEMENT</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.31055"><refipc change="mod" csn="72016801 098 "><?Pub Caret1><nomen>OUTILLAGE DE LEVAGE DISQUE TOUR TURB HP</nomen><quantity>1</quantity></supequi>
+<supequi id="O1"><refipc csn="72016107 011 "><nomen>GENERATEUR CFC ROHMANN ELOTEST B310</nomen><quantity>1</quantity></supequi>
+<supequi id="O2"><refipc csn="72016107 002 "><nomen>SYSTEME D'ACQUISITION ET DE TRAITEMENT SCANALYSER 5</nomen><quantity>1</quantity></supequi>
+<supequi id="O3"><refipc csn="72016107 009 "><nomen>TETE ROTATIVE SR1-HF</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.31056"><ident><manufact>F0301</manufact><partno>888-530-100-0</partno></ident><nomen>PLATEAU TOURNANT</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.31037"><refipc csn="72016101 045 "><nomen>MACHINE T CDF</nomen><quantity>1</quantity></supequi>
+<supequi id="O7"><refipc csn="72016107 001 "><nomen>MATERIEL INFORMATIQUE</nomen><quantity>1</quantity></supequi>
+</supeqli><nosupeqs></supequip><supplies><nosupply></supplies><miscs><nomisc></miscs><safety>
+<specpara>
+<caution>
+<p>Manipuler les pi&egrave;ces avec pr&eacute;caution (fabriqu&eacute;es en alliage &eacute;labor&eacute; par m&eacute;tallurgie des poudres MdP)&nbsp;: tout impact est inacceptable quelque soit son importance et sa localisation.</p>
+</caution>
+</specpara>
+</safety></prelreqs><mainfunc>
+<step1 control="0" id="P10">
+<title>G&eacute;n&eacute;ralit&eacute;s</title>
+<para><p>Cette instruction de travail permet de contr&ocirc;ler par courants de Foucault les trous diam&egrave;tre 8,268&nbsp;mm de la bride du disque tourillon de turbine HP.</p>
+</para>
+</step1>
+<step1 control="0" id="P20">
+<title>D&eacute;pose du disqur tourillon turbine HP de la caisse</title>
+<step2 id="P20-10">
+<para><p>Prendre le disque tourillon de turbine HP dans la caisse et le d&eacute;poser sur une table d'atelier &agrave; l'aide de l'outillage de manutention<supeqref refid="O2.31055"><figref repnohot="2.31055" refid="A725200SF030100253A021">.</p>
+<note>
+<p>Disque tourillon de turbine HP pos&eacute; sur sa face amont.</p>
+</note>
+</para>
+</step2>
+<step2 id="P20-20">
+<para><p>D&eacute;poser cet outillage.</p>
+</para>
+</step2>
+</step1>
+<step1 control="0" id="P30">
+<title>Retournement du disque tourillon de turbine HP</title>
+<step2 control="0" id="P30-10">
+<para><p>Installer l'outillage de retournement<supeqref refid="O2.31029"><figref repnohot="2.31029" refid="A725200SF030100254A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P30-20">
+<para><p>Lever puis faire pivoter le disque tourillon.</p>
+</para>
+</step2>
+<step2 control="0" id="P30-30">
+<para><p>Poser le disque tourillon sur le plateau tournant<supeqref refid="O2.31056"><figref repnohot="2.31056" refid="A725200SF030100272A011">.</p>
+<note>
+<p>Le disque tourillon pos&eacute; sur sa face aval.</p>
+</note>
+</para>
+</step2>
+<step2 control="0" id="P30-40">
+<para><p>D&eacute;poser l'outillage de retournement<supeqref refid="O2.31029"><figref repnohot="2.31029" refid="A725200SF030100254A011">.</p>
+</para>
+</step2>
+</step1>
+<step1 control="0" id="P40">
+<title>Mat&eacute;riel de contr&ocirc;le utilis&eacute;</title>
+<step2 control="0" id="P40-10">
+<title>Equipements courants de Foucault</title>
+<para><p>Utiliser les &eacute;quipements suivants&nbsp;:</p>
+</para>
+<list type="SIMPLE">
+<item><para><p>g&eacute;n&eacute;rateur courants de Foucault ROHMANN Elotest B310<supeqref refid="O1">,</p>
+</para>
+</item>
+<item><para><p>syst&egrave;me d'acquisition et de traitement ScanAlyser 5<supeqref refid="O2">,</p>
+</para>
+</item>
+<item><para><p>t&ecirc;te rotative SR1-HF<supeqref refid="O3">,</p>
+</para>
+</item>
+<item><para><p>machine T CdF<supeqref refid="O2.31037">,</p>
+</para>
+</item>
+<item><para><p>mat&eacute;riel informatique<supeqref refid="O7">,</p>
+</para>
+</item>
+</list>
+</step2>
+<step2 control="0" id="P40-20">
+<title change="mod">Kit de contr&ocirc;le </title>
+<para><p>Utiliser le Kit de contr&ocirc;le N&deg; 889&ndash;404&ndash;004&ndash;0 compos&eacute; des &eacute;l&eacute;ment suivants&nbsp;:</p>
+</para>
+<list type="SIMPLE">
+<item><para><p>une cale &eacute;talon 8.21.1.000515.0,</p>
+</para>
+</item>
+<item><para><p>un sabot support t&ecirc;te rotative disque tourillon de turbine HP N&deg; 889-404-006-0,</p>
+</para>
+</item>
+<item><para><p>deux sondes tournantes disque tourillon NORTEC SPO 5000 8,26&nbsp;mm,</p>
+</para>
+</item>
+<item><para><p>un rouleau de t&eacute;flon,</p>
+</para>
+</item>
+<item><para><p>un goupillon,</p>
+</para>
+</item>
+<item><para><p>scotch brite,</p>
+</para>
+</item>
+<item><para><p>un crayon gras bleu et un crayon gras rouge.</p>
+</para>
+</item>
+</list>
+</step2>
+</step1>
+<step1 control="0" id="P50">
+<title>D&eacute;roul&eacute; op&eacute;ratoire</title>
+<para><p>Utiliser le document de r&eacute;f&eacute;rence pour le contr&ocirc;le par courants de Foulcault &agrave; haute vitesse des trous sur pi&egrave;ces MDP du moteur M88<dmcref xrefid="A1A70360002A353AC">.</p>
+</para>
+<step2 control="0" id="P50-10">
+<title>Pr&eacute;paration</title>
+<step3 control="0">
+<para><p>S'assurer que la pi&egrave;ce &agrave; contr&ocirc;ler et en particulier les trous de fixation de la bride aval pr&eacute;sentent un &eacute;tat de propret&eacute; compatible pour le contr&ocirc;le par courants de Foucault.</p>
+<note>
+<p>Si n&eacute;cessaire, le goupillon du Kit de contr&ocirc;le N&deg; 889&ndash;404&ndash;004&ndash;0 ou le scotch brite sera utilis&eacute;.</p>
+</note>
+</para>
+</step3>
+<step3 control="0">
+<para><p>D&eacute;marer le logiciel SCAN ANALYSER 5 LT<supeqref refid="O2">.</p>
+</para>
+</step3>
+<step3 control="0">
+<para><p>Appeler le programme M88 THP ALESAGE.lay.</p>
+</para>
+</step3>
+<step3 control="0">
+<para><p>Renseigner le masque intitul&eacute; "EN-TETE".</p>
+</para>
+</step3>
+</step2>
+<step2 control="0" id="P50-20">
+<title>Etalonnage et contr&ocirc;le</title>
+<step3 control="0">
+<para><p>Fixer la t&ecirc;te rotative sur le support scanner N&deg; 889-404-006-0.</p>
+</para>
+</step3>
+<step3 control="0">
+<para><p>Positionner la sonde tournante et mettre un morceau de teflon sur l'&eacute;l&eacute;ment sensible.</p>
+</para>
+</step3>
+<step3 control="0">
+<para><p>Placer l'outillage sur le disque tourillon turbine HP (de fa&ccedil;on &agrave; avoir le trou n&deg;1 centr&eacute; par rapport au support scanner)<figref refid="A725200SF030100303A011">.</p>
+</para>
+<note>
+<p>Le trou n&deg;1 est rep&eacute;r&eacute; par rapport au rep&eacute;rage des alv&eacute;oles.</p>
+</note>
+</step3>
+<step3 control="0">
+<para><p>Placer la cale &eacute;talon dans l'encoche du scanner (le num&eacute;ro d'identifaiant de la cale doit &ecirc;tre visible).</p>
+</para>
+</step3>
+<step3 control="0">
+<para><p>Ajuster les r&eacute;glages phase et amplitude pour obtenir un signal de 4 Vcc<dmcref xrefid="A1A70360002A353AC"></p>
+</para>
+</step3>
+<step3 control="0">
+<para><p>Effectuer un acquisition.</p>
+</para>
+<para><p>S&eacute;lectionner le programme M88 THP ALESAGE.</p>
+</para>
+<para><p>Renseigner le masque de saisie et suivre le d&eacute;rouler op&eacute;ratoire du logiciel.</p>
+</para>
+</step3>
+<step3 control="0">
+<para><p>Contr&ocirc;ler les trente trous.</p>
+</para>
+</step3>
+<step3 control="0">
+<para><p>Effectuer une v&eacute;rification d'&eacute;talonnage &agrave; mi-contr&ocirc;le et en fin de contr&ocirc;le.</p>
+</para>
+</step3>
+</step2>
+<step2 control="0" id="P50-30">
+<title>Evaluation</title>
+<para><p>Evalu&eacute; tout signal dont l'amplitude est comprise entre 1,5&nbsp;V et 3&nbsp;V cr&ecirc;te &agrave; cr&ecirc;te.</p>
+</para>
+</step2>
+<step2 control="0" id="P50-40">
+<title>Sanction</title>
+<para><p>Ne pas admettre tout signal &eacute;valu&eacute; dont l'amplitude est &ge;&nbsp;3&nbsp;V cr&ecirc;te &agrave; cr&ecirc;te.</p>
+</para>
+</step2>
+<step2 control="0" id="P50-50">
+<title>Rapport de contr&ocirc;le</title>
+<para><p>R&eacute;capituler toutes les indications dans un document final; il sera &eacute;mis apr&egrave;s contr&ocirc;le complet d'une bride.</p>
+</para>
+</step2>
+<step2 control="0" id="P50-60">
+<title>Archivage</title>
+<para><p>Archiver obligatoirement les donn&eacute;es relev&eacute;es<dmcref xrefid="A1A70360002A353AC">.</p>
+</para>
+</step2>
+</step1>
+<step1 control="0" id="P60">
+<title>Retournement du rotor</title>
+<step2 control="0" id="P60-10">
+<para><p>Installer l'outillage de retournement<supeqref refid="O2.31029"><figref repnohot="2.31029" refid="A725200SF030100254A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P60-20">
+<para><p>Lever puis pivoter le rotor.</p>
+</para>
+</step2>
+<step2 control="0" id="P60-30">
+<para><p>Poser le rotor sur la table d'atelier.</p>
+<note>
+<p>Rotor pos&eacute; sur sa face amont.</p>
+</note>
+</para>
+</step2>
+<step2 control="0" id="P60-40">
+<para><p>D&eacute;poser l'outillage de retournement<supeqref refid="O2.31029"><figref repnohot="2.31029" refid="A725200SF030100254A011">.</p>
+</para>
+</step2>
+</step1>
+<step1 control="0" id="P70">
+<title>Installation du rotor dans la caisse</title>
+<para><p>Prendre le rotor et le d&eacute;poser dans la caisse &agrave; l'aide de l'outillage de manutention<supeqref refid="O2.31055"><figref repnohot="2.31055" refid="A725200SF030100253A021">.</p>
+</para>
+</step1>
+<figure id="A725200SF030100253A021">
+<title>INSTALLATION/DEPOSE DU DISQUE</title>
+<graphic callicn="A1A725200SF030100253A021">
+</figure>
+<figure id="A725200SF030100272A011">
+<title>DISQUE SUR PLATEAU TOURNANT</title>
+<graphic callicn="A1A725200SF030100272A011">
+</figure>
+<figure id="A725200SF030100254A011">
+<title>INSTALLATION OUTILLAGE DE RETOURNEMENT</title>
+<graphic callicn="A1A725200SF030100254A011">
+</figure>
+<figure id="A725200SF030100273A011">
+<title>TETE ROTATIVE EN POSITION SUR BRIDE AVAL</title>
+<graphic callicn="A1A725200SF030100273A011">
+</figure>
+<figure id="A725200SF030100303A011">
+<title>TETE ROTATIVE CALE ETALON</title>
+<graphic callicn="A1A725200SF030100303A011">
+</figure>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000013834 0>

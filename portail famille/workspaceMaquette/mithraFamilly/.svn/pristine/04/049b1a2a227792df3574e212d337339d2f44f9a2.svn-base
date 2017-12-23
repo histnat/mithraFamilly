@@ -1,0 +1,75 @@
+package com.sonovision.openconv.db.dao.impl;
+
+import java.util.List;
+
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.stereotype.Repository;
+
+import com.sonovision.openconv.db.dao.TaskDao;
+import com.sonovision.openconv.db.vo.Conversion;
+import com.sonovision.openconv.db.vo.Task;
+
+@Repository(value="TaskDao")
+public class TaskDaoImpl  extends CommonDaoImpl<Task> implements TaskDao{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2559203684440841983L;
+	
+	@Override
+	public Task findByConversionActionId(Conversion conversion, String actionId) {
+		Query query = new Query();
+        query.addCriteria(
+                new Criteria().andOperator(
+                        Criteria.where("actionId").is(actionId),
+                        Criteria.where("conversionId").is(conversion.getId())
+                )
+        );
+        List<Task> lll= mongoTemplate.find(query, Task.class);
+
+        if (lll != null && lll.size() > 0) {
+            return lll.get(0);
+        }
+        return null;
+	}
+
+	@Override
+	public Task findByAll(String actionId, String name, String taskName, String conversionId) {
+		
+        Query query = new Query();
+        query.addCriteria(
+                new Criteria().andOperator(
+                        Criteria.where("actionId").is(actionId),
+                        Criteria.where("name").is(name),
+                        Criteria.where("conversionId").is(conversionId),
+                        Criteria.where("taskName").is(taskName)
+                )
+        );
+        List<Task> lll= mongoTemplate.find(query, Task.class);
+
+        if (lll != null && lll.size() > 0) {
+            return lll.get(0);
+        }
+        return null;
+	}
+	
+	@Override
+	public Task findOne(String id)
+	{
+		return super.findOne(id, Task.class);
+	}
+
+	@Override
+	public void deleteAll()
+	{
+		super.deleteAll(Task.class);
+	}
+	
+	@Override
+	public List<Task> findAll()
+	{
+		return super.findAll(Task.class);
+	}
+}

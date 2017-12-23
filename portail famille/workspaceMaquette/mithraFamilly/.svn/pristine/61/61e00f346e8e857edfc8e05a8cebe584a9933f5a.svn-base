@@ -1,0 +1,1362 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1A703700SF030100001A021 SYSTEM "x-dm://0900f90b80004310,MYWORKING" NDATA jpeg>
+<!ENTITY A1A703700SF030100003A011 SYSTEM "x-dm://0900f90b800041cb,MYWORKING" NDATA jpeg>
+<!ENTITY A1A703700SF030100004A011 SYSTEM "x-dm://0900f90b800041cc,MYWORKING" NDATA jpeg>
+<!ENTITY A1A703700SF030100005A011 SYSTEM "x-dm://0900f90b800041cd,MYWORKING" NDATA jpeg>
+<!ENTITY A1A703700SF030100006A011 SYSTEM "x-dm://0900f90b800041ce,MYWORKING" NDATA jpeg>
+<!ENTITY A1A703700SF030100007A011 SYSTEM "x-dm://0900f90b800041cf,MYWORKING" NDATA jpeg>
+<!ENTITY A1A703700SF030100008A011 SYSTEM "x-dm://0900f90b800041d0,MYWORKING" NDATA jpeg>
+<!ENTITY A1A703700SF030100009A011 SYSTEM "x-dm://0900f90b800041d1,MYWORKING" NDATA jpeg>
+<!ENTITY A1A703700SF030100010A011 SYSTEM "x-dm://0900f90b800041d2,MYWORKING" NDATA jpeg>
+<!ENTITY A1A703700SF030100011A011 SYSTEM "x-dm://0900f90b800041d3,MYWORKING" NDATA jpeg>
+<!ENTITY A1A703700SF030100012A011 SYSTEM "x-dm://0900f90b800041d4,MYWORKING" NDATA jpeg>
+<!ENTITY A1A703700SF030100013A011 SYSTEM "x-dm://0900f90b800041d5,MYWORKING" NDATA jpeg>
+<!ENTITY A1A703700SF030100014A011 SYSTEM "x-dm://0900f90b800041d6,MYWORKING" NDATA jpeg>
+<!ENTITY A1A703700SF030100015A011 SYSTEM "x-dm://0900f90b800041d7,MYWORKING" NDATA jpeg>
+<!ENTITY A1A703700SF030100016A011 SYSTEM "x-dm://0900f90b800041d8,MYWORKING" NDATA jpeg>
+<!ENTITY A1A703700SF030100017A011 SYSTEM "x-dm://0900f90b800041d9,MYWORKING" NDATA jpeg>
+<!ENTITY A1A703700SF030100018A011 SYSTEM "x-dm://0900f90b800041da,MYWORKING" NDATA jpeg>
+<!ENTITY A1A703700SF030100019A011 SYSTEM "x-dm://0900f90b800041db,MYWORKING" NDATA jpeg>
+<!ENTITY A1A703700SF030100022A011 SYSTEM "x-dm://0900f90b80004311,MYWORKING" NDATA jpeg>
+<!ENTITY A1A703700SF030100023A011 SYSTEM "x-dm://0900f90b80004312,MYWORKING" NDATA jpeg>
+<!ENTITY A1A703700SF030100024A011 SYSTEM "x-dm://0900f90b80004313,MYWORKING" NDATA jpeg>
+]>
+<dmodule><?Pub Caret1><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>3</section><subsect>7</subsect><subject>00</subject><discode>11</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmc>
+<dmtitle><techname>ROULEMENTS</techname><infoname>CONTROLE VISUEL SANS MOYEN SPECIAL</infoname></dmtitle>
+<issno type="R" issno="3">
+<issdate month="06" year="2004" day="30">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 1"></version>
+<version version="M88-2 ETAPE 4"></version>
+<customer aaf="1" anf="1">
+<nti nti2="1" nti3="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Am&eacute;lioration de la proc&eacute;dure documentaire</rfu>
+<remarks>RAS</remarks>
+<icns><icn id="A1A703700SF030100001A021">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>3</section><subsect>7</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00001</illnum><illver>A</illver><illupdat>02</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A703700SF030100023A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>3</section><subsect>7</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00023</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A703700SF030100024A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>3</section><subsect>7</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00024</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A703700SF030100003A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>3</section><subsect>7</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00003</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A703700SF030100004A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>3</section><subsect>7</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00004</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A703700SF030100005A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>3</section><subsect>7</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00005</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A703700SF030100006A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>3</section><subsect>7</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00006</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A703700SF030100007A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>3</section><subsect>7</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00007</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A703700SF030100008A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>3</section><subsect>7</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00008</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A703700SF030100009A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>3</section><subsect>7</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00009</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A703700SF030100010A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>3</section><subsect>7</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00010</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A703700SF030100011A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>3</section><subsect>7</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00011</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A703700SF030100012A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>3</section><subsect>7</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00012</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A703700SF030100013A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>3</section><subsect>7</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00013</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A703700SF030100014A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>3</section><subsect>7</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00014</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A703700SF030100015A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>3</section><subsect>7</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00015</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A703700SF030100016A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>3</section><subsect>7</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00016</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A703700SF030100017A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>3</section><subsect>7</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00017</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A703700SF030100018A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>3</section><subsect>7</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00018</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A703700SF030100019A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>3</section><subsect>7</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00019</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A703700SF030100022A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>3</section><subsect>7</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00022</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<norefs>
+</refs><proced><pmd>
+<manhour value="0,1"></manhour>
+<duration value="0,1"></duration>
+</pmd><prelreqs><reqconds><reqcondli><reqcond>
+<cond><para><p>Le roulement doit &ecirc;tre d&eacute;pos&eacute;.</p>
+</para>
+</cond>
+</reqcond></reqcondli></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><subcat>Contr&ocirc;leur roulement</subcat><persnum no="1"><perstime value="0,1"></reqper>
+</reqpers><supequip><nosupeq><nosupeqs></supequip><supplies><nosupply></supplies><miscs><miscli>
+<misc id="P0397" matiere="0"><refipc csn="72013002 031 "><nomen>Ethanol d&eacute;natur&eacute;</nomen><quantity>SB</quantity></misc>
+</miscli></miscs><safety>
+<specpara>
+<caution>
+<p>Signaler tout autre d&eacute;faut non r&eacute;pertori&eacute; dans la proc&eacute;dure &agrave; SNECMA MOTEURS.</p>
+</caution>
+<caution>
+<p>Graisser le roulement apr&egrave;s contr&ocirc;le dans un d&eacute;lai inf&eacute;rieur &agrave; 5&nbsp;heures apr&egrave;s d&eacute;graissage.</p>
+</caution>
+</specpara>
+</safety></prelreqs><mainfunc>
+<step1 control="0" id="P10">
+<title>Description</title>
+<step2 control="0" id="P10-10">
+<para><p>Appliquer ce chapitre des m&eacute;thodes de contr&ocirc;le particuli&egrave;res aux roulements ainsi qu'aux crit&egrave;res d'acceptation des d&eacute;fauts rencontr&eacute;s.</p>
+<note>
+<p>Dans le cas o&ugrave; une information propre &agrave; un roulement figure dans le Data Module celle-ci doit &ecirc;tre prioritaire.</p>
+</note>
+</para>
+</step2>
+<step2 control="0" id="P10-20">
+<specpara>
+<caution>
+<p>Porter avant toute manipulation des gants en caoutchouc synth&eacute;tique ou en nylon avec paumes et doigts en poly&eacute;thyl&egrave;ne. A d&eacute;faut, utiliser des gants en coton propres, qui devront &ecirc;tre chang&eacute;s avant qu'ils ne soient contamin&eacute;s par la sueur, ou une cr&egrave;me protectrice pour les mains.</p>
+</caution>
+</specpara>
+<para><p>R&eacute;duire au minimum la manipulation des roulements.</p>
+</para>
+</step2>
+<step2 control="0" id="P10-30">
+<para><p>Prendre soin de ne pas m&eacute;langer les &eacute;l&eacute;ments d'un roulement avec ceux d'un autre roulement.</p>
+</para>
+</step2>
+<step2 control="0" id="P10-40">
+<specpara>
+<caution>
+<p>Ne pas transporter les roulements sur des v&eacute;hicules &eacute;lectriques sauf s'ils ont re&ccedil;u une protection appropri&eacute;e.</p>
+</caution>
+</specpara>
+<para><p>Eviter la magn&eacute;tisation des roulements par induction.</p>
+</para>
+</step2>
+<step2 control="0" id="P10-50">
+<para><p>En cas de doute, contr&ocirc;ler le niveau de magn&eacute;tisation qui doit rester inf&eacute;rieur &agrave; XX&nbsp;A&nbsp;/&nbsp;m.</p>
+</para>
+</step2>
+<step2 control="0" id="P10-60">
+<para><p>Afin d'&eacute;viter la magn&eacute;tisation des roulements par induction, ne pas les transporter sur des v&eacute;hicules &eacute;lectriques sauf s'ils ont re&ccedil;u une protection appropri&eacute;e.</p>
+</para>
+</step2>
+<step2 control="0" id="P10-70">
+<para><p>Exercer une attention particuli&egrave;re tout au long de la proc&eacute;dure de r&eacute;vision des roulements.</p>
+<note>
+<p>Les roulements &eacute;tant des pi&egrave;ces de pr&eacute;cision.</p>
+</note>
+</para>
+</step2>
+<step2 control="0" id="P10-80">
+<para><p>Utiliser un local sp&eacute;cial r&eacute;serv&eacute; a cet effet.</p>
+</para>
+</step2>
+<step2 control="0" id="P10-90">
+<para><p>Rev&ecirc;tir les surfaces de travail ainsi que les sols de mat&eacute;riaux anti-choc.</p>
+</para>
+</step2>
+<step2 control="0" id="P10-100">
+<para><p>Utiliser des chiffons propres non pelucheux.</p>
+</para>
+</step2>
+<step2 control="0" id="P10-110">
+<para><p>Avant contr&ocirc;le, v&eacute;rifier que le nettoyage des roulements a bien &eacute;t&eacute; r&eacute;alis&eacute;.</p>
+</para>
+</step2>
+<step2 control="0" id="P10-120">
+<para><p>Apr&egrave;s contr&ocirc;le ne pas omettre de r&eacute;appliquer la protection indiqu&eacute;e dans le Data Module.</p>
+</para>
+</step2>
+</step1>
+<step1 control="0" id="P20">
+<title>Contr&ocirc;le d'aspect</title>
+<specpara>
+<caution>
+<p>R&eacute;aliser le contr&ocirc;le d'aspect faisant appel au jugement par un personnel ayant une grande exp&eacute;rience dans de type d'examen.</p>
+</caution>
+</specpara>
+<step2 control="0" id="P20-10">
+<para><p>Contr&ocirc;ler visuellement chaque roulement.</p>
+<note>
+<p>Pour &eacute;valuer un d&eacute;faut, une loupe grossissement X10 Maxi doit &ecirc;tre utilis&eacute;e.</p>
+</note>
+</para>
+</step2>
+<step2 control="0" id="P20-20">
+<para><p>Utiliser une lumi&egrave;re blanche ayant un spectre voisin de celui de la lumi&egrave;re du jour.</p>
+<note>
+<p>Les conditions d'&eacute;clairement sont tr&egrave;s importantes pour la d&eacute;tection des d&eacute;fauts.</p>
+</note>
+</para>
+</step2>
+<step2 control="0" id="P20-30">
+<title>D&eacute;tection des d&eacute;fauts &agrave; l'aide d'un stylet</title>
+<step3 control="0">
+<para><p>Pour r&eacute;aliser ce contr&ocirc;le il ne faut pas exercer de pression sur le stylet mais uniquement le guider avec les doigts sur la surface &agrave; contr&ocirc;ler.</p>
+</para>
+</step3>
+<step3 control="0">
+<para><p>Fabriquer les stylets de contr&ocirc;le localement, ou s'approvisionner dans le commerce s'ils sont conformes aux exigences <figref refid="A703700SF030100001A021">.</p>
+</para>
+</step3>
+<note>
+<p>L'acceptation de roulements qui pr&eacute;sentent des d&eacute;fauts tels que des rayures ou empreintes est subordonn&eacute;e &agrave; un contr&ocirc;le de la surface consid&eacute;r&eacute;e &agrave; l'aide d'un stylet.</p>
+</note>
+</step2>
+<step2 control="0" id="P20-40">
+<applic><systemid><nti nti2="1"></systemid></applic>
+<para><p>Si constat de pollution du circuit d'huile (t&eacute;moins magn&eacute;tiques, cr&eacute;pines,..), d&eacute;poser le roulement et retour au NTI3 pour inspection.</p>
+</para>
+</step2>
+<step2 control="0" id="P20-50">
+<applic><systemid><nti nti2="1"></systemid></applic>
+<para><p>Si les zones fonctionnelles visibles pr&eacute;sentent des indications suspectant une pollution ou un d&eacute;but de d&eacute;gradation du roulement, retourner le roulement au NTI3 pour inspection.</p>
+</para>
+</step2>
+</step1>
+<step1 control="0" id="P30">
+<title>Terminologie</title>
+<step2 control="0" id="P30-10">
+<specpara>
+<note>
+<p>La terminologie employ&eacute;e pour d&eacute;signer les parties constitutives des roulements est illustr&eacute;e <figref refid="A703700SF030100023A011"> <figref refid="A703700SF030100024A011">.</p>
+</note>
+</specpara>
+<para><p>Utiliser cette terminologie pour la r&eacute;daction des rapports de contr&ocirc;le ainsi que pour toute communication relative aux roulements.</p>
+</para>
+</step2>
+<step2 control="0" id="P30-20">
+<para><p>Dans les logements, d&eacute;finir 2 types de surface, l'une fonctionnelle et l'autre non fonctionnelle.</p>
+</para>
+<list type="SIMPLE">
+<item><para><p>les surfaces fonctionnelles,</p>
+</para>
+<list type="SIMPLE">
+<item><para><p>billes,</p>
+</para>
+</item>
+<item><para><p>rouleaux (sauf rayons de raccordement du cylindre ext&eacute;rieur et des faces),</p>
+</para>
+</item>
+<item><para><p>surfaces en contact avec les billes ou les rouleaux (chemins de roulement, &eacute;paulement des bagues de roulements &agrave; rouleaux),</p>
+</para>
+</item>
+<item><para><p>centrage des cages.</p>
+</para>
+</item>
+</list>
+</item>
+<item><para><p>les surfaces non fonctionnelles</p>
+</para>
+<list type="SIMPLE">
+<item><para><p>les surfaces autres que les surfaces fonctionnelles.</p>
+</para>
+</item>
+</list>
+</item>
+</list>
+</step2>
+</step1>
+<step1 control="0" id="P40">
+<title>D&eacute;fauts rencontr&eacute;s en contr&ocirc;le d'aspect</title>
+<specpara>
+<note>
+<p>Ce chapitre indique les principaux d&eacute;fauts affectant les roulements &agrave; billes et &agrave; rouleaux. Pour chaque d&eacute;faut est donn&eacute; son aspect, la cause probable du d&eacute;faut et ses limites d'acceptation.</p>
+</note>
+<note>
+<p>Les d&eacute;fauts et les limites d'acceptation aux cages sont d&eacute;finis en fin de ce chapitre.</p>
+</note>
+</specpara>
+<step2 control="0" id="P40-10">
+<title>Brunissage - Glassage</title>
+<para><p>Effectuer un brunissage - gla&ccedil;age sur toutes les surfaces (sauf cages) <figref refid="A703700SF030100022A011">.</p>
+</para>
+</step2>
+<step2 control="0" id="P40-20">
+<step3 control="0">
+<title>Aspect</title>
+<para><p>Contr&ocirc;ler l'aspect.</p>
+<note>
+<p>Le brunissage pr&eacute;sente l'aspect d'un polissage m&eacute;canique de surface sans d&eacute;placement ou perte de mati&egrave;re, provoquant parfois une coloration pr&eacute;sentant l'aspect d'une surface allant du brun clair au noir.</p>
+</note>
+</para>
+</step3>
+<step3 control="0">
+<title>Cause probable</title>
+<para><p>Identifier les causes.</p>
+<note>
+<p>Frottement entre surfaces, par exemple entre la cage et le DIA. EXTERIEUR DE BI dans des conditions de lubrification limite. Arr&ecirc;t de la lubrification ou cokfaction du lubrifiant.</p>
+</note>
+</para>
+</step3>
+<step3 control="0">
+<title>Limites d'acceptation</title>
+<para><p>Identifier les limites d'acceptation.</p>
+<note>
+<p>Le brunissage est acceptable s'il n'est pas accompagn&eacute; de collage ou de transfert de m&eacute;tal. Une usure du DIA.INTERIEUR DE BE ou une usure du DIA. EXTERIEUR DE BI par la cage est cause de rebut du roulement. Le brunissage peut &ecirc;tre &eacute;limin&eacute; avec un chiffon imbib&eacute; d'alcool &eacute;thylique d&eacute;natur&eacute; <miscref refid="P0397">.</p>
+</note>
+</para>
+</step3>
+</step2>
+<step2 control="0" id="P40-30">
+<title>Coloration par la chaleur (toutes surfaces sauf cages)</title>
+<step3 control="0">
+<title>Aspect</title>
+<para><p>Contr&ocirc;ler l'aspect.</p>
+<note>
+<p>Coloration des surfaces allant du jaune paille (temp&eacute;rature moyenne) au violet (temp&eacute;rature &eacute;lev&eacute;e) ; voir &eacute;galement brunissage.</p>
+</note>
+</para>
+</step3>
+<step3 control="0">
+<title>Cause probable</title>
+<para><p>Identifier les causes.</p>
+<note>
+<p>Lubrification insuffisante pour assurer un refroidissement correct. Exposition des roulements &agrave; un environnement d'air chaud.</p>
+</note>
+</para>
+</step3>
+<step3 control="0">
+<title>Limites d'acceptation</title>
+<para><p>Identifier les limites d'acceptation.</p>
+<note>
+<p>Une faible coloration des surfaces est acceptable. La coloration anormale (violet ou bleu) entra&icirc;ne le rebut du roulement.</p>
+</note>
+</para>
+</step3>
+</step2>
+<step2 control="0" id="P40-40">
+<title>Corrosion</title>
+<step3 control="0">
+<title>Aspect</title>
+<para><p>Contr&ocirc;ler l'aspect.</p>
+<note>
+<p>Surface alt&eacute;r&eacute;e, piqu&eacute;e ou d&eacute;color&eacute;e qui pr&eacute;sente un aspect peau d'orange. Les zones corrod&eacute;es forment de larges groupes de piq&ucirc;res relativement petites et superficielles.</p>
+</note>
+</para>
+</step3>
+<step3 control="0">
+<title>Cause probable</title>
+<para><p>Identifier les causes.</p>
+<note>
+<p>Protection d&eacute;fectueuse pendant la manipulation ou le stockage ou arr&ecirc;t de la lubrification ayant entra&icirc;n&eacute; une attaque chimique ou &eacute;lectrolyte des surfaces du roulement ou encore exposition des surfaces &agrave; des mati&egrave;res corrosives.</p>
+</note>
+</para>
+</step3>
+<step3 control="0">
+<title>Limites d'acceptation, surfaces fonctionnelles</title>
+<step4 control="0">
+<applic><systemid><nti nti2="1"></systemid></applic>
+<para><p>La corrosion est inacceptable</p>
+</para>
+</step4>
+<step4 control="0">
+<applic><systemid><nti nti3="1"></systemid></applic>
+<para><p>Accepter la corrosion des surfaces fonctionnelles si le d&eacute;faut ne peut &ecirc;tre d&eacute;cel&eacute; &agrave; l'aide du stylet adapt&eacute; au roulement.</p>
+</para>
+<table tocentry="1">
+<tgroup cols="2" align="LEFT"><colspec colnum="1" colname="SQCOLUMN1" colwidth="8cm" align="LEFT" colsep="1" rowsep="1"><colspec colnum="2" colname="SQCOLUMN2" colwidth="8cm" align="LEFT" colsep="1" rowsep="1">
+<tbody valign="TOP">
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Billes ou rouleaux</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Stylet</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>&Oslash;&nbsp;&lt;&nbsp;&agrave;&nbsp;25&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>R&nbsp;=&nbsp;0,75&nbsp;mm</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step4>
+</step3>
+<step3 control="0">
+<title>Limites d'acceptation, surfaces non fonctionnelles</title>
+<para><p>La corrosion des surfaces non fonctionnelles est acceptable.</p>
+</para>
+</step3>
+</step2>
+<step2 control="0" id="P40-50">
+<title>Corrosion de contact</title>
+<step3 control="0">
+<title>Aspect <figref refid="A703700SF030100003A011"></title>
+<para><p>Contr&ocirc;ler l'aspect.</p>
+<note>
+<p>Elle est caract&eacute;ris&eacute;e par une surface localement corrod&eacute;e. Elle appara&icirc;t le plus souvent entre la bague int&eacute;rieure et l'arbre, la bague ext&eacute;rieure et son logement, sur les faces lat&eacute;rales des bagues et sur les &eacute;l&eacute;ments de retenue.</p>
+</note>
+</para>
+</step3>
+<step3 control="0">
+<title>Cause probable</title>
+<para><p>Identifier les causes.</p>
+<note>
+<p>Corrosion rapide des surfaces de contact d'&eacute;l&eacute;ments maintenus par pression l'un sur l'autre, r&eacute;sultant de petits mouvements relatifs entre ces surfaces ou de l'alternance de dilatation et de r&eacute;treint d'un arbre ou d'une bague par rapport &agrave; ses surfaces de contact.</p>
+</note>
+</para>
+</step3>
+<step3 control="0">
+<title>Limites d'acceptation</title>
+<list type="SIMPLE">
+<item><para><p>zones fonctionnelles,</p>
+</para>
+<list type="SIMPLE">
+<item><para><p>la corrosion de contact est inacceptable,</p>
+</para>
+</item>
+</list>
+</item>
+<item><para><p>zones non fonctionnelles,</p>
+</para>
+</item>
+<item><para><p>la corrosion de contact est acceptable.</p>
+</para>
+</item>
+</list>
+</step3>
+</step2>
+<step2 control="0" id="P40-60">
+<title>Ecaillage</title>
+<step3 control="0">
+<title>Aspect <figref refid="A703700SF030100004A011"></title>
+<para><p>Contr&ocirc;ler l'aspect.</p>
+<note>
+<p>Cavit&eacute;s de formes irr&eacute;guli&egrave;res, &agrave; angles vifs et relativement profondes.</p>
+</note>
+</para>
+</step3>
+<step3 control="0">
+<title>Cause probable</title>
+<para><p>Identifier les causes.</p>
+<note>
+<p>Fatigue des surfaces de contact. Serrage interne des roulements, surcharge provoqu&eacute;e par un excentrage excessif des arbres ou des bo&icirc;tiers.</p>
+</note>
+</para>
+</step3>
+<step3 control="0">
+<title>Limites d'acceptation</title>
+<para><p>Ne pas accepter l'&eacute;caillage.</p>
+</para>
+</step3>
+</step2>
+<step2 control="0" id="P40-70">
+<title>Effet Brinell (v&eacute;ritable et faux)</title>
+<step3 control="0">
+<title>Aspect <figref refid="A703700SF030100005A011"> <figref refid="A703700SF030100006A011"></title>
+<para><p>Contr&ocirc;ler l'aspect.</p>
+<note>
+<p>Le v&eacute;ritable effet Brinell pr&eacute;sente sur les chemins de roulement et sur les billes ou rouleaux l'aspect d'empreintes lisses et peu profondes. Le faux effet Brinell est caract&eacute;ris&eacute; par des marques superficielles sur les surfaces de roulement, pr&eacute;sentant g&eacute;n&eacute;ralement un aspect satin&eacute; ou poli. Sur les chemins de roulements &agrave; rouleaux, ces marques apparaissent comme des lignes perpendiculaires au sens de rotation, au droit de chaque rouleau. Sur les chemins de roulements &agrave; billes, elles apparaissent comme une ligne pointill&eacute;e d'intervalle &eacute;gal au pas des billes.</p>
+</note>
+</para>
+</step3>
+<step3 control="0">
+<title>Cause probable</title>
+<para><p>Identifier les causes.</p>
+<note>
+<p>Le v&eacute;ritable effet Brinell r&eacute;sulte de la surcharge du roulement g&eacute;n&eacute;ralement lorsqu'il ne tourne pas, provoquant des empreintes permanentes sur les billes, rouleaux et chemins de roulement. Le v&eacute;ritable effet Brinell se produit souvent au cours d'une manipulation d&eacute;fectueuse (transport du moteur sur un chariot mal con&ccedil;u, d&eacute;montage non conforme, par exemple). Le faux effet Brinell se produit lorsque le roulement est &agrave; l'arr&ecirc;t et est souvent le r&eacute;sultat de sollicitations axiales de faible amplitude engendr&eacute;es lors de transport des moteurs, par exemple.</p>
+</note>
+</para>
+</step3>
+<step3 control="0">
+<title>Limites d'acceptation</title>
+<step4 control="0">
+<applic><systemid><nti nti2="1"></systemid></applic>
+<para><p>Inacceptable en l'&eacute;tat, retourner le roulement au NTI 3 pour d&eacute;cision.</p>
+</para>
+</step4>
+<step4 control="0">
+<applic><systemid><nti nti3="1"></systemid></applic>
+<para><p>Accepter l'effet Brinell (v&eacute;ritable et faux) s'il ne peut &ecirc;tre d&eacute;cel&eacute; &agrave; l'aide du stylet adapt&eacute; au roulement.</p>
+</para>
+</step4>
+<step4 control="0">
+<para><p>Accepter les d&eacute;fauts s'il n'exc&egrave;de pas les dimensions suivantes&nbsp;:</p>
+</para>
+<table tocentry="1">
+<tgroup cols="2" align="LEFT"><colspec colnum="1" colname="SQCOLUMN1" colwidth="4cm" align="LEFT" colsep="1" rowsep="1"><colspec colnum="2" colname="SQCOLUMN2" colwidth="4cm" align="LEFT" colsep="1" rowsep="1">
+<tbody valign="TOP">
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Billes &agrave; rouleaux</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Stylet</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>&Oslash;&nbsp;&lt;&nbsp;&agrave;&nbsp;25&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>R&nbsp;=&nbsp;0,75&nbsp;mm</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step4>
+</step3>
+</step2>
+<step2 control="0" id="P40-80">
+<title>Empreintes &agrave; fond vif et &agrave; fond arrondi (toutes surfaces sauf cages)</title>
+<step3 control="0">
+<title>Aspect</title>
+<para><p>Identifier l'aspect.</p>
+<note>
+<p>Cavit&eacute;s peu profondes &agrave; fond arrondi ou anguleux. Sur les surfaces fonctionnelles, chaque empreinte &agrave; fond arrondi pr&eacute;sente un aspect poli de sa p&eacute;riph&eacute;rie, caus&eacute; par l'&eacute;crouissage du bourrelet de m&eacute;tal. Sur les surfaces non fonctionnelles, le bourrelet est apparent &agrave; la p&eacute;riph&eacute;rie des empreintes.</p>
+</note>
+</para>
+</step3>
+<step3 control="0">
+<title>Cause probable</title>
+<para><p>Identifier les causes.</p>
+<note>
+<p>Passage de corps durs, &eacute;trangers ou non, entre les chemins de roulement et les billes ou les rouleaux. Chocs au cours des manipulations.</p>
+</note>
+</para>
+</step3>
+<step3 control="0">
+<title>Limites d'acceptation, surfaces fonctionnelles</title>
+<step4 control="0">
+<applic><systemid><nti nti2="1"></systemid></applic>
+<para><p>Si constat de pollution du circuit d'huile (t&eacute;moins magn&eacute;tiques, cr&eacute;pines,..), d&eacute;poser le roulement et retour au NTI3 pour inspection.</p>
+</para>
+</step4>
+<step4 control="0">
+<applic><systemid><nti nti2="1"></systemid></applic>
+<para><p>Si les zones fonctionnelles visibles pr&eacute;sentent des indications suspectant une pollution ou un d&eacute;but de d&eacute;gradation du roulement, retourner le roulement au NTI3 pour inspection.</p>
+</para>
+</step4>
+<step4 control="0">
+<applic><systemid><nti nti2="1"></systemid></applic>
+<para><p>Accepter les empreintes si non d&eacute;cel&eacute;es au stylet si elles n'exc&egrave;dent pas les dimensions suivantes&nbsp;: distance entre 2 d&eacute;fauts >&nbsp;&Oslash; des corps roulants</p>
+</para>
+<table tocentry="1">
+<tgroup cols="4" align="LEFT"><colspec colnum="1" colname="SQCOLUMN1" colwidth="4cm" align="LEFT" colsep="1" rowsep="1"><colspec colnum="2" colname="SQCOLUMN2" colwidth="4cm" align="LEFT" colsep="1" rowsep="1"><colspec colnum="3" colname="SQCOLUMN3" colwidth="4cm" align="LEFT" colsep="1" rowsep="1"><colspec colnum="4" colname="SQCOLUMN4" colwidth="4cm" align="LEFT" colsep="1" rowsep="1">
+<tbody valign="TOP">
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Billes &agrave; rouleaux</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Stylet</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Longueur maxi</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Profondeur Maxi</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>&Oslash;&nbsp;&lt;&nbsp;&agrave;&nbsp;25&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>R&nbsp;=&nbsp;0,75&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>0,30&nbsp;mm et sensible stylet</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>P&nbsp;>&nbsp;0,06&nbsp;mm</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Piste roulement &agrave; billes</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>R&nbsp;=&nbsp;0,75 mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>0,20&nbsp;mm et sensible stylet</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>-</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Rouleaux</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Stylet</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Dimension Maxi</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Profondeur</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>&Oslash;&nbsp; &lt;&nbsp;25&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>R&nbsp;=&nbsp;0,75 mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>0,40&nbsp;mm et sensible stylet</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>P&nbsp;>&nbsp;0,06&nbsp;mm</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Piste roulement &agrave; rouleaux</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>R&nbsp;=&nbsp;0,75 mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>0,20&nbsp;mm et sensible stylet</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>-</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step4>
+</step3>
+<step3 control="0">
+<title>Limites d'acceptation, surfaces non fonctionnelles</title>
+<para><p>Identifier les limites d'acceptation.</p>
+<note>
+<p>Sur les roulements &agrave; billes ou &agrave; rouleaux dont l'al&eacute;sage ne d&eacute;passe pas 50&nbsp;mm, les empreintes &agrave; fond vif et &agrave; fond arrondi sont acceptables si leur plus grande dimension n'exc&egrave;de pas 0,8&nbsp;mm apr&egrave;s &eacute;limination du bourrelet p&eacute;riph&eacute;rique. Sur les roulements &agrave; billes ou &agrave; rouleaux dont l'al&eacute;sage est sup&eacute;rieur &agrave; 50&nbsp;mm, les empreintes &agrave; fond vif et &agrave; fond arrondi sont acceptables si leur plus grande dimension n'exc&egrave;de pas 1,5&nbsp;mm apr&egrave;s &eacute;limination du bourrelet p&eacute;riph&eacute;rique.</p>
+</note>
+</para>
+</step3>
+</step2>
+<step2 control="0" id="P40-90">
+<title>Rayures avec enl&egrave;vement de mati&egrave;re</title>
+<step3 control="0">
+<title>Aspect</title>
+<para><p>Contr&ocirc;ler l'aspect.</p>
+<note>
+<p>Rayures multiples et profondes qui peuvent &ecirc;tre observ&eacute;es sur toutes les surfaces des roulements.</p>
+</note>
+</para>
+</step3>
+<step3 control="0">
+<title>Cause probable</title>
+<para><p>Identifier les causes.</p>
+<note>
+<p>Glissement des billes ou des rouleaux en pr&eacute;sence de particules &eacute;trang&egrave;res. Les surfaces non fonctionnelles des roulements peuvent &ecirc;tre entaill&eacute;es au montage lorsque les m&eacute;thodes utilis&eacute;es sont d&eacute;fectueuses.</p>
+</note>
+</para>
+</step3>
+<step3 control="0">
+<title>Limites d'acceptation, surfaces fonctionnelles</title>
+<step4 control="0">
+<applic><systemid><nti nti2="1"></systemid></applic>
+<para><p>Si constat de pollution du circuit d'huile (t&eacute;moins magn&eacute;tiques, cr&eacute;pines,..), d&eacute;poser le roulement et retour au NTI3 pour inspection.</p>
+</para>
+</step4>
+<step4 control="0">
+<applic><systemid><nti nti2="1"></systemid></applic>
+<para><p>Si les zones fonctionnelles visibles pr&eacute;sentent des indications suspectant une pollution ou un d&eacute;but de d&eacute;gradation du roulement, retourner le roulement au NTI3 pour inspection.</p>
+</para>
+</step4>
+<step4 control="0">
+<applic><systemid><nti nti3="1"></systemid></applic>
+<para><p>Accepter les rayures si elles ne sont pas d&eacute;celables &agrave; l'aide du stylet adapt&eacute; au roulement.</p>
+</para>
+<table tocentry="1">
+<tgroup cols="2" align="LEFT"><colspec colnum="1" colname="SQCOLUMN1" colwidth="8cm" align="LEFT" colsep="1" rowsep="1"><colspec colnum="2" colname="SQCOLUMN2" colwidth="8cm" align="LEFT" colsep="1" rowsep="1">
+<tbody valign="TOP">
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Billes ou rouleaux</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Stylet</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>&Oslash;&nbsp;&lt;&nbsp;&agrave;&nbsp;25&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>R&nbsp;=&nbsp;0,75&nbsp;mm</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<note>
+<p>Sur rouleaux, rayures axiales interdites si sensibles au stylet.</p>
+</note>
+</step4>
+</step3>
+<step3 control="0">
+<title>Limites d'acceptation, surfaces non fonctionnelles</title>
+<para><p>Accepter les rayures si elles n'exc&egrave;dent pas la profondeur de 0,2&nbsp;mm.</p>
+</para>
+</step3>
+</step2>
+<step2 control="0" id="P40-100">
+<title>Rayures et griffures (toutes surfaces sauf cages)</title>
+<step3 control="0">
+<title>Aspect <figref refid="A703700SF030100007A011"> <figref refid="A703700SF030100008A011"></title>
+<para><p>Contr&ocirc;ler l'aspect.</p>
+<note>
+<p>Les rayures pr&eacute;sentent l'aspect de sillons lin&eacute;aires &eacute;troits et de faible profondeur, &agrave; la surface des composants des roulements.</p>
+</note>
+<note>
+<p>Les rayures occasionnent un d&eacute;placement et non une perte de mati&egrave;re.</p>
+</note>
+<note>
+<p>Les griffures pr&eacute;sentent l'aspect d'une multitude de petites rayures enchev&ecirc;tr&eacute;es, g&eacute;n&eacute;ralement observ&eacute;es sur les &eacute;l&eacute;ments roulants et les pistes.</p>
+</note>
+</para>
+</step3>
+<step3 control="0">
+<title>Cause probable</title>
+<para><p>Identifier les causes.</p>
+<note>
+<p>Les rayures sont provoqu&eacute;es par le passage de particules g&eacute;n&eacute;ralement anguleuses entre les &eacute;l&eacute;ments roulants.</p>
+</note>
+<note>
+<p>Les griffures sont provoqu&eacute;es par un glissement au niveau des surfaces de contact de roulement en pr&eacute;sence de particules &eacute;trang&egrave;res ou par la rupture locale du film d'huile.</p>
+</note>
+</para>
+</step3>
+<step3 control="0">
+<title>Limites d'acceptation sur billes</title>
+<step4 control="0">
+<applic><systemid><nti nti2="1"></systemid></applic>
+<para><p>Si constat de pollution du circuit d'huile (t&eacute;moins magn&eacute;tiques, cr&eacute;pines,..), d&eacute;poser le roulement et retour au NTI3 pour inspection.</p>
+</para>
+</step4>
+<step4 control="0">
+<applic><systemid><nti nti2="1"></systemid></applic>
+<para><p>Si les zones fonctionnelles visibles pr&eacute;sentent des indications suspectant une pollution ou un d&eacute;but de d&eacute;gradation du roulement, retourner le roulement au NTI3 pour inspection.</p>
+</para>
+</step4>
+<step4 control="0">
+<applic><systemid><nti nti3="1"></systemid></applic>
+<para><p>Accepter les rayures et griffures si elles ne peuvent &ecirc;tre d&eacute;cel&eacute;es et si leur profondeur ne d&eacute;passe pas 0,04&nbsp;mm.</p>
+</para>
+<table tocentry="1">
+<tgroup cols="2" align="LEFT"><colspec colnum="1" colname="SQCOLUMN1" colwidth="8cm" align="LEFT" colsep="1" rowsep="1"><colspec colnum="2" colname="SQCOLUMN2" colwidth="8cm" align="LEFT" colsep="1" rowsep="1">
+<tbody valign="TOP">
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Billes</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Stylet</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>&Oslash;&nbsp;&lt;&nbsp;&agrave;&nbsp;25&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>R&nbsp;=&nbsp;0,75&nbsp;mm</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<note>
+<p>Rayures crois&eacute;es interdites si point d'intersection sensible au stylet.</p>
+</note>
+</step4>
+</step3>
+<step3 control="0">
+<title>Limites d'acceptation sur rouleaux</title>
+<step4 control="0">
+<applic><systemid><nti nti2="1"></systemid></applic>
+<para><p>Si constat de pollution du circuit d'huile (t&eacute;moins magn&eacute;tiques, cr&eacute;pines,..), d&eacute;poser le roulement et retour au NTI3 pour inspection.</p>
+</para>
+</step4>
+<step4 control="0">
+<applic><systemid><nti nti2="1"></systemid></applic>
+<para><p>Si les zones fonctionnelles visibles pr&eacute;sentent des indications suspectant une pollution ou un d&eacute;but de d&eacute;gradation du roulement, retourner le roulement au NTI3 pour inspection.</p>
+</para>
+</step4>
+<step4 control="0">
+<applic><systemid><nti nti3="1"></systemid></applic>
+<para><p>Accepter les rayures et griffures si elles ne peuvent &ecirc;tre d&eacute;cel&eacute;es &agrave; l'aide du stylet adapt&eacute; au roulement et si leur largeur &lt;&nbsp;0,15&nbsp;mm.</p>
+</para>
+<table tocentry="1">
+<tgroup cols="2" align="LEFT"><colspec colnum="1" colname="SQCOLUMN1" colwidth="5cm" align="LEFT" colsep="1" rowsep="1"><colspec colnum="2" colname="SQCOLUMN2" colwidth="8cm" align="LEFT" colsep="1" rowsep="1">
+<tbody valign="TOP">
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Rouleaux</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Stylet</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>&Oslash;&nbsp;&lt;&nbsp;&agrave;&nbsp;25&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>R&nbsp;=&nbsp;0,75&nbsp;mm</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<note>
+<p>Rayures axiales interdites si sensibles au stylet.</p>
+</note>
+<note>
+<p>Rayures crois&eacute;es interdites si point d'intersection sensible au stylet.</p>
+</note>
+</step4>
+</step3>
+<step3 control="0">
+<title>Limites d'acceptation sur chemins de roulement</title>
+<step4 control="0">
+<applic><systemid><nti nti2="1"></systemid></applic>
+<para><p>Si constat de pollution du circuit d'huile (t&eacute;moins magn&eacute;tiques, cr&eacute;pines,..), d&eacute;poser le roulement et retour au NTI3 pour inspection.</p>
+</para>
+</step4>
+<step4 control="0">
+<applic><systemid><nti nti2="1"></systemid></applic>
+<para><p>Si les zones fonctionnelles visibles pr&eacute;sentent des indications suspectant une pollution ou un d&eacute;but de d&eacute;gradation du roulement, retourner le roulement au NTI3 pour inspection.</p>
+</para>
+</step4>
+<step4 control="0">
+<applic><systemid><nti nti3="1"></systemid></applic>
+<para><p>Identifier les limites d'acceptation.</p>
+<note>
+<p>Les rayures et griffures sont acceptables si elles ne peuvent &ecirc;tre d&eacute;cel&eacute;es &agrave; l'aide du stylet adapt&eacute; au roulement.</p>
+</note>
+<note>
+<p>Si elles sont d&eacute;cel&eacute;es, les rayures et griffures circonf&eacute;rentielles sont acceptables si leur longueur unitaire n'exc&egrave;de pas 6&nbsp;mm et leur largeur &lt;&nbsp;0,15&nbsp;mm.</p>
+</note>
+<note>
+<p>Les rayures et griffures axiales sont acceptables si leur longueur unitaire n'exc&egrave;de pas 1/4 de la largeur du chemin de roulement et leur largeur &lt;&nbsp;0,15&nbsp;mm.</p>
+</note>
+</para>
+<table tocentry="1">
+<tgroup cols="2" align="LEFT"><colspec colnum="1" colname="SQCOLUMN1" colwidth="8cm" align="LEFT" colsep="1" rowsep="1"><colspec colnum="2" colname="SQCOLUMN2" colwidth="8cm" align="LEFT" colsep="1" rowsep="1">
+<tbody valign="TOP">
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Billes ou rouleaux</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Stylet</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>&Oslash;&nbsp;&lt;&nbsp;&agrave;&nbsp;25&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>R&nbsp;=&nbsp;0,75&nbsp;mm</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<note>
+<p>Rayures crois&eacute;es interdites si point d'intersection sensible au stylet.</p>
+</note>
+</step4>
+</step3>
+</step2>
+<step2 control="0" id="P40-110">
+<title>Grippage <figref refid="A703700SF030100009A011"> <figref refid="A703700SF030100010A011"></title>
+<para><p>Contr&ocirc;ler l'aspect.</p>
+<note>
+<p>Similaire &agrave; l'aspect de la corrosion de contact, mais plus s&eacute;v&egrave;re. L'aspect est caract&eacute;ris&eacute; par un transfert de m&eacute;tal provoqu&eacute; par la friction des surfaces de contact et, cons&eacute;cutivement par un arrachement de particules de mati&egrave;re.</p>
+</note>
+</para>
+</step2>
+<step2 control="0" id="P40-120">
+<title>Cause probable</title>
+<para><p>Identifier les causes.</p>
+<note>
+<p>D&eacute;placement sous forte charge de 2&nbsp;surfaces insuffisamment ou non lubrifi&eacute;es.</p>
+</note>
+</para>
+<step3 control="0">
+<title>Grippage</title>
+<step4 control="0">
+<title>Limites d'acceptation sur surfaces fonctionnelles</title>
+<para><p>Ne pas accepter de grippage.</p>
+</para>
+</step4>
+<step4 control="0">
+<title>Limites d'acceptation sur surfaces non fonctionnelles</title>
+<para><p>Accepter de l&eacute;g&egrave;res traces de grippage axiales et circonf&eacute;rentielles apr&egrave;s adoucissement.</p>
+</para>
+</step4>
+</step3>
+<step3 control="0">
+<title>Patinage</title>
+<step4 control="0">
+<title>Aspect <figref refid="A703700SF030100011A011"> <figref refid="A703700SF030100012A011"></title>
+<para><p>Contr&ocirc;ler l'aspect</p>
+<note>
+<p>Glissement excessif entre les billes ou rouleaux et les chemins de roulement. Sur les roulements &agrave; rouleaux, le patinage est mis en &eacute;vidence par la pr&eacute;sence de zones mates, grises, orient&eacute;es dans le sens du d&eacute;placement sur chemins de roulement et rouleaux. Sur les roulements &agrave; billes, le patinage est mis en &eacute;vidence par la pr&eacute;sence de zones annulaires mates sur les billes et par des zones mates de forme irr&eacute;guli&egrave;re sur les chemins de roulement. Une usure marqu&eacute;e des alv&eacute;oles de la cage est souvent une indication de patinage.</p>
+</note>
+</para>
+</step4>
+<step4 control="0">
+<title>Cause probable</title>
+<para><p>Identifier les causes.</p>
+<note>
+<p>Lubrification et/ou charge insuffisante.</p>
+</note>
+</para>
+</step4>
+<step4 control="0">
+<title>Limites d'acceptation</title>
+<para><p>Ne pas accepter le patinage.</p>
+</para>
+</step4>
+</step3>
+<step3 control="0">
+<title>Piq&ucirc;res</title>
+<step4 control="0">
+<title>Aspect <figref refid="A703700SF030100013A011"></title>
+<para><p>Contr&ocirc;ler l'aspect.</p>
+<note>
+<p>Petites cavit&eacute;s de forme irr&eacute;guli&egrave;re, caract&eacute;ris&eacute;es par une perte de mati&egrave;re et la disparition de l'&eacute;clat m&eacute;tallique.</p>
+</note>
+</para>
+</step4>
+<step4 control="0">
+<title>Cause probable</title>
+<para><p>Identifier les causes.</p>
+<note>
+<p>Action r&eacute;sultant d'un processus chimique ou &eacute;lectrochimique ou action m&eacute;canique conduisant &agrave; des &eacute;clats ou &eacute;chappement de particules &eacute;trang&egrave;res incrust&eacute;es.</p>
+</note>
+</para>
+</step4>
+<step4 control="0">
+<title>Limites d'acceptation sur surfaces fonctionnelles des piq&ucirc;res isol&eacute;es</title>
+<step5 control="0">
+<applic><systemid><nti nti2="1"></systemid></applic>
+<para><p>Si constat de pollution du circuit d'huile (t&eacute;moins magn&eacute;tiques, cr&eacute;pines,..), d&eacute;poser le roulement et retour au NTI3 pour inspection.</p>
+</para>
+</step5>
+<step5 control="0">
+<applic><systemid><nti nti2="1"></systemid></applic>
+<para><p>Si les zones fonctionnelles visibles pr&eacute;sentent des indications suspectant une pollution ou un d&eacute;but de d&eacute;gradation du roulement, retourner le roulement au NTI3 pour inspection.</p>
+</para>
+</step5>
+<step5 control="0">
+<applic><systemid><nti nti3="1"></systemid></applic>
+<para><p>Accepter les piq&ucirc;res isol&eacute;es si elles ne sont pas d&eacute;celables &agrave; l'aide du stylet.</p>
+</para>
+</step5>
+<step5 control="0">
+<para><p>Accepter les piq&ucirc;res d&eacute;cel&eacute;es au stylet si elles n'exc&egrave;dent par les dimensions suivantes&nbsp;:</p>
+</para>
+<table tocentry="1">
+<tgroup cols="3" align="LEFT"><colspec colnum="1" colname="SQCOLUMN1" colwidth="5cm" align="LEFT" colsep="1" rowsep="1"><colspec colnum="2" colname="SQCOLUMN2" colwidth="8cm" align="LEFT" colsep="1" rowsep="1"><colspec colnum="3" colname="SQCOLUMN3" colwidth="4cm" align="LEFT" colsep="1" rowsep="1">
+<tbody valign="TOP">
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Toutes surfaces fonctionnelles, tous types de roulement</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Stylet</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Dimensions Maxi</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>&Oslash;&nbsp;&lt;&nbsp;&agrave;&nbsp;12&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>R&nbsp;=&nbsp;0,75&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>R&nbsp;=&nbsp;0,25&nbsp;mm</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step5>
+</step4>
+<step4 control="0">
+<title>Limites d'acceptation sur surfaces fonctionnelles des piq&ucirc;res group&eacute;es</title>
+<step5 control="0">
+<para><p>Accepter les piq&ucirc;res group&eacute;es (3&nbsp;piq&ucirc;res MAXI non align&eacute;es inscrites dans un cercle de diam&egrave;tre donn&eacute;) si elles ne sont pas d&eacute;celables &agrave; l'aide du stylet.</p>
+</para>
+</step5>
+<step5 control="0">
+<para><p>Accepter les piq&ucirc;res d&eacute;cel&eacute;es au stylet si elles n'exc&egrave;dent pas les dimensions suivantes&nbsp;:</p>
+</para>
+<table tocentry="1">
+<tgroup cols="4" align="LEFT"><colspec colnum="1" colname="SQCOLUMN1" colwidth="4cm" align="LEFT" colsep="1" rowsep="1"><colspec colnum="2" colname="SQCOLUMN2" colwidth="4cm" align="LEFT" colsep="1" rowsep="1"><colspec colnum="3" colname="SQCOLUMN3" colwidth="4cm" align="LEFT" colsep="1" rowsep="1"><colspec colnum="4" colname="SQCOLUMN4" colwidth="4cm" align="LEFT" colsep="1" rowsep="1">
+<tbody valign="TOP">
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Toutes surfaces fonctionnelles, tous types de roulement</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Cercle</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Stylet</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Dimensions Maxi</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>-</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>D&nbsp;=&nbsp;6&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>R&nbsp;=&nbsp;0,75&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>0,06&nbsp;mm</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step5>
+</step4>
+<step4 control="0">
+<title>Limites d'acceptation sur surfaces non fonctionnelles des piq&ucirc;res isol&eacute;es</title>
+<para><p>Accepter les piq&ucirc;res isol&eacute;es si elles n'exc&egrave;dent pas 0,7 mm.</p>
+</para>
+</step4>
+<step4 control="0">
+<title>Limites d'acceptation sur surfaces non fonctionnelles des piq&ucirc;res group&eacute;es</title>
+<para><p>Accepter les piq&ucirc;res group&eacute;es (3&nbsp;piq&ucirc;res minimum inscrites dans un cercle de diam&egrave;tre donn&eacute;) si elles n'exc&egrave;dent pas les dimensions suivantes&nbsp;:</p>
+</para>
+<table tocentry="1">
+<tgroup cols="3" align="LEFT"><colspec colnum="1" colname="SQCOLUMN1" colwidth="8cm" align="LEFT" colsep="1" rowsep="1"><colspec colnum="2" colname="SQCOLUMN2" colwidth="5cm" align="LEFT" colsep="1" rowsep="1"><colspec colnum="3" colname="SQCOLUMN3" colwidth="4cm" align="LEFT" colsep="1" rowsep="1">
+<tbody valign="TOP">
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Al&eacute;sage du roulement</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Cercle</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Dimensions Maxi</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Tous les roulements</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>D&nbsp;=&nbsp;6&nbsp;mm</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>0,6&nbsp;mm</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step4>
+</step3>
+<step3 control="0">
+<title>Exfoliation, Cloquage, pelage sur cages</title>
+<step4 control="0">
+<title>Aspect <figref refid="A703700SF030100016A011"> <figref refid="A703700SF030100017A011"> <figref refid="A703700SF030100018A011"> <figref refid="A703700SF030100019A011"></title>
+<para><p>Contr&ocirc;ler l'aspect.</p>
+<note>
+<p>D&eacute;t&eacute;riorations de la cage caract&eacute;ris&eacute;es par le d&eacute;tachement du rev&ecirc;tement d'argent (exfoliation, pelage) ou par l'apparition de saillies sur la surface rev&ecirc;tue (cloquage).</p>
+</note>
+</para>
+</step4>
+<step4 control="0">
+<title>Cause probable</title>
+<para><p>Identifier les causes.</p>
+<note>
+<p>Perte d'adh&eacute;rence du rev&ecirc;tement.</p>
+</note>
+</para>
+</step4>
+<step4 control="0">
+<title>Limites d'acceptation</title>
+<para><p>Ne pas accepter l'exfoliation, le cloquage ou le pelage du rev&ecirc;tement d'argent.</p>
+</para>
+</step4>
+</step3>
+<step3 control="0">
+<title>Usure de la cage</title>
+<step4 control="0">
+</step4>
+<step4 control="0">
+<title>Aspect</title>
+<para><p>Contr&ocirc;ler l'aspect.</p>
+<note>
+<p>Perte de mati&egrave;re pouvant affecter le rev&ecirc;tement ou le m&eacute;tal de base.</p>
+</note>
+</para>
+</step4>
+<step4 control="0">
+<title>Cause probable</title>
+<para><p>Identifier les causes.</p>
+<note>
+<p>Frottement excessif avec les autres &eacute;l&eacute;ments favoris&eacute; par un d&eacute;salignement des bagues ou un balourd excessif de la cage ou une lubrification insuffisante.</p>
+</note>
+</para>
+</step4>
+<step4 control="0">
+<title>Limites d'acceptation</title>
+<para><p>Accepter l'usure de la cage dans les conditions suivantes&nbsp;:</p>
+</para>
+<list type="SIMPLE">
+<item><para><p>le rev&ecirc;tement d'argent ne forme pas de bavure par fluage,</p>
+</para>
+</item>
+<item><para><p>le m&eacute;tal de base n'est pas mis &agrave; nu,</p>
+</para>
+</item>
+<item><para><p>l'usure des alv&eacute;oles n'entra&icirc;ne pas la chute des billes ou des rouleaux sous leur propre poids (cages non d&eacute;montables).</p>
+</para>
+</item>
+</list>
+</step4>
+</step3>
+<step3 control="0">
+<title>Empreintes sur cages</title>
+<step4 control="0">
+<title>Aspect</title>
+<para><p>Contr&ocirc;ler l'aspect.</p>
+<note>
+<p>Cavit&eacute;s peu profondes n'ayant pas entra&icirc;n&eacute; de perte de mati&egrave;re.</p>
+</note>
+</para>
+</step4>
+<step4 control="0">
+<title>Cause probable</title>
+<para><p>Identifier les causes.</p>
+<note>
+<p>Passage ou interposition de corps &eacute;trangers ou chocs.</p>
+</note>
+</para>
+</step4>
+<step4 control="0">
+<title>Limites d'acceptation</title>
+<para><p>Accepter les empreintes si leur longueur n'exc&egrave;de pas 0,5&nbsp;mm.</p>
+</para>
+<note>
+<p>Empreintes acceptables sur toutes surfaces si pas de d&eacute;formations g&eacute;om&eacute;triques de la cage (ovalisation,&hellip;) et si &eacute;paisseur du bourrelet &lt;&nbsp;0,5&nbsp;mm.</p>
+</note>
+<note>
+<p>Empreintes interdites dans les rayons des alv&eacute;oles de cage de roulements &agrave; rouleaux.</p>
+</note>
+</step4>
+</step3>
+<step3 control="0">
+<title>Rayures sur cages</title>
+<step4 control="0">
+<title>Aspect</title>
+<para><p>Contr&ocirc;ler l'aspect.</p>
+<note>
+<p>Sillons peu profonds pouvant affecter le rev&ecirc;tement et le m&eacute;tal de base.</p>
+</note>
+</para>
+</step4>
+<step4 control="0">
+<title>Cause probable</title>
+<para><p>Identifier les causes.</p>
+<note>
+<p>Interposition de corps &eacute;trangers.</p>
+</note>
+</para>
+</step4>
+<step4 control="0">
+<title>Limites d'acceptation toutes surfaces</title>
+<para><p>Acceptable si pas apparition m&eacute;tal de base.</p>
+</para>
+</step4>
+</step3>
+<step3 control="0">
+<title>Coloration par la chaleur des cages</title>
+<step4 control="0">
+<title>Aspect</title>
+<para><p>Contr&ocirc;ler l'aspect.</p>
+<note>
+<p>Coloration anormale de la cage g&eacute;n&eacute;ralement localis&eacute;e. Voir &eacute;galement gla&ccedil;age <xref xrefid="P40-10">.</p>
+</note>
+</para>
+</step4>
+<step4 control="0">
+<title>Cause probable</title>
+<para><p>Identifier les causes.</p>
+<note>
+<p>Lubrification ou refroidissement insuffisants ou frottements excessif avec les autres &eacute;l&eacute;ments.</p>
+</note>
+</para>
+</step4>
+<step4 control="0">
+<title>Limites d'acceptation</title>
+<para><p>Ne pas accepter la coloration par la chaleur.</p>
+</para>
+</step4>
+</step3>
+</step2>
+<step2 control="0" id="P40-130">
+<title>Ruptures, d&eacute;formations, ovalisations des cages</title>
+<step3 control="0">
+<title>Cause probable</title>
+<para><p>Identifier les causes.</p>
+<note>
+<p>Le plus souvent, ces d&eacute;fauts sont provoqu&eacute;s par de mauvaises manipulations.</p>
+</note>
+</para>
+</step3>
+<step3 control="0">
+<title>Limites d'acceptation</title>
+<para><p>Ne pas accepter ces d&eacute;fauts.</p>
+</para>
+</step3>
+</step2>
+<step2 control="0" id="P40-140">
+<title>Brunissage sur cages</title>
+<step3 control="0">
+<title>Aspect</title>
+<para><p>Contr&ocirc;ler l'aspect.</p>
+<note>
+<p>Coloration de surface allant du brun clair au noir.</p>
+</note>
+</para>
+</step3>
+<step3 control="0">
+<title>Cause probable</title>
+<para><p>Identifier les causes.</p>
+<note>
+<p>Arr&ecirc;t temporaire de la lubrification ou cok&eacute;faction du lubrifiant.</p>
+</note>
+</para>
+</step3>
+<step3 control="0">
+<title>Limites d'acceptation</title>
+<para><p>Accepter le brunissage des cages.</p>
+<note>
+<p>Il peut &ecirc;tre &eacute;limin&eacute; avec un chiffon imbib&eacute; d'alcool &eacute;thylique d&eacute;natur&eacute; <miscref refid="P0397">.</p>
+</note>
+</para>
+</step3>
+</step2>
+</step1>
+<figure id="A703700SF030100001A021">
+<title>STYLET DE CONTROLE</title>
+<graphic callicn="A1A703700SF030100001A021">
+</figure>
+<figure id="A703700SF030100023A011">
+<title>NOMENCLATURE DE ROULEMENTS - 1</title>
+<graphic callicn="A1A703700SF030100023A011">
+</figure>
+<figure id="A703700SF030100024A011">
+<title>NOMENCLATURE DES ROULEMENTS - 2</title>
+<graphic callicn="A1A703700SF030100024A011">
+</figure>
+<figure id="A703700SF030100003A011">
+<title>CORROSION DE CONTACT</title>
+<graphic callicn="A1A703700SF030100003A011">
+</figure>
+<figure id="A703700SF030100004A011">
+<title>ECAILLAGE</title>
+<graphic callicn="A1A703700SF030100004A011">
+</figure>
+<figure id="A703700SF030100005A011">
+<title>EFFET BRINELL (FAUX)</title>
+<graphic callicn="A1A703700SF030100005A011">
+</figure>
+<figure id="A703700SF030100006A011">
+<title>EFFET BRINELL (VERITABLE)</title>
+<graphic callicn="A1A703700SF030100006A011">
+</figure>
+<figure id="A703700SF030100007A011">
+<title>RAYURES</title>
+<graphic callicn="A1A703700SF030100007A011">
+</figure>
+<figure id="A703700SF030100008A011">
+<title>GRIFFURES</title>
+<graphic callicn="A1A703700SF030100008A011">
+</figure>
+<figure id="A703700SF030100009A011">
+<title>GRIFFAGE SUR BAGUE INTERIEURE DE ROULEMENT A ROULEAUX</title>
+<graphic callicn="A1A703700SF030100009A011">
+</figure>
+<figure id="A703700SF030100010A011">
+<title>GRIFFAGE SUR ROULEAUX</title>
+<graphic callicn="A1A703700SF030100010A011">
+</figure>
+<figure id="A703700SF030100011A011">
+<title>PATINAGE SUR BAGUE DE ROULEMENT A ROULEAUX</title>
+<graphic callicn="A1A703700SF030100011A011">
+</figure>
+<figure id="A703700SF030100012A011">
+<title>PATINAGE SUR ROULEAUX</title>
+<graphic callicn="A1A703700SF030100012A011">
+</figure>
+<figure id="A703700SF030100013A011">
+<title>PIQURES SUR BAGUE EXTERIEURE DE ROULEMENT A ROULEAUX</title>
+<graphic callicn="A1A703700SF030100013A011">
+</figure>
+<figure id="A703700SF030100014A011">
+<title>USURE CONCENTRIQUE DE L'EXTREMITE D'UN ROULEAU</title>
+<graphic callicn="A1A703700SF030100014A011">
+</figure>
+<figure id="A703700SF030100015A011">
+<title>USURE EXCENTREE DE L'EXTREMITE D'UN ROULEAU</title>
+<graphic callicn="A1A703700SF030100015A011">
+</figure>
+<figure id="A703700SF030100016A011">
+<title>USURE DE CAGE AVEC MISE A NU DU METAL DE BASE</title>
+<graphic callicn="A1A703700SF030100016A011">
+</figure>
+<figure id="A703700SF030100017A011">
+<title>USURE DE CAGE (SANS MISE A NU DU METAL DE BASE)</title>
+<graphic callicn="A1A703700SF030100017A011">
+</figure>
+<figure id="A703700SF030100018A011">
+<title>USURE DU DIAMETRE EXTERIEURE DE CAGE</title>
+<graphic callicn="A1A703700SF030100018A011">
+</figure>
+<figure id="A703700SF030100019A011">
+<title>USURE ALVEOLE DE CAGE AVEC FLUAGE DU REVETEMENT</title>
+<graphic callicn="A1A703700SF030100019A011">
+</figure>
+<figure id="A703700SF030100022A011">
+<title>BRUNISSAGE - GLACAGE</title>
+<graphic callicn="A1A703700SF030100022A011">
+</figure>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>

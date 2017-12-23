@@ -1,0 +1,87 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Description 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1A725200SF030100152A011 SYSTEM "x-dm://0900f90b80003114,MYWORKING" NDATA cgm>
+]>
+<dmodule><?Pub Caret1><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>00</discode><discodev>A</discodev><incode>041</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmc>
+<dmtitle><techname>ROTOR DE TURBINE HP - MODULE 08</techname><infoname>DESCRIPTION DE COMPOSITION</infoname></dmtitle>
+<issno type="C" issno="2">
+<issdate month="12" year="2002" day="06">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 1"></version>
+<nti nti1="1" nti2="1" nti3="1"></systemid>
+</applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Int&eacute;gration 11&egrave;me CLM</rfu>
+<remarks>RAS</remarks>
+<icns><icn id="A1A725200SF030100152A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00152</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<norefs>
+</refs><descript><para0 id="P10">
+<title>PRESENTATION DU MODULE 08 <figref refid="A725200SF030100152A011"></title>
+<para><p>C'est une turbine mono-&eacute;tage refroidie par de l'air pr&eacute;lev&eacute; au niveau du 5&egrave;me &eacute;tage du compresseur HP.</p></para>
+<para><p>Elle comporte 60&nbsp;aubes <refipc csn="72520001 021 "> en alliage r&eacute;fractaire AM1 &agrave; structure monocristalline.</p></para>
+<para change="MOD"><p>En amont, elle est boulonn&eacute;e au rotor compresseur&nbsp;HP par l'interm&eacute;diaire d'un disque plus petit assurant l'&eacute;tanch&eacute;it&eacute; et la distribution de l'air de ventilation pr&eacute;lev&eacute; au 5&egrave;me &eacute;tage (disque labyrinthe turbine&nbsp;HP) <refipc csn="72520001 013 ">.</p></para>
+<para><p>En aval, elle est boulonn&eacute;e au disque tourillon, qui prend appui sur le roulement du palier&nbsp;4 <refipc csn="72540001 028 ">.</p></para>
+<para><p>La turbine&nbsp;HP est compos&eacute;e&nbsp;:</p></para>
+<list type="SIMPLE">
+<item><para><p>en amont, le disque labyrinthe &agrave; 5&nbsp;l&eacute;chettes <refipc csn="72520001 013 "> qui assure l'&eacute;tanch&eacute;it&eacute; inter-&eacute;tage.</p></para>
+</item>
+<item><para><p>en aval, le disque tourillon  <refipc csn="72520001 028 ">qui re&ccedil;oit sur sa partie externe 2&nbsp;joints inter-arbres&nbsp;:</p></para>
+<list type="SIMPLE">
+<item><para><p>un&nbsp;joint carbone air/air (avec son labyrinthe de secours) qui emp&ecirc;che l'air de ventilation des enceintes paliers&nbsp;4 et 5 de s'&eacute;chapper vers l'ext&eacute;rieur,</p></para>
+</item>
+<item><para><p>un&nbsp;joint carbone air/huile qui emp&ecirc;che les remont&eacute;es d'huile des enceintes lubrifi&eacute;es vers l'ext&eacute;rieur.</p></para>
+</item>
+</list>
+</item>
+</list>
+<para change="ADD"><p>Un&nbsp;fourreau  <refipc csn="72520001 006 ">reliant les tourillons de compresseur&nbsp;HP et de turbine&nbsp;HP. Ce fourreau canalise l'air de ventilation des enceintes paliers&nbsp;4 et 5.</p></para>
+</para0><para0 id="P20" change="ADD">
+<title>PRINCIPALES CARACTERISTIQUES</title>
+<table tocentry="1"><tgroup cols="2" align="LEFT"><colspec colnum="1" colname="SQCOLUMN" colwidth="5cm" align="LEFT" colsep="1" rowsep="1"><colspec colnum="2" colname="SQCOLUMN2" colwidth="1,5cm" colsep="1" rowsep="1">
+<tbody valign="TOP">
+<row rowsep="1">
+<entry valign="MIDDLE" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Nombre d'&eacute;tages</p></para>
+</entry>
+<entry valign="MIDDLE" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>1</p></para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="MIDDLE" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Perm&eacute;abilit&eacute; (kg/s)</p></para>
+</entry>
+<entry valign="MIDDLE" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>4,8</p></para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="MIDDLE" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>R&eacute;gime m&eacute;canique (tr/mn)</p></para>
+</entry>
+<entry valign="MIDDLE" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>16.500</p></para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="MIDDLE" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Temp&eacute;rature d'entr&eacute;e (K)</p></para>
+</entry>
+<entry valign="MIDDLE" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>1.647,5</p></para>
+</entry>
+</row>
+</tbody>
+</tgroup></table>
+</para0>
+<figure id="A725200SF030100152A011">
+<title>ENSEMBLES TURBINES</title>
+<graphic callicn="A1A725200SF030100152A011">
+</figure>
+</descript></content></dmodule>

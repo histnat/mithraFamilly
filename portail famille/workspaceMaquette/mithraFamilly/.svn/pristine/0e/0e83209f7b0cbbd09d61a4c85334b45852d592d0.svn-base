@@ -1,0 +1,50 @@
+package com.sonovision.openconv.wf.model;
+
+public class ParameterId {
+	private String taskId;
+	private String parameterName;
+	private final static String SEPARATOR="_";
+	
+	
+/*
+ * Pas de constructeur car sinon Binding du JSON ne se fait pas...
+ */
+	
+	
+//	public ParameterId(String taskId, String parameterName) {
+//		super();
+//		this.taskId=taskId;
+//		this.parameterName=parameterName;
+//	}
+//	public ParameterId(String parameterId) {
+//		super();
+//		parse(parameterId);
+//	}
+
+	public void parse(String parameterId){
+		String []splitted=parameterId.split(SEPARATOR);
+		taskId=splitted[0];
+		parameterName=splitted[1];
+	}
+
+	public String getTaskId() {
+		return taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+	}
+
+	public String getParameterName() {
+		return parameterName;
+	}
+
+	public void setParameterName(String parameterName) {
+		this.parameterName = parameterName;
+	}
+	
+	@Override
+	public String toString(){
+		return taskId+SEPARATOR+parameterName;
+	}
+}

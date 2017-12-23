@@ -1,0 +1,205 @@
+package com.sonovision.openconv.modules.sgmlprocess;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.PrintStream;
+import java.io.Writer;
+import java.lang.ProcessBuilder.Redirect;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.function.Consumer;
+import java.util.stream.Stream;
+
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang3.StringEscapeUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
+import com.sedoc.toolbox.LogMes;
+import com.sonovision.openconv.log.model.DBLogger;
+import com.sonovision.openconv.log.model.LoggerLevel;
+import com.sonovision.openconv.log.model.LoggerType;
+import com.sonovision.openconv.model.TreatedObject;
+import com.sonovision.openconv.modules.sgmlprocess.exception.SGMLException;
+import com.sonovision.openconv.service.FileService;
+import com.sonovision.openconv.utils.FileAccess;
+
+//TODO: Doit etre refait pour ne plus faire d'accès disque et avoir une bonne gestion des exceptions
+@PropertySource("classpath:openconv.properties")
+@Component("SGMLConverter")
+public class SGMLConverter {
+
+	/**
+	 * Repertoire de travail
+	 */
+	private String workFolder;
+	
+	@Autowired
+	FileService fileService;
+
+	@Value("#{propertiesFile['folder.sx']}")
+	protected String folderSX;
+
+	 
+
+	public synchronized InputStream runSX(InputStream in, String dtdFile,DBLogger dbLogger,TreatedObject to) throws IOException {
+		workFolder=fileService.getFolderTemp();
+		ByteArrayOutputStream out1 = new ByteArrayOutputStream();
+		// String home = System.getProperty("user.dir");
+		LogMes.log(SGMLConverter.class, LogMes.DEBUG, "work folder :" + workFolder);
+		File workDir = new File(workFolder + "/sgml/");
+		if (workDir.exists() && !workDir.isDirectory()) {
+			workDir = new File(workFolder + "/sgmlDir/");
+		}
+		if (!workDir.exists()) {
+			workDir.mkdir();
+		}
+		// TODO: remove this access
+		File fileTemp = new File(workDir.getAbsolutePath() + "/xml" + in.toString() + ".xml");
+		//TODO : return erreur log dans le log
+		File errorTemp = new File(workDir.getAbsolutePath() + "/xml" + in.toString() + ".err");
+		File fileTemp1 = new File(workDir.getAbsolutePath() + "/xml1" + in.toString() + ".xml");
+		File fileTemp2 = new File(workDir.getAbsolutePath() + "/xml2" + in.toString() + ".xml");
+		LogMes.log(SGMLConverter.class, LogMes.DEBUG, "fileTemp2 :" + fileTemp2.getAbsolutePath());
+		//System.out.println(fileTemp2.getAbsolutePath());
+		try {
+			PrintStream out = new PrintStream(out1);
+
+			//String[] commande = { "D:\\Work\\OpenConv\\Rafale\\sx\\bin\\sx.exe", "-c","D:\\Work\\OpenConv\\Rafale\\dtd\\NewRafale.cat", "-x", "lower" };
+			String[] commande = { folderSX+"\\sx\\bin\\sx.exe", "-b","utf-8", "-c", dtdFile , "-x", "lower" };
+			
+			FileUtils.copyInputStreamToFile(in, fileTemp1);
+
+			ProcessBuilder pb = new ProcessBuilder().command(commande).redirectError(errorTemp).redirectInput(fileTemp1)
+					.redirectOutput(fileTemp);
+			Process p = pb.start();
+			p.waitFor();
+
+		} catch (IOException e) {
+			LogMes.logError(FileAccess.class, "Probleme durant la convertion sgml to xml", e);
+		} catch (InterruptedException e) {
+			LogMes.logError(FileAccess.class, "Probleme durant la convertion sgml to xml", e);
+		}
+
+		//////DEBUG
+//		byte[] buf = Files.readAllBytes(Paths.get(errorTemp.getAbsolutePath()));
+//		String str = new String(buf,"UTF-8");
+//		System.out.println(str);
+		try (Stream<String> stream = Files.lines(Paths.get(errorTemp.getAbsolutePath()), StandardCharsets.ISO_8859_1)) {
+
+			stream.forEach(x -> {
+//				dbLogger.logObject("l'objet :" + to.getIdObject() +" : "+x, LoggerLevel.WARNING, to.getIdObject());
+//				dbLogger.logTask("l'objet :" + to.getIdObject() +" : "+x, LoggerLevel.WARNING);
+				
+			});
+
+		}
+		
+		
+	//////DEBUG
+		
+		BufferedWriter out = null;
+		Writer fw = new OutputStreamWriter(new FileOutputStream(fileTemp2), StandardCharsets.UTF_8);
+
+		// FileWriter fw= new FileWriter(fileTemp2);
+		try (Stream<String> stream = Files.lines(Paths.get(fileTemp.getAbsolutePath()))) {
+
+			stream.forEach(x -> {
+				try {
+					fw.write(StringEscapeUtils.unescapeHtml4(x).replaceAll("“", "\"").replaceAll("”", "\"")
+							.replaceAll("&dash;", "-").replaceAll(" < ", " &lt; ").replaceAll(" < ", " &lt; ")
+							.replaceAll(" > ", "&gt;") + "\n");
+					fw.flush();
+				} catch (IOException e) {
+					LogMes.logError(FileAccess.class, "Probleme durant la convertion sgml to xml", e);
+				}
+			});
+
+		}
+		fw.close();
+		LogMes.log(SGMLConverter.class, LogMes.DEBUG, "runSX file :" + fileTemp2.getAbsolutePath());
+		return new FileInputStream(fileTemp2);
+	}
+	
+	
+
+	public String getWorkFolder() {
+		return workFolder;
+	}
+
+	public void setWorkFolder(String workFolder) {
+		this.workFolder = workFolder;
+	}
+
+	public FileService getFileService() {
+		return fileService;
+	}
+
+	public void setFileService(FileService fileService) {
+		this.fileService = fileService;
+	}
+
+	public String getFolderSX() {
+		return folderSX;
+	}
+
+	public void setFolderSX(String folderSX) {
+		this.folderSX = folderSX;
+	}
+
+
+
+	private static class StreamWriter implements Runnable {
+		private OutputStream outputStream;
+		private InputStream inputStream;
+
+		public StreamWriter(OutputStream outputStream, InputStream inputStream) {
+			this.outputStream = outputStream;
+			this.inputStream = inputStream;
+		}
+
+		@Override
+		public void run() {
+			try {
+				byte[] buffer = new byte[1024]; // Adjust if you want
+				int bytesRead;
+				while ((bytesRead = inputStream.read(buffer)) != -1) {
+					outputStream.write(buffer, 0, bytesRead);
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	private static class StreamGobbler implements Runnable {
+		private InputStream inputStream;
+		private Consumer<String> consumer;
+
+		public StreamGobbler(InputStream inputStream, Consumer<String> consumer) {
+			this.inputStream = inputStream;
+			this.consumer = consumer;
+		}
+
+		@Override
+		public void run() {
+			new BufferedReader(new InputStreamReader(inputStream)).lines().forEach(consumer);
+		}
+	}
+
+
+
+}

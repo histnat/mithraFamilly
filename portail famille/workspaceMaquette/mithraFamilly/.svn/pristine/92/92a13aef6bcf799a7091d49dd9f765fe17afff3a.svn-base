@@ -1,0 +1,4 @@
+UtilsService.path_ressource=com/sonovision/openweb/xsl/
+pubhelper-build-version=${project.version}
+pubhelper-build-date=${project.build.date}
+

@@ -1,0 +1,123 @@
+package com.sonovision.openconv.modules.xslprocess.service.impl;
+
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Service;
+import org.springframework.web.context.WebApplicationContext;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+
+import com.sonovision.openconv.db.cir.TotalCirTable;
+import com.sonovision.openconv.modules.xslprocess.model.CirTypeKey;
+import com.sonovision.openconv.modules.xslprocess.service.CirService;
+
+
+@Service("CirService")
+//@Scope(value = WebApplicationContext.SCOPE_SESSION)
+public class CirServiceImpl implements CirService{
+
+//	xmlNode :
+//	<ITEM>
+//		<ITEMKEY1>coco1</ITEMKEY1>
+//		<ITEMKEY2>coco2</ITEMKEY2>
+//		<ITEMXML><data>
+//					....
+//				</data>
+//		</ITEMXML>
+//	</ITEM>
+	
+	private final static String TAG_ITEMKEY1="ITEMKEY1";
+	private final static String TAG_ITEMKEY2="ITEMKEY2";
+	private final static String TAG_ITEMXML="ITEMXML";
+	
+//	
+//	@Autowired
+//	TotalCirTable totalCirTable;
+	
+	private String key1;
+	private String key2;
+	private Node xml;
+	
+	
+	@Override
+	public String push(TotalCirTable totalCirTable,Node xmlNode, CirTypeKey cirTypeKey){
+		parse(xmlNode);
+		if(cirTypeKey!=null)
+			return totalCirTable.add(cirTypeKey, key1, key2, xml);
+		return null;
+	}
+
+	
+	@Override
+	public Node getXML(TotalCirTable totalCirTable,String key) throws ParserConfigurationException{
+		return totalCirTable.getXML(key);
+	}
+	
+	
+	private void parse (Node xmlNode){
+		NodeList nl=xmlNode.getChildNodes();
+		for(int i=0;i<nl.getLength();i++){
+			Node n=nl.item(i);
+			if(n.getNodeName().equals(TAG_ITEMKEY1)){
+				Element el=(Element)n;
+				key1=el.getTextContent();
+			}
+			if(n.getNodeName().equals(TAG_ITEMKEY2)){
+				Element el=(Element)n;
+				key2=el.getTextContent();
+			}
+			if(n.getNodeName().equals(TAG_ITEMXML)){
+				Element el=(Element)n;
+				xml=el.getFirstChild();
+			}
+		}
+		
+		
+		
+	}
+//
+//	@Override
+//	public String getKey1() {
+//		return key1;
+//	}
+//
+//	@Override
+//	public void setKey1(String key1) {
+//		this.key1 = key1;
+//	}
+//
+//	@Override
+//	public String getKey2() {
+//		return key2;
+//	}
+//
+//	@Override
+//	public void setKey2(String key2) {
+//		this.key2 = key2;
+//	}
+//
+//	@Override
+//	public Node getXml() {
+//		return xml;
+//	}
+//
+//	@Override
+//	public void setXml(Node xml) {
+//		this.xml = xml;
+//	}
+
+
+
+	@Override
+	public int getSize(TotalCirTable totalCirTable,CirTypeKey cirTypeKey) {
+		return totalCirTable.getTable().get(cirTypeKey).values().size();
+	}
+
+
+	
+	
+	
+}

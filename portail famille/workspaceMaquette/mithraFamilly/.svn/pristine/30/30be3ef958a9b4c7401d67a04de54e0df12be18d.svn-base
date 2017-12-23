@@ -1,0 +1,155 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1A723300SF030100624A011 SYSTEM "x-dm://0900f90b8006290a,MYWORKING" NDATA cgm>
+<!ENTITY A1A723300SF030100591A011 SYSTEM "x-dm://0900f90b800571de,MYWORKING" NDATA cgm>
+<!ENTITY A1A725300SF030100066A031 SYSTEM "x-dm://0900f90b80004025,MYWORKING" NDATA cgm>
+]>
+<?Pub EntList alpha bull copy rArr sect trade le nbsp>
+<?Pub Inc>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><discode>11</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmc>
+<dmtitle><techname>DISQUE 3 TOURILLON, COMPRESSEUR HP</techname><infoname>CONTROLE VISUEL SANS MOYEN SPECIAL</infoname></dmtitle>
+<issno type="c" issno="3">
+<issdate month="12" year="2010" day="15"><?Pub Caret>
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 4"></version>
+<customer aaf="1" anf="1">
+<nti nti2="1" nti3="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Prise en compte CSC 2008-12/00006</rfu>
+<remarks>RAS</remarks>
+<icns><icn id="A1A723300SF030100591A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00591</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A723300SF030100624A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00624</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<norefs>
+</refs><proced><pmd>
+<manhour value="0,1"></manhour>
+<duration value="0,1"></duration>
+</pmd><prelreqs><reqconds>
+<noconds></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="0,1"></reqper>
+</reqpers><supequip><nosupeq><nosupeqs></supequip><supplies><supplyli exhaust="0">
+<supply id="R20201" mand="0"><refipc csn="72330001A196 "><nomen>Disque 3 tourillon, compresseur HP</nomen><quantity>1</quantity></supply>
+</supplyli></supplies><miscs><nomisc></miscs><safety>
+<specpara>
+<caution>
+<p>SIGNALER TOUT AUTRE DEFAUT NON REPERTORIE DANS LA PROCEDURE A SNECMA.</p>
+</caution>
+</specpara>
+</safety></prelreqs><mainfunc>
+<step1 control="0" id="P10">
+<para><p>Approvisionner en cas de  remplacement la ou les rechanges <supplref refid="R20201">.</p>
+</para>
+</step1>
+<step1 control="0" id="P20">
+<para><p change="mod">Contr&ocirc;ler visuellement les pi&egrave;ces selon les informations du tableau ci-dessous <figref refid="A723300SF030100591A011"> <figref change="add" refid="A723300SF030100624A011">.</p>
+</para>
+<table tocentry="1">
+<tgroup cols="3" align="LEFT"><colspec colnum="1" change="mod" colname="SQCOLUMN1" colwidth="5.50cm" align="LEFT" colsep="1" rowsep="1"><colspec colnum="2" change="mod" colname="SQCOLUMN2" colwidth="5.50cm" align="LEFT" colsep="1" rowsep="1"><colspec colnum="3" change="mod" colname="SQCOLUMN3" colwidth="5.00cm" align="left" colsep="1" rowsep="1">
+<tbody valign="TOP">
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>DEFAUTS</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>CRITERES D'ADMISSIBILITE NTI&nbsp;2 - NTI&nbsp;3</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>SANCTION</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Usure Type A de contact (avec le fourreau de la turbine HP) sur le diam&egrave;tre C du disque 3 tourillon.</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Usure sans profondeur : admissible en l'&eacute;tat. Usure maxi de 0.05&nbsp;mm admissible sur secteurs de 30&deg; maxi.</p>
+</para>
+</entry>
+<entry valign="TOP" align="LEFT" colsep="1" morerows="0" rowsep="1"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="SQCOLUMN1"><para><p>Fretting en fond de gorge o&ugrave; viennent se loger les 5 tenons du frein d&rsquo;&eacute;crou de palier et sur le bord de la gorge.</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN2"><para><p>Admissible si profondeur&nbsp;&le;&nbsp;0.05&nbsp;mm </p>
+</para>
+</entry>
+<entry colname="SQCOLUMN3"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="SQCOLUMN1"><para><p>Empreintes sph&eacute;riques en fond d'alv&eacute;oles D3 Type Es </p>
+</para>
+</entry>
+<entry colname="SQCOLUMN2"><para><p>Empreintes sp&eacute;hriques en fond d'alv&eacute;oles D3 admissibles si et seulement si&nbsp;:</p>
+</para>
+<list>
+<item><para><p> localis&eacute;es en fond d'alv&eacute;oles &agrave; l'exclusion des rayons de raccordement (dents de disques),</p>
+</para>
+</item>
+<item><para><p>absence d'arrachement de mati&egrave;re ou de rayures,</p>
+</para>
+</item>
+<item><para><p>profondeur inf&eacute;rieure &agrave; 0,05&nbsp;mm.</p>
+</para>
+</item>
+</list>
+</entry>
+<entry colname="SQCOLUMN3"><para><p>Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="SQCOLUMN1"><para><p change="add">Impact sur le &Oslash; ext&eacute;rieur de la rainure recevant l'anneau d'arr&ecirc;t</p>
+</para>
+</entry>
+<entry colname="SQCOLUMN2"><para><p change="add">Un seul impact admissible si&nbsp;:</p>
+</para>
+<list>
+<item><para><p change="add">longueur &le;&nbsp;3&nbsp;mm</p>
+</para>
+</item>
+<item><para><p change="add">largeur &le;&nbsp;1&nbsp;mm</p>
+</para>
+</item>
+<item><para><p change="add">profondeur &le;&nbsp;0,5&nbsp;mm</p>
+</para>
+</item>
+</list>
+</entry>
+<entry colname="SQCOLUMN3"><para><p change="add">Au-del&agrave; remplacement de la pi&egrave;ce</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step1>
+<figure id="A723300SF030100591A011">
+<title>IDENTIFICATION DES DEFAUTS</title>
+<graphic callicn="A1A723300SF030100591A011">
+</figure>
+<figure id="A723300SF030100624A011" change="add">
+<title>IDENTIFICATION DES DEFAUTS</title>
+<graphic callicn="A1A723300SF030100624A011" change="add">
+</figure>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000006580 0>

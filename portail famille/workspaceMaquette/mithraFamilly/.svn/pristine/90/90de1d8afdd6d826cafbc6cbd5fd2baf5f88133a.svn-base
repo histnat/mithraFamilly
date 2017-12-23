@@ -1,0 +1,28 @@
+package com.sonovision.openconv.modules.xslprocess.service;
+
+import org.w3c.dom.Node;
+
+import com.sonovision.openconv.db.cir.TotalCirTable;
+import com.sonovision.openconv.modules.xslprocess.model.CirTypeKey;
+
+public interface CirService {
+//	public String push(Node xmlNode, CirTypeKey cirTypeKey);
+
+//	public int getSize(CirTypeKey cirTypeKey);
+	
+//	String getKey1();
+//
+//	void setKey1(String key1);
+//
+//	String getKey2();
+//
+//	void setKey2(String key2);
+//
+//	Node getXml();
+//
+//	void setXml(Node xml);
+
+	String push(TotalCirTable totalCirTable, Node xmlNode, CirTypeKey cirTypeKey);
+
+	int getSize(TotalCirTable totalCirTable, CirTypeKey cirTypeKey);
+}

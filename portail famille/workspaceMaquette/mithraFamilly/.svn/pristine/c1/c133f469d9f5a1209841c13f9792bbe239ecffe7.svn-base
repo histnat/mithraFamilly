@@ -1,0 +1,163 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                           RAFALE                                   *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                   dated 01st October 1997                          *
+    *                                                                    *
+    * Amendment :-                                                       *
+    *  31/08/95     attribute "control" initialized with "nocont" 		 *
+    *               for each step										 *
+    *               attribute "title" added to each step				 *
+	*																	 *
+    *   19/05/97 :  Changed Public Identifier							 *
+    *               attribute "title" removed to each <step>			 *
+    *              (title is now an element in %stepcon;)				 *
+    * 1. Update Public Identifier.                                       *
+    * 2. Moved entity %stepcon; from Common entities to Steps Entity.    *
+    * 3. Change attribut cont to step1/5 (0,1,2)                         *
+    *                                                                    *
+	*                                                                    *
+	*                                                                    *
+	* Typical invocation :                                               *
+    * <!ENTITY % EXTSTEP                                                 *
+    *   PUBLIC "-//RAFALE//ELEMENTS Steps Breakdown 971001//EN" >         *
+    * %EXTSTEP;                                                          *
+    ********************************************************************** -->
+
+
+
+<!--**********************************************************************
+    * Define Entity %stepcon (Step Content) containing:-                 *
+    *  APPLIC   - optional   single      contains TYPE, MODEL.           *
+    *--------------------------------------------------------------------*
+    * Mandatory Repeatable Group.                                        *
+    *--------------------------------------------------------------------*
+    *   SPECPARA - mandatory single     contains WARNING, CAUTION, NOTE, *
+    *   PARA     - mandatory single     contains definition stored in    *
+    *                                   entity %nparcon;                 *
+    *      TO BE UPDATED                                                 *
+    ********************************************************************** -->
+
+<!ENTITY % stepcon 
+	"(%applic)?,title?,specpara?,(para|%list;|figure|table)*"
+		-- Step Content.-->
+
+
+
+<!--**********************************************************************
+    * Define Element STEP1 (Procedural Step Level 1) containing:-        *
+    *  Definition stored in entity %stepcon;                             *
+    *--------------------------------------------------------------------*
+    * Optional Single Group.                                             *
+    *--------------------------------------------------------------------*
+    *  STEP2    - mandatory  single      contains definition stored in   *
+    *                                    entity %stepcon; STEP3.         *
+    *  STEP2    - mandatory  repeatable  contains definition stored in   *
+    *                                    entity %stepcon; STEP3.         *
+    *--------------------------------------------------------------------*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition List stored in entity %bodyatt;               *
+    ********************************************************************** -->
+
+<!ELEMENT step1 - - (%stepcon;,(step2,step2+)?,note*)>
+<!ATTLIST step1
+          %bodyatt
+		  control	(0|1|2)	"0"
+		-- Control type : nocontrol, selfcontrol or external control-->
+
+
+
+<!--**********************************************************************
+    * Define Element STEP2 (Procedural Step Level 2) containing:-        *
+    *  Definition stored in entity %stepcon;                             *
+    *--------------------------------------------------------------------*
+    * Optional Single Group.                                             *
+    *--------------------------------------------------------------------*
+    *  STEP3    - mandatory  single      contains definition stored in   *
+    *                                    entity %stepcon; STEP4.         *
+    *  STEP3    - mandatory  repeatable  contains definition stored in   *
+    *                                    entity %stepcon; STEP4.         *
+    *--------------------------------------------------------------------*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition List stored in entity %bodyatt;               *
+    ********************************************************************** -->
+
+<!ELEMENT step2 - - (%stepcon;,(step3,step3+)?,note*)
+		-- Procedural Step Level 2.-->
+<!ATTLIST step2
+              %bodyatt
+		control	(0|1|2)	"0"
+		-- Control type : nocontrol, selfcontrol or external control--
+		>
+
+
+
+<!--**********************************************************************
+    * Define Element STEP3 (Procedural Step Level 3) containing:-        *
+    *  Definition stored in entity %stepcon;                             *
+    *--------------------------------------------------------------------*
+    * Optional Single Group.                                             *
+    *--------------------------------------------------------------------*
+    *  STEP4    - mandatory  single      contains definition stored in   *
+    *                                    entity %stepcon; STEP5.         *
+    *  STEP4    - mandatory  repeatable  contains definition stored in   *
+    *                                    entity %stepcon; STEP5.         *
+    *--------------------------------------------------------------------*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition List stored in entity %bodyatt;               *
+    ********************************************************************** -->
+
+<!ELEMENT step3 - - (%stepcon;,(step4,step4+)?,note*)
+		-- Procedural Step Level 3.-->
+<!ATTLIST step3
+              %bodyatt
+		control	(0|1|2)	"0"
+		-- Control type : nocontrol, selfcontrol or external control--
+		>
+
+
+<!--**********************************************************************
+    * Define Element STEP4 (Procedural Step Level 4) containing:-        *
+    *  Definition stored in entity %stepcon;                             *
+    *--------------------------------------------------------------------*
+    * Optional Single Group.                                             *
+    *--------------------------------------------------------------------*
+    *  STEP5    - mandatory  single      contains definition stored in   *
+    *                                    entity %stepcon;                *
+    *  STEP5    - mandatory  repeatable  contains definition stored in   *
+    *                                    entity %stepcon;                *
+    *--------------------------------------------------------------------*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition List stored in entity %bodyatt;               *
+    ********************************************************************** -->
+
+<!ELEMENT step4 - - (%stepcon;,(step5,step5+)?,note*)
+		-- Procedural Step Level 4.-->
+<!ATTLIST step4
+              %bodyatt
+		control	(0|1|2)	"0"
+		-- Control type : nocontrol, selfcontrol or external control--
+		>
+
+
+
+<!--**********************************************************************
+    * Define Element STEP5 (Procedural Step Level 5) containing:-        *
+    *  Definition stored in entity %stepcon;                             *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition List stored in entity %bodyatt;               *
+    ********************************************************************** -->
+
+<!ELEMENT step5 - - (%stepcon;) -- Procedural Step Level 5.-->
+<!ATTLIST step5
+              %bodyatt
+		control	(0|1|2)	"0"
+		-- Control type : nocontrol, selfcontrol or external control--
+		>

@@ -1,0 +1,271 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1A753210SF030150065A011 SYSTEM "x-dm://0900f90b800489ce,MYWORKING" NDATA jpeg>
+<!ENTITY A1A753210SF030100042A021 SYSTEM "x-dm://0900f90b80003e3d,MYWORKING" NDATA cgm>
+]>
+<?Pub EntList alpha bull copy rArr sect trade nbsp oslash Oslash>
+<?Pub Inc>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>75</chapnum><section>3</section><subsect>2</subsect><subject>00</subject><discode>02</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmc>
+<dmtitle><techname>CHAPE EQUIPEE ET SUPPORT DE CHAPE DES VERINS MAITRE STATOR ET STATOR</techname><infoname>CONTROLE VISUEL SANS MOYEN SPECIAL</infoname></dmtitle>
+<issno type="c" issno="4">
+<issdate month="04" year="2011" day="30">
+</dmaddres><status>
+<security class="np">
+<rpc rpcname="s">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 4"></version>
+<customer aaf="1" anf="1">
+<nti nti1="0" nti2="1" nti3="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Prise en compte de la DRER N&deg; ATVT 042/KS/2010</rfu>
+<remarks>RAS</remarks>
+<icns><icn id="a1a753210sf030100042a021">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>75</chapnum><section>3</section><subsect>2</subsect><subject>10</subject><rpc rpcname="s"><orig>F0301</orig><illnum>00042</illnum><illver>A</illver><illupdat>02</illupdat><secur class="1"></icn-c>
+</icn><icn id="a1a753210sf030150065a011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>75</chapnum><section>3</section><subsect>2</subsect><subject>10</subject><rpc rpcname="s"><orig>F0301</orig><illnum>50065</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<refdm>
+<dmcid id="a1a70370006a369ad"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>3</section><subsect>7</subsect><subject>00</subject><discode>06</discode><discodev>A</discodev><incode>369</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmcid>
+<dmcid id="a1a70420003a921ad"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>4</section><subsect>2</subsect><subject>00</subject><discode>03</discode><discodev>A</discodev><incode>921</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmcid>
+<dmcid id="A1A75320002A361AC" change="add"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>75</chapnum><section>3</section><subsect>2</subsect><subject>00</subject><discode>02</discode><discodev>A</discodev><incode>361</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+</refdm>
+</refs><proced><pmd>
+<manhour value="0,1"></manhour>
+<duration value="0,1"></duration>
+</pmd><prelreqs><reqconds><reqcondli><reqcond>
+<cond><para><p>Chape mont&eacute;e sur v&eacute;rin ou d&eacute;pos&eacute;e.</p>
+</para>
+</cond>
+</reqcond></reqcondli></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="0,1"></reqper>
+</reqpers><supequip><nosupeq><nosupeqs></supequip><supplies><nosupply></supplies><miscs><nomisc></miscs><safety><nosafety></safety></prelreqs><mainfunc>
+<step1 control="0" id="p10">
+<title>CONTROLE VISUEL DE LA CHAPE EQUIPEE</title>
+<step2 control="0" id="p10-10">
+<para><p>Contr&ocirc;ler visuellement les chapes &eacute;quip&eacute;es <refipc csn="75321001 001 "> <refipc csn="75322001 001 "> <figref repnohot="CHAPE EQUIPEE" refid="a753210sf030100042a021"> et <figref repnohot="CHAPE EQUIPEE" refid="a753210sf030150065a011">.</p>
+</para>
+</step2>
+<step2 control="0" id="p10-20">
+<para><p>V&eacute;rifier&nbsp;les chapes &eacute;quip&eacute;es suivant le tableau :</p>
+</para>
+<table tocentry="1">
+<tgroup cols="4" align="left"><colspec colname="col1" colwidth="4.25cm"><colspec colname="col2" colwidth="4.25cm"><colspec colname="col3" colwidth="4.25cm"><colspec colname="col4" colwidth="4.25cm">
+<tbody valign="top">
+<row>
+<entry valign="middle" align="center" morerows="0"><para><p>ZONE</p>
+</para>
+</entry>
+<entry valign="middle" align="center" morerows="0"><para><p>DEFAUTS</p>
+</para>
+</entry>
+<entry valign="middle" align="center" morerows="0"><para><p>CRITERE D'ADMISSIBILITE</p>
+</para>
+</entry>
+<entry valign="middle" align="center" morerows="0"><para><p>SANCTION</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="top" morerows="0"><para><p>Filets</p>
+</para>
+</entry>
+<entry valign="top" morerows="0"><para><p>Choc, arrachement</p>
+</para>
+</entry>
+<entry valign="top" morerows="0"><para><p>Inacceptable</p>
+</para>
+</entry>
+<entry valign="top" morerows="0"><para><p>Contacter le CSC M88-2 de Snecma</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p change="add">Bagues &eacute;paul&eacute;es &Oslash;&nbsp;4</p>
+</para>
+</entry>
+<entry colname="col2"><para><p change="add">Usure</p>
+</para>
+</entry>
+<entry colname="col3"><para><p change="add">Acceptable si &Oslash;&nbsp;A dans les limites de tol&eacute;rance.</p>
+</para>
+</entry>
+<entry colname="col4"><para><p change="add">Contr&ocirc;ler <dmcref change="add" xrefid="A1A75320002A361AC"></p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step2>
+<step2 control="0" id="p10-30">
+<para><p>V&eacute;rifier les &eacute;crous <refipc csn="75322001 003 "> <refipc csn="75321001 003 "> suivant le tableau&nbsp;:</p>
+</para>
+<table tocentry="1">
+<tgroup cols="4" align="left"><colspec colname="col1" colwidth="4.25cm"><colspec colname="col2" colwidth="4.25cm"><colspec colname="col3" colwidth="4.25cm"><colspec colname="col4" colwidth="4.25cm">
+<tbody valign="top">
+<row>
+<entry valign="middle" align="center" morerows="0"><para><p>ZONES</p>
+</para>
+</entry>
+<entry valign="middle" align="center" morerows="0"><para><p>DEFAUTS</p>
+</para>
+</entry>
+<entry valign="middle" align="center" morerows="0"><para><p>CRITERES D'ADMISSIBILITE</p>
+</para>
+</entry>
+<entry valign="middle" align="center" morerows="0"><para><p>SANCTIONS</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="top" morerows="0"><para><p>Toute la surface</p>
+</para>
+</entry>
+<entry valign="top" morerows="0"><para><p>Ecaillage, rayure, choc</p>
+</para>
+</entry>
+<entry valign="top" morerows="0"><para><p>Inacceptable</p>
+</para>
+</entry>
+<entry valign="top" morerows="0"><para><p>Rebut</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="top" morerows="0"><para><p>Filetage</p>
+</para>
+</entry>
+<entry valign="top" morerows="0"><para><p>Bavures, traces de chocs</p>
+</para>
+</entry>
+<entry valign="top" morerows="0"><para><p>Inacceptable</p>
+</para>
+</entry>
+<entry valign="top" morerows="0"><para><p>Rebut</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step2>
+</step1>
+<step1 control="0" id="p20">
+<title>CONTROLE VISUEL DU SUPPORT DE CHAPE EQUIPEE</title>
+<step2 control="0" id="p20-10">
+<para><p>Contr&ocirc;ler visuellement les supports de chape &eacute;quip&eacute;e <refipc csn="75322001 010 "> <refipc csn="75321001 015 "> <figref repnohot="SUPPORT DE CHAPE" refid="a753210sf030100042a021"> et <figref repnohot="CHAPE EQUIPEE" refid="a753210sf030150065a011">.</p>
+</para>
+</step2>
+<step2 control="0" id="p20-20">
+<para><p>V&eacute;rifier les supports de chape &eacute;quip&eacute;e suivant le tableau&nbsp;:</p>
+</para>
+<table tocentry="1">
+<tgroup cols="4" align="left"><colspec colname="col1" colwidth="4.25cm"><colspec colname="col2" colwidth="4.25cm"><colspec colname="col3" colwidth="4.25cm"><colspec colname="col4" colwidth="4.25cm">
+<tbody valign="top">
+<row>
+<entry valign="middle" align="center" morerows="0"><para><p>ZONES</p>
+</para>
+</entry>
+<entry valign="middle" align="center" morerows="0"><para><p>DEFAUTS</p>
+</para>
+</entry>
+<entry valign="middle" align="center" morerows="0"><para><p>CRITERES D'ADMISSIBILITE</p>
+</para>
+</entry>
+<entry valign="middle" align="center" morerows="0"><para><p>SANCTIONS</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="top" morerows="0"><para><p>Filets (diam&egrave;tre A) <figref repnohot="DIA. A" refid="a753210sf030100042a021"></p>
+</para>
+</entry>
+<entry valign="top" morerows="0"><para><p>Ecaillage, choc</p>
+</para>
+</entry>
+<entry valign="top" morerows="0"><para><p>Inacceptable</p>
+</para>
+</entry>
+<entry valign="top" morerows="0"><para><p>Contacter le CSC M88-2 de Snecma</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="top" morerows="0"><para><p>Gorge (ZONE B) <figref repnohot="ZONE B" refid="a753210sf030100042a021"></p>
+</para>
+</entry>
+<entry valign="top" morerows="0"><para><p>Rayure</p>
+</para>
+</entry>
+<entry valign="top" morerows="0"><para><p>Inacceptable</p>
+</para>
+</entry>
+<entry valign="top" morerows="0"><para><p>Contacter le CSC M88-2 de Snecma</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Encoche pour freinage de la bague frein <refipc csn="75321001 014 "></p>
+</para>
+</entry>
+<entry colname="col2"><para><p>Traces de chocs <figref refid="a753210sf030150065a011"></p>
+</para>
+</entry>
+<entry colname="col3"><para><p>Acceptable apr&egrave;s adoucissement des traces</p>
+</para>
+</entry>
+<entry colname="col4"><para><p></p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="top" morerows="1"><para><p>Filet rapport&eacute; (diam&eacute;tre C) <figref repnohot="DIA. C" refid="a753210sf030100042a021"></p>
+</para>
+</entry>
+<entry valign="top" morerows="0"><para><p>Absence du filet</p>
+</para>
+</entry>
+<entry valign="top" morerows="0"><para><p>Inacceptable</p>
+</para>
+</entry>
+<entry valign="top" morerows="0"><para><p>Remplacer le filet rapport&eacute; <dmcref xrefid="a1a70420003a921ad"></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col2"><para><p>D&eacute;faut de freinage <dmcref xrefid="a1a70370006a369ad"></p>
+</para>
+</entry>
+<entry colname="col3"><para><p>Inacceptable</p>
+</para>
+</entry>
+<entry colname="col4"><para><p>Remplacer le filet rapport&eacute; <dmcref xrefid="a1a70420003a921ad"></p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step2>
+</step1>
+<figure id="a753210sf030100042a021">
+<title>CONTROLE DIMENSIONNEL DE LA CHAPE EQUIPEE ET DU SUPPORT DE CHAPE</title>
+<graphic callicn="A1A753210SF030100042A021">
+</figure>
+<figure id="a753210sf030150065a011">
+<title>CONTROLE VISUEL DE LA CHAPE EQUIPEE ET DU SUPPORT DE CHAPE</title>
+<graphic callicn="A1A753210SF030150065A011">
+</figure>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000010367 0>

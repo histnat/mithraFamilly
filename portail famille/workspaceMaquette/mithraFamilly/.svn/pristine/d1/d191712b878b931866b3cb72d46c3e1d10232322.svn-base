@@ -1,0 +1,119 @@
+package com.sonovision.openconv.ws.controller.model;
+
+import java.util.Date;
+
+import com.sonovision.openconv.db.vo.execution.CoScenario;
+
+public class HistoryDetailedModel {
+
+	private int nbrFiles;
+	private int nbrOK;
+	private int nbrNOK;
+	private int nbrNBloquant;
+		
+	private Date startTime;
+	private Date endTime;
+	
+//	@JsonIgnore
+//    @DBRef(lazy=true)
+//    private OpUser opUser;
+    private String userId;
+    
+    private String idExe;
+    private boolean zipAvailable;
+
+	
+	public HistoryDetailedModel(){
+		super();
+	}
+	
+	public HistoryDetailedModel(int nbrFiles, int nbrOK, int nbrNOK, int nbrNBloquant, Date startTime, Date endTime,
+			String userId,String idExe) {
+		super();
+		this.nbrFiles = nbrFiles;
+		this.nbrOK = nbrOK;
+		this.nbrNOK = nbrNOK;
+		this.nbrNBloquant = nbrNBloquant;
+		this.startTime = startTime;
+		this.endTime = endTime;
+		this.userId = userId;
+		this.idExe=idExe;
+	}
+
+
+	public int getNbrFiles() {
+		return nbrFiles;
+	}
+
+	public void setNbrFiles(int nbrFiles) {
+		this.nbrFiles = nbrFiles;
+	}
+
+	public int getNbrOK() {
+		return nbrOK;
+	}
+
+	public void setNbrOK(int nbrOK) {
+		this.nbrOK = nbrOK;
+	}
+
+	public int getNbrNOK() {
+		return nbrNOK;
+	}
+
+	public void setNbrNOK(int nbrNOK) {
+		this.nbrNOK = nbrNOK;
+	}
+
+	public int getNbrNBloquant() {
+		return nbrNBloquant;
+	}
+
+	public void setNbrNBloquant(int nbrNBloquant) {
+		this.nbrNBloquant = nbrNBloquant;
+	}
+
+	public Date getStartTime() {
+		return startTime;
+	}
+
+	public void setStartTime(Date startTime) {
+		this.startTime = startTime;
+	}
+
+	public Date getEndTime() {
+		return endTime;
+	}
+
+	public void setEndTime(Date endTime) {
+		this.endTime = endTime;
+	}
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
+	public String getIdExe() {
+		return idExe;
+	}
+
+	public void setIdExe(String idExe) {
+		this.idExe = idExe;
+	}
+
+	public boolean isZipAvailable() {
+		return zipAvailable;
+	}
+
+	public void setZipAvailable(boolean zipAvailable) {
+		this.zipAvailable = zipAvailable;
+	}
+	
+
+	
+	
+}

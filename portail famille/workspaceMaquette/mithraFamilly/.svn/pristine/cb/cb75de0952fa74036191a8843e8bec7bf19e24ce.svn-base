@@ -1,0 +1,123 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1A723300SF030100459A011 SYSTEM "x-dm://0900f90b80003ff7,MYWORKING" NDATA cgm>
+<!ENTITY A1A723300SF030100460A011 SYSTEM "x-dm://0900f90b80003ff9,MYWORKING" NDATA cgm>
+<!ENTITY A1A723300SF030100461A011 SYSTEM "x-dm://0900f90b80003ff8,MYWORKING" NDATA cgm>
+]>
+<?Pub EntList alpha bull copy rArr sect trade laquo raquo>
+<?Pub Inc>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>03</discode><discodev>A</discodev><incode>300</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmc>
+<dmtitle><techname>DISQUE LABYRINTHE TURBINE HP</techname><infoname>EXAMENS, TESTS, ESSAIS, CONTROLES ET VERIFICATIONS</infoname></dmtitle>
+<issno type="c" issno="4">
+<issdate month="03" year="2012" day="30">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 1"></version>
+<version version="M88-2 ETAPE 4"></version>
+<manufact>F0301</manufact><partno>307-090-267-0</partno>
+<manufact>F0301</manufact><partno>307-245-802-0</partno>
+<manufact>F0301</manufact><partno>307-245-803-0</partno>
+<manufact>F0301</manufact><partno>307-245-855-0</partno>
+<customer aaf="1" anf="1">
+<nti nti1="0" nti2="0" nti3="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Prise en compte de la MOD 250-78R1</rfu>
+<remarks>RAS</remarks>
+<icns><icn id="A1A723300SF030100461A021">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00461</illnum><illver>A</illver><illupdat>02</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A723300SF030100460A021">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00460</illnum><illver>A</illver><illupdat>02</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A723300SF030100459A021">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00459</illnum><illver>A</illver><illupdat>02</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<refdm>
+<dmcid id="A1A72520003A251AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>03</discode><discodev>A</discodev><incode>251</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A72520003A251BC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>03</discode><discodev>A</discodev><incode>251</incode><incodev>B</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A72520003A310AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>03</discode><discodev>A</discodev><incode>310</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A72520003A353AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>03</discode><discodev>A</discodev><incode>353</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A72520003A353BC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>03</discode><discodev>A</discodev><incode>353</incode><incodev>B</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A72520003A351AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>03</discode><discodev>A</discodev><incode>351</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1ARF720501A100AD"><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>RF</ecscc><eidc>72</eidc><cic>05</cic><discode>01</discode><discodev>A</discodev><incode>100</incode><incodev>A</incodev><itemloc>D</itemloc></age></dmcid>
+<dmcid id="A1ARF720502A030BC"><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>RF</ecscc><eidc>72</eidc><cic>05</cic><discode>02</discode><discodev>A</discodev><incode>030</incode><incodev>B</incodev><itemloc>C</itemloc></age></dmcid>
+</refdm>
+</refs><proced><pmd>
+<manhour value="0,1"></manhour>
+<duration value="0,1"></duration>
+</pmd><prelreqs><reqconds>
+<noconds></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="0,1"></reqper>
+</reqpers><supequip><nosupeq><nosupeqs></supequip><supplies><nosupply></supplies><miscs><nomisc></miscs><safety>
+<specpara>
+<caution>
+<p>Manipuler les pi&egrave;ces avec pr&eacute;caution (fabriqu&eacute;es en alliage &eacute;labor&eacute; par m&eacute;tallurgie des poudres MdP)&nbsp;: tout impact est inacceptable quelque soit son importance et sa localisation.</p>
+</caution>
+</specpara>
+</safety></prelreqs><mainfunc>
+<step1 control="0" id="P10">
+<para><p>Nettoyer le disque labyrinthe <dmcref xrefid="A1A72520003A251BC">.</p>
+</para>
+</step1>
+<step1 control="0" id="P20">
+<para><p>Effectuer un contr&ocirc;le visuel <dmcref xrefid="A1A72520003A310AC">.</p>
+</para>
+</step1>
+<step1 control="0" id="P30">
+<para><applic><config><mod modnb="250-78R1" change="add" modcond="pre"></config></applic>
+<p change="mod">Effectuer un contr&ocirc;le par Courants De Foucault Machine T des trous de la bride Aval <dmcref xrefid="A1A72520003A353AC">.</p>
+</para>
+</step1>
+<step1 control="0" id="P40">
+<para><p>Effectuer un contr&ocirc;le par Courants De Foucault Machine M1 <dmcref xrefid="A1A72520003A353BC">.</p>
+</para>
+</step1>
+<step1 control="0" id="P50">
+<para><p>D&eacute;graisser le disque labyrinthe si n&eacute;cessaire <dmcref xrefid="A1A72520003A251AC">.</p>
+</para>
+</step1>
+<step1 control="0" id="P60">
+<para><p>Effectuer un contr&ocirc;le ressuage <dmcref xrefid="A1A72520003A351AC">.</p>
+</para>
+</step1>
+<step1 control="0" id="P70">
+<para><p>D&eacute;graisser le disque labyrinthe si n&eacute;cessaire <dmcref xrefid="A1A72520003A251AC">.</p>
+</para>
+</step1>
+<step1 control="0" id="P80">
+<para><p change="mod">Lever le doute en cas d'indications de d&eacute;fauts non identifi&eacute;s <figref refid="A723300SF030100461A021"><figref refid="A723300SF030100460A021"><figref refid="A723300SF030100459A021">.</p>
+</para>
+</step1>
+<step1 control="0" id="P90">
+<para><p>Mettre &agrave; &laquo; 1 &raquo; le champ &laquo; CTRMDP &raquo; du Livret Informatis&eacute; Moteur <dmcref xrefid="A1ARF720501A100AD">.</p>
+</para>
+</step1>
+<step1 control="0" id="P100">
+<para><p>Renseigner le &laquo; Code Nature Travaux &raquo; dans la table intervention <dmcref xrefid="A1ARF720502A030BC">.</p>
+</para>
+</step1>
+<figure id="A723300SF030100461A021" change="mod">
+<title>CONTROLE DEVIS 1 </title>
+<graphic callicn="A1A723300SF030100461A021" change="mod">
+</figure>
+<figure id="A723300SF030100460A021" change="mod">
+<title>CONTROLE DEVIS 2</title>
+<graphic callicn="A1A723300SF030100460A021" change="mod">
+</figure><?Pub Caret>
+<figure id="A723300SF030100459A021" change="mod">
+<title>CONTROLE DEVIS 3</title>
+<graphic callicn="A1A723300SF030100459A021" change="mod">
+</figure>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000007611 0>

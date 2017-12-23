@@ -1,0 +1,1024 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1A732110SF030100078A011 SYSTEM "x-dm://0900f90b80002ec0,MYWORKING" NDATA cgm>
+<!ENTITY A1A732110SF030100081A011 SYSTEM "x-dm://0900f90b80002ec2,MYWORKING" NDATA cgm>
+<!ENTITY A1A732110SF030100170A011 SYSTEM "x-dm://0900f90b80003cca,MYWORKING" NDATA cgm>
+]>
+<dmodule><?Pub Caret1><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>1</subsect><subject>10</subject><discode>10</discode><discodev>A</discodev><incode>342</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmc>
+<dmtitle><techname>POMPE A CARBURANT PRINCIPALE</techname><infoname>TEST AUTOMATIQUE - RODAGE</infoname></dmtitle>
+<issno type="C" issno="2">
+<issdate month="06" year="2004" day="30">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 1"></version>
+<version version="M88-2 ETAPE 4"></version>
+<nti nti1="0" nti2="0" nti3="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Application des CAD 27-40355/000 et CAD 27-40325/000. Prise en compte de la FRD n&deg; 795</rfu>
+<remarks>RAS</remarks>
+<icns><icn id="A1A732110SF030100170A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>1</subsect><subject>10</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00170</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A732110SF030100081A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>1</subsect><subject>10</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00081</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A732110SF030100078A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>1</subsect><subject>10</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00078</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<refdm>
+<dmcid id="A1A73211010A736AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>1</subsect><subject>10</subject><discode>10</discode><discodev>A</discodev><incode>736</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A73211000A030AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>1</subsect><subject>10</subject><discode>00</discode><discodev>A</discodev><incode>030</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A73211010A518AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>1</subsect><subject>10</subject><discode>10</discode><discodev>A</discodev><incode>518</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+</refdm>
+</refs><proced><pmd>
+<manhour value="6,0"></manhour>
+<duration value="6,0"></duration>
+</pmd><prelreqs><reqconds><reqcondli><reqcond>
+<cond><para><p>La pompe &agrave; carburant est dans sa caisse navette.</p>
+</para>
+</cond>
+</reqcond></reqcondli></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="6,0"></reqper>
+</reqpers><supequip><supeqli>
+<supequi id="O2.30979"><refipc csn="72016701 471 "><nomen>Plaque essai test pompe</nomen><quantity> 1</quantity></supequi>
+</supeqli><nosupeqs></supequip><supplies><nosupply></supplies><miscs><miscli>
+<misc id="PXXXX" matiere="0"><ident><manufact>0000</manufact><partno>00000</partno></ident><nomen>Ardrox 9D1</nomen><quantity>SB</quantity></misc>
+</miscli></miscs><safety><nosafety></safety></prelreqs><mainfunc>
+<step1 control="0" id="P10">
+<title>Pr&eacute;paration de la pompe &agrave; carburant principale <dmcref xrefid="A1A73211010A736AC">.</title>
+</step1>
+<step1 control="0" id="P20">
+<title>BESOINS EN APPAREILS DE MESURE.</title>
+<specpara>
+<note>
+<p>La gamme de mesure de l'appareil choisi peut &ecirc;tre plus grande que celle indiqu&eacute;e dans les tableaux ci-apr&egrave;s.</p>
+<p>Les incertitudes maxi tol&eacute;r&eacute;es correspondent aux erreurs maxi introduites par l'ensemble de la cha&icirc;ne de mesure.</p>
+<p>Ces incertitudes sont calcul&eacute;es en appliquant la norme RM AERO 80001B avec un niveau de confiance de 99,7&nbsp;%.</p>
+</note>
+</specpara>
+<step2 control="0" id="P20-10">
+<title>MESURE DE PRESSION</title>
+<table id="TABLEAU-1" tocentry="1">
+<tgroup cols="4" align="LEFT"><colspec colnum="1" colname="COL1" colwidth="5.30cm"><colspec colnum="2" colname="COL2" colwidth="2.50cm"><colspec colnum="3" colname="COL3" colwidth="3.50cm"><colspec colnum="4" colname="COL4" colwidth="4.60cm" colsep="1">
+<tbody valign="TOP">
+<row>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>D&eacute;finition de la mesure</p>
+</para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>Symbole</p>
+</para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>Gamme de mesure</p>
+</para>
+<para><p>bar</p>
+</para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>Incertitude maxi tol&eacute;r&eacute;e sur la gamme</p>
+</para>
+<para><p>bar</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0"><para><p>Pression d'alimentation</p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p>PFA</p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p>0 - 4</p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p>&plusmn; 0,05</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0"><para><p>Sortie BP amont filtre</p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p>P24</p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p>0 - 20</p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p>&plusmn; 0,2</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0"><para><p>Sortie BP aval filtre</p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p>P4</p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p>0 - 20</p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p>&plusmn; 0,2</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p>Refoulement HP en r&eacute;ception</p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p>P1</p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p>0 - 40</p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p>&plusmn; 0,5</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0" rowsep="1"><para><p></p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>0 - 80</p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>&plusmn; 1</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Refoulement HP en rodage</p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p>P1</p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p>0 - 150</p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p>&plusmn; 1</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<para><p>* Pression maxi en ligne : 100 bar.</p>
+</para>
+</step2>
+<step2 control="0" id="P20-20">
+<title>MESURE DE DEBIT</title>
+<table id="TABLEAU-2" tocentry="1">
+<tgroup cols="4" align="LEFT"><colspec colnum="1" colname="COL1" colwidth="5.30cm"><colspec colnum="2" colname="COL2" colwidth="2.50cm"><colspec colnum="3" colname="COL3" colwidth="3.50cm"><colspec colnum="4" colname="COL4" colwidth="4.60cm" colsep="1">
+<tbody valign="TOP">
+<row>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>D&eacute;finition de la mesure</p>
+</para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>Symbole</p>
+</para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>Gamme de mesure</p>
+</para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>Incertitude maxi tol&eacute;r&eacute;e sur la gamme</p>
+</para>
+<para><p>% valeurs mesur&eacute;es</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p>D&eacute;bit &eacute;tage HP</p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p>C1</p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p>500 - 2000 l/h</p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p>&plusmn; 0,5</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0" rowsep="1"><para><p></p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>1000 - 20000 l/h</p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>&plusmn; 0,5</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0" rowsep="1"><para><p>D&eacute;bit &eacute;tage BP</p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>C4</p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>10000 - 25000 l/h</p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>&plusmn; 0,5</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0" rowsep="0"><para><p>Fuite au drainage</p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p>Qd</p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p>0 - 60 cm <supscrpt>3</supscrpt>/h</p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p>&plusmn; 0,3 cm <supscrpt>3</supscrpt>/h</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step2>
+<step2 control="0" id="P20-30">
+<title>MESURE DE LA VITESSE DE ROTATION</title>
+<table id="TABLEAU-3" tocentry="1">
+<tgroup cols="4" align="LEFT"><colspec colnum="1" colname="COL1" colwidth="5.30cm"><colspec colnum="2" colname="COL2" colwidth="2.50cm"><colspec colnum="3" colname="COL3" colwidth="3.50cm"><colspec colnum="4" colname="COL4" colwidth="4.60cm" colsep="1">
+<tbody valign="TOP">
+<row>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>D&eacute;finition de la mesure</p>
+</para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>Symbole</p>
+</para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>Gamme de mesure</p>
+</para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>Incertitude maxi tol&eacute;r&eacute;e sur la gamme</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Vitesse d'entra&icirc;nement</p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p>Np</p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p>0 - 7700</p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p>&plusmn; 2</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step2>
+<step2 control="0" id="P20-40">
+<title>MESURE DE COUPLE</title>
+<table id="TABLEAU-4" tocentry="1">
+<tgroup cols="4" align="LEFT"><colspec colnum="1" colname="COL1" colwidth="5.30cm"><colspec colnum="2" colname="COL2" colwidth="2.50cm"><colspec colnum="3" colname="COL3" colwidth="3.50cm"><colspec colnum="4" colname="COL4" colwidth="4.60cm" colsep="1">
+<tbody valign="TOP">
+<row>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>D&eacute;finition de la mesure</p>
+</para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>Symbole</p>
+</para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>Gamme de mesure</p>
+</para>
+<para><p>N.m</p>
+</para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>Incertitude maxi tol&eacute;r&eacute;e sur la gamme</p>
+</para>
+<para><p>N.m</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0"><para><p>Couple d'entra&icirc;nement statique</p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p>CS</p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p>0 - 20</p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p>&plusmn; 1</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Couple absorb&eacute; sur l'arbre d'entra&icirc;nement</p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p>CMc</p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p>0 - 100</p>
+</para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p>&plusmn; 2</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step2>
+</step1>
+<step1 control="0" id="P30">
+<title>CONDITIONS D'ESSAI</title>
+<step2 control="0" id="P30-10">
+<para><p>Voir sch&eacute;ma de principe de l'installation d'essai <figref refid="A732110SF030100170A011">. </p>
+</para>
+</step2>
+<step2 control="0" id="P30-20">
+<para><p>Installer la pompe &agrave; carburant principale sur le banc <figref refid="A732110SF030100081A011">. </p>
+</para>
+</step2>
+<step2 control="0" id="P30-30">
+<para><p>Raccorder le d&eacute;tecteur de colmatage au bo&icirc;tier &eacute;lectronique du banc.</p>
+</para>
+</step2>
+<step2 control="0" id="P30-40">
+<para><p>Nettoyer la pompe et appliquer de l'Ardrox 9D1 <miscref refid="PXXXX">.</p>
+</para>
+</step2>
+<step2 control="0" id="P30-50">
+<para><p>Fermer le circuit 4.</p>
+</para>
+</step2>
+</step1>
+<step1 control="0" id="P40">
+<title>RODAGE</title>
+<step2 control="0" id="P40-10">
+<title>PROCEDURE DE RODAGE</title>
+<list type="SIMPLE">
+<item><para><p>Effectuer le cycle de rodage suivant le tableau ci-apr&egrave;s <tabref refid="TABLEAU-1">.</p>
+</para>
+</item>
+<item><para><p>Pour chaque palier de pression de refoulement P1, effectuer les 50 s&eacute;quences de mise en charge et d&eacute;charge <figref refid="A732110SF030100078A011"> par cyclage de la vanne &agrave; commande automatique.</p>
+</para>
+</item>
+</list>
+<step3 control="0">
+<table id="TABLEAU-5" tocentry="1">
+<tgroup cols="8" align="LEFT"><colspec colnum="1" colname="SQCOLUMN1" colwidth="1.90cm"><colspec colnum="2" colname="SQCOLUMN2" colwidth="1.90cm"><colspec colnum="3" colname="SQCOLUMN3" colwidth="1.90cm"><colspec colnum="4" colname="SQCOLUMN4" colwidth="1.90cm"><colspec colnum="5" colname="SQCOLUMN5" colwidth="1.90cm"><colspec colnum="6" colname="SQCOLUMN6" colwidth="1.90cm"><colspec colnum="7" colname="SQCOLUMN7" colwidth="1.90cm"><colspec colnum="8" colname="SQCOLUMN8" colwidth="1.90cm" colsep="1">
+<thead valign="MIDDLE">
+<row>
+<entry valign="MIDDLE" morerows="0" rowsep="0"><para><p>Temps partiel</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0" rowsep="0"><para><p>Temps cumul&eacute;</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0" rowsep="0"><para><p>N.Ppe</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0" rowsep="0"><para><p>P.F.A.</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0" rowsep="0"><para><p>P1 charge</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0" rowsep="0"><para><p>P'1 d&eacute;charge</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0" rowsep="0"><para><p>C1 th&eacute;orique</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0" rowsep="0"><para><p>CMC charge constante</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="MIDDLE" morerows="0"><para><p>Min</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>H.Min</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>tr/mn</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>bar</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>bar</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>bar</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>l/h</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>N.m</p>
+</para>
+</entry>
+</row>
+</thead>
+<tbody valign="MIDDLE">
+<row>
+<entry valign="MIDDLE" morerows="0"><para><p>10</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>10</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>5100</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>3,5</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>25</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>24</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>10310</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>24</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="MIDDLE" morerows="0"><para><p>10</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>20</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>3800</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>3,5</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>26</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>24</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>7360</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>21</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="MIDDLE" morerows="0"><para><p>10</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>30</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>2600</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>3,5</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>34</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>27</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>4660</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>23</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="MIDDLE" morerows="0"><para><p>10</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>40</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>5400</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>3,5</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>38</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>33</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>10690</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>34</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="MIDDLE" morerows="0"><para><p>10</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>50</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>4100</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>3,5</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>43</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>35</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>7790</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>34</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="MIDDLE" morerows="0"><para><p>10</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>1.00</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>3300</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>3,5</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>51</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>36</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>5900</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>38</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="MIDDLE" morerows="0"><para><p>10</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>1.10</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>5000</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>3,5</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>56</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>44</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>9570</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>46</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="MIDDLE" morerows="0"><para><p>10</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>1.20</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>4000</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>3,5</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>65</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>46</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>7290</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>50</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="MIDDLE" morerows="0"><para><p>10</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>1.30</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>3200</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>3,5</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>79</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>48</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>5380</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>62</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="MIDDLE" morerows="0"><para><p>10</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>1.40</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>5000</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>3,5</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>86</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>61</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>9210</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>69</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="MIDDLE" morerows="0"><para><p>10</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>1.50</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>4000</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>3,5</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>96</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>61</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>6890</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>77</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<note>
+<p>- Ces 11 points sont &agrave; effectuer suivant s&eacute;quence d&eacute;finit <figref refid="A732110SF030100078A011">.</p>
+<p change="ADD">- Seul le point de cyclage &agrave; N.Ppe = 5400&nbsp;tr/min est &agrave; respecter inp&eacute;rativement. </p>
+<p change="ADD">- Les autres points ne sont donn&eacute;s qu'&agrave; titre indicatif.</p>
+</note>
+</step3>
+<step3 control="0">
+<table id="TABLEAU-6" tocentry="1">
+<tgroup cols="6" align="LEFT"><colspec colnum="1" colname="SQCOLUMN1" colwidth="2.5cm"><colspec colnum="2" colname="SQCOLUMN2" colwidth="2.5cm"><colspec colnum="3" colname="SQCOLUMN3" colwidth="2.5cm"><colspec colnum="4" colname="SQCOLUMN4" colwidth="2.5cm"><colspec colnum="5" colname="SQCOLUMN5" colwidth="2.5cm"><colspec colnum="6" colname="SQCOLUMN6" colwidth="2.5cm" colsep="1">
+<thead valign="MIDDLE">
+<row>
+<entry valign="MIDDLE" morerows="0" rowsep="0"><para><p>Temps partiel</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0" rowsep="0"><para><p>Temps cumul&eacute;</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0" rowsep="0"><para><p>N.Ppe</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0" rowsep="0"><para><p>P.F.A.</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0" rowsep="0"><para><p>P1 charge</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0" rowsep="0"><para><p>CMC charge constante</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="MIDDLE" morerows="0"><para><p>Min</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>H.Min</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>tr/mn</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>bar</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>bar</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>Nm</p>
+</para>
+</entry>
+</row>
+</thead>
+<tbody valign="MIDDLE">
+<row>
+<entry valign="MIDDLE" morerows="0"><para><p>10</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>10</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>4270</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>3,5</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>27</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>23</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="MIDDLE" morerows="0"><para><p>10</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>20</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>5410</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>3,5</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>29</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>28</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="MIDDLE" morerows="0"><para><p>10</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>30</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>6170</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>3,5</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>31</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>33</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="MIDDLE" morerows="0"><para><p>10</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>40</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>7619</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>3,5</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>45</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p change="MOD">52</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="MIDDLE" morerows="0"><para><p>10</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>50</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>7619</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>3,5</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>55</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p change="MOD">59</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="MIDDLE" morerows="0"><para><p>10</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>1.00</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>7619</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>3,5</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>65</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p change="MOD">68</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="MIDDLE" morerows="0"><para><p>10</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>1.10</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>7619</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>3,5</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>76</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p change="MOD">75</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<note>
+<p>Ces 7 points sont &agrave; effectuer &agrave; charge constante.</p>
+</note>
+</step3>
+</step2>
+<step2 control="0" id="P40-20">
+<title>SURVEILLANCE A EFFECTUER AU COURS DU RODAGE</title>
+<list type="SIMPLE">
+<item><para><p>Pour les 10 premiers points :</p>
+</para>
+<list type="SIMPLE">
+<item><para><p>Pendant la p&eacute;riode de charge discontinue, en cas de d&eacute;passement de la valeur maxi du couple CMC d&eacute;finie ci-dessus <tabref refid="TABLEAU-1">, d&eacute;poser la pompe pour visite sur table.</p>
+</para>
+</item>
+<item><para><p>Pendant la p&eacute;riode en charge constante, en cas de d&eacute;passement de la valeur maxi du couple CMC d&eacute;finie ci-dessus <tabref refid="TABLEAU-1">, reprendre le rodage depuis le d&eacute;but de la p&eacute;riode de charge discontinue.</p>
+</para>
+</item>
+<item><para><p>Si l'anomalie se reproduit une nouvelle fois, d&eacute;poser la pompe pour visite sur table.</p>
+</para>
+</item>
+</list>
+</item>
+</list>
+<list type="SIMPLE">
+<item><para><p>Pour les 7 points effectu&eacute;s &agrave; charge constante :</p>
+</para>
+<list type="SIMPLE">
+<item><para><p>En cas de d&eacute;passement de la valeur maxi du couple CMC d&eacute;finie ci-dessus <tabref refid="TABLEAU-2">, reprendre le rodage depuis le d&eacute;but de la p&eacute;riode &agrave; charge constante.</p>
+</para>
+</item>
+<item><para><p>Si l'anomalie se reproduit une nouvelle fois, d&eacute;poser la pompe pour visite sur table.</p>
+</para>
+</item>
+</list>
+</item>
+</list>
+<list type="SIMPLE">
+<item><para><p>Pendant la derni&egrave;re phase &agrave; haut r&eacute;gime, relever les fuites par l'orifice de drainage pendant 5 minutes. On doit avoir "Qd" &le; 30 cm <supscrpt>3</supscrpt>/h.</p>
+</para>
+</item>
+<item><para><p>Relever la valeur de la fuite et la reporter sur la FSRC au point num&eacute;ro 16 <dmcref xrefid="A1A73211000A030AC"> .</p>
+</para>
+</item>
+</list>
+</step2>
+</step1>
+<step1 control="0" id="P50">
+<title>CONTROLE DU POINT CARACTERISTIQUE A BAS REGIME</title>
+<list type="SIMPLE">
+<item><para><p>Afficher P.F.A. : 3,5 bar.</p>
+</para>
+</item>
+<item><para><p>Fermer le circuit 4.</p>
+</para>
+</item>
+<item><para><p>Afficher "Np" : 990 tr/mn.</p>
+</para>
+</item>
+<item><para><p>Afficher P1 : 23 bar.</p>
+</para>
+</item>
+<item><para><p>Relever le d&eacute;bit C1.</p>
+</para>
+<para><p>On doit avoir : C1 &ge; 1000 l/h.</p>
+</para>
+</item>
+<item><para><p>Relever la valeur du d&eacute;bit et la reporter sur la FSRC au point num&eacute;ro 17 <dmcref xrefid="A1A73211000A030AC"> .</p>
+</para>
+</item>
+</list>
+<note>
+<p>A l'issue de l'essai, s'assurer que le bo&icirc;tier n'a enregistr&eacute; aucun colmatage du filtre.</p>
+</note>
+</step1>
+<step1 control="0" id="P60">
+<para><p>Effectuer les op&eacute;rations apr&egrave;s d&eacute;connexion du banc <dmcref xrefid="A1A73211010A518AC">.</p>
+</para>
+</step1>
+<figure id="A732110SF030100170A011">
+<title>SCHEMA DE PRINCIPE DE L'INSTALLATION D'ESSAI</title>
+<graphic callicn="A1A732110SF030100170A011">
+</figure>
+<figure id="A732110SF030100081A011">
+<title>INSTALLATION DE LA POMPE A CARBURANT PRINCIPALE SUR LE BANC</title>
+<graphic callicn="A1A732110SF030100081A011">
+</figure>
+<figure id="A732110SF030100078A011">
+<title>DEFINITION DES SEQUENCES DE MISE EN CHARGE</title>
+<graphic callicn="A1A732110SF030100078A011">
+</figure>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>

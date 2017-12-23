@@ -1,0 +1,198 @@
+package com.sonovision.openconv.wf.dao.impl;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.math.BigInteger;
+import java.util.List;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
+
+import org.springframework.stereotype.Service;
+
+import com.sedoc.toolbox.LogMes;
+import com.sonovision.openconv.utils.FileAccess;
+import com.sonovision.openconv.wf.dao.WorkFlowDao;
+import com.sonovision.openconv.wf.exception.WorkflowException;
+import com.sonovision.openconv.wf.xmodel.Action;
+import com.sonovision.openconv.wf.xmodel.Condition;
+import com.sonovision.openconv.wf.xmodel.Cycle;
+import com.sonovision.openconv.wf.xmodel.Sequence;
+import com.sonovision.openconv.wf.xmodel.Task;
+import com.sonovision.openconv.wf.xmodel.Workflow;
+
+
+@Service("WorkFlowDaoXML")
+public class WorkFlowDaoXMLImpl implements WorkFlowDao {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7558664068761392736L;
+
+	@Override
+	public Sequence getSequence(Workflow workflow, String idSequence) throws WorkflowException {
+		if (workflow == null) {
+			throw new WorkflowException("workflow can't be null");
+		}
+		if (idSequence == null || idSequence.isEmpty()) {
+			throw new WorkflowException("idSequence can't be null or empty");
+		}
+		Sequence result = null;
+		try {
+//			for (Sequence s : workflow.getWf().getSequences().getSequence()) {
+//				if(s.getId()!=null && s.getId().toString().equals(idSequence))
+//				{
+//					result = s;
+//					break;
+//				}
+//			}
+			result=workflow.getWf().getSequences().getSequence();
+
+		} catch (NullPointerException e) {
+			// catch here if we havn't sequence, it's not really an exception
+			LogMes.log(WorkFlowDaoXMLImpl.class, LogMes.ERROR, "sequence doesn't exist because something is null");
+		}
+		return result;
+	}
+	
+	@Override
+	public Workflow loadWorkflow(String workFlowPath) throws WorkflowException {
+		return loadWorkflow(FileAccess.getResourceFilePath(workFlowPath,true));
+	}
+	
+	@Override
+	public Workflow loadWorkflow(File workFlowFile) throws WorkflowException {
+		if(workFlowFile==null || !workFlowFile.exists())
+		{
+			throw new WorkflowException(workFlowFile==null?"workflow file":workFlowFile.getAbsolutePath() + " doesn't exists");
+		}
+		try {
+			return loadWorkflow(new FileInputStream(workFlowFile));
+		} catch (FileNotFoundException e) {
+			throw new WorkflowException(workFlowFile==null?"workflow file":workFlowFile.getAbsolutePath() + " doesn't exists  :"+e.getMessage());
+		}
+	}
+	@Override
+	public Workflow loadWorkflow(InputStream workFlowFile) throws WorkflowException {
+		Workflow workflow = null;
+		try {
+			JAXBContext jaxbContext = JAXBContext.newInstance(Workflow.class);
+			Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+			
+			workflow = (Workflow) jaxbUnmarshaller.unmarshal(workFlowFile);
+		} catch (JAXBException e) {
+			LogMes.logError(WorkFlowDaoXMLImpl.class, "it's impossible to load workflow configuration file", e);
+		}
+		return workflow;
+	}
+	
+	@Override
+	public Action getFirstAction(Cycle cycle) throws WorkflowException {
+		Action resultAction = null;
+		if(cycle==null)
+		{
+			throw new WorkflowException("cycle is null");
+		}
+		List<Action> actionList = cycle.getAction();		
+		if(actionList==null || actionList.isEmpty())
+		{
+			throw new WorkflowException("No action find in cycle :"+cycle.getCycleid());
+		}
+		for(Action action:actionList)
+		{
+			if(resultAction==null)
+			{
+				resultAction = action;
+			}
+			else if(resultAction.getOrd().compareTo(action.getOrd())>0)
+			{
+				resultAction=action;
+			}
+		}
+		return resultAction;
+	}
+	
+	@Override
+	public Action getAction(Cycle cycle, String actionId) throws WorkflowException {
+		Action resultAction = null;
+		if(cycle==null)
+		{
+			throw new WorkflowException("cycle is null");
+		}
+		List<Action> actionList = cycle.getAction();
+		if(actionList==null || actionList.isEmpty())
+		{
+			throw new WorkflowException("No action find in cycle :"+cycle.getCycleid());
+		}
+		for(Action action:actionList)
+		{
+			if(action.getActionid().equals(actionId))
+			{
+				resultAction = action;
+			}			
+		}
+		return resultAction;
+	}
+	
+	@Override
+	public String getActionForResult(Action action, String resultAction) throws WorkflowException {
+		if(action == null)
+		{
+			throw new WorkflowException("action is null");
+		}
+		
+		List<Condition> conditionList=action.getCondition();
+		Condition defaultCondition=null;
+		Condition resultCondition=null;
+		for(Condition c:conditionList)
+		{
+			if(c.getOutputValue()==null || c.getOutputValue().isEmpty())
+			{
+				if(defaultCondition!=null)
+				{
+					LogMes.log(WorkFlowDaoXMLImpl.class, LogMes.ERROR, "Attention : multiple default condition");
+				}
+				defaultCondition=c;
+			}
+			else if (!(resultAction==null || resultAction.isEmpty()) && c.getOutputValue().equals(resultAction))
+			{
+				resultCondition = c;
+				break;
+			}
+		}
+		if(resultCondition==null)
+		{
+			resultCondition=defaultCondition;
+		}
+		if(resultCondition==null)
+		{
+			LogMes.log(WorkFlowDaoXMLImpl.class, LogMes.ERROR, "No condition find for resultAction :"+resultAction+ " action : "+action.getActionid());
+		}
+		return resultCondition.getActionid();
+	}
+	
+	@Override
+	public Task getTaskById(BigInteger taskid, Workflow workflow) throws WorkflowException {
+		if(taskid==null)
+		{
+			throw new WorkflowException("taskid is null");
+		}
+		Task result=null;
+		List<Task> taskList = workflow.getWf().getTasks().getTask();
+		for(Task t:taskList)
+		{
+			if(t.getId().equals(taskid))
+			{
+				result=t;
+			}
+		}
+		return result;
+		
+	}
+	
+	
+}

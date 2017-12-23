@@ -1,0 +1,92 @@
+package com.sonovision.openconv.modules.loganalyser;
+
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.fail;
+
+import java.io.IOException;
+import java.util.HashMap;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.testng.annotations.Test;
+
+import com.sedoc.toolbox.bean.UtilsService;
+import com.sonovision.openconv.db.exception.DBNONullException;
+import com.sonovision.openconv.db.exception.DBNOUniqueException;
+import com.sonovision.openconv.db.vo.Task;
+import com.sonovision.openconv.log.model.DBLogger;
+import com.sonovision.openconv.model.TreatedObject;
+import com.sonovision.openconv.modules.sgmlprocess.TaskSGMLProcess;
+import com.sonovision.openconv.modules.xslprocess.TaskXSLProcess;
+import com.sonovision.openconv.utils.ResourceTestPath;
+import com.sonovision.openconv.utils.TestHelperXslProcess;
+
+@Component
+public class TaskLogToPDFProcessTest extends  TestHelperXslProcess {
+	@Autowired
+	UtilsService utilservice;
+
+
+  
+  //TODO:must be resolved
+@Test()
+  public void runCobraTest() throws IOException {
+	  System.out.println("Test run Min");
+	//Set saxon as transformer.  
+      
+	  HashMap<String,TreatedObject> toList=getTreatedObjectList(ResourceTestPath.COBRA);
+	  TaskXSLProcess txp = new TaskXSLProcess();
+	  DBLogger dbLogger = getDBLogger(ResourceTestPath.COBRA);
+	  txp.setDBLogger(dbLogger);
+	  txp.addParameter(TaskXSLProcess.PARAMETER_XSL_FILE_NAME, ResourceTestPath.COBRA.getXsl());
+	  txp.addParameter(TaskXSLProcess.PARAMETER_LOADFILE_CODIFICATION_FILE, getFilePath("/codification/listeInOut.xml"));
+	  String result=txp.run(toList);
+
+	  assertEquals(result, "1");
+	  
+	  HashMap<String,TreatedObject> toList2=getTreatedObjectList(ResourceTestPath.COBRA);
+	  TaskSGMLProcess tsp = new TaskSGMLProcess();
+	  tsp.setDBLogger(dbLogger);
+		Task task = new Task();
+		task.setActionId("1");
+		task.setConversionId(dbLogger.getConversion().getId());
+		task.setName("transformationsgml");
+		task.setTaskName("transformationsgml");
+		task.setDescription("Convertir en SGML");
+			try {
+				task = dbConversionService.getOrSave(task);
+			} catch (DBNONullException | DBNOUniqueException e) {
+				fail(e.getMessage());
+			}
+	  dbLogger.setTask(task);
+	  String result2=tsp.run(toList2);
+	  dbLogger.stopConversion();
+	  
+	  TaskLogToPDFProcess tlt= new TaskLogToPDFProcess();
+	  tlt.setDBLogger(dbLogger);
+	  tlt.addParameter(TaskLogToPDFProcess.PARAMETER_OUPUTFILE_FILE_NAME, "d:\\sortie.pdf");
+	  result = tlt.run(toList);
+	  assertEquals(result, "3");
+  }
+  
+  
+
+/**
+ * @return the utilservice
+ */
+public UtilsService getUtilservice() {
+	return utilservice;
+}
+
+/**
+ * @param utilservice the utilservice to set
+ */
+public void setUtilservice(UtilsService utilservice) {
+	this.utilservice = utilservice;
+}
+
+private void assertTrue(boolean b) {
+	// TODO Auto-generated method stub
+	
+}
+}

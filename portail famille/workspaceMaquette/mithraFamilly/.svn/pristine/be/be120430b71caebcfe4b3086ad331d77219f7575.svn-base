@@ -1,0 +1,11 @@
+package com.sonovision.openconv.modules.sgmlprocess.model;
+
+import java.io.PrintStream;
+
+public class Bit
+{
+ public void print(PrintStream out)
+ {
+	out.println(this);
+ }
+}

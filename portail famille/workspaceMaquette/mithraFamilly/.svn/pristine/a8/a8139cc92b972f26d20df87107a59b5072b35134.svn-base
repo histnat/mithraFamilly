@@ -1,0 +1,135 @@
+<!DOCTYPE GIDGROUPS PUBLIC "-//ArborText//DTD GIDGROUPS 5.0//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY lt SDATA "[lt    ]">
+<!ENTITY amp SDATA "[amp   ]">
+]>
+<gidgroups><allgroups></allgroups><sysgroups><group gid="system" label="FOSI Components"
+type="S">
+<gref label="" ent="" gidref="stringdecl" goid="(553,3,127)">
+<gref label="" ent="" gidref="charfill" goid="(551,3,127)">
+<gref label="" ent="" gidref="counter" goid="(549,3,127)">
+<gref label="" ent="" gidref="floatloc" goid="(547,3,127)">
+<gref label="" ent="" gidref="hyphrule" goid="(545,3,127)">
+<gref label="" ent="" gidref="sectoken" goid="(543,3,127)">
+<gref label="" ent="" gidref="pageset" goid="(541,3,127)">
+<gref label="" ent="" gidref="envdesc" goid="(539,3,127)">
+<gref label="" ent="" gidref="charsubset" goid="(537,3,127)">
+<gref label="" ent="" gidref="eic" goid="(535,3,127)">
+<gref label="" ent="" gidref="ftneic" goid="(533,3,127)">
+<gref label="" ent="" gidref="rsrcdesc" goid="(531,3,127)">
+<gref label="" ent="" gidref="secdesc" goid="(529,3,127)">
+<fref label="" ent="" fidref="f144" foid="(541,1,124)"></group><group gid="stringdecl"
+label="Text Variables" type="S">
+<fref label="" ent="" fidref="f236" foid="(259,1,124)">
+<fref label="" ent="" fidref="f279" foid="(260,1,124)">
+<fref label="" ent="" fidref="f328" foid="(261,1,124)">
+<fref label="" ent="" fidref="f329" foid="(262,1,124)">
+<fref label="" ent="" fidref="f282" foid="(263,1,124)">
+<fref label="" ent="" fidref="f294" foid="(264,1,124)">
+<fref label="" ent="" fidref="f295" foid="(265,1,124)">
+<fref label="" ent="" fidref="f298" foid="(266,1,124)">
+<fref label="" ent="" fidref="f330" foid="(267,1,124)">
+<fref label="" ent="" fidref="f331" foid="(268,1,124)"></group><group gid="charfill"
+label="Character Fills" type="S"></group><group gid="counter" label="Counters"
+type="S"></group><group gid="floatloc" label="Float Locations" type="S"></group>
+<group gid="hyphrule" label="Hyphenation Rules" type="S"></group><group gid="sectoken"
+label="Security Classes" type="S"></group><group gid="pageset" label="Page Layout Sets"
+type="S">
+<fref label="" ent="" fidref="f234" foid="(271,1,124)"></group><group gid="envdesc"
+label="Environments" type="S"></group><group gid="charsubset" label="Style Sets"
+type="S">
+<fref label="" ent="" fidref="f226" foid="(305,1,124)">
+<fref label="" ent="" fidref="f227" foid="(514,1,124)">
+<fref label="" ent="" fidref="f229" foid="(522,1,124)">
+<fref label="" ent="" fidref="f230" foid="(529,1,124)">
+<fref label="" ent="" fidref="f231" foid="(532,1,124)">
+<fref label="" ent="" fidref="f232" foid="(535,1,124)">
+<fref label="" ent="" fidref="f237" foid="(538,1,124)"></group><group gid="eic"
+label="Elements-in-Context" type="S">
+<fref label="" ent="" fidref="f242" foid="(546,1,124)">
+<fref label="" ent="" fidref="f314" foid="(551,1,124)">
+<fref label="" ent="" fidref="f315" foid="(559,1,124)">
+<fref label="" ent="" fidref="f300" foid="(773,1,124)">
+<fref label="" ent="" fidref="f301" foid="(793,1,124)">
+<fref label="" ent="" fidref="f277" foid="(810,1,124)">
+<fref label="" ent="" fidref="f317" foid="(1030,1,124)">
+<fref label="" ent="" fidref="f233" foid="(1039,1,124)">
+<fref label="" ent="" fidref="f285" foid="(1301,1,124)">
+<fref label="" ent="" fidref="f278" foid="(1310,1,124)">
+<fref label="" ent="" fidref="f292" foid="(1329,1,124)">
+<fref label="" ent="" fidref="f286" foid="(1546,1,124)">
+<fref label="" ent="" fidref="f287" foid="(1555,1,124)">
+<fref label="" ent="" fidref="f313" foid="(1560,1,124)">
+<fref label="" ent="" fidref="f283" foid="(1574,1,124)">
+<fref label="" ent="" fidref="f284" foid="(1583,1,124)">
+<fref label="" ent="" fidref="f327" foid="(1798,1,124)">
+<fref label="" ent="" fidref="f321" foid="(1807,1,124)">
+<fref label="" ent="" fidref="f322" foid="(1816,1,124)">
+<fref label="" ent="" fidref="f325" foid="(1821,1,124)">
+<fref label="" ent="" fidref="f302" foid="(1840,1,124)">
+<fref label="" ent="" fidref="f323" foid="(2060,1,124)">
+<fref label="" ent="" fidref="f324" foid="(2068,1,124)">
+<fref label="" ent="" fidref="f239" foid="(2076,1,124)">
+<fref label="" ent="" fidref="f251" foid="(2086,1,124)">
+<fref label="" ent="" fidref="f243" foid="(2305,1,124)">
+<fref label="" ent="" fidref="f250" foid="(2311,1,124)">
+<fref label="" ent="" fidref="f291" foid="(2340,1,124)">
+<fref label="" ent="" fidref="f254" foid="(2575,1,124)">
+<fref label="" ent="" fidref="f261" foid="(2828,1,124)">
+<fref label="" ent="" fidref="f288" foid="(2838,1,124)">
+<fref label="" ent="" fidref="f289" foid="(2847,1,124)">
+<fref label="" ent="" fidref="f265" foid="(2852,1,124)">
+<fref label="" ent="" fidref="f267" foid="(2864,1,124)">
+<fref label="" ent="" fidref="f290" foid="(3082,1,124)">
+<fref label="" ent="" fidref="f297" foid="(3091,1,124)">
+<fref label="" ent="" fidref="f303" foid="(3101,1,124)">
+<fref label="" ent="" fidref="f304" foid="(3116,1,124)">
+<fref label="" ent="" fidref="f332" foid="(3337,1,124)">
+<fref label="" ent="" fidref="f305" foid="(3352,1,124)">
+<fref label="" ent="" fidref="f307" foid="(3367,1,124)">
+<fref label="" ent="" fidref="f308" foid="(3588,1,124)">
+<fref label="" ent="" fidref="f309" foid="(3603,1,124)">
+<fref label="" ent="" fidref="f333" foid="(3618,1,124)">
+<fref label="" ent="" fidref="f310" foid="(3633,1,124)">
+<fref label="" ent="" fidref="f311" foid="(3854,1,124)">
+<fref label="" ent="" fidref="f263" foid="(3869,1,124)">
+<fref label="" ent="" fidref="f269" foid="(3875,1,124)">
+<fref label="" ent="" fidref="f244" foid="(3880,1,124)">
+<fref label="" ent="" fidref="f280" foid="(4097,1,124)">
+<fref label="" ent="" fidref="f249" foid="(4102,1,124)">
+<fref label="" ent="" fidref="f262" foid="(4132,1,124)">
+<fref label="" ent="" fidref="f268" foid="(4138,1,124)">
+<fref label="" ent="" fidref="f271" foid="(4143,1,124)">
+<fref label="" ent="" fidref="f253" foid="(4354,1,124)">
+<fref label="" ent="" fidref="f255" foid="(4393,1,124)">
+<fref label="" ent="" fidref="f326" foid="(4619,1,124)">
+<fref label="" ent="" fidref="f257" foid="(4638,1,124)">
+<fref label="" ent="" fidref="f260" foid="(4650,1,124)">
+<fref label="" ent="" fidref="f259" foid="(4868,1,124)">
+<fref label="" ent="" fidref="f256" foid="(4880,1,124)">
+<fref label="" ent="" fidref="f241" foid="(5125,1,124)">
+<fref label="" ent="" fidref="f246" foid="(5130,1,124)">
+<fref label="" ent="" fidref="f248" foid="(5138,1,124)">
+<fref label="" ent="" fidref="f252" foid="(5144,1,124)">
+<fref label="" ent="" fidref="f281" foid="(5154,1,124)">
+<fref label="" ent="" fidref="f319" foid="(5163,1,124)">
+<fref label="" ent="" fidref="f320" foid="(5168,1,124)">
+<fref label="" ent="" fidref="f316" foid="(5383,1,124)">
+<fref label="" ent="" fidref="f318" foid="(5392,1,124)">
+<fref label="" ent="" fidref="f274" foid="(5401,1,124)">
+<fref label="" ent="" fidref="f275" foid="(5407,1,124)">
+<fref label="" ent="" fidref="f264" foid="(5413,1,124)">
+<fref label="" ent="" fidref="f273" foid="(5419,1,124)">
+<fref label="" ent="" fidref="f276" foid="(5635,1,124)">
+<fref label="" ent="" fidref="f247" foid="(5643,1,124)">
+<fref label="" ent="" fidref="f258" foid="(5651,1,124)">
+<fref label="" ent="" fidref="f272" foid="(5663,1,124)">
+<fref label="" ent="" fidref="f296" foid="(5677,1,124)">
+<fref label="" ent="" fidref="f312" foid="(5891,1,124)"></group><?Pub Caret1>
+<group gid="ftneic" label="Footnote Elements-in-Context" type="S"></group>
+<group gid="rsrcdesc" label="Resource Defaults" type="S">
+<fref label="" ent="" fidref="f270" foid="(258,1,124)"></group><group gid="secdesc"
+label="Security Defaults" type="S"></group></sysgroups><usergroups><group
+gid="default" label="User Default" type="U"></group></usergroups><entgroups>
+<group gid="find" label="User Query Results" type="U"></group></entgroups>
+</gidgroups>

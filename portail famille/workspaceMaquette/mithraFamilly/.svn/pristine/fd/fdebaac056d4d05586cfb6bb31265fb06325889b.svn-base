@@ -1,0 +1,2156 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1B723300SF030100699A011 SYSTEM "x-dm://0900f90b800779de,MYWORKING" NDATA jpeg>
+<!ENTITY A1B723300SF030100485A021 SYSTEM "x-dm://0900f90b800779db,MYWORKING" NDATA jpeg>
+<!ENTITY A1B723300SF030100484A021 SYSTEM "x-dm://0900f90b800779da,MYWORKING" NDATA jpeg>
+<!ENTITY A1B723300SF030100483A021 SYSTEM "x-dm://0900f90b800779d9,MYWORKING" NDATA jpeg>
+<!ENTITY A1B723300SF030100482A021 SYSTEM "x-dm://0900f90b800779cf,MYWORKING" NDATA cgm>
+<!ENTITY A1B723300SF030100481A021 SYSTEM "x-dm://0900f90b800779ce,MYWORKING" NDATA cgm>
+<!ENTITY A1B723300SF030100480A021 SYSTEM "x-dm://0900f90b800779d8,MYWORKING" NDATA jpeg>
+<!ENTITY A1B723300SF030100698A011 SYSTEM "x-dm://0900f90b800779dd,MYWORKING" NDATA jpeg>
+<!ENTITY A1B723300SF030100697A011 SYSTEM "x-dm://0900f90b800779dc,MYWORKING" NDATA jpeg>
+<!ENTITY A1B723300SF030100477A021 SYSTEM "x-dm://0900f90b800779d7,MYWORKING" NDATA jpeg>
+<!ENTITY A1B723300SF030100476A021 SYSTEM "x-dm://0900f90b800779d6,MYWORKING" NDATA jpeg>
+<!ENTITY A1B723300SF030100484A011 SYSTEM "x-dm://0900f90b8000a18f,MYWORKING" NDATA tiff>
+<!ENTITY A1B723300SF030100485A011 SYSTEM "x-dm://0900f90b8000a190,MYWORKING" NDATA jpeg>
+<!ENTITY A1B723300SF030100483A011 SYSTEM "x-dm://0900f90b8000a18e,MYWORKING" NDATA jpeg>
+<!ENTITY A1B723300SF030100482A011 SYSTEM "x-dm://0900f90b8000a188,MYWORKING" NDATA cgm>
+<!ENTITY A1B723300SF030100481A011 SYSTEM "x-dm://0900f90b8000a187,MYWORKING" NDATA cgm>
+<!ENTITY A1B723300SF030100480A011 SYSTEM "x-dm://0900f90b8000a18d,MYWORKING" NDATA jpeg>
+<!ENTITY A1B723300SF030100479A011 SYSTEM "x-dm://0900f90b8000a18c,MYWORKING" NDATA jpeg>
+<!ENTITY A1B723300SF030100478A011 SYSTEM "x-dm://0900f90b8000a18b,MYWORKING" NDATA jpeg>
+<!ENTITY A1B723300SF030100477A011 SYSTEM "x-dm://0900f90b8000a18a,MYWORKING" NDATA jpeg>
+<!ENTITY A1B723300SF030100463A011 SYSTEM "x-dm://0900f90b80004110,MYWORKING" NDATA cgm>
+<!ENTITY A1B723300SF030100476A011 SYSTEM "x-dm://0900f90b8000a189,MYWORKING" NDATA jpeg>
+<!ENTITY A1A723300SF030100409A011 SYSTEM "x-dm://0900f90b80003997,MYWORKING" NDATA cgm>
+<!ENTITY A1A723300SF030100443A011 SYSTEM "x-dm://0900f90b80003fed,MYWORKING" NDATA cgm>
+<!ENTITY A1B723300SF030100453A021 SYSTEM "x-dm://0900f90b800027ee,MYWORKING" NDATA cgm>
+<!ENTITY A1B723300SF030100454A011 SYSTEM "x-dm://0900f90b8000430b,MYWORKING" NDATA jpeg>
+<!ENTITY A1B723300SF030100455A021 SYSTEM "x-dm://0900f90b800041c8,MYWORKING" NDATA jpeg>
+<!ENTITY A1B723300SF030100456A011 SYSTEM "x-dm://0900f90b8000430d,MYWORKING" NDATA jpeg>
+<!ENTITY A1B723300SF030100457A011 SYSTEM "x-dm://0900f90b8000430e,MYWORKING" NDATA jpeg>
+<!ENTITY A1B723300SF030100458A011 SYSTEM "x-dm://0900f90b8000430f,MYWORKING" NDATA jpeg>
+<!ENTITY A1B723300SF030100465A011 SYSTEM "x-dm://0900f90b800085a4,MYWORKING" NDATA cgm>
+]>
+<?Pub EntList bull copy rArr sect trade percnt nbsp raquo laquo>
+<?Pub Inc>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><discode>08</discode><discodev>A</discodev><incode>353</incode><incodev>C</incodev><itemloc>C</itemloc></avee></dmc>
+<dmtitle><techname>TAMBOUR ETAGE 4 6, COMPRESSEUR HP ETAPE 4</techname><infoname>CONTROLE AUX COURANTS DE FOUCAULT - MACHINE M2</infoname></dmtitle>
+<issno type="r" issno="2">
+<issdate month="04" year="2012" day="30">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid change="MOD">
+<version version="M88-2 ETAPE 4"></version>
+<manufact>F0301</manufact><partno>307-264-702-0</partno>
+<manufact>F0301</manufact><partno>307-264-703-0</partno>
+<manufact>F0301</manufact><partno>307-264-704-0</partno>
+<manufact>F0301</manufact><partno>307-264-706-0</partno>
+<customer aaf="1" anf="1">
+<nti nti1="0" nti2="0" nti3="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Avant MOD 250-78R1  Mise &agrave; jour des zone(s) &agrave; contr&ocirc;ler STB BE Snecma - Apr&egrave;s MOD 250-78R1 Introduction du pack CGP r&eacute;f. F301 307-264-706-0. Prise en compte de la version &laquo; logiciel IHM CDF SCANALIZER R16 &raquo;.</rfu>
+<remarks>RAS</remarks>
+<icns><icn id="A1B723300SF030100476A021">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00476</illnum><illver>A</illver><illupdat>02</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1B723300SF030100477A021">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00477</illnum><illver>A</illver><illupdat>02</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1B723300SF030100478A011">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00478</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1B723300SF030100479A011">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00479</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1B723300SF030100480A021">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00480</illnum><illver>A</illver><illupdat>02</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1B723300SF030100481A021">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00481</illnum><illver>A</illver><illupdat>02</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1B723300SF030100482A021">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00482</illnum><illver>A</illver><illupdat>02</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1B723300SF030100483A021">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00483</illnum><illver>A</illver><illupdat>02</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1B723300SF030100484A021">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00484</illnum><illver>A</illver><illupdat>02</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1B723300SF030100485A021">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00485</illnum><illver>A</illver><illupdat>02</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A723300SF030100409A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00409</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A723300SF030100443A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00443</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1B723300SF030100697A011">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00697</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1B723300SF030100698A011">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00698</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1B723300SF030100699A011">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00699</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<refdm>
+<dmcid id="A1A70360003A353AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>3</section><subsect>6</subsect><subject>00</subject><discode>03</discode><discodev>A</discodev><incode>353</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A70360004A353AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>3</section><subsect>6</subsect><subject>00</subject><discode>04</discode><discodev>A</discodev><incode>353</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+</refdm>
+</refs><proced><pmd>
+<manhour value="30,0"></manhour>
+<duration value="30,0"></duration>
+</pmd><prelreqs><reqconds>
+<noconds></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><subcat>Contr&ocirc;leur CDF</subcat><persnum no="1"><perstime value="30,0"></reqper>
+</reqpers><supequip><supeqli>
+<supequi id="O2.31076"><ident><manufact>F0301</manufact><partno>889-404-017-0</partno></ident><nomen>ENS.MACHINE M2</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.31062"><refipc csn="72016108 004 "><nomen>GENERATEUR CDF</nomen><quantity>1</quantity></supequi>
+<supequi id="O15"><ident><manufact>F0301</manufact><partno>889-404-265-0</partno></ident><nomen>SUPPORT SONDE ATNE (MDK26)</nomen><quantity>1</quantity></supequi>
+<supequi id="O16"><ident><manufact>F0301</manufact><partno>889-404-415-0</partno></ident><nomen>SUPPORT SONDE ATNH (MDK35)</nomen><quantity>1</quantity></supequi>
+<supequi id="O17"><ident><manufact>F0301</manufact><partno>889-404-295-0</partno></ident><nomen>SUPPORT SONDE ATNF ( MULTI-ELEMENT)</nomen><quantity>1</quantity></supequi>
+<supequi id="O18"><ident><manufact>F0301</manufact><partno>889-404-235-0</partno></ident><nomen>SUPPORT SONDE ATND (MULTI-ELEMENT)</nomen><quantity>1</quantity></supequi>
+<supequi id="O19"><ident><manufact>F0301</manufact><partno>889-404-205-0</partno></ident><nomen>SUPPORT SONDE ATNC (KDS-4)</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.31071"><refipc csn="72016110 002 "><nomen>ETALON STANDARD</nomen><quantity>1</quantity></supequi>
+<supequi id="O22"><ident><manufact>F0301</manufact><partno>8-18-1-469-137-0</partno></ident><nomen>ETALON STANDARD ET DE VERIFICATION</nomen><quantity>1</quantity></supequi>
+<supequi id="O20202"><refipc csn="72330001 310 "><nomen>ETALON CANAUX</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.31060"><ident><manufact>F0301</manufact><partno>888-537-700-0</partno></ident><nomen>OUTILLAGE DE MANUTENTION</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.31031"><refipc csn="72016801 096 "><nomen>OUTILLAGE DE RETOURNEMENT</nomen><quantity>1</quantity></supequi>
+<supequi id="O24"><ident><manufact></manufact><partno>554304 RM 560 2/2</partno></ident><nomen>SUPPORT + MORS ROHM COMPRESSEUR</nomen><quantity>3</quantity></supequi>
+<supequi id="O25"><ident><manufact>F008614</manufact><partno>KDS4 H1737-03-2 </partno></ident><nomen>SONDE ATNC</nomen><quantity>1</quantity></supequi>
+<supequi id="O26"><ident><manufact>F008614</manufact><partno>MDK-26 H1702-02-7 </partno></ident><nomen>SONDE ATNE</nomen><quantity>1</quantity></supequi>
+<supequi id="O27"><ident><manufact>F008614</manufact><partno>MDK-35 H1702-02-6 </partno></ident><nomen>SONDE ATNH</nomen><quantity>1</quantity></supequi>
+<supequi id="O28"><ident><manufact>F016821</manufact><partno>ATNF-0424-1070B </partno></ident><nomen>SONDE ATNF STATICE</nomen><quantity>1</quantity></supequi>
+<supequi id="O29"><ident><manufact>F016821</manufact><partno>ATND-0424-1050B</partno></ident><nomen>SONDE ATND STATICE</nomen><quantity>4</quantity></supequi>
+</supeqli><nosupeqs></supequip><supplies><nosupply></supplies><miscs><miscli>
+<misc><ident><manufact></manufact><partno></partno></ident><nomen>Ruban &laquo; t&eacute;flon&reg; &raquo; de protection capteur</nomen><quantity>SB</quantity></misc>
+<misc><ident><manufact></manufact><partno></partno></ident><nomen>Toile nylon abrasive &laquo; scotch brite &reg; &raquo;</nomen><quantity>SB</quantity></misc>
+<misc><ident><manufact></manufact><partno></partno></ident><nomen>Crayon gras ou marqueur homologu&eacute; N 18</nomen><quantity>1</quantity></misc>
+</miscli></miscs><safety>
+<specpara>
+<caution>
+<p>Un changement de proc&eacute;dure, le remplacement ou la modification de la cha&icirc;ne de mesure peut entra&icirc;ner des probl&egrave;mes de d&eacute;tection de d&eacute;faut et ou influencer la performance de l'installation.</p>
+<p>Dans ce cas, le laboratoire de contr&ocirc;le non destructif de Snecma devra &eacute;valuer et valider les &eacute;carts.</p>
+<p>Manipuler les pi&egrave;ces avec pr&eacute;caution (fabriqu&eacute;es en alliage &eacute;labor&eacute; par m&eacute;tallurgie des poudres MDP) : tout impact est inacceptable quelque soit son importance et sa localisation.</p>
+</caution>
+</specpara>
+</safety></prelreqs><mainfunc>
+<step1 control="0" id="P10">
+<title>G&eacute;n&eacute;ralit&eacute;s</title>
+<para><p>Cette instruction de contr&ocirc;le a pour objectif de d&eacute;finir les conditions du contr&ocirc;le non destructif par courants de Foucault du tambour D4D6 Compresseur HP M88 &eacute;tape 4 <refipc csn="72330001A191 ">, r&eacute;alis&eacute; sur l&rsquo;ensemble machine M2 <supeqref refid="O2.31076">.</p>
+</para>
+</step1>
+<step1 control="0" id="P20">
+<title>Machine de contr&ocirc;le et g&eacute;n&eacute;rateur &agrave; courants de Foucault</title>
+<para><p>Utiliser l&rsquo;&eacute;quipement Machine M2 <supeqref refid="O2.31076"><figref refid="B723300SF030100476A021">&nbsp;:</p>
+</para>
+<list type="SIMPLE">
+<item><para><p>Interface Homme Machine SNECMA_M88 R16 appelant le logiciel ROHMANN SCANALYSER version A&eacute;ro 6.0,</p>
+</para>
+</item>
+<item><para><p>g&eacute;n&eacute;rateur CDF ROHMANN s&eacute;rie PL300 <supeqref refid="O2.31062">,</p>
+</para>
+</item>
+</list>
+<para><p>Un descriptif d&eacute;taill&eacute; des sp&eacute;cifications techniques figure dans le document <dmcref xrefid="A1A70360003A353AC">.</p>
+</para>
+</step1>
+<step1 control="0" id="P30">
+<title>Outillages et sondes</title>
+<para><p>Utiliser les supports de sondes et sondes associ&eacute;es comme ci-dessous <figref refid="B723300SF030100480A021">&nbsp;<figref refid="B723300SF030100483A021"><figref refid="B723300SF030100484A021">&nbsp;:</p>
+<note>
+<p>chaque outil &laquo; support de sonde &raquo; est appel&eacute; par le programme de contr&ocirc;le en fonction de la zone &agrave; contr&ocirc;ler.</p>
+</note>
+</para>
+<list type="SIMPLE">
+<item><para><p>support sonde ATNC (KDS-4) <supeqref refid="O19">, sonde ATNC (KDS4 H1737.03.2) <supeqref refid="O25">, </p>
+</para>
+</item>
+<item><para><p>support sonde ATNE (MDK26) <supeqref refid="O15">, sonde ATNE (MDK-26 H1702.02.7 <supeqref refid="O26">,</p>
+</para>
+</item>
+<item><para><p>support sonde ATNH (MDK35) <supeqref refid="O16">, sonde ATNH (MDK-35 H1702.02.6) <supeqref refid="O27">,</p>
+</para>
+</item>
+<item><para><p>support sonde ATNF (multi-&eacute;l&eacute;ment) <supeqref refid="O17">, sonde ATNF STATICE <supeqref refid="O28">,</p>
+</para>
+</item>
+<item><para><p>support sonde ATND (multi-&eacute;l&eacute;ment)<supeqref refid="O18">, sonde ATND STATICE <supeqref refid="O29">,</p>
+</para>
+</item>
+</list>
+</step1>
+<step1 control="0" id="P40">
+<title>Etalons</title>
+<para><p>Le mode op&eacute;ratoire comprend l&rsquo;utilisation des &eacute;talons suivants en fonction des zones &agrave; contr&ocirc;ler et des sondes appel&eacute;es par le programme d&rsquo;inspection <figref refid="B723300SF030100480A021">&nbsp;<figref refid="B723300SF030100483A021"><figref refid="B723300SF030100484A021"><figref refid="B723300SF030100485A021">&nbsp;&nbsp;:</p>
+</para>
+<list type="SIMPLE">
+<item><para><p>&eacute;talon standard <supeqref refid="O2.31071">,</p>
+</para>
+</item>
+<item><para><p>&eacute;talon standard et de v&eacute;rification <supeqref refid="O22">,</p>
+</para>
+</item>
+<item><para><p>&eacute;talon canaux<supeqref refid="O20202">.</p>
+</para>
+</item>
+</list>
+<note>
+<p>Un changement de proc&eacute;dure, le remplacement ou la modification de la cha&icirc;ne de mesure peut entra&icirc;ner des probl&egrave;mes de d&eacute;tection de d&eacute;faut et/ou influencer la performance de l&rsquo;installation. Dans ce cas, le laboratoire de contr&ocirc;le non destructif de Snecma devra &eacute;valuer et valider les &eacute;carts.</p>
+</note>
+</step1>
+<step1 control="0" id="P50">
+<title>Zones &agrave; contr&ocirc;ler</title>
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>Contr&ocirc;ler les zones suivantes<figref refid="B723300SF030100481A021">&nbsp;<figref refid="B723300SF030100482A021">&nbsp;conform&eacute;ment aux exigences du bureau d&rsquo;&eacute;tudes Snecma (STB) :</p>
+</para>
+<step2 control="0" id="P50-10">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>F0301 - 307-264-702-0 <refipc csn="72330001A191 " isn="00A">.</p>
+</para>
+<list type="SIMPLE">
+<item><para><p>dents amont et aval D5,</p>
+</para>
+</item>
+<item><para><p>dents amont et aval D6,</p>
+</para>
+</item>
+<item><para><p>soudure interne D4-D5,</p>
+</para>
+</item>
+<item><para><p>soudure interne D5-D6,</p>
+</para>
+</item>
+<item><para><p>virole interne amont D5,</p>
+</para>
+</item>
+<item><para><p>virole interne aval D5,</p>
+</para>
+</item>
+<item><para><p>festons et crochets de d&eacute;trompage (bride aval D6),</p>
+</para>
+</item>
+<item><para><p>virole interne amont D6.</p>
+</para>
+</item>
+</list>
+<note>
+<p>Canaux D5 : Zone &agrave; ne plus contr&ocirc;ler sur l&rsquo;installation machine M2 avec le support et sondes ATND.</p>
+</note>
+</step2>
+<step2 control="0" id="P50-20">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>F0301 - 307-264-703-0 <refipc csn="72330001A191 " isn="00C">.</p>
+</para>
+<list type="SIMPLE">
+<item><para><p>dents amont et aval D5,</p>
+</para>
+</item>
+<item><para><p>dents amont et aval D6,</p>
+</para>
+</item>
+<item><para><p>soudure interne D4-D5,</p>
+</para>
+</item>
+<item><para><p>soudure interne D5-D6,</p>
+</para>
+</item>
+<item><para><p>virole interne amont D5,</p>
+</para>
+</item>
+<item><para><p>virole interne aval D5,</p>
+</para>
+</item>
+<item><para><p>festons et crochets de d&eacute;trompage (bride aval D6),</p>
+</para>
+</item>
+<item><para><p>virole interne amont D6.</p>
+</para>
+</item>
+</list>
+<note>
+<p>Canaux D5 : Zone &agrave; ne plus contr&ocirc;ler sur l&rsquo;installation machine M2 avec le support et sondes ATND.</p>
+</note>
+</step2>
+<step2 control="0" id="P50-30">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>F0301 - 307-264-704-0 <refipc csn="72330001A191 " isn="00E">.</p>
+</para>
+<list type="SIMPLE">
+<item><para><p>dents amont et aval D5,</p>
+</para>
+</item>
+<item><para><p>dents amont et aval D6,</p>
+</para>
+</item>
+<item><para><p>soudure interne D4-D5,</p>
+</para>
+</item>
+<item><para><p>soudure interne D5-D6,</p>
+</para>
+</item>
+<item><para><p>virole interne amont D5,</p>
+</para>
+</item>
+<item><para><p>virole interne aval D5,</p>
+</para>
+</item>
+<item><para><p>festons et crochets de d&eacute;trompage (bride aval D6),</p>
+</para>
+</item>
+<item><para><p>virole interne amont D6.</p>
+</para>
+</item>
+</list>
+<note>
+<p>Canaux D5 : Zone &agrave; ne plus contr&ocirc;ler sur l&rsquo;installation machine M2 avec le support et sondes ATND.</p>
+</note>
+</step2>
+<step2 control="0" id="P50-40">
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>F0301 - 307-264-706-0 <refipc csn="72330001A191 " isn="00G">.</p>
+</para>
+<list type="SIMPLE">
+<item><para><p>dents amont et aval D6,</p>
+</para>
+</item>
+<item><para><p>soudure interne D5-D6.</p>
+</para>
+</item>
+</list>
+</step2>
+</step1>
+<step1 control="0" id="P60">
+<title>Pr&eacute;paration au contr&ocirc;le</title>
+<step2 control="0" id="P60-10">
+<title>Pr&eacute;paration de la pi&egrave;ce &agrave; contr&ocirc;ler</title>
+<para><p>Faire un examen visuel des zones &agrave; inspecter et les nettoyer si n&eacute;cessaire &agrave; l&rsquo;aide de la toile nylon abrasive &laquo; scotch brite &reg; &raquo; imbib&eacute;e d&rsquo;alcool isopropylique.</p>
+</para>
+</step2>
+<step2 control="0" id="P60-20">
+<title>Positionnement de l&rsquo;interface Tambour D4-D6 CoHP sur le plateau tournant</title>
+<para><p>Positionner l&rsquo;interface &laquo; Tambour D4-D6 &raquo; sur le plateau tournant et visser les 3 vis &agrave; l&rsquo;aide d&rsquo;une cl&eacute; ad&eacute;quate <figref refid="B723300SF030100697A011"> .</p>
+</para>
+<note>
+<p>Les interfaces D4-D6 permettent de donner une surface de r&eacute;f&eacute;rence sur le plateau tournant et doivent &ecirc;tre mont&eacute;es avant le positionnement de la pi&egrave;ce.</p>
+</note>
+</step2>
+<step2 control="0" id="P60-30">
+<title>Positionnement des mors &laquo; Tambour D4-D6 Compresseur &raquo; sur le plateau tournant</title>
+<para><p>Monter les mors num&eacute;rot&eacute;s de 1 &agrave; 3  sur le mandrin du plateau tournant &agrave; l&rsquo;emplacement poss&eacute;dant le m&ecirc;me num&eacute;ro <figref refid="B723300SF030100698A011"> .</p>
+</para>
+<note>
+<p>Avant de positionner les mors vous devez vous assurer que le mandrin est en position &laquo; ouvert &raquo; sur but&eacute;e m&eacute;canique en actionnant le bouton poussoir de positionnement. Seule cette position permet aux mors d&rsquo;&ecirc;tre mobile <figref refid="B723300SF030100698A011">.</p>
+</note>
+</step2>
+<step2 control="0" id="P60-40">
+<title>Positionnement de la pi&egrave;ce sur le plateau tournant</title>
+<step3 control="0" id="P60-40-10">
+<para><p>S&rsquo;assurer de l&rsquo;absence de corps &eacute;tranger sur l&rsquo;interface appui pi&egrave;ce et passer un chiffon si n&eacute;cessaire.</p>
+</para>
+</step3>
+<step3 control="0" id="P60-40-20">
+<para><p>Pr&eacute;parer en fonction de la s&eacute;quence de contr&ocirc;le, la position des mors :</p>
+</para>
+<list>
+<item><para><p>Phase &laquo; Amont, f&ucirc;t en haut &raquo; mors en position rentr&eacute;e pour serrage sur le diam&egrave;tre interne de la bride amont du disque D4 de la pi&egrave;ce <figref refid="B723300SF030100479A011">.</p>
+<note>
+<p>Pour les cycles d&rsquo;inspection &laquo; amont &raquo;, l&rsquo;acc&egrave;s aux zones de contr&ocirc;le s&rsquo;effectuent par la face aval (tambour D4-D6 en position sur face amont).</p>
+</note>
+</para>
+</item>
+<item><para><p>Phase &laquo; Aval, f&ucirc;t en bas &raquo; mors en position sortie pour serrage sur le diam&egrave;tre externe de la bride aval du tourillon f&ucirc;t de la pi&egrave;ce <figref refid="B723300SF030100478A011">.</p>
+<note>
+<p>Pour les cycles d&rsquo;inspection &laquo; aval &raquo;, l&rsquo;acc&egrave;s aux zones de contr&ocirc;le s&rsquo;effectuent par la face amont (tambour D4-D6 en position sur face amont.</p>
+</note>
+</para>
+</item>
+</list>
+</step3>
+<step3 control="0" id="P60-40-30">
+<para><p>Prendre le tambour D4-D6 dans la caisse navette et en fonction de son sens d&rsquo;orientation et de la s&eacute;quence de contr&ocirc;le &agrave; engager, le d&eacute;poser sur une table d&rsquo;atelier pour proc&eacute;der &agrave; son retournement suivant s&eacute;quence 60-50 ou directement sur le plateau de la machine <supeqref refid="O2.31076"> &agrave; l&rsquo;aide de l&rsquo;outillage de manutention <supeqref refid="O2.31060"> <figref refid="A723300SF030100443A011">.</p>
+</para>
+</step3>
+<step3 control="0" id="P60-40-40">
+<para><p>V&eacute;rifier le contact de la pi&egrave;ce sur les 3 faces de l&rsquo;interface appui pi&egrave;ce.</p>
+</para>
+</step3>
+<step3 control="0" id="P60-40-50">
+<para><p>Approcher les 3 mors sur le diam&egrave;tre interne de la bride amont ou externe de la bride aval de la pi&egrave;ce.</p>
+</para>
+</step3>
+<step3 control="0" id="P60-40-60">
+<para><p>Localiser le S/N de la pi&egrave;ce sur la bride amont.  La premi&egrave;re lettre d&eacute;finit le z&eacute;ro angulaire de la pi&egrave;ce.</p>
+</para>
+</step3>
+<step3 control="0" id="P60-40-70">
+<para><p>Tracer au crayon gras blanc un trait au droit de cette lettre sur le diam&egrave;tre ext&eacute;rieur de la pi&egrave;ce.</p>
+<note>
+<p>Op&eacute;ration n&eacute;cessaire pour le calage angulaire de la pi&egrave;ce en position bride amont en appui sur l&rsquo;interface pi&egrave;ce du mandrin - plateau tournant.</p>
+</note>
+</para>
+</step3>
+<step3 control="0" id="P60-40-80">
+<para><p>Effectuer manuellement une rotation de la pi&egrave;ce et faire co&iuml;ncider cette 1&egrave;re lettre et/ou le trait au droit de l&rsquo;index &laquo; trou &raquo; du plateau.  S&rsquo;assurer que le centre du canal 1 du tambour D4-D6 rep&eacute;r&eacute; par deux chiffres &laquo; 1 &raquo;  encadr&eacute; de part et d&rsquo;autre du canal sur la face aval externe du disque 5 <figref refid="B723300SF030100481A021"> soit &agrave; l&rsquo;axe de l&rsquo;index &laquo; trou &raquo; du plateau tournant de la machine.</p>
+</para>
+</step3>
+<step3 control="0" id="P60-40-90">
+<para><p>Mettre en contact les but&eacute;es sur la pi&egrave;ce en serrant &agrave; la main &agrave; l&rsquo;aide de la cl&eacute; &agrave; mandrin sans ajout d&rsquo;un bras de levier et s&rsquo;assurer de l&rsquo;absence de rotation de la pi&egrave;ce.</p>
+</para>
+</step3>
+</step2>
+<step2 control="0" id="P60-50">
+<title>Retournement de la pi&egrave;ce</title>
+<step3 control="0" id="P60-50-10">
+<para><p>Installer l&rsquo;outillage de retournement <supeqref refid="O2.31031"> <figref refid="A723300SF030100409A011">.</p>
+</para>
+</step3>
+<step3 control="0" id="P60-50-20">
+<para><p>Lever puis pivoter le rotor.</p>
+</para>
+</step3>
+<step3 control="0" id="P60-50-30">
+<para><p>D&eacute;poser l&rsquo;outillage de retournement <supeqref refid="O2.31031"> <figref refid="A723300SF030100409A011">.</p>
+</para>
+</step3>
+</step2>
+<step2 control="0" id="P60-60">
+<title>Pr&eacute;paration des &eacute;talons</title>
+<step3 control="0" id="P60-60-10">
+<para><p>Effectuer un visuel des &eacute;talons &laquo; standard  et de v&eacute;rification &raquo; <supeqref refid="O22"> et <supeqref refid="O2.31071"> <figref refid="B723300SF030100477A021">.</p>
+</para>
+</step3>
+<step3 control="0" id="P60-60-20">
+<para><p>Nettoyer &agrave; l&rsquo;aide d&rsquo;un chiffon imbib&eacute; d&rsquo;ac&eacute;tone les &eacute;talons avant le lancement du cycle d&rsquo;inspection, si n&eacute;cessaire.</p>
+</para>
+<note>
+<p>Les &eacute;talons sont &agrave; demeure sur l&rsquo;installation <figref refid="B723300SF030100476A011">.</p>
+</note>
+</step3>
+</step2>
+<step2 control="0" id="P60-70">
+<title>Pr&eacute;paration des sondes</title>
+<step3 control="0" id="P60-70-10">
+<para><p>V&eacute;rifier la propret&eacute; des sondes &agrave; chaque pi&egrave;ce.</p>
+</para>
+</step3>
+<step3 control="0" id="P60-70-20">
+<para><p>En fonction du cycle d&rsquo;inspection choisi, retirer du rack &laquo; outils &raquo; les outillages ATN-C <figref refid="B723300SF030100483A021">, ATN-E, ATN-H <figref refid="B723300SF030100480A021">, ATN-F <figref refid="B723300SF030100484A021">.</p>
+</para>
+</step3>
+<step3 control="0" id="P60-70-30">
+<para><p>V&eacute;rifier que l&rsquo;&eacute;l&eacute;ment sensible de la sonde n&rsquo;est pas endommag&eacute; ou pollu&eacute;.</p>
+</para>
+</step3>
+<step3 control="0" id="P60-70-40">
+<para><p>V&eacute;rifier qu&rsquo;aucune bobine n&rsquo;est &agrave; nu.</p>
+</para>
+<note>
+<p>Toutes les sondes sont prot&eacute;g&eacute;es d&rsquo;origine par un rev&ecirc;tement compatible avec le mat&eacute;riau N18. En cas d&rsquo;un constat d&rsquo;une perte partielle de la protection et/ou d&rsquo;un signal fortement bruit&eacute;, il est admis de positionner une bande de protection en appliquant un morceau de bande &laquo; t&eacute;flon&reg; &raquo; d&rsquo;&eacute;paisseur 0,1 mm environ  au droit de l&rsquo;&eacute;l&eacute;ment sensible de la sonde.</p>
+</note>
+</step3>
+<step3 control="0" id="P60-70-50">
+<para><p>Bloquer manuellement la partie mobile du support de sonde et nettoyer la zone de l&rsquo;&eacute;l&eacute;ment sensible &agrave; l&rsquo;aide d&rsquo;un chiffon propre et non pelucheux imbib&eacute; d&rsquo;ac&eacute;tone.</p>
+</para>
+<note>
+<p>En fonction de l&rsquo;&eacute;tat d&rsquo;encrassement de la sonde, frotter la zone de l&rsquo;&eacute;l&eacute;ment sensible &agrave; l&rsquo;aide d&rsquo;une toile abrasive nylon de grade moyen (scotch brite &reg; vert).</p>
+</note>
+</step3>
+<step3 control="0" id="P60-70-60">
+<para><p>Repositionner l&rsquo;outillage sur le rack, au m&ecirc;me emplacement.</p>
+</para>
+</step3>
+</step2>
+</step1>
+<step1 control="0" id="P70">
+<title>Cycle d'inspection</title>
+<specpara></specpara>
+<step2 control="0" id="P70-10">
+<title>Programme de contr&ocirc;le</title>
+<para><p>S&eacute;lectionner le programme machine en fonction de la pi&egrave;ce &agrave; contr&ocirc;ler, s&eacute;quence 70-10-10 &agrave; 70-10-50.</p>
+<note>
+<p>Les programmes peuvent &ecirc;tre lanc&eacute;s soit en cha&icirc;nage automatique, soit apr&egrave;s validation manuelle entre chaque acquisition de zone.</p>
+</note>
+</para>
+<step3 control="0" id="P70-10-10">
+<title>Programme d&rsquo;inspection</title>
+<para><p>Pi&egrave;ce pos&eacute;e sur bride aval, f&ucirc;t en bas <figref refid="B723300SF030100478A011">.</p>
+</para>
+<para><specpara><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+</specpara><p>F0301 307-264-702-0</p>
+</para>
+<para><p>S&eacute;lectionner le programme &laquo;&nbsp;307-264-702 aval&nbsp;&raquo; et d&eacute;rouler la gamme afin de contr&ocirc;ler les zones suivantes :<tabref refid="tableau1">.</p>
+</para>
+<table id="tableau1"><title>Zones contr&ocirc;l&eacute;es par le programme d&rsquo;inspection  &laquo;&nbsp;307-264-702 aval&nbsp;&raquo;</title>
+<tgroup cols="3"><colspec colnum="1" colname="col1" colwidth="40mm" align="left"><colspec colnum="2" colname="col2" colwidth="40mm" align="left"><colspec colnum="3" colname="col3" colwidth="85mm" align="left">
+<tbody>
+<row>
+<entry colname="col1"><para><p>Zone</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>Robot Programme</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>Outil et Sonde utilis&eacute;s</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1" rowsep="0"><para><p>Dent amont-aval D6</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>Dent_D6_amont</p>
+</para>
+</entry>
+<entry colname="col3" rowsep="0"><para><p></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p></p>
+</para>
+</entry>
+<entry colname="col2"><para><p>Dent_D6_aval</p>
+</para>
+</entry>
+<entry colname="col3" rowsep="0"><para><p>SUPPORT SONDE ATNF (MULTI-ELEMENT) <supeqref refid="O17"></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1" rowsep="0"><para><p>Dent amont-aval D5</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>Dent_D5_amont</p>
+</para>
+</entry>
+<entry colname="col3" rowsep="0"><para><p>SONDE ATNF STATICE  <supeqref refid="O28"></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p></p>
+</para>
+</entry>
+<entry colname="col2"><para><p>Dent_D5_aval</p>
+</para>
+</entry>
+<entry colname="col3"><para><p></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Virole interne amont D6</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>Virole_interne_amont_D6</p>
+</para>
+</entry>
+<entry colname="col3" rowsep="0"><para><p></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Soudure interne D5-D6</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>Soudure_interne_D5-D6</p>
+</para>
+</entry>
+<entry colname="col3" rowsep="0"><para><p>SUPPORT SONDE ATNE (MDK26) <supeqref refid="O15"></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Virole interne amont D5</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>Virole_interne_amont_D5</p>
+</para>
+</entry>
+<entry colname="col3" rowsep="0"><para><p>SONDE ATNE (MDK-26 H1702.02.7)  <supeqref refid="O26"></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Soudure interne D4-D5</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>Soudure_interne_D4-D5</p>
+</para>
+</entry>
+<entry colname="col3"><para><p></p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step3>
+<step3 control="0" id="P70-10-20">
+<title>Programme de contr&ocirc;le</title>
+<para><p>Pi&egrave;ce pos&eacute;e sur bride amont, f&ucirc;t en haut <figref refid="B723300SF030100479A011">.</p>
+</para>
+<para><specpara><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+</specpara><p>F0301 307-264-702-0</p>
+</para>
+<para><p>S&eacute;lectionner le programme &laquo;&nbsp;307-264-702 amont&nbsp;&raquo; et d&eacute;rouler la gamme afin de contr&ocirc;ler les zones suivantes :<tabref refid="tableau2">.</p>
+</para>
+<table id="tableau2"><title>Zones contr&ocirc;l&eacute;es par le programme d&rsquo;inspection  &laquo;&nbsp;307-264-702 amont&nbsp;&raquo;</title>
+<tgroup cols="3"><colspec colnum="1" colname="col1" colwidth="40mm" align="left"><colspec colnum="2" colname="col2" colwidth="40mm" align="left"><colspec colnum="3" colname="col3" colwidth="85mm" align="left">
+<tbody>
+<row>
+<entry colname="col1"><para><p>Zone</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>Robot Programme</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>Outil et Sonde utilis&eacute;s</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Canaux D5</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>Canaux_D5 (A ne pas contr&ocirc;ler)</p>
+</para>
+</entry>
+<entry colname="col3" rowsep="1"><para><p> SUPPORT SONDES ATND (MULTI-ELEMENT)  <supeqref refid="O18"></p>
+</para>
+<para><p>SONDE ATND STATICE  <supeqref refid="O29"></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Festons et crochets de d&eacute;trompage (Bride Aval)</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>Festons_et_crochets_de_detrompage</p>
+</para>
+</entry>
+<entry colname="col3" rowsep="1"><para><p>SUPPORT SONDE ATNC (KDS-4) <supeqref refid="O19"></p>
+</para>
+<para><p>SONDE ATNC <supeqref refid="O25"></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Virole interne aval D5</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>Virole_interne_aval_D5</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>SUPPORT SONDE ATNH (MDK35) <supeqref refid="O16"></p>
+</para>
+<para><p>SONDE ATNH  <supeqref refid="O27"></p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step3>
+<step3 control="0" id="P70-10-30">
+<title>Programme d&rsquo;inspection</title>
+<para><p>Pi&egrave;ce pos&eacute;e sur bride aval, f&ucirc;t en bas <figref refid="B723300SF030100478A011">.</p>
+</para>
+<para><specpara><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+</specpara><p>F0301 307-264-703-0 et F0301 307-264-704-0</p>
+</para>
+<para><p>S&eacute;lectionner le programme &laquo;&nbsp;307-264-703-704 aval&nbsp;&raquo; et d&eacute;rouler la gamme afin de contr&ocirc;ler les zones suivantes :<tabref refid="tableau3">.</p>
+</para>
+<table id="tableau3"><title>Zones contr&ocirc;l&eacute;es par le programme d&rsquo;inspection  &laquo;&nbsp;307-264-704 aval &raquo;</title>
+<tgroup cols="3"><colspec colnum="1" colname="col1" colwidth="40mm" align="left"><colspec colnum="2" colname="col2" colwidth="40mm" align="left"><colspec colnum="3" colname="col3" colwidth="85mm" align="left">
+<tbody>
+<row>
+<entry colname="col1"><para><p>Zone</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>Robot Programme</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>Outil et Sonde utilis&eacute;s</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1" rowsep="0"><para><p>Dent amont-aval D6 mm</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>Dent_D6_amont_mm</p>
+</para>
+</entry>
+<entry colname="col3" rowsep="0"><para><p></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p></p>
+</para>
+</entry>
+<entry colname="col2"><para><p>Dent_D6_aval_mm</p>
+</para>
+</entry>
+<entry colname="col3" rowsep="0"><para><p>SUPPORT SONDE ATNF (MULTI-ELEMENT)  <supeqref refid="O17"></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1" rowsep="0"><para><p>Dent amont-aval D5 mm</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>Dent_D5_amont_mm</p>
+</para>
+</entry>
+<entry colname="col3" rowsep="0"><para><p>SONDE ATNF STATICE <supeqref refid="O28"></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p></p>
+</para>
+</entry>
+<entry colname="col2"><para><p>Dent_D5_aval_mm</p>
+</para>
+</entry>
+<entry colname="col3"><para><p></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Virole interne amont D6 mm</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>Virole_interne_amont_D6_mm</p>
+</para>
+</entry>
+<entry colname="col3" rowsep="0"><para><p></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Soudure interne D5-D6 mm</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>Soudure_interne_D5-D6_mm</p>
+</para>
+</entry>
+<entry colname="col3" rowsep="0"><para><p>SUPPORT SONDE ATNE (MDK26) <supeqref refid="O15"></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Virole interne amont D5 mm</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>Virole_interne_amont_D5_mm</p>
+</para>
+</entry>
+<entry colname="col3" rowsep="0"><para><p>SONDE ATNE (MDK-26 H1702.02.7) <supeqref refid="O26"></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Soudure interne D4-D5 mm</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>Soudure_interne_D4-D5_mm</p>
+</para>
+</entry>
+<entry colname="col3" rowsep="0"><para><p></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Virole interne aval D5 mm</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>Virole_interne_aval_D5_mm</p>
+</para>
+</entry>
+<entry colname="col3"><para><p></p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step3>
+<step3 control="0" id="P70-10-40">
+<title>Programme d&rsquo;inspection</title>
+<para><p>Pi&egrave;ce pos&eacute;e sur bride amont, f&ucirc;t en haut <figref refid="B723300SF030100479A011">.</p>
+</para>
+<para><specpara><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+</specpara><p>F0301 307-264-703-0 et F0301 307-264-704-0</p>
+</para>
+<para><p>S&eacute;lectionner le programme &laquo;&nbsp;307-264-703-704 amont&nbsp;&raquo; et d&eacute;rouler la gamme afin de contr&ocirc;ler les zones suivantes :<tabref refid="tableau4">.</p>
+</para>
+<table id="tableau4"><title>Zones contr&ocirc;l&eacute;es par le programme d&rsquo;inspection  &laquo;&nbsp;307-264-704 amont&nbsp;&raquo;</title>
+<tgroup cols="3"><colspec colnum="1" colname="col1" colwidth="40mm" align="left"><colspec colnum="2" colname="col2" colwidth="40mm" align="left"><colspec colnum="3" colname="col3" colwidth="85mm" align="left">
+<tbody>
+<row>
+<entry colname="col1"><para><p>Zone</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>Robot Programme</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>Outil et Sonde utilis&eacute;s</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Canaux D5 mm</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>Canaux_D5_mm (A ne pas contr&ocirc;ler)</p>
+</para>
+</entry>
+<entry colname="col3" rowsep="1"><para><p> SUPPORT SONDES ATND (MULTI-ELEMENT)  <supeqref refid="O18"></p>
+</para>
+<para><p>SONDE ATND STATICE  <supeqref refid="O29"></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Festons et crochets de d&eacute;trompage mm (Bride Aval)</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>Festons_et_crochets_de_detrompage_mm</p>
+</para>
+</entry>
+<entry colname="col3" rowsep="1"><para><p>SUPPORT SONDE ATNC (KDS-4)  <supeqref refid="O19"></p>
+</para>
+<para><p>SONDE ATNC (KDS4 H1737.03.2) <supeqref refid="O25"></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Virole interne aval D5 mm</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>Virole_interne_aval_D5_mm</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>SUPPORT SONDE ATNH (MDK35) <supeqref refid="O16"></p>
+</para>
+<para><p>SONDE ATNH (MDK-35 H1702.02.6)  <supeqref refid="O27"></p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step3>
+<step3 control="0" id="P70-10-50">
+<title>Programme d&rsquo;inspection</title>
+<para><p>Pi&egrave;ce pos&eacute;e sur bride aval, f&ucirc;t en bas <figref refid="B723300SF030100478A011">.</p>
+</para>
+<para><specpara><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+</specpara><p>F0301 307-264-706-0</p>
+</para>
+<para><p>S&eacute;lectionner le programme &laquo;&nbsp;307-264-706 aval CGP&nbsp;&raquo; et d&eacute;rouler la gamme afin de contr&ocirc;ler les zones suivantes :<tabref refid="tableau5">.</p>
+</para>
+<table id="tableau5"><title>Zones contr&ocirc;l&eacute;es par le programme d&rsquo;inspection  &laquo;&nbsp;307-264-706 aval CGP&nbsp;&raquo;</title>
+<tgroup cols="3"><colspec colnum="1" colname="col1" colwidth="40mm" align="left"><colspec colnum="2" colname="col2" colwidth="40mm" align="left"><colspec colnum="3" colname="col3" colwidth="85mm" align="left">
+<tbody>
+<row>
+<entry colname="col1"><para><p>Zone</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>Robot Programme</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>Outil et Sonde utilis&eacute;s</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1" rowsep="0"><para><p>Dent amont-aval D6 CGP</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>Dent_D6_amont_CGP</p>
+</para>
+</entry>
+<entry colname="col3" rowsep="0"><para><p> SUPPORT SONDE ATNF (MULTI-ELEMENT)  <supeqref refid="O17"></p>
+</para>
+<para><p>SONDE ATNF STATICE  <supeqref refid="O28"></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p></p>
+</para>
+</entry>
+<entry colname="col2"><para><p>Dent_D6_aval_CGP</p>
+</para>
+</entry>
+<entry colname="col3"><para><p></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p>Soudure interne  D5-D6 CGP</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>Soudure_interne_D5-D6_CGP</p>
+</para>
+</entry>
+<entry colname="col3" rowsep="1"><para><p>SUPPORT SONDE ATNE (MDK26)  <supeqref refid="O15"></p>
+</para>
+<para><p>SONDE ATNE (MDK-26 H1702.02.7)  <supeqref refid="O26"></p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step3>
+</step2>
+<step2 control="0" id="P70-20">
+<title>Param&egrave;tres initiaux</title>
+<para><specpara>
+<note>
+<p>Param&egrave;tres &laquo; Courants De Foucault &raquo; utilis&eacute;s lors de la mesure : (*) les param&egrave;tres avec un ast&eacute;risque seront ajust&eacute;s en fonction de la sonde, valeurs donn&eacute;es &agrave; titre indicatif.</p>
+</note>
+<note>
+<p>Les r&eacute;glages initiaux de la sonde ATND &laquo; Canal D5 &raquo; ne sont pas communiqu&eacute;s dans ce documents suite &agrave; la suppression du contr&ocirc;le de la zone avec cette installation M2.</p>
+</note>
+</specpara><p></p>
+</para>
+<step3 control="0" id="P70-20-10">
+<title>Sonde ATNC - Param&eacute;trage CDF &laquo; EC Setting &raquo;</title>
+</step3>
+<step3 control="0" id="P70-20-20">
+<title>Sonde ATNE - Param&eacute;trage CDF &laquo; EC Setting &raquo;</title>
+</step3>
+<step3 control="0" id="P70-20-30">
+<title>Sonde ATNH - Param&eacute;trage CDF &laquo; EC Setting &raquo;</title>
+</step3>
+<step3 control="0" id="P70-20-40">
+<title>Sonde ATNF - Param&eacute;trage CDF &laquo; EC Setting &raquo;</title>
+</step3>
+</step2>
+<step2 control="0" id="P70-30">
+<title>Inspection</title>
+<para><p>Lancer les s&eacute;quences de contr&ocirc;le pour acquisitions des donn&eacute;es &laquo; Courants de Foucault &raquo; des zones contenues dans le programme d&rsquo;inspection choisi.</p>
+<note>
+<p>L&rsquo;installation permet de travailler suivant deux modes :</p>
+<p>-&nbsp;soit en mode &ldquo;start&rdquo; avec &eacute;valuation des d&eacute;fauts &agrave; chaque fin de zone(s),</p>
+<p>-&nbsp;soit en lan&ccedil;ant un &ldquo;start cont&rdquo; de l&rsquo;ensemble des zones et en effectuant l&rsquo;exploitation des diff&eacute;rentes images &laquo; Cartographie scans &raquo; une fois l&rsquo;ensemble des acquisitions termin&eacute;es.</p>
+</note>
+<note>
+<p>L&rsquo;image &laquo; cartographie &raquo; visible sur l&rsquo;&eacute;cran de contr&ocirc;le de la machine M2 est une reconstitution des x lignes de mesure en balayage et/ou contournement reproduisant ainsi le d&eacute;velopp&eacute; de la zone inspect&eacute;e avec un point 0 comme &laquo; top &raquo; d&eacute;part <figref refid="B723300SF030100699A011">. </p>
+</note>
+</para>
+<step3 control="0" id="P70-30-10">
+<title>Etalonnage</title>
+<specpara>
+<note>
+<p>L'&eacute;talonnage standard est lanc&eacute; automatiquement lors du lancement d'un programme. Il est associ&eacute; &agrave; une zone ou une s&eacute;rie de zones contr&ocirc;l&eacute;es par le m&ecirc;me couple sonde&nbsp;/&nbsp;outils.</p>
+</note>
+<note>
+<p>La correction du gain est automatique. L'acquisition de la zone est lanc&eacute;e automatiquement apr&egrave;s l'&eacute;talonnage.</p>
+</note>
+<note>
+<p>Le contr&ocirc;le se termine toujours par une op&eacute;ration de fin d'&eacute;talonnage automatique.</p>
+</note>
+</specpara>
+<para><p>Pour information, l'&eacute;talonnage 307&ndash;056&ndash;702&ndash;0 (Tol&eacute;rance: + 15&percnt;), se reporter au tableau suivant&nbsp;:</p>
+</para>
+</step3>
+<step3 control="0" id="P70-30-20">
+<title>Evaluation et sanctions</title>
+<para><p>Analyser &agrave; l&rsquo;aide de l&rsquo;image &laquo; Cartographie scan &raquo; affich&eacute;e &agrave; l&rsquo;&eacute;cran, toutes les indications sup&eacute;rieures ou &eacute;gales au seuil d&rsquo;&eacute;valuation et rejet mentionn&eacute; en s&eacute;quence 70-20-30 et identifi&eacute;es automatiquement au travers de la fonction &laquo; Find Defects &raquo;.</p>
+</para>
+<para><p>S&eacute;lectionner &agrave; l&rsquo;aide du rectangle d&rsquo;analyse fonction &laquo; Use selection rect &raquo; chaque indication identifi&eacute;e.</p>
+</para>
+<para><p>Effectuer une analyse avec la fonction &laquo; Modifications &raquo;, de l&rsquo;amplitude cr&ecirc;te &agrave; cr&ecirc;te, la phase et la forme du signal.</p>
+</para>
+<para><p>Evaluer et sanctionner la mesure (se reporter &agrave; A1-A-70-36-00-03A-353A-C) (se reporter &agrave; A1-A-70-36-00-04A-353A-C).</p>
+</para>
+<para><p>Noter les indications hors crit&egrave;re sur le rapport de contr&ocirc;le.</p>
+</para>
+</step3>
+<step3 control="0" id="P70-30-30">
+<title>Crit&egrave;res d&rsquo;&eacute;valuation</title>
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>F0301 307-264-702-0</p>
+</para>
+<table>
+<tgroup cols="2"><colspec colname="col1"><colspec colname="col2">
+<tbody>
+<row>
+<entry colname="col1"></entry>
+<entry colname="col2"></entry>
+</row>
+<row>
+<entry colname="col1"></entry>
+<entry colname="col2"></entry>
+</row>
+<row>
+<entry colname="col1"></entry>
+<entry colname="col2"></entry>
+</row>
+<row>
+<entry colname="col1"></entry>
+<entry colname="col2"></entry>
+</row>
+<row>
+<entry colname="col1"></entry>
+<entry colname="col2"></entry>
+</row>
+<row>
+<entry colname="col1"></entry>
+<entry colname="col2"></entry>
+</row>
+<row>
+<entry colname="col1"></entry>
+<entry colname="col2"></entry>
+</row>
+<row>
+<entry colname="col1"></entry>
+<entry colname="col2"></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>F0301 307-264-703/704-0</p>
+</para>
+<table>
+<tgroup cols="2"><colspec colname="col1"><colspec colname="col2">
+<tbody>
+<row>
+<entry colname="col1"></entry>
+<entry colname="col2"></entry>
+</row>
+<row>
+<entry colname="col1"></entry>
+<entry colname="col2"></entry>
+</row>
+<row>
+<entry colname="col1"></entry>
+<entry colname="col2"></entry>
+</row>
+<row>
+<entry colname="col1"></entry>
+<entry colname="col2"></entry>
+</row>
+<row>
+<entry colname="col1"></entry>
+<entry colname="col2"></entry>
+</row>
+<row>
+<entry colname="col1"></entry>
+<entry colname="col2"></entry>
+</row>
+<row>
+<entry colname="col1"></entry>
+<entry colname="col2"></entry>
+</row>
+<row>
+<entry colname="col1"></entry>
+<entry colname="col2"></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>F0301 307-264-706-0</p>
+</para>
+<table>
+<tgroup cols="2"><colspec colname="col1"><colspec colname="col2">
+<tbody>
+<row>
+<entry colname="col1"></entry>
+<entry colname="col2"></entry>
+</row>
+<row>
+<entry colname="col1"></entry>
+<entry colname="col2"></entry>
+</row>
+<row>
+<entry colname="col1"></entry>
+<entry colname="col2"></entry>
+</row>
+<row>
+<entry colname="col1"></entry>
+<entry colname="col2"></entry>
+</row>
+<row>
+<entry colname="col1"></entry>
+<entry colname="col2"></entry>
+</row>
+<row>
+<entry colname="col1"></entry>
+<entry colname="col2"></entry>
+</row>
+<row>
+<entry colname="col1"></entry>
+<entry colname="col2"></entry>
+</row>
+<row>
+<entry colname="col1"></entry>
+<entry colname="col2"></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step3>
+<step3 control="0" id="P70-30-40">
+<title>Lev&eacute;e de doute</title>
+<para><p>En cas d&rsquo;indication douteuse suivre le mode op&eacute;ratoire d&eacute;fini dans le DM contr&ocirc;le (se reporter &agrave; A1-A-70-36-00-03A-353A-C).</p>
+</para>
+</step3>
+</step2>
+<step2 control="0" id="P70-40">
+<title>Rapport de contr&ocirc;le</title>
+<step3 control="0">
+<para><p>R&eacute;capituler toutes les indications dans le document final, il sera &eacute;mis apr&egrave;s contr&ocirc;le complet.</p>
+</para>
+</step3>
+<step3 control="0">
+<para><p>Si la pi&egrave;ce est &laquo;&nbsp;NON CONFORME&nbsp;&raquo;, l'identifier comme telle puis pr&eacute;venir Snecma.</p>
+</para>
+</step3>
+<step3 control="0">
+<para><p>Si la pi&egrave;ce est &laquo;&nbsp;CONFORME&nbsp;&raquo;, l'identifier comme telle.</p>
+</para>
+</step3>
+</step2>
+<step2 control="0" id="P70-50">
+<title>Archivage</title>
+<para><p>Archiver obligatoirement les donn&eacute;es relev&eacute;es<dmcref xrefid="A1A70360003A353AC"><dmcref xrefid="A1A70360004A353AC">.</p>
+</para>
+</step2>
+<step2 control="0" id="P60-60">
+<title></title>
+<step3 control="0">
+</step3>
+<step3 control="0">
+<table tocentry="1">
+<tgroup cols="4" align="LEFT"><colspec colnum="1" colname="COL1" colwidth="4.50cm"><colspec colnum="2" colname="COL2" colwidth="6.00cm" colsep="1"><colspec colnum="3" colname="COL3" colwidth="4.66cm" colsep="1"><colspec colnum="4" colname="COL4" colwidth="4.31cm" colsep="1">
+<tbody valign="TOP">
+<row>
+<entry valign="TOP" morerows="0"><para><p>Zone contr&ocirc;l&eacute;e</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>Etalon associ&eacute;</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>Amplitude </p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>Taille du d&eacute;faut</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Soudure interne D4-D5</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p><supeqref refid="O2.31071"></p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>3 V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>0,6/0,3</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Soudure interne D5-D6</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p><supeqref refid="O2.31071"></p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>3&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>0,6/0,3</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Virole interne amont D5</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p><supeqref refid="O2.31071"></p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>3&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>0,6/0,3</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Virole interne amont D6</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p><supeqref refid="O2.31071"></p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>3&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>0,6/0,3</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Dent amont D5</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p><supeqref refid="O22"></p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>4,5&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>0,6/0,3</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Dent aval D5</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p><supeqref refid="O22"></p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>4,5&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>0,6/0,3</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Dent amont D6</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p><supeqref refid="O22"></p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>4,5&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>0,6/0,3</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Dent aval D6</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p><supeqref refid="O22"></p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>4,5&nbsp;mV</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>0,6/0,3</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Encoches D5</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p><supeqref refid="O22"></p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>1,5&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>0,6/0,4</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Verrous D5</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p><supeqref refid="O22"></p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>1,5&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>0,6/0,4</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Encoches D6</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p><supeqref refid="O22"></p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>1,5&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>0,6/0,4</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Verrous D6</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p><supeqref refid="O22"></p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>1,5&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>0,6/0,4</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0"><para><p>Virole interne aval D5</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p><supeqref refid="O2.31071"></p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>3&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>0,6/0,3</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Canaux D5</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p><supeqref refid="O20202"></p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>X&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>0,6/0,3</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>festons et crochets de d&eacute;trompage (bride aval D6)</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p><supeqref refid="O22"></p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>2,5&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>0,6/0,4</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step3>
+<step3 control="0">
+<para><p>Pour l'&eacute;talonnage 307&ndash;056&ndash;704&ndash;0 (Tol&eacute;rance: + 15&percnt;), se reporter au tableau suivant&nbsp;:</p>
+</para>
+<table tocentry="1"><title>Etalons utilis&eacute;s pour 307&ndash;056&ndash;704&ndash;0</title>
+<tgroup cols="4" align="LEFT"><colspec colnum="1" colname="COL1" colwidth="4.50cm"><colspec colnum="2" colname="COL2" colwidth="6.00cm" colsep="1"><colspec colnum="3" colname="COL3" colwidth="4.66cm" colsep="1"><colspec colnum="4" colname="COL4" colwidth="4.31cm" colsep="1">
+<tbody valign="TOP">
+<row>
+<entry valign="TOP" morerows="0"><para><p>Zone contr&ocirc;l&eacute;e</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>Etalon associ&eacute;</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>Amplitude </p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>Taille du d&eacute;faut</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Soudure interne D4-D5</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p><supeqref refid="O2.31071"></p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>3 V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>0,6/0,3</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Soudure interne D5-D6</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p><supeqref refid="O2.31071"></p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>3&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>0,6/0,3</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>MM virole interne amont D5</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p><supeqref refid="O2.31071"></p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>3&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>0,6/0,3</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>MM virole interne amont D6</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p><supeqref refid="O2.31071"></p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>3&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>0,6/0,3</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Dent amont D5</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p><supeqref refid="O22"></p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>4,5&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>0,6/0,3</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Dent aval D5</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p><supeqref refid="O22"></p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>4,5&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>0,6/0,3</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Dent amont D6</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p><supeqref refid="O22"></p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>4,5&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>0,6/0,3</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Dent aval D6</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p><supeqref refid="O22"></p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>4,5&nbsp;mV</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>0,6/0,3</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Encoches D5</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p><supeqref refid="O22"></p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>1,5&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>0,6/0,4</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Verrous D5</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p><supeqref refid="O22"></p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>1,5&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>0,6/0,4</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Encoches D6</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p><supeqref refid="O22"></p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>1,5&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>0,6/0,4</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Verrous D6</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p><supeqref refid="O22"></p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>1,5&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>0,6/0,4</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0"><para><p>MM virole interne aval D5</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p><supeqref refid="O2.31071"></p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>3&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>0,6/0,3</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Canaux D5</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p><supeqref refid="O20202"></p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>X&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>0,6/0,3</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>festons et crochets de d&eacute;trompage (bride aval D6)</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p><supeqref refid="O22"></p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>2,5&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>0,6/0,4</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step3>
+</step2>
+<step2 control="0" id="P60-70">
+<title>Inspection, &eacute;valuation et sanctions.</title>
+<specpara>
+<note>
+<p>L'installation permet de travailler suivant deux modes. Soit en mode &ldquo;start&rdquo; avec &eacute;valuation des d&eacute;fauts &agrave; chaque fin de zones, soit en lan&ccedil;ant un  &ldquo;start cont&rdquo; de l'ensemble des zones et en effectuant l'exploitation des diff&eacute;rents scans une fois l'ensemble des acquisitions termin&eacute;es.</p>
+</note>
+</specpara>
+<step3 control="0">
+<para><p>Lancer l'inspection des zones contenues dans le programme.</p>
+</para>
+</step3>
+<step3 control="0">
+<para><p>Evaluer toutes les indications verticales cr&ecirc;te &agrave; cr&ecirc;te.</p>
+</para>
+</step3>
+<step3 control="0">
+<para><p>Effectuer une analyse<dmcref xrefid="A1A70360003A353AC"><dmcref xrefid="A1A70360004A353AC">.</p>
+</para>
+</step3>
+<step3 control="0">
+<para><p>Noter les indications sur le rapport de contr&ocirc;le.</p>
+</para>
+</step3>
+</step2>
+<step2 control="0" id="P60-80">
+<para><p>Respecter les crit&egrave;res de conformit&eacute;s suivants&nbsp;tableaux ci-dessous:</p>
+</para>
+<table tocentry="1"><title>Crit&egrave;res et sanctions 307&ndash;056&ndash;702&ndash;0</title>
+<tgroup cols="3" align="LEFT"><colspec colnum="1" colname="COL1" colwidth="4.50cm"><colspec colnum="2" colname="COL3" colwidth="4.66cm" colsep="1"><colspec colnum="3" colname="COL4" colwidth="4.31cm" colsep="1">
+<tbody valign="TOP">
+<row>
+<entry valign="TOP" morerows="0"><para><p>Zone contr&ocirc;l&eacute;e</p>
+</para>
+</entry>
+<entry colname="COL3" valign="TOP" morerows="0"><para><p>Seuil d'&eacute;valuation</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>Seuil de rejet</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Soudure interne D4-D5</p>
+</para>
+</entry>
+<entry colname="COL3" valign="TOP" morerows="0"><para><p>3&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>x</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Soudure interne D5-D6</p>
+</para>
+</entry>
+<entry colname="COL3" valign="TOP" morerows="0"><para><p>3&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>x</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Virolle interne amont D5</p>
+</para>
+</entry>
+<entry colname="COL3" valign="TOP" morerows="0"><para><p>3&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>x</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Virolle interne amont D6</p>
+</para>
+</entry>
+<entry colname="COL3" valign="TOP" morerows="0"><para><p>3&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>x</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Dent amont D5</p>
+</para>
+</entry>
+<entry colname="COL3" valign="TOP" morerows="0"><para><p>4,5&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>x</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Dent aval D5</p>
+</para>
+</entry>
+<entry colname="COL3" valign="TOP" morerows="0"><para><p>4,5&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>x</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Dent amont D6</p>
+</para>
+</entry>
+<entry colname="COL3" valign="TOP" morerows="0"><para><p>4,5&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>x</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Dent aval D6</p>
+</para>
+</entry>
+<entry colname="COL3" valign="TOP" morerows="0"><para><p>4,5&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>x</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Encoches D5</p>
+</para>
+</entry>
+<entry colname="COL3" valign="TOP" morerows="0"><para><p>1,5&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>x</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Verrous D5</p>
+</para>
+</entry>
+<entry colname="COL3" valign="TOP" morerows="0"><para><p>1,5&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>x</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Encoches D6</p>
+</para>
+</entry>
+<entry colname="COL3" valign="TOP" morerows="0"><para><p>1,5&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>x</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Verrous D6</p>
+</para>
+</entry>
+<entry colname="COL3" valign="TOP" morerows="0"><para><p>1,5&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>x</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0"><para><p>Virolle interne aval D5</p>
+</para>
+</entry>
+<entry colname="COL3" valign="TOP" morerows="0"><para><p>3&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>x</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Canaux D5</p>
+</para>
+</entry>
+<entry colname="COL3" valign="TOP" morerows="0"><para><p>X&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>x</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>festons et crochets de d&eacute;trompage (bride aval D6)</p>
+</para>
+</entry>
+<entry colname="COL3" valign="TOP" morerows="0"><para><p>2,5&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>x</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<table tocentry="1"><title>Crit&egrave;res et sanctions 307&ndash;056&ndash;704&ndash;0</title>
+<tgroup cols="3" align="LEFT"><colspec colnum="1" colname="COL1" colwidth="4.50cm"><colspec colnum="2" colname="COL3" colwidth="4.66cm" colsep="1"><colspec colnum="3" colname="COL4" colwidth="4.31cm" colsep="1">
+<tbody valign="TOP">
+<row>
+<entry valign="TOP" morerows="0"><para><p>Zone contr&ocirc;l&eacute;e</p>
+</para>
+</entry>
+<entry colname="COL3" valign="TOP" morerows="0"><para><p>Seuil d'&eacute;valuation</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>Seuil de rejet</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Soudure interne D4-D5</p>
+</para>
+</entry>
+<entry colname="COL3" valign="TOP" morerows="0"><para><p>3&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>x</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Soudure interne D5-D6</p>
+</para>
+</entry>
+<entry colname="COL3" valign="TOP" morerows="0"><para><p>3&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>x</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>MM virole interne amont D5</p>
+</para>
+</entry>
+<entry colname="COL3" valign="TOP" morerows="0"><para><p>3&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>x</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>MM virole interne amont D6</p>
+</para>
+</entry>
+<entry colname="COL3" valign="TOP" morerows="0"><para><p>3&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>x</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Dent amont D5</p>
+</para>
+</entry>
+<entry colname="COL3" valign="TOP" morerows="0"><para><p>4,5&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>x</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Dent aval D5</p>
+</para>
+</entry>
+<entry colname="COL3" valign="TOP" morerows="0"><para><p>4,5&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>x</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Dent amont D6</p>
+</para>
+</entry>
+<entry colname="COL3" valign="TOP" morerows="0"><para><p>4,5&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>x</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Dent aval D6</p>
+</para>
+</entry>
+<entry colname="COL3" valign="TOP" morerows="0"><para><p>4,5&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>x</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Encoches D5</p>
+</para>
+</entry>
+<entry colname="COL3" valign="TOP" morerows="0"><para><p>1,5&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>x</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Verrous D5</p>
+</para>
+</entry>
+<entry colname="COL3" valign="TOP" morerows="0"><para><p>1,5&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>x</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Encoches D6</p>
+</para>
+</entry>
+<entry colname="COL3" valign="TOP" morerows="0"><para><p>1,5&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>x</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Verrous D6</p>
+</para>
+</entry>
+<entry colname="COL3" valign="TOP" morerows="0"><para><p>1,5&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>x</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0"><para><p>MM virole interne aval D5</p>
+</para>
+</entry>
+<entry colname="COL3" valign="TOP" morerows="0"><para><p>3&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>x</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>Canaux D5</p>
+</para>
+</entry>
+<entry colname="COL3" valign="TOP" morerows="0"><para><p>X&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>x</p>
+</para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>festons et crochets de d&eacute;trompage (bride aval D6)</p>
+</para>
+</entry>
+<entry colname="COL3" valign="TOP" morerows="0"><para><p>2,5&nbsp;V</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>x</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step2>
+<step2 control="0" id="P60-100">
+<title>Installation du rotor dans la caisse.</title>
+<step3 control="0">
+<para><p>Installer l'outillage de retournement<supeqref refid="O2.31031"><figref repnohot="2.31031" refid="A723300SF030100409A011">.</p>
+</para>
+</step3>
+<step3 control="0">
+<para><p>Lever puis pivoter le rotor.</p>
+</para>
+</step3>
+<step3 control="0">
+<para><p>Poser le rotor sur le plateau de la machine M2 ou sur une desserte.</p>
+<note>
+<p>Rotor pos&eacute; sur sa face amont.</p>
+</note>
+</para>
+</step3>
+<step3 control="0">
+<para><p>D&eacute;poser l'outillage de retournement<supeqref refid="O2.31031"><figref repnohot="2.31031" refid="A723300SF030100409A011">.</p>
+</para>
+</step3>
+<step3 control="0">
+<para><p>Installer le rotor dans la caisse navette &agrave; l'aide de l'outillage de manutention<supeqref refid="O2.31060"><figref repnohot="2.31060" refid="A723300SF030100443A011">.</p>
+<note>
+<p>Rotor pos&eacute; sur sa face amont.</p>
+</note>
+</para>
+</step3>
+</step2>
+</step1>
+<step1 control="0" id="P80">
+<title>Installation du tambour D4-D6 dans la caisse</title>
+<specpara>
+<note>
+<p>En fonction du dernier programme d&rsquo;inspection et de l&rsquo;orientation de la pi&egrave;ce sur le plateau tournant de la machine, choisir l&rsquo;op&eacute;ration de levage ad&eacute;quate.</p>
+</note>
+</specpara>
+<step2 control="0" id="P80-10">
+<title>Tambour D4-D6 en appui sur face Aval, f&ucirc;t vers le bas (Figure A1B723300SF030100478A011) </title>
+<step3 control="0" id="P80-10-10">
+<para><p>Desserrer le mandrin &agrave; l&rsquo;aide de la cl&eacute; &agrave; mandrin.</p>
+</para>
+</step3>
+<step3 control="0" id="P80-10-20">
+<para><p>S&rsquo;assurer de la libre rotation de la pi&egrave;ce sur l&rsquo;interface appui pi&egrave;ce.</p>
+</para>
+</step3>
+<step3 control="0" id="P80-10-30">
+<para><p>Installer l&rsquo;outillage de retournement (O2.31031, 72016801 096 , OUTILLAGE DE RETOURNEMENT) (Figure A1A723300SF030100409A011, 2.31031</p>
+</para>
+</step3>
+<step3 control="0" id="P80-10-40">
+<para><p>Lever puis pivoter le tambour D4-D6.</p>
+</para>
+</step3>
+<step3 control="0" id="P80-10-50">
+<para><p>Poser le tambour D4-D6 sur une desserte atelier.</p>
+<note>
+<p>Tambour D4-D6 pos&eacute; sur sa face amont.</p>
+</note>
+</para>
+</step3>
+<step3 control="0" id="P80-10-60">
+<para><p>D&eacute;poser l&rsquo;outillage de retournement (O2.31031, 72016801 096 , OUTILLAGE DE RETOURNEMENT) (Figure A1A723300SF030100409A011, 2.31031</p>
+</para>
+</step3>
+<step3 control="0" id="P80-10-70">
+<para><p>Installer le tambour D4D6 dans la caisse navette &agrave; l&rsquo;aide de l&rsquo;outillage de manutention (O2.31060, F0301 888-537-700-0, OUTILLAGE DE MANUTENTION) (Figure A1A723300SF030100443A011, 2.31060</p>
+<note>
+<p>Le tambour D4D6 doit &ecirc;tre pos&eacute; sur sa face amont.</p>
+</note>
+</para>
+</step3>
+</step2>
+<step2 control="0" id="P80-20">
+<title>Tambour D4-D6 en appui sur face Amont, f&ucirc;t vers le haut (Figure A1B723300SF030100479A011 </title>
+<step3 control="0" id="P80-20-10">
+<para><p>Desserrer le mandrin &agrave; l&rsquo;aide de la cl&eacute; &agrave; mandrin.</p>
+</para>
+</step3>
+<step3 control="0" id="P80-20-20">
+<para><p>S&rsquo;assurer de la libre rotation de la pi&egrave;ce sur l&rsquo;interface appui pi&egrave;ce.</p>
+</para>
+</step3>
+<step3 control="0" id="P80-20-30">
+<para><p>Installer l&rsquo;outillage de manutention (O2.31060, F0301 888-537-700-0, OUTILLAGE DE MANUTENTION) (FigureA1A723300SF030100443A011, 2.31060</p>
+</para>
+</step3>
+<step3 control="0" id="P80-20-40">
+<para><p>Lever et d&eacute;poser r le tambour D4D6 dans la caisse navette.</p>
+</para>
+</step3>
+<step3 control="0" id="P80-20-50">
+<para><p>Retirer l&rsquo;outillage de manutention.</p>
+</para>
+<note>
+<p>Le tambour D4D6 doit &ecirc;tre pos&eacute; sur sa face amont.</p>
+</note>
+</step3>
+</step2>
+</step1>
+<figure id="A723300SF030100409A011">
+<title>INSTALLATION OUTILLAGE DE RETOURNEMENT</title>
+<graphic callicn="A1A723300SF030100409A011">
+</figure>
+<figure id="A723300SF030100443A011">
+<title>INSTALLATION OUTILLAGE DE MANUTENTION</title>
+<graphic callicn="A1A723300SF030100443A011">
+</figure>
+<figure id="B723300SF030100476A021">
+<title>INSTALLATION MACHINE M2</title>
+<graphic callicn="A1B723300SF030100476A021">
+</figure>
+<figure id="B723300SF030100477A021">
+<title>ETALONS</title>
+<graphic callicn="A1B723300SF030100477A021">
+</figure>
+<figure id="B723300SF030100697A011">
+<title>PLATEAU TOURNANT AVEC MANDRIN - MORS MOBILES - INTERFACE APPUI PIECE</title>
+<graphic callicn="A1B723300SF030100697A011">
+</figure>
+<figure id="B723300SF030100698A011">
+<title>LOCALISATION DU CARRE DE SERRAGE MORS - MANDRIN</title>
+<graphic callicn="A1B723300SF030100698A011">
+</figure>
+<figure id="B723300SF030100478A011">
+<title>CONTROLE CDF PREMIERE PHASE</title>
+<graphic callicn="A1B723300SF030100478A011">
+</figure>
+<figure id="B723300SF030100479A011">
+<title>CONTROLE CDF DEUXIEME PHASE</title>
+<graphic callicn="A1B723300SF030100479A011">
+</figure>
+<figure id="B723300SF030100480A021">
+<title>ELEMENTS DE CONTROLE</title>
+<graphic callicn="A1B723300SF030100480A021">
+</figure>
+<figure id="B723300SF030100481A021">
+<title>ZONES A CONTROLER</title>
+<graphic callicn="A1B723300SF030100481A021">
+</figure>
+<figure id="B723300SF030100482A021">
+<title>ZONES A CONTROLER</title>
+<graphic callicn="A1B723300SF030100482A021">
+</figure>
+<figure id="B723300SF030100483A021">
+<title>ELEMENTS DE CONTROLE</title>
+<graphic callicn="A1B723300SF030100483A021">
+</figure>
+<figure id="B723300SF030100484A021">
+<title>ELEMENTS DE CONTROLE</title>
+<graphic callicn="A1B723300SF030100484A021">
+</figure>
+<figure id="B723300SF030100485A021">
+<title>ELEMENTS DE CONTROLE</title>
+<graphic callicn="A1B723300SF030100485A021">
+</figure>
+<figure id="B723300SF030100699A011">
+<title>EXEMPLE DE CARTOGRAPHIE ET SCAN ATNH</title>
+<graphic callicn="A1B723300SF030100699A011">
+</figure><?Pub Caret1>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000078370 0>

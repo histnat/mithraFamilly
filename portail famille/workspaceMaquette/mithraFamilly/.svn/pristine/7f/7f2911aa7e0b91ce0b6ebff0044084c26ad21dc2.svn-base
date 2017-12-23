@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:fo="http://www.w3.org/1999/XSL/Format">
+	<xsl:output version="1.0" method="xml" encoding="UTF-8" indent="yes"/>
+	
+	<xsl:variable name="colorDebug">blue</xsl:variable>	
+	<xsl:variable name="colorInfo">green</xsl:variable>	
+	<xsl:variable name="colorWarning">orange</xsl:variable>	
+	<xsl:variable name="colorError">red</xsl:variable>	
+	<xsl:variable name="colorFatal">#690000</xsl:variable>	
+	<xsl:strip-space elements="*"/>
+	<xsl:template match="node()|@*">
+		<xsl:copy>
+			<xsl:apply-templates select="node()|@*"/>
+		</xsl:copy>
+	</xsl:template>
+	<xsl:template match="conversion">
+		<fo:root>
+			<fo:layout-master-set>
+				<fo:simple-page-master master-name="my-page" page-width="8.5in" page-height="11in">
+					<fo:region-body margin-left="2cm"  margin-right="2cm" margin-top="2cm" margin-bottom="2cm"/>
+					<fo:region-before region-name="enteteDePage" extent="1cm"/><!-- extent = hauteur zone contenu haut de page -->
+					<fo:region-after region-name="piedDePage" extent="1cm"/><!-- extent = hauteur zone contenu bas de page -->
+				</fo:simple-page-master>
+			</fo:layout-master-set>
+			<fo:page-sequence master-reference="my-page">
+				<fo:static-content flow-name="enteteDePage">
+				<fo:block text-align="center" font-size="20pt"  font-weight="bold" margin-top="10pt"  margin-bottom="10pt" color="grey">
+				<xsl:text>HISTORIQUE DES EXECUTIONS</xsl:text>
+				</fo:block>
+			</fo:static-content>
+			<fo:static-content flow-name="piedDePage">
+				<fo:table  table-layout="fixed" width="70%" >
+					<fo:table-column column-width="2%"/>
+					<fo:table-column column-width="3%"/>
+					<fo:table-column column-width="15%"/>
+					<fo:table-column column-width="2%"/>
+					<fo:table-column column-width="3%"/>
+					<fo:table-column column-width="15%"/>
+					<fo:table-column column-width="2%"/>
+					<fo:table-column column-width="3%"/>
+					<fo:table-column column-width="15%"/>
+					<fo:table-column column-width="2%"/>
+					<fo:table-column column-width="3%"/>
+					<fo:table-column column-width="15%"/>
+					<fo:table-column column-width="2%"/>
+					<fo:table-column column-width="3%"/>
+					<fo:table-column column-width="15%"/>
+					<fo:table-body>
+						<fo:table-row ><!-- height="2.2cm"-->
+							<xsl:attribute name="height">1cm</xsl:attribute>
+							<fo:table-cell  text-align="left" ><fo:block/></fo:table-cell>
+							<fo:table-cell  text-align="left">
+								<fo:block>
+									<xsl:attribute name="background-color"><xsl:value-of select="$colorDebug"></xsl:value-of></xsl:attribute>
+									<xsl:attribute name="color"><xsl:value-of select="$colorDebug"></xsl:value-of></xsl:attribute>
+									<xsl:text>x</xsl:text>
+								</fo:block>
+							</fo:table-cell>
+							<fo:table-cell  text-align="left" padding="2px"><fo:block><xsl:text>Debug</xsl:text></fo:block></fo:table-cell>
+							<fo:table-cell  text-align="left" ><fo:block/></fo:table-cell>
+							<fo:table-cell  text-align="left">
+								<fo:block>
+									<xsl:attribute name="background-color"><xsl:value-of select="$colorInfo"></xsl:value-of></xsl:attribute>
+									<xsl:attribute name="color"><xsl:value-of select="$colorInfo"></xsl:value-of></xsl:attribute>
+									<xsl:text>x</xsl:text>
+								</fo:block>
+							</fo:table-cell>
+							<fo:table-cell  text-align="left"  padding="2px"><fo:block><xsl:text>Info</xsl:text></fo:block></fo:table-cell>
+							<fo:table-cell  text-align="left" ><fo:block/></fo:table-cell>
+							<fo:table-cell  text-align="left">
+								<fo:block>
+									<xsl:attribute name="background-color"><xsl:value-of select="$colorWarning"></xsl:value-of></xsl:attribute>
+									<xsl:attribute name="color"><xsl:value-of select="$colorWarning"></xsl:value-of></xsl:attribute>
+									<xsl:text>x</xsl:text>
+								</fo:block>
+							</fo:table-cell>
+							<fo:table-cell  text-align="left"  padding="2px"><fo:block><xsl:text>Attention</xsl:text></fo:block></fo:table-cell>
+							<fo:table-cell  text-align="left" ><fo:block/></fo:table-cell>
+							<fo:table-cell  text-align="left">
+								<fo:block>
+									<xsl:attribute name="background-color"><xsl:value-of select="$colorError"></xsl:value-of></xsl:attribute>
+									<xsl:attribute name="color"><xsl:value-of select="$colorError"></xsl:value-of></xsl:attribute>
+									<xsl:text>x</xsl:text>
+								</fo:block>
+							</fo:table-cell>
+							<fo:table-cell  text-align="left"  padding="2px"><fo:block><xsl:text>Erreur</xsl:text></fo:block></fo:table-cell>
+							<fo:table-cell  text-align="left" ><fo:block/></fo:table-cell>
+							<fo:table-cell  text-align="left">
+								<fo:block>
+									<xsl:attribute name="background-color"><xsl:value-of select="$colorFatal"></xsl:value-of></xsl:attribute>
+									<xsl:attribute name="color"><xsl:value-of select="$colorFatal"></xsl:value-of></xsl:attribute>
+									<xsl:text>x</xsl:text>
+								</fo:block>
+							</fo:table-cell>
+							<fo:table-cell  text-align="left"  padding="2px"><fo:block><xsl:text>Fatal</xsl:text></fo:block></fo:table-cell>
+						</fo:table-row>
+					</fo:table-body>
+				</fo:table>
+			</fo:static-content>
+				<fo:flow flow-name="xsl-region-body">
+					<xsl:apply-templates/>
+				</fo:flow>
+			</fo:page-sequence>
+		</fo:root>
+	</xsl:template>
+	<xsl:template match="name">
+		<xsl:choose>
+			<xsl:when test="parent::conversion">
+						<fo:block text-align="center" font-size="20pt"  font-weight="bold" margin-bottom="10pt" margin-top="20pt">
+					<!--<fo:inline text-decoration="underline"><xsl:text>name : </xsl:text></fo:inline>-->
+						<xsl:apply-templates/>
+				</fo:block>
+			</xsl:when>
+			<xsl:otherwise>
+
+			</xsl:otherwise>
+		</xsl:choose>
+
+	</xsl:template>
+	<xsl:template match="sequence">
+	<fo:block>	<fo:inline font-weight="bold" font-size="15pt"  text-decoration="underline"><xsl:text>RESUME</xsl:text></fo:inline> : </fo:block>
+		<fo:block>
+			<fo:table  table-layout="fixed" width="100%" >
+					<fo:table-column column-width="35%"/>
+					<fo:table-column column-width="65%"/>
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block>SEQUENCE : </fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block><xsl:apply-templates/></fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+				</fo:table-body>
+			</fo:table>
+		</fo:block>
+	</xsl:template>
+	<xsl:template match="folderIn">
+		<fo:block>
+			<fo:table  table-layout="fixed" width="100%" >
+					<fo:table-column column-width="35%"/>
+					<fo:table-column column-width="65%"/>
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block>REPERTOIRE D'ENTREE : </fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block><xsl:apply-templates/></fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+				</fo:table-body>
+			</fo:table>
+		</fo:block>
+	</xsl:template>
+	<xsl:template match="folderOut">
+		<fo:block>
+			<fo:table  table-layout="fixed" width="100%" >
+					<fo:table-column column-width="35%"/>
+					<fo:table-column column-width="65%"/>
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block>REPERTOIRE DE SORTIE : </fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block><xsl:apply-templates/></fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+				</fo:table-body>
+			</fo:table>
+		</fo:block>
+	</xsl:template>
+	<xsl:template match="result">
+		<xsl:variable name="myLevel"><xsl:value-of select="."/></xsl:variable>
+			<xsl:variable name="colorValue">
+				<xsl:choose>
+					<xsl:when test="$myLevel='4'"><xsl:value-of select="$colorDebug"></xsl:value-of></xsl:when>
+					<xsl:when test="$myLevel='3'"><xsl:value-of select="$colorInfo"></xsl:value-of></xsl:when>
+					<xsl:when test="$myLevel='2'"><xsl:value-of select="$colorWarning"></xsl:value-of></xsl:when>
+					<xsl:when test="$myLevel='1'"><xsl:value-of select="$colorError"></xsl:value-of></xsl:when>
+					<xsl:when test="$myLevel='0'"><xsl:value-of select="$colorFatal"></xsl:value-of></xsl:when>
+				</xsl:choose>
+		</xsl:variable>
+				<fo:block>
+				<fo:table  table-layout="fixed" width="100%" >
+					<fo:table-column column-width="35%"/>
+					<fo:table-column column-width="65%"/>
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block>RESULTAT : </fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+					
+								<fo:table  table-layout="fixed" width="20mm">
+									<fo:table-column column-width="20mm"/>
+									<fo:table-body>
+										<fo:table-row height="1cm">
+										<fo:table-cell>
+											<fo:block>
+											<xsl:attribute name="background-color"><xsl:value-of select="$colorValue"></xsl:value-of></xsl:attribute>
+											<xsl:attribute name="color"><xsl:value-of select="$colorValue"></xsl:value-of></xsl:attribute>
+											<xsl:text>x</xsl:text>
+											</fo:block>
+										</fo:table-cell>
+									</fo:table-row>
+							</fo:table-body>
+						</fo:table>
+						</fo:table-cell>
+					</fo:table-row>
+				</fo:table-body>
+			</fo:table>
+		</fo:block>
+	</xsl:template>
+	<xsl:template match="duration">
+		<fo:block>
+			<fo:table  table-layout="fixed" width="100%" >
+					<fo:table-column column-width="35%"/>
+					<fo:table-column column-width="65%"/>
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block>TEMPS D'EXECUTION : </fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block><xsl:apply-templates/></fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+				</fo:table-body>
+			</fo:table>
+		</fo:block>
+	</xsl:template>
+	<xsl:template match="tasks">
+	<fo:block text-align="center" margin-top="10pt" margin-bottom="10pt">	__________________________________________________</fo:block>
+		<fo:block>	<fo:inline font-weight="bold" font-size="15pt"  text-decoration="underline"><xsl:text>TACHES</xsl:text></fo:inline> : </fo:block>
+	<!--	<fo:list-block>
+			<xsl:apply-templates/>
+		</fo:list-block>-->
+			<fo:table  table-layout="fixed" width="100%" >
+			<fo:table-body>
+				<xsl:apply-templates/>
+			</fo:table-body>
+		</fo:table>
+		
+	</xsl:template>
+	
+	
+	<xsl:template match="task">
+	
+<!--		<fo:list-item>
+			<fo:list-item-label end-indent="label-end()">
+				<fo:block>&#x02022;</fo:block>
+			</fo:list-item-label>
+			<fo:list-item-body start-indent="body-start()">
+				<fo:block>
+					<xsl:apply-templates/>
+				</fo:block>
+			</fo:list-item-body>
+		</fo:list-item>-->
+		<xsl:if test="result != 'null'">
+
+				<fo:table-row>
+					<fo:table-cell  border="1pt solid grey" padding="0.5cm">
+						<xsl:apply-templates/>
+					</fo:table-cell>
+				</fo:table-row>
+		</xsl:if>
+	</xsl:template>
+	
+	
+	<xsl:template match="acctionId">
+	</xsl:template>
+	
+	<xsl:template match="taskname">
+	<fo:block text-align="center" font-weight="bold" font-size="15pt" margin-top="0.5cm" margin-bottom="0.5cm"><xsl:apply-templates/></fo:block>
+	</xsl:template>
+	
+	
+	<xsl:template match="description">
+		<fo:block>
+			<fo:table  table-layout="fixed" width="100%" >
+					<fo:table-column column-width="35%"/>
+					<fo:table-column column-width="65%"/>
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block>DESCRIPTION : </fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block><xsl:apply-templates/></fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+				</fo:table-body>
+			</fo:table>
+		</fo:block>
+	</xsl:template>
+
+	<xsl:template match="xmlId">
+		<fo:block>
+			<fo:table  table-layout="fixed" width="100%" >
+					<fo:table-column column-width="35%"/>
+					<fo:table-column column-width="65%"/>
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block>XMLID : </fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block><xsl:apply-templates/></fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+				</fo:table-body>
+			</fo:table>
+		</fo:block>
+	</xsl:template>	
+	
+		<xsl:template match="conversionObjects">
+<!--		<fo:block>
+			<fo:table  table-layout="fixed" width="100%" >
+					<fo:table-column column-width="35%"/>
+					<fo:table-column column-width="65%"/>
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block>OBJETS CONVERTIS : </fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block><xsl:apply-templates/></fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+				</fo:table-body>
+			</fo:table>
+		</fo:block>-->
+	</xsl:template>	
+	<xsl:template match="nbConverted">
+		<fo:block>
+			<fo:table  table-layout="fixed" width="100%" >
+					<fo:table-column column-width="35%"/>
+					<fo:table-column column-width="65%"/>
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block>OBJETS CONVERTIS : </fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block><xsl:apply-templates/></fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+				</fo:table-body>
+			</fo:table>
+		</fo:block>
+	</xsl:template>	
+	<xsl:template match="logLines">
+	<xsl:choose>
+		<xsl:when test="parent::task">
+			<fo:block>DETAILS : </fo:block>
+		<fo:table border="1pt solid black" width="100%">
+			<fo:table-column column-width="15%"/>
+<!--			<fo:table-column column-width="15mm"/>-->
+			<fo:table-column column-width="70%"/>
+			<fo:table-column column-width="15%"/>
+			<fo:table-header start-indent="0mm">
+				<fo:table-row>
+					<fo:table-cell border="1pt solid black"  text-align="center" background-color="#939393">
+						<fo:block font-weight="bold">Résultat</fo:block>
+					</fo:table-cell>
+<!--					<fo:table-cell border="1pt solid black"  text-align="center">
+						<fo:block font-weight="bold">result</fo:block>
+					</fo:table-cell>-->
+					<fo:table-cell border="1pt solid black"  text-align="center" background-color="#939393">
+						<fo:block font-weight="bold">Description</fo:block>
+					</fo:table-cell >
+					<fo:table-cell  border="1pt solid black"  text-align="center" background-color="#939393">
+						<fo:block font-weight="bold">Date/Heure</fo:block>
+					</fo:table-cell>
+				</fo:table-row>
+			</fo:table-header>
+			<fo:table-body start-indent="0mm">
+				<xsl:apply-templates/>
+			</fo:table-body>
+		</fo:table>
+		</xsl:when>
+		<xsl:otherwise></xsl:otherwise>
+	</xsl:choose>
+	</xsl:template>
+	<xsl:template match="conversionObject">
+		<fo:table-row>
+			<fo:table-cell border="1pt solid black"  text-align="center" number-columns-spanned="3" background-color="#d3d3d3">
+				<fo:block  font-weight="bold">
+					<xsl:value-of select="identification"></xsl:value-of>
+				</fo:block>
+			</fo:table-cell>
+		</fo:table-row>
+	</xsl:template>
+	<xsl:template match="logLine">
+		<xsl:variable name="myLevel"><xsl:value-of select="level"/></xsl:variable>
+		<xsl:variable name="colorValue">
+				<xsl:choose>
+					<xsl:when test="$myLevel='4'"><xsl:value-of select="$colorDebug"></xsl:value-of></xsl:when>
+					<xsl:when test="$myLevel='3'"><xsl:value-of select="$colorInfo"></xsl:value-of></xsl:when>
+					<xsl:when test="$myLevel='2'"><xsl:value-of select="$colorWarning"></xsl:value-of></xsl:when>
+					<xsl:when test="$myLevel='1'"><xsl:value-of select="$colorError"></xsl:value-of></xsl:when>
+					<xsl:when test="$myLevel='0'"><xsl:value-of select="$colorFatal"></xsl:value-of></xsl:when>
+				</xsl:choose>
+		</xsl:variable>
+		<fo:table-row>
+			<fo:table-cell border="1pt solid black"  text-align="center">
+				<fo:block>
+					<xsl:attribute name="color"><xsl:value-of select="$colorValue"></xsl:value-of></xsl:attribute>
+					<xsl:attribute name="background-color"><xsl:value-of select="$colorValue"></xsl:value-of></xsl:attribute>
+					<xsl:text>X</xsl:text>
+				</fo:block>
+			</fo:table-cell>
+<!--			<fo:table-cell border="1pt solid black"  text-align="center">
+				<fo:block>
+					<xsl:value-of select="result"/>
+				</fo:block>
+			</fo:table-cell>-->
+			<fo:table-cell border="1pt solid black"  text-align="center">
+				<fo:block>
+					<xsl:value-of select="messageLong"/>
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border="1pt solid black"  text-align="center">
+				<fo:block>
+					<xsl:value-of select="timeStamp"/>
+				</fo:block>
+			</fo:table-cell>
+		</fo:table-row>
+	</xsl:template>
+</xsl:stylesheet>

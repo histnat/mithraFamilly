@@ -1,0 +1,2384 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Description 981222//EN">
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<?Pub EntList alpha bull copy rArr sect trade le nbsp percnt>
+<?Pub Inc>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>2</subsect><subject>10</subject><discode>00</discode><discodev>A</discodev><incode>030</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmc>
+<dmtitle><techname>BLOC HYDROMECANIQUE PC</techname><infoname>DONNEES TECHNIQUES - FICHE DE RELEVE DE CONTROLE ESSAI</infoname></dmtitle>
+<issno type="C" issno="5">
+<issdate month="07" year="2010" day="15">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 1"></version>
+<version version="M88-2 ETAPE 4"></version>
+<customer aaf="1" anf="1">
+<nti nti3="1"></systemid>
+</applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Prise en compte de l'amendement MOD 108351. Notification d'amendement NG N&deg; 9443/SQ/PR/PAE/MO du 10/05/2010.</rfu>
+<remarks>RAS</remarks>
+</status>
+</idstatus><content><refs>
+<norefs>
+</refs><descript><para0 id="P10">
+<title>Donn&eacute;es techniques</title>
+<table tocentry="1">
+<title>Relev&eacute; des op&eacute;rations de contr&ocirc;le</title>
+<tgroup cols="7" align="CENTER" rowsep="1"><colspec colnum="1" colname="COL1" colwidth="1.01cm" align="CENTER"><colspec colnum="2" colname="COL2" colwidth="2.99cm"><colspec colnum="3" colname="COL3" colwidth="4.00cm"><colspec colnum="4" colname="COL4" colwidth="3.07cm" align="CENTER"><colspec colnum="5" colname="COL5" colwidth="2.04cm"><colspec colnum="6" colname="COL6" colwidth="1.7cm"><colspec colnum="7" colname="COL7" colwidth="1.7cm" colsep="1"><spanspec spanname="SQSPAN1-2" align="CENTER" nameend="COL2" namest="COL1"><spanspec spanname="SQSPAN4-5" align="CENTER" nameend="COL5" namest="COL4"><spanspec spanname="SQSPAN6-7" align="CENTER" nameend="COL7" namest="COL6">
+<thead valign="BOTTOM">
+<row>
+<entry spanname="SQSPAN1-2" valign="TOP" align="CENTER" morerows="0"><para><p>N&deg;MOTEUR /MODULE/ SERIE</p></para>
+</entry>
+<entry colname="COL3" valign="MIDDLE" morerows="0"><para><p>ELEMENT EQUIPEMENT</p></para>
+</entry>
+<entry spanname="SQSPAN4-5" valign="TOP" align="CENTER" morerows="0"><para><p>N&deg;REF.ELEMENT</p></para>
+</entry>
+<entry spanname="SQSPAN6-7" valign="TOP" align="CENTER" morerows="0"><para><p>ORDRE D'EXECUTION</p></para>
+</entry>
+</row>
+</thead>
+<tbody valign="TOP">
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>Point N&deg;</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>Description des op&eacute;rations</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>Num&eacute;ro DMC</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>Valeur nominale</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>Tol&eacute;rance</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0" rowsep="1"><para><p>Valeur relev&eacute;e</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0" rowsep="1"><para><p>Nom / Matricule / Date</p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>01</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0" rowsep="1"><para><p>Fuite par l'orifice de purge Q26 en mode PC</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>A1A73221000A342AC</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0" rowsep="1"><para><p>&le;&nbsp;30&nbsp;cm <supscrpt>3</supscrpt>/h</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>02</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>Fuite par l'orifice de purge Q26 en mode Sec</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>A1A73221000A342AC</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p>&le;&nbsp;30&nbsp;cm <supscrpt>3</supscrpt>/h</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>03</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>Temp&eacute;rature huile entr&eacute;e The</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>A1A73221000A342AC</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p>04</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>Temp&eacute;rature huile sortie Ths</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p>A1A73221000A342AC</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p>Ths&nbsp;-&nbsp;The</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0" rowsep="1"><para><p>&le;&nbsp;35&nbsp;&deg;C</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>05</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p>Temp&eacute;rature du corps de pompe</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>A1A73221000A342AC</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p>&le;&nbsp;120&nbsp;&deg;C</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>06</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p>Fuite par l'orifice de drainage Qd</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>A1A73221000A342AC</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p>&le;&nbsp;20&nbsp;cm <supscrpt>3</supscrpt>/h</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>07</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p>Mesure de r&eacute;sistance</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>A1A73221000A365AC</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p>&le; 10&nbsp;m&Omega;</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p>08</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>Mesure du circuit voie droite et gauche</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p>A1A73221000A366AC</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>Broches 1-2</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>93&nbsp;&ohm;</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>&plusmn;&nbsp;5&nbsp;&ohm;</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>Broches 3-4</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>93&nbsp;&ohm;</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>&plusmn;&nbsp;5&nbsp;&ohm;</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>Broches 5-6</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>1350&nbsp;&ohm;</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>&plusmn;&nbsp;150&nbsp;&ohm;</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>Broches 7-8</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>1350&nbsp;&ohm;</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>&plusmn;&nbsp;150&nbsp;&ohm;</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>Broches 9-10</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p change="MOD">31&nbsp;&ohm;</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>(0&nbsp;;&nbsp;-&nbsp;5)&nbsp;&ohm;</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>Broches 10-11</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p change="MOD">31&nbsp;&ohm;</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>(0&nbsp;;&nbsp;-&nbsp;5)&nbsp;&ohm;</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>Broches 12-13</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p change="MOD">31&nbsp;&ohm;</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>(0&nbsp;;&nbsp;-&nbsp;5)&nbsp;&ohm;</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p>Broches 13-14</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p change="MOD">31&nbsp;&ohm;</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p>(0&nbsp;;&nbsp;-&nbsp;5)&nbsp;&ohm;</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p>09</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>Mesure des circuits (position BHMPC)</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p>A1A73221000A366AC</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>1-2</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>&ge;&nbsp;20&nbsp; M&ohm;</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>3-4</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>&ge;&nbsp;20&nbsp; M&ohm;</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>5-6</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>&ge;&nbsp;20&nbsp; M&ohm;</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>7-8</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>&ge;&nbsp;20&nbsp; M&ohm;</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>9-10-11</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>&ge;&nbsp;20&nbsp; M&ohm;</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p>12-13-14</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p>&ge;&nbsp;20&nbsp; M&ohm;</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>10</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p>Contr&ocirc;le du circuit de purge (fuite Q26)</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>A1A73221000A340AC</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p>73&nbsp;l/h</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p>&plusmn;&nbsp;10&nbsp;l/h</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>11</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p>Etanch&eacute;it&eacute; en mode "sec" (fuite orifice purge Q26)</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>A1A73221000A340AC</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p>&le;&nbsp;30&nbsp;cm&nbsp; <supscrpt>3</supscrpt>/h</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p>12</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>ERSPC ouvert en excitant ERSPCOG</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p>A1A73221000A340AC</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>P27</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="0"><para><p>P28</p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="0"><para><p>P4&nbsp;-&nbsp;P28</p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>0&nbsp;bar</p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="0"><para><p>&plusmn;&nbsp;1&nbsp;bar</p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p>P27&nbsp;-&nbsp;P4</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p>&gt;&nbsp;57&nbsp;bar</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p>13</p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="0"><para><p>ERSPC ferm&eacute; en excitant ERSPCFG</p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p>A1A73221000A340AC</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="0"><para><p>P28</p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="1"><para><p>P7&nbsp;-&nbsp;P28</p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p>0&nbsp;bar</p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="1"><para><p>&plusmn;&nbsp;1&nbsp;bar</p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p>14</p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="0"><para><p>ERSPC ouvert en excitant ERSPCOD</p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p>A1A73221000A340AC</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>P27</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="0"><para><p>P28</p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="0"><para><p>P4&nbsp;-&nbsp;P28</p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>0&nbsp;bar</p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="0"><para><p>&plusmn;&nbsp;1&nbsp;bar</p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="1"><para><p>P27&nbsp;-&nbsp;P4</p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p>&gt;&nbsp;57&nbsp;bar</p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p>15</p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="0"><para><p>ERSPC ferm&eacute; en excitant ERSPCFD</p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p>A1A73221000A340AC</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="0"><para><p>P28</p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="1"><para><p>P7&nbsp;-&nbsp;P28</p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p>0&nbsp;bar</p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="1"><para><p>&plusmn;&nbsp;1&nbsp;bar</p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p>16</p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="0"><para><p>Fuites des soupapes en position fermeture</p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p>A1A73221000A340AC</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="0"><para><p>C13</p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>170&nbsp;l/h</p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="0"><para><p>&plusmn;&nbsp;20&nbsp;l/h</p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="0"><para><p>P27</p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>P4</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="0"><para><p>P27&nbsp;-&nbsp;P4</p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>&gt;&nbsp;55&nbsp;bar</p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="1"><para><p>C11</p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p change="MOD">10&nbsp;l/h</p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="1"><para><p change="MOD">&plusmn;&nbsp;100&nbsp;l/h</p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+</row>
+</tbody>
+</tgroup></table>
+<table tocentry="1">
+<title>Relev&eacute; de valeur pour CFG (A1A73221000A340AC)</title>
+<tgroup cols="9" align="LEFT"><colspec colnum="1" colname="COLSPEC0" colwidth="1.00cm"><colspec colnum="2" colname="COL1" colwidth="1.9cm" align="CENTER"><colspec colnum="3" colname="COL2" colwidth="1.90cm" align="CENTER"><colspec colnum="4" colname="COL3" colwidth="1.9cm"><colspec colnum="5" colname="COL4" colwidth="1.9cm"><colspec colnum="6" colname="COL5" colwidth="1.9cm"><colspec colnum="7" colname="COL6" colwidth="1.9cm"><colspec colnum="8" colname="COL7" colwidth="1.9cm"><colspec colnum="9" colname="COL8" colwidth="1.8cm" colsep="1">
+<thead valign="BOTTOM">
+<row>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>Point N&deg;</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>CFG</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>C11</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>50&nbsp;&le;&nbsp;ISVFG&nbsp;&le;&nbsp;60mA</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>Tt11</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>Tcsf</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>Tcsp</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" colsep="0" morerows="0"><para><p>(CF&nbsp;-&nbsp;C11)&nbsp;/&nbsp;C11</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>IT</p></para>
+</entry>
+</row>
+</thead>
+<tbody valign="TOP">
+<row>
+<entry valign="MIDDLE" align="CENTER" morerows="0" rowsep="0"><para><p>17</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>240&nbsp;l/h</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>&le;&nbsp;&plusmn;&nbsp;6&nbsp;&percnt;</p></para>
+</entry>
+</row>
+<row>
+<entry valign="MIDDLE" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>580&nbsp;l/h</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>&le;&nbsp;&plusmn;&nbsp;6&nbsp;&percnt;</p></para>
+</entry>
+</row>
+<row>
+<entry valign="MIDDLE" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>1000&nbsp;l/h</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>&le;&nbsp;&plusmn;&nbsp;3&nbsp;&percnt;</p></para>
+</entry>
+</row>
+<row>
+<entry valign="MIDDLE" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>2500&nbsp;l/h</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>&le;&nbsp;&plusmn;&nbsp;3&nbsp;&percnt;</p></para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="MIDDLE" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>4300&nbsp;l/h</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>&le;&nbsp;&plusmn;&nbsp;3&nbsp;&percnt;</p></para>
+</entry>
+</row>
+</tbody>
+</tgroup></table>
+<table tocentry="1">
+<title>Relev&eacute; de valeur pour CFD (A1A73221000A340AC)</title>
+<tgroup cols="9" align="LEFT"><colspec colnum="1" colname="COLSPEC1" colwidth="1.00cm"><colspec colnum="2" colname="COL1" colwidth="1.9cm" align="CENTER"><colspec colnum="3" colname="COL2" colwidth="1.9cm" align="CENTER"><colspec colnum="4" colname="COL3" colwidth="1.9cm"><colspec colnum="5" colname="COL4" colwidth="1.9cm"><colspec colnum="6" colname="COL5" colwidth="1.9cm"><colspec colnum="7" colname="COL6" colwidth="1.9cm"><colspec colnum="8" colname="COL7" colwidth="1.9cm"><colspec colnum="9" colname="COL8" colwidth="1.8cm" colsep="1">
+<thead valign="BOTTOM">
+<row>
+<entry valign="MIDDLE" align="CENTER" morerows="0" rowsep="1"><para><p>Point N&deg;</p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>CFD</p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>C11</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>50&nbsp;&le;&nbsp;ISVFD&nbsp;&le;&nbsp;60mA</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>Tt11</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>Tcsf</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>Tcsp</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" colsep="0" morerows="0"><para><p>(CF&nbsp;-&nbsp;C11)&nbsp;/&nbsp;C11</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>IT</p></para>
+</entry>
+</row>
+</thead>
+<tbody valign="TOP">
+<row>
+<entry valign="MIDDLE" align="CENTER" morerows="0" rowsep="0"><para><p>18</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>4300&nbsp;l/h</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>&le;&nbsp;&plusmn;&nbsp;3&nbsp;&percnt;</p></para>
+</entry>
+</row>
+<row>
+<entry valign="MIDDLE" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>2500&nbsp;l/h</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>&le;&nbsp;&plusmn;&nbsp;3&nbsp;&percnt;</p></para>
+</entry>
+</row>
+<row>
+<entry valign="MIDDLE" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>1000&nbsp;l/h</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>&le;&nbsp;&plusmn;&nbsp;3&nbsp;&percnt;</p></para>
+</entry>
+</row>
+<row>
+<entry valign="MIDDLE" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>580&nbsp;l/h</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>&le;&nbsp;&plusmn;&nbsp;6&nbsp;&percnt;</p></para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="MIDDLE" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>240&nbsp;l/h</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>&le;&nbsp;&plusmn;&nbsp;6&nbsp;&percnt;</p></para>
+</entry>
+</row>
+</tbody>
+</tgroup></table>
+<table tocentry="1">
+<title>Relev&eacute; de valeur des &eacute;carts entre chaque couple de d&eacute;bit (A1A73221000A340AC)</title>
+<tgroup cols="4" align="LEFT"><colspec colnum="1" colname="COLSPEC2" colwidth="1.00cm"><colspec colnum="2" colname="COL1" colwidth="4.00cm" align="CENTER"><colspec colnum="3" colname="COL2" colwidth="4.00cm" align="CENTER"><colspec colnum="4" colname="COL3" colwidth="4.00cm" align="CENTER" colsep="1">
+<thead valign="BOTTOM">
+<row>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p>Point N&deg;</p></para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>CF</p></para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>&Verbar;ISVFG&nbsp;-&nbsp;ISVFD&Verbar;</p></para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>Valeur nominale</p></para>
+</entry>
+</row>
+</thead>
+<tbody valign="TOP">
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p>19</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p>4300&nbsp;l/h</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p>&le;&nbsp;4&nbsp;mA</p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p>2500&nbsp;l/h</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p>&le;&nbsp;4&nbsp;mA</p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p>1000&nbsp;l/h</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p>&le;&nbsp;4&nbsp;mA</p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p>580&nbsp;l/h</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p>&le;&nbsp;4&nbsp;mA</p></para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p>240&nbsp;l/h</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p>&le;&nbsp;4&nbsp;mA</p></para>
+</entry>
+</row>
+</tbody>
+</tgroup></table>
+<table tocentry="1">
+<title>Relev&eacute; de valeur pour CPG (A1A73221000A340AC)</title>
+<tgroup cols="11" align="LEFT"><colspec colnum="1" colname="COLSPEC3" colwidth="1.00cm"><colspec colnum="2" colname="COL1" colwidth="1.72cm" align="CENTER"><colspec colnum="3" colname="COL2" colwidth="1.61cm" align="CENTER"><colspec colnum="4" colname="COL3" colwidth="1.61cm"><colspec colnum="5" colname="COL4" colwidth="1.72cm"><colspec colnum="6" colname="COL5" colwidth="1.67cm"><colspec colnum="7" colname="COL6" colwidth="1.43cm"><colspec colnum="8" colname="COL7" colwidth="1.32cm"><colspec colnum="9" colname="COL8" colwidth="1.35cm"><colspec colnum="10" colname="COL9" colwidth="1.43cm"><colspec colnum="11" colname="COL10" colwidth="1.46cm" colsep="1">
+<thead valign="BOTTOM">
+<row>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>Point N&deg;</p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>PCPG</p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>C13</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>45&nbsp;&le;&nbsp;ISVPG&nbsp;&le;&nbsp;55mA</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>Tt13</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>Tcsf</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>Tcsp</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>P27</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>P4</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" colsep="0" morerows="0"><para><p>(CP&nbsp;-&nbsp;C13)&nbsp;/&nbsp;C13</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>IT</p></para>
+</entry>
+</row>
+</thead>
+<tbody valign="TOP">
+<row>
+<entry valign="MIDDLE" align="CENTER" morerows="0" rowsep="0"><para><p>20</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>650&nbsp;l/h</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>&le;&nbsp;&plusmn;&nbsp;6&nbsp;&percnt;</p></para>
+</entry>
+</row>
+<row>
+<entry valign="MIDDLE" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>950&nbsp;l/h</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>&le;&nbsp;&plusmn;&nbsp;6&nbsp;&percnt;</p></para>
+</entry>
+</row>
+<row>
+<entry valign="MIDDLE" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>4000&nbsp;l/h</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>&le;&nbsp;&plusmn;&nbsp;3&nbsp;&percnt;</p></para>
+</entry>
+</row>
+<row>
+<entry valign="MIDDLE" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>8000&nbsp;l/h</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>&le;&nbsp;&plusmn;&nbsp;3&nbsp;&percnt;</p></para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="MIDDLE" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>13000&nbsp;l/h</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>&le;&nbsp;&plusmn;&nbsp;3&nbsp;&percnt;</p></para>
+</entry>
+</row>
+</tbody>
+</tgroup></table>
+<table tocentry="1">
+<title>Relev&eacute; de valeur pour CPD (A1A73221000A340AC)</title>
+<tgroup cols="11" align="LEFT"><colspec colnum="1" colname="COLSPEC4" colwidth="1.00cm"><colspec colnum="2" colname="COL1" colwidth="1.72cm" align="CENTER"><colspec colnum="3" colname="COL2" colwidth="1.61cm" align="CENTER"><colspec colnum="4" colname="COL3" colwidth="1.61cm"><colspec colnum="5" colname="COL4" colwidth="1.75cm"><colspec colnum="6" colname="COL5" colwidth="1.67cm"><colspec colnum="7" colname="COL6" colwidth="1.43cm"><colspec colnum="8" colname="COL07" colwidth="1.32cm"><colspec colnum="9" colname="COL08" colwidth="1.35cm"><colspec colnum="10" colname="COL7" colwidth="1.43cm"><colspec colnum="11" colname="COL8" colwidth="1.46cm" colsep="1">
+<thead valign="BOTTOM">
+<row>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>Point N&deg;</p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>CPD</p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>C13</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>45&nbsp;&le;&nbsp;ISVPD&nbsp;&le;&nbsp;55mA</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>Tt1<?Pub Caret>3</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>Tcsf</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>Tcsp</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>P27</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>P4</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" colsep="0" morerows="0"><para><p>(CP&nbsp;-&nbsp;C13)&nbsp;/&nbsp;C13</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>IT</p></para>
+</entry>
+</row>
+</thead>
+<tbody valign="TOP">
+<row>
+<entry valign="MIDDLE" align="CENTER" morerows="0" rowsep="0"><para><p>21</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>13000&nbsp;l/h</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>&le;&nbsp;&plusmn;&nbsp;3&nbsp;&percnt;</p></para>
+</entry>
+</row>
+<row>
+<entry valign="MIDDLE" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>8000&nbsp;l/h</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>&le;&nbsp;&plusmn;&nbsp;3&nbsp;&percnt;</p></para>
+</entry>
+</row>
+<row>
+<entry valign="MIDDLE" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>4000&nbsp;l/h</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>&le;&nbsp;&plusmn;&nbsp;3&nbsp;&percnt;</p></para>
+</entry>
+</row>
+<row>
+<entry valign="MIDDLE" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>950&nbsp;l/h</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>&le;&nbsp;&plusmn;&nbsp;6&nbsp;&percnt;</p></para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="MIDDLE" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p>650&nbsp;l/h</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>&le;&nbsp;&plusmn;&nbsp;6&nbsp;&percnt;</p></para>
+</entry>
+</row>
+</tbody>
+</tgroup></table>
+<table tocentry="1">
+<title>Relev&eacute; de valeur des &eacute;carts entre chaque couple de d&eacute;bit (A1A73221000A340AC)</title>
+<tgroup cols="4" align="LEFT"><colspec colnum="1" colname="COLSPEC5" colwidth="1.00cm"><colspec colnum="2" colname="COL1" colwidth="4.00cm" align="CENTER"><colspec colnum="3" colname="COL2" colwidth="4.00cm" align="CENTER"><colspec colnum="4" colname="COL3" colwidth="4.00cm" align="CENTER" colsep="1">
+<thead valign="BOTTOM">
+<row>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p>Point N&deg;</p></para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>CF</p></para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>&Verbar;ISVPG&nbsp;-&nbsp;ISVPD&Verbar;</p></para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>Valeur nominale</p></para>
+</entry>
+</row>
+</thead>
+<tbody valign="TOP">
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p>22</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p>13000&nbsp;l/h</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p>&le;&nbsp;4&nbsp;mA</p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p>8000&nbsp;l/h</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p>&le;&nbsp;4&nbsp;mA</p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p>4000&nbsp;l/h</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p>&le;&nbsp;4&nbsp;mA</p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p>950&nbsp;l/h</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p>&le;&nbsp;4&nbsp;mA</p></para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p>650&nbsp;l/h</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0"><para><p>&le;&nbsp;4&nbsp;mA</p></para>
+</entry>
+</row>
+</tbody>
+</tgroup></table>
+<table tocentry="1"><tgroup cols="7" align="CENTER" rowsep="1"><colspec colnum="1" colname="COL1" colwidth="1.01cm" align="CENTER"><colspec colnum="2" colname="COL2" colwidth="2.99cm"><colspec colnum="3" colname="COL3" colwidth="4.00cm"><colspec colnum="4" colname="COL4" colwidth="3.07cm" align="CENTER"><colspec colnum="5" colname="COL5" colwidth="2.04cm"><colspec colnum="6" colname="COL6" colwidth="1.8cm"><colspec colnum="7" colname="COL7" colwidth="1.8cm" colsep="1"><spanspec spanname="SQSPAN1-2" align="CENTER" nameend="COL2" namest="COL1"><spanspec spanname="SQSPAN4-5" align="CENTER" nameend="COL5" namest="COL4"><spanspec spanname="SQSPAN6-7" align="CENTER" nameend="COL7" namest="COL6">
+<thead valign="BOTTOM">
+<row>
+<entry spanname="SQSPAN1-2" valign="TOP" align="CENTER" morerows="0"><para><p>N&deg;MOTEUR /MODULE/ SERIE</p></para>
+</entry>
+<entry colname="COL3" valign="MIDDLE" morerows="0"><para><p>ELEMENT EQUIPEMENT</p></para>
+</entry>
+<entry spanname="SQSPAN4-5" valign="TOP" align="CENTER" morerows="0"><para><p>N&deg;REF.ELEMENT</p></para>
+</entry>
+<entry spanname="SQSPAN6-7" valign="TOP" align="CENTER" morerows="0"><para><p>ORDRE D'EXECUTION</p></para>
+</entry>
+</row>
+</thead>
+<tbody valign="TOP">
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>Point N&deg;</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>Description des op&eacute;rations</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>Num&eacute;ro DMC</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>Valeur nominale</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>Tol&eacute;rance</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0" rowsep="1"><para><p>Valeur relev&eacute;e</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0" rowsep="1"><para><p>Nom / Matricule / Date</p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p>22</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0" rowsep="0"><para><p>V&eacute;rification de la loi POMPE P27&nbsp;-&nbsp;P4</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p>A1A73221000A340AC</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p>650&nbsp;l/h</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>&gt;&nbsp;54&nbsp;bar</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p>950&nbsp;l/h</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p>&gt;&nbsp;54&nbsp;bar</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>4000&nbsp;l/h</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>&gt;&nbsp;56&nbsp;bar</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>8000&nbsp;l/h</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>&gt;&nbsp;58&nbsp;bar</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p>13000&nbsp;l/h</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p>&gt;&nbsp;58&nbsp;bar</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p>23</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>Relev&eacute; de pression (ERC ferm&eacute;)</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p>A1A73221000A340AC</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>P14</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>P15</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p>P14&nbsp;-&nbsp;P15</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p>0&nbsp;bar</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p>&plusmn;&nbsp;1</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p>24</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>Relev&eacute; de pression (ERC ouvert en excitant ERCOG)</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p>A1A73221000A340AC</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p>P14</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p>&nbsp;&ge;&nbsp;32&nbsp;bar</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p>25</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>Relev&eacute; de pression (ERC ferm&eacute; en excitant ERCFG)</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p>A1A73221000A340AC</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>P14</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>P15</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p>P15&nbsp;-&nbsp;P14</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p>0&nbsp;bar</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p>&plusmn;&nbsp;1</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p>26</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p> ERC ouvert en excitant ERCOD</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p>A1A73221000A340AC</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p>P14</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p>&ge;&nbsp;32&nbsp;bar</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p>27</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>ERC ferm&eacute; en excitant ERCFD</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p>A1A73221000A340AC</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>P14</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>P15</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p>P15&nbsp;-&nbsp;P14</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p>0&nbsp;bar</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p>&plusmn;&nbsp;1</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p>28</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>Temps de d&eacute;placement de la soupape FAN</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p>A1A73221000A340AC</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>sens ouverture</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>&le;&nbsp;0,15&nbsp;s</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p>sens fermeture</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p>&le;&nbsp;0,15&nbsp;s</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p>29</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>Temps de d&eacute;placement de la soupape PRIMAIRE</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p>A1A73221000A340AC</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="0"><para><p>sens ouverture</p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>&le;&nbsp;0,7&nbsp;s</p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="1"><para><p>sens fermeture</p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p>&le;&nbsp;0,7&nbsp;s</p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0" rowsep="1"><para><p>30</p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="1"><para><p>Temps ouverture (TC1) pour P27&nbsp;=&nbsp;50&nbsp;bar</p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="1"><para><p>A1A73221000A340AC</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p>&le;&nbsp;0,5&nbsp;s</p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p>31</p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="0"><para><p>Temps fermeture (TC2) pour P27&nbsp;=&nbsp;20&nbsp;bar</p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p>A1A73221000A340AC</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>&le;&nbsp;2,5&nbsp;s</p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p>32</p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="0"><para><p>Contr&ocirc;le fonctionnement clapet anti-retour ERSPC ouvert en excitant ERSPCOG</p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p>A1A73221000A340AC</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>P4</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="0"><para><p>P27</p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="1"><para><p>P4&nbsp;-&nbsp;P27</p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p>0&nbsp;bar</p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="1"><para><p>&plusmn;&nbsp;1</p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p>33</p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="0"><para><p>ERSPC ferm&eacute; en excitant ERSPCFG</p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p>A1A73221000A340AC</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="0"><para><p>P27</p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="0"><para><p>P15</p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="1"><para><p>P27&nbsp;-&nbsp;P15</p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="1"><para><p>0.5&nbsp;bar</p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="1"><para><p>&plusmn;&nbsp;0.5</p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p>34</p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="0"><para><p>Etanch&eacute;it&eacute; haute pression</p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p>A1A73221000A340AC</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="0"><para><p>Q26</p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>&le;&nbsp;30&nbsp;cm<supscrpt>3</supscrpt>/h</p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>Qd</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p>&le;&nbsp;20&nbsp;cm<supscrpt>3</supscrpt>/h</p></para>
+</entry>
+<entry valign="BOTTOM" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="BOTTOM" morerows="0" rowsep="1"><para><p>Suintement externe</p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>0</p></para>
+</entry>
+<entry valign="TOP" align="LEFT" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" morerows="0"><para><p>35</p></para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>Etanch&eacute;it&eacute; basse pression</p></para>
+<para><p>Fuite ou suintement externe</p></para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>A1A73221000A340AC</p></para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p></p></para>
+<para><p></p></para>
+<para><p></p></para>
+<para><p>0</p></para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p></p></para>
+</entry>
+</row>
+</tbody>
+</tgroup></table>
+<table tocentry="1"><applic><config><mod modnb="145-15.18" modcond="POST"></config></applic>
+<tgroup cols="7" align="CENTER" rowsep="1"><colspec colnum="1" colname="COL1" colwidth="1.01cm" align="CENTER"><colspec colnum="2" colname="COL2" colwidth="2.99cm"><colspec colnum="3" colname="COL3" colwidth="4.00cm"><colspec colnum="4" colname="COL4" colwidth="3.07cm" align="CENTER"><colspec colnum="5" colname="COL5" colwidth="2.04cm"><colspec colnum="6" colname="COL6" colwidth="1.8cm"><colspec colnum="7" colname="COL7" colwidth="1.8cm" colsep="1"><spanspec spanname="SQSPAN1-2" align="CENTER" nameend="COL2" namest="COL1"><spanspec spanname="SQSPAN4-5" align="CENTER" nameend="COL5" namest="COL4"><spanspec spanname="SQSPAN6-7" align="CENTER" nameend="COL7" namest="COL6">
+<thead valign="BOTTOM">
+<row>
+<entry spanname="SQSPAN1-2" valign="TOP" align="CENTER" morerows="0"><para><p>N&deg;MOTEUR /MODULE/ SERIE</p></para>
+</entry>
+<entry colname="COL3" valign="MIDDLE" morerows="0"><para><p>ELEMENT EQUIPEMENT</p></para>
+</entry>
+<entry spanname="SQSPAN4-5" valign="TOP" align="CENTER" morerows="0"><para><p>N&deg;REF.ELEMENT</p></para>
+</entry>
+<entry spanname="SQSPAN6-7" valign="TOP" align="CENTER" morerows="0"><para><p>ORDRE D'EXECUTION</p></para>
+</entry>
+</row>
+</thead>
+<tbody valign="TOP">
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>Point N&deg;</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>Description des op&eacute;rations</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>Num&eacute;ro DMC</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>Valeur nominale</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="1"><para><p>Tol&eacute;rance</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0" rowsep="1"><para><p>Valeur relev&eacute;e</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0" rowsep="1"><para><p>Nom / Matricule / Date</p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p>36</p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p>Contr&ocirc;le du d&eacute;bit du clapet de sortie (pompe en rotation lente)</p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p>A1A73221000A340AC</p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0" rowsep="0"><para><p>C13</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0" rowsep="0"><para><p>Q26&nbsp;&le;&nbsp;30&nbsp;cm<supscrpt>3</supscrpt>/h</p></para>
+<para><p>1800&nbsp;l/h</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+<para><p>&plusmn;&nbsp;100&nbsp;l/h</p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="MIDDLE" align="CENTER" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+</tbody>
+</tgroup></table>
+</para0><para0 id="P20">
+<table tocentry="1"><tgroup cols="3" align="LEFT" colsep="1" rowsep="1"><colspec colnum="1" colname="SQCOLUMN1" colwidth="5.66cm" align="CENTER" colsep="1" rowsep="1"><colspec colnum="2" colname="SQCOLUMN2" colwidth="5.66cm" align="CENTER" colsep="1" rowsep="1"><colspec colnum="3" colname="SQCOLUMN3" colwidth="5.66cm" align="CENTER" colsep="1" rowsep="1">
+<tbody valign="TOP">
+<row>
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><p>BUREAU METHODES</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><p>DATE INSERTION ET SIGNATURES</p></para>
+</entry>
+<entry valign="TOP" align="CENTER" colsep="1" morerows="0" rowsep="1"><para><p>ASSURANCE QUALITE</p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" colsep="1" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" colsep="1" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" colsep="1" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" colsep="1" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" colsep="1" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" colsep="1" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" colsep="1" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" colsep="1" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+<entry valign="TOP" colsep="1" morerows="0" rowsep="0"><para><p></p></para>
+</entry>
+</row>
+<row rowsep="1">
+<entry valign="TOP" colsep="1" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" colsep="1" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+<entry valign="TOP" colsep="1" morerows="0" rowsep="1"><para><p></p></para>
+</entry>
+</row>
+</tbody>
+</tgroup></table>
+</para0></descript></content></dmodule>
+<?Pub *0000099289 0>

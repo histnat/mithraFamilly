@@ -1,0 +1,84 @@
+package com.sonovision.openconv.modules.sgmlprocess.model;
+
+import java.io.PrintStream;
+import java.util.Enumeration;
+import java.util.Hashtable;
+
+import com.sonovision.openconv.modules.sgmlprocess.exception.SGMLException;
+
+public class StartTag extends Bit
+{
+ String name;
+ Hashtable attr_table = new Hashtable();
+ public static Object no_value = new Object();
+
+ public StartTag(String _name)
+ {
+	name = _name.toLowerCase().intern();
+ }
+
+ 
+ public String getName() {
+	return name;
+}
+
+
+public void setName(String name) {
+	this.name = name;
+}
+
+
+public Hashtable getAttr_table() {
+	return attr_table;
+}
+
+
+public void setAttr_table(Hashtable attr_table) {
+	this.attr_table = attr_table;
+}
+
+
+public void addAttr(String name, String value)
+ {
+	attr_table.put(name.toLowerCase().intern(), value);
+ }
+
+public void addAttr(String name)
+ {
+	attr_table.put(name.toLowerCase().intern(), no_value);
+ }
+
+ boolean hasAttr(String name)
+ {
+	return attr_table.containsKey(name.toLowerCase());
+ }
+
+ String attrValue(String name)
+ {
+	Object value = attr_table.get(name.toLowerCase());
+
+	if(value == null)
+	    throw new SGMLException("Attempt to get non-existent attribute");
+
+	return value == no_value ? null : (String)value;
+ }
+
+ Enumeration attributes()
+ {
+	return attr_table.keys();
+ }
+
+ public void print(PrintStream out)
+ {
+	out.println("Start " + name);
+	for(Enumeration e = attributes(); e.hasMoreElements(); )
+	{
+	    String name = (String)e.nextElement();
+	    String value = attrValue(name);
+	    out.print("   " + name);
+	    if(value != null)
+		out.print(" = " + value);
+	    out.println("");
+	}
+ }
+}

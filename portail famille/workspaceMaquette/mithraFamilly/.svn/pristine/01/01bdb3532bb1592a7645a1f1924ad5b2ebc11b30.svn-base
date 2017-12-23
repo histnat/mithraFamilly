@@ -1,0 +1,18 @@
+package com.sonovision.openconv.codification.exception;
+
+public class CodificationException extends Exception  {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3123126308244730965L;
+
+	public CodificationException() {}
+	
+	public CodificationException(String message){
+		super(message);
+	}
+	
+	public CodificationException(String message, Throwable cause){
+		super(message,cause);
+	}
+}

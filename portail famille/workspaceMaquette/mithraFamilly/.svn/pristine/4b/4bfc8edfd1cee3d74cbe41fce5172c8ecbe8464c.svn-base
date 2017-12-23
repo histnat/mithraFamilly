@@ -1,0 +1,419 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1Z732210SF030100003A021 SYSTEM "x-dm://0900f90b80002d76,MYWORKING" NDATA cgm>
+]>
+<?Pub EntList bull copy rArr sect trade nbsp>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>73</chapnum><section>2</section><subsect>2</subsect><subject>99</subject><discode>13</discode><discodev>A</discodev><incode>930</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmc>
+<dmtitle><techname>SERVICE BULLETIN IDENTIFICATION BHMPC</techname><infoname>SERVICE BULLETIN - OPERATION EXCEPTIONNELLE DE MAINTENANCE</infoname></dmtitle>
+<issno type="n" issno="1">
+<issdate month="06" year="2011" day="21">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 4"></version>
+<customer aaf="1" anf="1">
+<nti nti1="0" nti2="1" nti3="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Version initiale.</rfu>
+<remarks>RAS</remarks>
+<icns><icn id="A1Z732210SF030100003A021">
+<icn-c><modelic>A1</modelic><sdc>Z</sdc><chapnum>73</chapnum><section>2</section><subsect>2</subsect><subject>10</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00003</illnum><illver>A</illver><illupdat>02</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<refdm>
+<dmcid id="A1ARF720500A100FC"><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>RF</ecscc><eidc>72</eidc><cic>05</cic><discode>00</discode><discodev>A</discodev><incode>100</incode><incodev>F</incodev><itemloc>C</itemloc></age></dmcid>
+<dmcid id="A1ARF720505A100AC"><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>RF</ecscc><eidc>72</eidc><cic>05</cic><discode>05</discode><discodev>A</discodev><incode>100</incode><incodev>A</incodev><itemloc>C</itemloc></age></dmcid>
+</refdm>
+</refs><proced><pmd>
+<manhour value="1,0"></manhour>
+<duration value="1,0"></duration>
+</pmd><prelreqs><reqconds><reqcondli><reqcond><applic><systemid><nti nti1="0" nti2="1" nti3="0"></systemid></applic>
+<cond><para><p>Le bloc hydrom&eacute;canique PC doit &ecirc;tre d&eacute;pos&eacute;.</p>
+</para>
+<para><p>Le bloc hydrom&eacute;canique PC doit &ecirc;tre sorti du conteneur.</p>
+</para><?Pub Caret>
+</cond>
+</reqcond></reqcondli></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="1,0"></reqper>
+</reqpers><supequip><nosupeq><supeqlis>
+<supequis id="O2.C0001"><refipc csn="72016002 153 "><nomen>Tournevis pour vis &agrave; fente</nomen><quantity>1</quantity></supequis>
+<supequis id="O2.C0141"><refipc csn="72016002 165 "><nomen>Marteau rivoir</nomen><quantity>1</quantity></supequis>
+</supeqlis></supequip><supplies><supplyli>
+<supply id="RGY020" mand="1"><refipc csn="73221001 031 "><nomen>Plaque d&rsquo;identification</nomen><quantity>1</quantity></supply>
+<supply id="RGY021" mand="1"><refipc csn="73221001 032 "><nomen>Clou cannel&eacute;</nomen><quantity>4</quantity></supply>
+</supplyli></supplies><miscs><nomisc></miscs><safety><nosafety></safety></prelreqs><mainfunc>
+<step1 control="0" id="P10">
+<title>CONSTAT</title>
+<para><p>Les nouvelles directives concernant l&rsquo;&eacute;volution de r&eacute;f&eacute;rence des &eacute;quipements modifi&eacute;s demandent :</p>
+</para>
+<list type="SIMPLE">
+<item><para><p>De faire &eacute;voluer la r&eacute;f&eacute;rence de l&rsquo;&eacute;quipement (P/N) au dernier indice si toutes les modifications pr&eacute;c&eacute;dentes ont &eacute;t&eacute; appliqu&eacute;es.</p>
+</para>
+</item>
+<item><para><p>De figer la r&eacute;f&eacute;rence &agrave; la date de non application de la modification interm&eacute;diaire, si une modification interm&eacute;diaire n&rsquo;est pas appliqu&eacute;e.</p>
+</para>
+</item>
+</list>
+</step1>
+<step1 control="0" id="P20">
+<title>ANALYSE</title>
+<step2 control="0" id="P20-10">
+<para><p>L&rsquo;analyse montre que des mat&eacute;riels actuellement en exploitation ne suivent pas cette r&egrave;gle.</p>
+</para>
+</step2>
+<step2 control="0" id="P20-20">
+<para><p>Dans l&rsquo;&eacute;tat actuel des modifications appliqu&eacute;es, les BHMPC suivants doivent &ecirc;tre r&eacute;-identifi&eacute;s comme indiqu&eacute; dans le Tableau 1 ci-dessous <tabref refid="Tableau1">. </p>
+</para>
+<table id="Tableau1" tocentry="1">
+<tgroup cols="3" align="LEFT"><colspec colname="COL1" colwidth="3.50cm"><colspec colname="COL2" colwidth="5.00cm"><colspec colname="COL3" colwidth="5.00cm">
+<tbody valign="TOP">
+<row>
+<entry valign="MIDDLE" morerows="0"><para><p>S/N BHMPC</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>P/N actuel</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>P/N apr&egrave;s r&eacute;-identification</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="MIDDLE" morerows="0" rowsep="1"><para><p>YN045001</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>309-162-002-0</p>
+</para>
+</entry>
+<entry valign="MIDDLE" morerows="0"><para><p>309-144-208-0</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0" rowsep="1"><para><p>YN045006</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>309-162-002-0</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>309-144-208-0</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0"><para><p>YN045007</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>309-162-002-0</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>309-144-208-0</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0"><para><p>YN045008</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>309-162-003-0</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>309-144-208-0</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0"><para><p>YN045013</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>309-162-003-0</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>309-144-208-0</p>
+</para>
+</entry>
+</row>
+<row>
+<entry valign="TOP" morerows="0"><para><p>YN045021</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>309-162-003-0</p>
+</para>
+</entry>
+<entry valign="TOP" morerows="0"><para><p>309-144-208-0</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="COL1"><para><p>YN045022</p>
+</para>
+</entry>
+<entry colname="COL2"><para><p>309-162-002-0</p>
+</para>
+</entry>
+<entry colname="COL3"><para><p>309-144-208-0</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="COL1"><para><p>YN045023</p>
+</para>
+</entry>
+<entry colname="COL2"><para><p>309-162-002-0</p>
+</para>
+</entry>
+<entry colname="COL3"><para><p>309-144-208-0</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="COL1"><para><p>YN045027</p>
+</para>
+</entry>
+<entry colname="COL2"><para><p>309-162-002-0</p>
+</para>
+</entry>
+<entry colname="COL3"><para><p>309-144-208-0</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="COL1"><para><p>YN045031</p>
+</para>
+</entry>
+<entry colname="COL2"><para><p>309-162-003-0</p>
+</para>
+</entry>
+<entry colname="COL3"><para><p>309-144-208-0</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="COL1"><para><p>YN045032</p>
+</para>
+</entry>
+<entry colname="COL2"><para><p>309-162-002-0</p>
+</para>
+</entry>
+<entry colname="COL3"><para><p>309-144-208-0</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="COL1"><para><p>YN045034</p>
+</para>
+</entry>
+<entry colname="COL2"><para><p>309-162-002-0</p>
+</para>
+</entry>
+<entry colname="COL3"><para><p>309-144-208-0</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="COL1"><para><p>YN045039</p>
+</para>
+</entry>
+<entry colname="COL2"><para><p>309-162-002-0</p>
+</para>
+</entry>
+<entry colname="COL3"><para><p>309-144-208-0</p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step2>
+<step2 control="0" id="P20-30">
+<applic><systemid><nti nti2="1"></systemid></applic>
+<para><p>Appliquer ce service bulletin &agrave; l&rsquo;occasion :</p>
+</para>
+<list type="simple">
+<item><para><p>de l&rsquo;application d&rsquo;une modification sur l&rsquo;&eacute;quipement,</p>
+</para>
+</item>
+<item><para><p>d&rsquo;un d&eacute;placement de sp&eacute;cialistes NTI3 pour intervention sur l&rsquo;&eacute;quipement.</p>
+</para>
+</item>
+</list>
+<note>
+<p>Les rechanges n&eacute;cessaires lors de l&rsquo;application de ce Service Bulletin seront de fourniture AIA de Bordeaux.</p>
+</note>
+</step2>
+<step2 control="0" id="P20-40">
+<applic><systemid><nti nti3="1"></systemid></applic>
+<para><p>Appliquer ce service bulletin au premier retour de l&rsquo;&eacute;quipement.</p>
+</para>
+</step2>
+</step1>
+<step1 control="0" id="P30">
+<title>ACTION</title>
+<step2 control="0" id="P30-10">
+<title>Remplacement de la plaque d&rsquo;identification du bloc hydrom&eacute;canique PC</title>
+<step3 control="0" id="P30-10-10">
+<para><p>Remplacer la plaque d&rsquo;identification <refipc csn="73221001 031 "> <figref repnohot="31" refid="Z732210SF030100003A021">.</p>
+</para>
+<note>
+<p>La r&eacute;f&eacute;rence fournie dans le Tableau 1 <tabref refid="Tableau1"> doit &ecirc;tre grav&eacute;e sur la plaque d&rsquo;identification <refipc csn="73221001 031 "> de remplacement en fonction du S/N de l&rsquo;&eacute;quipement.</p>
+</note>
+</step3>
+<step3 control="0" id="P30-10-20">
+<para><p>Noter les informations suivantes de la plaque d&rsquo;identification <refipc csn="73221001 031 ">&agrave; d&eacute;poser :</p>
+</para>
+<list type="simple">
+<item><para><p>le code fabricant,</p>
+</para>
+</item>
+<item><para><p>la date de fabrication,</p>
+</para>
+</item>
+<item><para><p>la d&eacute;nomination,</p>
+</para>
+</item>
+<item><para><p>le num&eacute;ro de s&eacute;rie.</p>
+</para>
+</item>
+</list>
+</step3>
+<step3 control="0" id="P30-10-30">
+<specpara>
+<caution>
+<p>EVITER QUE LES 4 CLOUS CANNEL&Eacute;S <refipc csn="73221001 032 "> NE SAUTENT DANS LES &Eacute;QUIPEMENTS ENVIRONNANTS</p>
+</caution>
+</specpara>
+<para><p>D&eacute;poser les 4 clous cannel&eacute;s <refipc csn="73221001 032 "> en passant l&rsquo;outillage <supeqref refid="O2.C0001"> sous la plaque d&rsquo;identification <refipc csn="73221001 031 ">.</p>
+</para>
+</step3>
+<step3 control="0" id="P30-10-40">
+<para><p>Rebuter les 4 clous cannel&eacute;s <refipc csn="73221001 032 "> et la plaque d&rsquo;identification <refipc csn="73221001 031 ">.</p>
+</para>
+</step3>
+<step3 control="0" id="P30-10-50">
+<para><p>Graver sur la plaque d&rsquo;identification <supplref refid="RGY020"> les informations suivantes :</p>
+</para>
+<list type="simple">
+<item><para><p>le code fabricant,</p>
+</para>
+</item>
+<item><para><p>la date de fabrication,</p>
+</para>
+</item>
+<item><para><p>la d&eacute;nomination,</p>
+</para>
+</item>
+<item><para><p>le num&eacute;ro de s&eacute;rie.</p>
+</para>
+</item>
+<item><para><p>la r&eacute;f&eacute;rence fabricant.</p>
+</para>
+</item>
+</list>
+</step3>
+<step3 control="0" id="P30-10-60">
+<para><p>Installer :</p>
+</para>
+<list type="simple">
+<item><para><p>la plaque d&rsquo;identification <supplref refid="RGY020">,</p>
+</para>
+</item>
+<item><para><p>les 4 clous cannel&eacute;s <supplref refid="RGY021"> <figref repnohot="31, 32" refid="Z732210SF030100003A021">.</p>
+</para>
+</item>
+</list>
+</step3>
+<step3 control="0" id="P30-10-70">
+<para><p>Mater les t&ecirc;tes des clous cannel&eacute;s <supplref refid="RGY021"> &agrave; l&rsquo;aide d&rsquo;un jet et de l&rsquo;outillage <supeqref refid="O2.C0141">.</p>
+</para>
+</step3>
+</step2>
+<step2 control="0" id="P30-20">
+<title>Mise &agrave; jour des champs dans le LIM</title>
+<para><p>Renseigner dans la table identification du Livret Informatis&eacute; Moteur du BHMPC les champs ISN, NNO et ART suivant le Tableau 2 <tabref refid="Tableau2"> ci-dessous :</p>
+</para>
+<table id="Tableau2" tocentry="1">
+<tgroup cols="4"><colspec colname="col1" colwidth="4.50cm"><colspec colname="col2" colwidth="2.00cm"><colspec colname="col3" colwidth="4.50cm"><colspec colname="col4" colwidth="5.00cm">
+<tbody>
+<row>
+<entry colname="col1"><para><p>P/N apr&egrave;s r&eacute;-identification</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>Champs</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>Valeurs</p>
+</para>
+</entry>
+<entry colname="col4"><para><p>DM rappel&eacute;</p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1" rowsep="0"><para><p></p>
+</para>
+</entry>
+<entry colname="col2"><para><p>ISN</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>00F</p>
+</para>
+</entry>
+<entry colname="col4" rowsep="0"><para><p></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1" rowsep="0"><para><p>309-144-208-0</p>
+</para>
+</entry>
+<entry colname="col2"><para><p>NNO</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>2840145143968</p>
+</para>
+</entry>
+<entry colname="col4" rowsep="0"><para><p><dmcref xrefid="A1ARF720505A100AC"></p>
+</para>
+</entry>
+</row>
+<row>
+<entry colname="col1"><para><p></p>
+</para>
+</entry>
+<entry colname="col2"><para><p>ART</p>
+</para>
+</entry>
+<entry colname="col3"><para><p>309-144-208-0</p>
+</para>
+</entry>
+<entry colname="col4" rowsep="0"><para><p></p>
+</para>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</step2>
+</step1>
+<step1 control="0" id="P40">
+<title>INFORMATIONS COMPLEMENTAIRES</title>
+<para><p>Renseigner le Livret Informatis&eacute; Moteur du BHMPC <dmcref xrefid="A1ARF720500A100FC"> apr&egrave;s application du pr&eacute;sent service bulletin.</p>
+</para>
+</step1>
+<figure id="Z732210SF030100003A021">
+<title>PLAQUE D'IDENTIFICATION DU BHMPC</title>
+<graphic callicn="A1Z732210SF030100003A021">
+</figure>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000013578 0>

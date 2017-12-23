@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="../DTD/styles/module.xsl"?>
+<!DOCTYPE module PUBLIC "-//SEDOC//DTD UD GIAT industries module//FR" "../DTD/module.dtd">
+<module>
+    <statutmodule langue="FR">
+        <mi version="A">VB</mi>
+        <codeTSA>
+            <codegroupe>03</codegroupe>
+            <codessgroupe>10</codessgroupe>
+            <codedivision>10</codedivision>
+            <nomgroupe>STRUCTURE</nomgroupe>
+            <nomssgroupe>Portes</nomssgroupe>
+            <nomdivision>Porte Chef</nomdivision>
+        </codeTSA>
+        <nomtech>Échange d'un inverseur fin de course hermétique monopolaire (Porte chef</nomtech>
+        <numordre>001</numordre>
+        <codeinfo>0331</codeinfo>
+        <nominfo>Échanges standards</nominfo>
+        <nrevision>A</nrevision>
+        <daterevision jour="10" mois="04" annee="2006"/>
+        <nmodif>C</nmodif>
+        <datemodif jour="26" mois="06" annee="2014"/>
+        <nti>1</nti>
+        <applicst>
+            <elementst id="MAT00000006" typemateriel="VBCI" versionmateriel="VCI" modele="ERYX 32T"/>
+            <elementst id="MAT00000005" typemateriel="VBCI" versionmateriel="VCI" modele="RANG 32T"/>
+            <elementst id="MAT00000001" typemateriel="VBCI" versionmateriel="VCI" modele="RANG"/>
+            <elementst id="MAT00000002" typemateriel="VBCI" versionmateriel="VPC" modele="00"/>
+            <elementst id="MAT00000003" typemateriel="VBCI" versionmateriel="VCI" modele="ERYX"/>
+        </applicst>
+        <logistique>
+            <lcn lcn="ASE4015" alc="00" task="HGOAAAA"/>
+        </logistique>
+        <refs>
+            <ref type="operation" id="OPE50002694">Ope(VB-A-03-10-05-000-0540-FR-A)OPE00002694</ref>
+            <ref type="operation" id="OPE50002693">Ope(VB-A-03-10-10-001-0540-FR-A)OPE00002693</ref>
+            <ref type="operation" id="OPE50000022">Ope(VB-A-03-10-20-001-0540-FR-A)OPE00000022</ref>
+        </refs>
+    </statutmodule>
+    <modcontenu>
+        <intervention>
+            <operprincipal>
+                <operation id="OPE50000027">
+                    <appliccont></appliccont>
+                    <title>
+                        <p>Dépose d'un inverseur fin de course hermétique monopolaire</p>
+                    </title>
+                    <prereqs>
+                        <condreq>
+                            <outilstdli>
+                                <outilstd id="OPE50000027_ART00000359">
+                                    <intitule>Clé à fourche de 22X24</intitule>
+                                    <qte>1</qte>
+                                    <fabricant>
+                                        <codefab>F0541</codefab>
+                                        <reffab>44.22X24</reffab>
+                                    </fabricant>
+                                </outilstd>
+                            </outilstdli>
+                            <outilcomplli>
+                                <aucun/>
+                            </outilcomplli>
+                            <outilspecifli>
+                                <aucun/>
+                            </outilspecifli>
+                            <ingredientli>
+                                <ingredient id="OPE50000027_ART00000017">
+                                    <intitule>Frein filet faible</intitule>
+                                    <qte>2</qte>
+                                    <fabricant>
+                                        <codefab>F7121</codefab>
+                                        <reffab>LOCTITE 222 FL50ML</reffab>
+                                    </fabricant>
+                                </ingredient>
+                            </ingredientli>
+                            <consoli>
+                                <aucun/>
+                            </consoli>
+                            <rechangeli>
+                                <aucun/>
+                            </rechangeli>
+                            <duree operation="0.034" cumul="0" tmi="0"></duree>
+                            <environnement condition="sans"/>
+                        </condreq>
+                        <persreq>
+                            <personne id="OPE50000027_MECANIC" clair="Mécanicien" nbre="1"/>
+                        </persreq>
+                    </prereqs>
+                    <tache1>
+                        <appliccont></appliccont>
+                        <figure id="FIG1" principale="oui">
+                            <title>
+                                <p>Contacteur porte chef équipé</p>
+                            </title>
+                            <graphic hauteur="852" largeur="647"
+                                     source="..\Illustration Travail\VB-A-031010-G-F0531-03001-A-03-1.jpg" type="jpg"/>
+                        </figure>
+                    </tache1>
+                    <tache1>
+                        <appliccont></appliccont>
+                        <para>
+                            <p>Débloquer et dévisser l'inverseur de fin de course
+
+
+                                <refint type="figure" refid="FIG1">1,</refint>.
+
+
+                                <refint refid="OPE50000027_MECANIC" type="personne">Mécanicien</refint>
+                                <refint refid="OPE50000027_ART00000359" type="outilstd">Clé à fourche de 22X24</refint>
+                                <refint refid="OPE50000027_ART00000017" type="ingredient">Frein filet faible</refint>
+                            </p>
+                        </para>
+                    </tache1>
+                    <tache1>
+                        <appliccont></appliccont>
+                        <para>
+                            <p>Déposer l'inverseur de fin de course
+
+
+                                <refint type="figure" refid="FIG1">1,</refint>.
+                            </p>
+                        </para>
+                    </tache1>
+                </operation>
+                <operation id="OPE50000028">
+                    <appliccont></appliccont>
+                    <title>
+                        <p>Pose d'un inverseur fin de course hermétique monopolaire</p>
+                    </title>
+                    <prereqs>
+                        <condreq>
+                            <outilstdli>
+                                <outilstd id="OPE50000028_ART00000359">
+                                    <intitule>Clé à fourche de 22X24</intitule>
+                                    <qte>1</qte>
+                                    <fabricant>
+                                        <codefab>F0541</codefab>
+                                        <reffab>44.22X24</reffab>
+                                    </fabricant>
+                                </outilstd>
+                            </outilstdli>
+                            <outilcomplli>
+                                <aucun/>
+                            </outilcomplli>
+                            <outilspecifli>
+                                <aucun/>
+                            </outilspecifli>
+                            <ingredientli>
+                                <ingredient id="OPE50000028_ART00000017">
+                                    <intitule>Frein filet faible</intitule>
+                                    <qte>1</qte>
+                                    <fabricant>
+                                        <codefab>F7121</codefab>
+                                        <reffab>LOCTITE 222 FL50ML</reffab>
+                                    </fabricant>
+                                </ingredient>
+                            </ingredientli>
+                            <consoli>
+                                <aucun/>
+                            </consoli>
+                            <rechangeli>
+                                <rechange id="OPE50000028_ART00003625">
+                                    <intitule>Minirupteur</intitule>
+                                    <qte>1</qte>
+                                    <fabricant>
+                                        <codefab>FA0X2</codefab>
+                                        <reffab>83770187</reffab>
+                                    </fabricant>
+                                </rechange>
+                                <rechange id="OPE50000028_ART00003581">
+                                    <intitule>Inv.fin course hermétiq. monopol. 5A</intitule>
+                                    <qte>1</qte>
+                                    <fabricant>
+                                        <codefab>F0214</codefab>
+                                        <reffab>120FL01F3Y1</reffab>
+                                    </fabricant>
+                                </rechange>
+                            </rechangeli>
+                            <duree operation="0.05" cumul="0" tmi="0"></duree>
+                            <environnement condition="sans"/>
+                        </condreq>
+                        <persreq>
+                            <personne id="OPE50000028_MECANIC" clair="Mécanicien" nbre="1"/>
+                        </persreq>
+                    </prereqs>
+                    <tache1>
+                        <appliccont></appliccont>
+                        <para>
+                            <p>Poser l'inverseur de fin de course
+
+
+                                <refint type="figure" refid="FIG1">1,</refint>
+                                dans le support switch porte
+
+
+                                <refint type="figure" refid="FIG1">6,</refint>.
+
+
+                                <refint refid="OPE50000028_MECANIC" type="personne">Mécanicien</refint>
+                                <refint refid="OPE50000028_ART00003625" type="rechange">Minirupteur</refint>
+                                <refint refid="OPE50000028_ART00000017" type="ingredient">Frein filet faible</refint>
+                                <refint refid="OPE50000028_ART00003581" type="rechange">Inv.fin course hermétiq.
+                                    monopol. 5A
+                                </refint>
+                            </p>
+                        </para>
+                    </tache1>
+                    <tache1>
+                        <appliccont></appliccont>
+                        <para>
+                            <p>Visser et bloquer l'inverseur de fin de course
+
+
+                                <refint type="figure" refid="FIG1">1,</refint>.
+
+
+                                <refint refid="OPE50000028_ART00000359" type="outilstd">Clé à fourche de 22X24</refint>
+                            </p>
+                        </para>
+                    </tache1>
+                </operation>
+            </operprincipal>
+            <opercompl>
+                <refext refid="OPE50002693" type="operation">Voir : (VB-A-03-10-10-001-0540-FR-A) Réglage du contacteur
+                    porte chef équipée
+                </refext>
+            </opercompl>
+        </intervention>
+    </modcontenu>
+</module>

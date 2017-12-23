@@ -1,0 +1,3 @@
+cd target
+java -jar sysconv.jar  -i D:\WORK\sysconv\datain -o D:\WORK\sysconv\dataout -s TITUS_TO_S1000D
+cd ..

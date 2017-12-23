@@ -1,0 +1,47 @@
+package com.sonovision.openconv.service;
+
+import java.io.File;
+import java.util.List;
+
+import com.sonovision.openconv.db.vo.execution.CoHistoryExe;
+import com.sonovision.openconv.db.vo.execution.CoScenario;
+import com.sonovision.openconv.log.model.LoggerLevel;
+import com.sonovision.openconv.ws.controller.model.TaskParameterModel;
+
+public interface OpenConvService {
+
+	/**
+	 * launch conversion
+	 * @param workflowFile
+	 * @param sequenceId
+	 * @param folderIn
+	 * @param folderOut
+	 * @return
+	 */
+//	LoggerLevel launchSequence(File workflowFile, String sequenceId, File folderIn, File folderOut,CoScenario coScenario);
+	
+	/**
+	 * 
+	 * @param idConversion
+	 * @return
+	 */
+	int getStatusSequence(int idConversion);
+	
+	/**
+	 * 
+	 * @param idConversion
+	 * @return
+	 */
+//	String getResume(int idConversion);
+
+	String getResume(String idAction);
+
+	LoggerLevel initSequence(CoScenario coScenario);
+
+
+	String getIdExe();
+
+	LoggerLevel launchSequence(List<TaskParameterModel> wsParameterList);
+//	, File folderIn,File folderOut);
+
+}

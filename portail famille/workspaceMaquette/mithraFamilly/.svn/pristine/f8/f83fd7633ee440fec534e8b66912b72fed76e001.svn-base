@@ -1,0 +1,127 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN">
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<?Pub EntList alpha bull copy rArr sect trade nbsp>
+<?Pub Inc>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>0</section><subsect>0</subsect><subject>00</subject><discode>00</discode><discodev>A</discodev><incode>100</incode><incodev>E</incodev><itemloc>A</itemloc></avee></dmc>
+<dmtitle><techname>MOTEUR ASSEMBLE</techname><infoname>MISE EN OEUVRE ET UTILISATION - PREPARATION A LA MCS</infoname></dmtitle>
+<issno type="r" issno="2">
+<issdate month="10" year="2010" day="28">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 1"></version>
+<version version="M88-2 ETAPE 4"></version>
+<customer aaf="1" anf="1">
+<nti nti1="1" nti2="0" nti3="0"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Prise en compte de la modification version logiciel VL08D dans sa totalit&eacute;</rfu>
+<remarks>RAS</remarks>
+</status>
+</idstatus><content><refs>
+<refdm>
+<dmcid id="A1A72000000A900BB"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>0</section><subsect>0</subsect><subject>00</subject><discode>00</discode><discodev>A</discodev><incode>900</incode><incodev>B</incodev><itemloc>B</itemloc></avee></dmcid>
+<dmcid id="A1A72000000B900BB"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>0</section><subsect>0</subsect><subject>00</subject><discode>00</discode><discodev>B</discodev><incode>900</incode><incodev>B</incodev><itemloc>B</itemloc></avee></dmcid>
+<dmcid id="DM1"><dmcopen dmco="A1A00055200A100AA">MISE SOUS ET HORS TENSION SUR GENERATION ELECTRIQUE SOL - PROCEDURE</dmcopen></dmcid>
+<dmcid id="DM3"><dmcopen dmco="A1A45450000A130AA">MODE MAINTENANCE - SELECTION/DESELECTION</dmcopen></dmcid>
+<dmcid id="DM4"><dmcopen dmco="A1A49200000A130AA">TGA - DEMARRAGE</dmcopen></dmcid>
+<dmcid id="DM5"><dmcopen dmco="A1A45452100A130AA">PASSAGE EN MCS - PROCEDURE GENERALE</dmcopen></dmcid>
+</refdm>
+</refs><proced><pmd>
+<manhour value="0,1"></manhour>
+<duration value="0,1"></duration>
+</pmd><prelreqs><reqconds>
+<noconds></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="0,1"></reqper>
+</reqpers><supequip><nosupeq><nosupeqs></supequip><supplies><nosupply></supplies><miscs><nomisc></miscs><safety><nosafety></safety></prelreqs><mainfunc>
+<step1 control="0" id="P10">
+<specpara>
+<caution><applic><systemid><version version="M88-2 ETAPE 1"></version></systemid></applic>
+<p>R&eacute;p&eacute;ter la mise sous tension du moteur assembl&eacute; jusqu'&agrave; initialisation sans panne de perte d'int&eacute;grit&eacute; des calculateurs programm&eacute;s (3&nbsp;fois au maximum), sinon remplacer le calculateur incrimin&eacute;<dmcref xrefid="A1A72000000A900BB">. </p>
+</caution>
+<caution><applic><systemid><version version="M88-2 ETAPE 4"></version></systemid></applic>
+<p>R&eacute;p&eacute;ter la mise sous tension du moteur assembl&eacute; jusqu'&agrave; initialisation sans panne de perte d'int&eacute;grit&eacute; des calculateurs programm&eacute;s (3&nbsp;fois au maximum), sinon remplacer le calculateur incrimin&eacute;<dmcref xrefid="A1A72000000B900BB">. </p>
+</caution>
+<caution>
+<p>Laisser les calculateurs sous tension environ 15&nbsp;min, pour mise en temp&eacute;rature, en cas de non r&eacute;p&eacute;titivit&eacute; de l'avarie en MCS.</p>
+</caution>
+</specpara>
+<para><p>Mettre sous tension le moteur assembl&eacute;<dmcref xrefid="DM1">. </p>
+</para>
+<note>
+<p>La panne d&apos;initialisation des calculateurs programm&eacute;s &agrave; la mise sous tension du moteur assembl&eacute; n&apos;est pas syst&eacute;matique.</p>
+</note>
+</step1>
+<step1>
+<title>Contr&ocirc;les pr&eacute;liminaires avant passage en MCS</title>
+<step2>
+<para><p>Contr&ocirc;ler les connexions, les connecteurs des &eacute;quipements et les harnais.</p>
+</para>
+</step2>
+<step2>
+<para><p>S'assurer de l'absence de panne interne au calculateur de la voie incrimin&eacute;e.</p>
+</para>
+</step2>
+<step2>
+<para><p>S'assurer de l'absence de fuite de carburant.</p>
+</para>
+</step2>
+<step2>
+<para><p>S&rsquo;assurer que les manettes auxiliaires sont sur stop.</p>
+</para>
+</step2>
+</step1>
+<step1 control="0" id="P40">
+<title>Passage en mode MCS</title>
+<step2>
+<para><p>S&eacute;lectionner, en visu, le moteur assembl&eacute; <refipc csn="72000001 000 "> &agrave; tester <dmcref xrefid="DM3">.</p>
+</para>
+</step2>
+<step2>
+<title>Tests d&eacute;clench&eacute;s avec s&eacute;quence en ventilation</title>
+<para><p>D&eacute;marrer le TGA<dmcref xrefid="DM4">.</p>
+</para>
+</step2>
+<step2>
+<para><p>Passer en mode MCS<dmcref xrefid="DM5">.</p>
+</para>
+</step2>
+</step1>
+<step1 id="P70">
+<title>Passage en mode MCS impossible</title>
+<step2>
+<para><p>S&rsquo;assurer que <?Pub Caret>les manettes auxiliaires sont sur stop.</p>
+</para>
+</step2>
+<step2>
+<para><p>Sortir du mode maintenance<dmcref xrefid="DM3">.</p>
+</para>
+</step2>
+<step2>
+<para><p>Couper l'alimentation 28&nbsp;V du moteur assembl&eacute;<dmcref xrefid="DM1">. </p>
+</para>
+</step2>
+<step2>
+<para><p>Mettre sous tension le moteur assembl&eacute;<dmcref xrefid="DM1">. </p>
+</para>
+</step2>
+<step2>
+<para><p>S&eacute;lectionner, en visu, le moteur assembl&eacute; <refipc csn="72000001 000 "> &agrave; tester <dmcref xrefid="DM3">.</p>
+</para>
+</step2>
+<step2>
+<para><p>Passer en mode MCS<dmcref xrefid="DM5">.</p>
+</para>
+</step2>
+</step1>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000005679 0>

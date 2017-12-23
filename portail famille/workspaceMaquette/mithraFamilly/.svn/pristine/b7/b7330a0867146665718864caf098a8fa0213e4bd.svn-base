@@ -1,0 +1,85 @@
+package com.sonovision.openconv.ws.manager;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Service;
+
+import com.sonovision.openconv.wf.model.ParameterId;
+import com.sonovision.openconv.ws.controller.model.TaskParameterModel;
+
+@Service("ParametersManagerWithIdExe")
+@Scope(value = ConfigurableBeanFactory.SCOPE_SINGLETON)
+//@Singleton
+//@AccessTimeout(value=60, timeUnit=SECONDS)
+public class ParametersManagerWithIdExe {
+	/*
+	 * 
+	 * hashmap de 
+	 * 
+	 * key	-> idExe
+	 * value ->		hashmap de :
+	 * 				key 	-> taskId_parameterCode = parameterId
+	 *  			value	-> TaskParameterModel
+	 * 
+	 */
+//	private HashMap<String, TaskParameterModel> parametersHashMap;
+	private HashMap<String, HashMap<String, TaskParameterModel>> parametersHashMapByIdExe;
+	
+	public ParametersManagerWithIdExe() {
+		super();
+		parametersHashMapByIdExe= new HashMap<>();
+	}
+	
+//	public ParametersManagerWithIdExe(List<TaskParameterModel> listParams) {
+//		super();
+//		parametersHashMap= new HashMap<>();
+//		for(TaskParameterModel taskParam:listParams){
+//			parametersHashMap.put(taskParam.getId().toString(), taskParam);
+//		}
+//	}
+	
+	public void clean(String idExe){
+		parametersHashMapByIdExe.remove(idExe);
+	}
+	
+	
+	/*
+	 * update current parameterList with datas from listParams<TaskParamameterModel>
+	 *
+	 * 
+	 */
+//	 @Lock(LockType.WRITE)
+	public void update(String idExe,List<TaskParameterModel> listParams) {
+		if(parametersHashMapByIdExe==null)
+			parametersHashMapByIdExe= new HashMap<>();
+		HashMap<String, TaskParameterModel> parametersHashMap= new HashMap<>();
+		for(TaskParameterModel taskParam:listParams){
+			parametersHashMap.put(taskParam.getId().toString(), taskParam);
+		}
+		parametersHashMapByIdExe.put(idExe, parametersHashMap);
+	}
+//	 @Lock(LockType.WRITE)
+	public void addOrUpdate(String idExe,TaskParameterModel param){
+		if(parametersHashMapByIdExe==null)
+			parametersHashMapByIdExe= new HashMap<>();
+		HashMap<String, TaskParameterModel> parametersHashMap=parametersHashMapByIdExe.get(idExe);
+		parametersHashMap.put(param.getId().toString(), param);
+		parametersHashMapByIdExe.put(idExe, parametersHashMap);
+	}
+	
+	
+	public TaskParameterModel getParam(String idExe,ParameterId id){
+		HashMap<String, TaskParameterModel> parametersHashMap=parametersHashMapByIdExe.get(idExe);
+		return parametersHashMap.get(id.toString());
+	}
+	
+	public List<TaskParameterModel> getAllParams(String idExe){
+		HashMap<String, TaskParameterModel> parametersHashMap=parametersHashMapByIdExe.get(idExe);
+		return new ArrayList<>(parametersHashMap.values());
+	}
+	
+}

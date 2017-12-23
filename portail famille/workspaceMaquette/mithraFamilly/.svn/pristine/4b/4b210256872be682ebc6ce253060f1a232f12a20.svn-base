@@ -1,0 +1,237 @@
+package com.sonovision.openconv.modules.fileaccess;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.DirectoryIteratorException;
+import java.nio.file.DirectoryStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.sedoc.toolbox.SpringBeanProvider;
+import com.sedoc.toolbox.bean.UtilsService;
+import com.sonovision.openconv.codification.Codification;
+import com.sonovision.openconv.codification.exception.CodificationException;
+import com.sonovision.openconv.log.model.LoggerLevel;
+import com.sonovision.openconv.model.TreatedObject;
+import com.sonovision.openconv.modules.fileaccess.exception.LoadFileException;
+import com.sonovision.openconv.wf.WFTask;
+import com.sonovision.openconv.wf.WFTaskHelper;
+import com.sonovision.openconv.wf.model.ParameterDetailled;
+import com.sonovision.openconv.wf.model.ParameterTypes;
+
+@Component
+public class TaskLoadFileAndCodif extends WFTaskHelper implements WFTask {
+
+	@Autowired
+	UtilsService utilsService;
+
+	public final static String PARAMETER_LOADFILE_INPUT_FOLDER = "inputFolder";
+	public final static String PARAMETER_LOADFILE_CODIFICATION_CLASS = "codificationClass";
+	public final static String PARAMETER_LOADFILE_CODIFICATION_FILE = "codificationFile";
+	public final static String PARAMETER_LOADFILE_EXTENSION = "extensionFilter";
+
+	
+	public final static String DEFAULT_EXTENSION_FILTER="*.{xml,XML}";
+	
+	// I must init spring composent, buti have loop on this class. this variable
+	// is for skip loop. I think it will be better if we use @Configure. next
+	// time
+	private static boolean initrun = false;
+	
+	private String extensionFilter;
+	
+	private Codification codification;
+	
+	private String inputFile;
+	
+	private String codificationClass;
+	
+	private String codificationFile;
+
+	public TaskLoadFileAndCodif() {
+		super();
+//		initClass();
+	}
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7764367737889004545L;
+
+	public String run(HashMap<String, TreatedObject> treatedObjectHash) {
+		if(!checkRequiredParams())
+			return LoggerLevel.FATAL.getValue().toString();
+		dbLogger.logTask("Chargement des fichier xml", LoggerLevel.INFO);
+		if (treatedObjectHash == null) {
+			treatedObjectHash = new  HashMap<>();
+		}
+		
+		File inputFolder = new File(inputFile);
+		if(!inputFolder.exists())
+		{
+			dbLogger.logTask("Le répertoire :"+inputFile+" n'existe pas", LoggerLevel.FATAL);
+			return LoggerLevel.FATAL.getValue().toString();
+		}
+		if(!inputFolder.isDirectory())
+		{
+			dbLogger.logTask(inputFolder.getAbsolutePath()+" doit etre un répertoire", LoggerLevel.FATAL);
+			return LoggerLevel.FATAL.getValue().toString();
+		}
+
+		try {
+			loadCodification();
+		} catch (LoadFileException e) {
+			dbLogger.logTask(e.getMessage(), LoggerLevel.FATAL);
+			return LoggerLevel.FATAL.getValue().toString();
+		}
+		try {
+			getTreatedObjectList(inputFolder, treatedObjectHash);
+		} catch (LoadFileException e) {
+			dbLogger.logTask(e.getMessage(), LoggerLevel.FATAL);
+			return LoggerLevel.FATAL.getValue().toString();
+		}
+		dbLogger.logTask("donnée d'entrée chargé, "+treatedObjectHash.size()+" fichiers trouvé", LoggerLevel.INFO);
+		
+		return dbLogger.getTask().getLogResult();
+
+	}
+	
+	private HashMap<String, TreatedObject> getTreatedObjectList(File inputFolder, HashMap<String, TreatedObject>   treatedObjectHash) throws LoadFileException {
+
+
+		Path folderPath = (inputFolder).toPath();
+
+		try (DirectoryStream<Path> stream = Files.newDirectoryStream(folderPath, extensionFilter)) {
+			for (Path entry : stream) {
+				TreatedObject to = getTreatedObject(entry);
+				treatedObjectHash.put(to.getIdObject(), to);
+			}
+		} catch (DirectoryIteratorException ex) {
+			throw new LoadFileException("Impossible de lire les fichier d'entrés :" + ex.getMessage(),ex);
+		} catch (IOException e) {
+			throw new LoadFileException("Impossible de lire les fichier d'entrés :" + e.getMessage(),e);
+		} catch (CodificationException e) {
+			throw new LoadFileException("Impossible de lire la codification :" + e.getMessage(),e);
+		}
+		return treatedObjectHash;
+
+	}
+
+	private TreatedObject getTreatedObject(Path entry) throws CodificationException {
+		TreatedObject to = new TreatedObject();
+		String xmlName = entry.getFileName().toString();
+		to.setIdObject(xmlName);
+		to.setObjectConvert(entry);
+		to.setOutputName(codification.getNewFileName(xmlName));
+		return to;
+	}
+	
+	private void loadCodification() throws LoadFileException
+	{
+		Class clazz;
+		try {
+			//clazz = ClassLoader.getSystemClassLoader().loadClass(codificationClass);
+			clazz = Thread.currentThread().getContextClassLoader().loadClass(codificationClass);
+			
+		} catch (ClassNotFoundException e1) {
+			throw new LoadFileException("Impossible de charger la class de codification :" + codificationClass);
+		}
+		if (clazz == null) {
+			throw new LoadFileException("Impossible de charger la class de codification :" + codificationClass);
+		}
+		try {
+			codification = (Codification) clazz.newInstance();
+		} catch (InstantiationException e) {
+			throw new LoadFileException("Impossible de charger la class de codification :" + codificationClass);
+		} catch (IllegalAccessException e) {
+			throw new LoadFileException("Impossible de charger la class de codification :" + codificationClass);
+		}
+		
+		try {
+			codification.setCodificationParameter(parametersRunning);
+		} catch (CodificationException e) {
+			throw new LoadFileException("Impossible de charger la class de codification :" + e);
+		}
+	}
+
+	
+
+	/**
+	 * It can be replaced by @Configuration with aspectj spring but i don't know
+	 * why it doesn't work TODO :make it generic in extends's class
+	 */
+	public void initClass() {
+		if (!initrun) {
+			initrun = true;
+			if (utilsService == null) {
+				utilsService = (UtilsService) SpringBeanProvider.getBean("UtilsService");
+			}
+			initrun = false;
+		}
+	}
+
+	/**
+	 * @return the utilsService
+	 */
+	public UtilsService getUtilsService() {
+		return utilsService;
+	}
+
+	/**
+	 * @param utilsService
+	 *            the utilsService to set
+	 */
+	public void setUtilsService(UtilsService utilsService) {
+		this.utilsService = utilsService;
+	}
+	
+	@Override
+	public HashMap<String, ParameterTypes> getRequiredParams() {
+
+		parametersRequired=new HashMap<>();
+		parametersRequired.put(PARAMETER_LOADFILE_INPUT_FOLDER,ParameterTypes.TXT);
+		parametersRequired.put(PARAMETER_LOADFILE_CODIFICATION_CLASS,ParameterTypes.TXT);
+		parametersRequired.put(PARAMETER_LOADFILE_CODIFICATION_FILE,ParameterTypes.TXT);
+		parametersRequired.put(PARAMETER_LOADFILE_EXTENSION,ParameterTypes.TXT);		
+		return parametersRequired;
+	}
+
+	
+	@Override
+	public List<ParameterDetailled> getParameterList(Locale locale) {
+		getRequiredParams();	
+		return super.procedeParameterList(locale);
+	}
+
+	@Override
+	public boolean checkRequiredParams() {
+		
+		/// first try inputFile = retrieveFrom dbLogger
+		inputFile = dbLogger.getFolderIn();
+		if(inputFile==null || inputFile.isEmpty())
+		{
+			/// second try inputFile = retrieveFrom parameters
+			inputFile=(String) parametersRunning.get(PARAMETER_LOADFILE_INPUT_FOLDER);
+			dbLogger.setFolderIn(inputFile);
+		}
+
+		extensionFilter = (String) parametersRunning.get(PARAMETER_LOADFILE_EXTENSION);
+		if(extensionFilter==null || extensionFilter.isEmpty())
+		{
+			//default extension
+			extensionFilter=DEFAULT_EXTENSION_FILTER;
+			parametersRunning.put(PARAMETER_LOADFILE_EXTENSION, extensionFilter);
+		}
+		
+		codificationClass = (String) parametersRunning.get(PARAMETER_LOADFILE_CODIFICATION_CLASS);
+		codificationFile = (String) parametersRunning.get(PARAMETER_LOADFILE_CODIFICATION_FILE);
+		return super.checkParams();
+	}
+
+}

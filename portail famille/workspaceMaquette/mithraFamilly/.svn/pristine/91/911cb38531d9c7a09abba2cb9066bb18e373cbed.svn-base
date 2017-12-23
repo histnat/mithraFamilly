@@ -1,0 +1,91 @@
+package com.sonovision.openconv.db.dao.impl;
+
+import java.util.List;
+
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
+import org.springframework.data.domain.Sort.Order;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.stereotype.Repository;
+
+import com.sonovision.openconv.db.dao.ConversionDao;
+import com.sonovision.openconv.db.vo.Conversion;
+
+@Repository(value="ConversionDao")
+public class ConversionDaoImpl  extends CommonDaoImpl<Conversion> implements ConversionDao{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2324361442980503029L;
+	
+	@Override
+	public Conversion findByAllWithLastTime(String folderIn, String folderOut, String workFlowName, String workFlowSequence) {
+		Query query = new Query();
+        query.addCriteria(
+                new Criteria().andOperator(
+                        Criteria.where("folderIn").is(folderIn),
+                        Criteria.where("folderOut").is(folderOut),
+                        Criteria.where("workFlowName").is(workFlowName),
+                        Criteria.where("workFlowSequence").is(workFlowSequence)
+                        
+                )
+        );
+       query.with(new Sort(new Order(Direction.DESC, "startTime")));
+       query.limit(1);
+        List<Conversion> lll= mongoTemplate.find(query, Conversion.class);
+
+        if (lll != null && lll.size() > 0) {
+            return lll.get(0);
+        }
+        return null;
+	}
+	
+	@Override
+	public Conversion findByAllWithLastTime(Conversion conversion) {
+		 return findByAllWithLastTime(conversion.getFolderIn(), conversion.getFolderOut(), conversion.getWorkFlowName(), conversion.getWorkFlowSequence());
+	}
+
+	@Override
+	public Conversion findByAll(String folderIn, String folderOut, String workFlowName, String workFlowSequence, Long startTime) {
+		
+        Query query = new Query();
+        query.addCriteria(
+                new Criteria().andOperator(
+                        Criteria.where("folderIn").is(folderIn),
+                        Criteria.where("folderOut").is(folderOut),
+                        Criteria.where("workFlowName").is(workFlowName),
+                        Criteria.where("workFlowSequence").is(workFlowSequence),
+                        Criteria.where("startTime").is(startTime)
+                )
+        );
+        List<Conversion> lll= mongoTemplate.find(query, Conversion.class);
+
+        if (lll != null && lll.size() > 0) {
+            return lll.get(0);
+        }
+        return null;
+	}
+	
+	@Override
+	public Conversion findOne(String id)
+	{
+		return super.findOne(id, Conversion.class);
+	}
+
+	@Override
+	public void deleteAll()
+	{
+		super.deleteAll(Conversion.class);
+	}
+	
+	@Override
+	public List<Conversion> findAll()
+	{
+		return super.findAll(Conversion.class);
+	}
+
+
+	
+}

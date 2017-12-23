@@ -1,0 +1,224 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                           RAFALE                                   *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.2d                           *
+    *                   Dated 12th January 2014                          *
+    *                  M.DOMEON - Dassault-Aviation                      *
+    *                                                                    *
+    *	Dtd Object : Data Dispatch Note.        		         *
+    *								      	 *
+    *  Amendment :						         *
+    *    19/05/97: Change public Identifier				 *
+    *                Modified comment attached to <supporid>, to reflect *
+    *                the fact that the element identifies the exchange	 *
+    *                rather than the physical 'support' of the exchange. *
+    *									 *
+    *                add reference to  public entities ISO Latin 1	 *
+    *									 *
+    *	19/04/99        : Add ISOpub, ISOgrk3, ISOnum, ISOtech entities  *
+    *									 *
+    *	12/01/14        : Add nbpdf files  (FCR 4479)                    *
+    *                     Reference new public identifier.               *
+    *								     	 *
+    *  The following DOCTYPE statement may be used to call this set of	 *
+    *  declarations:		                			 *
+    *								     	 *
+    *	 <!DOCTYPE ddn PUBLIC					    	 *
+    *   "-//RAFALE CSDB//DTD Data Dispatch Note 140112//EN"	   	 *
+    *	 []>							  	 *
+    ********************************************************************** -->
+
+<!--**********************************************************************
+    * Define Entity %ISOlat1; (ISO Added Latin 1) containing:-  the      *
+    * formal public identifier for the ISO Added Latin 1 public text.    *
+    ********************************************************************** -->
+
+<!ENTITY % ISOlat1
+  PUBLIC "ISO 8879-1986//ENTITIES Added Latin 1//EN" >
+
+
+
+<!--**********************************************************************
+    * Define Entity %ISOpub; (ISO Publishing) containing:- the formal    *
+    * public identifier for the ISO Publishing public text.              *
+    ********************************************************************** -->
+
+<!ENTITY % ISOpub
+  PUBLIC "ISO 8879-1986//ENTITIES Publishing//EN" > 
+
+
+
+
+<!--**********************************************************************
+    * Define Entity %ISOgrk3; (ISO Greek Symbols) containing:- the       *
+    * formal public identifier for the ISO Greek Symbols public text.    *
+    ********************************************************************** -->
+
+<!ENTITY % ISOgrk3
+  PUBLIC "ISO 8879-1986//ENTITIES Greek Symbols//EN" >
+
+
+
+
+<!--**********************************************************************
+    * Define Entity %ISOnum; (ISO Numeric and Special Symbols)           *
+    * containing:- the formal public identifier for the ISO Numeric and  *
+    * Special Symbols public text.                                       *
+    ********************************************************************** -->
+
+<!ENTITY % ISOnum
+  PUBLIC "ISO 8879-1986//ENTITIES Numeric and Special Graphic//EN" >
+
+<!--**********************************************************************
+    * Define Entity %ISOtech; (ISO General Technical) containing:- the   *
+    * formal public identifier for the ISO General Technical public text.*
+    ********************************************************************** -->
+
+<!ENTITY % ISOtech
+  PUBLIC "ISO 8879-1986//ENTITIES General Technical//EN" >
+
+
+
+<!--**********************************************************************
+    * Call the ISO Added Latin 1 Public Text. The formal public          *
+    * identifier is stored in the entity %ISOlat1;                       *
+    ********************************************************************** -->
+
+%ISOlat1;
+
+
+
+<!--**********************************************************************
+    * Call the ISO Publishing Public Text. The formal public identifier  *
+    * is stored in the entity %ISOpub;                                   *
+    ********************************************************************** -->
+
+%ISOpub;
+
+
+
+<!--**********************************************************************
+    * Call the ISO Greek Symbols Public Text. The formal public          *
+    * identifier is stored in the entity %ISOgrk3;                       *
+    ********************************************************************** -->
+
+%ISOgrk3;
+
+
+
+<!--**********************************************************************
+    * Call the ISO Numeric and Special Symbols Public Text. The formal   *
+    * public identifier is stored in the entity %ISOnum;                 *
+    ********************************************************************** -->
+
+%ISOnum;
+
+
+
+<!--**********************************************************************
+    * Call the ISO General Technical Public Text. The formal public      *
+    * identifier is stored in the entity %ISOtech;                       *
+    ********************************************************************** -->
+
+%ISOtech;
+
+<!--*********************************************************************
+    * Define Element DDN (Data Dispatch Note).			        *
+    *********************************************************************-->
+<!ELEMENT ddn  - - (srcsys, supporid, bexpno, refdocc, marketno, date, ctgver,
+			nbfiles, nbdm, nbccitt4, nbcgm, nbjpeg, nbpdf, remarks?) >
+
+
+<!--*********************************************************************
+    * Define Element SRCSYS (Source system).			     	*
+    *********************************************************************-->
+<!ELEMENT srcsys - O (#PCDATA) -- Source System.-->
+
+
+<!--*********************************************************************
+    * Define Element SUPPORID (Exchange identificator).		       	*
+    *********************************************************************-->
+<!ELEMENT supporid - O  (#PCDATA) -- Exchange identificator.-->
+
+
+<!--*********************************************************************
+    * Define Element BEXPNO (Bordereau expedition number).	    	*
+    *********************************************************************-->
+<!ELEMENT bexpno - O  (#PCDATA) -- Bordereau expedition number.	 -->
+
+
+<!--*********************************************************************
+    * Define Element REFCDOC (Reference of the doc's contract).        	*
+    *********************************************************************-->
+<!ELEMENT refdocc - O  (#PCDATA) -- Reference of the doc's contract.-->
+
+
+<!--*********************************************************************
+    * Define Element MARKETNO (Market number).	                      	*
+    *********************************************************************-->
+<!ELEMENT marketno - O (#PCDATA) -- Market number.-->
+
+
+<!--*********************************************************************
+    * Define Element DATE (date of expedition).                  	*
+    *********************************************************************-->
+<!ELEMENT date - O  EMPTY -- Date of expedition.-->
+<!ATTLIST date
+            year 	NUMBER  #REQUIRED -- The year.--
+            month 	NUMBER	#REQUIRED -- The month of the year.--
+            day  	NUMBER  #REQUIRED -- The day of the month. -->
+
+<!--*********************************************************************
+    * Define Element CTGVER ("clauses techniques generiques"  version)  *
+    *********************************************************************-->
+<!ELEMENT ctgver - O (#PCDATA) --"clauses techniques generiques" version).-->
+
+
+<!--*********************************************************************
+    * Define Element nbfiles (total number of files).	                *
+    *********************************************************************-->
+<!ELEMENT nbfiles - O  EMPTY -- total number of files.-->
+<!ATTLIST nbfiles
+		total	NUMBER	#REQUIRED >
+
+<!--*********************************************************************
+    * Define Element nbdm (total number of data-modules).              	*
+    *********************************************************************-->
+<!ELEMENT nbdm - O  EMPTY --total number of data-modules.-->
+<!ATTLIST nbdm
+		total	NUMBER	#REQUIRED >
+
+<!--*********************************************************************
+    * Define Element nbccitt4 (total number of CCITT GR 4's files).    	*
+    *********************************************************************-->
+<!ELEMENT nbccitt4 - O  EMPTY --total number of CCITT GR 4's files.-->
+<!ATTLIST nbccitt4
+		total	NUMBER	#REQUIRED >
+
+<!--*********************************************************************
+    * Define Element nbcgm (total number of CGM's files).	        *
+    *********************************************************************-->
+<!ELEMENT nbcgm - O  EMPTY --total number of CGM's files.-->
+<!ATTLIST nbcgm
+		total	NUMBER	#REQUIRED >
+
+<!--*********************************************************************
+    * Define Element nbjpeg (total number of JPEG's files).	        *
+    *********************************************************************-->
+<!ELEMENT nbjpeg - O  EMPTY --total number of JPEG's files.-->
+<!ATTLIST nbjpeg
+		total	NUMBER	#REQUIRED >		
+
+<!--*********************************************************************
+    * Define Element nbpdf (total number of PDF's files).	        *
+    *********************************************************************-->
+<!ELEMENT nbpdf - O  EMPTY --total number of PDF's files.-->
+<!ATTLIST nbpdf
+		total	NUMBER	#REQUIRED >
+
+<!--*********************************************************************
+    * Define Element remarks (optional remarks).                       	*
+    *********************************************************************-->
+<!ELEMENT remarks - O (#PCDATA) --optional remarks.-->

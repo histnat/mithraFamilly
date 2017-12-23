@@ -1,0 +1,233 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                          RAFALE                                    *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.1                            *
+    *                   Dated 15st January 1998                          *
+    *                                                                    *
+    *  Amendment      :							                         *
+    *   31/08/95   : modified attributes "from" and "to" of <version>	 *
+    *                element						                     *
+    *                optional attribute "modtyp" deleted from <mod>	     *
+    *                value prandpo deleted from attribute "modcond"	     *
+    *									                                 *
+    *   19/05/97   : Changed Public Identifier				             *
+    *                added attribute %INSDEL to elements		         *	 
+    *                <applic-a>,<systemid>,<version>,<serialnb>,	     *
+    *                <customer>,<config>,<mod>,<swprog>,<applic-e>,	     *
+    *                <equipid>,<manufact>,<mpn>				             *
+    *                                                                    *
+    *   1. Update Public Identifier                                      *
+    *   2. Removal of AGE & AVEE marked sections.                        *
+    *   3. Group applic-a and applic -e                                  *
+    *   4. Add Versrank behind version,                                  *
+	*      change attr version from versid to version                    *
+	*      delete nsn attribute of MPN                                   *
+	*      add from/to behind serialnb                                   *
+	*      add std decomposition (standard)                              *
+	*      customer optionnal single                                     *
+	*      sb structure with reference to dmc                            *
+	*									                                 *
+    *   15/01/98   : Update Public Identifier				             *
+    *                Systemid and version become optionnal elements      *
+	*                change mpn by partno                                *
+	*                                                                    *
+	* Typical invocation :                                               *
+    * <!ENTITY % EXTAPPL                                                 *
+    *   PUBLIC "-//RAFALE//ELEMENTS Applicability Breakdown 980115//EN" >*
+    * %EXTAPPL;                                                          *
+    ********************************************************************** -->
+
+<!--*****************************************************************************
+    * Define Element APPLIC (Data Module Applicability for Air Vehicle and AGE)	*
+    **************************************************************************-->
+
+<!ELEMENT applic 	- O (systemid?,config?,swprog?) 
+      			-- Data Module Applicability for Air Vehicle.-->
+<!ATTLIST applic  %INSDEL;>
+
+<!--*****************************************************************************
+    * Define Element SYSTEMID (System Identification).				*
+    **************************************************************************-->
+					
+<!ELEMENT systemid 	- O (version*,(manufact,(partno,serialnb*)*)*,std?,customer?,nti?)
+      		     -- Air Vehicle System Identification.-->
+<!ATTLIST systemid   %INSDEL;>
+
+
+	
+
+<!--**********************************************************************
+    * Define Element VERSION (Version for System or Equipment)containing:*
+    *  VERSRANK - optional   repeatable  contains SINGLE, RANGE          *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  VERSION  - CDATA    - REQUIRED - Version.id                       *
+    ********************************************************************** -->
+
+<!ELEMENT version - o (versrank*) >
+<!ATTLIST version
+           version CDATA #REQUIRED 
+		   %INSDEL>
+
+
+
+<!--**********************************************************************
+    * Define Element VERSRANK (Version Rank) containing:-                *
+    *--------------------------------------------------------------------*
+    * Mandatory Repeatable Group                                         *
+    *--------------------------------------------------------------------*
+    *  SINGLE   - optional   single      contains Parsed Character Data  *
+    * or                                                                 *
+    *  RANGE      optional   single      contains No Other Tags          *
+    ********************************************************************** -->
+
+<!ELEMENT versrank - o (single | range)+ >
+
+
+
+
+<!--**********************************************************************
+    * Define Element SINGLE (Single Number) containing:-                 *
+    *   No other tags.                                                   *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Rank     - CDATA    - REQUIRED - Rank number                      *
+    ********************************************************************** -->
+
+<!ELEMENT single - o EMPTY >
+<!ATTLIST single
+           rank CDATA #REQUIRED>
+
+
+<!--**********************************************************************
+    * Define Element RANGE (Range of Numbers) containing:-               *
+    *   No other tags.                                                   *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  FROM     - CDATA    - REQUIRED - Start of Range.                  *
+    *  TO       - CDATA    - REQUIRED - End of Range.                    *
+    ********************************************************************** -->
+
+<!ELEMENT range - o EMPTY >
+<!ATTLIST range
+           from CDATA #REQUIRED
+           to   CDATA #REQUIRED >
+
+
+
+<!--**********************************************************************
+    * Define Element SERIALNB (Serial Number) containing:-               *
+    *--------------------------------------------------------------------*
+    * Mandatory Repeatable Group                                         *
+    *--------------------------------------------------------------------*
+    *  SINGLE   - optional   single      contains Parsed Character Data  *
+    * or                                                                 *
+    *  RANGE      optional   single      contains No Other Tags          *
+    ********************************************************************** -->
+
+<!ELEMENT serialnb - o (single | range)+ >
+
+
+
+
+<!--**********************************************************************
+    * Define Element STD (standard) containing:-                        *
+    *--------------------------------------------------------------------*
+    * Mandatory Repeatable Group                                         *
+    *--------------------------------------------------------------------*
+    *  STANDARD   - optional   single      contains Parsed Character Data  *
+    ********************************************************************** -->
+
+<!ELEMENT std - o (standard)+ >
+
+
+<!--*****************************************************************************
+    * Define Element STANDARD (aircraft standard).	                         *
+    **************************************************************************-->
+
+<!ELEMENT standard	- O (#PCDATA) -- standard Name.-->
+<!ATTLIST standard   %INSDEL;>
+
+
+
+<!--*****************************************************************************
+    * Define Element CUSTOMER (Customer Name).					*
+    **************************************************************************-->
+
+<!ELEMENT customer	- O EMPTY -- Customer Name.-->
+<!ATTLIST customer 
+		aaf    %yesorno; #IMPLIED
+	    anf    %yesorno; #IMPLIED
+		%INSDEL;   >
+
+
+
+<!--**********************************************************************
+    * Define Element NTI (Niveau technique d intervention)               *
+    *--------------------------------------------------------------------*
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  NTI1     - yesorno - Implied   - NTI1                             *
+    *  NTI2     - yesorno - Implied   - NTI1                             *
+	*  NTI3     - yesorno - Implied   - NTI1                             *
+	********************************************************************** -->
+
+<!ELEMENT nti - O EMPTY>
+<!ATTLIST nti     
+            -- the model below enables combinations (mixture) of renditions. --
+	    nti1     %yesorno; #IMPLIED
+	    nti2     %yesorno; #IMPLIED
+	    nti3     %yesorno; #IMPLIED 
+         %INSDEL;   >
+
+
+<!--*****************************************************************************
+    * Define Element CONFIG (Configuration).					*
+    **************************************************************************-->
+
+<!ELEMENT config	- O (mod*,sb*)-- Configuration.-->
+<!ATTLIST config     %INSDEL;>
+
+<!--*****************************************************************************
+    * Define Element MOD (Modification Description).				*
+    **************************************************************************-->
+
+<!ELEMENT mod		- O EMPTY -- Modification Description.-->
+<!ATTLIST mod         %INSDEL;
+	modnb		NMTOKEN		#REQUIRED	-- Modification Number.--
+	modcond	(pre | post)	#REQUIRED 	-- Condition Modification.-->
+
+
+<!--*****************************************************************************
+    * Define Element SB (Bulletin service).	                     			*
+    **************************************************************************-->
+
+<!ELEMENT sb		- O (%ALLDMC;,issno?,dmtitle?) -- service bulletin Description.-->
+<!ATTLIST sb         %INSDEL;
+	  sbcond	(pre | post)	#REQUIRED 	-- Condition sb.-->
+
+
+<!--*****************************************************************************
+    * Define Element SWPROG (Software Program).					*
+    **************************************************************************-->
+
+<!ELEMENT swprog	- O (#PCDATA) -- Software Program.-->
+<!ATTLIST swprog      %INSDEL;>
+
+
+
+<!--*****************************************************************************
+    * Define Element MANUFACT (Manufacturer Code).				*
+    **************************************************************************-->
+<!ELEMENT manufact 	- - CDATA >
+<!ATTLIST manufact      %INSDEL;>
+
+<!--*****************************************************************************
+    * Define Element PARTNO (Manufacturer PartNumber).				*
+    **************************************************************************-->
+<!ELEMENT partno		- - CDATA >
+<!ATTLIST partno   %INSDEL;>
+
+

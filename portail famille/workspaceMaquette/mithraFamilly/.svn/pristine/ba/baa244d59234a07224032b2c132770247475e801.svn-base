@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet href="cobra1_th_en_new.xsl" type="text/xsl"?><!DOCTYPE TLDOC PUBLIC "-//XCOBRA-IETP // Interactive Technical Logistic Documentation //DE" "./XCobrask/XCobrask.dtd" []>  <!--<!DOCTYPE TLDOC PUBLIC "-//COBRA-IETP //DTD Interactive Technical Logistic Documentation //DE" [ ENTITY amp SDATA "[amp   ]">]--> <TLDOC VERSION="COBRA-DTD 1.0.0">
+<DM LANG="EN.GB" SECURITY="2" UDN="COBRAAK000K01000D0000000000042CA">
+<TDDM>
+<HEAD>
+<DES>COBRA Radar Operation</DES>
+<TMN/>
+<VARCODE>Common</VARCODE>
+<ISSDATE YEAR="2015" MONTH="06" DAY="18"/>
+<MANUF>Euro-Art International</MANUF>
+<CHGLIST>
+<CHGREC>
+<CHGNUM>V00-00-00</CHGNUM>
+<CHGREF>COBRAAG000U01000D0000000000042CA_00A</CHGREF>
+<CHGDEF>
+</CHGDEF>
+<CHGDATE YEAR="2015" MONTH="06" DAY="18"/>
+</CHGREC>
+</CHGLIST>
+</HEAD>
+<DESCONT>
+<SECTION1>
+<STITLE>General</STITLE>
+<P>When operating, the radar performs the following functions:</P>
+<UNDLIST>
+<LITEM>Terrain Mask Adjustment (TMA)</LITEM>
+<LITEM>Passive listening</LITEM>
+<LITEM>Weapon location</LITEM>
+<LITEM>Adjustment/registration.</LITEM>
+</UNDLIST>
+<P>The two most complex functions are weapon location and adjustment/registration as they cover the functions of detection, verification, tracking and firing/impact location. These two functions can be carried out in the same mission. Jamming detection is performed initially during passive listening mode to determine the jammer scenario, and is then continued during the weapon locating mode. </P>
+<SECTION2>
+<STITLE>TMA</STITLE>
+<P>The radar detects projectiles (see illustration - <A HREFDPL="COBRAAK000K01000D0000000012R16AA.SVG">Terrain Mask Adjustment (TMA)</A>) at the earliest possible time by setting the elevation of each search beam so that it is just above the radar horizon. The elevations required are determined by calculating the maximum elevation of the terrain mask at each bearing, first by reference to the Digital Terrain Map (DTM) held in the data system. The terrain mask is then finely adjusted at the start of the transmission phase of the mission in order to minimise the ground clutter at the radar horizon.</P>
+</SECTION2>
+<SECTION2>
+<STITLE>Passive Listening Mode</STITLE>
+<P>During passive listening, the beam position is set in sequence to each bearing in the search arc and for 6 elevation layers. The radar then processes the received signals to determine the bearing, elevation and frequency of jamming signals in the search sector. The search raster beam elevations (calculated for the current radar position) for a location mission are adjusted to minimise main lobe jamming, using the Electronic Counter Measure (ECM) data. The operator or detachment commander can define the operational channels and inhibit zone to be used for location or registration missions.</P>
+</SECTION2>
+<SECTION2>
+<STITLE>Weapon Location Mode</STITLE>
+<P>Detection, verification and track processes are scheduled to run concurrently (track while scan) to make the most efficient and effective use of the radar resources.</P>
+<SECTION3>
+<STITLE>Detection</STITLE>
+<P>During the detection process or sub-mode (see illustration - <A HREFDPL="COBRAAK000K01000D0000000012R09AA.SVG">Target Detection And Verify Beams</A>), the radar is searching for returns of interest over an adjustable search arc contained within &amp;plusmn; 800 mils (&amp;plusmn; 45 &amp;deg;) from the Antenna boresight and at elevations above the terrain mask in order to avoid false detections in areas of high ground clutter. The transmission beams are steered over the search arc such that full sector coverage can be achieved within approximately 0.6 s. If a possible target is detected as a result of this search process, the radar schedules the verification process whilst continuing to search for further targets. </P>
+</SECTION3>
+<SECTION3>
+<STITLE>Verification</STITLE>
+<P>Within 30 to 50 ms of the detection of a possible target (see illustration - <A HREFDPL="COBRAAK000K01000D0000000012R09AA.SVG">Target Detection And Verify Beams</A>), the radar beam is positioned at the same target azimuth using a modified waveform to confirm that the detected target should be further processed. At this time, the system can distinguish between unwanted or false targets and projectile returns. Once a target has been confirmed, the system schedules a series of track beams within 50 ms.</P>
+</SECTION3>
+<SECTION3>
+<STITLE>Tracking</STITLE>
+<P>As the target passes through the radar beam elevation coverage (see illustration - <A HREFDPL="COBRAAK000K01000D0000000012R10AA.SVG">Target Tracking Beams and Impact Location</A>), track beams are positioned to collect additional samples of the target's ballistic flight. Tracking continues until the required prediction accuracy is obtained. Many targets can be detected, verified and tracked concurrently whilst the radar continues to search for additional targets. </P>
+</SECTION3>
+<SECTION3>
+<STITLE>Weapon Impact Location</STITLE>
+<P>On termination of the track (see illustration - <A HREFDPL="COBRAAK000K01000D0000000012R10AA.SVG">Target Tracking Beams and Impact Location</A>), all data points associated with the particular target are inserted into a ballistic prediction algorithm. The prediction data is combined with information from a Digital Terrain Map (DTM) to estimate the ground coordinates of the firing position.</P>
+</SECTION3>
+</SECTION2>
+<SECTION2>
+<STITLE>Adjustment/Registration Mode</STITLE>
+<P>During registration missions (see illustration - <A HREFDPL="COBRAAK000K01000D0000000012R06AA.SVG">Friendly Fire Adjustment/Registration</A>), the radar tracks friendly fire projectiles and extrapolates their track to the impact point. In this case the radar first receives information on the expected track of the friendly fire, so that the search may be concentrated into a small area.</P>
+</SECTION2>
+</SECTION1>
+<SECTION1>
+<STITLE>Multiple System Operation</STITLE>
+<P>When operating multiple COBRA Systems in the same area some precautions are necessary to avoid performance degradation and interference between the Systems.</P>
+<SECTION2>
+<STITLE>Radar System Location / Siting</STITLE>
+<P>Direct radiation from one System into another at less than 300m, or indirect radiation at less than 50m, may cause equipment damage. In order to avoid interference and performance degradation:</P>
+<UNDLIST>
+<LITEM>COBRA Systems should not be operated closer than 50m from another COBRA System.</LITEM>
+<LITEM>Systems should not be operated in opposing surveillance directions </LITEM>
+<LITEM>Employ the procedures below for operational modes when using multiple Systems</LITEM>
+</UNDLIST>
+</SECTION2>
+<SECTION2>
+<STITLE>Radar Initialising</STITLE>
+<P>Calibration should be completed in turn while no other COBRA System is radiating. The Antenna should be in the stowed position (if possible) to prevent calibration failures on single frequencies. If interference is experienced, the operator should check the current faults list for potential calibration faults, like PCG050 (calibration failed for channels 3, 4, 5). In this case the calibration should be repeated while the other COBRA is not radiating or the indicated channels deselected.</P>
+</SECTION2>
+<SECTION2>
+<STITLE>Mission Execution</STITLE>
+<P>Before operating multiple COBRA Systems, the local Commander should take consideration of the allocation of frequency channels between the operated radars. The preferred allocation of frequency channels is to use blocks of channels separated by deselected buffer channels i.e. for two operating COBRA Systems transmitting simultaneously in <FONT>PEACE</FONT>mode an example allocation could be 1-10 for System 1 and 12-22 for System 2. It is recommended to have a minimum of 4 channels enabled.</P>
+</SECTION2>
+<SECTION2>
+<ATT TYPATT="NOTE">The lower the number of channels the higher the risk for self jamming due to multi-path returns received by consecutive dwells using the same frequency as the previous one. </ATT>
+</SECTION2>
+</SECTION1>
+</DESCONT>
+</TDDM>
+</DM>
+</TLDOC>

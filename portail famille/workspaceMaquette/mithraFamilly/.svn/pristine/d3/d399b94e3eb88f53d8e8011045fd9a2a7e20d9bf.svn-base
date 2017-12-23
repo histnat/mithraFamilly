@@ -1,0 +1,9 @@
+package com.sonovision.openconv.modules.xslprocess.helper.table;
+
+
+
+public interface LoadTable {
+
+	public void initTable() throws Exception;
+	public void load() throws Exception;
+}

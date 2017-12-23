@@ -1,0 +1,24 @@
+[
+   {
+          "id": {
+            "taskId": "1",
+            "parameterName": "inputFolder"
+          },
+          "label": "R\ufffdpertoire d'entr\ufffde",
+          "value": "\/xml\/cobra",
+          "code": "inputFolder",
+          "type": "FILE",
+          "descr": "R\ufffdpertoire des fichiers \ufffd charger"
+        },
+    {
+          "id": {
+            "taskId": "1",
+            "parameterName": "extensionFilter"
+          },
+          "label": "Extension du filtre",
+          "value": null,
+          "code": "extensionFilter",
+          "type": "TXT",
+          "descr": "Description extension du filtre"
+        }
+]

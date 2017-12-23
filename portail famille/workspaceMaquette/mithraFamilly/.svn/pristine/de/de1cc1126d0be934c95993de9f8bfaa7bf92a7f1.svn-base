@@ -1,0 +1,1271 @@
+<!--**********************************************************************
+* *
+* RAFALE Change 2.2 *
+* Document Type Definition *
+* *
+* Release Version 2.2 *
+* Dated 22th December 1998 *
+* *
+* Amendment :- *
+* 1. New Componant Status list Public Identifier *
+* *
+**********************************************************************-->
+<!--*****************************************************************************
+* Define Entity %RPCNAME (Responsible Partner Company Names). *
+* Responsible Partner Company Names. *
+* See "CTG annexe 2" for details about the above letters. *
+**************************************************************************-->
+<!ENTITY % RPCNAME  
+               "(A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z|0|1|2|3|4|5|6|7|8|9)" >
+
+<!--**********************************************************************
+* Define Entity %ISOgrk3; (ISO Greek Symbols) containing:- the *
+* formal public identifier for the ISO Greek Symbols public text. *
+**********************************************************************-->
+<!ENTITY % ISOGRK3   PUBLIC "ISO 8879-1986//ENTITIES Greek Symbols//EN"    >
+
+<!--********************************************************************
+* *
+* RAFALE *
+* *
+* Release Version 2.2 *
+* Dated 22th December 1998 *
+* *
+* *
+* Company in charge of : *
+* *
+* Dtd Object : Configuration Status List. *
+* Amendment : *
+* 19/05/97 : Change public Identifier *
+* add reference to public entities ISO Latin 1*
+* *
+* 15/01/98 : Change public Identifier *
+* add value "p" to rpcname attribute list values*
+* *
+* 22/12/98 : Change public Identifier *
+* remove one definition of subsect *
+* change comments inside IPCN definition *
+* *
+* 19/04/99 : Add ISOpub, ISOgrk3, ISOnum, ISOtech entities *
+* *
+* 15/03/01 : Extension de la liste de l'attribut rpcname *
+* Motif: Fiche de Changement Rafale Num 3485 Ind A du 06/10/2000 *
+* *
+*The following DOCTYPE statement may be used to call this set of *
+* declarations: *
+* *
+* <!DOCTYPE csl PUBLIC *
+* "-//RAFALE CSDB//DTD Configuration Status List 981222//EN" *
+* []> *
+* *
+********************************************************************
+**********************************************************************
+* Define Entity %ISOlat1; (ISO Added Latin 1) containing:- the *
+* formal public identifier for the ISO Added Latin 1 public text. *
+**********************************************************************-->
+<!ENTITY % ISOLAT1   PUBLIC "ISO 8879-1986//ENTITIES Added Latin 1//EN"    >
+
+<!--**********************************************************************
+* Define Entity %ISOnum; (ISO Numeric and Special Symbols) *
+* containing:- the formal public identifier for the ISO Numeric and *
+* Special Symbols public text. *
+**********************************************************************-->
+<!ENTITY % ISONUM   PUBLIC 
+               "ISO 8879-1986//ENTITIES Numeric and Special Graphic//EN"    >
+
+<!--**********************************************************************
+* Define Entity %ISOpub; (ISO Publishing) containing:- the formal *
+* public identifier for the ISO Publishing public text. *
+**********************************************************************-->
+<!ENTITY % ISOPUB   PUBLIC "ISO 8879-1986//ENTITIES Publishing//EN"    >
+
+<!--**********************************************************************
+* Define Entity %ISOtech; (ISO General Technical) containing:- the *
+* formal public identifier for the ISO General Technical public text.*
+**********************************************************************-->
+<!ENTITY % ISOTECH   PUBLIC "ISO 8879-1986//ENTITIES General Technical//EN"    >
+
+<!--**********************************************************************
+* Call the ISO Added Latin 1 Public Text. The formal public *
+* identifier is stored in the entity %ISOlat1; *
+**********************************************************************
+(C) International Organization for Standardization 1986
+Permission to copy in any form is granted for use with
+conforming SGML systems and applications as defined in
+ISO 8879, provided this notice is included in all copies.
+
+Character entity set. Typical invocation:
+<!ENTITY % ISOlat1 PUBLIC
+"ISO 8879-1986//ENTITIES Added Latin 1//EN">
+%ISOlat1;
+
+=small a, acute accent-->
+<!ENTITY AACUTE   SDATA "[aacute]" >
+
+<!--=small a, circumflex accent-->
+<!ENTITY ACIRC   SDATA "[acirc ]" >
+
+<!--=small ae diphthong (ligature)-->
+<!ENTITY AELIG   SDATA "[aelig ]" >
+
+<!--=small a, grave accent-->
+<!ENTITY AGRAVE   SDATA "[agrave]" >
+
+<!--**********************************************************************
+* Call the ISO General Technical Public Text. The formal public *
+* identifier is stored in the entity %ISOtech; *
+**********************************************************************
+(C) International Organization for Standardization 1986
+Permission to copy in any form is granted for use with
+conforming SGML systems and applications as defined in
+ISO 8879, provided this notice is included in all copies.
+
+Character entity set. Typical invocation:
+<!ENTITY % ISOtech PUBLIC
+"ISO 8879-1986//ENTITIES General Technical//EN">
+%ISOtech;
+
+/aleph =aleph, Hebrew-->
+<!ENTITY ALEPH   SDATA "[aleph ]" >
+
+<!--**********************************************************************
+* Call the ISO Greek Symbols Public Text. The formal public *
+* identifier is stored in the entity %ISOgrk3; *
+**********************************************************************
+(C) International Organization for Standardization 1986
+Permission to copy in any form is granted for use with
+conforming SGML systems and applications as defined in
+ISO 8879, provided this notice is included in all copies.
+
+Character entity set. Typical invocation:
+<!ENTITY % ISOgrk3 PUBLIC
+"ISO 8879-1986//ENTITIES Greek Symbols//EN">
+%ISOgrk3;
+
+=small alpha, Greek-->
+<!ENTITY ALPHA   SDATA "[alpha ]" >
+
+<!--=ampersand-->
+<!ENTITY AMP   SDATA "[amp   ]" >
+
+<!--/wedge /land B: =logical and-->
+<!ENTITY AND   SDATA "[and   ]" >
+
+<!--=right (90 degree) angle-->
+<!ENTITY ANG90   SDATA "[ang90 ]" >
+
+<!--/sphericalangle =angle-spherical-->
+<!ENTITY ANGSPH   SDATA "[angsph]" >
+
+<!--Angstrom =capital A, ring-->
+<!ENTITY ANGST   SDATA "[angst ]" >
+
+<!--/approx R: =approximate-->
+<!ENTITY AP   SDATA "[ap    ]" >
+
+<!--=apostrophe-->
+<!ENTITY APOS   SDATA "[apos  ]" >
+
+<!--=small a, ring-->
+<!ENTITY ARING   SDATA "[aring ]" >
+
+<!--/ast B: =asterisk-->
+<!ENTITY AST   SDATA "[ast   ]" >
+
+<!--=small a, tilde-->
+<!ENTITY ATILDE   SDATA "[atilde]" >
+
+<!--=small a, dieresis or umlaut mark-->
+<!ENTITY AUML   SDATA "[auml  ]" >
+
+<!--/because R: =because-->
+<!ENTITY BECAUS   SDATA "[becaus]" >
+
+<!--Bernoulli function (script capital B)-->
+<!ENTITY BERNOU   SDATA "[bernou]" >
+
+<!--=small beta, Greek-->
+<!ENTITY BETA   SDATA "[beta  ]" >
+
+<!--=significant blank symbol-->
+<!ENTITY BLANK   SDATA "[blank ]" >
+
+<!--=50% shaded block-->
+<!ENTITY BLK12   SDATA "[blk12 ]" >
+
+<!--=25% shaded block-->
+<!ENTITY BLK14   SDATA "[blk14 ]" >
+
+<!--=75% shaded block-->
+<!ENTITY BLK34   SDATA "[blk34 ]" >
+
+<!--=full block-->
+<!ENTITY BLOCK   SDATA "[block ]" >
+
+<!--/bot B: =perpendicular-->
+<!ENTITY BOTTOM   SDATA "[bottom]" >
+
+<!--=broken (vertical) bar-->
+<!ENTITY BRVBAR   SDATA "[brvbar]" >
+
+<!--/backslash =reverse solidus-->
+<!ENTITY BSOL   SDATA "[bsol  ]" >
+
+<!--/bullet B: =round bullet, filled-->
+<!ENTITY BULL   SDATA "[bull  ]" >
+
+<!--/cap B: =intersection-->
+<!ENTITY CAP   SDATA "[cap   ]" >
+
+<!--=caret (insertion mark)-->
+<!ENTITY CARET   SDATA "[caret ]" >
+
+<!--=small c, cedilla-->
+<!ENTITY CCEDIL   SDATA "[ccedil]" >
+
+<!--=cent sign-->
+<!ENTITY CENT   SDATA "[cent  ]" >
+
+<!--/checkmark =tick, check mark-->
+<!ENTITY CHECK   SDATA "[check ]" >
+
+<!--=small chi, Greek-->
+<!ENTITY CHI   SDATA "[chi   ]" >
+
+<!--/circ B: =circle, open-->
+<!ENTITY CIR   SDATA "[cir   ]" >
+
+<!--/clubsuit =club suit symbol-->
+<!ENTITY CLUBS   SDATA "[clubs ]" >
+
+<!--/colon P:-->
+<!ENTITY COLON   SDATA "[colon ]" >
+
+<!--P: =comma-->
+<!ENTITY COMMA   SDATA "[comma ]" >
+
+<!--=commercial at-->
+<!ENTITY COMMAT   SDATA "[commat]" >
+
+<!--B: composite function (small circle)-->
+<!ENTITY COMPFN   SDATA "[compfn]" >
+
+<!--/cong R: =congruent with-->
+<!ENTITY CONG   SDATA "[cong  ]" >
+
+<!--/oint L: =contour integral operator-->
+<!ENTITY CONINT   SDATA "[conint]" >
+
+<!--=copyright sign-->
+<!ENTITY COPY   SDATA "[copy  ]" >
+
+<!--=sound recording copyright sign-->
+<!ENTITY COPYSR   SDATA "[copysr]" >
+
+<!--=ballot cross-->
+<!ENTITY CROSS   SDATA "[ballot]" >
+
+<!--/cup B: =union or logical sum-->
+<!ENTITY CUP   SDATA "[cup   ]" >
+
+<!--=general currency sign-->
+<!ENTITY CURREN   SDATA "[curren]" >
+
+<!--/dagger B: =dagger-->
+<!ENTITY DAGGER   SDATA "[dagger]" >
+
+<!--/downarrow A: =downward arrow-->
+<!ENTITY DARR   SDATA "[darr  ]" >
+
+<!--=hyphen (true graphic)-->
+<!ENTITY DASH   SDATA "[dash  ]" >
+
+<!--=degree sign-->
+<!ENTITY DEG   SDATA "[deg   ]" >
+
+<!--=small delta, Greek-->
+<!ENTITY DELTA   SDATA "[delta ]" >
+
+<!--/diamondsuit =diamond suit symbol-->
+<!ENTITY DIAMS   SDATA "[diams ]" >
+
+<!--/div B: =divide sign-->
+<!ENTITY DIVIDE   SDATA "[divide]" >
+
+<!--downward left crop mark-->
+<!ENTITY DLCROP   SDATA "[dlcrop]" >
+
+<!--=dollar sign-->
+<!ENTITY DOLLAR   SDATA "[dollar]" >
+
+<!--=dieresis or umlaut mark-->
+<!ENTITY DOT   SDATA "[Dot   ]" >
+
+<!--four dots above-->
+<!ENTITY DOTDOT   SDATA "[DotDot]" >
+
+<!--downward right crop mark-->
+<!ENTITY DRCROP   SDATA "[drcrop]" >
+
+<!--/triangledown =down triangle, open-->
+<!ENTITY DTRI   SDATA "[dtri  ]" >
+
+<!--/blacktriangledown =dn tri, filled-->
+<!ENTITY DTRIF   SDATA "[dtrif ]" >
+
+<!--=small e, acute accent-->
+<!ENTITY EACUTE   SDATA "[eacute]" >
+
+<!--=small e, circumflex accent-->
+<!ENTITY ECIRC   SDATA "[ecirc ]" >
+
+<!--=small e, grave accent-->
+<!ENTITY EGRAVE   SDATA "[egrave]" >
+
+<!--**********************************************************************
+* Call the ISO Publishing Public Text. The formal public identifier *
+* is stored in the entity %ISOpub; *
+**********************************************************************
+(C) International Organization for Standardization 1986
+Permission to copy in any form is granted for use with
+conforming SGML systems and applications as defined in
+ISO 8879, provided this notice is included in all copies.
+
+Character entity set. Typical invocation:
+<!ENTITY % ISOpub PUBLIC
+"ISO 8879-1986//ENTITIES Publishing//EN">
+%ISOpub;
+
+=em space-->
+<!ENTITY EMSP   SDATA "[emsp  ]" >
+
+<!--=1/3-em space-->
+<!ENTITY EMSP13   SDATA "[emsp3 ]" >
+
+<!--=1/4-em space-->
+<!ENTITY EMSP14   SDATA "[emsp4 ]" >
+
+<!--=en space (1/2-em)-->
+<!ENTITY ENSP   SDATA "[ensp  ]" >
+
+<!--=small epsilon, Greek-->
+<!ENTITY EPSI   SDATA "[epsi  ]" >
+
+<!--/straightepsilon-->
+<!ENTITY EPSIS   SDATA "[epsis ]" >
+
+<!--/varepsilon-->
+<!ENTITY EPSIV   SDATA "[epsiv ]" >
+
+<!--=equals sign R:-->
+<!ENTITY EQUALS   SDATA "[equals]" >
+
+<!--/equiv R: =identical with-->
+<!ENTITY EQUIV   SDATA "[equiv ]" >
+
+<!--=small eta, Greek-->
+<!ENTITY ETA   SDATA "[eta   ]" >
+
+<!--=small eth, Icelandic-->
+<!ENTITY ETH   SDATA "[eth   ]" >
+
+<!--=small e, dieresis or umlaut mark-->
+<!ENTITY EUML   SDATA "[euml  ]" >
+
+<!--=exclamation mark-->
+<!ENTITY EXCL   SDATA "[excl  ]" >
+
+<!--/exists =at least one exists-->
+<!ENTITY EXIST   SDATA "[exist ]" >
+
+<!--=female symbol-->
+<!ENTITY FEMALE   SDATA "[female]" >
+
+<!--small ffi ligature-->
+<!ENTITY FFILIG   SDATA "[ffilig]" >
+
+<!--small ff ligature-->
+<!ENTITY FFLIG   SDATA "[fflig ]" >
+
+<!--small ffl ligature-->
+<!ENTITY FFLLIG   SDATA "[ffllig]" >
+
+<!--small fi ligature-->
+<!ENTITY FILIG   SDATA "[filig ]" >
+
+<!--small fj ligature-->
+<!ENTITY FJLIG   SDATA "[fjlig ]" >
+
+<!--/flat =musical flat-->
+<!ENTITY FLAT   SDATA "[flat  ]" >
+
+<!--small fl ligature-->
+<!ENTITY FLLIG   SDATA "[fllig ]" >
+
+<!--=function of (italic small f)-->
+<!ENTITY FNOF   SDATA "[fnof  ]" >
+
+<!--/forall =for all-->
+<!ENTITY FORALL   SDATA "[forall]" >
+
+<!--=fraction one-half-->
+<!ENTITY FRAC12   SDATA "[frac12]" >
+
+<!--=fraction one-third-->
+<!ENTITY FRAC13   SDATA "[frac13]" >
+
+<!--=fraction one-quarter-->
+<!ENTITY FRAC14   SDATA "[frac14]" >
+
+<!--=fraction one-fifth-->
+<!ENTITY FRAC15   SDATA "[frac15]" >
+
+<!--=fraction one-sixth-->
+<!ENTITY FRAC16   SDATA "[frac16]" >
+
+<!--=fraction one-eighth-->
+<!ENTITY FRAC18   SDATA "[frac18]" >
+
+<!--=fraction two-thirds-->
+<!ENTITY FRAC23   SDATA "[frac23]" >
+
+<!--=fraction two-fifths-->
+<!ENTITY FRAC25   SDATA "[frac25]" >
+
+<!--=fraction three-quarters-->
+<!ENTITY FRAC34   SDATA "[frac34]" >
+
+<!--=fraction three-fifths-->
+<!ENTITY FRAC35   SDATA "[frac35]" >
+
+<!--=fraction three-eighths-->
+<!ENTITY FRAC38   SDATA "[frac38]" >
+
+<!--=fraction four-fifths-->
+<!ENTITY FRAC45   SDATA "[frac45]" >
+
+<!--=fraction five-sixths-->
+<!ENTITY FRAC56   SDATA "[frac56]" >
+
+<!--=fraction five-eighths-->
+<!ENTITY FRAC58   SDATA "[frac58]" >
+
+<!--=fraction seven-eighths-->
+<!ENTITY FRAC78   SDATA "[frac78]" >
+
+<!--=small gamma, Greek-->
+<!ENTITY GAMMA   SDATA "[gamma ]" >
+
+<!--/digamma-->
+<!ENTITY GAMMAD   SDATA "[gammad]" >
+
+<!--/geq /ge R: =greater-than-or-equal-->
+<!ENTITY GE   SDATA "[ge    ]" >
+
+<!--=greater-than sign R:-->
+<!ENTITY GT   SDATA "[gt    ]" >
+
+<!--=hair space-->
+<!ENTITY HAIRSP   SDATA "[hairsp]" >
+
+<!--**********************************************************************
+* Call the ISO Numeric and Special Symbols Public Text. The formal *
+* public identifier is stored in the entity %ISOnum; *
+**********************************************************************
+(C) International Organization for Standardization 1986
+Permission to copy in any form is granted for use with
+conforming SGML systems and applications as defined in
+ISO 8879, provided this notice is included in all copies.
+
+Character entity set. Typical invocation:
+<!ENTITY % ISOnum PUBLIC
+"ISO 8879-1986//ENTITIES Numeric and Special Graphic//EN">
+%ISOnum;
+
+=fraction one-half-->
+<!ENTITY HALF   SDATA "[half  ]" >
+
+<!--Hamiltonian (script capital H)-->
+<!ENTITY HAMILT   SDATA "[hamilt]" >
+
+<!--/heartsuit =heart suit symbol-->
+<!ENTITY HEARTS   SDATA "[hearts]" >
+
+<!--=ellipsis (horizontal)-->
+<!ENTITY HELLIP   SDATA "[hellip]" >
+
+<!--=horizontal bar-->
+<!ENTITY HORBAR   SDATA "[horbar]" >
+
+<!--rectangle, filled (hyphen bullet)-->
+<!ENTITY HYBULL   SDATA "[hybull]" >
+
+<!--=hyphen-->
+<!ENTITY HYPHEN   SDATA "[hyphen]" >
+
+<!--=small i, acute accent-->
+<!ENTITY IACUTE   SDATA "[iacute]" >
+
+<!--=small i, circumflex accent-->
+<!ENTITY ICIRC   SDATA "[icirc ]" >
+
+<!--=inverted exclamation mark-->
+<!ENTITY IEXCL   SDATA "[iexcl ]" >
+
+<!--/iff =if and only if-->
+<!ENTITY IFF   SDATA "[iff   ]" >
+
+<!--=small i, grave accent-->
+<!ENTITY IGRAVE   SDATA "[igrave]" >
+
+<!--=in-care-of symbol-->
+<!ENTITY INCARE   SDATA "[incare]" >
+
+<!--/infty =infinity-->
+<!ENTITY INFIN   SDATA "[infin ]" >
+
+<!--/int L: =integral operator-->
+<!ENTITY INT   SDATA "[int   ]" >
+
+<!--=small iota, Greek-->
+<!ENTITY IOTA   SDATA "[iota  ]" >
+
+<!--=inverted question mark-->
+<!ENTITY IQUEST   SDATA "[iquest]" >
+
+<!--/in R: =set membership-->
+<!ENTITY ISIN   SDATA "[isin  ]" >
+
+<!--=small i, dieresis or umlaut mark-->
+<!ENTITY IUML   SDATA "[iuml  ]" >
+
+<!--=small kappa, Greek-->
+<!ENTITY KAPPA   SDATA "[kappa ]" >
+
+<!--/varkappa-->
+<!ENTITY KAPPAV   SDATA "[kappav]" >
+
+<!--Lagrangian (script capital L)-->
+<!ENTITY LAGRAN   SDATA "[lagran]" >
+
+<!--=small lambda, Greek-->
+<!ENTITY LAMBDA   SDATA "[lambda]" >
+
+<!--/langle O: =left angle bracket-->
+<!ENTITY LANG   SDATA "[lang  ]" >
+
+<!--=angle quotation mark, left-->
+<!ENTITY LAQUO   SDATA "[laquo ]" >
+
+<!--/leftarrow /gets A: =leftward arrow-->
+<!ENTITY LARR   SDATA "[larr  ]" >
+
+<!--/lbrace O: =left curly bracket-->
+<!ENTITY LCUB   SDATA "[lcub  ]" >
+
+<!--=double quotation mark, left-->
+<!ENTITY LDQUO   SDATA "[ldquo ]" >
+
+<!--=rising dbl quote, left (low)-->
+<!ENTITY LDQUOR   SDATA "[ldquor]" >
+
+<!--/leq /le R: =less-than-or-equal-->
+<!ENTITY LE   SDATA "[le    ]" >
+
+<!--=lower half block-->
+<!ENTITY LHBLK   SDATA "[lhblk ]" >
+
+<!--low asterisk-->
+<!ENTITY LOWAST   SDATA "[lowast]" >
+
+<!--=low line-->
+<!ENTITY LOWBAR   SDATA "[lowbar]" >
+
+<!--/lozenge - lozenge or total mark-->
+<!ENTITY LOZ   SDATA "[loz   ]" >
+
+<!--/blacklozenge - lozenge, filled-->
+<!ENTITY LOZF   SDATA "[lozf  ]" >
+
+<!--O: =left parenthesis-->
+<!ENTITY LPAR   SDATA "[lpar  ]" >
+
+<!--/lbrack O: =left square bracket-->
+<!ENTITY LSQB   SDATA "[lsqb  ]" >
+
+<!--=single quotation mark, left-->
+<!ENTITY LSQUO   SDATA "[lsquo ]" >
+
+<!--=rising single quote, left (low)-->
+<!ENTITY LSQUOR   SDATA "[lsquor]" >
+
+<!--=less-than sign R:-->
+<!ENTITY LT   SDATA "[lt    ]" >
+
+<!--/triangleleft B: l triangle, open-->
+<!ENTITY LTRI   SDATA "[ltri  ]" >
+
+<!--/blacktriangleleft R: =l tri, filled-->
+<!ENTITY LTRIF   SDATA "[ltrif ]" >
+
+<!--=male symbol-->
+<!ENTITY MALE   SDATA "[male  ]" >
+
+<!--/maltese =maltese cross-->
+<!ENTITY MALT   SDATA "[malt  ]" >
+
+<!--=histogram marker-->
+<!ENTITY MARKER   SDATA "[marker]" >
+
+<!--=em dash-->
+<!ENTITY MDASH   SDATA "[mdash ]" >
+
+<!--=micro sign-->
+<!ENTITY MICRO   SDATA "[micro ]" >
+
+<!--/centerdot B: =middle dot-->
+<!ENTITY MIDDOT   SDATA "[middot]" >
+
+<!--B: =minus sign-->
+<!ENTITY MINUS   SDATA "[minus ]" >
+
+<!--em leader-->
+<!ENTITY MLDR   SDATA "[mldr  ]" >
+
+<!--/mp B: =minus-or-plus sign-->
+<!ENTITY MNPLUS   SDATA "[mnplus]" >
+
+<!--=small mu, Greek-->
+<!ENTITY MU   SDATA "[mu    ]" >
+
+<!--/nabla =del, Hamilton operator-->
+<!ENTITY NABLA   SDATA "[nabla ]" >
+
+<!--/natural - music natural-->
+<!ENTITY NATUR   SDATA "[natur ]" >
+
+<!--=no break (required) space-->
+<!ENTITY NBSP   SDATA "[nbsp  ]" >
+
+<!--=en dash-->
+<!ENTITY NDASH   SDATA "[ndash ]" >
+
+<!--/ne /neq R: =not equal-->
+<!ENTITY NE   SDATA "[ne    ]" >
+
+<!--/ni /owns R: =contains-->
+<!ENTITY NI   SDATA "[ni    ]" >
+
+<!--=double baseline dot (en leader)-->
+<!ENTITY NLDR   SDATA "[nldr  ]" >
+
+<!--/neg /lnot =not sign-->
+<!ENTITY NOT   SDATA "[not   ]" >
+
+<!--N: negated set membership-->
+<!ENTITY NOTIN   SDATA "[notin ]" >
+
+<!--=small n, tilde-->
+<!ENTITY NTILDE   SDATA "[ntilde]" >
+
+<!--=small nu, Greek-->
+<!ENTITY NU   SDATA "[nu    ]" >
+
+<!--=number sign-->
+<!ENTITY NUM   SDATA "[num   ]" >
+
+<!--=digit space (width of a number)-->
+<!ENTITY NUMSP   SDATA "[numsp ]" >
+
+<!--=small o, acute accent-->
+<!ENTITY OACUTE   SDATA "[oacute]" >
+
+<!--=small o, circumflex accent-->
+<!ENTITY OCIRC   SDATA "[ocirc ]" >
+
+<!--=small o, grave accent-->
+<!ENTITY OGRAVE   SDATA "[ograve]" >
+
+<!--=ohm sign-->
+<!ENTITY OHM   SDATA "[ohm   ]" >
+
+<!--=small omega, Greek-->
+<!ENTITY OMEGA   SDATA "[omega ]" >
+
+<!--/vee /lor B: =logical or-->
+<!ENTITY OR   SDATA "[or    ]" >
+
+<!--order of (script small o)-->
+<!ENTITY ORDER   SDATA "[order ]" >
+
+<!--=ordinal indicator, feminine-->
+<!ENTITY ORDF   SDATA "[ordf  ]" >
+
+<!--=ordinal indicator, masculine-->
+<!ENTITY ORDM   SDATA "[ordm  ]" >
+
+<!--=small o, slash-->
+<!ENTITY OSLASH   SDATA "[oslash]" >
+
+<!--=small o, tilde-->
+<!ENTITY OTILDE   SDATA "[otilde]" >
+
+<!--=small o, dieresis or umlaut mark-->
+<!ENTITY OUML   SDATA "[ouml  ]" >
+
+<!--/parallel R: =parallel-->
+<!ENTITY PAR   SDATA "[par   ]" >
+
+<!--=pilcrow (paragraph sign)-->
+<!ENTITY PARA   SDATA "[para  ]" >
+
+<!--/partial =partial differential-->
+<!ENTITY PART   SDATA "[part  ]" >
+
+<!--=percent sign-->
+<!ENTITY PERCNT   SDATA "[percnt]" >
+
+<!--=full stop, period-->
+<!ENTITY PERIOD   SDATA "[period]" >
+
+<!--=per thousand-->
+<!ENTITY PERMIL   SDATA "[permil]" >
+
+<!--/perp R: =perpendicular-->
+<!ENTITY PERP   SDATA "[perp  ]" >
+
+<!--=capital Phi, Greek-->
+<!ENTITY PHI   SDATA "[Phi   ]" >
+
+<!--/straightphi - straight phi-->
+<!ENTITY PHIS   SDATA "[phis  ]" >
+
+<!--/varphi - curly or open phi-->
+<!ENTITY PHIV   SDATA "[phiv  ]" >
+
+<!--physics M-matrix (script capital M)-->
+<!ENTITY PHMMAT   SDATA "[phmmat]" >
+
+<!--=telephone symbol-->
+<!ENTITY PHONE   SDATA "[phone ]" >
+
+<!--=small pi, Greek-->
+<!ENTITY PI   SDATA "[pi    ]" >
+
+<!--/varpi-->
+<!ENTITY PIV   SDATA "[piv   ]" >
+
+<!--=plus sign B:-->
+<!ENTITY PLUS   SDATA "[plus  ]" >
+
+<!--/pm B: =plus-or-minus sign-->
+<!ENTITY PLUSMN   SDATA "[plusmn]" >
+
+<!--=pound sign-->
+<!ENTITY POUND   SDATA "[pound ]" >
+
+<!--/prime =prime or minute-->
+<!ENTITY PRIME   SDATA "[prime ]" >
+
+<!--/propto R: =is proportional to-->
+<!ENTITY PROP   SDATA "[prop  ]" >
+
+<!--=small psi, Greek-->
+<!ENTITY PSI   SDATA "[psi   ]" >
+
+<!--=punctuation space (width of comma)-->
+<!ENTITY PUNCSP   SDATA "[puncsp]" >
+
+<!--=question mark-->
+<!ENTITY QUEST   SDATA "[quest ]" >
+
+<!--=quotation mark-->
+<!ENTITY QUOT   SDATA "[quot  ]" >
+
+<!--/surd =radical-->
+<!ENTITY RADIC   SDATA "[radic ]" >
+
+<!--/rangle C: =right angle bracket-->
+<!ENTITY RANG   SDATA "[rang  ]" >
+
+<!--=angle quotation mark, right-->
+<!ENTITY RAQUO   SDATA "[raquo ]" >
+
+<!--/rightarrow /to A: =rightward arrow-->
+<!ENTITY RARR   SDATA "[rarr  ]" >
+
+<!--/rbrace C: =right curly bracket-->
+<!ENTITY RCUB   SDATA "[rcub  ]" >
+
+<!--=double quotation mark, right-->
+<!ENTITY RDQUO   SDATA "[rdquo ]" >
+
+<!--rising dbl quote, right (high)-->
+<!ENTITY RDQUOR   SDATA "[rdquor]" >
+
+<!--=rectangle, open-->
+<!ENTITY RECT   SDATA "[rect  ]" >
+
+<!--/circledR =registered sign-->
+<!ENTITY REG   SDATA "[reg   ]" >
+
+<!--=small rho, Greek-->
+<!ENTITY RHO   SDATA "[rho   ]" >
+
+<!--/varrho-->
+<!ENTITY RHOV   SDATA "[rhov  ]" >
+
+<!--C: =right parenthesis-->
+<!ENTITY RPAR   SDATA "[rpar  ]" >
+
+<!--/rbrack C: =right square bracket-->
+<!ENTITY RSQB   SDATA "[rsqb  ]" >
+
+<!--=single quotation mark, right-->
+<!ENTITY RSQUO   SDATA "[rsquo ]" >
+
+<!--rising single quote, right (high)-->
+<!ENTITY RSQUOR   SDATA "[rsquor]" >
+
+<!--/triangleright B: r triangle, open-->
+<!ENTITY RTRI   SDATA "[rtri  ]" >
+
+<!--/blacktriangleright R: =r tri, filled-->
+<!ENTITY RTRIF   SDATA "[rtrif ]" >
+
+<!--pharmaceutical prescription (Rx)-->
+<!ENTITY RX   SDATA "[rx    ]" >
+
+<!--=section sign-->
+<!ENTITY SECT   SDATA "[sect  ]" >
+
+<!--=semicolon P:-->
+<!ENTITY SEMI   SDATA "[semi  ]" >
+
+<!--sextile (6-pointed star)-->
+<!ENTITY SEXT   SDATA "[sext  ]" >
+
+<!--/sharp =musical sharp-->
+<!ENTITY SHARP   SDATA "[sharp ]" >
+
+<!--=soft hyphen-->
+<!ENTITY SHY   SDATA "[shy   ]" >
+
+<!--=small sigma, Greek-->
+<!ENTITY SIGMA   SDATA "[sigma ]" >
+
+<!--/varsigma-->
+<!ENTITY SIGMAV   SDATA "[sigmav]" >
+
+<!--/sim R: =similar-->
+<!ENTITY SIM   SDATA "[sim   ]" >
+
+<!--/simeq R: =similar, equals-->
+<!ENTITY SIME   SDATA "[sime  ]" >
+
+<!--=solidus-->
+<!ENTITY SOL   SDATA "[sol   ]" >
+
+<!--/spadesuit =spades suit symbol-->
+<!ENTITY SPADES   SDATA "[spades]" >
+
+<!--=square, open-->
+<!ENTITY SQU   SDATA "[squ   ]" >
+
+<!--/square B: =square-->
+<!ENTITY SQUARE   SDATA "[square]" >
+
+<!--/blacksquare =sq bullet, filled-->
+<!ENTITY SQUF   SDATA "[squf  ]" >
+
+<!--=star, open-->
+<!ENTITY STAR   SDATA "[star  ]" >
+
+<!--/bigstar - star, filled-->
+<!ENTITY STARF   SDATA "[starf ]" >
+
+<!--/subset R: =subset or is implied by-->
+<!ENTITY SUB   SDATA "[sub   ]" >
+
+<!--/subseteq R: =subset, equals-->
+<!ENTITY SUBE   SDATA "[sube  ]" >
+
+<!--=music note (sung text sign)-->
+<!ENTITY SUNG   SDATA "[sung  ]" >
+
+<!--/supset R: =superset or implies-->
+<!ENTITY SUP   SDATA "[sup   ]" >
+
+<!--=superscript one-->
+<!ENTITY SUP1   SDATA "[sup1  ]" >
+
+<!--=superscript two-->
+<!ENTITY SUP2   SDATA "[sup2  ]" >
+
+<!--=superscript three-->
+<!ENTITY SUP3   SDATA "[sup3  ]" >
+
+<!--/supseteq R: =superset, equals-->
+<!ENTITY SUPE   SDATA "[supe  ]" >
+
+<!--=small sharp s, German (sz ligature)-->
+<!ENTITY SZLIG   SDATA "[szlig ]" >
+
+<!--register mark or target-->
+<!ENTITY TARGET   SDATA "[target]" >
+
+<!--=small tau, Greek-->
+<!ENTITY TAU   SDATA "[tau   ]" >
+
+<!--three dots above-->
+<!ENTITY TDOT   SDATA "[tdot  ]" >
+
+<!--=telephone recorder symbol-->
+<!ENTITY TELREC   SDATA "[telrec]" >
+
+<!--/therefore R: =therefore-->
+<!ENTITY THERE4   SDATA "[there4]" >
+
+<!--=capital Theta, Greek-->
+<!ENTITY THETA   SDATA "[Theta ]" >
+
+<!--straight theta-->
+<!ENTITY THETAS   SDATA "[thetas]" >
+
+<!--/vartheta - curly or open theta-->
+<!ENTITY THETAV   SDATA "[thetav]" >
+
+<!--=thin space (1/6-em)-->
+<!ENTITY THINSP   SDATA "[thinsp]" >
+
+<!--=small thorn, Icelandic-->
+<!ENTITY THORN   SDATA "[thorn ]" >
+
+<!--/times B: =multiply sign-->
+<!ENTITY TIMES   SDATA "[times ]" >
+
+<!--triple prime-->
+<!ENTITY TPRIME   SDATA "[tprime]" >
+
+<!--=trade mark sign-->
+<!ENTITY TRADE   SDATA "[trade ]" >
+
+<!--=small u, acute accent-->
+<!ENTITY UACUTE   SDATA "[uacute]" >
+
+<!--/uparrow A: =upward arrow-->
+<!ENTITY UARR   SDATA "[uarr  ]" >
+
+<!--=small u, circumflex accent-->
+<!ENTITY UCIRC   SDATA "[ucirc ]" >
+
+<!--=small u, grave accent-->
+<!ENTITY UGRAVE   SDATA "[ugrave]" >
+
+<!--=upper half block-->
+<!ENTITY UHBLK   SDATA "[uhblk ]" >
+
+<!--upward left crop mark-->
+<!ENTITY ULCROP   SDATA "[ulcrop]" >
+
+<!--=small upsilon, Greek-->
+<!ENTITY UPSI   SDATA "[upsi  ]" >
+
+<!--upward right crop mark-->
+<!ENTITY URCROP   SDATA "[urcrop]" >
+
+<!--/triangle =up triangle, open-->
+<!ENTITY UTRI   SDATA "[utri  ]" >
+
+<!--/blacktriangle =up tri, filled-->
+<!ENTITY UTRIF   SDATA "[utrif ]" >
+
+<!--=small u, dieresis or umlaut mark-->
+<!ENTITY UUML   SDATA "[uuml  ]" >
+
+<!--vertical ellipsis-->
+<!ENTITY VELLIP   SDATA "[vellip]" >
+
+<!--/vert =vertical bar-->
+<!ENTITY VERBAR   SDATA "[verbar]" >
+
+<!--R: corresponds to (wedge, equals)-->
+<!ENTITY WEDGEQ   SDATA "[wedgeq]" >
+
+<!--=small xi, Greek-->
+<!ENTITY XI   SDATA "[xi    ]" >
+
+<!--=small y, acute accent-->
+<!ENTITY YACUTE   SDATA "[yacute]" >
+
+<!--/yen =yen sign-->
+<!ENTITY YEN   SDATA "[yen   ]" >
+
+<!--=small y, dieresis or umlaut mark-->
+<!ENTITY YUML   SDATA "[yuml  ]" >
+
+<!--=small zeta, Greek-->
+<!ENTITY ZETA   SDATA "[zeta  ]" >
+
+<!--*****************************************************************************
+* Define Element CSL (Configuration Status List). *
+**************************************************************************
+Configuration Status List.-->
+<!ELEMENT CSL  - O (SRCSYS,LISTDM) >
+
+<!--*****************************************************************************
+* Define Element srcsys (SOURCE SYSTEM). *
+**************************************************************************
+Source System.-->
+<!ELEMENT SRCSYS  - O (#PCDATA) >
+
+<!--*****************************************************************************
+* Define Element LISTDM (List of DM). *
+**************************************************************************
+List of DM existing in the CSDB.-->
+<!ELEMENT LISTDM  - O (DM+) >
+
+<!--*****************************************************************************
+* Define Element DM (Data Module). *
+**************************************************************************
+Data for each DM in the List.-->
+<!ELEMENT DM  - O ((AVEE | AGE | IPCC | IPCN),ISSNO,ISSDATE,BEXPNO) >
+
+<!--*****************************************************************************
+* Define Element AVEE (Air Vehicle, Engines, Equipment). *
+**************************************************************************
+Air Vehicle, Engines, Equipment.-->
+<!ELEMENT AVEE  - O (MODELIC,SDC,CHAPNUM,SECTION,SUBSECT,SUBJECT,DISCODE,DISCODEV,
+               INCODE,INCODEV,ITEMLOC) >
+
+<!--**********************************************************************
+* Define the following elements. *
+* MODELIC - Model Identification Code. *
+* SDC - System Difference code *
+* FIXZ - Z *
+* RPC - RPCNAME *
+* ENDIPPN - Four Last IPPN digits *
+* FIG - FIGURE NUMBER *
+* FIGV - FIGURE VARIANT *
+* INCODE - Information Code. *
+* INCODEV - Information Code Variant. *
+* ITEMLOC - Item Location Code. *
+**********************************************************************-->
+<!ELEMENT MODELIC  - O (#PCDATA) >
+
+<!ELEMENT SDC  - O (#PCDATA) >
+
+<!ELEMENT CHAPNUM  - O (#PCDATA) >
+
+<!ELEMENT SECTION  - O (#PCDATA) >
+
+<!ELEMENT SUBSECT  - O (#PCDATA) >
+
+<!ELEMENT SUBJECT  - O (#PCDATA) >
+
+<!ELEMENT DISCODE  - O (#PCDATA) >
+
+<!ELEMENT DISCODEV  - O (#PCDATA) >
+
+<!ELEMENT INCODE  - O (#PCDATA) >
+
+<!ELEMENT INCODEV  - O (#PCDATA) >
+
+<!ELEMENT ITEMLOC  - O (#PCDATA) >
+
+<!--*****************************************************************************
+* Define Element AGE (Aircraft Ground Equipment). *
+**************************************************************************
+Aircraft Ground Equipment.-->
+<!ELEMENT AGE  - O (MODELIC,SUPEQVC,ECSCC,EIDC,CIC,DISCODE,DISCODEV,INCODE,INCODEV,
+               ITEMLOC) >
+
+<!ELEMENT SUPEQVC  - O (#PCDATA) >
+
+<!ELEMENT ECSCC  - O (#PCDATA) >
+
+<!ELEMENT EIDC  - O (#PCDATA) >
+
+<!ELEMENT CIC  - O (#PCDATA) >
+
+<!--**********************************************************************
+* Define Element IPCC (Chapterized Illustrated parts Catalog) containing:- *
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*
+* This defines the structure of the data module code for *
+* Chapterized IPC. *
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*
+* MODELIC - mandatory single contains Parsed Character Data. *
+* SDC - mandatory single contains Parsed Character Data. *
+* CHAPNUM - mandatory single contains Parsed Character Data. *
+* SECTION - mandatory single contains Parsed Character Data. *
+* SUBSECT - mandatory single contains Parsed Character Data. *
+* SUBJECT - mandatory single contains Parsed Character Data. *
+* FIG - mandatory single contains Parsed Character Data. *
+* FIGV - mandatory single contains Parsed Character Data. *
+* INCODE - mandatory single contains Parsed Character Data. *
+* INCODEV - mandatory single contains Parsed Character Data. *
+* ITEMLOC - mandatory single contains Parsed Character Data. *
+**********************************************************************-->
+<!ELEMENT IPCC  - O (MODELIC,SDC,CHAPNUM,SECTION,SUBSECT,SUBJECT,FIG,FIGV,INCODE,
+               INCODEV,ITEMLOC) >
+
+<!ELEMENT FIG  - O (#PCDATA) >
+
+<!ELEMENT FIGV  - O (#PCDATA) >
+
+<!--**********************************************************************
+* Define Element IPCN (Non Chapterized Illustrated parts Catalog) *
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*
+* This defines the structure of the data module code for *
+* Non Chapterized IPC. *
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*
+* MODELIC - mandatory single contains Parsed Character Data. *
+* SDC - mandatory single contains Parsed Character Data. *
+* FIXZ - mandatory single 'Z' *
+* RPC - mandatory single Responnsible Partner Company *
+* ENDIPPN - mandatory single IPPN last digit *
+* FIG - mandatory single Figure Number *
+* FIGV - mandatory single Figure variant *
+* INCODEV - mandatory single contains Parsed Character Data. *
+* ITEMLOC - mandatory single contains Parsed Character Data. *
+**********************************************************************-->
+<!ELEMENT IPCN  - O (MODELIC,SDC,FIXZ,RPC,ENDIPPN,FIG,FIGV,INCODE,INCODEV,ITEMLOC) >
+
+<!--**********************************************************************
+* Define Element FIXZ (FIXE A "Z") containing:- *
+* No Other Tags. *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* fixz - DECLARED - Z- Issue Number. *
+**********************************************************************-->
+<!ELEMENT FIXZ  - O  EMPTY  >
+
+<!--**********************************************************************
+* Define Element RPC (Responsible Partner Company) containing:- *
+* Parsed Character Data. *
+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+* Attribute(s):- *
+* RPCNAME - %RPCNAME - The name or CAGE code of the responsible *
+* partner company. *
+**********************************************************************
+Responsible Partner Company.-->
+<!ELEMENT RPC  - O  EMPTY  >
+
+<!ELEMENT ENDIPPN  - O (#PCDATA) >
+
+<!--*****************************************************************************
+* Define Element ISSNO (Issue Number). *
+**************************************************************************
+Issue Number.-->
+<!ELEMENT ISSNO  - O  EMPTY  >
+
+<!--D supprime ds CSL
+*****************************************************************************
+* Define ISSDATE (Issue Date). *
+**************************************************************************
+Issue Date.-->
+<!ELEMENT ISSDATE  - O  EMPTY  >
+
+<!--*****************************************************************************
+* Define Element BEXPNO (Bordereau expedition number). *
+**************************************************************************
+Bordereau expedition number for a DM.-->
+<!ELEMENT BEXPNO  - O (#PCDATA) >
+
+<!ATTLIST FIXZ
+               FIXZ (Z)  "Z" >
+
+<!--The year.
+The month of the year.
+The day of the month.-->
+<!ATTLIST ISSDATE
+               YEAR  NUMBER    #REQUIRED 
+               MONTH  NUMBER    #REQUIRED 
+               DAY  NUMBER    #REQUIRED  >
+
+<!--Issue Number.
+Status of this issue of the data module :
+- "N" - New
+- "C" - Changed
+- "R" - Completely Revised
+- "S" - Status Changed
+- "T" - Reinstated.-->
+<!ATTLIST ISSNO
+               ISSNO  NUMBER    #REQUIRED 
+               TYPE (N | C | R | S | T)  "N" >
+
+<!--The name of the Responsible
+Partner Company.-->
+<!ATTLIST RPC
+               RPCNAME (A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | 
+               P | Q | R | S | T | U | V | W | X | Y | Z | 0 | 1 | 2 | 3 | 4 | 5 | 
+               6 | 7 | 8 | 9)   #REQUIRED  >
+

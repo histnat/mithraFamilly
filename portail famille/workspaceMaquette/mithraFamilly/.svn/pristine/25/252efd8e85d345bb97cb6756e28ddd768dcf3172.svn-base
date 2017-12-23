@@ -1,0 +1,23 @@
+package com.sonovision.openconv.modules.fileaccess.exception;
+
+import com.sonovision.openconv.wf.exception.WorkflowException;
+
+public class LoadFileException extends WorkflowException {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1543423731368063599L;
+
+	public LoadFileException() {
+	}
+
+	public LoadFileException(String message) {
+		super(message);
+	}
+
+	public LoadFileException(String message, Throwable cause) {
+		super(message, cause);
+	}
+}
+

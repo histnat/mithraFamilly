@@ -1,0 +1,20 @@
+package com.sonovision.openconv.db.dao;
+
+import java.io.Serializable;
+import java.util.List;
+
+import com.sonovision.openconv.db.vo.LogLine;
+
+public interface LogLineDao  extends CommonDao<LogLine>, Serializable  {
+
+	LogLine findByAll(String logResult, String message, String messageLong);
+
+	LogLine findOne(String id);
+
+	void deleteAll();
+
+	List<LogLine> findAll();
+	
+	List<LogLine> findByConversionId(String conversionId);
+	
+}

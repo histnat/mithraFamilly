@@ -1,0 +1,177 @@
+package com.sonovision.openconv.db.dao.user.impl;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.bson.types.ObjectId;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
+import org.springframework.data.domain.Sort.Order;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.stereotype.Repository;
+
+import com.sedoc.toolbox.LogMes;
+import com.sonovision.openconv.db.dao.OpRoleDao;
+import com.sonovision.openconv.db.dao.OpUserDao;
+import com.sonovision.openconv.db.dao.impl.CommonDaoImpl;
+import com.sonovision.openconv.db.vo.common.Common;
+import com.sonovision.openconv.db.vo.user.OpRole;
+import com.sonovision.openconv.db.vo.user.OpUser;
+
+import static com.sonovision.openconv.db.util.CriteriaHelper.criteriaFilter;
+
+@Repository(value="OpUserDao")
+public class OpUserDaoImpl  extends CommonDaoImpl<OpUser> implements OpUserDao{
+    private final static String DEFAULT_SORT_DIRECTION = "asc";
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2324361442980503029L;
+	
+    @SuppressWarnings("SpringAutowiredFieldsWarningInspection")
+    @Autowired
+    OpRoleDao roleDao;
+	
+	@Override
+	public OpUser findByAll(String name, String login) {
+		Query query = new Query();
+        query.addCriteria(
+                new Criteria().andOperator(
+                        Criteria.where("name").is(name),
+                        Criteria.where("login").is(login)
+                )
+        );
+        List<OpUser> lll= mongoTemplate.find(query, OpUser.class);
+
+        if (lll != null && lll.size() > 0) {
+            return lll.get(0);
+        }
+        return null;
+	}
+
+	
+	
+	@Override
+	public OpUser findOne(String id)
+	{
+		return super.findOne(id, OpUser.class);
+	}
+
+	@Override
+	public void deleteAll()
+	{
+		super.deleteAll(OpUser.class);
+	}
+	
+	@Override
+	public List<OpUser> findAll()
+	{
+		return super.findAll(OpUser.class);
+	}
+
+
+
+	@Override
+	public OpUser findByLogin(String login) {
+        if (login == null) {
+            LogMes.log(OpUserDaoImpl.class, LogMes.ERROR, "findByLogin : login can't be null");
+            return null;
+        }
+        Query query = new Query();
+        query.addCriteria(
+                new Criteria().andOperator(
+                        Criteria.where("login").is(login)
+                )
+        );
+        return mongoTemplate.findOne(query, OpUser.class);
+	}
+
+
+
+
+
+
+	@Override
+	public long countUser(Map<String, Object> filters, boolean exactMatchOption) {
+        Query query = new Query();
+        // critere
+        if (filters != null && !filters.isEmpty()) {
+            for (String filter : filters.keySet()) {
+                LogMes.log(OpUserDaoImpl.class, LogMes.DEBUG, "countUser:filter:" + filter + " : " + filters.get(filter));
+                if ("idRole".equals(filter)) {
+                    OpRole role = roleDao.findById((String) filters.get(filter), OpRole.class);
+                    query.addCriteria(Criteria.where("roleList.$id").is(new ObjectId(role.getId())));
+
+                } else {
+                    if (exactMatchOption) {
+                        query.addCriteria(Criteria.where(filter).is(filters.get(filter)));
+                    } else {
+                        if (filters.get(filter) instanceof String) {
+                            query.addCriteria(Criteria.where(filter).regex((String) filters.get(filter), "i"));
+                        } else {
+                            String[] filterList = (String[]) filters.get(filter);
+                            for (String filterValue : filterList) {
+                                query.addCriteria(Criteria.where(filter).regex(filterValue, "i"));
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+        return mongoTemplate.count(query, OpUser.class);
+	}
+
+
+
+	@Override
+	public List<OpUser> findUser(int first, int pageSize, Map<String, String> multiSortMeta,
+			Map<String, Object> filters, boolean exactMatchOption) {
+		  Query query = new Query();
+	        if (pageSize > 0) {
+	            query.limit(pageSize);
+	        }
+	        query.skip(first);
+
+	        // trie
+	        if (multiSortMeta != null && !multiSortMeta.isEmpty()) {
+	            for (String sort : multiSortMeta.keySet()) {
+
+	                String sortDirection = multiSortMeta.get(sort);
+	                if (sortDirection == null) {
+	                    sortDirection = DEFAULT_SORT_DIRECTION;
+	                }
+	                LogMes.log(OpUserDaoImpl.class, LogMes.DEBUG, "findUser:sort:" + sort + " " + sortDirection);
+	                Sort s = new Sort(Sort.Direction.fromString(sortDirection), sort);
+	                query.with(s);
+	            }
+	        }
+
+	        // init filters if not yet
+	        if (filters == null) {
+	            filters = new HashMap<>();
+	        }
+
+	        // critere
+	        if (!filters.isEmpty()) {
+
+	            for (String filter : filters.keySet()) {
+	                LogMes.log(OpUserDaoImpl.class, LogMes.DEBUG, "findUser:filter:" + filter + " : " + filters.get(filter));
+	                if ("idRole".equals(filter)) {
+	                    OpRole role = roleDao.findById((String) filters.get(filter), OpRole.class);
+	                    query.addCriteria(Criteria.where("roleList.$id").is(new ObjectId(role.getId())));
+	                } else {
+	                    criteriaFilter(filters, exactMatchOption, query, filter);
+	                }
+	            }
+	        }
+
+	        return mongoTemplate.find(query, OpUser.class);
+	}
+
+
+	
+}

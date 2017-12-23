@@ -1,0 +1,8 @@
+package com.sonovision.openconv.modules.xslprocess.helper.table;
+
+public interface GetTable {
+
+	public void initDocument() throws Exception;
+	public void generate();
+	
+}

@@ -1,0 +1,435 @@
+package net.mithra.toolbox.bean;
+
+import org.apache.fop.events.EventListener;
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
+
+import javax.xml.namespace.NamespaceContext;
+import javax.xml.transform.ErrorListener;
+import javax.xml.transform.Source;
+import javax.xml.transform.URIResolver;
+import javax.xml.transform.stream.StreamResult;
+import javax.xml.xpath.XPathVariableResolver;
+import java.io.*;
+import java.util.Map;
+
+/**
+ *
+ * @author Frebeche
+ */
+public interface XMLFactoryService extends Serializable {
+
+    public Document getDOMDocumentFromTransformedDocument(Document domDoc, File xslFile) throws Exception;
+
+    public Document getDOMDocumentFromTransformedDocument(Document domDoc, InputStream xslFile) throws Exception;
+    
+    public Document getDOMDocumentFromTransformedDocument(Document domDoc, InputStream xslFile, URIResolver uriResolver) throws Exception;
+
+    public Document getDOMDocumentFromTransformedXML(File xmlFile, File xslFile) throws Exception;
+    
+    public Document getDOMDocumentFromNode(Node node);
+
+    public Document parseXmlDoc(String strXmlFile);
+
+    public Document parseXmlDoc(InputSource source) throws Exception;
+
+    public Document parseXmlDoc(File xmlFile);
+    
+    public Document parseXmlDocWithValidation(File xmlFile) throws Exception;
+    
+    public Document parseXmlDocWithValidation(InputStream xmlFile) throws Exception;
+    
+    public Document parseXmlDoc(InputStream stream);
+
+    public void checkParse(File xmlFile) throws IOException, SAXException;
+
+    public Document newDomDoc();
+    
+    public String executeXpathFonction(Document domDoc, String strQuery) throws Exception;
+
+    public String executeXpathFonction(Node node, String strQuery) throws Exception;
+
+    public Object executeXpathQuery(Document domDoc, String strQuery, boolean bList) throws Exception;
+    
+    public Object executeXpathQuery(Document domDoc, String strQuery, boolean bList, NamespaceContext namespaceContext) throws Exception;
+    
+    public boolean executeXpathQueryBoolean(Document domDoc, String strQuery) throws Exception;
+    
+    public Object executeXpathQuery(Node nodeDoc, String strQuery, boolean bList) throws Exception;
+    
+    public Object executeXpathQuery(Node nodeDoc, String strQuery, boolean bList, NamespaceContext namespaceContext) throws Exception;
+    
+    public boolean executeXpathQueryBoolean(Node nodeDoc, String strQuery) throws Exception;
+
+    public void writeXML(Document domDoc, File dataFile) throws FileNotFoundException, IOException;
+    
+    public void writeXML(Document domDoc, File dataFile, String encodage) throws FileNotFoundException, IOException;
+
+    /**
+     * renvoie le document xml domDoc dans out
+     *
+     * @param domDoc
+     * @param out
+     */
+    public void writeXML(Document domDoc, OutputStream out);
+
+	void writeXML(Document domDoc, OutputStream out, boolean indent);
+
+    /**
+     * Fournit une liste de nom de fichier a partir du DataModuleList avec
+     * sFiltre et sDocType
+     *
+     * @param	sFiltre	filtre applique sur le nom de fichier
+     * @param	sDocType	type de document retourne. '' retourne tous les types
+     * @return	Liste de nom de fichier
+     */
+    public String[] getXmlFilesFromDataModuleList(String sFiltre, String sDocType);
+
+    public org.w3c.dom.Document fusionXSL(String file1, String file2);
+
+    public org.w3c.dom.Document fusionXSL(InputStream file1, InputStream file2);
+
+    public org.w3c.dom.Document fusionXSL(InputStream file1, String file2);
+
+    public org.w3c.dom.Document fusionXSL(String file1, InputStream file2);
+
+    public org.w3c.dom.Document fusionXSL(File file1, InputStream file2);
+
+    public org.w3c.dom.Document fusionXSL(Document file1, InputStream file2);
+
+    public org.w3c.dom.Document fusionXSL(Document doc1, Document doc2);
+
+    public org.w3c.dom.Document fusionXSL(InputStream file1, Document file2);
+
+    public Node addNodeWithAttributes(Node parent, String strNewNodeName, Map<String, String> attributes);
+
+	public Node addNodeWithAttribute(Node parentElem,
+			String xmlcompanionNoticepdfNode,
+			String xmlcompanionNoticepdfnameAttribute, String pdfName);
+
+	public Node addNode(Node parent, String strNewNodeName);
+
+
+    // ---------- DEPRECATED ----------
+    
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use XSLTransformService instead 
+     */
+	@Deprecated
+    public void addTransformerParameter(String strParamName, String strParamValue);
+    
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use XSLTransformService instead 
+     */
+	@Deprecated
+    public void addTransformerParameter(String strParamName, boolean bParamValue);
+    
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use XSLTransformService instead 
+     */
+	@Deprecated
+    public void addTransformerParameter(String strParamName, int nParamValue);
+    
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use XSLTransformService instead 
+     */
+	@Deprecated
+    public void transform(Document xmlDocument, File xslFile, Writer writer);
+    
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use XSLTransformService instead 
+     */
+	@Deprecated
+    public void transform(Document xmlDocument, Source xslFile, Writer writer, URIResolver uriResolver);
+    
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use XSLTransformService instead 
+     */
+	@Deprecated
+    public void transform(String strXML, File xslFile, Writer writer);
+    
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use XSLTransformService instead 
+     */
+	@Deprecated
+    public void transform(File xmlFile, File xslFile, Writer writer);
+    
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use XSLTransformService instead 
+     */
+	@Deprecated
+    public void transform(Source source, File xslFile, OutputStream OutputStream);
+    
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use XSLTransformService instead 
+     */
+	@Deprecated
+    public void transform(Source source, File xslFile, Writer writer);
+    
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use XSLTransformService instead 
+     */
+	@Deprecated
+    public void transform(Source source, Source xslFile, OutputStream OutputStream);
+    
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use XSLTransformService instead 
+     */
+	@Deprecated
+    public void transform(Source source, InputStream xslFile, StringWriter writer);
+    
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use XSLTransformService instead 
+     */
+	@Deprecated
+    public void transform(Document xmlDocument, InputStream xslFile, StringWriter writer);
+    
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use XSLTransformService instead 
+     */
+	@Deprecated
+    public void transform(Document xmlDocument, InputStream xslFile, StringWriter writer, URIResolver uriResolver);
+    
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use XSLTransformService instead 
+     */
+	@Deprecated
+	public void transform(InputStream xmlDocument, InputStream xslFile, Writer writer, URIResolver uriResolver);
+    
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use XSLTransformService instead 
+     */
+	@Deprecated
+    public void transform(Document xmlDocument, Source xslFile, Writer writer);
+    
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use XSLTransformService instead 
+     */
+	@Deprecated
+    public void transform(Source source, Source xslFile, StreamResult OutputStream);
+    
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use XSLTransformService instead 
+     */
+	@Deprecated
+    public void transform(Document xmlDocument, InputStream xslFile, Writer writer);
+    
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use XSLTransformService instead 
+     */
+	@Deprecated
+    public void transform(Source source, InputStream xslFile, Writer writer);
+    
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use XSLTransformService instead 
+     */
+	@Deprecated
+    public void transform(Source source, InputStream xslFile, Writer writer, URIResolver uriResolver);
+    
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use XSLTransformService instead 
+     */
+	@Deprecated
+    public void transform(Source source, Source xslFile, StreamResult OutputStream, URIResolver uriResolver);
+
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use PDFTransformService instead 
+     */
+	@Deprecated
+    public void addFopConfigFile(File configFile);
+
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use PDFTransformService instead 
+     */
+	@Deprecated
+    public void addFopConfigFile(InputStream configFile);
+
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use PDFTransformService instead 
+     */
+	@Deprecated
+    public void toPDF(File xmlFile, File xslFile, OutputStream os);
+
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use PDFTransformService instead 
+     */
+	@Deprecated
+    public void toPDF(Document source, Source xslFile, OutputStream os);
+
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use PDFTransformService instead 
+     */
+	@Deprecated
+    public void toPDF(Source source, File xslFile, OutputStream os);
+
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use PDFTransformService instead 
+     */
+	@Deprecated
+    public void toPDF(File xmlFile, InputStream xslFile, OutputStream os);
+
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use PDFTransformService instead 
+     */
+	@Deprecated
+    public void toPDF(Document xmlDocument, InputStream xslFile, OutputStream os, URIResolver uriResolver);
+
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use PDFTransformService instead 
+     */
+	@Deprecated
+    public void toPDF(Document xmlDocument, InputStream xslFile, OutputStream os);
+
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use PDFTransformService instead 
+     */
+	@Deprecated
+    public void toPDF(String strXML, InputStream xslFile, OutputStream os);
+
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use PDFTransformService instead 
+     */
+	@Deprecated
+    public void toPDF(Source source, InputStream xslFile, OutputStream os);
+
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use PDFTransformService instead 
+     */
+	@Deprecated
+    public void toFO(File xmlFile, File xslFile, OutputStream os);
+
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use PDFTransformService instead 
+     */
+	@Deprecated
+    public void toFO(Document xmlDocument, InputStream xslFile, OutputStream os);
+
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use PDFTransformService instead 
+     */
+	@Deprecated
+    public void toFO(Source source, InputStream xslFile, OutputStream os);
+
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use PDFTransformService instead 
+     */
+	@Deprecated
+    public void toFO(Document xmlDocument, InputStream xslFile, OutputStream os, URIResolver uriResolver);
+
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use PDFTransformService instead 
+     */
+	@Deprecated
+    public void toFo(Document doc, InputStream xSLFile, BufferedOutputStream bosPdf);
+
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use PDFTransformService instead 
+     */
+	@Deprecated
+    public void toFo(Document doc, InputStream xSLFile, BufferedOutputStream bosPdf, URIResolver uriResolver);
+
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use PDFTransformService instead 
+     */
+	@Deprecated
+    public void toFO(Source source, InputStream xslFile, OutputStream os, URIResolver uriResolver);
+
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use PDFTransformService instead 
+     */
+	@Deprecated
+    public void toRTF(File xmlFile, File xslFile, OutputStream os);
+
+
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use PDFTransformService instead 
+     */
+	@Deprecated
+    public void foToPDF(File foFile, OutputStream out);
+
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use PDFTransformService instead 
+     */
+	@Deprecated
+    public void foToPDF(Source foFile, OutputStream out);
+
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use PDFTransformService instead 
+     */
+	@Deprecated
+    public void foToPDF(File foFile, OutputStream out, URIResolver uriResolver);
+
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use PDFTransformService instead 
+     */
+	@Deprecated
+    public void foToPDF(Source foFile, OutputStream out, URIResolver uriResolver);
+
+    @Deprecated
+    public void toPDF(Source source, Source xslFile, OutputStream os,
+                       URIResolver uriResolver, EventListener eventListener, ErrorListener errorListener);
+    
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use XSLTransformService instead 
+     */
+	@Deprecated
+    public void transformSaxon(Source source, Source xslFile, OutputStream OutputStream);
+    
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use XSLTransformService instead 
+     */
+	@Deprecated
+    public void transformSaxon(Document source, Source xslFile, OutputStream outputStream);
+    
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use XSLTransformService instead 
+     */
+	@Deprecated
+    public void reset();
+
+
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use PDFTransformService instead 
+     */
+	@Deprecated
+    public boolean isStrictValidationFOP();
+
+
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use PDFTransformService instead 
+     */
+	@Deprecated
+    public void setStrictValidationFOP(boolean strictValidationFOP);
+
+	@Deprecated
+    public String getOmitXmlDeclaration();
+
+	@Deprecated
+	public void setOmitXmlDeclaration(String omitXmlDeclaration);
+
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use PDFTransformService instead 
+     */
+	@Deprecated
+	public String getBaseFopFont();
+
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use PDFTransformService instead 
+     */
+	@Deprecated
+	public void setBaseFopFont(String baseFopFont);
+	
+    /**
+     * @deprecated this method isn't thread-safe caused by parameters map, please use PDFTransformService instead 
+     */
+	@Deprecated
+    public void toPDF(Document xmlDoc, File xslFile, OutputStream os, URIResolver uriResolver);
+
+	void setxPathVariableResolver(XPathVariableResolver xPathVariableResolver);
+
+	Object executeXpathQuery(Node nodeDoc, String strQuery, int bList)
+			throws Exception;
+
+}

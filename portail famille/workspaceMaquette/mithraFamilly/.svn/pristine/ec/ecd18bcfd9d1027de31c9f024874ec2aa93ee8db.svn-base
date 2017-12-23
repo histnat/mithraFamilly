@@ -1,0 +1,72 @@
+package com.sonovision.openconv.ws.controller.model;
+
+import java.util.Date;
+
+import com.sonovision.openconv.db.vo.execution.CoScenario;
+
+public class ScenarioMiniModel extends CommonModel{
+
+//	private String scenarioId;
+//	private String scenarioName;
+	private String creatorName;
+	private int nbSteps;
+	private String descr;
+	private Date creationDate;
+	
+	public ScenarioMiniModel(){
+		super();
+	}
+	
+	public ScenarioMiniModel(String scenarioId,String scenarioName){
+		super(scenarioId,scenarioName);
+	}
+	
+	public ScenarioMiniModel(String scenarioId,String scenarioName,String creatorName,int nbSteps, String descr,Date creationDate){
+		super(scenarioId,scenarioName);
+		this.creatorName=creatorName;
+		this.nbSteps=nbSteps;
+		this.creationDate=creationDate;
+		this.descr=descr;
+	}
+	
+//	public String getScenarioId() {
+//		return scenarioId;
+//	}
+//	public void setScenarioId(String scenarioId) {
+//		this.scenarioId = scenarioId;
+//	}
+//	public String getScenarioName() {
+//		return scenarioName;
+//	}
+//	public void setScenarioName(String scenarioName) {
+//		this.scenarioName = scenarioName;
+//	}
+	
+	public String getCreatorName() {
+		return creatorName;
+	}
+	public void setCreatorName(String creatorName) {
+		this.creatorName = creatorName;
+	}
+	public int getNbSteps() {
+		return nbSteps;
+	}
+	public void setNbSteps(int nbSteps) {
+		this.nbSteps = nbSteps;
+	}
+	public String getDescr() {
+		return descr;
+	}
+	public void setDescr(String descr) {
+		this.descr = descr;
+	}
+	public Date getCreationDate() {
+		return creationDate;
+	}
+	public void setCreationDate(Date creationDate) {
+		this.creationDate = creationDate;
+	}
+	
+	
+	
+}

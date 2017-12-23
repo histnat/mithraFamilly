@@ -1,0 +1,18 @@
+function csn_id1 (window, oid)
+	{
+	local wcsn1=substr(oid_attr(oid,"csn"),1,2) . "-";
+	local wcsn2=substr(oid_attr(oid,"csn"),3,2) . "-";
+	local wcsn3=substr(oid_attr(oid,"csn"),5,2) ;
+	local wcsn=wcsn1 . wcsn2 . wcsn3;
+	return wcsn
+	}
+function csn_id2 (window, oid)
+	{
+	local wcsn1=substr(oid_attr(oid,"csn"),7,2);
+	return wcsn1
+	}
+function csn_id3 (window, oid)
+	{
+	local wcsn1=substr(oid_attr(oid,"csn"),7,1);
+	return wcsn1
+	}

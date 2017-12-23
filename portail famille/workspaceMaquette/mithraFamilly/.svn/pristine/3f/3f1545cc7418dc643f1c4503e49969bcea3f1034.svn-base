@@ -1,0 +1,98 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1A722100SF030100091A011 SYSTEM "x-dm://0900f90b80002b87,MYWORKING" NDATA cgm>
+]>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>2</section><subsect>1</subsect><subject>00</subject><discode>00</discode><discodev>A</discodev><incode>310</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmc>
+<dmtitle><techname>CARTER D'ENTREE</techname><infoname>CONTROLES VISUELS</infoname></dmtitle>
+<issno type="c" issno="3">
+<issdate month="09" year="2011" day="30">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 4"></version>
+<customer aaf="1" anf="1">
+<nti nti1="1" nti2="1" nti3="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Pr&eacute;cisions concernant le niveau technique d'intervention<?Pub Caret> NTI2</rfu>
+<remarks>RAS</remarks>
+<icns><icn id="A1A722100SF030100091A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>2</section><subsect>1</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00091</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<refdm>
+<dmcid id="A1A72210025A311AD"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>2</section><subsect>1</subsect><subject>00</subject><discode>25</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmcid>
+<dmcid id="A1A72210009A311AD"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>2</section><subsect>1</subsect><subject>00</subject><discode>09</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmcid>
+<dmcid id="A1A72210010A311AD"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>2</section><subsect>1</subsect><subject>00</subject><discode>10</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmcid>
+<dmcid id="A1A72210020A311AD"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>2</section><subsect>1</subsect><subject>00</subject><discode>20</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>D</itemloc></avee></dmcid>
+<dmcid id="A1A70370011A311AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>70</chapnum><section>3</section><subsect>7</subsect><subject>00</subject><discode>11</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+</refdm>
+</refs><proced><pmd>
+<manhour value="0,1"></manhour>
+<duration value="0,1"></duration>
+</pmd><prelreqs><reqconds><reqcondli><reqcond><applic><systemid><customer aaf="1"></systemid></applic>
+<cond><para><p>Module 1 doit &ecirc;tre sur le B.A.T <refipc csn="72016701 185 ">.</p>
+</para>
+</cond>
+</reqcond><reqcond><applic><systemid><customer anf="1"></systemid></applic>
+<cond><para><p>Module 1 doit &ecirc;tre sur le support vertical modules <refipc csn="72016801 036 ">.</p>
+</para>
+</cond>
+</reqcond><reqcond><applic><systemid><nti change="add" nti2="1"></systemid></applic>
+<cond><para><p change="add">Module sur moteur complet.</p>
+</para>
+</cond>
+</reqcond></reqcondli></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="0,1"></reqper>
+</reqpers><supequip><nosupeq><nosupeqs></supequip><supplies><nosupply></supplies><miscs><nomisc></miscs><safety>
+<specpara>
+<caution>
+<p change="mod">Signaler tout autre d&eacute;faut non r&eacute;pertori&eacute; dans la proc&eacute;dure &agrave; SNECMA.</p>
+</caution>
+</specpara>
+</safety></prelreqs><mainfunc>
+<step1 control="0" id="P10">
+<para><p>Inspecter les zones A, B, C, F, G du carter d'entr&eacute;e &eacute;quip&eacute; <refipc csn="72210001 097 "> <dmcref xrefid="A1A72210025A311AD"> <figref refid="A722100SF030100091A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P20">
+<para><p>Inspecter la zone D cin&eacute;matique RDE visuellement et tactilement <dmcref xrefid="A1A72210009A311AD"> <dmcref xrefid="A1A72210010A311AD"> <dmcref xrefid="A1A72210020A311AD"> <figref refid="A722100SF030100091A011">.</p>
+</para>
+<note><applic change="add"><systemid><nti change="add" nti2="1"></systemid></applic>
+<p change="add">le contr&ocirc;le visuel et tactile de la cin&eacute;matique RDE (libre d&eacute;battement des volets, levier de commande, fixation v&eacute;rin-guignol...) doit &ecirc;tre effectu&eacute; chape/v&eacute;rin RDE d&eacute;pos&eacute;.</p>
+</note>
+</step1>
+<step1 control="0" id="P30">
+<para><p>Inspecter les volets RDE <dmcref xrefid="A1A72210020A311AD"> <figref refid="A722100SF030100091A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P40">
+<applic><systemid><customer aaf="1"></systemid></applic>
+<para><p>Orienter le B.A.T <refipc csn="72016701 185 "> afin d'examiner les zones arri&egrave;re.</p>
+</para>
+</step1>
+<step1 control="0" id="P50">
+<applic><systemid><customer anf="1"></systemid></applic>
+<para><p>Retourner le carter d'entr&eacute;e <refipc csn="72210001 097 "> afin d'examiner les zones arri&egrave;res.</p>
+</para>
+</step1>
+<step1 control="0" id="P60">
+<para><p>Inspecter la zone E du roulement &agrave; billes palier 1 <refipc csn="72210001 083 "> <dmcref xrefid="A1A70370011A311AC"> <figref refid="A722100SF030100091A011">.</p>
+</para>
+</step1>
+<figure id="A722100SF030100091A011">
+<title>CONTROLES VISUELS DU CARTER D'ENTREE</title>
+<graphic callicn="A1A722100SF030100091A011">
+</figure>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000005792 0>

@@ -1,0 +1,253 @@
+/**
+ * 
+ */
+package com.sonovision.openconv.db.bo.impl;
+
+import java.io.File;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.stereotype.Service;
+
+import com.sonovision.openconv.db.bo.DBExecutionService;
+import com.sonovision.openconv.db.bo.DBUserService;
+import com.sonovision.openconv.db.dao.CoHistoryExeDao;
+import com.sonovision.openconv.db.dao.CoParameterExeDao;
+import com.sonovision.openconv.db.dao.CoScenarioDao;
+import com.sonovision.openconv.db.dao.OpGroupDao;
+import com.sonovision.openconv.db.dao.OpRoleDao;
+import com.sonovision.openconv.db.dao.OpUserDao;
+import com.sonovision.openconv.db.exception.DBNONullException;
+import com.sonovision.openconv.db.exception.DBNOUniqueException;
+import com.sonovision.openconv.db.vo.common.Common;
+import com.sonovision.openconv.db.vo.execution.CoHistoryExe;
+import com.sonovision.openconv.db.vo.execution.CoParameterExe;
+import com.sonovision.openconv.db.vo.execution.CoScenario;
+import com.sonovision.openconv.db.vo.user.OpGroup;
+import com.sonovision.openconv.db.vo.user.OpRole;
+import com.sonovision.openconv.db.vo.user.OpUser;
+import com.sonovision.openconv.wf.dao.WorkFlowDao;
+import com.sonovision.openconv.wf.exception.WorkflowException;
+import com.sonovision.openconv.wf.xmodel.Workflow;
+
+
+@Service("DBExecutionService")
+@PropertySource(value = "classpath:openconv.properties")
+public class DBExecutionServiceImpl implements DBExecutionService {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -698253837007835546L;
+
+	@Autowired
+	private CoScenarioDao coScenarioDao;
+	
+	@Autowired
+	private CoHistoryExeDao coHistoryExeDao;
+	
+	@Autowired
+	private CoParameterExeDao coParameterExeDao;
+	
+	@Autowired
+	protected WorkFlowDao workFlowDao;
+
+//	
+////	CoScenario
+//	
+//	
+	@Override
+	public CoScenario getOrSave(CoScenario coScenario) throws DBNONullException, DBNOUniqueException{ 
+		CoScenario ou = findByAll(coScenario);
+		if (ou == null) {
+			coScenarioDao.save(coScenario);
+		} else {
+			coScenario = ou;
+		}
+
+		return coScenario;
+	}
+
+	@Override
+	public CoScenario findByAll(CoScenario coScenario) {
+//		return opUserDao.findByAll(opUser.getName(), opUser.getLogin());
+		return coScenarioDao.findByAll(coScenario.getId(),coScenario.getName(), coScenario.getFileName(), coScenario.getNbrStep(), coScenario.getCreationDate(), coScenario.getModificationdate(), coScenario.getShared());
+	}
+
+	@Override
+	public CoScenario save(CoScenario coScenario) throws DBNONullException, DBNOUniqueException {
+		coScenarioDao.save(coScenario);
+		return coScenario;
+	}
+	
+	@Override
+	public List<CoScenario> list(OpUser user) {
+		// TODO Auto-generated method stub
+		return coScenarioDao.findAllByUser(user);
+	}
+	@Override
+	public List<CoScenario> listScenario() {
+		// TODO Auto-generated method stub
+		return coScenarioDao.findAll(CoScenario.class);
+	}
+
+	@Override
+	public CoScenario findById(String id) {
+		// TODO Auto-generated method stub
+		return coScenarioDao.findById(id, CoScenario.class);
+	}
+
+	
+	@Override
+	public CoScenario findUserByIdScen(String id) {
+		// TODO Auto-generated method stub
+		return coScenarioDao.findByUserId(id);
+	}
+		
+	@Override
+	public Workflow loadWorkflow(File workflowFile) throws WorkflowException {
+		// TODO Auto-generated method stub
+		return workFlowDao.loadWorkflow(workflowFile);
+	}
+	
+//	
+////CoHistoryExeDao
+//
+//
+	
+	@Override
+	public CoHistoryExe getOrSave(CoHistoryExe coHistoryExe) throws DBNONullException, DBNOUniqueException{ 
+		CoHistoryExe ou = findByAll(coHistoryExe);
+		if (ou == null) {
+			coHistoryExeDao.save(coHistoryExe);
+		} else {
+			coHistoryExe = ou;
+		}
+
+		return coHistoryExe;
+	}
+
+
+	@Override
+	public CoHistoryExe findByAll(CoHistoryExe coHistoryExe) {
+		return coHistoryExeDao.findByAll(coHistoryExe.getNbrFiles(), coHistoryExe.getNbrOK(), coHistoryExe.getNbrNOK(), coHistoryExe.getNbrNBloquant(), coHistoryExe.getStartTime(), coHistoryExe.getEndTime());
+	}
+
+	@Override
+	public CoHistoryExe save(CoHistoryExe coHistoryExe) throws DBNONullException, DBNOUniqueException {
+		coHistoryExeDao.save(coHistoryExe);
+		return coHistoryExe;
+	}	
+	
+//	
+////CoParameterExeDao
+//
+//
+	
+	@Override
+	public CoParameterExe save(CoParameterExe coParameterExe) throws DBNONullException, DBNOUniqueException {
+		coParameterExeDao.save(coParameterExe);
+		return coParameterExe;
+	}
+	
+	@Override
+	public List<CoParameterExe> save(List<CoParameterExe> coParameterExeList, CoHistoryExe coHistoryExe) throws DBNONullException, DBNOUniqueException {
+		for(CoParameterExe coParameterExe:coParameterExeList){
+			save(coParameterExe);
+		}
+		coHistoryExe.setParameterList(coParameterExeList);
+		save(coHistoryExe);
+		return coParameterExeList;
+	}	
+	
+	
+
+	@Override
+	public CoParameterExe getOrSave(CoParameterExe coParameterExe) throws DBNONullException, DBNOUniqueException {
+		CoParameterExe ou = findByAll(coParameterExe);
+		if (ou == null) {
+			coParameterExeDao.save(coParameterExe);
+		} else {
+			coParameterExe = ou;
+		}
+
+		return coParameterExe;
+	}
+
+	@Override
+	public CoParameterExe findByAll(CoParameterExe coParameterExe) {
+		return coParameterExeDao.findByAll(coParameterExe.getId(),coParameterExe.getParamName(), coParameterExe.getParamValue(), coParameterExe.getTaskId());
+	}
+
+	@Override
+	public CoHistoryExe findUserByIdHist(String id) {
+		// TODO Auto-generated method stub
+		return coHistoryExeDao.findByUserId(id);
+	}
+
+	@Override
+	public CoHistoryExe findByIdExe(String id) {
+		// TODO Auto-generated method stub
+		return coHistoryExeDao.findById(id, CoHistoryExe.class);
+	}
+
+	@Override
+	public CoHistoryExe get(String scenarioId, String executionid) {
+		// TODO Auto-generated method stub
+		return coHistoryExeDao.findByScenarioIdExecId(scenarioId, executionid);
+	}
+
+	@Override
+	public List<CoHistoryExe> listHistory() {
+		// TODO Auto-generated method stub
+		return coHistoryExeDao.findAll(CoHistoryExe.class);
+	}
+
+	@Override
+	public void deleteScenario(String idScenario) {
+		coScenarioDao.delete(findById(idScenario));	
+	}
+
+	@Override
+	public CoHistoryExe createExe(CoScenario coScenario) throws DBNONullException, DBNOUniqueException {
+		// TODO Auto-generated method stub
+		CoHistoryExe coHistoryExe=new CoHistoryExe();
+		coHistoryExe.setScenarioId(coScenario.getId());
+		coHistoryExe.setUserId(coScenario.getUserId());
+		Date dt = new Date();
+		Calendar c = Calendar.getInstance(); 
+		c.setTime(dt); 
+		c.add(Calendar.DATE, 1);
+		dt = c.getTime();
+		coHistoryExe.setStartTime(dt);
+		coScenario.addHistory(coHistoryExe);
+		coHistoryExe=save(coHistoryExe);
+		save(coScenario);
+		return coHistoryExe;
+	}	
+	
+	
+	@Override
+	public CoHistoryExe stop(String idExe, int nbFilesConverted,int nbrOK, int nbrNOK, int nbrNBloquant) throws DBNONullException, DBNOUniqueException {
+		CoHistoryExe coHistoryExe=findByIdExe(idExe);
+		// TODO Auto-generated method stub
+		coHistoryExe.setNbrFiles(nbFilesConverted);
+		coHistoryExe.setNbrOK(nbrOK);
+		coHistoryExe.setNbrNOK(nbrNOK);
+		coHistoryExe.setNbrNBloquant(nbrNBloquant);
+		Date dt = new Date();
+		Calendar c = Calendar.getInstance(); 
+		c.setTime(dt); 
+		c.add(Calendar.DATE, 1);
+		dt = c.getTime();
+		coHistoryExe.setEndTime(dt);
+		return save(coHistoryExe);
+	}
+
+
+	
+
+}

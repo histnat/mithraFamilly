@@ -1,0 +1,757 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                           RAFALE                                   *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.2                            *
+    *                     Dated 22 December 1998                         *
+    *                                                                    *
+    * Amendment :-                                                       *
+    * 1. New Public Identifier to support removal of marked sections.    *
+    * 2. Change attribute id of ISN to ISN                               *
+    * 3. Change attribute csn of CSN from cdata to ID type               *
+    * 4. Add DFP to CSN                                                  *
+    * 5. add %insdel for wuu,wpu,suu,spu,qui,uom                         *
+    *                                                                    *
+	*									                                 *
+    *   15/01/98   : Update Public Identifier				             *
+    *                delete str                                          *
+	*                add sid and sns attributes to ipp                   *
+	*                add item  attributes to csn                         *
+	*                ipp mandatory instead of optional                   *
+	*                CES optional repeatable                             *
+	*                FTC value not fixed to 1                            *
+	*                attr csn of CSN element became cdata instead of id  *
+	*                dfl instead of dfp behind csn                       *
+	*                add hotspot reference as attribute of CSN           *
+	*                                                                    *
+	*   22/12/98   : Update Public Identifier				             *
+    *                add id attributes to csn                            *
+	*                mov become optionnal (for non chapterized data)     *
+	*                rfs become mandatory empty                          *
+	*                ctl become empty                                    *
+	*                pas become unique                                   *
+	*                rpcname added to ippref							 *
+	*																	 *
+	*	19/04/99   : Call %rpcname in uppercase in ippref				 *
+	*				 uce and uca instead of uce or uca					 *
+	*                                                                    *
+	* Typical invocation :                                               *
+    * <!ENTITY % IPC                                                     *
+    *   "-//RAFALE//ELEMENTS Illustrated Parts Catalog 981222//EN" >     *
+    * %IPC;                                                              *
+    ********************************************************************** -->
+
+
+<!--**********************************************************************
+    * Define Entity %CONTENT (Content Breakdown) containing :- IPC       *
+    ********************************************************************** -->
+ 
+<!ENTITY % CONTENT "ipc" >
+
+
+ 
+<!--**********************************************************************
+    * Define Element IPC (Illustrated arts Catalog) containing:-         *
+    *   FIGURE   - mandatory  single      contains definition stored in  *
+    *                                    entity %titles, GRAPHIC, SHEET, *
+    *                                    RFA, LEGEND.                    *
+    *   IPP - mandatory  single     contains no other tags.              *
+    *   CSN - mandatory  repeatable                                      *
+    ********************************************************************** -->
+ 
+<!ELEMENT ipc - o (figure,ipp,csn+) >
+
+
+ 
+<!--**********************************************************************
+    * Define Element IPP (initial provisioning project) containing:-     *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  ippn    - CDATA - REQUIRED - initial provisioning project number  *
+    *  ips     - CDATA - REQUIRED - ippn subject                         *
+    *  sid     - CDATA - REQUIRED - ippn subject identification          *
+	*  sns     - CDATA - REQUIRED - subject nato stock number            *
+	*  fid     - VALUES - IMPLIED - file identifier                      *
+    *  lge     - CDATA  - IMPLIED - language code                        *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+ 
+<!ELEMENT ipp  - O  EMPTY>
+<!ATTLIST ipp
+             ippn  CDATA    #REQUIRED
+             ips   CDATA    #REQUIRED
+             sid   CDATA    #IMPLIED
+			 sns   CDATA    #IMPLIED
+			 fid   (S,T)    #IMPLIED
+             lge   CDATA    #IMPLIED
+             %INSDEL; >
+ 
+
+
+<!--**********************************************************************
+    * Define Element CSN (catalog sequence number) containing:-          *
+    *  ISN - mandatory  repeatable   Item Sequence Number                *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  csn      = catalog sequence number                                *
+    *  ind      = indenture   (1 - 9)                                    *
+    *  item     = item  - repere (last part of csn)                      *
+	*  id       = id for hotspot to text navigation                      *
+	*  hotspref = hot spot reference                                     *
+	* Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+ 
+ 
+<!ELEMENT csn  - - (dfl,isn+)>
+<!ATTLIST csn
+             csn       CDATA     #REQUIRED
+             ind       NUMBER    #REQUIRED
+			 item      CDATA     #REQUIRED
+			 id        ID        #REQUIRED
+			 hotspref  IDREF     #IMPLIED
+			 %INSDEL;>
+
+
+ 
+<!--**********************************************************************
+    * Define Element ISN (item sequence number) containing:-             *
+    *  RFS - mandatory  Single         Reason for Selecion               *
+    *  QNA - mandatory  Single         quantity per next higher assembly *
+    *  MFC - mandatory  Single         manufacturer code                 *
+    *  PNR - mandatory  Single         Part Number                       *
+    *  PAS - mandatory  Single         PAS Segment                       *
+    *  NSN - Optionnal  Single         nato Stock Number                 *
+    *  CBS - Optionnal  Single         CBS Segment                       *
+    *  CCS - Optionnal  Single         CCS Segment                       *
+    *  CTL - Optionnal  Single         category 1 container location     *
+    *  CES - Optionnal  Single         CES Segment                       *
+    *  RFD - Optionnal  repeatable     reference Designator              *
+    *  ILS - Optionnal  repeatable     integrated Logistic Support Number*
+    *  CAN - Optionnal  Single         change Authority Number           *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * ISN= ISN Identifier                                                *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+ 
+<!ELEMENT isn  - O (rfs , qna , mfc , pnr , pas , nsn? , cbs? , ccs? ,
+             ctl? , ces* , rfd* , ils* , can?)>
+<!ATTLIST isn
+            isn  CDATA #REQUIRED
+            %INSDEL;>
+
+
+ 
+<!--**********************************************************************
+    * Define Element RFS  (Reason for Selection) containing:-            *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  VALUE      - Choice  - REQUIRED - Choice value for RFS            *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+ 
+<!ELEMENT rfs  - O  EMPTY>
+<!ATTLIST rfs
+             value (0 , 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9)  #REQUIRED
+             %INSDEL;>
+ 
+ 
+
+<!--**********************************************************************
+    * Define Element QNA (quantity per next higher assembly) containing:-*
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+ 
+<!ELEMENT qna  - O (#PCDATA)>
+<!ATTLIST qna %INSDEL;>
+
+
+ 
+<!--**********************************************************************
+    * Define Element MFC (manufacturer code) containing:-                *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+ 
+<!ELEMENT mfc  - O (#PCDATA)>
+<!ATTLIST mfc   %INSDEL; >
+ 
+ 
+
+<!--**********************************************************************
+    * Define Element PNR (Part number) containing:-                      *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+ 
+<!ELEMENT pnr  - O (#PCDATA)>
+<!ATTLIST pnr   %INSDEL; >
+ 
+ 
+
+<!--**********************************************************************
+    * Define Element PAS (PAS 2000M SEGMENT) containing:-                *
+    *   DFP - mandatory  single     description of part                  *
+    *   UOI - Optionnal  single     Unit Of Issue                        *
+    *   PSC - Optionnal  single     SEGMENT PCS (2000M))                 *
+    *   COM - Optionnal  single     Category of Material                 *
+    *   HAZ - Optionnal  single     Hazardous Material                   *
+    *   FTC - Optionnal  single     Fitment code                         *
+    *   PSC - Optionnal  single     Physical Security / Pilferage code   *
+    *   CMK - Optionnal  single     Calibration Marker                   *
+    *   SIZE - Optionnal  single    size of unit                         *
+    *   WEIGHT - Optionnal  single  Weight of unit                       *
+	********************************************************************** -->
+ 
+<!ELEMENT pas  - O (dfp , uoi? , pcs? , com? , haz? ,ftc? , psc? ,
+             cmk? , size? , weight?) >
+ 
+ 
+
+<!--**********************************************************************
+    * Define Element DFP (description of part) containing:-              *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+ 
+<!ELEMENT dfp  - O (#PCDATA)>
+<!ATTLIST dfp   %INSDEL; >
+ 
+ 
+
+<!--**********************************************************************
+    * Define Element UOI (Unit Of Issue) containing:-                    *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+ 
+<!ELEMENT uoi  - O (#PCDATA)>
+<!ATTLIST uoi   %INSDEL; >
+ 
+ 
+
+<!--**********************************************************************
+    * Define Element PCS  (SEGMENT PCS (2000M)) containing:-             *
+    *   QUI - Optionnal single      Quantity per Unit of Issue           *
+    *   UOM - Optionnal  single     Unit Of Measure                      *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+ 
+<!ELEMENT pcs  - O (qui? , uom?) >
+<!ATTLIST pcs  %INSDEL; >
+ 
+ 
+
+<!--**********************************************************************
+    * Define Element QUI (Quantity per Unit of Issue) containing:-       *
+    *  No Other Tags.                                                    *
+    ********************************************************************** -->
+ 
+<!ELEMENT qui  - O (#PCDATA) >
+<!ATTLIST qui  %INSDEL;>
+
+ 
+<!--**********************************************************************
+    * Define Element UOM (Unit Of Measure) containing:-                  *
+    *  No Other Tags.                                                    *
+    ********************************************************************** -->
+ 
+<!ELEMENT uom  - O (#PCDATA) >
+<!ATTLIST uom  %INSDEL;> 
+
+
+<!--**********************************************************************
+    * Define Element COM (Category of Material) containing:-             *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  CODE      - Values  - IMPLIED - category code                     * 
+    *  Attribute Definition list stored in entity %INSDEL;               *
+    ********************************************************************** -->
+
+  <!ELEMENT com  - O  EMPTY>  
+  <!ATTLIST com  
+                 code (0, 1 , 2 , 3 , 4 , 5)   #IMPLIED
+                 %INSDEL;     >  
+
+
+<!--**********************************************************************
+    * Define Element HAZ (Hazardous Material) containing:-               *
+    *  No Other Tags.                                                    *
+    *     present if rfs differ from 0                                   *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+
+  <!ELEMENT haz  - O (#PCDATA)> 
+  <!ATTLIST haz  %INSDEL;>
+
+ 
+<!--**********************************************************************
+    * Define Element FTC (FiTment Code) containing:-                     *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  VALUE      - Choice  - REQUIRED - 1 if percing needed             *
+    *                                    M if mounting equipment needed  *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+ 
+<!ELEMENT ftc  - O  EMPTY>
+<!ATTLIST ftc
+             value (1 , M)    "1"
+             %INSDEL; >
+ 
+ 
+
+<!--**********************************************************************
+    * Define Element PSC(Physical Security / Pilferage code) containing:-*
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+ 
+<!ELEMENT psc  - O (#PCDATA)>
+<!ATTLIST psc  %INSDEL;>
+ 
+ 
+
+<!--**********************************************************************
+    * Define Element CMK (Calibration Marker) containing:-               *
+    *  No Other Tags.                                                    *
+    *     present means cmk= "1" for spec 2000M (calibration needed)     *
+    *     Absent means nocalibration needed                              *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+ 
+<!ELEMENT cmk  - O (#PCDATA)>
+<!ATTLIST cmk   %INSDEL;>
+ 
+<!--**********************************************************************
+    * Define Element SIZE (Size) containing:-                            *
+    *   SPU - optional   single     size of package unit                 *                  
+    *   SUU - mandatory  single     size of unpackage unit               *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+
+  <!ELEMENT size  - O (spu? , suu) >
+  <!ATTLIST size  %INSDEL;>
+
+
+<!--**********************************************************************
+    * Define Element SPU (Size of Package Unit) containing:-             *
+    *  No Other Tags.                                                    *
+    ********************************************************************** -->
+
+  <!ELEMENT spu  - O (#PCDATA) > 
+  <!ATTLIST spu  %INSDEL;>
+	
+<!--**********************************************************************
+    * Define Element SUU (Size of Unpackage Unit) containing:-           *
+    *  No Other Tags.                                                    *
+    ********************************************************************** -->
+
+  <!ELEMENT suu  - O (#PCDATA)>      
+  <!ATTLIST suu  %INSDEL;>
+
+<!--**********************************************************************
+    * Define Element WEIGHT (Weight) containing:-                        *
+    *   WPU - optional   single     Weight of package unit               *                  
+    *   WUU - mandatory  single     Weight of unpackage unit             *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+
+  <!ELEMENT weight  - O (wpu? , wuu) >
+  <!ATTLIST weight  %INSDEL;>
+
+<!--**********************************************************************
+    * Define Element WPU (weight of packaged unit) containing:-          *
+    *  No Other Tags.                                                    *
+    ********************************************************************** -->
+
+  <!ELEMENT wpu  - O (#PCDATA) >
+  <!ATTLIST wpu  %INSDEL;>
+
+<!--**********************************************************************
+    * Define Element WUU (weight of Unpackaged unit) containing:-        *
+    *  No Other Tags.                                                    *
+    ********************************************************************** -->
+
+  <!ELEMENT wuu  - O (#PCDATA)> 
+  <!ATTLIST wuu  %INSDEL;>
+
+
+<!--**********************************************************************
+    * Define Element NSN (nato stock number) containing:-                *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  NSC      - NUMBER  - IMPLIED - nato supply class                  *
+    *  NIN      - NUMBER  - IMPLIED - nato item identification number    *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+<!ELEMENT nsn  - O  EMPTY >
+<!ATTLIST nsn  %INSDEL;
+               nsc  NUMBER    #IMPLIED 
+               nin  NUMBER    #IMPLIED >
+
+
+
+<!--**********************************************************************
+    * Define Element CBS : 2000M CBS SEGMENT containing:-                *
+    *   ASP - Optionnal  single     Attaching Storage or shiping part    *
+    *   NIL - Optionnal  single     not illustrated                      *
+    *   RTX - Optionnal  single     refer to                             *
+    *   SMF - Optionnal  single     select or manufacture from identifier*
+    *   DFL - Optionnal  single     description of location              *
+    ********************************************************************** -->
+ 
+<!ELEMENT cbs  - O (asp? , nil? , rtx? , smf? , dfl?) >
+ 
+ 
+
+<!--**********************************************************************
+    * Define Element ASP (Attaching Storage or shiping part) containing:-*
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  ASC      - Values  - IMPLIED - attaching storage or shipping value*
+    *                        1 : Attaching Part                          *
+    *                        2 : Storage   Part                          *
+    *                        3 : Shipping  Part                          *
+    *  Attribute Definition list stored in entity %INSDEL;               *
+    ********************************************************************** -->
+ 
+<!ELEMENT asp  - O  EMPTY  >
+<!ATTLIST asp
+             %INSDEL;
+             asp (1 , 2 , 3)   #IMPLIED  >
+ 
+ 
+
+<!--**********************************************************************
+    * Define Element NIL (Not Illustrated) containing:-                  *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+ 
+<!ELEMENT nil  - - (#PCDATA)>
+<!ATTLIST nil  %INSDEL;>
+ 
+ 
+
+<!--**********************************************************************
+    * Define Element RTX  (Refer to) containing:-                        *
+    *   IPPREF - Mandatory single     reference to IPP                   *
+    *   CSNREF - Mandatory single     reference to CSN                   *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+ 
+<!ELEMENT rtx  - O (ippref | csnref)>
+<!ATTLIST rtx  %INSDEL;>
+ 
+ 
+
+<!--**********************************************************************
+    * Define Element IPPREF (Reference to IPP) containing:-              *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  REFIPP   - CDATA  - REQUIRED - IPP code                           *
+    *  RPCNAME  - RPCNAME - IMPLIED - RPCNAME VALUES                     *
+	********************************************************************** -->
+ 
+<!ELEMENT ippref  - O  EMPTY >
+<!ATTLIST ippref
+             refipp  CDATA    #REQUIRED 
+			 rpcname %RPCNAME; #IMPLIED>
+
+
+
+<!--**********************************************************************
+    * Define Element CSNREF (Reference to CSN) containing:-              *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  REFCSN   - CDATA  - REQUIRED - CSN code                           *
+    *  REFISN   - CDATA  - IMPLIED  - ISN code                   *
+    ********************************************************************** -->
+ 
+<!ELEMENT csnref  - O  EMPTY >
+<!ATTLIST csnref
+             refcsn  CDATA    #REQUIRED
+             refisn  CDATA    #IMPLIED >
+ 
+ 
+
+<!--**********************************************************************
+    * Define Element SMF(select or manufacture from)  containing:-       *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  VALUE   - Values  - REQUIRED -                                    *
+    *                        F : ..................                      *
+    *                        T : ..................                      *
+    *                        M : ..................                      *
+    *                        R : ..................                      *
+    *                        P : ..................                      *
+    *                        M : ..................                      *
+    *  Attribute Definition list stored in entity %INSDEL;               *
+    ********************************************************************** -->
+ 
+<!ELEMENT smf  - - (mfm?)>
+<!ATTLIST smf  %INSDEL;
+             value (F , T , M , R , P)   #REQUIRED >
+ 
+
+ 
+<!--**********************************************************************
+    * Define Element MFM(Select or manufacture from range) containing:-  *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+ 
+<!ELEMENT mfm  - O (#PCDATA)>
+<!ATTLIST mfm  %INSDEL;>
+ 
+ 
+
+<!--**********************************************************************
+    * Define Element DFL (description of location) containing:-          *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+ 
+<!ELEMENT dfl  - O (#PCDATA)>
+<!ATTLIST dfl  %INSDEL;>
+ 
+
+ 
+<!--**********************************************************************
+    * Define Element CCS  (SEGMENT CCS (2000M)) containing:-             *
+    *   UCE - Optionnal single      usable on code equipment             *
+    *   UCA - Optionnal  single     usable on code assembly              *
+    *   ICY - Optionnal  single     interchangeability                   *
+    ********************************************************************** -->
+
+<!ELEMENT ccs  - O (uce? , uca? , icy?) >
+
+
+ 
+<!--**********************************************************************
+    * Define Element UCE(usable on code equipment) containing:-          *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+ 
+<!ELEMENT uce  - - (#PCDATA)>
+<!ATTLIST uce  %INSDEL;>
+ 
+
+ 
+<!--**********************************************************************
+    * Define Element UCA(usable on code assembly) containing:-           *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+ 
+<!ELEMENT uca  - - (#PCDATA)>
+<!ATTLIST uca  %INSDEL;>
+
+ 
+ 
+<!--**********************************************************************
+    * Define Element ICY(Interchangeability) containing:-                *
+    *  No Other Tags.                                                    *
+    *  Icy is only present when rfs is different from 0.                 *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+ 
+<!ELEMENT icy  - O (#PCDATA) >
+<!ATTLIST icy  %INSDEL;>
+ 
+ 
+
+<!--**********************************************************************
+    * Define Element CTL (category 1 container location) containing:-    *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  CSN   - CDATA  - REQUIRED - CSN code                              *
+    *  ISN   - CDATA  - IMPLIED  - ISN code                              *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+ 
+<!ELEMENT ctl  - O  EMPTY>
+<!ATTLIST ctl  %INSDEL;
+              csn  CDATA    #REQUIRED
+              isn  CDATA    #IMPLIED >
+ 
+ 
+
+<!--**********************************************************************
+    * Define Element CES  (2000M CES Segment) containing:-               *
+    *   SRV - Mandatory single     Service                               *
+    *   SMR - Mandatory single     Source maintenance&recoverability     *
+    *   MOV - Optionnal Repeatable Model version                         *
+    ********************************************************************** -->
+ 
+<!ELEMENT ces  - O (srv , smr , mov*)+ >
+
+ 
+ 
+<!--**********************************************************************
+    * Define Element SRV (Service) containing:-                          *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+ 
+<!ELEMENT srv  - O (#PCDATA) >
+<!ATTLIST srv  %INSDEL;>
+
+ 
+ 
+<!--**********************************************************************
+    * Define Element SMR (source maintenance&recoverability) containing:-*
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+ 
+<!ELEMENT smr  - O (#PCDATA)>
+<!ATTLIST smr  %INSDEL;>
+ 
+ 
+
+<!--**********************************************************************
+    * Define Element MOV  (Model Version) containing:-                   *
+    *   EFY - Optionnal  repeatable     Effectivity                      *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  MOV   - CDATA  - REQUIRED - MOV code                              *
+    *  Attribute Definition list stored in entity %INSDEL;               *
+    ********************************************************************** -->
+ 
+<!ELEMENT mov  - O (efy*) >
+<!ATTLIST mov
+             mov  CDATA #REQUIRED
+             %INSDEL;>
+ 
+ 
+
+<!--**********************************************************************
+    * Define Element EFY(Effectivity) containing:-                       *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+ 
+<!ELEMENT efy  - O  (#PCDATA)>
+<!ATTLIST efy  %INSDEL;>
+ 
+ 
+
+<!--**********************************************************************
+    * Define Element RFD (Reference designator) containing:-             *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+ 
+<!ELEMENT rfd  - O (#PCDATA)>
+<!ATTLIST rfd  %INSDEL;>
+
+ 
+ 
+<!--**********************************************************************
+    * Define Element ILS (integrated Logistic Support Number)containing:-*
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+ 
+<!ELEMENT ils  - O (#PCDATA)  >
+<!ATTLIST ils  %INSDEL;>
+
+ 
+ 
+<!--**********************************************************************
+    * Define Element CAN (change authority number)containing:-           *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+ 
+<!ELEMENT can  - O (#PCDATA)>
+<!ATTLIST can  %INSDEL;>
+ 
+
+  
+<!--**********************************************************************
+    * Call the Figure Public Text.                                       *
+    * The formal public identifier is stored in the entity %EXTFIG;      *
+    ********************************************************************** -->
+ 
+%EXTFIG;
+
+
+<!--**********************************************************************
+    * Call the Lists Public Text.                                        *
+    * The formal public identifier is stored in the entity %EXTLIST;     *
+    ********************************************************************** -->
+ 
+%EXTLIST;
+
+
+
+<!--**********************************************************************
+    * Call the Special Paragraphs Public Text.                           *
+    * The formal public identifier is stored in the entity %EXTSPEC;     *
+    ********************************************************************** -->
+
+%EXTSPEC;

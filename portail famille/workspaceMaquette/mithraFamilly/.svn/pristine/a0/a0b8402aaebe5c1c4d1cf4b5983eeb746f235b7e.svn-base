@@ -1,0 +1,376 @@
+package com.sonovision.openconv.db.dao.impl;
+
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertNotNull;
+import static org.testng.Assert.assertNull;
+
+import java.lang.reflect.Method;
+import java.util.List;
+
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import com.sonovision.openconv.db.exception.DBNONullException;
+import com.sonovision.openconv.db.exception.DBNOUniqueException;
+import com.sonovision.openconv.db.vo.ConversionObject;
+import com.sonovision.openconv.db.vo.Task;
+import com.sonovision.openconv.utils.TestDBHelper;
+
+public class ConversionObjectDaoTest extends TestDBHelper {
+
+	@AfterMethod
+	public void setAfterMethod(Method method) throws Exception {
+		deleteAll();
+	}
+
+	@BeforeMethod
+	public void setUpMethod(Method method) throws Exception {
+		deleteAll();
+	}
+
+	@Test
+	public void test_save() throws DBNONullException, DBNOUniqueException {
+		System.out.println("*** TEST conversionObjectDao.save ***");
+
+		ConversionObject conversionObject = getConversionObjectWithoutSave();
+		conversionObjectDao.save(conversionObject);
+		assertNotNull(conversionObject.getId());
+
+	}
+
+	/**
+	 * test conversionObjectDao.deleteAll.
+	 * 
+	 * @throws DBNOUniqueException
+	 * @throws DBNONullException
+	 *
+	 * @throws DuplicateObjectException
+	 * @throws UnexpectedDatabaseException
+	 */
+	@Test(dependsOnMethods = { "test_save" })
+	public synchronized  void test_deleteAll() throws DBNONullException, DBNOUniqueException {
+		System.out.println("*** TEST conversionObjectDao.deleteAll ***");
+
+		getConversionObjectWithSave(3);
+
+		conversionObjectDao.deleteAll();
+
+		List<ConversionObject> conversionObjectTest = (List<ConversionObject>) conversionObjectDao.findAll();
+		assertEquals(conversionObjectTest.size(), 0);
+	}
+
+	/**
+	 * test conversionObjectDao.delete
+	 * 
+	 * @throws DBNOUniqueException
+	 * @throws DBNONullException
+	 *
+	 * @throws DuplicateObjectException
+	 * @throws UnexpectedDatabaseException
+	 */
+	@Test(dependsOnMethods = { "test_save", "test_deleteAll" })
+	public void test_delete() throws DBNONullException, DBNOUniqueException {
+		System.out.println("*** TEST conversionObjectDao.delete ***");
+		String conversionObjectId;
+
+		ConversionObject conversionObject = getConversionObjectWithSave();
+		conversionObjectId = conversionObject.getId();
+		assertNotNull(conversionObjectId);
+
+		conversionObjectDao.delete(conversionObject);
+
+		conversionObject = conversionObjectDao.findOne(conversionObjectId);
+		assertNull(conversionObject);
+	}
+
+	/**
+	 * test conversionObjectDao.update
+	 * 
+	 * @throws DBNOUniqueException
+	 * @throws DBNONullException
+	 *
+	 * @throws DuplicateObjectException
+	 * @throws UnexpectedDatabaseException
+	 */
+	@Test(dependsOnMethods = { "test_save", "test_delete", "test_deleteAll" })
+	public void test_Update() throws DBNONullException, DBNOUniqueException {
+		System.out.println("*** TEST conversionObjectDao.update ***");
+		String conversionObjectId;
+
+		ConversionObject conversionObject = getConversionObjectWithSave();
+		conversionObjectId = conversionObject.getId();
+		assertNotNull(conversionObjectId);
+
+		conversionObject.setLogResult("TEST UPDATE");
+		conversionObjectDao.save(conversionObject);
+
+		ConversionObject conversionObjectTest = new ConversionObject();
+		conversionObjectTest = conversionObjectDao.findOne(conversionObjectId);
+		assertEquals(conversionObjectTest.getLogResult(), "TEST UPDATE");
+
+	}
+
+	/**
+	 * test conversionObjectDao.get
+	 * 
+	 * @throws DBNOUniqueException
+	 * @throws DBNONullException
+	 *
+	 * @throws DuplicateObjectException
+	 * @throws UnexpectedDatabaseException
+	 */
+	@Test(dependsOnMethods = { "test_save", "test_delete", "test_deleteAll" })
+	public void test_get() throws DBNONullException, DBNOUniqueException {
+		System.out.println("*** TEST conversionObjectDao.get ***");
+		String conversionObjectId;
+
+		ConversionObject conversionObject = getConversionObjectWithSave();
+		conversionObjectId = conversionObject.getId();
+		assertNotNull(conversionObjectId);
+		String str = conversionObject.getLogResult();
+
+		conversionObject = getConversionObjectWithoutSave(2);
+		conversionObjectDao.save(conversionObject);
+		assertNotNull(conversionObject.getId());
+
+		ConversionObject conversionObjectTest = new ConversionObject();
+		conversionObjectTest = conversionObjectDao.findOne(conversionObjectId);
+		assertNotNull(conversionObjectTest.getId());
+		assertEquals(conversionObjectTest.getLogResult(), str);
+
+	}
+
+	/**
+	 * test conversionObjectDao.findAll
+	 * 
+	 * @throws DBNOUniqueException
+	 * @throws DBNONullException
+	 *
+	 * @throws DuplicateObjectException
+	 * @throws UnexpectedDatabaseException
+	 */
+	@Test(dependsOnMethods = { "test_save", "test_delete", "test_deleteAll" })
+	public void test_findAll() throws DBNONullException, DBNOUniqueException {
+		System.out.println("*** TEST conversionObjectDao.findAll ***");
+
+//		conversionObjectDao.deleteAll();
+
+		ConversionObject conversionObject = getConversionObjectWithSave();
+		assertNotNull(conversionObject.getId());
+
+		List<ConversionObject> result = (List<ConversionObject>) conversionObjectDao.findAll();
+		assertEquals(result.size(), 1);
+
+	}
+
+	/**
+	 * test conversionObjectDao.findOne
+	 * 
+	 * @throws DBNOUniqueException
+	 * @throws DBNONullException
+	 *
+	 * @throws DuplicateObjectException
+	 * @throws UnexpectedDatabaseException
+	 */
+	@Test(dependsOnMethods = { "test_save", "test_delete", "test_deleteAll" })
+	public void test_findOne() throws DBNONullException, DBNOUniqueException {
+		System.out.println("*** TEST conversionObjectDao.findOne ***");
+
+//		conversionObjectDao.deleteAll();
+
+		List<ConversionObject> conversionObject = getConversionObjectWithSave(2);
+
+		List<ConversionObject> conversionObjectList = (List<ConversionObject>) conversionObjectDao.findAll();
+		assertEquals(conversionObjectList.size(), conversionObject.size());
+
+		ConversionObject conversionObjectTest = conversionObjectDao.findOne(conversionObject.get(0).getId());// langue2.getScDmCodeId());
+		assertNotNull(conversionObjectTest.getId());
+		assertEquals(conversionObjectTest.getId(), conversionObject.get(0).getId());
+
+	}
+
+	/**
+	 * test dbConversionService.getOrSave
+	 * 
+	 * @throws DBNOUniqueException
+	 * @throws DBNONullException
+	 *
+	 * @throws DuplicateObjectException
+	 * @throws UnexpectedDatabaseException
+	 */
+	@Test(dependsOnMethods = { "test_save", "test_delete", "test_deleteAll" })
+	public void test_getOrSave() throws DBNONullException, DBNOUniqueException {
+		System.out.println("*** TEST dbConversionService.getOrSave ***");
+
+		conversionObjectDao.deleteAll();
+
+		ConversionObject conversionObject = getConversionObjectWithoutSave();
+		conversionObject.setTask(getTaskWithSave());
+		conversionObject.setConversion(getConversionWithSave());
+		conversionObject = dbConversionService.getOrSave(conversionObject);
+		assertNotNull(conversionObject.getId());
+
+		List<ConversionObject> conversionObjectList = (List<ConversionObject>) conversionObjectDao.findAll();
+		assertEquals(conversionObjectList.size(), 1);
+
+		ConversionObject conversionObjectTest = dbConversionService.getOrSave(conversionObject);
+		assertNotNull(conversionObjectTest.getId());
+
+		conversionObjectList = (List<ConversionObject>) conversionObjectDao.findAll();
+		assertEquals(conversionObjectList.size(), 1);
+
+	}
+
+	/**
+	 * test dbConversionService.findByAll
+	 * 
+	 * @throws DBNOUniqueException
+	 * @throws DBNONullException
+	 *
+	 * @throws DuplicateObjectException
+	 * @throws UnexpectedDatabaseException
+	 */
+	@Test(dependsOnMethods = { "test_save", "test_delete", "test_deleteAll" })
+	public void test_findByAll() throws DBNONullException, DBNOUniqueException {
+		System.out.println("*** TEST dbConversionService.findByAll ***");
+
+		conversionObjectDao.deleteAll();
+
+		ConversionObject conversionObject = getConversionObjectWithoutSave();
+		conversionObject.setTask(getTaskWithSave());
+		conversionObject.setConversion(getConversionWithSave());
+		conversionObject = dbConversionService.getOrSave(conversionObject);
+		assertNotNull(conversionObject.getId());
+
+		List<ConversionObject> conversionObjectList = (List<ConversionObject>) conversionObjectDao.findAll();
+		assertEquals(conversionObjectList.size(), 1);
+
+		ConversionObject conversionObjectTest = dbConversionService.findByAll(conversionObject);
+		assertNotNull(conversionObjectTest.getId());
+
+		conversionObjectList = (List<ConversionObject>) conversionObjectDao.findAll();
+		assertEquals(conversionObjectList.size(), 1);
+
+	}
+
+	/**
+	 * test dbConversionService.countBytask
+	 * 
+	 * @throws DBNOUniqueException
+	 * @throws DBNONullException
+	 */
+	@Test(dependsOnMethods = { "test_save", "test_delete", "test_deleteAll" })
+	public void test_countBytask() throws DBNONullException, DBNOUniqueException {
+		System.out.println("*** TEST dbConversionService.countBytask ***");
+
+		conversionObjectDao.deleteAll();
+		List<Task> lt = getTaskWithSave(3);
+		ConversionObject conversionObject = getConversionObjectWithoutSave(0);
+		conversionObject.setTask(lt.get(0));
+		conversionObject.setConversion(getConversionWithSave());
+		conversionObject = dbConversionService.getOrSave(conversionObject);
+		assertNotNull(conversionObject.getId());
+
+		conversionObject = getConversionObjectWithoutSave(1);
+		conversionObject.setTask(lt.get(0));
+		conversionObject.setConversion(getConversionWithSave());
+		conversionObject = dbConversionService.getOrSave(conversionObject);
+		assertNotNull(conversionObject.getId());
+
+		conversionObject = getConversionObjectWithoutSave(2);
+		conversionObject.setTask(lt.get(0));
+		conversionObject.setConversion(getConversionWithSave());
+		conversionObject = dbConversionService.getOrSave(conversionObject);
+		assertNotNull(conversionObject.getId());
+
+		conversionObject = getConversionObjectWithoutSave(3);
+		conversionObject.setTask(lt.get(1));
+		conversionObject.setConversion(getConversionWithSave());
+		conversionObject = dbConversionService.getOrSave(conversionObject);
+		assertNotNull(conversionObject.getId());
+
+		conversionObject = getConversionObjectWithoutSave(4);
+		conversionObject.setTask(lt.get(1));
+		conversionObject.setConversion(getConversionWithSave());
+		conversionObject = dbConversionService.getOrSave(conversionObject);
+		assertNotNull(conversionObject.getId());
+
+		conversionObject = getConversionObjectWithoutSave(5);
+		conversionObject.setTask(lt.get(2));
+		conversionObject.setConversion(getConversionWithSave());
+		conversionObject = dbConversionService.getOrSave(conversionObject);
+		assertNotNull(conversionObject.getId());
+
+		long result = conversionObjectDao.countByTask(lt.get(0));
+		assertEquals(result, 3);
+
+		result = conversionObjectDao.countByTask(lt.get(1));
+		assertEquals(result, 2);
+
+		result = conversionObjectDao.countByTask(lt.get(2));
+		assertEquals(result, 1);
+
+	}
+	
+
+	/**
+	 * test dbConversionService.countByTaskLogResult
+	 * 
+	 * @throws DBNOUniqueException
+	 * @throws DBNONullException
+	 */
+	@Test(dependsOnMethods = { "test_save", "test_delete", "test_deleteAll" })
+	public void test_countByTaskLogResult() throws DBNONullException, DBNOUniqueException {
+		System.out.println("*** TEST dbConversionService.countByTaskLogResult ***");
+
+		conversionObjectDao.deleteAll();
+		List<Task> lt = getTaskWithSave(3);
+		ConversionObject conversionObject = getConversionObjectWithoutSave(0);
+		conversionObject.setTask(lt.get(0));
+		conversionObject.setConversion(getConversionWithSave());
+		conversionObject.setLogResult("0");
+		conversionObject = dbConversionService.getOrSave(conversionObject);
+		assertNotNull(conversionObject.getId());
+
+		conversionObject = getConversionObjectWithoutSave(1);
+		conversionObject.setTask(lt.get(0));
+		conversionObject.setConversion(getConversionWithSave());
+		conversionObject.setLogResult("0");
+		conversionObject = dbConversionService.getOrSave(conversionObject);
+		assertNotNull(conversionObject.getId());
+
+		conversionObject = getConversionObjectWithoutSave(2);
+		conversionObject.setTask(lt.get(0));
+		conversionObject.setConversion(getConversionWithSave());
+		conversionObject.setLogResult("1");
+		conversionObject = dbConversionService.getOrSave(conversionObject);
+		assertNotNull(conversionObject.getId());
+
+		conversionObject = getConversionObjectWithoutSave(3);
+		conversionObject.setTask(lt.get(1));
+		conversionObject.setConversion(getConversionWithSave());
+		conversionObject.setLogResult("0");
+		conversionObject = dbConversionService.getOrSave(conversionObject);
+		assertNotNull(conversionObject.getId());
+
+		conversionObject = getConversionObjectWithoutSave(4);
+		conversionObject.setLogResult("0");
+		conversionObject.setTask(lt.get(1));
+		conversionObject.setConversion(getConversionWithSave());
+		conversionObject = dbConversionService.getOrSave(conversionObject);
+		assertNotNull(conversionObject.getId());
+
+		conversionObject = getConversionObjectWithoutSave(5);
+		conversionObject.setTask(lt.get(2));
+		conversionObject.setConversion(getConversionWithSave());
+		conversionObject = dbConversionService.getOrSave(conversionObject);
+		assertNotNull(conversionObject.getId());
+
+		long result = conversionObjectDao.countByTaskLogResult(lt.get(0),"0");
+		assertEquals(result, 2);
+
+
+	}
+
+}

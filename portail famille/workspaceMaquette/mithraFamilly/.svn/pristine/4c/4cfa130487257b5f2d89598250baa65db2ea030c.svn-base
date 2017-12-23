@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+								<table width="100%" border="1"> 
+						<tr> 
+						  <td width="50%"> 
+							 <para><p><emphasis gras="oui">First memory</emphasis></p>
+							 </para> 
+						  </td> 
+						  <td width="50%"> 
+							 <para><p>Press once <graphic hauteur="40" largeur="40" source="../Illustration_Travail/Z1-A-000000-G-FASL3-00145-A-01-1-00.jpg" type="jpg" picto="oui"/></p>
+							 </para> 
+						  </td> 
+						</tr> 
+						<tr> 
+						  <td width="50%"> 
+							 <para><p>Memory indication <refint type="figure" refid="FIG1">1</refint>:</p>
+							 </para> 
+						  </td> 
+						  <td width="50%"> 
+							 <para><p><emphasis gras="oui">1</emphasis> (initial setting 12:00)</p>
+							 </para> 
+						  </td> 
+						</tr> 
+						<tr> 
+						  <td width="50%"> 
+							 <para><p><emphasis gras="oui">Second memory</emphasis></p>
+							 </para> 
+						  </td> 
+						  <td width="50%"> 
+							 <para><p>Press twice <graphic hauteur="40" largeur="40" source="../Illustration_Travail/Z1-A-000000-G-FASL3-00145-A-01-1-00.jpg" type="jpg" picto="oui"/></p>
+							 </para> 
+						  </td> 
+						</tr> 
+						<tr> 
+						  <td width="50%"> 
+							 <para><p>Memory indication <refint type="figure" refid="FIG1">1</refint>:</p>
+							 </para> 
+						  </td> 
+						  <td width="50%"> 
+							 <para><p><emphasis gras="oui">2</emphasis> (initial setting 12:00)</p>
+							 </para> 
+						  </td> 
+						</tr> 
+						<tr> 
+						  <td width="50%"> 
+							 <para><p><emphasis gras="oui">Third memory</emphasis></p>
+							 </para> 
+						  </td> 
+						  <td width="50%"> 
+							 <para><p>Press three times <graphic hauteur="40" largeur="40" source="../Illustration_Travail/Z1-A-000000-G-FASL3-00145-A-01-1-00.jpg" type="jpg" picto="oui"/></p>
+							 </para> 
+						  </td> 
+						</tr> 
+						<tr> 
+						  <td width="50%"> 
+							 <para><p>Memory indication <refint type="figure" refid="FIG1">1</refint>:</p>
+							 </para> 
+						  </td> 
+						  <td width="50%"> 
+							 <para><p><emphasis gras="oui">3</emphasis> (initial setting 12:00)</p>
+							 </para> 
+						  </td> 
+						</tr> 
+						<tr> 
+						  <td width="50%"> 
+							 <para><p><emphasis gras="oui">Neutral position</emphasis></p>
+							 </para> 
+						  </td> 
+						  <td width="50%"> 
+							 <para><p>No memory is activated, press <graphic hauteur="40" largeur="40" source="../Illustration_Travail/Z1-A-000000-G-FASL3-00145-A-01-1-00.jpg" type="jpg" picto="oui"/> as many times as necessary until the memory activation goes out.</p>
+							 </para> 
+						  </td> 
+						</tr> 
+					 </table> 

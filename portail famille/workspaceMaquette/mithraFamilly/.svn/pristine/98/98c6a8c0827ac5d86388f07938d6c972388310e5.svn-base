@@ -1,0 +1,313 @@
+package com.sonovision.openconv.db.vo;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import com.sonovision.openconv.db.vo.common.GeneralInformation;
+
+@Document(collection = "Conversion")
+public class Conversion  extends GeneralInformation {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3326597863129406690L;
+	
+	private String folderIn;
+	
+	private String folderOut;
+	
+	private String workFlowName;
+	
+	private String workFlowSequence;
+	
+	private Long startTime;
+	
+	private String logResult;
+	
+	private Long stopTime;
+	
+	//@DBRef(lazy=false)
+	private List<Task> taskList = new ArrayList<>();    
+
+	//@DBRef(lazy=false)
+	private List<LogLine> logLineList= new ArrayList<>();
+
+	public Conversion() {
+	}
+	
+	public Conversion(String folderIn, String folderOut, String workFlowName,
+			String workFlowSequence, Long startTime, Long stopTime) {
+		super();
+		this.folderIn = folderIn;
+		this.folderOut = folderOut;
+		this.workFlowName = workFlowName;
+		this.workFlowSequence = workFlowSequence;
+		this.startTime = startTime;
+		this.stopTime = stopTime;
+	}
+	
+	public Conversion(String folderIn, String folderOut, String workFlowName,
+			String workFlowSequence) {
+		super();
+		this.folderIn = folderIn;
+		this.folderOut = folderOut;
+		this.workFlowName = workFlowName;
+		this.workFlowSequence = workFlowSequence;
+	}
+	
+	
+
+	public Conversion( String folderIn, String folderOut, String workFlowName,
+			String workFlowSequence, Long startTime, Long stopTime, List<Task> taskList,
+			List<ConversionObject> conversionObjectList, List<LogLine> logLineList) {
+		super();
+		this.folderIn = folderIn;
+		this.folderOut = folderOut;
+		this.workFlowName = workFlowName;
+		this.workFlowSequence = workFlowSequence;
+		this.startTime = startTime;
+		this.stopTime = stopTime;
+		this.taskList = taskList;
+		this.logLineList = logLineList;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + ((folderIn == null) ? 0 : folderIn.hashCode());
+		result = prime * result + ((folderOut == null) ? 0 : folderOut.hashCode());
+		result = prime * result + ((logLineList == null) ? 0 : logLineList.hashCode());
+		result = prime * result + ((logResult == null) ? 0 : logResult.hashCode());
+		result = prime * result + ((startTime == null) ? 0 : startTime.hashCode());
+		result = prime * result + ((stopTime == null) ? 0 : stopTime.hashCode());
+		result = prime * result + ((taskList == null) ? 0 : taskList.hashCode());
+		result = prime * result + ((workFlowName == null) ? 0 : workFlowName.hashCode());
+		result = prime * result + ((workFlowSequence == null) ? 0 : workFlowSequence.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Conversion other = (Conversion) obj;
+		if (folderIn == null) {
+			if (other.folderIn != null)
+				return false;
+		} else if (!folderIn.equals(other.folderIn))
+			return false;
+		if (folderOut == null) {
+			if (other.folderOut != null)
+				return false;
+		} else if (!folderOut.equals(other.folderOut))
+			return false;
+		if (logLineList == null) {
+			if (other.logLineList != null)
+				return false;
+		} else if (!logLineList.equals(other.logLineList))
+			return false;
+		if (logResult == null) {
+			if (other.logResult != null)
+				return false;
+		} else if (!logResult.equals(other.logResult))
+			return false;
+		if (startTime == null) {
+			if (other.startTime != null)
+				return false;
+		} else if (!startTime.equals(other.startTime))
+			return false;
+		if (stopTime == null) {
+			if (other.stopTime != null)
+				return false;
+		} else if (!stopTime.equals(other.stopTime))
+			return false;
+		if (taskList == null) {
+			if (other.taskList != null)
+				return false;
+		} else if (!taskList.equals(other.taskList))
+			return false;
+		if (workFlowName == null) {
+			if (other.workFlowName != null)
+				return false;
+		} else if (!workFlowName.equals(other.workFlowName))
+			return false;
+		if (workFlowSequence == null) {
+			if (other.workFlowSequence != null)
+				return false;
+		} else if (!workFlowSequence.equals(other.workFlowSequence))
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Conversion [folderIn=" + folderIn + ", folderOut=" + folderOut + ", workFlowName=" + workFlowName + ", workFlowSequence=" + workFlowSequence + ", startTime=" + startTime + ", logResult=" + logResult + ", stopTime="
+				+ stopTime + ", taskList=" + taskList + ", logLineList=" + logLineList + "]";
+	}
+	
+	
+
+	/**
+	 * @return the folderIn
+	 */
+	public String getFolderIn() {
+		return folderIn;
+	}
+
+	/**
+	 * @param folderIn the folderIn to set
+	 */
+	public void setFolderIn(String folderIn) {
+		this.folderIn = folderIn;
+	}
+
+	/**
+	 * @return the folderOut
+	 */
+	public String getFolderOut() {
+		return folderOut;
+	}
+
+	/**
+	 * @param folderOut the folderOut to set
+	 */
+	public void setFolderOut(String folderOut) {
+		this.folderOut = folderOut;
+	}
+
+	/**
+	 * @return the workFlowName
+	 */
+	public String getWorkFlowName() {
+		return workFlowName;
+	}
+
+	/**
+	 * @param workFlowName the workFlowName to set
+	 */
+	public void setWorkFlowName(String workFlowName) {
+		this.workFlowName = workFlowName;
+	}
+
+	/**
+	 * @return the workFlowSequence
+	 */
+	public String getWorkFlowSequence() {
+		return workFlowSequence;
+	}
+
+	/**
+	 * @param workFlowSequence the workFlowSequence to set
+	 */
+	public void setWorkFlowSequence(String workFlowSequence) {
+		this.workFlowSequence = workFlowSequence;
+	}
+
+	/**
+	 * @return the startTime
+	 */
+	public Long getStartTime() {
+		return startTime;
+	}
+
+	/**
+	 * @param startTime the startTime to set
+	 */
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+	}
+
+	/**
+	 * @return the stopTime
+	 */
+	public Long getStopTime() {
+		return stopTime;
+	}
+
+	/**
+	 * @param stopTime the stopTime to set
+	 */
+	public void setStopTime(Long stopTime) {
+		this.stopTime = stopTime;
+	}
+
+	/**
+	 * @return the taskList
+	 */
+	public List<Task> getTaskList() {
+		return taskList;
+	}
+
+	/**
+	 * @param taskList the taskList to set
+	 */
+	public void setTaskList(List<Task> taskList) {
+		this.taskList = taskList;
+	}
+
+	public void addTask(Task task) {
+		
+		taskList.add(task);
+	}
+	
+	
+	/**
+	 * @return the logLineList
+	 */
+	public List<LogLine> getLogLineList() {
+		return logLineList;
+	}
+
+	/**
+	 * @param logLineList the logLineList to set
+	 */
+	public void setLogLineList(List<LogLine> logLineList) {
+		this.logLineList = logLineList;
+	}
+	
+	public void addLogLine(LogLine logLine) {
+		this.logLineList.add(logLine);
+	}
+
+	/**
+	 * hashcode reduce for hash without db data
+	 * @return
+	 */
+	public int hashCodeReduce() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((folderIn == null) ? 0 : folderIn.hashCode());
+		result = prime * result + ((folderOut == null) ? 0 : folderOut.hashCode());
+		result = prime * result + ((workFlowName == null) ? 0 : workFlowName.hashCode());
+		result = prime * result + ((workFlowSequence == null) ? 0 : workFlowSequence.hashCode());
+		return result;
+	}
+
+	/**
+	 * @return the logResult
+	 */
+	public String getLogResult() {
+		return logResult;
+	}
+
+	/**
+	 * @param logResult the logResult to set
+	 */
+	public void setLogResult(String logResult) {
+		this.logResult = logResult;
+	}
+	
+	
+	
+	
+
+}

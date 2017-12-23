@@ -1,0 +1,16 @@
+package com.sonovision.openconv.modules.sgmlprocess.exception;
+
+import com.sonovision.openconv.modules.sgmlprocess.reader.SGMLStream;
+
+public class SGMLException extends RuntimeException
+{
+	 public SGMLException(SGMLStream stream, String message)
+	 {
+		super("Error at line " + stream.getLine() + ": " + message);
+	 }
+
+	 public SGMLException(String message)
+	 {
+		super(message);
+	 }
+}

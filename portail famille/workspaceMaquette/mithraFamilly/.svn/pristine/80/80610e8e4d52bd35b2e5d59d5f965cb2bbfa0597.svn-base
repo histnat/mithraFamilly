@@ -1,0 +1,166 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1B725200SF030100192A011 SYSTEM "x-dm://0900f90b8006f14a,MYWORKING" NDATA cgm>
+<!ENTITY A1B725200SF030100191A011 SYSTEM "x-dm://0900f90b8006f149,MYWORKING" NDATA cgm>
+<!ENTITY A1B725200SF030100243A011 SYSTEM "x-dm://0900f90b8000349b,MYWORKING" NDATA cgm>
+<!ENTITY A1B725200SF030100244A011 SYSTEM "x-dm://0900f90b8000349c,MYWORKING" NDATA cgm>
+]>
+<?Pub Inc>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>06</discode><discodev>A</discodev><incode>527</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmc>
+<dmtitle><techname>COUVERCLE TURBINE HP ETAPE 4</techname><infoname>PROCEDURES DE DEPOSE PROPREMENT DITE - DU DISQUE LABYRINTHE TURBINE HP</infoname></dmtitle>
+<issno type="r" issno="2">
+<issdate month="10" year="2011" day="15">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 4"></version>
+<nti nti3="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Version initiale</rfu>
+<remarks>Prise en compte de la modification 250-78R1</remarks>
+<icns><icn id="A1B725200SF030100243A011">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00243</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1B725200SF030100244A011">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00244</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1B725200SF030100191A011">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00191</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1B725200SF030100192A011">
+<icn-c><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00192</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<refdm>
+<dmcid id="A1A72520006A311AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>06</discode><discodev>A</discodev><incode>311</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A72520000A250AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>00</discode><discodev>A</discodev><incode>250</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+<dmcid id="A1A72520006A361AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>5</section><subsect>2</subsect><subject>00</subject><discode>06</discode><discodev>A</discodev><incode>361</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+</refdm>
+</refs><proced><pmd>
+<manhour value="2.0"></manhour>
+<duration value="1.0"></duration>
+</pmd><prelreqs><reqconds><reqcondli><reqcond>
+<cond><para><p>Ensemble disque labyrinthe/couvercle turbine sur table d'atelier.</p>
+</para>
+</cond>
+</reqcond><reqcond>
+<cond><para><p>Disque labyrinthe &eacute;quip&eacute; de l'extracteur <supeqref refid="O2.30212"> sur face AV.</p>
+</para>
+</cond>
+</reqcond><reqcond>
+<cond><para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>Le protecteur disque laby<supeqref refid="O2.00675"> est en place .</p>
+</para>
+</cond>
+</reqcond></reqcondli></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="2"><perstime value="1.0"></reqper>
+</reqpers><supequip><supeqli>
+<supequi id="O2.30211"><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<refipc csn="72016701 866A"><nomen>Extracteur disque laby/couvercle M08</nomen><quantity>8</quantity></supequi>
+<supequi id="O2.30212"><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<refipc csn="72016701 866N"><nomen>Extracteur disque laby/couvercle M08</nomen><quantity>8</quantity></supequi>
+<supequi id="O2.00675"><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<refipc csn="72016701 866N"><nomen>Protecteur disque laby</nomen><quantity>8</quantity></supequi>
+</supeqli><supeqlis>
+<supequis id="O2.C0185"><refipc csn="72016002 190 "><nomen>Cl&eacute; &agrave; fourche</nomen><quantity>1</quantity></supequis>
+<supequis id="O2.C0103"><refipc csn="72016002 119 "><nomen>Cl&eacute; &agrave; fourche</nomen><quantity>1</quantity></supequis>
+</supeqlis></supequip><supplies><supplyli exhaust="0">
+<supply id="R25017A" mand="0"><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<refipc csn="72520001A020 " isn="00A"><nomen>COUVERCLE, TURBINE HP</nomen><quantity>SB</quantity></supply>
+<supply id="R25017C" mand="0"><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<refipc csn="72520001A020 " isn="00C"><nomen>COUVERCLE, TURBINE HP</nomen><quantity>SB</quantity></supply>
+</supplyli></supplies><miscs><nomisc></miscs><safety><nosafety></safety></prelreqs><mainfunc>
+<step1 control="0" id="P10">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>Desserrer l'&eacute;crou stri&eacute; du plateau <supeqref refid="O2.30211"><figref repnohot="2.30211REP20, 2.30211REP13" refid="B725200SF030100243A011"> .</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>Desserrer l'&eacute;crou stri&eacute; du plateau <supeqref refid="O2.30212"> <figref repnohot="2.30212REP17, 2.30212REP25" refid="B725200SF030100192A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P20">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>Positionner le plateau sur le couvercle <supplref refid="R25017A"> <supeqref refid="O2.30211"> <figref repnohot="2.30211REP13" refid="B725200SF030100243A011">.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>Positionner le plateau sur le couvercle <supplref refid="R25017C"> <supeqref refid="O2.30212"> <figref repnohot="2.30211REP17" refid="B725200SF030100192A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P30">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>Installer les 3 secteurs <supeqref refid="O2.30211"> <figref repnohot="2.30211REP14" refid="B725200SF030100243A011">.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>Installer les 3 secteurs <supeqref refid="O2.30212"> <figref repnohot="2.30212REP16" refid="B725200SF030100192A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P40">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>Serrer les secteurs <supeqref refid="O2.30211"> <figref repnohot="2.30211REP14" refid="B725200SF030100243A011">.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>Serrer les secteurs <supeqref refid="O2.30212"> <figref repnohot="2.30211REP16" refid="B725200SF030100192A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P50">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>Retourner l'ensemble de 180&deg; &agrave; 2 personnes sur la table d'atelier <supeqref refid="O2.30211"> <figref repnohot="2.30211REP13, 2.30211REP08" refid="B725200SF030100244A011">.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>Retourner l'ensemble de 180&deg; &agrave; 2 personnes sur la table d'atelier <supeqref refid="O2.30212"> <figref repnohot="2.30212REP13, 2.30211REP08" refid="B725200SF030100191A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P60">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>Visser la tige filet&eacute; sur la plateau d'extraction jusqu'&agrave; extraction <supeqref refid="O2.30211"> <supeqref refid="O2.C0185"> <figref repnohot="2.30211REP10, 2.30211REP08" refid="B725200SF030100244A011">.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>Serrer les 3&nbsp;&eacute;crous de l'extracteur <supeqref refid="O2.30212"> par quart de tour jusqu'au d&eacute;collement du disque labyrinthe, &agrave; l'aide de la cl&eacute; <supeqref refid="O2.C0103"> <figref repnohot="2.30212REP23" refid="B725200SF030100191A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P70">
+<para><applic><config><mod modnb="250-78R1" modcond="pre"></config></applic>
+<p>D&eacute;poser le couvercle du plateau extracteur <supeqref refid="O2.30211"> <figref repnohot="2.30211REP13" refid="B725200SF030100243A011">.</p>
+</para>
+<para><applic><config><mod modnb="250-78R1" modcond="post"></config></applic>
+<p>D&eacute;poser le couvercle du plateau extracteur <supeqref refid="O2.30212"> <figref repnohot="2.30212REP17" refid="B725200SF030100191A011"><?Pub Caret>.</p>
+</para>
+</step1>
+<step1 control="0" id="P80">
+<para><p>Effectuer le contr&ocirc;le visuel du couvercle <dmcref xrefid="A1A72520006A311AC">.</p>
+</para>
+</step1>
+<step1 control="0" id="P90">
+<para><p>Nettoyer le couvercle <dmcref xrefid="A1A72520000A250AC">.</p>
+</para>
+</step1>
+<step1 control="0" id="P100">
+<para><p>Effectuer le contr&ocirc;le dimensionnel du couvercle <dmcref xrefid="A1A72520006A361AC">.</p>
+</para>
+</step1>
+<figure id="B725200SF030100243A011">
+<title>EXTRACTION COUVERCLE</title>
+<graphic callicn="A1B725200SF030100243A011">
+</figure>
+<figure id="B725200SF030100244A011">
+<title>EXTRACTION COUVERCLE</title>
+<graphic callicn="A1B725200SF030100244A011">
+</figure>
+<figure id="B725200SF030100191A011">
+<title>EXTRACTION COUVERCLE</title>
+<graphic callicn="A1B725200SF030100191A011">
+</figure>
+<figure id="B725200SF030100192A011">
+<title>EXTRACTION COUVERCLE</title>
+<graphic callicn="A1B725200SF030100192A011">
+</figure>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000010388 0>

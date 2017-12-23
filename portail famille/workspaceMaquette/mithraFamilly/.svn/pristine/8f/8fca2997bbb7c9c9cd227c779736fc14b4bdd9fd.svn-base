@@ -1,0 +1,363 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Air Vehicle Engines Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1A723300SF030100142A021 SYSTEM "x-dm://0900f90b8005ed28,MYWORKING" NDATA tiff>
+<!ENTITY A1A723300SF030100140A021 SYSTEM "x-dm://0900f90b8005ed27,MYWORKING" NDATA tiff>
+<!ENTITY A1A723300SF030190121A011 SYSTEM "x-dm://0900f90b8000266f,MYWORKING" NDATA tiff>
+<!ENTITY A1A723300SF030190122A011 SYSTEM "x-dm://0900f90b80002670,MYWORKING" NDATA tiff>
+<!ENTITY A1A723300SF030190136A011 SYSTEM "x-dm://0900f90b80002572,MYWORKING" NDATA tiff>
+<!ENTITY A1A723300SF030190137A011 SYSTEM "x-dm://0900f90b80002573,MYWORKING" NDATA tiff>
+<!ENTITY A1A723300SF030190138A011 SYSTEM "x-dm://0900f90b80002574,MYWORKING" NDATA tiff>
+<!ENTITY A1A723300SF030190139A011 SYSTEM "x-dm://0900f90b80002575,MYWORKING" NDATA tiff>
+<!ENTITY A1A723300SF030190141A011 SYSTEM "x-dm://0900f90b80002577,MYWORKING" NDATA tiff>
+]>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><avee><modelic>A1</modelic><sdc>B</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><discode>92</discode><discodev>A</discodev><incode>271</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmc>
+<dmtitle><techname>SECTEUR ANNEAU, REDRESSEUR 2 ETAPE 4</techname><infoname>REGLAGE</infoname></dmtitle>
+<issno type="C" issno="6">
+<issdate month="06" year="2011" day="30">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 4"></version>
+<customer aaf="1" anf="1">
+<nti nti1="0" nti2="1" nti3="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Prise en compte de la modification 276</rfu>
+<remarks>RAS</remarks>
+<icns><icn id="A1A723300SF030190136A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>90136</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A723300SF030190137A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>90137</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A723300SF030190121A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>90121</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A723300SF030190122A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>90122</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A723300SF030190138A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>90138</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A723300SF030190139A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>90139</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A723300SF030100140A021">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00140</illnum><illver>A</illver><illupdat>02</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A723300SF030190141A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>90141</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1A723300SF030100142A021">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00142</illnum><illver>A</illver><illupdat>02</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<refdm>
+<dmcid id="A1A72330023A655AC"><avee><modelic>A1</modelic><sdc>A</sdc><chapnum>72</chapnum><section>3</section><subsect>3</subsect><subject>00</subject><discode>23</discode><discodev>A</discodev><incode>655</incode><incodev>A</incodev><itemloc>C</itemloc></avee></dmcid>
+</refdm>
+</refs><proced><pmd>
+<manhour value="1,0"></manhour>
+<duration value="1,0"></duration>
+</pmd><prelreqs><reqconds><reqcondli><reqcond>
+<cond><para><p>Carter assembl&eacute; compresseur&nbsp;HP s&eacute;par&eacute;.</p>
+</para>
+</cond>
+</reqcond><reqcond>
+<cond><para><p>Support d'adradable RDE d&eacute;pos&eacute;.</p>
+</para>
+</cond>
+</reqcond><reqcond><applic><systemid><nti nti2="1"></systemid></applic>
+<cond><para><p>Outillage d'assemblage RDE/RD1/RD2 sur table d'atelier.</p>
+</para>
+</cond>
+</reqcond><reqcond><applic><systemid><nti nti3="1"></systemid></applic>
+<cond><para><p>Outillage d'assemblage RDE/RD1/RD2 solidaire du b&acirc;ti <supeqref refid="O2.30377">.</p>
+</para>
+</cond>
+</reqcond></reqcondli></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="1,0"></reqper>
+</reqpers><supequip><supeqli>
+<supequi id="O2.30377"><applic><systemid><nti nti3="1"></systemid></applic>
+<refipc csn="72016701A008 "><nomen>B&acirc;ti support stator MOD 04</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.00251"><refipc csn="72016701 049 "><nomen>Vis de centrage carter module 04</nomen><quantity>1</quantity></supequi>
+<supequi id="O1"><applic><config><mod modnb="165-S" modcond="PRE"></config></applic>
+<refipc csn="72016701 135 " isn="00A"><nomen>Outillage assemblage RDE/RD1/RD2</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.00444"><applic><config><mod modnb="165-S" modcond="POST"></config></applic>
+<refipc csn="72016701 135 " isn="00C"><nomen>Outillage assemblage RDE/RD1/RD2</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.00445"><refipc csn="72016601 013 "><nomen>Coffret tampon CTRO RDE/RD1/RD2</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.00771"><refipc csn="72016801 040 "><nomen>Outillage manutention carter MOD 4</nomen><quantity>3</quantity></supequi>
+<supequi id="O2.00449"><refipc csn="72016701 180 "><nomen>Outillage pose/d&eacute;pose MOD 9</nomen><quantity>1</quantity></supequi>
+<supequi id="O2.1"><ident><manufact>F0301</manufact><partno>888-379-804-0</partno></ident><nomen>Couronne RD2</nomen><quantity>1</quantity></supequi>
+</supeqli><supeqlis>
+<supequis id="O2.S0013"><refipc csn="72016001 002 "><nomen>G&eacute;n&eacute;rateur d'air chaud</nomen><quantity>1</quantity></supequis>
+<supequis id="O2.C0087"><refipc csn="72016002 103 "><nomen>Cl&eacute; mixte courte de 10</nomen><quantity>2</quantity></supequis>
+<supequis id="O2.C0088"><refipc csn="72016002 104 "><nomen>Cl&eacute; mixte courte de 11</nomen><quantity>2</quantity></supequis>
+<supequis id="O2.C0090"><refipc csn="72016002 106 "><nomen>Cl&eacute; mixte courte de 13</nomen><quantity>2</quantity></supequis>
+<supequis id="O2.C0150"><refipc csn="72016002 172 "><nomen>Cales de 18 lames de 4/100 &agrave; 100/100</nomen><quantity>1</quantity></supequis>
+<supequis id="O2.S0551"><refipc csn="72016001 032 "><nomen>Elingue rallonge grande (700)</nomen><quantity>3</quantity></supequis>
+</supeqlis></supequip><supplies><nosupply></supplies><miscs><miscli>
+<misc id="P0201A" matiere="0"><refipc csn="72013001 008 "><nomen>P&acirc;te au MOS2 &agrave; support synth&eacute;tique</nomen><quantity>SB</quantity></misc>
+</miscli></miscs><safety>
+<specpara>
+<note>
+<p>Les outillages <supeqref refid="O2.C0087"> <supeqref refid="O2.C0088"> <supeqref refid="O2.C0090"> <supeqref refid="O2.C0150"> sont n&eacute;cessaires pour cette proc&eacute;dure.</p>
+</note>
+</specpara>
+</safety></prelreqs><mainfunc>
+<step1 control="0" id="P20">
+<applic><config><mod modnb="165-S" modcond="POST"></config></applic>
+<specpara>
+<caution>
+<p>V&eacute;rifier que tous les poussoirs de la couronne sont en retrait du diam&egrave;tre ext&eacute;rieur de la couronne.</p>
+</caution>
+</specpara>
+<para><p>Placer la couronne <supeqref refid="O2.1"> de r&eacute;glage RD2 sur l'outillage d'assemblage redresseur <supeqref refid="O2.00444"> <figref repnohot="2.00444REP04" refid="A723300SF030190136A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P30">
+<applic><config><mod modnb="165-S" modcond="POST"></config></applic>
+<para><p>Fixer la couronne <supeqref refid="O2.1"> sur l'outillage &agrave; l'aide des 4 vis molet&eacute;es <supeqref refid="O2.00444"> situ&eacute;es au centre de la couronne <figref repnohot="2.00444REP04, 2.00444REP09" refid="A723300SF030190136A011">.</p>
+<note><applic><systemid><nti nti3="1"></systemid></applic>
+<p>L'outillage d'assemblage redresseur <supeqref refid="O2.00444"> est solidaire du b&acirc;ti d'assemblage <supeqref refid="O2.30377">.</p>
+</note>
+</para>
+</step1>
+<step1 control="0" id="P40">
+<para><applic><config><mod modnb="276" change="add" modcond="pre"></config></applic>
+<p>D&eacute;visser, d'environ un tour, les douilles de r&eacute;glages <refipc csn="72330001A116 "> situ&eacute;es sur les 4 secteurs d'anneaux RD2 <refipc change="mod" csn="72330001A118 " isn="00A"> <figref refid="A723300SF030190137A011">.</p>
+</para>
+<para><applic><config><mod modnb="276" change="add" modcond="post"></config></applic>
+<p>D&eacute;visser, d'environ un tour, les douilles de r&eacute;glages <refipc csn="72330001A116 "> situ&eacute;es sur les 4 secteurs d'anneaux RD2 <refipc change="mod" csn="72330001A118 " isn="00C"> <figref refid="A723300SF030190137A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P50">
+<para><p>D&eacute;poser 2 douilles int&eacute;rieures <refipc csn="72330001A117 "> de chaque c&ocirc;t&eacute; des douilles de r&eacute;glages <refipc csn="72330001A116 "> <figref refid="A723300SF030190137A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P60">
+<para><p>Assembler les deux demi-carters <refipc csn="72330001A163 "> en les faisant glisser sur la table d'atelier.</p>
+</para>
+</step1>
+<step1 control="0" id="P70">
+<para><p>Monter les vis de centrage <supeqref refid="O2.00251"> aux trous 2, 7 et 13 (de l'avant vers l'arri&egrave;re) <figref repnohot="2.00251" refid="A723300SF030190121A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P80">
+<para><p>Serrer les vis de centrage <supeqref refid="O2.00251"> <figref repnohot="2.00251" refid="A723300SF030190121A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P90">
+<para><p>Installer les outillages de manutention MOD 4 <supeqref refid="O2.00771"> sur la bride avant du carter HP <figref repnohot="2.00771" refid="A723300SF030190122A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P100">
+<para><p>Amener le carter assembl&eacute; <refipc csn="72330001A163 "> au-dessus de l'outillage d'assemblage redresseur &agrave; l'aide de l'outillage de pose/d&eacute;pose module 9 <supeqref refid="O2.00449">, des &eacute;lingues <supeqref refid="O2.S0551"> <figref repnohot="2.00444, 2.00449, 2.S0551" refid="A723300SF030190122A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P110">
+<para><p>Chauffer le diam&egrave;tre de la bride arri&egrave;re du carter assembl&eacute; <refipc csn="72330001A163 ">, jusqu'&agrave; une temp&eacute;rature d'environ 90&nbsp;&deg;C, &agrave; l'aide du g&eacute;n&eacute;rateur d'air chaud <supeqref refid="O2.S0013"> <figref repnohot="2.S0013" refid="A723300SF030190122A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P120">
+<para><p>Mettre en place le carter assembl&eacute; <refipc csn="72330001A163 ">sur l'outillage d'assemblage redresseur <figref repnohot="2.00444" refid="A723300SF030190122A011">.</p>
+</para>
+<note>
+<p>Le point haut du carter repr&eacute;sent&eacute; par une encoche sur la bride aval est en correspondance avec le point haut grav&eacute; sur l'outillage.</p>
+</note>
+</step1>
+<step1 control="0" id="P130">
+<applic><config><mod modnb="165-S" modcond="POST"></config></applic>
+<para><p>Fixer le carter assembl&eacute; <refipc csn="72330001A163 "> sur le plateau de l'outillage d'assemblage &agrave; l'aide des vis <supeqref refid="O2.00444"> <figref repnohot="2.00444REP22" refid="A723300SF030190136A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P140">
+<para><p>D&eacute;poser les outillages de manutention module&nbsp;04 <supeqref refid="O2.00771">, les &eacute;lingues <supeqref refid="O2.S0551"> et l'outillage de pose/d&eacute;pose <supeqref refid="O2.00449"> <figref repnohot="2.00771, 2.S0551, 2.00449" refid="A723300SF030190122A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P150">
+<para><p>Mettre en contact tous les poussoirs de la couronne avec les douilles de r&eacute;glage des secteurs d'anneaux <figref refid="A723300SF030190138A011">.</p>
+</para>
+<note>
+<p>Le poussoir est maintenu puis rel&acirc;ch&eacute; doucement apr&egrave;s avoir lib&eacute;r&eacute; le doigt d'indexage.</p>
+</note>
+</step1>
+<step1 control="2" id="P160">
+<para><applic><config><mod modnb="276" change="add" modcond="pre"></config></applic>
+<p>V&eacute;rifier la concentricit&eacute; des secteurs d'anneaux <refipc change="mod" csn="72330001A118 " isn="00A"><refipc csn="72330001A119 " isn="00A"> &agrave; l'aide des tampons de contr&ocirc;le marqu&eacute;s RD2 <supeqref refid="O2.00445"> <figref repnohot="2.00445" refid="A723300SF030190138A011">.</p>
+</para>
+<para><applic><config><mod modnb="276" change="add" modcond="post"></config></applic>
+<p>V&eacute;rifier la concentricit&eacute; des secteurs d'anneaux <refipc change="mod" csn="72330001A118 " isn="00C"><refipc change="mod" csn="72330001A119 " isn="00C"> &agrave; l'aide des tampons de contr&ocirc;le marqu&eacute;s RD2 <supeqref refid="O2.00445"> <figref repnohot="2.00445" refid="A723300SF030190138A011">.</p>
+</para>
+<note>
+<p>La concentricit&eacute; doit &ecirc;tre contr&ocirc;l&eacute;e le plus pr&egrave;s possible des douilles de r&eacute;glage, rep&egrave;res 1 et 3.</p>
+</note>
+<note>
+<p>Le tampon comporte 2&nbsp;rep&egrave;res,viser le maxi de la tol&eacute;rance afin d'obtenir un r&eacute;glage correcte des rails porte abradable.</p>
+</note>
+<note>
+<p>Le diam&egrave;tre est diminu&eacute; et augment&eacute; en vissant et d&eacute;vissant.</p>
+</note>
+</step1>
+<step1 control="0" id="P170">
+<para><p>Amener les douilles centrales <refipc csn="72330001A116 ">, rep&egrave;re 2, des 4 secteurs en contact avec la platine, sans alt&eacute;rer le r&eacute;glage pr&eacute;c&eacute;dent.</p>
+</para>
+</step1>
+<step1 control="2" id="P180"><?Pub Caret>
+<para><p>V&eacute;rifier aux extr&eacute;mit&eacute;s et en continu, l'&eacute;cart couronne/secteurs d'anneaux.</p>
+</para>
+</step1>
+<step1 control="0" id="P190">
+<para><applic><config><mod modnb="276" change="add" modcond="pre"></config></applic>
+<p>V&eacute;rifier que les six pans des douilles de r&eacute;glage <refipc csn="72330001A116 "> sont parall&egrave;les aux bords des secteurs d'anneaux <refipc csn="72330001A118 "><refipc csn="72330001A119 "> <figref refid="A723300SF030190139A011">.</p>
+</para>
+<para><applic><config><mod modnb="276" change="add" modcond="post"></config></applic>
+<p>V&eacute;rifier que les six pans des douilles de r&eacute;glage <refipc csn="72330001A116 "> sont parall&egrave;les aux bords des secteurs d'anneaux <refipc csn="72330001A118 "><refipc csn="72330001A119 "> <figref refid="A723300SF030190139A011">.</p>
+</para>
+<note>
+<p>Pour permettre d'assurer la mise en place des rails porte abradable, les douilles de r&eacute;glage sont viss&eacute;es ou d&eacute;viss&eacute;es de la fraction de tour la plus faible.</p>
+</note>
+</step1>
+<step1 control="0" id="P200">
+<specpara>
+<caution>
+<p>Ne plus intervenir sur les douilles de r&eacute;glage.</p>
+</caution>
+</specpara>
+<para><p>Mettre les poussoirs de la couronne en retrait.</p>
+</para>
+</step1>
+<step1 control="0" id="P210">
+<para><applic><config><mod modnb="276" change="add" modcond="pre"></config></applic>
+<p>V&eacute;rifier le jeu G185 entre chaque secteurs d'anneaux <refipc change="mod" csn="72330001A118 " isn="00A"><refipc change="mod" csn="72330001A119 " isn="00A"> <figref refid="A723300SF030100140A021">.</p>
+</para>
+<para><applic><config><mod modnb="276" change="add" modcond="post"></config></applic>
+<p>V&eacute;rifier le jeu G185 entre chaque secteurs d'anneaux <refipc change="mod" csn="72330001A118 " isn="00C"><refipc change="mod" csn="72330001A119 " isn="00C"> <figref refid="A723300SF030100140A021">.</p>
+</para>
+<note>
+<p>Jeu&nbsp;=&nbsp;0,40&nbsp;&plusmn;&nbsp;0,30&nbsp;mm.</p>
+</note>
+<note>
+<p>Viser le maxi de la tol&eacute;rance afin d'obtenir un r&eacute;glage correcte des rails porte abradable.</p>
+</note>
+<note>
+<p>Maintenir chaque secteur d'anneau en but&eacute;e vers l'ext&eacute;rieur (moteur) sur les platines des aubes.</p>
+</note>
+</step1>
+<step1 control="0" id="P220">
+<para><p>Desserrer les vis de centrage <supeqref refid="O2.00251"> pour lib&eacute;rer le carter assembl&eacute; <refipc csn="72330001A163 "> de l'outillage d'assemblage redresseur <figref refid="A723300SF030190121A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P230">
+<para><p>Installer les outillages de manutention <supeqref refid="O2.00771"> <figref repnohot="2.00771" refid="A723300SF030190122A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P240">
+<para><p>D&eacute;poser le carter assembl&eacute; de l'outillage d'assemblage redresseur &agrave; l'aide de l'outillage pose/d&eacute;pose <supeqref refid="O2.00449"> et des &eacute;lingues <supeqref refid="O2.S0551"> <figref repnohot="2.00444, 2.00449, 2.S0551" refid="A723300SF030190122A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P250">
+<para><p>Poser le carter assembl&eacute; <refipc csn="72330001A163 "> sur une table d'atelier.</p>
+</para>
+</step1>
+<step1 control="0" id="P260">
+<para><p>D&eacute;poser les vis de centrage <supeqref refid="O2.00251">.</p>
+</para>
+</step1>
+<step1 control="0" id="P270">
+<para><p>S&eacute;parer les deux demi-carters <refipc csn="72330001A163 ">.</p>
+</para>
+</step1>
+<step1 control="0" id="P280">
+<specpara>
+<caution>
+<p>Utiliser pour le montage des rails porte abradable, de la p&acirc;te au MOS2 &agrave; support synth&eacute;tique <miscref refid="P0201A">.</p>
+</caution>
+<note>
+<p>Les rails doivent se monter dans des conditions d'ajustement "glissant juste" sous un effort manuel.</p>
+</note>
+</specpara>
+<para><p>Monter les rails porte abradable <refipc csn="72330001A115 "> dans l'ordre rep&eacute;r&eacute;s &agrave; la d&eacute;pose <figref refid="A723300SF030190141A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P290">
+<para><p>Assembler les 2 demi-carters <refipc csn="72330001A163 "> en les faisant glisser sur la table d'atelier <figref refid="A723300SF030100142A021">.</p>
+</para>
+</step1>
+<step1 control="0" id="P300">
+<para><p>Monter les vis de centrage <supeqref refid="O2.00251"> aux trous 2, 7 et 13, de l'avant vers l'arri&egrave;re.</p>
+</para>
+</step1>
+<step1 control="0" id="P310">
+<para><p>Serrer les vis de centrage <supeqref refid="O2.00251">.</p>
+</para>
+</step1>
+<step1 control="0" id="P320">
+<para><p>V&eacute;rifier le jeu G186 entre chaque rail porte abradable <refipc csn="72330001A115 "> <figref refid="A723300SF030100142A021">.</p>
+<note>
+<p>Jeu&nbsp;=&nbsp;1,20&nbsp;&plusmn;&nbsp;0,30&nbsp;mm.</p>
+<p>Le jeu mini est admissible jusqu'&agrave; une valeur de 0.75 mm</p>
+</note>
+</para>
+</step1>
+<step1 control="0" id="P330">
+<para><p>D&eacute;poser les vis de centrage <supeqref refid="O2.00251"> <figref repnohot="2.00251" refid="A723300SF030190121A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P340">
+<para><p>S&eacute;parer les 2 demi-carters <refipc csn="72330001A163 ">.</p>
+</para>
+</step1>
+<step1 control="0" id="P350">
+<applic><config><mod modnb="165-S" modcond="POST"></config></applic>
+<para><p>D&eacute;visser les 4 vis molet&eacute;es <supeqref refid="O2.00444">de fixation de la couronne <supeqref refid="O2.1"> <figref repnohot="2.00444REP09, 2.00444REP04" refid="A723300SF030190136A011">.</p>
+</para>
+</step1>
+<step1 control="0" id="P360">
+<para><p>D&eacute;poser la couronne de r&eacute;glage RD2 <supeqref refid="O2.1">.</p>
+</para>
+</step1>
+<step1 control="0" id="P370">
+<applic><systemid><nti nti3="1"></systemid></applic>
+<para><p>Envoyer le carter compresseur&nbsp;HP au poste d'usinage, si le support abradable&nbsp;RD2 a &eacute;t&eacute; chang&eacute; <dmcref xrefid="A1A72330023A655AC">.</p>
+</para>
+</step1>
+<figure id="A723300SF030190136A011">
+<title>INSTALLATION COURONNE DE REGLAGE RD2</title>
+<graphic callicn="A1A723300SF030190136A011">
+</figure>
+<figure id="A723300SF030190137A011">
+<title>DOUILLE DE REGLAGE</title>
+<graphic callicn="A1A723300SF030190137A011">
+</figure>
+<figure id="A723300SF030190121A011">
+<title>MONTAGE DES VIS DE CENTRAGE</title>
+<graphic callicn="A1A723300SF030190121A011">
+</figure>
+<figure id="A723300SF030190122A011">
+<title>INSTALLATION CARTER ASSEMBLE</title>
+<graphic callicn="A1A723300SF030190122A011">
+</figure>
+<figure id="A723300SF030190138A011">
+<title>VERIFICATION CONCENTRE</title>
+<graphic callicn="A1A723300SF030190138A011">
+</figure>
+<figure id="A723300SF030190139A011">
+<title>VERIFICATION DOUILLE DE REGLAGE</title>
+<graphic callicn="A1A723300SF030190139A011">
+</figure>
+<figure id="A723300SF030100140A021" change="mod">
+<title>JEU SECTEUR ANNEAU</title>
+<graphic callicn="A1A723300SF030100140A021">
+</figure>
+<figure id="A723300SF030190141A011">
+<title>INSTALLATION RAIL PORTE-ADRADABLE RD2</title>
+<graphic callicn="A1A723300SF030190141A011">
+</figure>
+<figure id="A723300SF030100142A021" change="mod">
+<title>JEU RAIL PORTE ADRADABLE</title>
+<graphic callicn="A1A723300SF030100142A021">
+</figure>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000022038 0>

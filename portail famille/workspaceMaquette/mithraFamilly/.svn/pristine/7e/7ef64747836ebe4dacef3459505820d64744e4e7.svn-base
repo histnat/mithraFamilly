@@ -1,0 +1,255 @@
+<!-- ********************************************************************
+     *									                                *
+     *				             RAFALE              			       	*
+     *									                            	*
+     *				       Release Version 2.2             		       	*
+     *				     Dated 22th December 1998	                   	*
+     *				                        					       	*
+     *									                            	*
+     *	Company in charge of :	            					       	*
+     *									       	                        *
+     *	Dtd Object : CSDB Configuration List .        				    *
+     *  Amendment	:                                                   *
+     *                                                                  *
+	 *  19/05/97		: Change public Identifier                      *
+     *                    add reference to  public entities ISO Latin 1 *
+	 *                                                                  *
+	 *  15/01/98		: Change public Identifier                      *
+     *                    Element Message become optional in answer     *
+	 *                    add attribute sens to ccl                     *
+	 *                    update attribute type for ccl                 *
+	 *                                                                  *
+	 *  22/12/98		: Change public Identifier (ccl.cfg)            *
+     *                                                                  *
+	 *                                                                  *
+	 *  The following DOCTYPE statement may be used to call this set of	*
+     *  declarations:		                					       	*
+     *									                            	*
+     *	 <!DOCTYPE ccl PUBLIC					                		*
+     *   "-//RAFALE CSDB//DTD CSDB Configuration List 981222//EN"	   	*
+     *	 []>							                            	*
+     *									                            	*
+     *********************************************************************-->
+
+
+<!--**********************************************************************
+    * Define Entity %CCLCFG (CCL configuration) containing:-             *
+	* the formal public identifier for the CCL Configuration.            *
+    ********************************************************************** -->
+<!ENTITY % CCLCFG
+ PUBLIC "-//RAFALE CSDB//ENTITIES CCL Configuration 981222//EN"
+  >
+
+
+<!--**********************************************************************
+    * Call the CCL configuration Public Text. The formal public          *
+    * identifier is stored in the entity %CCLCFG;                        *
+    ********************************************************************** -->
+%CCLCFG;
+
+
+
+<!--**********************************************************************
+    * Define Element CcL (CSDB Configuration List).		Containing: 	 *
+    *  RPC      - mandatory  single      Responsible partner Compagny    *
+    *  DATE     - mandatory  single      CCL date.                       *
+    *  MARKETNO - mandatory  single      Reference to Market number      *
+    *  DELIVERY - optionnal  single      Dm delivery number             *
+    *  DM       - mandatory  repeatable  List of reserved Data modules   *
+	*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * id          CCL file identifier                                    *
+	* Type        Type of CCL (announce or reservation)                  *
+	* Sens        Type of process  (envoi, retour)                       *
+	* Attribute Definition List stored in Entity %SECURIT;               *
+	**********************************************************************-->
+<!ELEMENT ccl - O (rpc,date,marketno,delivery?,dm+,remarks?) >
+<!ATTLIST  ccl
+           id        id       		    #REQUIRED
+	       type		 (annonce|reserve)  #REQUIRED
+           sens		 (envoi | retour)   #REQUIRED
+		   %SECURIT;>
+
+
+<!--**********************************************************************
+    * Define Element SECURITY (Security Marking) containing:-            *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    * Attribute Definition List stored in Entity %SECURIT;               *
+    ********************************************************************** -->
+
+<!ELEMENT security  - o EMPTY >
+<!ATTLIST security %SECURIT; >
+
+<!--**********************************************************************
+    * Define Element RPC (Responsible Partner Company) containing:-      *
+    *  Parsed Character Data.                                            *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  RPCNAME  - %RPCNAME - The name or CAGE code of the responsible    *
+    *                        partner company.                            *
+    ********************************************************************** -->
+<!ELEMENT rpc      - O EMPTY >
+<!ATTLIST rpc
+            rpcname	%RPCNAME;	#REQUIRED >
+
+<!--*********************************************************************
+    * Define Element DM (List of reserved DM for the CSDB).	            *
+    *  DMADDRES - mandatory  single      DM identification              *
+    *  SECURITY - optionnal  single      Dm classification level        *
+	*  ANSWER   - optionnal  single      Reservation status (type R)    *
+    *  DM       - mandatory  repeatable  List of reserved Data modules  *
+	*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                    *
+    * chgtype     Type of command for Dm number reservation             *
+	*               N = new, D = deleted                                *
+	*********************************************************************-->
+<!ELEMENT dm - O (dmaddres,security?,answer?) >
+<!ATTLIST dm chgtype (N | D)  #REQUIRED >
+
+
+
+<!--**********************************************************************
+    * Define Element DMADDRES (Data Module Address) containing:-         *
+    *  DMC      - mandatory  single      contains definition stored in   *
+    *                                    entity %DMC;                    *
+    *  DMTITLE  - mandatory  single      contains TECHNAME, INFONAME.    *
+    *  ISSNO    - optional  single       contains No Other Tags.         *
+    *  ISSDATE  - mandatory  single      contains No Other Tags.         *
+    ********************************************************************** -->
+
+<!ELEMENT dmaddres - o (%ALLDMC;,dmtitle,issno?,issdate?) >
+
+
+
+<!--*********************************************************************
+    * Define Element MARKETNO (Market number).	                      	*
+    *********************************************************************-->
+<!ELEMENT marketno - O (#PCDATA) >
+
+
+<!--*********************************************************************
+    * Define Element DATE (date of expedition).                   		*
+    *********************************************************************-->
+<!ELEMENT date - O  EMPTY >
+<!ATTLIST date
+            year 	NUMBER  #REQUIRED -- The year.--
+            month 	NUMBER	#REQUIRED -- The month of the year.--
+            day  	NUMBER  #REQUIRED -- The day of the month. -->
+
+
+
+
+<!--**********************************************************************
+    * Define Element DMTITLE (Data Module Title) containing:-            *
+    *  TECHNAME - mandatory  single      contains Parsed Character Data. *
+    *  INFONAME - optional   single      contains Parsed Character Data. *
+    ********************************************************************** -->
+
+<!ELEMENT dmtitle - o (techname,infoname) >
+
+
+
+<!--**********************************************************************
+    * Define the following Elements:-                                    *
+    *   TECHNAME - Technical Name.                                       *
+    *   INFONAME - Information Name.                                     *
+    * Containing Parsed Character Data.                                  *
+    ********************************************************************** -->
+
+<!ELEMENT (techname | infoname) - o (#PCDATA) >
+
+
+
+<!--**********************************************************************
+    * Define Element ISSNO (Issue Number) containing:-                   *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  ISSNO    - NUMBER    - Required - Issue Number.                   *
+    *  TYPE     - DECLARED  - NEW      - Status of this issue of the     *
+    *                                    data module.                    *
+    *           - "N"      - New Data Module.                            *
+    *           - "C"  - Changed. Changes marked by change markers.      *
+    *           - "D"  - Deleted.                                        *
+    *           - "R"  - Completely Revised. Changes not marked by       *
+    *                           change markers.                          *
+    *           - "S"   - Only Status information changed.               *
+    *           - "T" - Reinstated.                                      *
+    ********************************************************************** -->
+
+<!ELEMENT issno - o  EMPTY >
+<!ATTLIST issno
+            issno   NUMBER      #REQUIRED
+            type    (N | C | D | R | S | T)	"N"   >
+
+
+
+<!--**********************************************************************
+    * Define Element ISSDATE (Issue Date) containing:-                   *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  YEAR     - NUMBER - REQUIRED - The year. (YYYY)                   *
+    *  MONTH    - NUMBER - REQUIRED - The month of the year. (MM)        *
+    *  DAY      - NUMBER - REQUIRED - The day of the month. (DD)         *
+    ********************************************************************** -->
+
+<!ELEMENT issdate  - o  EMPTY >
+<!ATTLIST issdate
+            year  NUMBER  #REQUIRED
+            month NUMBER  #REQUIRED
+            day   NUMBER  #REQUIRED >
+
+
+<!--*********************************************************************
+    * Define Element delivery (delivery number).	                  	*
+   	*********************************************************************-->
+<!ELEMENT delivery - O (date,bexpno?,workord?,lot?,refdocc?) >
+
+
+<!--*****************************************************************************
+    * Define Element WORKORD (Work order number).	             	*
+    **************************************************************************-->
+<!ELEMENT workord - O  (#PCDATA) >
+
+<!--*****************************************************************************
+    * Define Element LOT (LOT number).	             	*
+    **************************************************************************-->
+<!ELEMENT lot - O  (#PCDATA) >
+
+<!--*****************************************************************************
+    * Define Element BEXPNO (Bordereau expedition number).	             	*
+    **************************************************************************-->
+<!ELEMENT bexpno - O  (#PCDATA) -- Bordereau expedition number for a DM.-->
+
+
+<!--*********************************************************************
+    * Define Element REFCDOC (Reference of the doc's contract).        	*
+    *********************************************************************-->
+<!ELEMENT refdocc - O  (#PCDATA) >
+
+
+<!--*********************************************************************
+    * Define Element remarks (optional remarks).                       	*
+    *********************************************************************-->
+<!ELEMENT remarks - O (#PCDATA) >
+
+
+<!--*********************************************************************
+    * Define Element answer (reservation answer).	                  	*
+    * Attribute(s):-                                                    *
+    *  STATUS    - VALUES - REQUIRED - Reservation status               *
+	*              OK    : DM accepted                                  *
+	*              NOTOK : DM rejected                                  *
+	*********************************************************************-->
+<!ELEMENT answer - O (message?) >
+<!ATTLIST answer
+            status  (OK | NOTOK)	"OK"   > 
+
+
+<!--*********************************************************************
+    * Define Element message (optional message).                       	*
+    *********************************************************************-->
+<!ELEMENT message - O (#PCDATA) >

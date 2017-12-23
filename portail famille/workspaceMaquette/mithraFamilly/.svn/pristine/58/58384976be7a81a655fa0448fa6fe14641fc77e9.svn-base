@@ -1,0 +1,180 @@
+package com.sonovision.openconv.db.bo;
+
+import java.io.Serializable;
+
+import com.sonovision.openconv.db.exception.DBNONullException;
+import com.sonovision.openconv.db.exception.DBNOUniqueException;
+import com.sonovision.openconv.db.vo.Conversion;
+import com.sonovision.openconv.db.vo.ConversionObject;
+import com.sonovision.openconv.db.vo.LogLine;
+import com.sonovision.openconv.db.vo.Task;
+import com.sonovision.openconv.log.model.LoggerLevel;
+
+public interface DBConversionService extends Serializable{
+
+
+	Conversion findByAll(Conversion conversion);
+	
+	//Task findByAll(Task task);
+
+	/**
+	 * find the LoggerLevel. it return the most high level find in all child task
+	 * @param conversion
+	 * @return
+	 */
+	LoggerLevel geLogLevelResult(Conversion conversion);
+
+	
+	
+	/**
+	 * 
+	 * @param id
+	 * @return
+	 */
+	Conversion getConversion(String id);
+	
+	
+	/**
+	 * 
+	 * @param workFlowName
+	 * @param workFlowSequence
+	 * @return
+	 */
+	Conversion getConversion(String workFlowName,String workFlowSequence);
+
+	/**
+	 * try to find conversion in database. if it doesn't find it. it will be create with parameter given. and startTime is generated a this time.
+	 * @param folderIn
+	 * @param folderOut
+	 * @param workFlowName
+	 * @param workFlowSequence
+	 * @return
+	 * @throws DBNOUniqueException 
+	 * @throws DBNONullException 
+	 */
+	Conversion getConversion(String folderIn, String folderOut, String workFlowName, String workFlowSequence) throws DBNONullException, DBNOUniqueException;
+
+	/**
+	 * try to find conversion object if it exist in database, else it created it
+	 * @param conversion
+	 * @param task
+	 * @param idObject
+	 * @return
+	 * @throws DBNOUniqueException 
+	 * @throws DBNONullException 
+	 */
+	ConversionObject getConversionObject(Conversion conversion, Task task, String idObject) throws DBNONullException, DBNOUniqueException;
+
+	/**
+	 * 
+	 * @param objectId
+	 * @return
+	 */
+	ConversionObject getConversionObjectById(String objectId);
+
+	int getCountConversionObjectByTask(Task t);
+
+	int getCountConversionObjectByTaskOLogResult(Task t, String string);
+
+	/**
+	 * 
+	 * @return
+	 */
+	int getLogLevelWriter();
+
+	Conversion getOrSave(Conversion conversion) throws DBNONullException, DBNOUniqueException;
+
+	/**
+	 * 
+	 * @param task
+	 * @return
+	 * @throws DuplicateObjectException 
+	 */
+	//Task getOrSave(Task task);
+
+	Task getTaskByConversionActionId(Conversion conversion, String actionId);
+
+	StringBuffer getXML(Conversion conversion);
+
+	StringBuffer getXML(ConversionObject conversionObject);
+
+	StringBuffer getXML(LogLine logLine);
+
+	StringBuffer getXML(Task task);
+
+	/**
+	 * Return true if it find Conversion in database with the same field folderIn, folderOut, workFlowName, workFlowSequence and FinishTime null.
+	 * @param folderIn
+	 * @param folderOut
+	 * @param workFlowName
+	 * @param workFlowSequence
+	 * @return
+	 */
+	boolean isAlsoRunning(String folderIn, String folderOut, String workFlowName, String workFlowSequence) ;
+
+	/**
+	 * save conversion
+	 * @param conversion
+	 * @return
+	 * @throws DBNOUniqueException 
+	 * @throws DBNONullException 
+	 */
+	Conversion save(Conversion conversion) throws DBNONullException, DBNOUniqueException;   
+	/**
+	 * save conversion Object
+	 * @param conversionObject
+	 * @return
+	 * @throws DBNOUniqueException 
+	 * @throws DBNONullException 
+	 */
+	ConversionObject save(ConversionObject conversionObject) throws DBNONullException, DBNOUniqueException;   
+	
+	/**
+	 * Save logLine in database
+	 * @param logLine
+	 * @return
+	 * @throws DBNOUniqueException 
+	 * @throws DBNONullException 
+	 */
+	LogLine save(LogLine logLine) throws DBNONullException, DBNOUniqueException;
+	
+
+	
+	/**
+	 * add stop time to conversion
+	 * @param conversion
+	 * @return 
+	 * @throws DBNOUniqueException 
+	 * @throws DBNONullException 
+	 */
+	Conversion stopConversion(Conversion conversion) throws DBNONullException, DBNOUniqueException;   
+	
+	void update(Conversion conversion) throws DBNONullException, DBNOUniqueException;
+
+	void update(ConversionObject conversionObject) throws DBNONullException, DBNOUniqueException;
+
+	//void update(Task task);
+
+	Conversion updateOrSave(Conversion conversion) throws DBNONullException, DBNOUniqueException;
+
+	ConversionObject getOrSave(ConversionObject conversionObject) throws DBNONullException, DBNOUniqueException;
+
+	LogLine getOrSave(LogLine logLine) throws DBNONullException, DBNOUniqueException;
+
+	LogLine findByAll(LogLine logLine);
+
+	ConversionObject findByAll(ConversionObject conversionObject);
+
+	/**
+	 * return conversion with this task
+	 * @param task
+	 * @return
+	 */
+	Conversion getConversion(Task task);
+
+	Task findByAll(Task task);
+
+	Task getOrSave(Task task) throws DBNONullException, DBNOUniqueException;
+
+	Task save(Task task) throws DBNONullException, DBNOUniqueException;    
+}

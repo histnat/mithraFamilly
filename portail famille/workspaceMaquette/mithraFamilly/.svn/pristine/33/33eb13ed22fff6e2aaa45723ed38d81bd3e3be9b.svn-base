@@ -1,0 +1,217 @@
+package com.sonovision.openconv.modules.loganalyser;
+
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.w3c.dom.Document;
+
+import com.sedoc.dtdtoolbox.utils.DTDParsing;
+import com.sedoc.toolbox.SpringBeanProvider;
+import com.sedoc.toolbox.bean.PDFTransformService;
+import com.sedoc.toolbox.bean.UtilsService;
+import com.sedoc.toolbox.bean.impl.UtilsServiceImpl;
+import com.sonovision.openconv.log.model.LoggerLevel;
+import com.sonovision.openconv.model.TreatedObject;
+import com.sonovision.openconv.service.FileService;
+import com.sonovision.openconv.utils.FileAccess;
+import com.sonovision.openconv.wf.WFTask;
+import com.sonovision.openconv.wf.WFTaskHelper;
+import com.sonovision.openconv.wf.model.ParameterDetailled;
+import com.sonovision.openconv.wf.model.ParameterTypes;
+
+@Component
+public class TaskLogToPDFProcess extends WFTaskHelper implements WFTask {
+
+	@Autowired
+	PDFTransformService pdfTransformerService;
+
+	@Autowired
+	UtilsService utilsService;
+	
+	@Autowired
+    FileService fileService;
+	
+	static DTDParsing dtdParsing;
+
+	
+	//I must init spring composent, buti have loop on this class. this variable is for skip loop. I think it will be better if we use @Configure. next time
+	private static boolean initrun = false;
+	
+	static{
+		dtdParsing = new DTDParsing();
+	}
+
+	public TaskLogToPDFProcess() {
+		super();
+	}
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7764367737889004545L;
+
+	public final static String PARAMETER_OUPUTFILE_FILE_NAME = "outputPDF";
+	public final static String XSLT_XML_TO_PDF_FILENAME="xsltLogPdf";
+	public final static String DEFAULT_XSLT_XML_TO_PDF_FILENAME="logPdf.xsl";
+
+	private String outputFileName;
+	private String xsltLogPdf;
+
+	public String run(HashMap<String, TreatedObject> treatedObjectHash) {
+		initClass();
+		if(!checkRequiredParams())
+			return LoggerLevel.FATAL.getValue().toString();
+		// get parameter file name
+		String outputDir= dbLogger.getFolderOut();
+
+		if (outputDir == null || outputDir.isEmpty()) {
+			outputFileName = (String) parametersRunning.get(PARAMETER_OUPUTFILE_FILE_NAME);
+		}
+		else{
+			FileAccess.createOrInitializeDirectory(new File(fileService.pathAppendLog(outputDir)));
+			outputFileName = fileService.getLogPdfFilePath(dbLogger.getIdExe());
+		}
+
+		if (outputFileName == null) {
+			dbLogger.logTask("Le paramètre  " + PARAMETER_OUPUTFILE_FILE_NAME + " est obligatoire", LoggerLevel.FATAL);
+			return LoggerLevel.FATAL.getValue().toString();
+		}
+
+		dbLogger.stopConversion();
+		
+//		dbLogger.logTask("Debut de la L'analyse du log", LoggerLevel.INFO);
+		
+		StringBuffer logString = dbLogger.getDbConversionService().getXML(dbLogger.getConversion());
+		System.out.println("-------------------------------------------------------"+((UtilsServiceImpl)utilsService).getPath_ressource());
+//		utilsService.ecritFile(new ByteArrayInputStream(logString.toString().getBytes(StandardCharsets.UTF_8)), "d:\\test.xml");
+		InputStream xslFile=utilsService.getXSLFile(xsltLogPdf);
+		
+		Document doc=null;
+		try {
+			doc=utilsService.loadDOMfromXML(new String(logString.toString().getBytes("UTF-8")));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			dbLogger.logTask("Impossible de charger les logs :" + logString.toString(), LoggerLevel.FATAL);
+		}
+
+		
+		FileOutputStream fop = null;
+//		FileOutputStream fopfo = null;
+		try {
+			fop = new FileOutputStream(new File(outputFileName));
+//			fopfo= new FileOutputStream(new File(outputFileName+".fo"));
+		} catch (FileNotFoundException e) {
+			dbLogger.logTask("Impossible de trouver le fichier :" + outputFileName, LoggerLevel.FATAL);
+		}
+//		pdfTransformerService.toFO(doc, xslFile, fopfo);
+		pdfTransformerService.toPDF(doc, xslFile, fop);
+		
+		return dbLogger.getTask().getLogResult();
+
+	}
+
+
+
+	/**
+	 * It can be replaced by @Configuration with aspectj spring but i don't know
+	 * why it doesn't work TODO :make it generic in extends's class
+	 */
+	public void initClass() {
+		if (!initrun) {
+			initrun = true;
+			if (pdfTransformerService == null) {
+				pdfTransformerService = (PDFTransformService) SpringBeanProvider.getBean("PDFTransformService");
+			}
+			if (utilsService == null) {
+				utilsService = (UtilsService) SpringBeanProvider.getBean("UtilsService");
+			}
+			if (fileService == null) {
+				fileService = (FileService) SpringBeanProvider.getBean("FileService");
+			}
+			initrun = false;
+		}
+	}
+
+	/**
+	 * @return the xslTransformerService
+	 */
+	public PDFTransformService getPdfTransformerService() {
+		return pdfTransformerService;
+	}
+
+	/**
+	 * @param xslTransformerService
+	 *            the xslTransformerService to set
+	 */
+	public void setPdfTransformerService(PDFTransformService pdfTransformerService) {
+		this.pdfTransformerService = pdfTransformerService;
+	}
+
+	/**
+	 * @return the utilsService
+	 */
+	public UtilsService getUtilsService() {
+		return utilsService;
+	}
+
+	/**
+	 * @param utilsService
+	 *            the utilsService to set
+	 */
+	public void setUtilsService(UtilsService utilsService) {
+		this.utilsService = utilsService;
+	}
+	
+	
+	
+	public FileService getFileService() {
+		return fileService;
+	}
+
+
+
+	public void setFileService(FileService fileService) {
+		this.fileService = fileService;
+	}
+
+	
+	@Override
+	public HashMap<String, ParameterTypes> getRequiredParams() {
+
+		parametersRequired=new HashMap<>();
+		parametersRequired.put(PARAMETER_OUPUTFILE_FILE_NAME,ParameterTypes.TXT);
+		parametersRequired.put(XSLT_XML_TO_PDF_FILENAME,ParameterTypes.TXT);
+		return parametersRequired;
+	}
+
+	@Override
+	public List<ParameterDetailled> getParameterList(Locale locale) {
+		getRequiredParams();	
+		return super.procedeParameterList(locale);
+	}
+
+
+
+	@Override
+	public boolean checkRequiredParams() {
+		outputFileName = (String) parametersRunning.get(PARAMETER_OUPUTFILE_FILE_NAME);
+		xsltLogPdf=(String) parametersRunning.get(XSLT_XML_TO_PDF_FILENAME);
+		if(xsltLogPdf==null || xsltLogPdf.isEmpty())
+		{
+			//default extension
+			xsltLogPdf=DEFAULT_XSLT_XML_TO_PDF_FILENAME;
+			parametersRunning.put(XSLT_XML_TO_PDF_FILENAME, xsltLogPdf);
+		}
+		
+		return super.checkParams();
+	}
+
+}

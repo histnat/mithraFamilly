@@ -1,0 +1,57 @@
+package com.sonovision.openconv.ws.controller.model;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import com.sonovision.openconv.db.vo.execution.CoScenario;
+
+public class ScenarioDetailledModel extends ScenarioMiniModel{
+
+
+
+	private List<TaskModel> taskList;
+	
+	public ScenarioDetailledModel(){
+		super();
+	}
+	
+	public ScenarioDetailledModel(String scenarioId,
+			String scenarioName,
+			 String creatorName,
+			 int nbSteps,
+			 String descr,
+			 Date creationDate){
+		super(scenarioId,scenarioName);
+		setCreatorName(creatorName);
+		setNbSteps(nbSteps);
+		setDescr(descr);
+		setCreationDate(creationDate);
+		taskList=new ArrayList<>();
+	}
+
+	public ScenarioDetailledModel(CoScenario coScenario){
+this(coScenario.getId(),
+		coScenario.getName("Fr_fr"),
+coScenario.getUserId(),
+coScenario.getNbrStep(),
+coScenario.getDescr("Fr_fr"),
+coScenario.getCreationDate());
+	}
+
+
+
+	public List<TaskModel> getTaskList() {
+		return taskList;
+	}
+
+	public void setTaskList(List<TaskModel> taskList) {
+		this.taskList = taskList;
+	}
+	
+	public void addTask(TaskModel task){
+		taskList.add(task);
+	}
+	
+	
+}

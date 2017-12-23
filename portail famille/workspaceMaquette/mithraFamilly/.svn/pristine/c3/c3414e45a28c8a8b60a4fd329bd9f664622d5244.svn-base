@@ -1,0 +1,54 @@
+Log filename: "C:\epicuser\age_d\age_d.dtlog"
+Document type compile date: Tue Aug 02 16:27:11 2005
+Dtgen
+Platform: Windows NT 4.0
+
+Host: svst5457   Login: e077254
+
+Catalog path: "C:\epicuser;C:\Epicuser;C:\Program Files\Epic\doctypes;"
+
+
+Update (.ptd file written) or Validate (.ptd file not written): Update
+XML or SGML Application: SGML
+Force Compile: Yes
+Top level element: dmodule
+Public ID: -//RAFALE CSDB//DTD Aircraft Ground Equipment Description 981222//EN
+DTD Path: "C:\epicuser\age_d\age_d.dtd"
+ATD Path: "C:\epicuser\age_d\age_d.atd"
+PTD Path: "C:\epicuser\age_d\age_d.ptd"
+ATI Tag Path: "C:\Program Files\Epic\lib\dtgen\atitag.cf"
+Message File Path: (not specified)
+SGML Declaration Path: not specified - using "C:\Program Files\Epic\entities\ati-unc.dcl"
+
+Entity Name: %ISOtech
+Public Identifier: "ISO 8879-1986//ENTITIES General Technical//EN"
+System Identifier: (none)
+Resolved Path: "C:\Program Files\Epic\entities\iso-tech.gml"
+Catalog File: "C:\Program Files\Epic\doctypes\catalog"
+
+Entity Name: %ISOpub
+Public Identifier: "ISO 8879-1986//ENTITIES Publishing//EN"
+System Identifier: (none)
+Resolved Path: "C:\Program Files\Epic\entities\iso-pub.gml"
+Catalog File: "C:\Program Files\Epic\doctypes\catalog"
+
+Entity Name: %ISOnum
+Public Identifier: "ISO 8879-1986//ENTITIES Numeric and Special Graphic//EN"
+System Identifier: (none)
+Resolved Path: "C:\Program Files\Epic\entities\iso-num.gml"
+Catalog File: "C:\Program Files\Epic\doctypes\catalog"
+
+Entity Name: %ISOgrk3
+Public Identifier: "ISO 8879-1986//ENTITIES Greek Symbols//EN"
+System Identifier: (none)
+Resolved Path: "C:\Program Files\Epic\entities\iso-grk3.gml"
+Catalog File: "C:\Program Files\Epic\doctypes\catalog"
+
+Entity Name: %ISOlat1
+Public Identifier: "ISO 8879-1986//ENTITIES Added Latin 1//EN"
+System Identifier: (none)
+Resolved Path: "C:\Program Files\Epic\entities\iso-lat1.gml"
+Catalog File: "C:\Program Files\Epic\doctypes\catalog"
+
+DTD table model: CALS
+

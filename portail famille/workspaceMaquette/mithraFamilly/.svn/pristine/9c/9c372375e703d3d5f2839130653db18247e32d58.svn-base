@@ -1,0 +1,340 @@
+package com.sonovision.openconv.modules.sgmlprocess.reader;
+
+//Copyright Richard Tobin, HCRC 1997
+
+//Read an HTML file
+
+import java.util.*;
+
+import com.sonovision.openconv.modules.sgmlprocess.model.SGMLDoctype;
+import com.sonovision.openconv.modules.sgmlprocess.model.SGMLElementSpec;
+
+import java.io.*;
+import java.net.*;
+
+public class HTMLReader
+{
+ public static SGMLDoctype htmlDoctype = new SGMLDoctype();
+
+ // HTML Elements
+
+ public static SGMLElementSpec tt, i, b , u, strike, big, small, sub, sup;
+ public static SGMLElementSpec em, strong, dfn, code, samp, kbd, var, cite;
+ public static SGMLElementSpec font, basefont, br, body, address, div;
+ public static SGMLElementSpec center, a, map, area, link, img, applet;
+ public static SGMLElementSpec param, hr, p, h1, h2, h3, h4, h5, h6, pre;
+ public static SGMLElementSpec blockquote, dl, dt, dd, ol, ul, dir, menu;
+ public static SGMLElementSpec li, form, input, select, option, textarea;
+ public static SGMLElementSpec table, tr, th, td, caption, head, title;
+ public static SGMLElementSpec isindex, base, meta, html, script, style;
+
+ static {
+
+	// Define the structure of an HTML document.
+	// This is based on the HTML 3.2 Reference Specification.
+
+	tt = htmlDoctype.addMixed("tt", false, false);
+	i = htmlDoctype.addMixed("i", false, false);
+	b = htmlDoctype.addMixed("b", false, false);
+	u = htmlDoctype.addMixed("u", false, false);
+	strike = htmlDoctype.addMixed("strike", false, false);
+	big = htmlDoctype.addMixed("big", false, false);
+	small = htmlDoctype.addMixed("small", false, false);
+	sub = htmlDoctype.addMixed("sub", false, false);
+	sup = htmlDoctype.addMixed("sup", false, false);
+	em = htmlDoctype.addMixed("em", false, false);
+	strong = htmlDoctype.addMixed("strong", false, false);
+	dfn = htmlDoctype.addMixed("dfn", false, false);
+	code = htmlDoctype.addMixed("code", false, false);
+	samp = htmlDoctype.addMixed("samp", false, false);
+	kbd = htmlDoctype.addMixed("kbd", false, false);
+	var = htmlDoctype.addMixed("var", false, false);
+	cite = htmlDoctype.addMixed("cite", false, false);
+	font = htmlDoctype.addMixed("font", false, false);
+	basefont = htmlDoctype.addMixed("basefont", false, true);
+	br = htmlDoctype.addEmpty("br");
+	body = htmlDoctype.addMixed("body", true, true);
+	address = htmlDoctype.addMixed("address", false, false);
+	div = htmlDoctype.addMixed("div", false, false);
+	center = htmlDoctype.addMixed("center", false, false);
+	a = htmlDoctype.addMixed("a", false, false);
+	map = htmlDoctype.addElement("map", false, false);
+	area = htmlDoctype.addEmpty("area");
+	link = htmlDoctype.addEmpty("link");
+	img = htmlDoctype.addEmpty("img");
+	applet = htmlDoctype.addMixed("applet", false, false);
+	param = htmlDoctype.addEmpty("param");
+	hr = htmlDoctype.addEmpty("hr");
+	p = htmlDoctype.addMixed("p", false, true);
+	h1 = htmlDoctype.addMixed("h1", false, false);
+	h2 = htmlDoctype.addMixed("h2", false, false);
+	h3 = htmlDoctype.addMixed("h3", false, false);
+	h4 = htmlDoctype.addMixed("h4", false, false);
+	h5 = htmlDoctype.addMixed("h5", false, false);
+	h6 = htmlDoctype.addMixed("h6", false, false);
+	pre = htmlDoctype.addMixed("pre", false, false);
+	blockquote = htmlDoctype.addMixed("blockquote", false, false);
+	dl = htmlDoctype.addElement("dl", false, false);
+	dt = htmlDoctype.addMixed("dt", false, true);
+	dd = htmlDoctype.addMixed("dd", false, true);
+	ol = htmlDoctype.addElement("ol", false, false);
+	ul = htmlDoctype.addElement("ul", false, false);
+	dir = htmlDoctype.addElement("dir", false, false);
+	menu = htmlDoctype.addElement("menu", false, false);
+	li = htmlDoctype.addMixed("li", false, true);
+	form = htmlDoctype.addMixed("form", false, false);
+	input = htmlDoctype.addEmpty("input");
+	select = htmlDoctype.addElement("select", false, false);
+	option = htmlDoctype.addMixed("option", false, true);
+	textarea = htmlDoctype.addMixed("textarea", false, false);
+	table = htmlDoctype.addElement("table", false, false);
+	tr = htmlDoctype.addElement("tr", false, true);
+	th = htmlDoctype.addMixed("th", false, true);
+	td = htmlDoctype.addMixed("td", false, true);
+	caption = htmlDoctype.addMixed("caption", false, false);
+	head = htmlDoctype.addElement("head", true, true);
+	title = htmlDoctype.addMixed("title", false, false);
+	isindex = htmlDoctype.addEmpty("isindex");
+	base = htmlDoctype.addEmpty("base");
+	meta = htmlDoctype.addEmpty("meta");
+	html = htmlDoctype.addElement("html", true, true);
+	script = htmlDoctype.addCData("script", false);
+	style = htmlDoctype.addCData("style", false);
+
+	content_text(tt);
+	content_text(i);
+	content_text(b);
+	content_text(u);
+	content_text(strike);
+	content_text(big);
+	content_text(small);
+	content_text(sub);
+	content_text(sup);
+
+	content_text(em);
+	content_text(strong);
+	content_text(dfn);
+	content_text(code);
+	content_text(samp);
+	content_text(kbd);
+	content_text(var);
+	content_text(cite);
+
+	content_text(font);
+
+	content_text(basefont);
+
+
+	content_body(body);
+
+	content_text(address);
+	address.addAllowed(p);
+
+	content_body(div);
+	content_body(center);
+
+	content_text(a);
+	// XXX should really exclude a from a
+
+	map.addAllowed(area);
+
+	content_text(applet);
+	applet.addAllowed(param);
+
+	content_text(p);
+
+	content_text(h1);
+	content_text(h2);
+	content_text(h3);
+	content_text(h4);
+	content_text(h5);
+	content_text(h6);
+
+	content_text(pre);
+	// should really exclude various things from pre
+
+	content_body(blockquote);
+
+	dl.addAllowed(dt);
+	dl.addAllowed(dd);
+
+	content_text(dt);
+	content_flow(dd);
+
+	ol.addAllowed(li);
+	ul.addAllowed(li);
+
+	dir.addAllowed(li);
+	// should really exclude block content from dir
+
+	menu.addAllowed(li);
+	// should really exclude block content from menu
+
+	content_flow(li);
+
+	content_body(form);
+	// should really exclude form from form
+	
+	select.addAllowed(option);
+
+
+	table.addAllowed(caption);
+	table.addAllowed(tr);
+
+	tr.addAllowed(th);
+	tr.addAllowed(td);
+
+	content_body(th);
+	content_body(td);
+
+	content_text(caption);
+
+	head.addAllowed(title);	// should really be required!
+	head.addAllowed(isindex);
+	head.addAllowed(base);
+	head.addAllowed(meta);
+	head.addAllowed(link);
+	head.addAllowed(script);
+	head.addAllowed(style);
+
+	html.addRequired(head);
+	html.addRequired(body);
+ }
+
+ // %text
+
+ static void content_text(SGMLElementSpec spec)
+ {
+	content_font(spec);
+	content_phrase(spec);
+	content_special(spec);
+	content_form(spec);
+ }
+
+ // %font
+
+ static void content_font(SGMLElementSpec spec)
+ {
+	spec.addAllowed(tt);
+	spec.addAllowed(i);
+	spec.addAllowed(b);
+	spec.addAllowed(u);
+	spec.addAllowed(strike);
+	spec.addAllowed(big);
+	spec.addAllowed(small);
+	spec.addAllowed(sub);
+	spec.addAllowed(sup);
+ }
+
+ // %phrase
+
+ static void content_phrase(SGMLElementSpec spec)
+ {
+	spec.addAllowed(em);
+	spec.addAllowed(strong);
+	spec.addAllowed(dfn);
+	spec.addAllowed(code);
+	spec.addAllowed(samp);
+	spec.addAllowed(kbd);
+	spec.addAllowed(var);
+	spec.addAllowed(cite);
+ }
+
+ // %special
+
+ static void content_special(SGMLElementSpec spec)
+ {
+	spec.addAllowed(a);
+	spec.addAllowed(img);
+	spec.addAllowed(applet);
+	spec.addAllowed(font);
+	spec.addAllowed(basefont);
+	spec.addAllowed(br);
+	spec.addAllowed(map);
+ }
+
+ // %form
+
+ static void content_form(SGMLElementSpec spec)
+ {
+	spec.addAllowed(input);
+	spec.addAllowed(select);
+	spec.addAllowed(textarea);
+ }
+
+ // %list
+
+ static void content_list(SGMLElementSpec spec)
+ {
+	spec.addAllowed(ul);
+	spec.addAllowed(ol);
+	spec.addAllowed(dir);
+	spec.addAllowed(menu);
+ }
+
+ // %block
+
+ static void content_block(SGMLElementSpec spec)
+ {
+	spec.addAllowed(p);
+	spec.addAllowed(pre);
+	spec.addAllowed(dl);
+	spec.addAllowed(div);
+	spec.addAllowed(center);
+	spec.addAllowed(blockquote);
+	spec.addAllowed(form);
+	spec.addAllowed(isindex);
+	spec.addAllowed(hr);
+	spec.addAllowed(table);
+	content_list(spec);
+ }
+
+ // %flow
+
+ static void content_flow(SGMLElementSpec spec)
+ {
+	content_text(spec);
+	content_block(spec);
+ }
+
+ // %heading
+
+ static void content_heading(SGMLElementSpec spec)
+ {
+	spec.addAllowed(h1);
+	spec.addAllowed(h2);
+	spec.addAllowed(h3);
+	spec.addAllowed(h4);
+	spec.addAllowed(h5);
+	spec.addAllowed(h6);
+ }
+
+ // %body.content
+
+ static void content_body(SGMLElementSpec spec)
+ {
+	content_heading(spec);
+	content_text(spec);
+	content_block(spec);
+	spec.addAllowed(address);
+ }
+
+ public static void main(String argv[]) throws Exception
+ {
+	InputStream in;
+
+	if(argv.length > 0)
+	{
+//	    URL source = new URL(argv[0]);
+		in       = new FileInputStream(argv[0]);
+//	    in = source.openStream();
+	}
+	else
+	    in = System.in;
+
+	SGMLReader reader = new SGMLReader(in, htmlDoctype);
+
+	reader.read(html).print(System.out);
+	System.out.println("");
+ }
+}

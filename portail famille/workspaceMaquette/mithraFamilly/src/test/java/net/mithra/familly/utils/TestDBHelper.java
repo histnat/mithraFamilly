@@ -1,0 +1,552 @@
+package net.mithra.familly.utils;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.sedoc.toolbox.bean.UtilsService;
+import net.mithra.familly.db.bo.DBConversionService;
+import net.mithra.familly.db.dao.CoHistoryExeDao;
+import net.mithra.familly.db.dao.CoParameterExeDao;
+import net.mithra.familly.db.dao.CoScenarioDao;
+import net.mithra.familly.db.dao.ConversionObjectDao;
+import net.mithra.familly.db.dao.LogLineDao;
+import net.mithra.familly.db.dao.TaskDao;
+import net.mithra.familly.db.exception.DBNONullException;
+import net.mithra.familly.db.exception.DBNOUniqueException;
+import net.mithra.familly.db.vo.Conversion;
+import net.mithra.familly.db.vo.ConversionObject;
+import net.mithra.familly.db.vo.LogLine;
+import net.mithra.familly.db.vo.Task;
+import net.mithra.familly.db.vo.execution.CoHistoryExe;
+import net.mithra.familly.db.vo.execution.CoParameterExe;
+import net.mithra.familly.db.vo.execution.CoScenario;
+import net.mithra.familly.db.vo.user.FaGroup;
+import net.mithra.familly.db.vo.user.FaRole;
+import net.mithra.familly.db.vo.user.FaUser;
+import net.mithra.familly.service.FileService;
+import net.mithra.familly.utils.db.UserDBHelper;
+
+public abstract class TestDBHelper extends TestHelper {
+	
+	@Autowired
+	protected UserDBHelper userDBHelper;
+
+	@Autowired
+	protected ConversionObjectDao conversionObjectDao;
+
+	@Autowired
+	protected LogLineDao logLineDao;
+
+	@Autowired
+	protected TaskDao taskDao;
+
+	@Autowired
+	protected DBConversionService dbConversionService;
+	
+	@Autowired
+	protected CoHistoryExeDao coHistoryExeDao;
+	
+	@Autowired
+	protected CoParameterExeDao coParameterExeDao;
+
+	@Autowired
+	protected CoScenarioDao coScenarioDao;
+	
+	@Autowired
+	protected FileService fileService;
+	
+    @Autowired
+    protected UtilsService utilsService;
+    
+    protected String idExe;
+
+	protected void deleteAll() {
+		logLineDao.deleteAll();
+		conversionObjectDao.deleteAll();
+		conversionDao.deleteAll();
+		taskDao.deleteAll();
+		userDBHelper.deleteAll();
+		coHistoryExeDao.deleteAll();
+		coParameterExeDao.deleteAll();
+		coScenarioDao.deleteAll();
+	}
+	
+	
+
+	/**************************************************************
+	 * Conversion
+	 **************************************************************/
+
+	protected Conversion getConversionWithoutSave() {
+		return getConversionWithoutSave(1);
+	}
+
+	protected Conversion getConversionWithoutSave(int nbr) {
+		Conversion conversion = new Conversion();
+		conversion.setFolderIn("c:/testin" + nbr + "/");
+		conversion.setFolderOut("c:/testout" + nbr + "/");
+		conversion.setStartTime(1443351300000L);
+		conversion.setStopTime(1443353300000L);
+		conversion.setWorkFlowName("Workflow de test" + nbr);
+		conversion.setWorkFlowSequence(nbr + "");
+		return conversion;
+	}
+
+	protected List<Conversion> getConversionWithSave(int nbr) throws DBNONullException, DBNOUniqueException {
+		List<Conversion> conversionList = new ArrayList<>();
+		for (int i = 0; i < nbr; i++) {
+			Conversion conversion = getConversionWithoutSave(i);
+			Conversion c1 = dbConversionService.getOrSave(conversion);
+			conversionList.add(c1);
+
+		}
+		return conversionList;
+	}
+
+	protected Conversion getConversionWithSave() throws DBNONullException, DBNOUniqueException {
+		Conversion conversion = getConversionWithoutSave();
+		dbConversionService.getOrSave(conversion);
+		return conversion;
+	}
+
+	/**************************************************************
+	 * Task
+	 * @throws DBNOUniqueException 
+	 * @throws DBNONullException 
+	 **************************************************************/
+
+	protected Task getTaskWithoutSave() throws DBNONullException, DBNOUniqueException {
+		return getTaskWithoutSave(1);
+	}
+
+	protected Task getTaskWithoutSave(int nbr) throws DBNONullException, DBNOUniqueException {
+		Task task = new Task();
+		task.setActionId("Action" + nbr);
+		task.setName("task" + nbr);
+		Conversion c = getConversionWithSave();
+		task.setConversionId(c.getId());
+		task.setLogResult(nbr + "");
+		return task;
+	}
+
+	protected List<Task> getTaskWithSave(int nbr) throws DBNONullException, DBNOUniqueException {
+		List<Task> taskList = new ArrayList<>();
+		for (int i = 0; i < nbr; i++) {
+			Task task = getTaskWithoutSave(i);
+			Task c1 = dbConversionService.getOrSave(task);
+			taskList.add(c1);
+
+		}
+		return taskList;
+	}
+
+	protected Task getTaskWithSave() throws DBNONullException, DBNOUniqueException {
+		Task task = getTaskWithoutSave();
+		dbConversionService.getOrSave(task);
+		return task;
+	}
+
+	/**************************************************************
+	 * ConversionObject
+	 * @throws DBNOUniqueException 
+	 * @throws DBNONullException 
+	 **************************************************************/
+
+	protected ConversionObject getConversionObjectWithoutSave() throws DBNONullException, DBNOUniqueException {
+		return getConversionObjectWithoutSave(1);
+	}
+
+	protected ConversionObject getConversionObjectWithoutSave(int nbr) throws DBNONullException, DBNOUniqueException {
+		ConversionObject conversionObject = new ConversionObject();
+		conversionObject.setIdentification("Identification" + nbr);
+		Task t = getTaskWithSave();
+		conversionObject.setTask(t);
+		Conversion c = getConversionWithSave();
+		conversionObject.setConversion(c);
+		conversionObject.setLogResult(nbr + "");
+		return conversionObject;
+	}
+
+	protected List<ConversionObject> getConversionObjectWithSave(int nbr) throws DBNONullException, DBNOUniqueException {
+		List<ConversionObject> conversionObjectList = new ArrayList<>();
+		for (int i = 0; i < nbr; i++) {
+			ConversionObject conversionObject = getConversionObjectWithoutSave(i);
+
+			ConversionObject c1 = dbConversionService.getOrSave(conversionObject);
+			conversionObjectList.add(c1);
+
+		}
+		return conversionObjectList;
+	}
+
+	protected ConversionObject getConversionObjectWithSave() throws DBNONullException, DBNOUniqueException {
+		ConversionObject conversionObject = getConversionObjectWithoutSave();
+		dbConversionService.getOrSave(conversionObject);
+		return conversionObject;
+	}
+
+	/**************************************************************
+	 * LogLine
+	 **************************************************************/
+
+	protected LogLine getLogLineWithoutSave() {
+		return getLogLineWithoutSave(1);
+	}
+
+	protected LogLine getLogLineWithoutSave(int nbr) {
+		LogLine logLine = new LogLine();
+		logLine.setMessage("Message" + nbr);
+		logLine.setMessageLong("Message Long" + nbr);
+		logLine.setLogResult(nbr + "");
+		return logLine;
+	}
+
+	protected List<LogLine> getLogLineWithSave(int nbr) throws DBNONullException, DBNOUniqueException {
+		List<LogLine> logLineList = new ArrayList<>();
+		for (int i = 0; i < nbr; i++) {
+			LogLine logLine = getLogLineWithoutSave(i);
+
+			LogLine c1 = dbConversionService.getOrSave(logLine);
+			logLineList.add(c1);
+
+		}
+		return logLineList;
+	}
+	
+	/******************************************************************
+	 * user
+	 ******************************************************************/
+	
+	public FaUser getOpUserWithoutSave() {
+		return userDBHelper.getOpUserWithoutSave();
+	}
+
+	public FaUser getOpUserWithoutSave(int nbr) {
+		return userDBHelper.getOpUserWithoutSave(nbr);
+	}
+
+	public List<FaUser> getOpUserWithSave(int nbr) throws DBNONullException, DBNOUniqueException {
+		return userDBHelper.getOpUserWithSave(nbr);
+	}
+
+	public FaUser getOpUserWithSave() throws DBNONullException, DBNOUniqueException {
+		return userDBHelper.getOpUserWithSave();
+	}
+	
+	/******************************************************************
+	 * role
+	 ******************************************************************/
+	
+	public FaRole getOpRoleWithoutSave() {
+		return userDBHelper.getOpRoleWithoutSave();
+	}
+
+	public FaRole getOpRoleWithoutSave(int nbr) {
+		return userDBHelper.getOpRoleWithoutSave(nbr);
+	}
+
+	public List<FaRole> getOpRoleWithSave(int nbr) throws DBNONullException, DBNOUniqueException {
+		return userDBHelper.getOpRoleWithSave(nbr);
+	}
+
+	public FaRole getOpRoleWithSave() throws DBNONullException, DBNOUniqueException {
+		return userDBHelper.getOpRoleWithSave();
+	}
+	
+	
+	
+	/******************************************************************
+	 * group
+	 ******************************************************************/
+	
+	public FaGroup getOpGroupWithoutSave() {
+		return userDBHelper.getOpGroupWithoutSave();
+	}
+
+	public FaGroup getOpGroupWithoutSave(int nbr) {
+		return userDBHelper.getOpGroupWithoutSave(nbr);
+	}
+
+	public List<FaGroup> getOpGroupWithSave(int nbr) throws DBNONullException, DBNOUniqueException {
+		return userDBHelper.getOpGroupWithSave(nbr);
+	}
+
+	public FaGroup getOpGroupWithSave() throws DBNONullException, DBNOUniqueException {
+		return userDBHelper.getOpGroupWithSave();
+	}
+	
+	
+	
+	/**************************************************************
+	 * CoHistoryExe
+	 **************************************************************/
+
+	public CoHistoryExe getCoHistoryExeWithoutSave(int nbr) {
+		Date dt = new Date();
+		Calendar c = Calendar.getInstance(); 
+		c.setTime(dt); 
+		c.add(Calendar.DATE, 1);
+		dt = c.getTime();
+		CoHistoryExe coHistoryExe = new CoHistoryExe();
+		coHistoryExe.setNbrFiles(nbr);
+		coHistoryExe.setNbrNBloquant(nbr-1);
+		coHistoryExe.setNbrNOK(nbr-1);
+		coHistoryExe.setNbrOK(nbr-1);
+		coHistoryExe.setStartTime(dt);
+		coHistoryExe.setEndTime(c.getTime());
+		return coHistoryExe;
+	}
+
+	public CoHistoryExe getCoHistoryExeWithoutSave() {
+		return getCoHistoryExeWithoutSave(1);
+	}
+
+	public List<CoHistoryExe> getCoHistoryExeListWithSave(int nbr) throws DBNONullException, DBNOUniqueException {
+		List<CoHistoryExe> coHistoryExeList = new ArrayList<>();
+		for (int i = 0; i < nbr; i++) {
+			CoHistoryExe coHistoryExe = getCoHistoryExeWithoutSave(i);
+			CoHistoryExe c1 = coHistoryExeDao.getOrSave(coHistoryExe);
+			coHistoryExeList.add(c1);
+
+		}
+		return coHistoryExeList;
+	}
+	
+
+	public CoHistoryExe getCoHistoryExeWithSave() throws DBNONullException, DBNOUniqueException {
+		CoHistoryExe coHistoryExe = getCoHistoryExeWithoutSave();
+		coHistoryExeDao.getOrSave(coHistoryExe);
+		return coHistoryExe;
+	}
+	
+	
+	public void update(CoHistoryExe coHistoryExe){
+		coHistoryExeDao.update(coHistoryExe);
+	}
+	
+	
+	/**************************************************************
+	 * CoParameterExe
+	 **************************************************************/
+	public CoParameterExe getCoParameterExeWithoutSave(int nbr) {
+		Date dt = new Date();
+		Calendar c = Calendar.getInstance(); 
+		c.setTime(dt); 
+		c.add(Calendar.DATE, 1);
+		dt = c.getTime();
+		CoParameterExe coParameterExe = new CoParameterExe();
+		coParameterExe.setParamName("ParamName"+nbr);
+		coParameterExe.setParamValue("ParamValue"+nbr);
+		coParameterExe.setTaskId("taskId"+nbr);
+		return coParameterExe;
+	}
+
+	public CoParameterExe getCoParameterExeWithoutSave() {
+		return getCoParameterExeWithoutSave(1);
+	}
+
+	public List<CoParameterExe> getCoParameterExeListWithSave(int nbr) throws DBNONullException, DBNOUniqueException {
+		List<CoParameterExe> coParameterExeList = new ArrayList<>();
+		for (int i = 0; i < nbr; i++) {
+			CoParameterExe coParameterExe = getCoParameterExeWithoutSave(i);
+			CoParameterExe c1 = coParameterExeDao.getOrSave(coParameterExe);
+			coParameterExeList.add(c1);
+
+		}
+		return coParameterExeList;
+	}
+	
+
+	public CoParameterExe getCoParameterExeWithSave() throws DBNONullException, DBNOUniqueException {
+		CoParameterExe coParameterExe = getCoParameterExeWithoutSave();
+		coParameterExeDao.getOrSave(coParameterExe);
+		return coParameterExe;
+	}
+	
+	
+	
+	/**************************************************************
+	 * CoScenario
+	 **************************************************************/
+	
+	public CoScenario getCoScenarioWithoutSave(int nbr) {
+		Date dt = new Date();
+		Calendar c = Calendar.getInstance(); 
+		c.setTime(dt); 
+		c.add(Calendar.DATE, 1);
+		dt = c.getTime();
+		CoScenario coScenario = new CoScenario();
+		coScenario.addName("Fr_fr", "name1_"+nbr);
+		coScenario.addName("Gb_en", "name2_"+nbr);
+		coScenario.setCode("Code"+nbr);
+		coScenario.setFileName(getFilePath(ResourceTestPath.COBRA.getWf()));
+		coScenario.setNbrStep(nbr);
+		coScenario.setShared((byte)1);
+		coScenario.setCreationDate(dt);
+		coScenario.setModificationdate(c.getTime());
+		coScenario.addDescr("Fr_fr", "descr1_"+nbr);
+		coScenario.addDescr("Gb_en", "descr2_"+nbr);
+		return coScenario;
+	}
+
+	public CoScenario getCoScenarioWithoutSave() {
+		return getCoScenarioWithoutSave(1);
+	}
+
+	public List<CoScenario> getCoScenarioListWithSave(int nbr) throws DBNONullException, DBNOUniqueException {
+		List<CoScenario> coScenarioList = new ArrayList<>();
+		for (int i = 0; i < nbr; i++) {
+			CoScenario coScenario = getCoScenarioWithoutSave(i);
+			CoScenario c1 = coScenarioDao.getOrSave(coScenario);
+			coScenarioList.add(c1);
+
+		}
+		return coScenarioList;
+	}
+	
+
+	public CoScenario getCoScenarioWithSave() throws DBNONullException, DBNOUniqueException {
+		CoScenario coScenario = getCoScenarioWithoutSave();
+		coScenarioDao.getOrSave(coScenario);
+		return coScenario;
+	}
+
+	public void update(CoScenario coScenario){
+		coScenarioDao.update(coScenario);
+	}
+	
+	/**
+	 * @return the taskDao
+	 */
+	public TaskDao getTaskDao() {
+		return taskDao;
+	}
+
+	/**
+	 * @param taskDao
+	 *            the taskDao to set
+	 */
+	public void setTaskDao(TaskDao taskDao) {
+		this.taskDao = taskDao;
+	}
+
+	protected LogLine getLogLineWithSave() throws DBNONullException, DBNOUniqueException {
+		LogLine logLine = getLogLineWithoutSave();
+		dbConversionService.getOrSave(logLine);
+		return logLine;
+	}
+
+	public DBConversionService getDbConversionService() {
+		return dbConversionService;
+	}
+
+	public void setDbConversionService(DBConversionService dbConversionService) {
+		this.dbConversionService = dbConversionService;
+	}
+
+	/**
+	 * @return the conversionObjectDao
+	 */
+	public ConversionObjectDao getConversionObjectDao() {
+		return conversionObjectDao;
+	}
+
+	/**
+	 * @param conversionObjectDao
+	 *            the conversionObjectDao to set
+	 */
+	public void setConversionObjectDao(ConversionObjectDao conversionObjectDao) {
+		this.conversionObjectDao = conversionObjectDao;
+	}
+
+	public TestDBHelper() {
+
+		userDBHelper = new UserDBHelper();
+	}
+
+	/**
+	 * @return the logLineDao
+	 */
+	public LogLineDao getLogLineDao() {
+		return logLineDao;
+	}
+
+	/**
+	 * @param logLineDao
+	 *            the logLineDao to set
+	 */
+	public void setLogLineDao(LogLineDao logLineDao) {
+		this.logLineDao = logLineDao;
+	}
+
+
+
+	public UserDBHelper getUserDBHelper() {
+		return userDBHelper;
+	}
+
+
+
+	public void setUserDBHelper(UserDBHelper userDBHelper) {
+		this.userDBHelper = userDBHelper;
+	}
+
+
+
+	public CoHistoryExeDao getCoHistoryExeDao() {
+		return coHistoryExeDao;
+	}
+
+
+
+	public void setCoHistoryExeDao(CoHistoryExeDao coHistoryExeDao) {
+		this.coHistoryExeDao = coHistoryExeDao;
+	}
+
+
+
+	public CoParameterExeDao getCoParameterExeDao() {
+		return coParameterExeDao;
+	}
+
+
+
+	public void setCoParameterExeDao(CoParameterExeDao coParameterExeDao) {
+		this.coParameterExeDao = coParameterExeDao;
+	}
+
+
+
+	public CoScenarioDao getCoScenarioDao() {
+		return coScenarioDao;
+	}
+
+
+
+	public void setCoScenarioDao(CoScenarioDao coScenarioDao) {
+		this.coScenarioDao = coScenarioDao;
+	}
+	
+	
+	public int countCoScenarioInDB(){
+		return this.coScenarioDao.findAll(CoScenario.class).size();
+	}
+
+
+
+	public String getIdExe() {
+		return idExe;
+	}
+
+
+
+	public void setIdExe(String idExe) {
+		this.idExe = idExe;
+	}
+
+	
+}

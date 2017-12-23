@@ -1,0 +1,331 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                           RAFALE                                   *
+    *                   Document Type Definition                         *
+    *                                                                    *
+    *                     Release Version 2.2                            *
+    *                   Dated 22th December 1998                         *
+    *                                                                    *
+    * Amendment :-                                                       *
+    * 1. New Public Identifier to support removal of marked sections.    *
+    * 2. remove pmd from task                                            *
+    * 3. change from to limfrom and to to limto                          *
+	* 4. taskid of deftask in CDATA                                      *
+	* 5. Applic behind deftask                                           *
+	* 6. move reporg at the beginning of equip substructure              *
+	* 7. para under task                                                 *
+	*                                                                    *
+	*                                                                    *
+	*  15/01/98   : replace (csn,isn?) by refipc        				 *
+	*               add title optional for definspection  				 *
+	*               trigger multiple in limit                            *
+	*               uom optional for treshold value                      *
+	*               add refs to timelim                                  *
+	*               remove task and prelreqs (deftask & taskitem)        *
+	*               add nti to deftask                                   *
+	*               delete elements qty and cat (timelim part)           *
+	*               delete extspec entity call (para)                    *
+	*               use %ident for equipment definition                  *
+	*                                                                    *
+	*  22/12/98   : replace refs by dmcref              				 *
+	*             : uom defined as pcdata instead of cdata 				 *
+	*                                                                    *
+	* Typical invocation :                                               *
+   	* <!ENTITY % SCHED                                                   *
+    *   "-//RAFALE//ELEMENTS Schedule Informmation 981222//EN" >         *
+    * %SCHED;                                                            *
+    ********************************************************************** -->
+
+
+<!--**********************************************************************
+    * Define Entity %CONTENT (Content Breakdown) containing :- SCHEDULE  *
+    ********************************************************************** -->
+ 
+<!ENTITY % CONTENT "schedule" >
+
+
+<!--**********************************************************************
+    * Define Element SCHEDULE (Schedule information) containing:-        *
+    *   Definspec   - choice  repeatable  Inspection definition          *
+    *   Deftask     - choice  repeatable  Task definition                *
+    *   Timelimit   - choice  repeatable  Time limit                     *
+    **********************************************************************-->
+ 
+<!ELEMENT schedule - o (definspec+ | deftask+ | timelim+) >
+<!ATTLIST schedule
+               type  CDATA    #IMPLIED  >
+
+ 
+<!--**********************************************************************
+    * Define Element DEFINSPEC (Inspection definition)                   *
+	*    containing:-                                                    *
+    *   Describe   - Mandatory  single  Fault description                *
+    *   Detect     - optionnal  single  Fault detection                  *
+    *   Locandrep  - Mandatory  single  Fault localisation               *
+	*   Remarks    - optionnal  single  Remarks                          *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  id    - ID    - REQUIRED - Fault ID                               *
+    *  fcode - CDATA - REQUIRED - Fault code                             *
+    * Attribute Definition list stored in entity %INSDEL;                *
+    ********************************************************************** -->
+ 
+<!ELEMENT definspec  - O ((%applic;)?,title?,inspection , tasklist?) >
+<!ATTLIST definspec   
+          type  ID    #REQUIRED> 
+ 
+<!--**********************************************************************
+    * Define Element THRESHOLD (Threshold inspection) containing:-       *
+  	*   value    - Mandatory  single  treshold value                     *
+    *   uom      - optionnal  single  value unit of mesure               *
+    *   tolerance- optionnal  single  value tolerance                    *
+	*   or                                                               *
+	*   Reftp    - optionnal  single  Remarks                            *
+	********************************************************************** -->
+
+<!ELEMENT threshold  - O (value, uom?, tolerance?) >
+
+
+<!--**********************************************************************
+    * Define Element EQUIP (Equipment) containing:-                      *
+    *   NO OTHER TAGS                                                    *
+    ********************************************************************** -->
+ <!ELEMENT equip  - O ((%applic;)?,reporg? ,%ident;,nomen?) >
+ <!ATTLIST equip
+		%bodyatt;>	
+
+<!--**********************************************************************
+    * Define Element VALUE (Value) containing:-                          *
+    *   NO OTHER TAGS                                                    *
+    ********************************************************************** -->
+ <!ELEMENT value  - O (#PCDATA) >
+
+ <!--*****************************************************************************
+    * Define Element UOM (unit of measure).		(also define in prelreqs)    *
+    **************************************************************************-->
+<!ELEMENT uom  - - (#PCDATA)>
+<!ATTLIST uom  %INSDEL;>
+
+
+
+<!--**********************************************************************
+    * Define Element LIMRANGE (Limit range) containing:-                 *
+	*   limfrom    - mandatory  single                                   * 
+	*   limto      - mandatory  single                                   *
+ 	*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  type  - CDATA - IMPLIED - detection type : Unique, Dual...        *
+    * Attribute Definition list stored in entity %INSDEL;                *
+	********************************************************************** -->
+
+ <!ELEMENT limrange  - O (limfrom , limto?) >     
+
+
+<!--**********************************************************************
+    * Define Element TIMELIMIT (Time Limit) containing:-                 *
+	*   limittype    - mandatory  repeatable                             * 
+	*   remarks      - optional   repeatable                             *
+ 	*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  type  - CDATA - IMPLIED - detection type : Unique, Dual...        *
+    * Attribute Definition list stored in entity %INSDEL;                *
+	********************************************************************** -->
+
+ <!ELEMENT timelimit  - O (limittype+ | remarks*) >
+
+
+<!--**********************************************************************
+    * Define Element TASKLIST (Task list) containing:-                   *
+	*   taskitem    - mandatory  repeatable                              * 
+ 	*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  type  - CDATA - IMPLIED - detection type : Unique, Dual...        *
+    * Attribute Definition list stored in entity %INSDEL;                *
+	********************************************************************** -->
+ <!ELEMENT tasklist  - O (taskitem+) >
+
+
+<!--**********************************************************************
+    * Define Element From (Limrange from) containing:-                   *
+    *   TRESHOLD                                                         *
+    ********************************************************************** -->
+<!ELEMENT limfrom  - O (threshold) >
+
+
+<!--**********************************************************************
+    * Define Element To (Limrange to) containing:-                       *
+    *   TRESHOLD                                                         *
+    ********************************************************************** -->
+<!ELEMENT limto  - O (threshold) >
+
+<!--**********************************************************************
+    * Define Element Sampling (sampling) containing:-                    *
+    *  No Other Tags.                                                    *
+    ********************************************************************** -->
+  <!ELEMENT sampling  - O (#PCDATA) >
+
+<!--**********************************************************************
+    * Define Element Tolerance (Tolerance value) containing:-            *
+    *  No Other Tags.                                                    *
+    ********************************************************************** -->
+<!ELEMENT tolerance  - O  EMPTY  >
+<!ATTLIST tolerance
+               minus  NUMBER    #IMPLIED 
+               plus  NUMBER    #IMPLIED  >
+
+
+<!--**********************************************************************
+    * Define Element LIMIT (Time Limit) containing:-                     *
+	*   sampling    - optional single                                    * 
+	*   threshold   - optional repeatable                                * 
+	*   refinspec   - optional repeatable                                * 
+	*   trigger     - optional single                                    * 
+	*   limrange    - optional single                                    * 
+	*   remarks     - optional repeatable                                *
+ 	*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  typex  - values - IMPLIED - limit type : ponctuel, periodic, event*
+    *  condition - CDATA - IMPLIED - conditions                          *
+	* Attribute Definition list stored in entity %INSDEL;                *
+	********************************************************************** -->
+<!ELEMENT limit  - O ((%applic;)?,sampling? , threshold* , refinspec* , trigger* , 
+               limrange? , remarks*) >
+<!ATTLIST limit
+               typex (PO , EV , PE)  "PE"
+               condition  CDATA    #IMPLIED
+			   %INSDEL;  >
+
+<!--**********************************************************************
+    * Define Element TRIGGER (Trigger) containing:-                      *
+	*   dmcref      - optional single                                    * 
+	*   threshold   - optional single                                    * 
+	*   refinspec   - optional single                                    *
+	*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  release   - values - IMPLIED - before, with, after                *
+    *  Attribute Definition list stored in entity %INSDEL;               *
+	********************************************************************** -->
+<!ELEMENT trigger  - O (dmcref | threshold |refinspec) >
+<!ATTLIST trigger
+               release (before , with , after)   #IMPLIED 
+			   %INSDEL;  >
+
+
+<!--**********************************************************************
+    * Define Element timelim (timelim) containing:-                      *
+	*   equip    - mandatory single                                      * 
+	*   timelimit- mandatory repeatable                                  * 
+	*   dmcref   - optional single                                       * 
+	*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  identifier   - CDATA - REQUIRED -                                 *
+    *  Attribute Definition list stored in entity %INSDEL;               *
+	********************************************************************** -->
+<!ELEMENT timelim  - O (equip , timelimit+, dmcref?) >
+<!ATTLIST timelim
+               identifier  CDATA    #REQUIRED 
+			    %INSDEL;  >
+
+
+<!--**********************************************************************
+    * Define Element limittype (limittype) containing:-                  *
+	*   threshold    - mandatory repeatable                              * 
+	*   remarks      - optional repeatable                               * 
+	*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  type         - VALUES - IMPLIED -                                 *
+    *                 TBO : Time Between Overhaul                        *
+	*                 HT  : Hard Time                                    *
+	*                 SLM : Since Last Maintenance                       *
+	*                 OTL : Out Time Limit                               *
+	*                 OC  : On Condition                                 *
+	*                 CM  : Check Maintenance                            *
+	*                 FC  : Functional Check                             *
+	*  Attribute Definition list stored in entity %INSDEL;               *
+	********************************************************************** -->
+<!ELEMENT limittype  - O (threshold+ , remarks*) >
+<!ATTLIST limittype
+               type (tbo , ht , slm , otl , oc , cm , fc)   #IMPLIED 
+			    %INSDEL;  >
+
+
+<!--**********************************************************************
+    * Define Element Supervis (Supervisor) containing:-                  *
+	*   NO OTHER TAGS                                                    * 
+	*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  sup.Lev    - VALUES - IMPLIED -                                   *
+    *  Attribute Definition list stored in entity %INSDEL;               *
+	********************************************************************** -->
+<!ELEMENT Supervis  - O  EMPTY  >
+<!ATTLIST Supervis
+               sup.Lev (1 , 2 , 3 , 4)   #IMPLIED
+			   %INSDEL;  >
+
+
+
+<!--**********************************************************************
+    * Define Element deftask (task definition) containing:-              *
+	*   NO OTHER TAGS                                                    * 
+	*   dmcref   - mandatory single   reference to specific dm or techpub* 
+	*   nti      - optional  single   intervention level                 * 
+	*   equip    - optional  single   related equipment                  *
+	*   Supervis - optional  single   supervisor                         * 
+	*   limit    - mandatory repeatable limit definition                 *
+	*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  airworthlim  - VALUES -   -                                       *
+    *  reducem      - VALUES -   -                                       *
+	*  taskid       - REQUIRED -  CDATA                                  *
+	*  Attribute Definition list stored in entity %INSDEL;               *
+	********************************************************************** -->
+<!ELEMENT deftask  - O ((%applic;)?,dmcref,nti?, equip*, Supervis?, limit*) >
+<!ATTLIST deftask
+               taskid  CDATA    #REQUIRED  
+			   airworthlim (Recommended , Mandatory , none)   #IMPLIED 
+               reducem  CDATA   #IMPLIED 
+                %INSDEL; >
+
+
+<!--**********************************************************************
+    * Define Element inspection (inspection) containing:-                *
+	*   limit    - optional repeatable                                  * 
+	*   remarks  - optional repeatable                                   * 
+	*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  type         - ID - IMPLIED -                                     *
+    *  Attribute Definition list stored in entity %INSDEL;               *
+	********************************************************************** -->
+<!ELEMENT inspection  - O (limit* , remarks*) >
+<!ATTLIST inspection
+  			   %INSDEL; >
+
+<!--**********************************************************************
+    * Define Element taskitem (taskitem) containing:-                    *
+	*   dmcref     - mandatory single                                     * 
+	*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  taskid         - CDATA - REQUIRED -                               *
+	*  seqnum         - CDATA - REQUIRED -                               *
+    *  Attribute Definition list stored in entity %INSDEL;               *
+	********************************************************************** -->
+<!ELEMENT taskitem  - O ((%applic;)?,dmcref) >
+<!ATTLIST taskitem
+               seqnum  CDATA    #REQUIRED 
+               taskid  CDATA    #REQUIRED  >
+
+
+
+<!--**********************************************************************
+    * Define Element refinspec (inspection reference) containing:-       *
+	*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  insptype    - CDATA -   -                                             *
+    *  Attribute Definition list stored in entity %INSDEL;               *
+	********************************************************************** -->
+<!ELEMENT refinspec  - O  EMPTY  >
+<!ATTLIST refinspec
+               insptype  CDATA    #REQUIRED   
+			   %INSDEL;  >
+
+

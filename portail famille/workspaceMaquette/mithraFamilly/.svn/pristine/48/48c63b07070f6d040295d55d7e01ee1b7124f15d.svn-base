@@ -1,0 +1,42 @@
+param.inputFolder.label=Répertoire d'entrée
+param.inputFolder.descr=Répertoire des fichiers à charger
+
+param.inZipFile.label=Fichier zip d'entrée
+param.inZipFile.descr=Fichier zip à charger
+
+param.codificationClass.label=Classe de codification
+param.codificationClass.descr=Classe de la codification
+
+param.extensionFilter.label=Extension du filtre
+param.extensionFilter.descr=Description extension du filtre
+
+param.dtdType.label=Type de dtd
+param.dtdType.descr=Le type de dtd
+
+
+param.xslFileName.label=xslFileNamelbl
+param.xslFileName.descr=xslFileNamedescr
+
+param.xsltransformerEngine.label=xsltransformerEnginelbl
+param.xsltransformerEngine.descr=xsltransformerEnginedescr
+
+param.uriresolver.label=uriresolverlbl
+param.uriresolver.descr=uriresolverdesc
+
+param.codificationFile.label=codificationFilelbl
+param.codificationFile.descr=codificationFiledescr
+
+param.xslfoFileName.label=codificationFilelbl
+param.xslfoFileName.descr=codificationFiledescr
+
+param.xslfoFileName.label=xslfoFileNamelbl
+param.xslfoFileName.descr=xslfoFileNameescr
+
+param.outputFolder.label=outputFolderlbl
+param.outputFolder.descr=outputFolderDescr
+
+param.outputPDF.label=outputPDFrlbl
+param.outputPDF.descr=outputPDFDescr
+
+param.xsltLogPdf.label=logPdf.xsllbl
+param.xsltLogPdf.descr=logPdf.xslDescr

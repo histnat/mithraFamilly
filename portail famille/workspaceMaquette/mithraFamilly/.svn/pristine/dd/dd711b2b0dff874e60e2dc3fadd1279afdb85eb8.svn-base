@@ -1,0 +1,203 @@
+<!DOCTYPE DMODULE PUBLIC "-//RAFALE CSDB//DTD Aircraft Ground Equipment Procedural 981222//EN" [
+<!--ArborText, Inc., 1988-2000, v.4002-->
+<!ENTITY A1AJA7207SF030100005A021 SYSTEM "x-dm://0900f90b8004563d,MYWORKING" NDATA cgm>
+<!ENTITY A1AJA7207SF030100002A011 SYSTEM "x-dm://0900f90b80003eb3,MYWORKING" NDATA cgm>
+<!ENTITY A1AJA7207SF030100003A011 SYSTEM "x-dm://0900f90b80003927,MYWORKING" NDATA cgm>
+<!ENTITY A1AJA7207SF030100005A011 SYSTEM "x-dm://0900f90b80003928,MYWORKING" NDATA cgm>
+]>
+<dmodule><idstatus>
+<dmaddres>
+<dmc><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>JA</ecscc><eidc>72</eidc><cic>07</cic><discode>00</discode><discodev>A</discodev><incode>100</incode><incodev>A</incodev><itemloc>A</itemloc></age></dmc>
+<dmtitle><techname>ENSEMBLE MOBILE CHAUFFAGE INDUCTION</techname><infoname>MISE EN OEUVRE ET UTILISATION</infoname></dmtitle>
+<issno issno="2" type="r">
+<issdate year="2008" month="11" day="14">
+</dmaddres><status>
+<security class="NP">
+<rpc rpcname="S">
+<orig>F0301</orig>
+<applic>
+<systemid>
+<version version="M88-2 ETAPE 1"></version>
+<version version="M88-2 ETAPE 4"></version>
+<customer aaf="1" anf="1">
+<nti nti2="1"></systemid></applic>
+<techstd>
+<tpbase>&eacute;tat 2.2</tpbase>
+</techstd>
+<qa><context></qa>
+<rfu>Reprise du d&eacute;roul&eacute; op&eacute;ratoire suite &agrave; validation des inducteurs apr&egrave;s modification 242<?Pub Caret></rfu>
+<remarks>RAS</remarks>
+<icns><icn id="A1AJA7207SF030100002A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>JA</chapnum><section>7</section><subsect>2</subsect><subject>07</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00002</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn><icn id="A1AJA7207SF030100003A011">
+<icn-c><modelic>A1</modelic><sdc>A</sdc><chapnum>JA</chapnum><section>7</section><subsect>2</subsect><subject>07</subject><rpc rpcname="S"><orig>F0301</orig><illnum>00003</illnum><illver>A</illver><illupdat>01</illupdat><secur class="1"></icn-c>
+</icn></icns>
+</status>
+</idstatus><content><refs>
+<refdm>
+<dmcid id="A1AJA720700A030AA"><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>JA</ecscc><eidc>72</eidc><cic>07</cic><discode>00</discode><discodev>A</discodev><incode>030</incode><incodev>A</incodev><itemloc>A</itemloc></age></dmcid>
+<dmcid id="A1AJA720700A120BA"><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>JA</ecscc><eidc>72</eidc><cic>07</cic><discode>00</discode><discodev>A</discodev><incode>120</incode><incodev>B</incodev><itemloc>A</itemloc></age></dmcid>
+<dmcid id="A1AJA720700A410AA"><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>JA</ecscc><eidc>72</eidc><cic>07</cic><discode>00</discode><discodev>A</discodev><incode>410</incode><incodev>A</incodev><itemloc>A</itemloc></age></dmcid>
+<dmcid id="A1AJA720700A750AA"><age><modelic>A1</modelic><supeqvc>A</supeqvc><ecscc>JA</ecscc><eidc>72</eidc><cic>07</cic><discode>00</discode><discodev>A</discodev><incode>750</incode><incodev>A</incodev><itemloc>A</itemloc></age></dmcid>
+</refdm>
+</refs><proced><prelreqs><reqconds><reqcondli><reqcond>
+<cond><para><p>L'ensemble mobile chauffage induction doit &ecirc;tre pr&eacute;par&eacute; au poste de travail.</p>
+</para>
+</cond>
+<dmcref xrefid="A1AJA720700A120BA"></reqcond></reqcondli></reqconds><reqpers>
+<reqper>
+<perscat>P</perscat><persnum no="1"><perstime value="1,0"></reqper>
+</reqpers><supequip><supeqli>
+<supequi id="O2.00685"><refipc csn="72016901 006 "><nomen>Ensemble mobile chauffage induction</nomen><quantity>1</quantity></supequi>
+</supeqli><supeqlis>
+<supequis id="O2.C1"><refipc csn="72016002 185 "><nomen>Gants anti-chaleur</nomen><quantity>1 paire</quantity></supequis>
+<supequis id="O2.S0049"><refipc csn="72016001 030 "><nomen>Bo&icirc;tier de mesure temp&eacute;rature</nomen><quantity>1</quantity></supequis>
+<supequis id="O2.S0823"><refipc csn="72016001 060 "><nomen>Cordon</nomen><quantity>1</quantity></supequis>
+<supequis id="O2.S0620"><refipc csn="72016001 022 "><nomen>Sonde coud&eacute;e</nomen><quantity>1</quantity></supequis>
+</supeqlis></supequip><supplies><nosupply></supplies><miscs><nomisc></miscs><safety>
+<specpara>
+<warning vital="0">
+<p>Interdire l'utilisation de l'ensemble mobile chauffage induction aux porteurs d'implants actifs (pace-maker, etc).</p>
+</warning>
+<warning vital="0">
+<p>Ne pas porter d'objets metalliques (bagues, bracelets, etc) &agrave; proximit&eacute; de l'inducteur pendant la chauffe.</p>
+</warning>
+<warning vital="0">
+<p>Utiliser des gants<supeqref refid="O2.C1"> et un outillage adapt&eacute; pour manipuler des pi&egrave;ces chauff&eacute;es avec l'inducteur.</p>
+</warning>
+</specpara>
+</safety></prelreqs><mainfunc>
+<step1 id="P30" control="0">
+<title>Proc&eacute;dure de lancement de la s&eacute;quence de chauffe</title>
+<step2 id="P30-10" control="0">
+<para><p>Actionner l&apos;interrupteur g&eacute;n&eacute;ral pour la mise sous tension du g&eacute;n&eacute;rateur<figref refid="AJA7207SF030100003A011" repnohot="MISE SOUS TENSION">.</p>
+</para>
+<note>
+<p>Le voyant SOUS TENSION s'allume<figref refid="AJA7207SF030100003A011" repnohot="VOYANT SOUS TENSION">.</p>
+</note>
+</step2>
+<step2 id="P30-20" control="0">
+<title>S&eacute;lection de l'inducteur</title>
+<step3>
+<para><p>Appuyer sur la touche F2 pour atteindre le menu CHOIX DE L'INDUCTEUR<figref refid="AJA7207SF030100002A011" repnohot="F2">.</p>
+</para>
+</step3>
+<step3>
+<para><p>appuyer sur la touche MOD<figref refid="AJA7207SF030100002A011" repnohot="MOD">.</p>
+</para>
+</step3>
+<step3>
+<para><p>S&eacute;lectionner le num&eacute;ro de l&apos;inducteur s&eacute;lectionn&eacute;.</p>
+</para>
+</step3>
+<step3>
+<para><p>Valider par la touche ENTER<figref refid="AJA7207SF030100002A011" repnohot="ENTER">.</p>
+</para>
+</step3>
+</step2>
+<step2 id="P30-30" control="0">
+<title>V&eacute;rification de la consigne de puissance et du temps de chauffe</title>
+<step3>
+<para><p>Appuyer sur la touche F3 pour atteindre le menu VISUALISATION<figref refid="AJA7207SF030100002A011">.</p>
+</para>
+</step3>
+<step3>
+<para><p>V&eacute;rifier la consigne de puissance W et le temps de chauffe s programm&eacute;s pour l'inducteur s&eacute;lectionn&eacute;<dmcref xrefid="A1AJA720700A030AA"></p>
+</para>
+</step3>
+<step3>
+<title>Puissance et temps de chauffe non conformes</title>
+<para><p>Param&eacute;trer l'outillage<supeqref refid="O2.00685"><dmcref xrefid="A1AJA720700A750AA">.</p>
+</para>
+</step3>
+</step2>
+<step2 id="P30-40" control="0">
+<para><p>Activer les auxiliaires par appui sur la touche F7 <figref refid="AJA7207SF030100002A011" repnohot="F7">.</p>
+</para>
+</step2>
+<step2 id="P30-50" control="0">
+<specpara>
+<warning vital="0">
+<p>S'assurer que personne n'est en contact direct avec l'inducteur et la torche.</p>
+</warning>
+</specpara>
+<para><p>D&eacute;marrer la chauffe par appui sur sur la touche F9<figref refid="AJA7207SF030100002A011" repnohot="F9">.</p>
+</para>
+<note>
+<p>Le voyant rouge situ&eacute; sur la touche F9 s'&eacute;teint<figref refid="AJA7207SF030100002A011">.</p>
+</note>
+</step2>
+<step2 id="P30-60">
+<para><p>V&eacute;rifier la temp&eacute;rature sur la torche et les pinces &agrave; l'aide des outillages<supeqref refid="O2.S0049"> <supeqref refid="O2.S0823"> <supeqref refid="O2.S0620">.</p>
+</para>
+<note>
+<p>La  temp&eacute;rature ne doit pas d&eacute;passer 50&nbsp;&deg;C.</p>
+</note>
+</step2>
+<step2 id="P30-70">
+<specpara>
+<caution>
+<p>Appuyer sur la touche F10 pour interrompre &agrave; tout instant la s&eacute;quence programm&eacute;e de chauffe en cas de d&eacute;passement de temp&eacute;rature &agrave; 50&nbsp;&deg;C<figref refid="AJA7207SF030100002A011">.</p>
+</caution>
+<caution>
+<p>Appuyer sur le poussoir d'arr&ecirc;t d'urgence pour arr&ecirc;ter la chauffe en cas d'incident.</p>
+</caution>
+</specpara>
+<step3 id="P30-70-10">
+<para><p>Enlever l'ensemble inducteur/torche du moteur &agrave; l'aide de l'outillage<supeqref refid="O2.C1">.</p>
+</para>
+</step3>
+<step3 id="P30-70-20">
+<para><p>D&eacute;panner l'outillage<supeqref refid="O2.00685"><dmcref xrefid="A1AJA720700A410AA">.</p>
+</para>
+</step3>
+</step2>
+</step1>
+<step1 id="P40" control="0">
+<title>Fin de la s&eacute;quence de chauffe</title>
+<step2 id="P40-10">
+<para><p>Visualiser le voyant rouge CHAUFFE TERMINEE situ&eacute; sur la fa&ccedil;ade<figref refid="AJA7207SF030100003A011">.</p>
+</para>
+<note>
+<p>Le voyant rouge CHAUFFE TERMINEE situ&eacute; sur la fa&ccedil;ade s'allume en fin de chauffe<figref refid="AJA7207SF030100003A011" repnohot="VOYANT CHAUFFE TERMINEE">.</p>
+</note>
+</step2>
+<step2 id="P40-20">
+<para><p>Arr&ecirc;ter  les auxiliaires par appui sur la touche F8<figref refid="AJA7207SF030100002A011" repnohot="F8">.</p>
+</para>
+</step2>
+<step2 id="P40-30" control="0">
+<para><p>Actionner l&apos;interrupteur g&eacute;n&eacute;ral pour mettre hors tension le g&eacute;n&eacute;rateur<figref refid="AJA7207SF030100003A011" repnohot="MISE SOUS TENSION">.</p>
+</para>
+<note>
+<p>Le voyant SOUS TENSION s'&eacute;teint<figref refid="AJA7207SF030100003A011" repnohot="VOYANT SOUS TENSION">.</p>
+</note>
+</step2>
+<step2 id="P40-40">
+<para><p>Enlever l'inducteur du moteur.</p>
+</para>
+<note>
+<p>La p&egrave;ce chauff&eacute;e refroidit tr&egrave;s vite.</p>
+</note>
+</step2>
+<step2 id="P40-50">
+<para><p>D&eacute;connecter le c&acirc;ble d'alimentation &eacute;lectrique.</p>
+</para>
+</step2>
+</step1>
+<step1 id="P50" control="0">
+<title>Incidents et pannes</title>
+<para><p>D&eacute;panner l'outillage<supeqref refid="O2.00685"><dmcref xrefid="A1AJA720700A410AA">.</p>
+</para>
+</step1>
+<figure id="AJA7207SF030100002A011">
+<title>Ensemble mobile chauffage induction</title>
+<graphic callicn="A1AJA7207SF030100002A011">
+</figure>
+<figure id="AJA7207SF030100003A011">
+<title>Ensemble mobile chauffage induction</title>
+<graphic callicn="A1AJA7207SF030100003A011">
+</figure>
+</mainfunc><closeup>
+<noclose></closeup></proced></content></dmodule>
+<?Pub *0000009900 0>

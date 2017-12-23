@@ -1,0 +1,308 @@
+package com.sonovision.openconv.codification.impl;
+
+import java.io.BufferedInputStream;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
+import java.util.HashMap;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+
+import com.sedoc.dtdtoolbox.utils.DTDParsing;
+import com.sedoc.toolbox.SpringBeanProvider;
+import com.sedoc.toolbox.bean.UtilsService;
+import com.sedoc.toolbox.bean.XMLFactoryService;
+import com.sedoc.toolbox.bean.XSLTransformService;
+import com.sonovision.openconv.codification.Codification;
+import com.sonovision.openconv.codification.exception.CodificationException;
+import com.sonovision.openconv.utils.FileAccess;
+
+@Service("ListMaked")
+public class ListMaked implements Codification {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3853167456780174143L;
+
+	private static final String XPATH_OBJECT = "//object";
+	private static final String XPATH_OBJECT_IN = "./@in";
+	private static final String XPATH_OBJECT_OUT = "./@out";
+
+	public final static String PARAMETER_LOADFILE_XSL_CODIFICATION_FILE = "xslcodificationFile";
+
+	private DTDParsing dtdParsing = new DTDParsing();
+
+	@Autowired
+	private XMLFactoryService xmlFactoryService;
+	
+	@Autowired
+	XSLTransformService xslTransformerService;
+	
+	@Autowired
+	UtilsService utilsService;
+
+	private HashMap<String, String> hashInToOut = new HashMap<>();
+
+	private HashMap<String, String> hashOutToIn = new HashMap<>();
+
+	private String codificationFilePath;
+
+	private boolean codificationLoaded = false;
+
+	private String codificationXslFile;
+
+	// I must init spring composent, buti have loop on this class. this variable
+	// is for skip loop. I think it will be better if we use @Configure. next
+	// time
+	private static boolean initrun = false;
+
+	public ListMaked() {
+		super();
+	}
+
+	@Override
+	public String getNewFileName(String oldFileName) throws CodificationException {
+		initClass();
+		if (!codificationLoaded)
+			loadCodificationFile();
+		if(hashInToOut.get(oldFileName.replaceAll("(?i).xml",""))==null)
+			makeNewFileName(oldFileName);
+				
+		return hashInToOut.get(oldFileName.replaceAll("(?i).xml",""));
+	}
+
+	@Override
+	public String getOldFileName(String newFileName) throws CodificationException {
+		initClass();
+		if (!codificationLoaded)
+			loadCodificationFile();
+
+		if(hashOutToIn.get(newFileName.replaceAll("(?i).xml",""))==null)
+			makeOldFileName(newFileName);
+		return hashOutToIn.get(newFileName.replaceAll("(?i).xml",""));
+	}
+
+	private void loadCodificationFile() throws CodificationException {
+		if(codificationFilePath!=null && !codificationFilePath.isEmpty())
+		{
+		Document document = null;
+		document = dtdParsing.getParseXML(FileAccess.getResourceFilePath(codificationFilePath, true));
+		NodeList objectNodeList = null;
+		try {
+			objectNodeList = (NodeList) xmlFactoryService.executeXpathQuery(document, XPATH_OBJECT, true);
+		} catch (Exception e) {
+			throw new CodificationException("probleme for getting object :" + XPATH_OBJECT, e);
+		}
+		if (objectNodeList != null) {
+			int taille = objectNodeList.getLength();
+			while (--taille > -1) {
+				Node n = objectNodeList.item(taille);
+				Node inNode = null;
+				try {
+					inNode = (Node) xmlFactoryService.executeXpathQuery(n, XPATH_OBJECT_IN, false);
+				} catch (Exception e) {
+					throw new CodificationException("probleme for getting in :" + XPATH_OBJECT_IN, e);
+				}
+				Node outNode = null;
+				try {
+					outNode = (Node) xmlFactoryService.executeXpathQuery(n, XPATH_OBJECT_OUT, false);
+				} catch (Exception e) {
+					throw new CodificationException("probleme for getting in :" + XPATH_OBJECT_OUT, e);
+				}
+
+				hashInToOut.put(inNode.getNodeValue().toUpperCase().replaceAll(".XML", ""), outNode.getNodeValue());
+				hashOutToIn.put(outNode.getNodeValue().toUpperCase().replaceAll(".XML", ""), inNode.getNodeValue());
+			}
+		}
+		}
+		codificationLoaded = true;
+
+	}
+	
+	private String makeOldFileName(String dmc) throws CodificationException
+	{
+	
+			InputStream xslInputSource = FileAccess.getResourceFileStream(codificationXslFile);
+			BufferedInputStream bin = new BufferedInputStream(xslInputSource);
+
+			String str="<out>"+dmc+"</out>";
+			InputStream document;
+			try {
+				document = new ByteArrayInputStream(str.getBytes("UTF-8"));
+			} catch (UnsupportedEncodingException e2) {
+				throw new CodificationException("impossible de créér la codification pour:"+dmc,e2);
+			}
+			Document doc = null;
+			try {
+				doc = dtdParsing.getParseXML(document);
+			} catch (IOException | ParserConfigurationException | SAXException e1) {
+				throw new CodificationException("impossible de créér la codification pour:"+dmc,e1);
+			}
+			ByteArrayOutputStream out = new ByteArrayOutputStream();
+			try {
+				xslTransformerService.transformWithEx(doc, xslInputSource, out,null);
+			} catch (TransformerException e) {
+				throw new CodificationException("impossible de créér la codification pour:"+dmc,e);
+			}
+			String result;
+			try {
+				result = out.toString("UTF-8");
+			} catch (UnsupportedEncodingException e) {
+				throw new CodificationException("impossible de créér la codification pour:"+dmc,e);
+			}
+			hashOutToIn.put(dmc.toUpperCase().replaceAll(".XML", ""), result);
+			hashInToOut.put(result.toUpperCase().replaceAll(".XML", ""), dmc);
+			
+			return result;
+		
+	}
+	
+	private String makeNewFileName(String dmc) throws CodificationException
+	{
+	
+			InputStream xslInputSource = FileAccess.getResourceFileStream(codificationXslFile);
+			//BufferedInputStream bin = new BufferedInputStream(xslInputSource);
+
+			String str="<in>"+dmc+"</in>";
+			InputStream document;
+			try {
+				document = new ByteArrayInputStream(str.getBytes("UTF-8"));
+			} catch (UnsupportedEncodingException e2) {
+				throw new CodificationException("impossible de créér la codification pour:"+dmc+" probleme d'encodage",e2);
+			}
+			Document doc = null;
+			try {
+				doc = dtdParsing.getParseXML(document);
+			} catch (IOException | ParserConfigurationException | SAXException e1) {
+				throw new CodificationException("impossible de créér la codification pour:"+dmc+" probleme de parsing",e1);
+			}
+			ByteArrayOutputStream out = new ByteArrayOutputStream();
+			try {
+				xslTransformerService.transformWithEx(doc, xslInputSource, out,null);
+			} catch (TransformerException e) {
+				e.printStackTrace();
+				throw new CodificationException("impossible de créér la codification pour:"+dmc+" probleme de transformation",e);
+			}
+			String result;
+			try {
+				result = out.toString("UTF-8");
+			} catch (UnsupportedEncodingException e) {
+				throw new CodificationException("impossible de créér la codification pour:"+dmc+" probleme d'encodage de la sortie",e);
+			}
+			hashInToOut.put(dmc.toUpperCase().replaceAll(".XML", ""), result);
+			hashOutToIn.put(result.toUpperCase().replaceAll(".XML", ""), dmc);
+			
+			return result;
+		
+	}
+
+	/**
+	 * @return the xmlFactoryService
+	 */
+	public XMLFactoryService getXmlFactoryService() {
+		return xmlFactoryService;
+	}
+
+	/**
+	 * @param xmlFactoryService
+	 *            the xmlFactoryService to set
+	 */
+	public void setXmlFactoryService(XMLFactoryService xmlFactoryService) {
+		this.xmlFactoryService = xmlFactoryService;
+	}
+
+	/**
+	 * @return the codificationFilePath
+	 */
+	public String getCodificationFilePath() {
+		return codificationFilePath;
+	}
+
+	/**
+	 * @param codificationFilePath
+	 *            the codificationFilePath to set
+	 */
+	@Override
+	public void setCodificationParameter(HashMap<String,Object>  parameter) throws CodificationException{
+		String codificationFile = (String) parameter.get(PARAMETER_LOADFILE_CODIFICATION_FILE);
+		this.codificationFilePath=codificationFile;
+
+		String codificationXslFile = (String) parameter.get(PARAMETER_LOADFILE_XSL_CODIFICATION_FILE);
+		if(codificationXslFile==null || codificationXslFile.isEmpty())
+		{
+			throw new CodificationException("aucun fichier xsl de codification indiqué pour  "+this.getClass().getName() );
+		}
+		this.codificationXslFile=codificationXslFile;
+	}
+
+	/**
+	 * @return the dtdParsing
+	 */
+	public DTDParsing getDtdParsing() {
+		return dtdParsing;
+	}
+
+	/**
+	 * @param dtdParsing
+	 *            the dtdParsing to set
+	 */
+	public void setDtdParsing(DTDParsing dtdParsing) {
+		this.dtdParsing = dtdParsing;
+	}
+
+	public void initClass() {
+		if (!initrun) {
+			initrun = true;
+			if (xmlFactoryService == null) {
+				xmlFactoryService = (XMLFactoryService) SpringBeanProvider.getBean("XMLFactoryService");
+			}
+			if (xslTransformerService == null) {
+				xslTransformerService = (XSLTransformService) SpringBeanProvider.getBean("XSLTransformService");
+			}
+			
+			initrun = false;
+		}
+	}
+
+	/**
+	 * @return the xslTransformerService
+	 */
+	public XSLTransformService getXslTransformerService() {
+		return xslTransformerService;
+	}
+
+	/**
+	 * @param xslTransformerService the xslTransformerService to set
+	 */
+	public void setXslTransformerService(XSLTransformService xslTransformerService) {
+		this.xslTransformerService = xslTransformerService;
+	}
+
+	/**
+	 * @return the utilsService
+	 */
+	public UtilsService getUtilsService() {
+		return utilsService;
+	}
+
+	/**
+	 * @param utilsService the utilsService to set
+	 */
+	public void setUtilsService(UtilsService utilsService) {
+		this.utilsService = utilsService;
+	}
+	
+	
+
+}
