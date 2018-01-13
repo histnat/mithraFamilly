@@ -41,7 +41,7 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.9</version>
+			<version>4.13</version>
 			<scope>test</scope>
 			<type>jar</type>
 		</dependency>
@@ -162,14 +162,24 @@
 	</dependencies>
 	<pluginRepositories>
 		<pluginRepository>
-			<id>archiva.internal</id>
-			<url>http://10.168.10.50:18080/archiva/repository/internal/</url>
+			<id>nexus.internal</id>
+			<url>http://nexus.rebeche.net/repository/maven-central/</url>
 		</pluginRepository>
 	</pluginRepositories>
 	<repositories>
 		<repository>
+			<id>nexus.internal</id>
+			<url>http://nexus.rebeche.net/repository/maven-central/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
 			<id>archiva.internal</id>
-			<url>http://10.168.10.50:18080/archiva/repository/internal/</url>
+			<url>http://nexus.rebeche.net/repository/internal/</url>
 			<releases>
 				<enabled>true</enabled>
 			</releases>
@@ -179,7 +189,7 @@
 		</repository>
 		<repository>
 			<id>archiva.snapshots</id>
-			<url>http://10.168.10.50:18080/archiva/repository/snapshots/</url>
+			<url>http://nexus.rebeche.net/repository/snapshots/</url>
 			<releases>
 				<enabled>false</enabled>
 			</releases>
@@ -230,12 +240,12 @@
 				<repository>
 					<id>archiva.internal</id>
 					<name>Internal Release Repository</name>
-					<url>http://10.168.10.50:18080/archiva/repository/internal/</url>
+					<url>http://nexus.rebeche.net/repository/internal/</url>
 				</repository>
 				<snapshotRepository>
 					<id>archiva.snapshots</id>
 					<name>Internal Snapshot Repository</name>
-					<url>http://10.168.10.50:18080/archiva/repository/snapshots/</url>
+					<url>http://nexus.rebeche.net/repository/snapshots/</url>
 				</snapshotRepository>
 			</distributionManagement>
 		</profile>
